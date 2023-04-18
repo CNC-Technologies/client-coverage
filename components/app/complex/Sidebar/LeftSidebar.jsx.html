@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -135,7 +135,33 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -211,9 +237,11 @@
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import MoreButtonItem from './MoreButtonItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { BarsIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { BarsIcon, PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import moreButtonLinks from '@/constants/sidebar/moreButtonLink'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -233,9 +261,7 @@
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setMounted(true)</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
-<span class="cstat-no" title="statement not covered" >    if (!mounted) {</span>
-<span class="cstat-no" title="statement not covered" >        return null</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='h-full col'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='ml-3'&gt;</span>
@@ -246,13 +272,26 @@
 <span class="cstat-no" title="statement not covered" >                    alt='White Logo'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5 w-full ring-0 focus:ring-0 focus:border-none outline-0 focus:outline-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className=''&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                        href={'/app/create'}</span>
+<span class="cstat-no" title="statement not covered" >                        className='hover:bg-white bg-white/80 text-primary font-semibold row space-x-5 items-center cursor-pointer py-3 rounded-r-xl pl-3 mr-3 smoothen'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;Create&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex-1 mt-5 space-y-3 col'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {sidebarLinks.map((item) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;LeftSidebarLinkItem key={item.id} linkItem={item} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative mt-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {showMoreModal &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {showMoreModal &amp;&amp; mounted &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                        onMouseLeave={() =&gt; setShowMoreModal(false)}</span>
 <span class="cstat-no" title="statement not covered" >                        className=' absolute bg-white shadow-lg rounded-lg w-full h-fit bottom-[140%] right-0'</span>
@@ -286,7 +325,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-17T21:44:45.848Z
+                at 2023-04-18T18:13:59.458Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
