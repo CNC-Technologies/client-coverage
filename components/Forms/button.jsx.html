@@ -98,16 +98,16 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -132,38 +132,38 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function Button({ name, children, ...props }) {
-  return (
-    &lt;button
-      type='submit'
-      {...props}
-      className={`w-full px-4 py-2 text-lg font-semibold text-center text-white rounded-lg shadow-md h-14 max-sm:h-12 bg-primary dark:bg-gray-300 dark:text-primary dark:hover:bg-white/50 hover:bg-primary/90 focus:outline-none`}
-    &gt;
-      {name<span class="branch-0 cbranch-no" title="branch not covered" > || children}</span>
-    &lt;/button&gt;
-  );
+    return (
+        &lt;button
+            type='submit'
+            {...props}
+            className={`disabled:bg-primary/30 disabled:cursor-not-allowed w-full px-4 py-2 text-lg font-semibold text-center text-white rounded-lg shadow-md h-14 max-sm:h-12 bg-primary dark:bg-gray-300 dark:text-primary dark:hover:bg-white/50 hover:bg-primary/90 focus:outline-none`}
+        &gt;
+            {name<span class="branch-0 cbranch-no" title="branch not covered" > || children}</span>
+        &lt;/button&gt;
+    )
 }
 &nbsp;
 export <span class="fstat-no" title="function not covered" >function BlackButton({ children, ...props }) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >      type='submit'</span>
-<span class="cstat-no" title="statement not covered" >      {...props}</span>
-<span class="cstat-no" title="statement not covered" >      className={`w-full px-8 py-2 text-lg font-semibold text-center cursor-pointer text-white rounded-lg shadow-md h-14 max-sm:h-12 bg-black dark:bg-grey dark:hover:bg-white/30  hover:bg-gray-800 smoothen focus:outline-none`}</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >      {children}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;button</span>
+<span class="cstat-no" title="statement not covered" >            type='submit'</span>
+<span class="cstat-no" title="statement not covered" >            {...props}</span>
+<span class="cstat-no" title="statement not covered" >            className={`w-full px-8 py-2 text-lg font-semibold text-center cursor-pointer text-white rounded-lg shadow-md h-14 max-sm:h-12 bg-black dark:bg-grey dark:hover:bg-white/30  hover:bg-gray-800 smoothen focus:outline-none`}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export <span class="fstat-no" title="function not covered" >function IconButton({ children, className, ...props }) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >      {...props}</span>
-<span class="cstat-no" title="statement not covered" >      className='items-center justify-center w-fit h-fit p-1 transition-all duration-200 border dark:border-none rounded-full row hover:brightness-100 focus:outline-none'</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >      {children}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;button</span>
+<span class="cstat-no" title="statement not covered" >            {...props}</span>
+<span class="cstat-no" title="statement not covered" >            className='items-center justify-center w-fit h-fit p-1 transition-all duration-200 border dark:border-none rounded-full row hover:brightness-100 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -172,7 +172,7 @@ export <span class="fstat-no" title="function not covered" >function IconButton(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-18T18:13:59.458Z
+                at 2023-04-21T06:33:40.768Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
