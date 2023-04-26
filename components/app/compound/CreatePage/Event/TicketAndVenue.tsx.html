@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.52% </span>
+                <span class="strong">7.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/291</span>
+                <span class='fraction'>21/288</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.52% </span>
+                <span class="strong">7.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/291</span>
+                <span class='fraction'>21/288</span>
             </div>
         
             
@@ -351,10 +351,7 @@
 <a name='L286'></a><a href='#L286'>286</a>
 <a name='L287'></a><a href='#L287'>287</a>
 <a name='L288'></a><a href='#L288'>288</a>
-<a name='L289'></a><a href='#L289'>289</a>
-<a name='L290'></a><a href='#L290'>290</a>
-<a name='L291'></a><a href='#L291'>291</a>
-<a name='L292'></a><a href='#L292'>292</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L289'></a><a href='#L289'>289</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -373,11 +370,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -663,52 +657,38 @@ import TicketTypes from '@/components/app/compound/CreatePage/Event/TicketTypes'
 import { Event } from '@/interfaces/types'
 import ParentModal from '@/components/modals/parentModal'
 &nbsp;
+import useTicketPolicyVenue from '@/hooks/FormValidators/EventCreation/useTicketPolicyVenue'
+&nbsp;
 export default <span class="fstat-no" title="function not covered" >function EventTicketAndVenue() {</span>
+<span class="cstat-no" title="statement not covered" >    const { errors, validate } = useTicketPolicyVenue()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const eventVenues = ['Virtual', 'In person', 'Hybrid']</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [selectedFiles, setSelectedFiles] = useState&lt;string[]&gt;([])</span>
-<span class="cstat-no" title="statement not covered" >    const [currentImageIndex, setCurrentImageIndex] = useState(0)</span>
+<span class="cstat-no" title="statement not covered" >    const [selectedFile, setSelectedFile] = useState&lt;string | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const [showTicketForm, setShowTicketForm] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Function to handle file upload</span>
 <span class="cstat-no" title="statement not covered" >    const handleFileInputChange = (</span>
 <span class="cstat-no" title="statement not covered" >        event: React.ChangeEvent&lt;HTMLInputElement&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (selectedFiles) setSelectedFiles([])</span>
+<span class="cstat-no" title="statement not covered" >        const file = event.target.files?.[0]</span>
+<span class="cstat-no" title="statement not covered" >        if (!file) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const files = Array.from(event.target.files || [])</span>
+<span class="cstat-no" title="statement not covered" >        setSelectedFile(null)</span>
+<span class="cstat-no" title="statement not covered" >        const reader = new FileReader()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        files.map((file) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const reader = new FileReader()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            reader.readAsDataURL(file)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            reader.onload = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                const result = reader.result</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                if (typeof result === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >                    setSelectedFiles((prevState) =&gt; [...prevState, result])</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >        reader.onload = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const result = reader.result</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof result === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >                setSelectedFile(result)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return URL.createObjectURL(file)</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        setCurrentImageIndex(0)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        reader.readAsDataURL(file)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Function to delete a single image on the image preview</span>
-<span class="cstat-no" title="statement not covered" >    const handleDeleteButtonClick = (index: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setSelectedFiles((prevSelectedFiles) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >            prevSelectedFiles.filter((_, i) =&gt; i !== index),</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            currentImageIndex === selectedFiles.length - 1 &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            currentImageIndex &gt; 0</span>
-<span class="cstat-no" title="statement not covered" >        ) {</span>
-<span class="cstat-no" title="statement not covered" >            setCurrentImageIndex(currentImageIndex - 1)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    const handleDeleteButtonClick = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setSelectedFile(null)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Form state for this page</span>
@@ -759,7 +739,16 @@ export default <span class="fstat-no" title="function not covered" >function Eve
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSubmit = (e: Event) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(ticketAndVenueForm)</span>
+<span class="cstat-no" title="statement not covered" >        const venue = {</span>
+<span class="cstat-no" title="statement not covered" >            externalLinks: ticketAndVenueForm.externalLink,</span>
+<span class="cstat-no" title="statement not covered" >            venueAddress: ticketAndVenueForm.venueAddress,</span>
+<span class="cstat-no" title="statement not covered" >            coverImage: selectedFile,</span>
+<span class="cstat-no" title="statement not covered" >            tags: ticketAndVenueForm.tags,</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const isValid = validate(venue, ticketAndVenueForm.venue)</span>
+<span class="cstat-no" title="statement not covered" >        if (isValid) {</span>
+<span class="cstat-no" title="statement not covered" >            // submit the form</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -813,12 +802,14 @@ export default <span class="fstat-no" title="function not covered" >function Eve
 <span class="cstat-no" title="statement not covered" >                            label={'External event link'}</span>
 <span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.externalLink}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.externalLinks}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {ticketAndVenueForm.venue !== 'Virtual' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;VenueLocation</span>
+<span class="cstat-no" title="statement not covered" >                        errors={errors}</span>
 <span class="cstat-no" title="statement not covered" >                        ticketAndVenueForm={ticketAndVenueForm}</span>
 <span class="cstat-no" title="statement not covered" >                        handleInputChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
@@ -849,11 +840,10 @@ export default <span class="fstat-no" title="function not covered" >function Eve
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ImageSelectItem</span>
-<span class="cstat-no" title="statement not covered" >                        selectedFiles={selectedFiles}</span>
+<span class="cstat-no" title="statement not covered" >                        selectedFile={selectedFile}</span>
 <span class="cstat-no" title="statement not covered" >                        handleDeleteButtonClick={handleDeleteButtonClick}</span>
 <span class="cstat-no" title="statement not covered" >                        handleFileInputChange={handleFileInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                        currentImageIndex={currentImageIndex}</span>
-<span class="cstat-no" title="statement not covered" >                        setCurrentImageIndex={setCurrentImageIndex}</span>
+<span class="cstat-no" title="statement not covered" >                        error={errors.coverImage}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -865,6 +855,7 @@ export default <span class="fstat-no" title="function not covered" >function Eve
 <span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.tags}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder={'tech, design, cool...'}</span>
+<span class="cstat-no" title="statement not covered" >                        error={errors.tags}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;span className='mt-3 text-primary/70 text-sm'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        (Improve discovery of your event by adding relevant</span>
@@ -943,7 +934,7 @@ export default <span class="fstat-no" title="function not covered" >function Eve
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-26T13:06:08.296Z
+                at 2023-04-26T13:06:42.835Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
