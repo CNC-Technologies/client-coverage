@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.6% </span>
+                <span class="strong">6.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/106</span>
+                <span class='fraction'>7/109</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.6% </span>
+                <span class="strong">6.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/106</span>
+                <span class='fraction'>7/109</span>
             </div>
         
             
@@ -169,13 +169,19 @@
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -282,8 +288,9 @@ import InputField from '@/components/Forms/inputWithLabel'
 import SelectField from '@/components/Forms/SelectField'
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function AdvancedOptions({</span>
-<span class="cstat-no" title="statement not covered" >    handleInputChange,</span>
+<span class="cstat-no" title="statement not covered" >    handleInputsOnChange,</span>
 <span class="cstat-no" title="statement not covered" >    ticketAndVenueForm,</span>
+<span class="cstat-no" title="statement not covered" >    errors,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const [active, setActive] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -301,10 +308,11 @@ export default <span class="fstat-no" title="function not covered" >function Adv
 <span class="cstat-no" title="statement not covered" >                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                        type='number'</span>
 <span class="cstat-no" title="statement not covered" >                        name='discount'</span>
-<span class="cstat-no" title="statement not covered" >                        label={'Discount *'}</span>
+<span class="cstat-no" title="statement not covered" >                        label={'Discount'}</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder={'Enter a discount price for your Ticket'}</span>
-<span class="cstat-no" title="statement not covered" >                        onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                        onChange={handleInputsOnChange}</span>
 <span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.discount}</span>
+<span class="cstat-no" title="statement not covered" >                        error={errors.discount}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -322,9 +330,9 @@ export default <span class="fstat-no" title="function not covered" >function Adv
 <span class="cstat-no" title="statement not covered" >                                { value: '5' },</span>
 <span class="cstat-no" title="statement not covered" >                                { value: '6' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
-<span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.minOrderLimit}</span>
-<span class="cstat-no" title="statement not covered" >                            error={''}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.minOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1'&gt;</span>
@@ -340,9 +348,9 @@ export default <span class="fstat-no" title="function not covered" >function Adv
 <span class="cstat-no" title="statement not covered" >                                { value: '5' },</span>
 <span class="cstat-no" title="statement not covered" >                                { value: '6' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
-<span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.maxOrderLimit}</span>
-<span class="cstat-no" title="statement not covered" >                            error={''}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.maxOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -350,20 +358,20 @@ export default <span class="fstat-no" title="function not covered" >function Adv
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;SelectField</span>
 <span class="cstat-no" title="statement not covered" >                        data-testid='Sales channel'</span>
-<span class="cstat-no" title="statement not covered" >                        name='maxOrderLimit'</span>
+<span class="cstat-no" title="statement not covered" >                        name='saleChannel'</span>
 <span class="cstat-no" title="statement not covered" >                        label={'Sales channel'}</span>
 <span class="cstat-no" title="statement not covered" >                        options={[</span>
 <span class="cstat-no" title="statement not covered" >                            { value: 'Online' },</span>
 <span class="cstat-no" title="statement not covered" >                            { value: 'On-site' },</span>
 <span class="cstat-no" title="statement not covered" >                            { value: 'Hybrid' },</span>
 <span class="cstat-no" title="statement not covered" >                        ]}</span>
-<span class="cstat-no" title="statement not covered" >                        onChange={handleInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.maxOrderLimit}</span>
-<span class="cstat-no" title="statement not covered" >                        error={''}</span>
+<span class="cstat-no" title="statement not covered" >                        onChange={handleInputsOnChange}</span>
+<span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.saleChannel}</span>
+<span class="cstat-no" title="statement not covered" >                        error={errors.saleChannel}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {ticketAndVenueForm.maxOrderLimit === 'Hybrid' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {ticketAndVenueForm.saleChannel === 'Hybrid' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            type='number'</span>
@@ -372,8 +380,9 @@ export default <span class="fstat-no" title="function not covered" >function Adv
 <span class="cstat-no" title="statement not covered" >                            placeholder={</span>
 <span class="cstat-no" title="statement not covered" >                                'Enter number of tickets you want to sell online'</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.numberOfOnlineTickets}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.numberOfOnlineTickets}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
@@ -388,7 +397,7 @@ export default <span class="fstat-no" title="function not covered" >function Adv
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-26T13:06:42.835Z
+                at 2023-04-26T13:06:57.517Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
