@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -127,7 +127,15 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -191,69 +199,85 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link';</span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons';</span>
+<span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import EventCard from '@/components/Events/eventCard';</span>
+<span class="cstat-no" title="statement not covered" >import EventCard from '@/components/Events/eventCard'</span>
 <span class="cstat-no" title="statement not covered" >export default function EventList({</span>
-<span class="cstat-no" title="statement not covered" >  mainTitle = '',</span>
-<span class="cstat-no" title="statement not covered" >  title = '',</span>
-<span class="cstat-no" title="statement not covered" >  subtext = '',</span>
-<span class="cstat-no" title="statement not covered" >  gridLayout,</span>
+<span class="cstat-no" title="statement not covered" >    mainTitle = '',</span>
+<span class="cstat-no" title="statement not covered" >    title = '',</span>
+<span class="cstat-no" title="statement not covered" >    subtext = '',</span>
+<span class="cstat-no" title="statement not covered" >    gridLayout,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  const horizontalClass =</span>
-<span class="cstat-no" title="statement not covered" >    'row space-x-5 desktop:space-x-8 overflow-x-scroll  scroll-smooth  styledScrollbar ';</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const horizontalClass =</span>
+<span class="cstat-no" title="statement not covered" >        'row space-x-5 desktop:space-x-8 overflow-x-scroll  scroll-smooth  styledScrollbar '</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const gridClass =</span>
-<span class="cstat-no" title="statement not covered" >    'grid grid-cols-3 gap-5 desktop:gap-8 max-[1515px]:grid-cols-2 max-[1095px]:grid-cols-1 max-md:grid-cols-2 max-xmd:grid-cols-1';</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='w-full my-20 text-primary eventsList'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {mainTitle &amp;&amp; &lt;div className='mb-4 text-3xl'&gt;{mainTitle}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className='text-xl font-semibold'&gt;{title}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {subtext &amp;&amp; &lt;div className='my-2 '&gt;{subtext}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    const gridClass =</span>
+<span class="cstat-no" title="statement not covered" >        'grid grid-cols-3 gap-5 desktop:gap-8 max-[1515px]:grid-cols-2 max-[1095px]:grid-cols-1 max-md:grid-cols-2 max-xmd:grid-cols-1'</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full my-20 text-primary eventsList'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {mainTitle &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='mb-4 text-3xl'&gt;{mainTitle}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl font-semibold'&gt;{title}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {subtext &amp;&amp; &lt;div className='my-2 '&gt;{subtext}&lt;/div&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        {!gridLayout &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >            href={'/search'}</span>
-<span class="cstat-no" title="statement not covered" >            className='flex items-center text-primary dark:hover:text-white/50 hover:text-primary/50 gap-3 font-medium'</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span&gt;See more&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >        )}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div</span>
-<span class="cstat-no" title="statement not covered" >        className={`w-full mt-5 ${</span>
-<span class="cstat-no" title="statement not covered" >          !gridLayout ? horizontalClass : gridClass</span>
-<span class="cstat-no" title="statement not covered" >        }  py-5`}</span>
-<span class="cstat-no" title="statement not covered" >      &gt;</span>
-<span class="cstat-no" title="statement not covered" >        {[...Array(6)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div key={idx} className={`${!gridLayout ? 'w-[330px]' : ''}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;EventCard /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {!gridLayout &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                        href={'/app/events'}</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center text-primary dark:hover:text-white/50 hover:text-primary/50 gap-3 font-medium'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >        })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`w-full mt-5 ${</span>
+<span class="cstat-no" title="statement not covered" >                    !gridLayout ? horizontalClass : gridClass</span>
+<span class="cstat-no" title="statement not covered" >                }  py-5`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {[...Array(6)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                            href={'/app/events/detail'}</span>
+<span class="cstat-no" title="statement not covered" >                            key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`${!gridLayout ? 'w-[330px]' : ''}`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;EventCard /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      {gridLayout &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-center mt-8'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;button</span>
-<span class="cstat-no" title="statement not covered" >            // onClick={() =&gt; router.push('/search')}</span>
-<span class="cstat-no" title="statement not covered" >            className={`bg-primary hover:bg-secondary dark:hover:bg-white/70 dark:hover:text-[rgb(25,_48,_60)] text-white py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            See More</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {gridLayout &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center mt-8'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; router.push('/app/events')}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`bg-primary hover:bg-secondary dark:hover:bg-white/70 dark:hover:text-[rgb(25,_48,_60)] text-white py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        See More</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      )}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -262,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-25T07:17:46.453Z
+                at 2023-04-26T13:00:40.945Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
