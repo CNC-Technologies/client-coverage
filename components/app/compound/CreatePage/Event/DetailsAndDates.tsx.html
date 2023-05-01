@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>250/250</span>
+                <span class='fraction'>248/248</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>250/250</span>
+                <span class='fraction'>248/248</span>
             </div>
         
             
@@ -311,9 +311,7 @@
 <a name='L246'></a><a href='#L246'>246</a>
 <a name='L247'></a><a href='#L247'>247</a>
 <a name='L248'></a><a href='#L248'>248</a>
-<a name='L249'></a><a href='#L249'>249</a>
-<a name='L250'></a><a href='#L250'>250</a>
-<a name='L251'></a><a href='#L251'>251</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L249'></a><a href='#L249'>249</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -364,8 +362,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -566,7 +562,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react'
 &nbsp;
 import SelectField from '@/components/Forms/SelectField'
-import Button from '@/components/Forms/button'
+import Button, { OutlineButton } from '@/components/Forms/button'
 import InputField from '@/components/Forms/inputWithLabel'
 import { ListPlusIcon, ClockOutlineIcon } from '@/constants/icons/icons'
 import { updateFormState } from '@/utils/formUtils'
@@ -616,7 +612,7 @@ export default function EventDetailsAndDates({ nextStep }) {
     }
     return (
         &lt;div&gt;
-            &lt;div className='px-4'&gt;
+            &lt;div className='px-2 mobile:px-4'&gt;
                 &lt;h4 className='text-xl font-semibold'&gt;Event details&lt;/h4&gt;
                 &lt;p className='font-light text-sm'&gt;
                     Fields marked * are required
@@ -626,12 +622,12 @@ export default function EventDetailsAndDates({ nextStep }) {
             &lt;hr className='my-5 border-darkGrey' /&gt;
 &nbsp;
             &lt;div&gt;
-                &lt;div className='flex gap-2 items-center px-4 my-4'&gt;
-                    &lt;div className='rounded bg-primary text-orange p-1'&gt;
+                &lt;div className='flex flex-wrap gap-2 items-center px-2 mobile:px-4 my-4'&gt;
+                    &lt;div className='rounded bg-primary dark:bg-white/70 dark:text-grey text-orange p-1'&gt;
                         &lt;ListPlusIcon className='w-6 h-6' /&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;h6 className='font-semibold text-xl text-primary'&gt;
+                    &lt;h6 className='font-semibold text-xl max-mobile:text-lg text-primary'&gt;
                         Basic info
                     &lt;/h6&gt;
 &nbsp;
@@ -641,7 +637,7 @@ export default function EventDetailsAndDates({ nextStep }) {
                     &lt;/span&gt;
                 &lt;/div&gt;
 &nbsp;
-                &lt;div className='px-4 py-2 grid gap-2'&gt;
+                &lt;div className='px-2 mobile:px-4 py-2 grid gap-2'&gt;
                     &lt;div&gt;
                         &lt;InputField
                             data-testid='Event host'
@@ -703,17 +699,17 @@ export default function EventDetailsAndDates({ nextStep }) {
             &lt;hr className='my-5 border-darkGrey' /&gt;
 &nbsp;
             &lt;div&gt;
-                &lt;div className='flex gap-2 items-center px-4 my-4'&gt;
-                    &lt;div className='rounded bg-primary text-orange p-1'&gt;
+                &lt;div className='flex gap-2 items-center px-2 mobile:px-4 my-4'&gt;
+                    &lt;div className='rounded bg-primary dark:bg-white/70 dark:text-grey text-orange p-1'&gt;
                         &lt;ClockOutlineIcon className='w-6 h-6' /&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;h6 className='font-semibold text-xl text-primary'&gt;
+                    &lt;h6 className='font-semibold text-xl max-mobile:text-lg text-primary'&gt;
                         Date and Time
                     &lt;/h6&gt;
                 &lt;/div&gt;
 &nbsp;
-                &lt;div className='px-4 py-2 grid gap-2'&gt;
+                &lt;div className='px-2 mobile:px-4 py-2 grid gap-2'&gt;
                     &lt;div&gt;
                         &lt;SelectField
                             data-testid='Time zone'
@@ -733,8 +729,8 @@ export default function EventDetailsAndDates({ nextStep }) {
                         /&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;div className='flex items-center gap-8 mt-4'&gt;
-                        &lt;div className='flex-1 flex gap-5'&gt;
+                    &lt;div className='flex max-lgDesktop:flex-col items-center gap-4 lgDesktop:gap-8 mt-4'&gt;
+                        &lt;div className='flex-1 w-full flex max-mobile:flex-col gap-2 mobile:gap-5'&gt;
                             &lt;div className='flex-1'&gt;
                                 &lt;InputField
                                     data-testid='Start date'
@@ -760,7 +756,7 @@ export default function EventDetailsAndDates({ nextStep }) {
                             &lt;/div&gt;
                         &lt;/div&gt;
 &nbsp;
-                        &lt;div className='flex-1 flex gap-5'&gt;
+                        &lt;div className='flex-1 w-full flex max-mobile:flex-col gap-2 mobile:gap-5'&gt;
                             &lt;div className='flex-1'&gt;
                                 &lt;InputField
                                     data-testid='End date'
@@ -795,12 +791,10 @@ export default function EventDetailsAndDates({ nextStep }) {
 &nbsp;
             &lt;hr className='my-5 border-darkGrey' /&gt;
 &nbsp;
-            &lt;div className='flex w-full px-4 gap-8'&gt;
-                &lt;button
-                    className={`w-full px-4 py-2 text-lg font-semibold text-center text-primary hover:text-white rounded-lg shadow-md h-14 max-sm:h-12 border border-primary bg-white dark:bg-gray-300 dark:text-primary dark:hover:bg-white/50 hover:bg-primary/90 focus:outline-none`}
-                &gt;
+            &lt;div className='flex max-xmd:flex-col w-full px-2 mobile:px-4 gap-8'&gt;
+                &lt;OutlineButton name={'Save and finish later'}&gt;
                     Save and finish later
-                &lt;/button&gt;
+                &lt;/OutlineButton&gt;
 &nbsp;
                 &lt;Button
                     // disabled={!isFormFilled()}
@@ -820,7 +814,7 @@ export default function EventDetailsAndDates({ nextStep }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T07:58:39.773Z
+                at 2023-05-01T13:45:06.243Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
