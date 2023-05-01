@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -93,7 +93,11 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -123,35 +127,43 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link';</span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function TagsList({ title = '', subtext = '' }) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='mt-20 mb-10 text-primary w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className='text-xl font-semibold'&gt;{title}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {subtext &amp;&amp; &lt;div className='my-2 '&gt;{subtext}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-20 mb-10 text-primary w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-xl font-semibold'&gt;{title}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {subtext &amp;&amp; &lt;div className='my-2 '&gt;{subtext}&lt;/div&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex flex-wrap mt-5 items-center gap-x-2 lgMobile:gap-x-4 gap-y-2 xmobile:gap-y-3  '&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {[...Array(14)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >              href={'/explore'}</span>
-<span class="cstat-no" title="statement not covered" >              className='bg-transparent border rounded-lg border-primary px-1 lgMobile:px-2 xxmd:px-4 py-1 xxmd:py-3 flex gap-2 xmobile:gap-4 justify-center items-center text-primary hover:bg-grey dark:hover:bg-orange/40'</span>
-<span class="cstat-no" title="statement not covered" >              key={idx}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className='max-xmobile:text-xs max-xmd:text-sm'&gt;Search&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >        })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-wrap mt-5 items-center gap-x-2 lgMobile:gap-x-4 gap-y-2 xmobile:gap-y-3  '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {[...Array(14)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                href={'/explore'}</span>
+<span class="cstat-no" title="statement not covered" >                                className='bg-transparent border rounded-lg border-primary px-1 lgMobile:px-2 xxmd:px-4 py-1 xxmd:py-3 flex gap-2 xmobile:gap-4 justify-center items-center text-primary hover:bg-grey dark:hover:bg-orange/40'</span>
+<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='max-xmobile:text-xs max-xmd:text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Search</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -160,7 +172,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-28T11:35:28.454Z
+                at 2023-05-01T07:58:39.773Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

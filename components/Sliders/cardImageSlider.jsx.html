@@ -139,43 +139,43 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image';</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/imageSlider';</span>
+<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CardImageSlider({ images, extraClass }) {</span>
-<span class="cstat-no" title="statement not covered" >  const [activeIndex] = useImageCarousel(images, 3000);</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >        src={images[activeIndex]}</span>
-<span class="cstat-no" title="statement not covered" >        alt={'activity'}</span>
-<span class="cstat-no" title="statement not covered" >        priority={true}</span>
-<span class="cstat-no" title="statement not covered" >        quality={75}</span>
-<span class="cstat-no" title="statement not covered" >        width={100}</span>
-<span class="cstat-no" title="statement not covered" >        height={100}</span>
-<span class="cstat-no" title="statement not covered" >        className={`w-full slidingImages h-full object-cover transition-opacity duration-1000 opacity-100 object-center ${extraClass}`}</span>
-<span class="cstat-no" title="statement not covered" >      /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      {images.map((image, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >          key={index}</span>
-<span class="cstat-no" title="statement not covered" >          className={`h-full slidingImages w-full absolute bottom-0 left-0  transition-opacity duration-1000 ${</span>
-<span class="cstat-no" title="statement not covered" >            activeIndex !== index ? 'opacity-0' : 'opacity-100'</span>
-<span class="cstat-no" title="statement not covered" >          }`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >            src={image}</span>
-<span class="cstat-no" title="statement not covered" >            alt={'activity'}</span>
-<span class="cstat-no" title="statement not covered" >            priority={true}</span>
-<span class="cstat-no" title="statement not covered" >            quality={75}</span>
-<span class="cstat-no" title="statement not covered" >            width={100}</span>
-<span class="cstat-no" title="statement not covered" >            height={100}</span>
-<span class="cstat-no" title="statement not covered" >            className={`w-full h-full object-cover object-center ${extraClass}`}</span>
-<span class="cstat-no" title="statement not covered" >          /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      ))}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    const [activeIndex] = useImageCarousel(images, 3000)</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                src={images[activeIndex]}</span>
+<span class="cstat-no" title="statement not covered" >                alt={'activity'}</span>
+<span class="cstat-no" title="statement not covered" >                priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                width={100}</span>
+<span class="cstat-no" title="statement not covered" >                height={100}</span>
+<span class="cstat-no" title="statement not covered" >                className={`w-full slidingImages h-full object-cover transition-opacity duration-1000 opacity-100 object-center ${extraClass}`}</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {images.map((image, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    key={index}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`h-full slidingImages w-full absolute bottom-0 left-0  transition-opacity duration-1000 ${</span>
+<span class="cstat-no" title="statement not covered" >                        activeIndex !== index ? 'opacity-0' : 'opacity-100'</span>
+<span class="cstat-no" title="statement not covered" >                    }`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                        src={image}</span>
+<span class="cstat-no" title="statement not covered" >                        alt={'activity'}</span>
+<span class="cstat-no" title="statement not covered" >                        priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                        quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                        width={100}</span>
+<span class="cstat-no" title="statement not covered" >                        height={100}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`w-full h-full object-cover object-center ${extraClass}`}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            ))}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -184,7 +184,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-28T11:35:28.454Z
+                at 2023-05-01T07:58:39.773Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

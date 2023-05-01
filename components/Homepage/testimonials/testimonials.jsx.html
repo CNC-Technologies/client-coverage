@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -122,7 +122,12 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,64 +186,74 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import UsersPictures from './usersPictures';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import UsersPictures from './usersPictures'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import TestimonialCard from './testimonialCard';</span>
+<span class="cstat-no" title="statement not covered" >import TestimonialCard from './testimonialCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/imageSlider';</span>
+<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
 <span class="cstat-no" title="statement not covered" >export default function Testimonials() {</span>
-<span class="cstat-no" title="statement not covered" >  const images = [</span>
-<span class="cstat-no" title="statement not covered" >    '/Images/homepage/user1.svg',</span>
-<span class="cstat-no" title="statement not covered" >    '/Images/homepage/user2.svg',</span>
-<span class="cstat-no" title="statement not covered" >    '/Images/homepage/user3.svg',</span>
-<span class="cstat-no" title="statement not covered" >    '/Images/homepage/user4.svg',</span>
-<span class="cstat-no" title="statement not covered" >    '/Images/homepage/user5.svg',</span>
-<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >    const images = [</span>
+<span class="cstat-no" title="statement not covered" >        '/Images/homepage/user1.svg',</span>
+<span class="cstat-no" title="statement not covered" >        '/Images/homepage/user2.svg',</span>
+<span class="cstat-no" title="statement not covered" >        '/Images/homepage/user3.svg',</span>
+<span class="cstat-no" title="statement not covered" >        '/Images/homepage/user4.svg',</span>
+<span class="cstat-no" title="statement not covered" >        '/Images/homepage/user5.svg',</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const [activeIndex] = useImageCarousel(images, 8000);</span>
+<span class="cstat-no" title="statement not covered" >    const [activeIndex] = useImageCarousel(images, 8000)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const imageSrc = (index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return images[(activeIndex + images.length - (2 - index)) % images.length];</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >    const imageSrc = (index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return images[</span>
+<span class="cstat-no" title="statement not covered" >            (activeIndex + images.length - (2 - index)) % images.length</span>
+<span class="cstat-no" title="statement not covered" >        ]</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >      id='homepageSection'</span>
-<span class="cstat-no" title="statement not covered" >      className='h-fit max-md:py-12 md:h-screen w-full flex flex-col justify-center bg-primary dark:bg-primary/70'</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >      {/* &lt;div className='max-width '&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='text-center text-white  pt-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;h2</span>
-<span class="cstat-no" title="statement not covered" >          className={`underlineHeader  mb-3 text-2xl xmobile:text-3xl mobile:text-4xl md:text-5xl  font-semibold after:bg-white dark:after:bg-white/70`}</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
+<span class="cstat-no" title="statement not covered" >            className='h-fit max-md:py-12 md:h-screen w-full flex flex-col justify-center bg-primary dark:bg-primary/70'</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          What users are saying</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;p className='mt-4 text-base mobile:text-xl  max-md:text-base max-md:mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          See testimoinies from users on Placio</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='h-fit relative py-14'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='max-width mx-auto px-6 mobile:px-10 md:px-14 flex items-center gap-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            data-aos='fade-up'</span>
-<span class="cstat-no" title="statement not covered" >            data-aos-duration='1000'</span>
-<span class="cstat-no" title="statement not covered" >            className='flex-1 hidden mx-auto md:flex relative'</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;UsersPictures activeIndex={activeIndex} imageSrc={imageSrc} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;div className='max-width '&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center text-white  pt-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h2</span>
+<span class="cstat-no" title="statement not covered" >                    className={`underlineHeader  mb-3 text-2xl xmobile:text-3xl mobile:text-4xl md:text-5xl  font-semibold after:bg-white dark:after:bg-white/70`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    What users are saying</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;p className='mt-4 text-base mobile:text-xl  max-md:text-base max-md:mt-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    See testimoinies from users on Placio</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='h-fit relative py-14'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='max-width mx-auto px-6 mobile:px-10 md:px-14 flex items-center gap-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        data-aos='fade-up'</span>
+<span class="cstat-no" title="statement not covered" >                        data-aos-duration='1000'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex-1 hidden mx-auto md:flex relative'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;UsersPictures</span>
+<span class="cstat-no" title="statement not covered" >                            activeIndex={activeIndex}</span>
+<span class="cstat-no" title="statement not covered" >                            imageSrc={imageSrc}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            data-aos='fade-down'</span>
-<span class="cstat-no" title="statement not covered" >            data-aos-duration='1000'</span>
-<span class="cstat-no" title="statement not covered" >            className='flex-1 h-full flex justify-center items-center'</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;TestimonialCard num={activeIndex} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        data-aos='fade-down'</span>
+<span class="cstat-no" title="statement not covered" >                        data-aos-duration='1000'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex-1 h-full flex justify-center items-center'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TestimonialCard num={activeIndex} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {/* &lt;/div&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -247,7 +262,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-28T11:35:28.454Z
+                at 2023-05-01T07:58:39.773Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

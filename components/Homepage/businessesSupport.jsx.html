@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -151,7 +151,9 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -239,93 +241,97 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation';</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SmallButton from '../Buttons/smallButtons';</span>
+<span class="cstat-no" title="statement not covered" >import SmallButton from '../Buttons/smallButtons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SectionHeading from './sectionHeading';</span>
+<span class="cstat-no" title="statement not covered" >import SectionHeading from './sectionHeading'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/imageSlider';</span>
+<span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
 <span class="cstat-no" title="statement not covered" >export default function BusinessesSupport() {</span>
-<span class="cstat-no" title="statement not covered" >  const images = [</span>
-<span class="cstat-no" title="statement not covered" >    { src: '/Images/homepage/businesses.svg' },</span>
-<span class="cstat-no" title="statement not covered" >    { src: '/Images/homepage/businesses2.svg' },</span>
-<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >    const images = [</span>
+<span class="cstat-no" title="statement not covered" >        { src: '/Images/homepage/businesses.svg' },</span>
+<span class="cstat-no" title="statement not covered" >        { src: '/Images/homepage/businesses2.svg' },</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const router = useRouter();</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const [activeIndex] = useImageCarousel(images, 8000);</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div id='homepageSection' className='h-screen  relative '&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='relative h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >          src={images[activeIndex].src}</span>
-<span class="cstat-no" title="statement not covered" >          alt={'Desktop mockup'}</span>
-<span class="cstat-no" title="statement not covered" >          priority={true}</span>
-<span class="cstat-no" title="statement not covered" >          quality={75}</span>
-<span class="cstat-no" title="statement not covered" >          width={100}</span>
-<span class="cstat-no" title="statement not covered" >          height={100}</span>
-<span class="cstat-no" title="statement not covered" >          className='w-full h-full object-cover transition-opacity duration-1000 opacity-100 object-center'</span>
-<span class="cstat-no" title="statement not covered" >        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {images.map((image, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            key={index}</span>
-<span class="cstat-no" title="statement not covered" >            className={`h-full w-full absolute bottom-0 left-0  transition-opacity duration-1000 ${</span>
-<span class="cstat-no" title="statement not covered" >              activeIndex !== index ? 'opacity-0' : 'opacity-100'</span>
-<span class="cstat-no" title="statement not covered" >            }`}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >              src={image.src}</span>
-<span class="cstat-no" title="statement not covered" >              alt={'Desktop mockup'}</span>
-<span class="cstat-no" title="statement not covered" >              priority={true}</span>
-<span class="cstat-no" title="statement not covered" >              quality={75}</span>
-<span class="cstat-no" title="statement not covered" >              width={100}</span>
-<span class="cstat-no" title="statement not covered" >              height={100}</span>
-<span class="cstat-no" title="statement not covered" >              className='w-full h-full object-cover object-center'</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        ))}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >          className={`absolute w-[30%] max-desktop:w-[40%] max-laptop:w-[50%] max-md:w-[70%] max-xmd:w-[85%] h-fit top-[70%] transition-transform duration-1000 ease-in-out ${</span>
-<span class="cstat-no" title="statement not covered" >            activeIndex === 0</span>
-<span class="cstat-no" title="statement not covered" >              ? 'left-32 max-desktop:left-16 max-xmd:left-10  max-mobile:left-6 text-left'</span>
-<span class="cstat-no" title="statement not covered" >              : 'right-32 max-desktop:right-16 text-right max-md:left-16 max-xmd:left-10 max-mobile:left-6'</span>
-<span class="cstat-no" title="statement not covered" >          } -translate-y-1/2 z-10`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className=' text-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;SectionHeading</span>
-<span class="cstat-no" title="statement not covered" >              heading={'Businesses Support'}</span>
-<span class="cstat-no" title="statement not covered" >              subtext={</span>
-<span class="cstat-no" title="statement not covered" >                'Businesses can create events, and also list their business in their prefered location'</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            className={`flex gap-6 mt-24 max-desktop:mt-12 ${</span>
-<span class="cstat-no" title="statement not covered" >              activeIndex === 0 ? '' : 'justify-end max-md:justify-start'</span>
-<span class="cstat-no" title="statement not covered" >            }`}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;SmallButton</span>
-<span class="cstat-no" title="statement not covered" >              name={'Login'}</span>
-<span class="cstat-no" title="statement not covered" >              bgColor={'primary'}</span>
-<span class="cstat-no" title="statement not covered" >              borderColor={'primary'}</span>
-<span class="cstat-no" title="statement not covered" >              textColor={'white'}</span>
-<span class="cstat-no" title="statement not covered" >              action={() =&gt; router.push('/auth/signin')}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    const [activeIndex] = useImageCarousel(images, 8000)</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div id='homepageSection' className='h-screen  relative '&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                    src={images[activeIndex].src}</span>
+<span class="cstat-no" title="statement not covered" >                    alt={'Desktop mockup'}</span>
+<span class="cstat-no" title="statement not covered" >                    priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                    quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                    width={100}</span>
+<span class="cstat-no" title="statement not covered" >                    height={100}</span>
+<span class="cstat-no" title="statement not covered" >                    className='w-full h-full object-cover transition-opacity duration-1000 opacity-100 object-center'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {images.map((image, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`h-full w-full absolute bottom-0 left-0  transition-opacity duration-1000 ${</span>
+<span class="cstat-no" title="statement not covered" >                            activeIndex !== index ? 'opacity-0' : 'opacity-100'</span>
+<span class="cstat-no" title="statement not covered" >                        }`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                            src={image.src}</span>
+<span class="cstat-no" title="statement not covered" >                            alt={'Desktop mockup'}</span>
+<span class="cstat-no" title="statement not covered" >                            priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                            quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                            width={100}</span>
+<span class="cstat-no" title="statement not covered" >                            height={100}</span>
+<span class="cstat-no" title="statement not covered" >                            className='w-full h-full object-cover object-center'</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ))}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    className={`absolute w-[30%] max-desktop:w-[40%] max-laptop:w-[50%] max-md:w-[70%] max-xmd:w-[85%] h-fit top-[70%] transition-transform duration-1000 ease-in-out ${</span>
+<span class="cstat-no" title="statement not covered" >                        activeIndex === 0</span>
+<span class="cstat-no" title="statement not covered" >                            ? 'left-32 max-desktop:left-16 max-xmd:left-10  max-mobile:left-6 text-left'</span>
+<span class="cstat-no" title="statement not covered" >                            : 'right-32 max-desktop:right-16 text-right max-md:left-16 max-xmd:left-10 max-mobile:left-6'</span>
+<span class="cstat-no" title="statement not covered" >                    } -translate-y-1/2 z-10`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className=' text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SectionHeading</span>
+<span class="cstat-no" title="statement not covered" >                            heading={'Businesses Support'}</span>
+<span class="cstat-no" title="statement not covered" >                            subtext={</span>
+<span class="cstat-no" title="statement not covered" >                                'Businesses can create events, and also list their business in their prefered location'</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        className={`flex gap-6 mt-24 max-desktop:mt-12 ${</span>
+<span class="cstat-no" title="statement not covered" >                            activeIndex === 0</span>
+<span class="cstat-no" title="statement not covered" >                                ? ''</span>
+<span class="cstat-no" title="statement not covered" >                                : 'justify-end max-md:justify-start'</span>
+<span class="cstat-no" title="statement not covered" >                        }`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SmallButton</span>
+<span class="cstat-no" title="statement not covered" >                            name={'Login'}</span>
+<span class="cstat-no" title="statement not covered" >                            bgColor={'primary'}</span>
+<span class="cstat-no" title="statement not covered" >                            borderColor={'primary'}</span>
+<span class="cstat-no" title="statement not covered" >                            textColor={'white'}</span>
+<span class="cstat-no" title="statement not covered" >                            action={() =&gt; router.push('/auth/signin')}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;SmallButton</span>
-<span class="cstat-no" title="statement not covered" >              name={'Sign up'}</span>
-<span class="cstat-no" title="statement not covered" >              bgColor={'white'}</span>
-<span class="cstat-no" title="statement not covered" >              borderColor={'white'}</span>
-<span class="cstat-no" title="statement not covered" >              textColor={'primary'}</span>
-<span class="cstat-no" title="statement not covered" >              action={() =&gt; router.push('/auth/signup')}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SmallButton</span>
+<span class="cstat-no" title="statement not covered" >                            name={'Sign up'}</span>
+<span class="cstat-no" title="statement not covered" >                            bgColor={'white'}</span>
+<span class="cstat-no" title="statement not covered" >                            borderColor={'white'}</span>
+<span class="cstat-no" title="statement not covered" >                            textColor={'primary'}</span>
+<span class="cstat-no" title="statement not covered" >                            action={() =&gt; router.push('/auth/signup')}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -334,7 +340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-28T11:35:28.454Z
+                at 2023-05-01T07:58:39.773Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
