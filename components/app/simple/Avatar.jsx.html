@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/34</span>
+                <span class='fraction'>36/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/34</span>
+                <span class='fraction'>36/36</span>
             </div>
         
             
@@ -97,73 +97,79 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use client';
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use client'
 &nbsp;
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 &nbsp;
 export default function Avatar({
-  img = '/Images/dummies/avatar.jpeg',
-  size = 'md',
+    img = '/Images/dummies/avatar.jpeg',
+    size = 'md',
 }) {
-  const [resolvedClass, resolvedClassSetter] = useState('h-10 w-10');
+    const [resolvedClass, resolvedClassSetter] = useState('h-10 w-10')
 &nbsp;
-  useEffect(() =&gt; {
-    if (size === 'xs') resolvedClassSetter('h-6 w-6');
-    if (size === 'sm') <span class="branch-0 cbranch-no" title="branch not covered" >resolvedClassSetter('h-8 w-8');</span>
-    if (size === 'md') resolvedClassSetter('h-10 w-10');
-    if (size === 'lg') <span class="branch-0 cbranch-no" title="branch not covered" >resolvedClassSetter('h-12 w-12');</span>
-    if (size === 'xl') resolvedClassSetter('h-20 w-20');
-    if (size === '2xl') <span class="branch-0 cbranch-no" title="branch not covered" >resolvedClassSetter('h-28 w-28');</span>
-  }, [size]);
+    useEffect(() =&gt; {
+        if (size === 'xs') resolvedClassSetter('h-6 w-6')
+        if (size === 'sm') <span class="branch-0 cbranch-no" title="branch not covered" >resolvedClassSetter('h-8 w-8')</span>
+        if (size === 'md') resolvedClassSetter('h-10 w-10')
+        if (size === 'lg') resolvedClassSetter('h-12 w-12')
+        if (size === 'xl') resolvedClassSetter('h-20 w-20')
+        if (size === '2xl') <span class="branch-0 cbranch-no" title="branch not covered" >resolvedClassSetter('h-28 w-28')</span>
+    }, [size])
 &nbsp;
-  return (
-    &lt;div
-      className={`overflow-hidden col items-center justify-center bg-black rounded-full smoothen ${resolvedClass}`}
-    &gt;
-      &lt;Image
-        height={100}
-        width={100}
-        src={img}
-        alt='Avatar'
-        className='w-auto h-auto m-auto'
-      /&gt;
-    &lt;/div&gt;
-  );
+    return (
+        &lt;div
+            data-testid='avatar-wrapper'
+            className={`overflow-hidden col items-center justify-center bg-black rounded-full smoothen ${resolvedClass}`}
+        &gt;
+            &lt;Image
+                height={100}
+                width={100}
+                src={img}
+                priority={true}
+                alt='Avatar'
+                className='w-full h-full object-cover object-center'
+            /&gt;
+        &lt;/div&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -172,7 +178,7 @@ export default function Avatar({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T13:45:06.243Z
+                at 2023-05-01T13:45:33.029Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

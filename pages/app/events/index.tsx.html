@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/108</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/108</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -171,7 +171,17 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -288,19 +298,17 @@
 <span class="cstat-no" title="statement not covered" >import eventsPageCategories from '@/constants/app/Events/EventPageCategories'</span>
 <span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function EventsPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const media = [</span>
-<span class="cstat-no" title="statement not covered" >        '/Images/dummies/story2.jpeg',</span>
-<span class="cstat-no" title="statement not covered" >        '/Images/dummies/story3.jpeg',</span>
-<span class="cstat-no" title="statement not covered" >        '/Images/dummies/story1.jpeg',</span>
-<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" >import { MockedCategories } from '@/constants/MockData/CategoriesList'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function EventsPage() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className=''&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='text-primary h-[20vh] md:h-[35vh] extraLarge:h-[20vh] relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-primary h-[25vh] md:h-[35vh] extraLarge:h-[20vh] relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                        src={'/Images/events/hero.svg'}</span>
+<span class="cstat-no" title="statement not covered" >                        src={</span>
+<span class="cstat-no" title="statement not covered" >                            'https://res.cloudinary.com/placio/image/upload/v1682773463/Event%20Images/hero_nh8sez.svg'</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        alt={'category'}</span>
 <span class="cstat-no" title="statement not covered" >                        priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                        quality={75}</span>
@@ -311,7 +319,9 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute bg-primary/40 top-0 left-0 w-full flex items-center h-full px-10 md:px-20'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='w-48 md:w-70'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                                src={'/Images/events/findEventText.svg'}</span>
+<span class="cstat-no" title="statement not covered" >                                src={</span>
+<span class="cstat-no" title="statement not covered" >                                    'https://res.cloudinary.com/placio/image/upload/v1682773685/Event%20Images/findEventText_fsqgev.svg'</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
 <span class="cstat-no" title="statement not covered" >                                alt={'category'}</span>
 <span class="cstat-no" title="statement not covered" >                                priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                                quality={75}</span>
@@ -326,9 +336,14 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mt-8 md:mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl'&gt;Trending Categories&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-3 w-full overflow-hidden max-width'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='overflow-x-auto row py-3 no-wrap space-x-5 md:space-x-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {[...Array(10)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                return &lt;ActivityItem media={media} key={idx} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='overflow-x-auto row py-1 xmd:py-3 no-wrap space-x-5 md:space-x-8'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {MockedCategories.map((category, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                return (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;ActivityItem</span>
+<span class="cstat-no" title="statement not covered" >                                        category={category}</span>
+<span class="cstat-no" title="statement not covered" >                                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )</span>
 <span class="cstat-no" title="statement not covered" >                            })}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -394,7 +409,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T13:45:06.243Z
+                at 2023-05-01T13:45:33.029Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
