@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/31</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/31</span>
             </div>
         
             
@@ -94,8 +94,7 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,37 +125,35 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { usePathname } from 'next/navigation'</span>
-<span class="cstat-no" title="statement not covered" >import { useState, useEffect } from 'react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { usePathname } from 'next/navigation'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ExploreCategories from '@/components/ExplorePage/categories'</span>
 <span class="cstat-no" title="statement not covered" >import RecommendedPlaces from '@/components/ExplorePage/recommendedPlaces'</span>
+<span class="cstat-no" title="statement not covered" >import UnauthenticatedLayout from '@/components/Layout/UnauthenticatedLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SingleCategoryPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const pathname: any = usePathname()</span>
-<span class="cstat-no" title="statement not covered" >    const [categoryName, setCategoryName] = useState('')</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const splittedROute = pathname.split('explore/')</span>
-<span class="cstat-no" title="statement not covered" >        setCategoryName(splittedROute[1])</span>
-<span class="cstat-no" title="statement not covered" >    }, [pathname])</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const { category } = router.query</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' py-5 mobile:py-10 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='max-width general-padding'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mb-0  xmd:mb-10 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;h2 className='capitalize text-2xl max-mobile:text-center xmd:text-3xl md:text-4xl desktop:text-[2.5rem] text-primary flex justify-center items-center font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {categoryName}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;UnauthenticatedLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className=' py-5 mobile:py-10 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='max-width general-padding'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='mb-0  xmd:mb-10 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;h2 className='capitalize text-2xl max-mobile:text-center xmd:text-3xl md:text-4xl desktop:text-[2.5rem] text-primary flex justify-center items-center font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {category}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ExploreCategories categoryName={category} /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;RecommendedPlaces categoryName={category} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ExploreCategories categoryName={categoryName} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;RecommendedPlaces categoryName={categoryName} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/UnauthenticatedLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -166,7 +163,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T13:45:33.029Z
+                at 2023-05-02T11:05:24.472Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

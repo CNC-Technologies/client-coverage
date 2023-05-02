@@ -111,29 +111,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import Link from 'next/link';</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import PlaceCard from '@/components/Places/placeCard';</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import PlaceCard from '@/components/Places/placeCard'</span></span></span>
 <span class="cstat-no" title="statement not covered" >export default function RecommendedPlaces({ categoryName }) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='mt-12 smLaptop:mt-24'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex justify-center items-center my-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;h2 className='text-xl mobile:text-2xl text-primary text-center font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {categoryName ? `Recommended ${categoryName}` : 'Recommendations'}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='grid grid-cols-1 mobile:place-items-center xxmd:grid-cols-2 xlaptop:grid-cols-3 xDesktop:grid-cols-4 gap-7 w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {[...Array(25)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div key={idx} className='w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;PlaceCard /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='mt-12 smLaptop:mt-24'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-center items-center my-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h2 className='text-xl mobile:text-2xl text-primary text-center font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {categoryName</span>
+<span class="cstat-no" title="statement not covered" >                        ? `Recommended ${categoryName}`</span>
+<span class="cstat-no" title="statement not covered" >                        : 'Recommendations'}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/h2&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >        })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid max-[600px]:grid-cols-1 mobile:place-items-center grid-cols-2 xlaptop:grid-cols-3 xDesktop:grid-cols-4 gap-3 xmd:gap-7 w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {[...Array(25)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div key={idx} className='w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;PlaceCard /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -142,7 +142,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T13:45:33.029Z
+                at 2023-05-02T11:05:24.472Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

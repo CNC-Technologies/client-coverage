@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.61% </span>
+                <span class="strong">98.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>71/72</span>
+                <span class='fraction'>51/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.61% </span>
+                <span class="strong">98.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>71/72</span>
+                <span class='fraction'>51/52</span>
             </div>
         
             
@@ -115,31 +115,7 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -155,24 +131,8 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -209,53 +169,33 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
 &nbsp;
-import {
-    PlusIcon,
-    ReelsSolidIcon,
-    MapMarkerSolidIcon,
-} from '@/constants/icons/icons'
+import { PlusIcon } from '@/constants/icons/icons'
 &nbsp;
-import { FloatingMenu } from '@/interfaces/layouts.interface'
+import { floatingMenu } from '@/constants/app/FloatingButtonMenu'
+import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'
+export default function MobileFloatingButtonMenu() {
+    const [floatingButtonMenu, setFloatingButtonMenu] = useState(false)
+    const { hidden } = useDisplayElementsInAppLayout()
 &nbsp;
-export default function MobileFloatingButton() {
-    const [floatingButton, setFloatingButton] = useState(false)
-    const floatingMenu: FloatingMenu[] = [
-        {
-            name: 'Places',
-            icon: MapMarkerSolidIcon,
-        },
-        {
-            name: 'Go Live',
-            icon: ReelsSolidIcon,
-        },
-        {
-            name: 'Post',
-            icon: PlusIcon,
-        },
-        {
-            name: 'Story',
-            icon: PlusIcon,
-        },
-        {
-            name: 'Event',
-            icon: PlusIcon,
-        },
-    ]
     return (
         &lt;div className='md:hidden'&gt;
             &lt;div
-                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButton(!floatingButton)}</span>
-                className={`fixed bottom-16 mobile:bottom-[5.5rem] right-4 flex justify-center items-center z-[1000] ${
-                    floatingButton<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bg-orange/70' </span>: 'bg-orange'
+                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButtonMenu(!floatingButtonMenu)}</span>
+                className={`fixed ${
+                    hidden
+                        ? 'bottom-6 mobile:bottom-[1.5rem]'
+                        : 'bottom-16 mobile:bottom-[5.5rem]'
+                } right-4 flex justify-center items-center z-[1000] ${
+                    floatingButtonMenu<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bg-orange/70' </span>: 'bg-orange'
                 } text-primary rounded-full h-14 w-14 shadow-lg`}
             &gt;
                 &lt;PlusIcon className='w-6 h-6' /&gt;
             &lt;/div&gt;
 &nbsp;
             &lt;div
-                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButton(false)}</span>
+                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButtonMenu(false)}</span>
                 className={`absolute bottom-32 mobile:bottom-40 right-4 ${
-                    floatingButton<span class="branch-0 cbranch-no" title="branch not covered" > ? 'z-[1000]' </span>: '-z-10'
+                    floatingButtonMenu<span class="branch-0 cbranch-no" title="branch not covered" > ? 'z-[1000]' </span>: '-z-10'
                 }  h-fit py-3 w-fit flex justify-end px-1`}
             &gt;
                 &lt;div className='grid gap-3 place-items-end'&gt;
@@ -264,7 +204,7 @@ export default function MobileFloatingButton() {
                             &lt;div
                                 key={idx}
                                 className={` ${
-                                    floatingButton
+                                    floatingButtonMenu
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ? 'translate-x-0 opacity-100 '</span></span>
                                         : '-translate-x-full opacity-0 '
                                 } transition duration-500  ease-in-out rounded-3xl px-4 py-2 w-fit flex gap-3  items-center bg-orange text-white`}
@@ -286,7 +226,7 @@ export default function MobileFloatingButton() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-01T13:45:33.029Z
+                at 2023-05-02T11:05:24.472Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
