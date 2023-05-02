@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.64% </span>
+                <span class="strong">74.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>66/85</span>
+                <span class='fraction'>61/82</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.64% </span>
+                <span class="strong">74.39% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>66/85</span>
+                <span class='fraction'>61/82</span>
             </div>
         
             
@@ -145,10 +145,7 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -199,14 +196,11 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">96x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -222,7 +216,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -241,7 +235,7 @@ import Link from 'next/link'
 &nbsp;
 import MoreButtonItem from './MoreButtonItem'
 &nbsp;
-import { BarsIcon, PlusIcon } from '@/constants/icons/icons'
+import { BarsIcon } from '@/constants/icons/icons'
 &nbsp;
 import moreButtonLinks from '@/constants/sidebar/moreButtonLink'
 &nbsp;
@@ -273,21 +267,18 @@ export default function LeftSidebar({ sidebarLinks }) {
                 /&gt;
             &lt;/div&gt;
 &nbsp;
-            &lt;div className='mt-5 w-full ring-0 focus:ring-0 focus:border-none outline-0 focus:outline-0'&gt;
-                &lt;div className=''&gt;
-                    &lt;Link
-                        href={'/app/create'}
-                        className='hover:bg-white dark:hover:bg-white/50 bg-white/80 dark:text-grey text-primary font-semibold row space-x-5 items-center cursor-pointer py-3 rounded-r-xl pl-3 mr-3 smoothen'
-                    &gt;
-                        &lt;PlusIcon className='w-6 h-6' /&gt;
-                        &lt;span&gt;Create&lt;/span&gt;
-                    &lt;/Link&gt;
-                &lt;/div&gt;
+            &lt;div className='w-auto mt-5 row'&gt;
+                &lt;Link
+                    href={'/app/create'}
+                    className = 'items-center inline py-3 mx-3 space-x-2 font-semibold cursor-pointer px-7 hover:bg-white bg-white/80 text-primary row rounded-xl smoothen'
+                &gt;
+                    &lt;span className='dark:text-black'&gt;Create&lt;/span&gt;
+                &lt;/Link&gt;
             &lt;/div&gt;
 &nbsp;
             &lt;div className='flex-1 mt-5 space-y-3 col'&gt;
                 {sidebarLinks.map((item) =&gt; (
-                    &lt;LeftSidebarLinkItem key={item.id} linkItem={item} /&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;LeftSidebarLinkItem key={item.id} linkItem={item} /&gt;</span>
                 ))}
             &lt;/div&gt;
             &lt;div className='relative mt-auto'&gt;
@@ -307,7 +298,7 @@ export default function LeftSidebar({ sidebarLinks }) {
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )</span>
 <span class="cstat-no" title="statement not covered" >                        })}</span>
-                    &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
                 )}
 &nbsp;
                 &lt;LeftSidebarLinkItem
@@ -325,7 +316,7 @@ export default function LeftSidebar({ sidebarLinks }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-02T11:05:24.472Z
+                at 2023-05-02T13:58:24.305Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
