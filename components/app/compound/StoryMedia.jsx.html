@@ -139,43 +139,43 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Stories from 'react-insta-stories';</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Stories from 'react-insta-stories'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/Forms/button';</span>
-<span class="cstat-no" title="statement not covered" >import { CloseOutlineIcon } from '@/constants/icons/icons';</span>
+<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import { CloseOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ElevateMedia({</span>
-<span class="cstat-no" title="statement not covered" >  closeStory,</span>
-<span class="cstat-no" title="statement not covered" >  showStory,</span>
-<span class="cstat-no" title="statement not covered" >  media,</span>
-<span class="cstat-no" title="statement not covered" >  toNextStory,</span>
+<span class="cstat-no" title="statement not covered" >    closeStory,</span>
+<span class="cstat-no" title="statement not covered" >    showStory,</span>
+<span class="cstat-no" title="statement not covered" >    media,</span>
+<span class="cstat-no" title="statement not covered" >    toNextStory,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!showStory) return null;</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >      className='absolute top-0 bottom-0 left-0 right-0 z-[9999] items-center justify-center overflow-hidden bg-black/40 col'</span>
-<span class="cstat-no" title="statement not covered" >      onMouseDown={closeStory}</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div</span>
-<span class="cstat-no" title="statement not covered" >        className='relative items-center justify-center col'</span>
-<span class="cstat-no" title="statement not covered" >        onMouseDown={(e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          e.stopPropagation();</span>
-<span class="cstat-no" title="statement not covered" >          e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >        }}</span>
-<span class="cstat-no" title="statement not covered" >      &gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='absolute z-[9999] top-5 right-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;IconButton onClick={closeStory}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;CloseOutlineIcon color='#fff' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >    if (!showStory) return null</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            className='absolute top-0 bottom-0 left-0 right-0 z-[9999] items-center justify-center overflow-hidden bg-black/40 col'</span>
+<span class="cstat-no" title="statement not covered" >            onMouseDown={closeStory}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className='relative items-center justify-center col'</span>
+<span class="cstat-no" title="statement not covered" >                onMouseDown={(e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >                    e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >                }}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='absolute z-[9999] top-5 right-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;IconButton onClick={closeStory}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;CloseOutlineIcon color='#fff' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Stories</span>
+<span class="cstat-no" title="statement not covered" >                    stories={media.media}</span>
+<span class="cstat-no" title="statement not covered" >                    onAllStoriesEnd={toNextStory}</span>
+<span class="cstat-no" title="statement not covered" >                    className='w-full m-auto bg-black progressBar'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Stories</span>
-<span class="cstat-no" title="statement not covered" >          stories={media.media}</span>
-<span class="cstat-no" title="statement not covered" >          onAllStoriesEnd={toNextStory}</span>
-<span class="cstat-no" title="statement not covered" >          className='w-full m-auto bg-black progressBar'</span>
-<span class="cstat-no" title="statement not covered" >        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -184,7 +184,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-03T12:09:32.081Z
+                at 2023-05-03T16:36:34.105Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

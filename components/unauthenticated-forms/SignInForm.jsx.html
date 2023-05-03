@@ -164,9 +164,41 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -187,115 +219,83 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link';
-import { useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
+import { useState } from 'react'
 &nbsp;
-import Button from '@/components/Forms/button';
-import CheckBox from '@/components/Forms/checkbox';
-import Input from '@/components/Forms/inputWithLabel';
+import Button from '@/components/FormComponents/button'
+import CheckBox from '@/components/FormComponents/checkbox'
+import Input from '@/components/FormComponents/inputWithLabel'
 &nbsp;
-import { updateFormState } from '@/utils/formUtils';
+import { updateFormState } from '@/utils/formUtils'
 &nbsp;
 export default function SignInForm({ handleSignIn }) {
-  const [signInForm, setSignInForm] = useState({
-    email: '',
-    password: '',
-    rememberMe: false,
-  });
+    const [signInForm, setSignInForm] = useState({
+        email: '',
+        password: '',
+        rememberMe: false,
+    })
 &nbsp;
-  const handleInputChange = (event) =&gt; {
-    updateFormState(
-      event.target.name,
-      event.target.value,
-      signInForm,
-      setSignInForm,
-    );
-  };
+    const handleInputChange = (event) =&gt; {
+        updateFormState(
+            event.target.name,
+            event.target.value,
+            signInForm,
+            setSignInForm,
+        )
+    }
 &nbsp;
-  const handleSubmit = (event) =&gt; {
-    event.preventDefault();
-    handleSignIn(); // Call handleSignIn function here
-  };
+    const handleSubmit = (event) =&gt; {
+        event.preventDefault()
+        handleSignIn() // Call handleSignIn function here
+    }
 &nbsp;
-  return (
-    &lt;form onSubmit={handleSubmit} className='grid w-full gap-6'&gt;
-      &lt;div&gt;
-        &lt;Input
-          type={'text'}
-          name={'email'}
-          placeholder={'example123@gmail.com'}
-          value={signInForm.email}
-          onChange={handleInputChange}
-        /&gt;
-      &lt;/div&gt;
+    return (
+        &lt;form onSubmit={handleSubmit} className='grid w-full gap-6'&gt;
+            &lt;div&gt;
+                &lt;Input
+                    type={'text'}
+                    name={'email'}
+                    placeholder={'example123@gmail.com'}
+                    value={signInForm.email}
+                    onChange={handleInputChange}
+                /&gt;
+            &lt;/div&gt;
 &nbsp;
-      &lt;div&gt;
-        &lt;Input
-          type='password'
-          name='password'
-          placeholder='enter password'
-          value={signInForm.password}
-          onChange={handleInputChange}
-        /&gt;
-      &lt;/div&gt;
+            &lt;div&gt;
+                &lt;Input
+                    type='password'
+                    name='password'
+                    placeholder='enter password'
+                    value={signInForm.password}
+                    onChange={handleInputChange}
+                /&gt;
+            &lt;/div&gt;
 &nbsp;
-      &lt;div className='flex justify-between'&gt;
-        &lt;CheckBox
-          type='checkbox'
-          onChange={() =&gt;
-            setSignInForm({
-              ...signInForm,
-              rememberMe: !signInForm.rememberMe,
-            })
-          }
-          checked={signInForm.rememberMe}
-          name='rememberMe'
-          label={'Remember me'}
-        /&gt;
+            &lt;div className='flex justify-between'&gt;
+                &lt;CheckBox
+                    type='checkbox'
+                    onChange={() =&gt;
+                        setSignInForm({
+                            ...signInForm,
+                            rememberMe: !signInForm.rememberMe,
+                        })
+                    }
+                    checked={signInForm.rememberMe}
+                    name='rememberMe'
+                    label={'Remember me'}
+                /&gt;
 &nbsp;
-        &lt;Link
-          href={'/auth/forgot-password'}
-          className='font-light text-primary'
-        &gt;
-          Forgot Password?
-        &lt;/Link&gt;
-      &lt;/div&gt;
+                &lt;Link
+                    href={'/auth/forgot-password'}
+                    className='font-light text-primary'
+                &gt;
+                    Forgot Password?
+                &lt;/Link&gt;
+            &lt;/div&gt;
 &nbsp;
-      &lt;Button name={'Sign In'} /&gt;
-    &lt;/form&gt;
-  );
+            &lt;Button name={'Sign In'} /&gt;
+        &lt;/form&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -304,7 +304,7 @@ export default function SignInForm({ handleSignIn }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-03T12:09:32.081Z
+                at 2023-05-03T16:36:34.105Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

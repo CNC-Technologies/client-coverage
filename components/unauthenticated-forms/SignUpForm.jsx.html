@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">99.07% </span>
+                <span class="strong">98.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>107/108</span>
+                <span class='fraction'>110/112</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">99.07% </span>
+                <span class="strong">98.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>107/108</span>
+                <span class='fraction'>110/112</span>
             </div>
         
             
@@ -171,7 +171,11 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -193,12 +197,12 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -228,6 +232,10 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -279,113 +287,117 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
 &nbsp;
-import Button from '@/components/Forms/button';
-import Input from '@/components/Forms/inputWithLabel';
+import Button from '@/components/FormComponents/button'
+import Input from '@/components/FormComponents/inputWithLabel'
 &nbsp;
-import { updateFormState } from '@/utils/formUtils';
+import { updateFormState } from '@/utils/formUtils'
 &nbsp;
 export default function SignUpForm({ handleSignUp }) {
-  const [signUpForm, setSignUpForm] = useState({
-    fullname: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
+    const [signUpForm, setSignUpForm] = useState({
+        fullname: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    })
 &nbsp;
-  const handleInputChange = (event) =&gt; {
-    updateFormState(
-      event.target.name,
-      event.target.value,
-      signUpForm,
-      setSignUpForm,
-    );
-  };
+    const handleInputChange = (event) =&gt; {
+        updateFormState(
+            event.target.name,
+            event.target.value,
+            signUpForm,
+            setSignUpForm,
+        )
+    }
 &nbsp;
-  const handleSubmit = (event) =&gt; {
-    event.preventDefault();
-    handleSignUp(); // Call handleSignIn function here
-  };
+    const handleSubmit = (event) =&gt; {
+        event.preventDefault()
+        handleSignUp() // Call handleSignIn function here
+    }
 &nbsp;
-  const [userType, setUserType] = useState('Individual');
+    const [userType, setUserType] = useState('Individual')
 &nbsp;
-  return (
-    &lt;&gt;
-      &lt;div className='flex w-full my-4 h-14 rounded-xl'&gt;
-        {[...Array('Individual', 'Business')].map((item, index) =&gt; {
-          return (
-            &lt;button
-              key={index}
-              className={`flex-1 ${
-                userType === item
-                  ? 'bg-primary dark:bg-gray-300 dark:text-primary shadow-xl text-white'
-                  : 'text-primary border border-primary dark:border-gray-300 '
-              } ${
-                item === 'Individual'
-                  ? 'rounded-bl-xl rounded-tl-xl'
-                  : 'rounded-br-xl rounded-tr-xl'
-              } `}
-              onClick={<span class="fstat-no" title="function not covered" >() =&gt; setUserType(item)}</span>
-            &gt;
-              {item}
-            &lt;/button&gt;
-          );
-        })}
-      &lt;/div&gt;
-      &lt;form onSubmit={handleSubmit} className='grid w-full gap-5 mt-3'&gt;
-        &lt;div&gt;
-          &lt;Input
-            label={userType === 'Individual' ? 'Full name'<span class="branch-0 cbranch-no" title="branch not covered" > : 'Business name'}</span>
-            type='text'
-            name='fullname'
-            placeholder='enter your name'
-            value={signUpForm.fullname}
-            onChange={handleInputChange}
-          /&gt;
-        &lt;/div&gt;
+    return (
+        &lt;&gt;
+            &lt;div className='flex w-full my-4 h-14 rounded-xl'&gt;
+                {[...Array('Individual', 'Business')].map((item, index) =&gt; {
+                    return (
+                        &lt;button
+                            key={index}
+                            className={`flex-1 ${
+                                userType === item
+                                    ? 'bg-primary dark:bg-gray-300 dark:text-primary shadow-xl text-white'
+                                    : 'text-primary border border-primary dark:border-gray-300 '
+                            } ${
+                                item === 'Individual'
+                                    ? 'rounded-bl-xl rounded-tl-xl'
+                                    : 'rounded-br-xl rounded-tr-xl'
+                            } `}
+                            onClick={<span class="fstat-no" title="function not covered" >() =&gt; setUserType(item)}</span>
+                        &gt;
+                            {item}
+                        &lt;/button&gt;
+                    )
+                })}
+            &lt;/div&gt;
+            &lt;form onSubmit={handleSubmit} className='grid w-full gap-5 mt-3'&gt;
+                &lt;div&gt;
+                    &lt;Input
+                        label={
+                            userType === 'Individual'
+                                ? 'Full name'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                : 'Business name'</span></span>
+                        }
+                        type='text'
+                        name='fullname'
+                        placeholder='enter your name'
+                        value={signUpForm.fullname}
+                        onChange={handleInputChange}
+                    /&gt;
+                &lt;/div&gt;
 &nbsp;
-        &lt;div&gt;
-          &lt;Input
-            label={
-              userType === 'Individual'
-                ? 'Email Address'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                : 'Business Email Address'</span></span>
-            }
-            type='text'
-            name='email'
-            placeholder='example123@gmail.com'
-            value={signUpForm.email}
-            onChange={handleInputChange}
-          /&gt;
-        &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;Input
+                        label={
+                            userType === 'Individual'
+                                ? 'Email Address'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                : 'Business Email Address'</span></span>
+                        }
+                        type='text'
+                        name='email'
+                        placeholder='example123@gmail.com'
+                        value={signUpForm.email}
+                        onChange={handleInputChange}
+                    /&gt;
+                &lt;/div&gt;
 &nbsp;
-        &lt;div&gt;
-          &lt;Input
-            label='Password'
-            type='password'
-            name='password'
-            placeholder='enter password'
-            value={signUpForm.password}
-            onChange={handleInputChange}
-          /&gt;
-        &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;Input
+                        label='Password'
+                        type='password'
+                        name='password'
+                        placeholder='enter password'
+                        value={signUpForm.password}
+                        onChange={handleInputChange}
+                    /&gt;
+                &lt;/div&gt;
 &nbsp;
-        &lt;div&gt;
-          &lt;Input
-            label='Confirm Password'
-            type='password'
-            name='confirmPassword'
-            placeholder='re-enter password'
-            value={signUpForm.confirmPassword}
-            onChange={handleInputChange}
-          /&gt;
-        &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;Input
+                        label='Confirm Password'
+                        type='password'
+                        name='confirmPassword'
+                        placeholder='re-enter password'
+                        value={signUpForm.confirmPassword}
+                        onChange={handleInputChange}
+                    /&gt;
+                &lt;/div&gt;
 &nbsp;
-        &lt;Button name={'Sign Up'} /&gt;
-      &lt;/form&gt;
-    &lt;/&gt;
-  );
+                &lt;Button name={'Sign Up'} /&gt;
+            &lt;/form&gt;
+        &lt;/&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -394,7 +406,7 @@ export default function SignUpForm({ handleSignUp }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-03T12:09:32.081Z
+                at 2023-05-03T16:36:34.105Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

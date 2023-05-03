@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/47</span>
+                <span class='fraction'>0/49</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/47</span>
+                <span class='fraction'>0/49</span>
             </div>
         
             
@@ -110,7 +110,9 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,52 +159,56 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Toggle from '@/components/Forms/toggle';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Toggle from '@/components/FormComponents/toggle'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function EmailNotifications() {</span>
-<span class="cstat-no" title="statement not covered" >  const emailNotifications = [</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      label: 'Feedback Emails',</span>
-<span class="cstat-no" title="statement not covered" >      status: false,</span>
-<span class="cstat-no" title="statement not covered" >      description: 'Give feedback on Placio.',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      label: 'Reminder Emails',</span>
-<span class="cstat-no" title="statement not covered" >      status: true,</span>
-<span class="cstat-no" title="statement not covered" >      description: 'Get notifications you may have missed.',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      label: 'Product Emails',</span>
-<span class="cstat-no" title="statement not covered" >      status: false,</span>
-<span class="cstat-no" title="statement not covered" >      description: `Get tips and resources about Placio's tools.`,</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      label: 'News Emails',</span>
-<span class="cstat-no" title="statement not covered" >      status: true,</span>
-<span class="cstat-no" title="statement not covered" >      description: 'Learn about new Placio features.',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      label: 'Support Emails',</span>
-<span class="cstat-no" title="statement not covered" >      status: false,</span>
-<span class="cstat-no" title="statement not covered" >      description:</span>
-<span class="cstat-no" title="statement not covered" >        'Get updates on reports and violations of our Community Guidelines.',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >  ];</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='grid gap-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      {emailNotifications.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div key={index} className='pb-5 border-b'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className='text-lg font-semibold '&gt;{item.label}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;Toggle status={item.status} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;p className='mt-3'&gt;{item.description}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >      })}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    const emailNotifications = [</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Feedback Emails',</span>
+<span class="cstat-no" title="statement not covered" >            status: false,</span>
+<span class="cstat-no" title="statement not covered" >            description: 'Give feedback on Placio.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Reminder Emails',</span>
+<span class="cstat-no" title="statement not covered" >            status: true,</span>
+<span class="cstat-no" title="statement not covered" >            description: 'Get notifications you may have missed.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Product Emails',</span>
+<span class="cstat-no" title="statement not covered" >            status: false,</span>
+<span class="cstat-no" title="statement not covered" >            description: `Get tips and resources about Placio's tools.`,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'News Emails',</span>
+<span class="cstat-no" title="statement not covered" >            status: true,</span>
+<span class="cstat-no" title="statement not covered" >            description: 'Learn about new Placio features.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Support Emails',</span>
+<span class="cstat-no" title="statement not covered" >            status: false,</span>
+<span class="cstat-no" title="statement not covered" >            description:</span>
+<span class="cstat-no" title="statement not covered" >                'Get updates on reports and violations of our Community Guidelines.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='grid gap-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {emailNotifications.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div key={index} className='pb-5 border-b'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;p className='text-lg font-semibold '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.label}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Toggle status={item.status} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='mt-3'&gt;{item.description}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            })}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -211,7 +217,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-03T12:09:32.081Z
+                at 2023-05-03T16:36:34.105Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
