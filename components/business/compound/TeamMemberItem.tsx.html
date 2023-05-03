@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/97</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/97</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -160,7 +160,9 @@
 <a name='L95'></a><a href='#L95'>95</a>
 <a name='L96'></a><a href='#L96'>96</a>
 <a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -257,9 +259,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Menu, Transition } from '@headlessui/react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Menu } from '@headlessui/react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { Fragment } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import HeadlessTransition from '../../app/simple/HeadlessTransition'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import { EditIcon } from '@/constants/icons/icons'</span>
@@ -280,7 +286,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='justify-center flex-1 row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Menu as='div' className='relative inline-block text-left'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Menu.Button className='inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Menu.Button className='inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-black bg-black rounded-md bg-opacity-20 hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:text-white hover:text-white'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;span&gt;Admin&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;EditIcon</span>
 <span class="cstat-no" title="statement not covered" >                                    className='w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100'</span>
@@ -288,15 +294,7 @@
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/Menu.Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Transition</span>
-<span class="cstat-no" title="statement not covered" >                            as={Fragment}</span>
-<span class="cstat-no" title="statement not covered" >                            enter='transition ease-out duration-100'</span>
-<span class="cstat-no" title="statement not covered" >                            enterFrom='transform opacity-0 scale-95'</span>
-<span class="cstat-no" title="statement not covered" >                            enterTo='transform opacity-100 scale-100'</span>
-<span class="cstat-no" title="statement not covered" >                            leave='transition ease-in duration-75'</span>
-<span class="cstat-no" title="statement not covered" >                            leaveFrom='transform opacity-100 scale-100'</span>
-<span class="cstat-no" title="statement not covered" >                            leaveTo='transform opacity-0 scale-95'</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;HeadlessTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Menu.Items className='absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg top-full ring-1 ring-black ring-opacity-5 focus:outline-none'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='px-1 py-1 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;Menu.Item&gt;</span>
@@ -305,7 +303,7 @@
 <span class="cstat-no" title="statement not covered" >                                                className={`${</span>
 <span class="cstat-no" title="statement not covered" >                                                    active</span>
 <span class="cstat-no" title="statement not covered" >                                                        ? 'bg-primary text-white'</span>
-<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900'</span>
+<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900 dark:text-white'</span>
 <span class="cstat-no" title="statement not covered" >                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}</span>
 <span class="cstat-no" title="statement not covered" >                                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                Speculator</span>
@@ -320,7 +318,7 @@
 <span class="cstat-no" title="statement not covered" >                                                className={`${</span>
 <span class="cstat-no" title="statement not covered" >                                                    active</span>
 <span class="cstat-no" title="statement not covered" >                                                        ? 'bg-primary text-white'</span>
-<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900'</span>
+<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900 dark:text-white'</span>
 <span class="cstat-no" title="statement not covered" >                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}</span>
 <span class="cstat-no" title="statement not covered" >                                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                Editor</span>
@@ -335,7 +333,7 @@
 <span class="cstat-no" title="statement not covered" >                                                className={`${</span>
 <span class="cstat-no" title="statement not covered" >                                                    active</span>
 <span class="cstat-no" title="statement not covered" >                                                        ? 'bg-primary text-white'</span>
-<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900'</span>
+<span class="cstat-no" title="statement not covered" >                                                        : 'text-gray-900 dark:text-white'</span>
 <span class="cstat-no" title="statement not covered" >                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}</span>
 <span class="cstat-no" title="statement not covered" >                                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                Super Admin</span>
@@ -344,10 +342,18 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;/Menu.Item&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/Menu.Items&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Transition&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/HeadlessTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Menu&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 text-[10px] text-gray-400 text-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                            href='/'</span>
+<span class="cstat-no" title="statement not covered" >                            className='text-sm text-red-500 hover:underline'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Delete</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    Joined Monday, 23rd January.</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -361,7 +367,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-02T13:58:24.305Z
+                at 2023-05-03T12:09:32.081Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
