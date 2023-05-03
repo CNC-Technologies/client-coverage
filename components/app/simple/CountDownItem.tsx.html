@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>39/75</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>39/75</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -138,7 +138,16 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -175,54 +184,45 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useState, useEffect } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function CountdownItem({ targetDate }) {</span>
-<span class="cstat-no" title="statement not covered" >    const [days, setDays] = useState('00')</span>
-<span class="cstat-no" title="statement not covered" >    const [hours, setHours] = useState('00')</span>
-<span class="cstat-no" title="statement not covered" >    const [minutes, setMinutes] = useState('00')</span>
-<span class="cstat-no" title="statement not covered" >    const [seconds, setSeconds] = useState('00')</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const intervalId = setInterval(() =&gt; {</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect } from 'react'
+&nbsp;
+export default function CountdownItem({ targetDate }) {
+    const [days, setDays] = useState('00')
+    const [hours, setHours] = useState('00')
+    const [minutes, setMinutes] = useState('00')
+    const [seconds, setSeconds] = useState('00')
+&nbsp;
+    useEffect(() =&gt; {
+        const intervalId = setInterval(() =&gt; {
 <span class="cstat-no" title="statement not covered" >            const now = new Date().getTime()</span>
 <span class="cstat-no" title="statement not covered" >            const distance = targetDate.getTime() - now</span>
 <span class="cstat-no" title="statement not covered" >            if (distance &lt;= 0) {</span>
@@ -259,35 +259,35 @@
 <span class="cstat-no" title="statement not covered" >            setHours(hourCount)</span>
 <span class="cstat-no" title="statement not covered" >            setMinutes(minuteCount)</span>
 <span class="cstat-no" title="statement not covered" >            setSeconds(secondCount)</span>
-<span class="cstat-no" title="statement not covered" >        }, 1000)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return () =&gt; clearInterval(intervalId)</span>
-<span class="cstat-no" title="statement not covered" >    }, [targetDate])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-evenly'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-3 place-items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-orange text-2xl font-medium'&gt;{days} :&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-white font-medium capitalize'&gt;days&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-3 place-items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-orange text-2xl font-medium'&gt;{hours} :&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-white font-medium capitalize'&gt;hours&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-3 place-items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-orange text-2xl font-medium'&gt;{minutes} :&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-white font-medium capitalize'&gt;minutes&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-3 place-items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-orange text-2xl font-medium'&gt;{seconds}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-white font-medium capitalize'&gt;seconds&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+        }, 1000)
+&nbsp;
+        return () =&gt; clearInterval(intervalId)
+    }, [targetDate])
+&nbsp;
+    return (
+        &lt;div className='flex justify-evenly'&gt;
+            &lt;div className='grid gap-3 place-items-center'&gt;
+                &lt;p className='text-orange text-2xl font-medium'&gt;{days} :&lt;/p&gt;
+                &lt;p className='text-white font-medium capitalize'&gt;days&lt;/p&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div className='grid gap-3 place-items-center'&gt;
+                &lt;p className='text-orange text-2xl font-medium'&gt;{hours} :&lt;/p&gt;
+                &lt;p className='text-white font-medium capitalize'&gt;hours&lt;/p&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div className='grid gap-3 place-items-center'&gt;
+                &lt;p className='text-orange text-2xl font-medium'&gt;{minutes} :&lt;/p&gt;
+                &lt;p className='text-white font-medium capitalize'&gt;minutes&lt;/p&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div className='grid gap-3 place-items-center'&gt;
+                &lt;p className='text-orange text-2xl font-medium'&gt;{seconds}&lt;/p&gt;
+                &lt;p className='text-white font-medium capitalize'&gt;seconds&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -295,7 +295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-03T16:36:34.105Z
+                at 2023-05-03T21:22:33.631Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
