@@ -177,62 +177,62 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
 &nbsp;
-import NavbarLogo from '@/components/navLogo';
-import SearchBar from '@/components/searchBar';
-import { BarsIcon, CloseOutlineIcon } from '@/constants/icons/icons';
+import NavbarLogo from '@/components/navLogo'
+import SearchBar from '@/components/SearchBar/SearchBar'
+import { BarsIcon, CloseOutlineIcon } from '@/constants/icons/icons'
 &nbsp;
 export default function HomepageMobileNav({
-  scrollPastSection,
-  activeColors,
-  showSidebar,
-  pathname,
-  handleSidebarToggle,
+    scrollPastSection,
+    activeColors,
+    showSidebar,
+    pathname,
+    handleSidebarToggle,
 }) {
-  return (
-    &lt;nav
-      className={`${
-        scrollPastSection
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          ? `bg-${activeColors.background} opacity-80 dark:opacity-100`</span></span>
-          : showSidebar
-          ? 'bg-primary '
-          : `${
-              pathname === '/'
-                ? 'bg-transparent dark:bg-transparent'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                : `bg-${activeColors.background}`</span></span>
-            }`
-      } block smLaptop:hidden transition-colors duration-700 ease-in-out fixed w-full top-0 left-0 z-40  py-2 `}
-    &gt;
-      &lt;div className='px-10 max-mobile:px-5 '&gt;
-        &lt;div className='flex items-center justify-between h-16'&gt;
-          &lt;div className='flex items-center '&gt;
-            &lt;Link className='flex-shrink-0' href='/'&gt;
-              &lt;NavbarLogo color={activeColors.logo} /&gt;
-            &lt;/Link&gt;
-          &lt;/div&gt;
+    return (
+        &lt;nav
+            className={`${
+                scrollPastSection
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    ? `bg-${activeColors.background} opacity-80 dark:opacity-100`</span></span>
+                    : showSidebar
+                    ? 'bg-primary '
+                    : `${
+                          pathname === '/'
+                              ? 'bg-transparent dark:bg-transparent'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                              : `bg-${activeColors.background}`</span></span>
+                      }`
+            } block smLaptop:hidden transition-colors duration-700 ease-in-out fixed w-full top-0 left-0 z-40  py-2 `}
+        &gt;
+            &lt;div className='px-10 max-mobile:px-5 '&gt;
+                &lt;div className='flex items-center justify-between h-16'&gt;
+                    &lt;div className='flex items-center '&gt;
+                        &lt;Link className='flex-shrink-0' href='/'&gt;
+                            &lt;NavbarLogo color={activeColors.logo} /&gt;
+                        &lt;/Link&gt;
+                    &lt;/div&gt;
 &nbsp;
-          &lt;div className='flex-1 mx-4 xmd:mx-6'&gt;
-            &lt;SearchBar /&gt;
-          &lt;/div&gt;
+                    &lt;div className='flex-1 mx-4 xmd:mx-6'&gt;
+                        &lt;SearchBar /&gt;
+                    &lt;/div&gt;
 &nbsp;
-          {showSidebar ? (
-            &lt;CloseOutlineIcon
-              role='closeMenu'
-              onClick={handleSidebarToggle}
-              className={`h-7 w-7 xmd:h-8 xmd:w-8 text-${activeColors.hamburger} `}
-            /&gt;
-          ) : (
-            &lt;BarsIcon
-              role='openMenu'
-              onClick={handleSidebarToggle}
-              className={`h-7 w-7 xmd:h-8 xmd:w-8 text-${activeColors.hamburger} `}
-            /&gt;
-          )}
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/nav&gt;
-  );
+                    {showSidebar ? (
+                        &lt;CloseOutlineIcon
+                            role='closeMenu'
+                            onClick={handleSidebarToggle}
+                            className={`h-7 w-7 xmd:h-8 xmd:w-8 text-${activeColors.hamburger} `}
+                        /&gt;
+                    ) : (
+                        &lt;BarsIcon
+                            role='openMenu'
+                            onClick={handleSidebarToggle}
+                            className={`h-7 w-7 xmd:h-8 xmd:w-8 text-${activeColors.hamburger} `}
+                        /&gt;
+                    )}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -241,7 +241,7 @@ export default function HomepageMobileNav({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T16:49:03.668Z
+                at 2023-05-04T16:57:11.926Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

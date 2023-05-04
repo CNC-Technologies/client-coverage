@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.2% </span>
+                <span class="strong">88.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>75/86</span>
+                <span class='fraction'>81/92</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/7</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.2% </span>
+                <span class="strong">88.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>75/86</span>
+                <span class='fraction'>81/92</span>
             </div>
         
             
@@ -149,7 +149,13 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -178,6 +184,12 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -251,7 +263,7 @@ export default function EventList({
 }) {
     const router = useRouter()
     const horizontalClass =
-        'row space-x-5 desktop:space-x-8 overflow-x-scroll scroll-smooth '
+        'row space-x-3 desktop:space-x-5 overflow-x-scroll scroll-smooth '
 &nbsp;
     const gridClass =
         'grid grid-cols-3 gap-5 max-[1515px]:grid-cols-2 max-[1095px]:grid-cols-1 max-md:grid-cols-2 max-xmd:grid-cols-1'
@@ -259,23 +271,29 @@ export default function EventList({
     const eventsToShow = mockedEvents.slice(0, 6)
 &nbsp;
     return (
-        &lt;div className='w-full my-10 md:my-20 text-primary eventsList'&gt;
+        &lt;div className='w-full my-10 text-primary eventsList'&gt;
             &lt;div className='flex items-center justify-between'&gt;
                 &lt;div&gt;
                     {mainTitle &amp;&amp; (
-                        &lt;div className='mb-4 text-3xl'&gt;{mainTitle}&lt;/div&gt;
+                        &lt;div className='mb-2 mobile:mb-3 text-xl mobile:text-2xl mobile:font-semibold'&gt;
+                            {mainTitle}
+                        &lt;/div&gt;
                     )}
-                    &lt;div className='text-xl font-semibold'&gt;{title}&lt;/div&gt;
+                    &lt;div className='text-lg mobile:text-xl font-medium mobile:font-semibold'&gt;
+                        {title}
+                    &lt;/div&gt;
                     {subtext &amp;&amp; &lt;div className='my-2 '&gt;{subtext}&lt;/div&gt;}
                 &lt;/div&gt;
 &nbsp;
                 {!gridLayout &amp;&amp; (
                     &lt;Link
-                        href={'/app/events'}
-                        className='flex items-center text-primary dark:hover:text-white/50 hover:text-primary/50 gap-3 font-medium'
+                        href={`/app/events/categories?name=${
+                            mainTitle ? mainTitle : title
+                        }`}
+                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium text-primary dark:hover:text-white/50 hover:text-primary/50'
                     &gt;
                         &lt;span&gt;See more&lt;/span&gt;
-                        &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;
+                        &lt;ArrowRightOutlineIcon className='text-base mobile:text-xl' /&gt;
                     &lt;/Link&gt;
                 )}
             &lt;/div&gt;
@@ -328,7 +346,7 @@ export default function EventList({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T16:49:03.668Z
+                at 2023-05-04T16:57:11.926Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

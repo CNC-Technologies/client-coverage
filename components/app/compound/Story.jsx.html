@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/34</span>
+                <span class='fraction'>0/36</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/34</span>
+                <span class='fraction'>0/36</span>
             </div>
         
             
@@ -97,7 +97,9 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -131,39 +133,43 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Image from 'next/image';</span>
+<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Avatar from '../simple/Avatar';</span>
+<span class="cstat-no" title="statement not covered" >import Avatar from '../simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Story({ media, handleSetActiveMedia, activeIndex }) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!media) return null;</span>
-<span class="cstat-no" title="statement not covered" >  function setStory(passedMedia) {</span>
-<span class="cstat-no" title="statement not covered" >    handleSetActiveMedia({ idx: activeIndex, media: passedMedia });</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div</span>
-<span class="cstat-no" title="statement not covered" >        className='h-[200px] bg-black rounded-xl overflow-hidden w-[135px] col relative cursor-pointer'</span>
-<span class="cstat-no" title="statement not covered" >        onClick={() =&gt; setStory(media)}</span>
-<span class="cstat-no" title="statement not covered" >      &gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >          height={100}</span>
-<span class="cstat-no" title="statement not covered" >          width={100}</span>
-<span class="cstat-no" title="statement not covered" >          src={media[0]?.url}</span>
-<span class="cstat-no" title="statement not covered" >          alt='Story cover'</span>
-<span class="cstat-no" title="statement not covered" >          className='w-auto h-auto m-auto'</span>
-<span class="cstat-no" title="statement not covered" >        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='col justify-between flex-1 absolute top-0 bottom-0 left-0 right-0 z-10 w-[135px] overflow-hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className='m-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Avatar /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className='mx-auto my-3 text-sm text-white'&gt;John Doe&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    if (!media) return null</span>
+<span class="cstat-no" title="statement not covered" >    function setStory(passedMedia) {</span>
+<span class="cstat-no" title="statement not covered" >        handleSetActiveMedia({ idx: activeIndex, media: passedMedia })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className='h-[150px] mobile:h-[170px] xmd:h-[200px] bg-black rounded-xl overflow-hidden w-[115px] mobile:w-[135px] col relative cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setStory(media)}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                    height={100}</span>
+<span class="cstat-no" title="statement not covered" >                    width={100}</span>
+<span class="cstat-no" title="statement not covered" >                    src={media[0]?.url}</span>
+<span class="cstat-no" title="statement not covered" >                    alt='Story cover'</span>
+<span class="cstat-no" title="statement not covered" >                    className='w-full h-full object-contain'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col justify-between flex-1 absolute top-0 bottom-0 left-0 right-0 z-10 w-[115px] mobile:w-[135px] overflow-hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='m-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Avatar /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='mx-auto my-3 text-sm text-white font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        John Doe</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -172,7 +178,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T16:49:03.668Z
+                at 2023-05-04T16:57:11.926Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
