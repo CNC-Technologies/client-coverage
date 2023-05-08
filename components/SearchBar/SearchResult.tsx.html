@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>132/132</span>
+                <span class='fraction'>135/135</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>132/132</span>
+                <span class='fraction'>135/135</span>
             </div>
         
             
@@ -195,7 +195,10 @@
 <a name='L130'></a><a href='#L130'>130</a>
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -204,6 +207,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -340,7 +346,7 @@ export default function SearchResult() {
         &lt;div
             onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.stopPropagation()}</span>
             role={'search-suggestion-dropdown'}
-            className={` bg-white shadow-md absolute top-full mt-1 max-xmd:mt-4  left-0 mx-auto xmd:min-h-[70vh] min-h-[80vh] overflow-auto scroll-auto w-[90vw] max-laptop:left-1/2 max-laptop:-translate-x-[50vw] laptop:w-full h-full rounded-lg p-4 z-50`}
+            className={`searchBarModal`}
         &gt;
             &lt;div className='px-2 py-3'&gt;
                 {/* Recent searches  */}
@@ -349,17 +355,20 @@ export default function SearchResult() {
                         &lt;h4 className='text-xl font-bold xmd:text-2xl'&gt;
                             Recent searches
                         &lt;/h4&gt;
-                        &lt;div className='flex items-center justify-center gap-4 px-2 py-1 border rounded-lg cursor-pointer hover:bg-grey dark:hover:text-primary dark:hover:border-primary border-grey text-primary'&gt;
+                        &lt;div
+                            className='flex items-center justify-center gap-4 px-2 py-1 grey-fill rounded-lg cursor-pointer '
+                            key={'clear-all'}
+                        &gt;
                             &lt;p className='max-xmd:text-sm'&gt;Clear all&lt;/p&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div className='flex flex-wrap items-center mt-2 gap-x-2 lgMobile:gap-x-4 gap-y-2 xmobile:gap-y-3 '&gt;
-                        {searchKeywords.map((item, idx) =&gt; {
+                        {searchKeywords.map((item, index) =&gt; {
                             return (
                                 &lt;Link
                                     href={`/search?q=${item}`}
-                                    className='flex cursor-pointer items-center justify-center gap-2 px-1 py-1 border rounded-lg border-grey lgMobile:px-2 xmobile:gap-4 text-primary'
-                                    key={idx}
+                                    className='flex cursor-pointer items-center justify-center gap-2 px-1 py-1 grey-outline rounded-lg  lgMobile:px-2 xmobile:gap-4 '
+                                    key={index}
                                 &gt;
                                     &lt;p className='max-xmobile:text-xs max-xmd:text-sm'&gt;
                                         {item}
@@ -378,12 +387,12 @@ export default function SearchResult() {
                     &lt;h4 className='text-xl font-bold xmd:text-2xl'&gt;
                         Categories for you
                     &lt;/h4&gt;
-                    &lt;div className='flex items-center w-full mt-2 max-lgMobile:overflow-x-scroll max-lgMobile:hide-scrollbar max-lgMobile:scroll-smooth lgMobile:flex-wrap justify-left gap-x-2 xmd:gap-x-4 gap-y-3 '&gt;
+                    &lt;div className='flex items-center w-full mt-2 max-lgMobile:overflow-x-scroll max-lgMobile:hideScrollbar max-lgMobile:scroll-smooth lgMobile:flex-wrap justify-left gap-x-2 xmd:gap-x-4 gap-y-3 '&gt;
                         {MockedCategories.map((category, idx) =&gt; {
                             return (
                                 &lt;Link
                                     href={`/search?q=${category.name}`}
-                                    className='h-16 hover:brightness-150 xmd:h-20 min-w-[8rem] xmd:min-w-[9rem] rounded-lg relative'
+                                    className='h-16 hover:brightness-150 smoothen xmd:h-20 min-w-[8rem] xmd:min-w-[9rem] rounded-lg relative'
                                     key={idx}
                                 &gt;
                                     &lt;Image
@@ -411,7 +420,7 @@ export default function SearchResult() {
                     &lt;h4 className='text-xl font-bold xmd:text-2xl'&gt;
                         Trending Places
                     &lt;/h4&gt;
-                    &lt;div className='flex w-full mt-2 overflow-x-scroll hide-scrollbar scroll-smooth justify-left gap-x-4 gap-y-3 '&gt;
+                    &lt;div className='flex w-full mt-2 overflow-x-scroll hideScrollbar scroll-smooth justify-left gap-x-4 gap-y-3 '&gt;
                         {[...Array(4)].map((_, idx) =&gt; {
                             return (
                                 &lt;div
@@ -449,7 +458,7 @@ export default function SearchResult() {
                     &lt;/div&gt;
                     &lt;div className='flex justify-center mt-3'&gt;
                         &lt;button
-                            className={`border border-primary dark:hover:text-primary py-2 w-fit shadow-md px-6 h-8 xmd:h-10 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base  hover:bg-grey text-primary text-center  font-semibold  rounded-lg `}
+                            className={`mt-4 primary-fill py-2 w-fit shadow-md px-6 h-8 xmd:h-10 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base  text-center  font-semibold  rounded-lg `}
                         &gt;
                             See more
                         &lt;/button&gt;
@@ -466,7 +475,7 @@ export default function SearchResult() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

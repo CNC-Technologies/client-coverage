@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.29% </span>
+                <span class="strong">95.06% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>81/85</span>
+                <span class='fraction'>77/81</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/11</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.29% </span>
+                <span class="strong">95.06% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>81/85</span>
+                <span class='fraction'>77/81</span>
             </div>
         
             
@@ -144,11 +144,7 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -165,16 +161,6 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -185,10 +171,18 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -222,13 +216,11 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -251,17 +243,7 @@ export default function SearchBar() {
         search: '',
     })
 &nbsp;
-    const handleInputChange = (event: Event) =&gt; {
-        updateFormState(
-            event.target.name,
-            event.target.value,
-            searchForm,
-            setSearchForm,
-        )
-        handleKeyPress(event.target.value)
-    }
-&nbsp;
-    const handleKeyPress = (query: String) =&gt; {
+    const updateSearchResultModal = (query: String) =&gt; {
         if (query === '') {
             setShowSearchResultModal(false)
         } else {
@@ -269,11 +251,19 @@ export default function SearchBar() {
         }
     }
 &nbsp;
+    const handleInputChange = (event: Event) =&gt; {
+        updateFormState(
+            event.target.name,
+            event.target.value,
+            searchForm,
+            setSearchForm,
+        )
+        updateSearchResultModal(event.target.value)
+    }
+&nbsp;
     const handleSearchModal = () =&gt; {
         setShowDarkBackground(true)
-        if (!showDarkBackground &amp;&amp; searchForm.search.length) {
-            setShowSearchResultModal(true)
-        }
+        setShowSearchResultModal(searchForm.search.length &gt; 0)
     }
 &nbsp;
     const closeModal = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
@@ -287,34 +277,32 @@ export default function SearchBar() {
     }
     return (
         &lt;&gt;
-            &lt;div className=''&gt;
-                &lt;div className='relative'&gt;
-                    &lt;div className='z-[1000] relative'&gt;
-                        &lt;InputField
-                            id='search'
-                            name={'search'}
-                            value={searchForm.search}
-                            placeholder={'Search for events, places and people'}
-                            onFocus={handleSearchModal}
-                            onBlur={handleOnBlur}
-                            onChange={handleInputChange}
-                        /&gt;
+            &lt;div className='relative'&gt;
+                &lt;div className='z-[1000] relative'&gt;
+                    &lt;InputField
+                        id='search'
+                        name={'search'}
+                        value={searchForm.search}
+                        placeholder={'Search for events, places and people'}
+                        onFocus={handleSearchModal}
+                        onBlur={handleOnBlur}
+                        onChange={handleInputChange}
+                    /&gt;
 &nbsp;
-                        &lt;div className='absolute bg-white border dark:bg-primary dark:border dark:border-white top-1/2 rounded-r-lg -translate-y-1/2 border-l border-grey text-primary cursor-pointer right-0 flex justify-center items-center h-full px-3 desktop:px-4'&gt;
-                            &lt;SearchOutlineIcon className='w-5 h-5 desktop:w-6 desktop:h-6' /&gt;
-                        &lt;/div&gt;
+                    &lt;div className='absolute bg-white border dark:bg-primary dark:border dark:border-white top-1/2 rounded-r-lg -translate-y-1/2 border-l border-grey text-primary cursor-pointer right-0 flex justify-center items-center h-full px-3 desktop:px-4'&gt;
+                        &lt;SearchOutlineIcon className='w-5 h-5 desktop:w-6 desktop:h-6' /&gt;
                     &lt;/div&gt;
-&nbsp;
-                    {showSearchResultModal &amp;&amp; &lt;SearchResult /&gt;}
                 &lt;/div&gt;
-                {showDarkBackground &amp;&amp; (
-                    &lt;div
-                        role={'overlay'}
-                        className={`fixed  inset-0 z-10 bg-black/40 bg-opacity-75`}
-                        onClick={closeModal}
-                    &gt;&lt;/div&gt;
-                )}
+&nbsp;
+                {showSearchResultModal &amp;&amp; &lt;SearchResult /&gt;}
             &lt;/div&gt;
+            {showDarkBackground &amp;&amp; (
+                &lt;div
+                    role={'overlay'}
+                    className={`fixed  inset-0 z-20 bg-black/40 bg-opacity-75`}
+                    onClick={closeModal}
+                &gt;&lt;/div&gt;
+            )}
         &lt;/&gt;
     )
 }
@@ -325,7 +313,7 @@ export default function SearchBar() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

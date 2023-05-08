@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/28</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/28</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -91,7 +91,11 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -119,33 +123,41 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Banner({</span>
-<span class="cstat-no" title="statement not covered" >  children,</span>
-<span class="cstat-no" title="statement not covered" >  image = '/Images/places/places-featured-image.svg',</span>
-<span class="cstat-no" title="statement not covered" >  title = '',</span>
-<span class="cstat-no" title="statement not covered" >  description = '',</span>
-<span class="cstat-no" title="statement not covered" >  rev = false,</span>
+<span class="cstat-no" title="statement not covered" >    children,</span>
+<span class="cstat-no" title="statement not covered" >    image = 'https://res.cloudinary.com/placio/image/upload/v1683018544/user-media-content/places/places-featured-image_p8dr3n.svg',</span>
+<span class="cstat-no" title="statement not covered" >    title = '',</span>
+<span class="cstat-no" title="statement not covered" >    description = '',</span>
+<span class="cstat-no" title="statement not covered" >    rev = false,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='bg-secondary/50 p-3 gap-x-3 grid grid-cols-1 md:grid-cols-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className={rev &amp;&amp; 'order-last'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='text-lg'&gt;{title}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {description &amp;&amp; &lt;div className='text-sm mt-3'&gt;{description}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='mt-3'&gt;{children}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >        src={image}</span>
-<span class="cstat-no" title="statement not covered" >        alt={'Places featured image'}</span>
-<span class="cstat-no" title="statement not covered" >        priority={true}</span>
-<span class="cstat-no" title="statement not covered" >        quality={75}</span>
-<span class="cstat-no" title="statement not covered" >        width={100}</span>
-<span class="cstat-no" title="statement not covered" >        height={100}</span>
-<span class="cstat-no" title="statement not covered" >        className='w-full h-full object-cover object-center'</span>
-<span class="cstat-no" title="statement not covered" >      /&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='bg-secondary/50 p-3 gap-x-3 grid grid-cols-1 md:grid-cols-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className={rev &amp;&amp; 'order-last'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-lg'&gt;{title}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {description &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-sm mt-3'&gt;{description}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-3'&gt;{children}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='h-[20vh]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                    src={image}</span>
+<span class="cstat-no" title="statement not covered" >                    alt={'Places featured image'}</span>
+<span class="cstat-no" title="statement not covered" >                    priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                    quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                    width={100}</span>
+<span class="cstat-no" title="statement not covered" >                    height={100}</span>
+<span class="cstat-no" title="statement not covered" >                    className='w-full h-full object-cover object-center'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -154,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

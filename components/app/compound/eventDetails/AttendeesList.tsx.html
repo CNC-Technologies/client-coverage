@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/127</span>
+                <span class='fraction'>0/140</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/127</span>
+                <span class='fraction'>0/140</span>
             </div>
         
             
@@ -190,7 +190,33 @@
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
 <a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -327,8 +353,18 @@
 <span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >type User = {</span>
+<span class="cstat-no" title="statement not covered" >    name: {</span>
+<span class="cstat-no" title="statement not covered" >        first: string</span>
+<span class="cstat-no" title="statement not covered" >        last: string</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    picture: {</span>
+<span class="cstat-no" title="statement not covered" >        medium: string</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AttendeesList() {</span>
-<span class="cstat-no" title="statement not covered" >    const { userData }: { userData: any } = useFetchRandomUsers({</span>
+<span class="cstat-no" title="statement not covered" >    const { userData }: { userData: User[] } = useFetchRandomUsers({</span>
 <span class="cstat-no" title="statement not covered" >        numOfUsers: null,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -344,14 +380,14 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; setIsOpen(true)}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center gap-3 font-medium'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center cursor-pointer gap-3 font-medium link-primary'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={`w-full mt-5 max-md:flex max-md:overflow-x-scroll max-md:hide-scrollbar max-md:scroll-smooth grid grid-cols-2 laptop:grid-cols-3 lgDesktop:grid-cols-4 extraLarge:grid-cols-5 gap-3 xmd:gap-6 `}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`w-full mt-5 max-md:flex max-md:overflow-x-scroll max-md:hideScrollbar max-md:scroll-smooth grid grid-cols-2 laptop:grid-cols-3 lgDesktop:grid-cols-4 extraLarge:grid-cols-5 gap-3 xmd:gap-6 `}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {userData ? (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;&gt;</span>
@@ -362,7 +398,7 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                                            href={`/${user?.name.first}_${user?.name.last}`}</span>
 <span class="cstat-no" title="statement not covered" >                                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                            className={`max-md:min-w-[200px] bg-primary rounded-lg py-6 xmd:py-10 px-5 grid gap-4 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >                                            className={`max-md:min-w-[200px] w-full bg-primary rounded-lg py-6 xmd:py-10 px-5 grid gap-4 place-items-center`}</span>
 <span class="cstat-no" title="statement not covered" >                                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;Avatar</span>
 <span class="cstat-no" title="statement not covered" >                                                img={`${user?.picture.medium}`}</span>
@@ -381,8 +417,8 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    ) : (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {[...Array(6)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                return &lt;Skeleton key={idx} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {[...Array(6)].map((_, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                return &lt;Skeleton key={index} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            })}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
@@ -394,46 +430,7 @@
 <span class="cstat-no" title="statement not covered" >                handleClose={() =&gt; setIsOpen(false)}</span>
 <span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='py-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-lg font-semibold text-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Attendees</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        className={`w-full mt-5  grid max-[430px]:grid-cols-1 grid-cols-2 laptop:grid-cols-3 lgDesktop:grid-cols-4 extraLarge:grid-cols-5 gap-3 xmd:gap-6 `}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {userData ? (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {userData.map((user: any, index: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                    return (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                            href={`/${user?.name.first}_${user?.name.last}`}</span>
-<span class="cstat-no" title="statement not covered" >                                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                            className={`max-xxmobile:w-full max-mobile:w-[90%] mx-auto max-md:min-w-[180px] bg-primary rounded-lg py-6 xmd:py-10 px-5 grid gap-2 mobile:gap-4 place-items-center`}</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;Avatar</span>
-<span class="cstat-no" title="statement not covered" >                                                img={`${user?.picture.medium}`}</span>
-<span class="cstat-no" title="statement not covered" >                                                size='xl'</span>
-<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;h4 className='mobile:text-lg text-center text-white xDesktop:text-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {user?.name.first}{' '}</span>
-<span class="cstat-no" title="statement not covered" >                                                {user?.name.last}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/h4&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;span className='text-base xDesktop:text-lg text-orange'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                Member</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )</span>
-<span class="cstat-no" title="statement not covered" >                                })}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {[...Array(6)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                    return &lt;Skeleton key={idx} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                })}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;AllAttendees userData={userData} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -444,6 +441,48 @@
 <span class="cstat-no" title="statement not covered" >        &lt;div className='min-w-[300px] h-64 animate-pulse bg-primary/70 '&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function AllAttendees({ userData }) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='py-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='text-lg font-semibold text-center'&gt;Attendees&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`w-full mt-5  grid max-[430px]:grid-cols-1 grid-cols-2 laptop:grid-cols-3 lgDesktop:grid-cols-4 extraLarge:grid-cols-5 gap-3 xmd:gap-6 `}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {userData ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {userData.map((user: any, index: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            return (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                    href={`/${user?.name.first}_${user?.name.last}`}</span>
+<span class="cstat-no" title="statement not covered" >                                    key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                    className={`max-xxmobile:w-full max-mobile:w-[90%] mx-auto max-md:min-w-[180px] w-full bg-primary rounded-lg py-6 xmd:py-10 px-5 grid gap-2 mobile:gap-4 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                        img={`${user?.picture.medium}`}</span>
+<span class="cstat-no" title="statement not covered" >                                        size='xl'</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;h4 className='mobile:text-lg text-center text-white xDesktop:text-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {user?.name.first} {user?.name.last}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/h4&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;span className='text-base xDesktop:text-lg text-orange'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        Member</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {[...Array(6)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            return &lt;Skeleton key={idx} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -451,7 +490,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

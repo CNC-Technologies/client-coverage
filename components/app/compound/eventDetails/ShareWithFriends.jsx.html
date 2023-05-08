@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/31</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/31</span>
             </div>
         
             
@@ -90,7 +90,15 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,21 +132,25 @@
 <span class="cstat-no" title="statement not covered" >    WhatsappOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >export default function ShareWithFriends() {</span>
+<span class="cstat-no" title="statement not covered" >    const generalCssClass = {</span>
+<span class="cstat-no" title="statement not covered" >        parent: 'p-1 rounded-full cursor-pointer hover:bg-grey',</span>
+<span class="cstat-no" title="statement not covered" >        child: 'w-7 h-7 text-primary hover:text-primary/70',</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='mt-7 md:mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-xl font-semibold'&gt;Share with friends&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex gap-4 my-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='p-1 rounded-full cursor-pointer hover:bg-grey'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;FacebookSolidIcon className='w-7 h-7 text-primary hover:text-primary/70' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className={generalCssClass.parent}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;FacebookSolidIcon className={generalCssClass.child} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='p-1 rounded-full cursor-pointer hover:bg-grey'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;WhatsappOutlineIcon className='w-7 h-7 text-primary hover:text-primary/70' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className={generalCssClass.parent}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;WhatsappOutlineIcon className={generalCssClass.child} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='p-1 rounded-full cursor-pointer hover:bg-grey'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;TwitterSolidIcon className='w-7 h-7 text-primary hover:text-primary/70' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className={generalCssClass.parent}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;TwitterSolidIcon className={generalCssClass.child} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='p-1 rounded-full cursor-pointer hover:bg-grey'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InstagramSolidIcon className='w-7 h-7 text-primary hover:text-primary/70' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className={generalCssClass.parent}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;InstagramSolidIcon className={generalCssClass.child} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -151,7 +163,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

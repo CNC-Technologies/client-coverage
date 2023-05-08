@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -111,7 +111,11 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,53 +163,61 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link';</span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import ConnectWithUser from '../compound/ConnectWithUser';</span>
+<span class="cstat-no" title="statement not covered" >import ConnectWithUser from '../compound/ConnectWithUser'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons';</span>
+<span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ConnectWithUserList({</span>
-<span class="cstat-no" title="statement not covered" >  mainTitle = '',</span>
-<span class="cstat-no" title="statement not covered" >  title = '',</span>
-<span class="cstat-no" title="statement not covered" >  description = '',</span>
-<span class="cstat-no" title="statement not covered" >  gridLayout,</span>
+<span class="cstat-no" title="statement not covered" >    mainTitle = '',</span>
+<span class="cstat-no" title="statement not covered" >    title = '',</span>
+<span class="cstat-no" title="statement not covered" >    description = '',</span>
+<span class="cstat-no" title="statement not covered" >    gridLayout,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='my-20'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='justify-between row'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {mainTitle &amp;&amp; &lt;div className='mb-4 text-3xl'&gt;{mainTitle}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div className='text-xl'&gt;{title}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {description &amp;&amp; &lt;div className='text-sm'&gt;{description}&lt;/div&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='my-20'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='justify-between row'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {mainTitle &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='mb-4 text-3xl'&gt;{mainTitle}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl'&gt;{title}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {description &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-sm'&gt;{description}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        {!gridLayout &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >            href={'/search'}</span>
-<span class="cstat-no" title="statement not covered" >            className='flex items-center gap-3 font-medium text-primary dark:hover:text-white/50 hover:text-primary/50'</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span&gt;See more&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >        )}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {!gridLayout &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                        href={'/search'}</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center gap-3 font-medium text-primary dark:hover:text-white/50 hover:text-primary/50'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ArrowRightOutlineIcon className='w-5 h-5' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='w-full mt-3 overflow-hidden max-width'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='py-5 space-x-5 overflow-x-auto row no-wrap md:space-x-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {[...Array(6)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" >              &lt;div key={idx}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;ConnectWithUser /&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            );</span>
-<span class="cstat-no" title="statement not covered" >          })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full mt-3 overflow-hidden max-width'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='py-5 space-x-3 overflow-x-auto row no-wrap md:space-x-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {[...Array(6)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='min-w-[260px] w-full' key={idx}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;ConnectWithUser /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -214,7 +226,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

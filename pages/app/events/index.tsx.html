@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/116</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/116</span>
             </div>
         
             
@@ -176,7 +176,10 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -289,7 +292,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import EventsList from '@/components/app/complex/EventsList'</span>
 <span class="cstat-no" title="statement not covered" >import ActivityItem from '@/components/app/compound/ActivityItem'</span>
@@ -333,16 +340,18 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-8 md:mt-14'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-6 md:mt-12'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl'&gt;Trending Categories&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-3 w-full overflow-hidden max-width'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='overflow-x-auto row py-1 xmd:py-3 no-wrap space-x-5 md:space-x-8'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='overflow-x-auto row py-1 xmd:py-3 no-wrap space-x-3 md:space-x-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {MockedCategories.map((category, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                return (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;ActivityItem</span>
-<span class="cstat-no" title="statement not covered" >                                        category={category}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                        href={`/app/events/${category?.name}`}</span>
 <span class="cstat-no" title="statement not covered" >                                        key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;ActivityItem category={category} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                )</span>
 <span class="cstat-no" title="statement not covered" >                            })}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
@@ -409,7 +418,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T16:19:49.615Z
+                at 2023-05-08T19:21:05.984Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
