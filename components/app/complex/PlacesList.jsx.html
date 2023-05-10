@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/78</span>
+                <span class='fraction'>0/83</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/78</span>
+                <span class='fraction'>0/83</span>
             </div>
         
             
@@ -141,7 +141,17 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -225,6 +235,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlaceCard from '@/components/Places/placeCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { mockedPlaces } from '@/constants/MockData/PlacesList'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesList({</span>
 <span class="cstat-no" title="statement not covered" >    mainTitle = '',</span>
 <span class="cstat-no" title="statement not covered" >    title = '',</span>
@@ -238,6 +250,8 @@
 <span class="cstat-no" title="statement not covered" >        'grid grid-cols-1 max-[768px]:grid-cols-2 max-[1515px]:grid-cols-3 min-[1515px]:grid-cols-4 gap-5'</span>
 <span class="cstat-no" title="statement not covered" >    // const gridClass =</span>
 <span class="cstat-no" title="statement not covered" >    //     'grid grid-cols-3 gap-5 desktop:gap-8 max-[1515px]:grid-cols-2 max-[1095px]:grid-cols-1 max-md:grid-cols-2 max-xmd:grid-cols-1'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const placesToShow = mockedPlaces.slice(0, 6)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='my-10'&gt;</span>
@@ -258,7 +272,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {!gridLayout &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={'/search'}</span>
+<span class="cstat-no" title="statement not covered" >                        href={`/app/places/categories?name=${title}`}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium  link-primary'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
@@ -271,13 +285,13 @@
 <span class="cstat-no" title="statement not covered" >                    !gridLayout ? horizontalClass : gridClass</span>
 <span class="cstat-no" title="statement not covered" >                } py-2 md:py-5`}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {[...Array(6)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                {placesToShow.map((place, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    return (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div key={idx}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div key={index}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                className={`${!gridLayout ? 'w-[330px]' : 'w-full'}`}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlaceCard /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;PlaceCard place={place} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
@@ -286,12 +300,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {gridLayout &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center mt-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                        // onClick={() =&gt; router.push('/search')}</span>
-<span class="cstat-no" title="statement not covered" >                        className={`primary-fill dark:bg-bright-blue py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        See More</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Link href={`/app/places/categories?name=${title}`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                            className={`primary-fill dark:bg-bright-blue py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            See More</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -304,7 +319,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-10T10:07:10.648Z
+                at 2023-05-10T14:56:00.127Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
