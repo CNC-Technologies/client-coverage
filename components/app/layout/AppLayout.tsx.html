@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.61% </span>
+                <span class="strong">96.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>114/118</span>
+                <span class='fraction'>115/119</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.61% </span>
+                <span class="strong">96.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>114/118</span>
+                <span class='fraction'>115/119</span>
             </div>
         
             
@@ -181,7 +181,8 @@
 <a name='L116'></a><a href='#L116'>116</a>
 <a name='L117'></a><a href='#L117'>117</a>
 <a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -299,6 +300,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 &nbsp;
@@ -346,73 +348,74 @@ export default function AppLayout({
     return (
         &lt;ThemeProvider enableSystem={true} attribute='class'&gt;
             &lt;SEOHead title={title} description={description} icon={appIcon} /&gt;
-&nbsp;
-            {(pathname?.includes('settings') ||
-                pathname?.includes('notification')<span class="branch-0 cbranch-no" title="branch not covered" >) &amp;&amp;</span>
-            showBelowScreenSize<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;MobileSettingsLayout&gt;{children}&lt;/MobileSettingsLayout&gt;</span>
-            ) : (
-                &lt;div
-                    className='row  justify-between max-w-[120rem] mx-auto bg-secondary/10 dark:bg-[#000]'
-                    style={{ height: height ? height : '100vh' }}
-                &gt;
-                    {/*Desktop Left Sidebar */}
-                    &lt;div className='text-white sidebar bg-primary'&gt;
-                        &lt;LeftSidebar sidebarLinks={leftSidebarLinks} /&gt;
-                    &lt;/div&gt;
-&nbsp;
-                    {/* Main Content */}
+            &lt;div className='text-primary'&gt;
+                {(pathname?.includes('settings') ||
+                    pathname?.includes('notification')<span class="branch-0 cbranch-no" title="branch not covered" >) &amp;&amp;</span>
+                showBelowScreenSize<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;MobileSettingsLayout&gt;{children}&lt;/MobileSettingsLayout&gt;</span>
+                ) : (
                     &lt;div
-                        className={`flex-1 ${
-                            showRightSidebar &amp;&amp; 'layoutCalcMaxWidth'
-                        } col`}
+                        className='row  justify-between max-w-[120rem] mx-auto bg-secondary/10 dark:bg-[#000]'
+                        style={{ height: height ? height : '100vh' }}
                     &gt;
-                        {search &amp;&amp; (
-                            &lt;div className='items-center hidden gap-4 p-5 md:block dark:border-b dark:border-white/50'&gt;
-                                &lt;div className='flex-1 '&gt;
-                                    &lt;SearchBar /&gt;
+                        {/*Desktop Left Sidebar */}
+                        &lt;div className='text-white sidebar bg-primary'&gt;
+                            &lt;LeftSidebar sidebarLinks={leftSidebarLinks} /&gt;
+                        &lt;/div&gt;
+&nbsp;
+                        {/* Main Content */}
+                        &lt;div
+                            className={`flex-1 ${
+                                showRightSidebar &amp;&amp; 'layoutCalcMaxWidth'
+                            } col`}
+                        &gt;
+                            {search &amp;&amp; (
+                                &lt;div className='items-center hidden gap-4 p-5 md:block dark:border-b dark:border-white/50'&gt;
+                                    &lt;div className='flex-1 '&gt;
+                                        &lt;SearchBar /&gt;
+                                    &lt;/div&gt;
                                 &lt;/div&gt;
+                            )}
+                            &lt;div className='flex-1 block md:hidden'&gt;
+                                {pathname === '/app/profile'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp;</span>
+                                showBelowScreenSize<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;MobileProfileNavbar /&gt;</span>
+                                ) : (
+                                    &lt;UsersLayoutMobileNavbar /&gt;
+                                )}
+                            &lt;/div&gt;
+                            &lt;div
+                                className={`overflow-y-scroll h-full w-full ${
+                                    pathname?.includes('reels') ||
+                                    pathname?.includes('chat')
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ? ''</span></span>
+                                        : ` px-3 mobile:px-5 ${
+                                              hidden ? 'pb-10' : 'pb-20'
+                                          } py-5 md:px-7`
+                                }`}
+                            &gt;
+                                {children as ReactNode}
+                            &lt;/div&gt;
+                            &lt;div className='md:hidden'&gt;
+                                &lt;UsersLayoutMobileFooter /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+&nbsp;
+                        {/* Desktop Right Sidebar */}
+                        {showRightSidebar &amp;&amp; (
+                            &lt;div
+                                className={` ${
+                                    pathname === '/app/chat'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ? 'bg-white text-primary border-l border-primary'</span></span>
+                                        : 'bg-primary text-white'
+                                } sidebar`}
+                            &gt;
+                                &lt;RightSidebar /&gt;
                             &lt;/div&gt;
                         )}
-                        &lt;div className='flex-1 block md:hidden'&gt;
-                            {pathname === '/app/profile'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp;</span>
-                            showBelowScreenSize<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;MobileProfileNavbar /&gt;</span>
-                            ) : (
-                                &lt;UsersLayoutMobileNavbar /&gt;
-                            )}
-                        &lt;/div&gt;
-                        &lt;div
-                            className={`overflow-y-scroll h-full w-full ${
-                                pathname?.includes('reels') ||
-                                pathname?.includes('chat')
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? ''</span></span>
-                                    : ` px-3 mobile:px-5 ${
-                                          hidden ? 'pb-10' : 'pb-20'
-                                      } py-5 md:px-7`
-                            }`}
-                        &gt;
-                            {children as ReactNode}
-                        &lt;/div&gt;
-                        &lt;div className='md:hidden'&gt;
-                            &lt;UsersLayoutMobileFooter /&gt;
-                        &lt;/div&gt;
                     &lt;/div&gt;
-&nbsp;
-                    {/* Desktop Right Sidebar */}
-                    {showRightSidebar &amp;&amp; (
-                        &lt;div
-                            className={` ${
-                                pathname === '/app/chat'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'bg-white text-primary border-l border-primary'</span></span>
-                                    : 'bg-primary text-white'
-                            } sidebar`}
-                        &gt;
-                            &lt;RightSidebar /&gt;
-                        &lt;/div&gt;
-                    )}
-                &lt;/div&gt;
-            )}
+                )}
+            &lt;/div&gt;
             &lt;MobileFloatingButton /&gt;
         &lt;/ThemeProvider&gt;
     )
@@ -424,7 +427,7 @@ export default function AppLayout({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-08T19:21:05.984Z
+                at 2023-05-10T10:06:57.301Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

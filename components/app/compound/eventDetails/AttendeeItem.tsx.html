@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/GetTheApp/WhyDownloadTheApp.tsx</title>
+    <title>Code coverage report for components/app/compound/eventDetails/AttendeeItem.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/GetTheApp</a> WhyDownloadTheApp.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">components/app/compound/eventDetails</a> AttendeeItem.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -137,41 +137,41 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import DownloadAppButtons from './DownloadAppButtons'</span>
+<span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function WhyDownloadTheApp() {</span>
+<span class="cstat-no" title="statement not covered" >export default function AttendeeItem({ user }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex flex-col-reverse md:flex-row space-y-5 md:space-y-0 md:space-x-5 w-[80vw] mx-auto items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                    src='https://res.cloudinary.com/placio/image/upload/v1683019342/user-media-content/splashscreen_ikwqhi.png'</span>
-<span class="cstat-no" title="statement not covered" >                    width={600}</span>
-<span class="cstat-no" title="statement not covered" >                    height={700}</span>
-<span class="cstat-no" title="statement not covered" >                    alt='Phone Mockup'</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-5 md:items-end col md:text-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl uppercase text-primary'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Make money through{' '}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className='border-b-2 border-orange'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            our app</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Refer others to using Placio and earn points for every</span>
-<span class="cstat-no" title="statement not covered" >                        sign up.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        All your referrals have to do is fill in your email</span>
-<span class="cstat-no" title="statement not covered" >                        address in referral field and you automatically get paid</span>
-<span class="cstat-no" title="statement not covered" >                        in points that can be redeemed in payment for</span>
-<span class="cstat-no" title="statement not covered" >                        Placio&amp;apos;s services.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DownloadAppButtons /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >            href={`/${user?.name.first}_${user?.name.last}`}</span>
+<span class="cstat-no" title="statement not covered" >            className={`max-md:min-w-[200px] w-full bg-primary dark:border dark:border-orange rounded-lg py-6 xmd:py-10 px-5 grid gap-4 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Avatar img={`${user?.picture.medium}`} size='xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;h4 className='text-lg text-center text-white xDesktop:text-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {user?.name.first} {user?.name.last}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/h4&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span className='text-base xDesktop:text-lg text-orange'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                Member</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function ModalAttendeeItem({ user }) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >            href={`/${user?.name.first}_${user?.name.last}`}</span>
+<span class="cstat-no" title="statement not covered" >            className={`max-xxmobile:w-full max-mobile:w-[90%] mx-auto max-md:min-w-[180px] w-full bg-primary dark:border dark:border-orange rounded-lg py-6 xmd:py-10 px-5 grid gap-2 mobile:gap-4 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Avatar img={`${user?.picture.medium}`} size='xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;h4 className='mobile:text-lg text-center text-white xDesktop:text-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {user?.name.first} {user?.name.last}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/h4&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span className='text-base xDesktop:text-lg text-orange'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                Member</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -183,14 +183,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-05-10T10:06:57.301Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
     </body>
 </html>
     
