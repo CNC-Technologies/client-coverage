@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/92</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/92</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -155,7 +155,21 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -251,18 +265,19 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import MobileCardImageSlider from '../Sliders/mobileCardImageSlider'</span>
+<span class="cstat-no" title="statement not covered" >import ImageSliderWIthNavigation from '@/components/Sliders/ImageSliderWIthNavigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Truncate from '../app/simple/Truncate'</span>
+<span class="cstat-no" title="statement not covered" >import Truncate from '@/components/app/simple/Truncate'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import CardImageSlider from '@/components/Sliders/cardImageSlider'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    LikeSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >    MapMarkerOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    StarSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span>
+<span class="cstat-no" title="statement not covered" >import { placeDetail, placesCategories } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface Place {</span>
 <span class="cstat-no" title="statement not covered" >    id: Number</span>
@@ -278,8 +293,11 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[13rem] mobile:h-[16rem] xmd:h-[15rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`/app/places/categories?name=${place?.category}`}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center justify-center px-2 py-1 bg-white rounded-lg shadow-lg text-primary dark:bg-darkGrey dark:text-primary'</span>
+<span class="cstat-no" title="statement not covered" >                        href={`${placesCategories}?name=${place?.category.replaceAll(</span>
+<span class="cstat-no" title="statement not covered" >                            /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >                            '_',</span>
+<span class="cstat-no" title="statement not covered" >                        )}`}</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-white text-primary dark:bg-darkGrey dark:text-primary'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='font-medium'&gt;{place?.category}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
@@ -299,13 +317,13 @@
 <span class="cstat-no" title="statement not covered" >                    height={100}</span>
 <span class="cstat-no" title="statement not covered" >                    className='block object-cover object-center w-full h-full max-laptop:hidden rounded-t-xl posterImage'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;MobileCardImageSlider</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ImageSliderWIthNavigation</span>
 <span class="cstat-no" title="statement not covered" >                    images={place?.images}</span>
 <span class="cstat-no" title="statement not covered" >                    extraClass={'rounded-t-xl'}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full px-3 py-2 text-white h-fit rounded-b-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full px-3 py-3 text-white h-fit rounded-b-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-between gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Truncate outerClass='font-medium text-base'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {place?.name}</span>
@@ -329,7 +347,10 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`/places/${place?.name}`}</span>
+<span class="cstat-no" title="statement not covered" >                        href={`${placeDetail}${place?.name.replaceAll(</span>
+<span class="cstat-no" title="statement not covered" >                            /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >                            '_',</span>
+<span class="cstat-no" title="statement not covered" >                        )}`}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center px-3 py-1 rounded-lg white-fill'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        See details</span>
@@ -346,7 +367,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-11T14:57:48.416Z
+                at 2023-05-11T15:07:59.367Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
