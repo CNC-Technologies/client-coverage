@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.63% </span>
+                <span class="strong">95.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>115/119</span>
+                <span class='fraction'>117/122</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.42% </span>
+                <span class="strong">63.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/19</span>
+                <span class='fraction'>12/19</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.63% </span>
+                <span class="strong">95.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>115/119</span>
+                <span class='fraction'>117/122</span>
             </div>
         
             
@@ -182,7 +182,10 @@
 <a name='L117'></a><a href='#L117'>117</a>
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -208,7 +211,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -250,6 +252,10 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -284,15 +290,15 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -323,14 +329,12 @@ import MobileFloatingButton from '@/components/app/simple/MobileFloatingButton'
 import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'
 &nbsp;
 import SEOHead from '@/components/SEOHead'
-import { leftSidebarLinks as sidebarLinks } from '@/constants/app/links'
 import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'
+import useLayoutConfig from '@/hooks/useLayoutConfig'
 &nbsp;
 export default function AppLayout({
     children,
-    leftSidebarLinks = sidebarLinks,
-    showRightSidebar = true,
-    search = true,
+    showRightSidebar,
     title = appTitle,
     description = appDescription,
 }: AppLayoutProps) {
@@ -338,6 +342,7 @@ export default function AppLayout({
     const router = useRouter()
     const { pathname } = router
     const [showBelowScreenSize, setShowBelowScreenSize] = useState(false)
+    const layoutConfig = useLayoutConfig()
     useEffect(() =&gt; {
         if (width &lt;= 830) setShowBelowScreenSize(true)
         else setShowBelowScreenSize(false)
@@ -360,16 +365,20 @@ export default function AppLayout({
                     &gt;
                         {/*Desktop Left Sidebar */}
                         &lt;div className='text-white sidebar bg-primary'&gt;
-                            &lt;LeftSidebar sidebarLinks={leftSidebarLinks} /&gt;
+                            &lt;LeftSidebar
+                                sidebarLinks={layoutConfig.leftSidebarLinks}
+                            /&gt;
                         &lt;/div&gt;
 &nbsp;
                         {/* Main Content */}
                         &lt;div
                             className={`flex-1 ${
-                                showRightSidebar &amp;&amp; 'layoutCalcMaxWidth'
+                                (showRightSidebar === undefined
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? layoutConfig.showRightSidebar</span></span>
+                                    : showRightSidebar) &amp;&amp; 'layoutCalcMaxWidth'
                             } col`}
                         &gt;
-                            {search &amp;&amp; (
+                            {layoutConfig.search &amp;&amp; (
                                 &lt;div className='items-center hidden gap-4 p-5 md:block dark:border-b dark:border-white/50'&gt;
                                     &lt;div className='flex-1 '&gt;
                                         &lt;SearchBar /&gt;
@@ -402,7 +411,7 @@ export default function AppLayout({
                         &lt;/div&gt;
 &nbsp;
                         {/* Desktop Right Sidebar */}
-                        {showRightSidebar &amp;&amp; (
+                        {layoutConfig.showRightSidebar &amp;&amp; (
                             &lt;div
                                 className={` ${
                                     pathname === '/app/chat'
@@ -427,7 +436,7 @@ export default function AppLayout({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-12T14:19:50.162Z
+                at 2023-05-12T14:20:07.693Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
