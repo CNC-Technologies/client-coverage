@@ -247,7 +247,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Avatar from '../simple/Avatar'</span>
+<span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >// import InputField from '@/components/Forms/inputWithoutLabel';</span>
@@ -260,12 +260,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SinglePost() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-3  col border-b border-grey pb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='pb-3 space-y-3 border-b col border-grey'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* Top row */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='items-center space-x-3 row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Avatar size='md' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex gap-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='font-semibold'&gt;Ayo_4_life&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm'&gt;.Apr 3&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -309,26 +309,26 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Second row */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='justify-between row items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='space-x-3 row items-center text-primary'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className=' flex items-center gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='items-center justify-between row'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='items-center space-x-3 row text-primary'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-2 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;HeartOutlineIcon className='w-6 h-6' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p className='font-medium text-sm'&gt;1,005&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm font-medium'&gt;1,005&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;ChatOutlineIcon className='w-5 h-5' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p className='font-medium text-sm'&gt;15&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm font-medium'&gt;15&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {/* &lt;IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;ForwardOutlineIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;/IconButton&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;button className='h-10 flex gap-1 items-center rounded-3xl px-4 text-center primary-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;button className='flex items-center h-10 gap-1 px-4 text-center rounded-3xl primary-outline'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    Share</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ForwardOutlineIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/button&gt;</span>
@@ -343,7 +343,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-11T15:07:59.367Z
+                at 2023-05-12T14:19:29.255Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

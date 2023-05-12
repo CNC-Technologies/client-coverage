@@ -262,9 +262,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SmallButton from '../Buttons/smallButtons'</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SectionHeading from './sectionHeading'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import SmallButton from '@/components/Buttons/smallButtons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
 <span class="cstat-no" title="statement not covered" >export default function BusinessesSupport() {</span>
@@ -284,7 +284,7 @@
 <span class="cstat-no" title="statement not covered" >        8000,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div id='homepageSection' className='h-screen  relative '&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div id='homepageSection' className='relative h-screen '&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                    src={images[activeIndex as number].src}</span>
@@ -293,7 +293,7 @@
 <span class="cstat-no" title="statement not covered" >                    quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                    width={100}</span>
 <span class="cstat-no" title="statement not covered" >                    height={100}</span>
-<span class="cstat-no" title="statement not covered" >                    className='w-full h-full object-cover transition-opacity duration-1000 opacity-100 object-center'</span>
+<span class="cstat-no" title="statement not covered" >                    className='object-cover object-center w-full h-full transition-opacity duration-1000 opacity-100'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {images.map((image, index) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
@@ -309,7 +309,7 @@
 <span class="cstat-no" title="statement not covered" >                            quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                            width={100}</span>
 <span class="cstat-no" title="statement not covered" >                            height={100}</span>
-<span class="cstat-no" title="statement not covered" >                            className='w-full h-full object-cover object-center'</span>
+<span class="cstat-no" title="statement not covered" >                            className='object-cover object-center w-full h-full'</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
@@ -320,7 +320,7 @@
 <span class="cstat-no" title="statement not covered" >                            : 'right-32 max-desktop:right-16 text-right max-md:left-16 max-xmd:left-10 max-mobile:left-6'</span>
 <span class="cstat-no" title="statement not covered" >                    } -translate-y-1/2 z-10`}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className=' text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-white '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SectionHeading</span>
 <span class="cstat-no" title="statement not covered" >                            heading={'Businesses Support'}</span>
 <span class="cstat-no" title="statement not covered" >                            subtext={</span>
@@ -364,7 +364,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-11T15:07:59.367Z
+                at 2023-05-12T14:19:29.255Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
