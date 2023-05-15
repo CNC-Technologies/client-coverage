@@ -137,42 +137,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client';</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use client'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SingleReelCard from '@/components/Reels/singleReelCard';</span>
+<span class="cstat-no" title="statement not covered" >import SingleReelCard from '@/components/Reels/singleReelCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ReelsList() {</span>
-<span class="cstat-no" title="statement not covered" >  const [isMute, setIsMute] = useState(false);</span>
+<span class="cstat-no" title="statement not covered" >    const [isMute, setIsMute] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const handleMuting = (e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    e.stopPropagation();</span>
-<span class="cstat-no" title="statement not covered" >    setIsMute(!isMute);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >    const handleMuting = (e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >        setIsMute(!isMute)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='bg-black'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='mt-3 w-full overflow-hidden max-width'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='overflow-x-auto row no-wrap space-x-5 md:space-x-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {[...Array(8)].map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" >              &lt;div key={index} className=''&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='page h-[400px] w-[200px] py-[3vh]  flex flex-col justify-center items-center px-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                  &lt;SingleReelCard</span>
-<span class="cstat-no" title="statement not covered" >                    mini</span>
-<span class="cstat-no" title="statement not covered" >                    videoIndex={index}</span>
-<span class="cstat-no" title="statement not covered" >                    isMute={isMute}</span>
-<span class="cstat-no" title="statement not covered" >                    handleMuting={handleMuting}</span>
-<span class="cstat-no" title="statement not covered" >                  /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='bg-black'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-3 w-full overflow-hidden max-width'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='overflow-x-auto row no-wrap space-x-5 md:space-x-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {[...Array(8)].map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='page h-[400px] w-[200px] py-[3vh]  flex flex-col justify-center items-center px-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;SingleReelCard</span>
+<span class="cstat-no" title="statement not covered" >                                        mini</span>
+<span class="cstat-no" title="statement not covered" >                                        videoIndex={index}</span>
+<span class="cstat-no" title="statement not covered" >                                        isMute={isMute}</span>
+<span class="cstat-no" title="statement not covered" >                                        handleMuting={handleMuting}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            );</span>
-<span class="cstat-no" title="statement not covered" >          })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -181,7 +181,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-12T16:11:56.262Z
+                at 2023-05-15T12:12:59.973Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
