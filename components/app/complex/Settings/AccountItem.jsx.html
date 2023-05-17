@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/111</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/111</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -173,8 +173,7 @@
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -284,15 +283,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import Image from 'next/image';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SmallButton from '@/components/Buttons/smallButtons'</span>
 <span class="cstat-no" title="statement not covered" >import CheckBox from '@/components/FormComponents/checkbox'</span>
-<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/inputWithoutLabel'</span>
+<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AccountItem() {</span>
 <span class="cstat-no" title="statement not covered" >    const inputFields = [</span>
@@ -304,10 +301,6 @@
 <span class="cstat-no" title="statement not covered" >            label: 'Username',</span>
 <span class="cstat-no" title="statement not covered" >            placeholder: 'JohnDoe123',</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        // {</span>
-<span class="cstat-no" title="statement not covered" >        //   label: 'Website',</span>
-<span class="cstat-no" title="statement not covered" >        //   placeholder: 'www.example.com',</span>
-<span class="cstat-no" title="statement not covered" >        // },</span>
 <span class="cstat-no" title="statement not covered" >        {</span>
 <span class="cstat-no" title="statement not covered" >            label: 'Bio',</span>
 <span class="cstat-no" title="statement not covered" >            placeholder: 'Description about your account',</span>
@@ -325,72 +318,76 @@
 <span class="cstat-no" title="statement not covered" >            placeholder: 'Male',</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='max-w-[55rem] mx-auto p-5 border border-grey rounded-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex flex-col items-center justify-center gap-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Avatar size='2xl' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        className='font-bold text-center text-primary/70'</span>
-<span class="cstat-no" title="statement not covered" >                        href={'app/settings/account/change-password'}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Change Password</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className=' mx-auto p-5 bg-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='max-w-[55rem] mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col items-center justify-center gap-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Avatar size='2xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                            className='font-bold text-center text-primary/70'</span>
+<span class="cstat-no" title="statement not covered" >                            href={'/app/settings/account/change-password'}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Change Password</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {inputFields.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                return (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div key={index} className='mt-5 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex flex-col gap-3 placeholder:text-grey'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='text-base font-semibold '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {item.label}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {item.label !== 'Bio' ? (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                    name={'name'}</span>
-<span class="cstat-no" title="statement not covered" >                                    placeholder={item.placeholder}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;textarea</span>
-<span class="cstat-no" title="statement not covered" >                                    rows='7'</span>
-<span class="cstat-no" title="statement not covered" >                                    name={item.label}</span>
-<span class="cstat-no" title="statement not covered" >                                    placeholder={item.placeholder}</span>
-<span class="cstat-no" title="statement not covered" >                                    className='flex-1 px-4 py-2 text-base bg-white border rounded-lg shadow-sm h-44 placeholder-primary text-primary max-lgMobile:text-sm focus:outline-none'</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                {inputFields.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div key={index} className='mt-5 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex flex-col gap-2 placeholder:text-grey'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='text-base font-semibold '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.label}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.label !== 'Bio' ? (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                                        name={'name'}</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder={item.placeholder}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                                        type='textarea'</span>
+<span class="cstat-no" title="statement not covered" >                                        rows='7'</span>
+<span class="cstat-no" title="statement not covered" >                                        name={item.label}</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder={item.placeholder}</span>
+<span class="cstat-no" title="statement not covered" >                                        className='flex-1 px-4 py-2 text-base bg-white border rounded-lg shadow-sm h-44 placeholder-primary text-primary max-lgMobile:text-sm focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex flex-col gap-3 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='text-base font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Account Suggestions</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;CheckBox</span>
+<span class="cstat-no" title="statement not covered" >                                label={</span>
+<span class="cstat-no" title="statement not covered" >                                    'Choose whether people can see similar account suggestions on your profile, and whether your account can be suggested on other profiles.'</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            })}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col gap-3 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-base font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Account Suggestions</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;CheckBox</span>
-<span class="cstat-no" title="statement not covered" >                            label={</span>
-<span class="cstat-no" title="statement not covered" >                                'Choose whether people can see similar account suggestions on your profile, and whether your account can be suggested on other profiles.'</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-6 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SmallButton</span>
-<span class="cstat-no" title="statement not covered" >                        bgColor={'primary'}</span>
-<span class="cstat-no" title="statement not covered" >                        name={'Submit'}</span>
-<span class="cstat-no" title="statement not covered" >                        textColor={'white'}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-6 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center justify-center w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SmallButton</span>
+<span class="cstat-no" title="statement not covered" >                            bgColor={'primary'}</span>
+<span class="cstat-no" title="statement not covered" >                            name={'Submit'}</span>
+<span class="cstat-no" title="statement not covered" >                            textColor={'white'}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {/* &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                        className='text-sm font-bold text-center text-orange md:text-base'</span>
 <span class="cstat-no" title="statement not covered" >                        href={'#'}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Temporarily deactivate my account</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -403,7 +400,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

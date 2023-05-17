@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -126,7 +126,25 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -194,20 +212,29 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { searchForEvent } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import { useRef } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function SearchForEvents() {</span>
+<span class="cstat-no" title="statement not covered" >import { searchForEvent } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function SearchForEvents({ setActiveClass }) {</span>
+<span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = 'theme-green-inv'</span>
+<span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
+<span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
-<span class="cstat-no" title="statement not covered" >            className='h-fit max-md:py-12 md:h-screen flex flex-col  justify-center  bg-primary'</span>
+<span class="cstat-no" title="statement not covered" >            className={`h-fit max-md:py-12 md:h-screen flex flex-col justify-center bg-inherit`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-center  w-full max-width px-6 mobile:px-10 md:px-14 flex gap-16 md:gap-6 desktop:gap-12 items-center max-md:flex-col-reverse'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex md:hidden justify-center '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; router.push('/explore')}</span>
-<span class="cstat-no" title="statement not covered" >                        className={`bg-orange text-primary py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`inv text-primary py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Explore</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
@@ -230,10 +257,10 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold text-orange'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Search for an event</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='w-full italic text-white/50 desktop:w-[80%] lgMobile:px-6 mt-4 mx-auto text-center text-sm xmobile:text-base laptop:text-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='w-full italic desktop:w-[80%] lgMobile:px-6 mt-4 mx-auto text-center text-sm xmobile:text-base laptop:text-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Where would you like to go to next? A bar, the museum,</span>
 <span class="cstat-no" title="statement not covered" >                        an hotel, a restaurant.....how about you try “a</span>
 <span class="cstat-no" title="statement not covered" >                        breakfast spot”.....and see what you’ll find.</span>
@@ -242,7 +269,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='hidden md:flex justify-center mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; router.push('/explore')}</span>
-<span class="cstat-no" title="statement not covered" >                            className={`bg-orange text-primary py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`inv text-primary py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Explore</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
@@ -259,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

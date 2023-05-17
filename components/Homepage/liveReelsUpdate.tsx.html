@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/62</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/62</span>
             </div>
         
             
@@ -114,7 +114,29 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -168,12 +190,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { homepageReelSection } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import { useRef } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const LiveReelsUpdate = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >import { homepageReelSection } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const LiveReelsUpdate = ({ setActiveClass }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = 'theme-purple-inv'</span>
+<span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
+<span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
 <span class="cstat-no" title="statement not covered" >            className='flex h-fit md:h-screen max-md:flex-col'</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
@@ -189,7 +220,9 @@
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-center flex-1 py-12  max-md:h-1/2 text-dark bg-lightPurple text-purpleBlood'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`flex items-center justify-center flex-1 py-12  max-md:h-1/2 text-dark bg-inherit`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col px-16 text-center max-laptop:px-10'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Live Reels update</span>
@@ -223,7 +256,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/103</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/103</span>
             </div>
         
             
@@ -157,7 +157,25 @@
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -253,6 +271,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRef } from 'react'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import useHandleColorChange from '../../hooks/useHandleColorChange'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    CopyrightOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    FacebookSolidIcon,</span>
@@ -262,7 +284,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import footerLinks from '@/constants/footer/footer'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function Footer() {</span>
+<span class="cstat-no" title="statement not covered" >export default function Footer({ activeClass, setActiveClass }) {</span>
+<span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = 'theme-charcoal'</span>
+<span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
+<span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
+<span class="cstat-no" title="statement not covered" >    </span>
 <span class="cstat-no" title="statement not covered" >    const socials = [</span>
 <span class="cstat-no" title="statement not covered" >        {</span>
 <span class="cstat-no" title="statement not covered" >            icon: &lt;FacebookSolidIcon className='w-8 h-8 text-lightbrown' /&gt;,</span>
@@ -276,7 +303,7 @@
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='relative pt-16 pb-8 text-white max-xmd:pt-12 max-xmd:py-6 bg-neutral-700 dark:bg-primary'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div ref={containerRef} className={`relative pt-16 pb-8 text-white max-xmd:pt-12 max-xmd:py-6 ${activeClass}`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;footer className='max-w-screen-xl extraLarge:max-w-[110rem] mx-auto pt-4 max-mobile:py-0 pb-8 xl:pt-8'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='w-full px-4 sm:px-6 md:px-8'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ul className='flex flex-wrap justify-between pb-8 text-lg font-light max-laptop:gap-10 max-xmd:gap-x-5 max-mobile:gap-y-8 max-laptop:justify-right max-xmd:justify-between'&gt;</span>
@@ -352,7 +379,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

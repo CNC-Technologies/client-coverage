@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/65</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/65</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -128,7 +128,14 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -193,12 +200,27 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import UsersPictures from './usersPictures'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRef } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import UsersPictures from './usersPictures'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import TestimonialCard from './testimonialCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
 <span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
-<span class="cstat-no" title="statement not covered" >export default function Testimonials() {</span>
+<span class="cstat-no" title="statement not covered" >export default function Testimonials({ setActiveClass }) {</span>
+<span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = 'theme-charcoal-inv'</span>
+<span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
+<span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const images = [</span>
 <span class="cstat-no" title="statement not covered" >        'https://res.cloudinary.com/placio/image/upload/v1682977948/user-media-content/homepage/user1_izikqx.svg',</span>
 <span class="cstat-no" title="statement not covered" >        'https://res.cloudinary.com/placio/image/upload/v1682977949/user-media-content/homepage/user2_jyjq3q.svg',</span>
@@ -206,9 +228,7 @@
 <span class="cstat-no" title="statement not covered" >        'https://res.cloudinary.com/placio/image/upload/v1682977951/user-media-content/homepage/user4_wiylnn.svg',</span>
 <span class="cstat-no" title="statement not covered" >        'https://res.cloudinary.com/placio/image/upload/v1682977950/user-media-content/homepage/user5_krig0m.svg',</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [activeIndex] = useImageCarousel(images, 8000)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const imageSrc = (index: number) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return images[</span>
 <span class="cstat-no" title="statement not covered" >            ((activeIndex as number) + images.length - (2 - index)) %</span>
@@ -218,15 +238,16 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
-<span class="cstat-no" title="statement not covered" >            className='h-fit max-md:py-12 md:h-screen w-full flex flex-col justify-center bg-primary dark:bg-primary/70'</span>
+<span class="cstat-no" title="statement not covered" >            className='h-fit max-md:py-12 md:h-screen w-full flex flex-col justify-center bg-inherit'</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* &lt;div className='max-width '&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center text-white  pt-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center text-inherit  pt-10'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;h2</span>
-<span class="cstat-no" title="statement not covered" >                    className={`underlineHeader  mb-3 text-2xl xmobile:text-3xl mobile:text-4xl md:text-5xl  font-semibold after:bg-white dark:after:bg-white/70`}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`underlineHeader col mb-3 text-2xl xmobile:text-3xl mobile:text-4xl md:text-5xl font-semibold after:bg-inherit dark:after:bg-white/70`}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    What users are saying</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;What users are saying&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/h2&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;p className='mt-4 text-base mobile:text-xl  max-md:text-base max-md:mt-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    See testimoinies from users on Placio</span>
@@ -265,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

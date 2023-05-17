@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -130,7 +130,25 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,19 +217,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/navigation'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRef } from 'react'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import DesktopCategories from '@/components/Homepage/categories/desktopCategories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import MobileCategories from '@/components/Homepage/categories/mobileCategories'</span>
+<span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const CategoriesForYou = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >const CategoriesForYou = ({ setActiveClass }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = 'theme-maroon-inv'</span>
+<span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
+<span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
+<span class="cstat-no" title="statement not covered" >    </span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
-<span class="cstat-no" title="statement not covered" >            className='h-screen max-[980px]:h-fit max-[980px]:py-6 flex flex-col justify-center  bg-faintOrange dark:bg-grey'</span>
+<span class="cstat-no" title="statement not covered" >            className='h-screen max-[980px]:h-fit max-[980px]:py-6 flex flex-col justify-center  bg-inherit text-inherit'</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-center w-full max-width px-6 mobile:px-10 md:px-14  flex gap-8 laptop:gap-4 desktop:gap-12 items-center max-[980px]:flex-col '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col text-deepMaroon flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col flex-1 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Categories for you{' '}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h3&gt;</span>
@@ -224,7 +251,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='md:flex hidden justify-center mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                            type='submit'</span>
-<span class="cstat-no" title="statement not covered" >                            className={`bg-deepMaroon text-faintOrange py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`inv py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                router.push('/explore?search=a_breakfast_spot')</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
@@ -271,7 +298,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-16T19:37:43.369Z
+                at 2023-05-17T18:54:54.196Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
