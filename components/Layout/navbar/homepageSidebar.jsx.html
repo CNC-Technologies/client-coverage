@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/65</span>
+                <span class='fraction'>49/49</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>65/65</span>
+                <span class='fraction'>49/49</span>
             </div>
         
             
@@ -112,23 +112,8 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -163,23 +148,6 @@
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -196,7 +164,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 &nbsp;
-import SmallButton from '@/components/Buttons/smallButtons';
+&nbsp;
+import HomeNavButton from '../../FormComponents/HomeNavButton';
 &nbsp;
 import homepageSideBarLinks from '@/constants/sidebar/homepageSidebarLinks';
 &nbsp;
@@ -211,7 +180,7 @@ export default function HomepageSideBar({ showSidebar }) {
     &gt;
       &lt;div
         onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.stopPropagation()}</span>
-        className={`  h-full bg-white dark:bg-primary pb-[7rem] overflow-auto scroll-auto dark:border-t-grey dark:border-t shadow-lg  w-full  `}
+        className={`  h-full bg-white text-inherit dark:bg-primary pb-[7rem] overflow-auto scroll-auto dark:border-t-grey dark:border-t shadow-lg  w-full  `}
       &gt;
         &lt;nav className='flex flex-col justify-between h-full '&gt;
           &lt;div&gt;
@@ -231,28 +200,11 @@ export default function HomepageSideBar({ showSidebar }) {
             })}
           &lt;/div&gt;
 &nbsp;
-          &lt;div className='grid w-full gap-4 px-5 '&gt;
-            &lt;SmallButton
-              name={'Sign In'}
-              bgColor={'transparent'}
-              textColor={'primary'}
-              borderColor={'primary'}
-              extraClasses={
-                'w-full dark:text-primary dark:bg-transparent dark:border-white '
-              }
-              action={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signin')}</span>
-            /&gt;
-&nbsp;
-            &lt;SmallButton
-              name={'Sign Up'}
-              bgColor={'primary'}
-              textColor={'white'}
-              extraClasses={
-                'w-full dark:text-primary dark:bg-white dark:border-none'
-              }
-              action={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signup')}</span>
-            /&gt;
+          &lt;div className='col px-4 space-y-5'&gt;
+            &lt;HomeNavButton onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signin')} </span>className='inv'&gt;Sign in&lt;/HomeNavButton&gt;
+            &lt;HomeNavButton onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signup')} </span>className='inv'&gt;Sign up&lt;/HomeNavButton&gt;
           &lt;/div&gt;
+&nbsp;
         &lt;/nav&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -265,7 +217,7 @@ export default function HomepageSideBar({ showSidebar }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-18T20:37:09.392Z
+                at 2023-05-18T20:38:19.847Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

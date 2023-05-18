@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/90</span>
+                <span class='fraction'>0/101</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/90</span>
+                <span class='fraction'>0/101</span>
             </div>
         
             
@@ -153,7 +153,29 @@
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -248,12 +270,16 @@
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >// import InputField from '@/components/Forms/inputWithoutLabel';</span>
+<span class="cstat-no" title="statement not covered" >import ShareButton from '@/components/app/simple/ShareButton'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    ChatOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ForwardOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    HeartOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ThreeDotsIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SinglePost() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -325,10 +351,17 @@
 <span class="cstat-no" title="statement not covered" >          &lt;/IconButton&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;button className='flex items-center h-10 gap-1 px-4 text-center rounded-3xl primary-outline'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Share</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ForwardOutlineIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ShareButton </span>
+<span class="cstat-no" title="statement not covered" >                    content={{</span>
+<span class="cstat-no" title="statement not covered" >                        url: 'https://google.com',</span>
+<span class="cstat-no" title="statement not covered" >                        text: 'Shogo logo bangoshe',</span>
+<span class="cstat-no" title="statement not covered" >                    }}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button className='flex items-center h-10 gap-1 px-4 text-center rounded-3xl primary-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Share</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ForwardOutlineIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/ShareButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -340,7 +373,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-18T20:37:09.392Z
+                at 2023-05-18T20:38:19.847Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
