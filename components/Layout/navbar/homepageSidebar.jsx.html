@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>49/49</span>
+                <span class='fraction'>57/57</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>49/49</span>
+                <span class='fraction'>57/57</span>
             </div>
         
             
@@ -112,7 +112,15 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -120,7 +128,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -161,54 +168,71 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
+import { useRouter } from 'next/router'
 &nbsp;
+import HomeNavButton from '../../FormComponents/HomeNavButton'
 &nbsp;
-import HomeNavButton from '../../FormComponents/HomeNavButton';
-&nbsp;
-import homepageSideBarLinks from '@/constants/sidebar/homepageSidebarLinks';
+import homepageSideBarLinks from '@/constants/sidebar/homepageSidebarLinks'
 &nbsp;
 export default function HomepageSideBar({ showSidebar }) {
-  const router = useRouter();
-  return (
-    &lt;div
-      role='dialog'
-      className={`${
-        showSidebar ? 'translate-x-0 ' : 'translate-x-full'
-      } duration-1000 transition-all ease-in-out h-full z-30 block smLaptop:hidden fixed top-20 right-0 w-full  `}
-    &gt;
-      &lt;div
-        onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.stopPropagation()}</span>
-        className={`  h-full bg-white text-inherit dark:bg-primary pb-[7rem] overflow-auto scroll-auto dark:border-t-grey dark:border-t shadow-lg  w-full  `}
-      &gt;
-        &lt;nav className='flex flex-col justify-between h-full '&gt;
-          &lt;div&gt;
-            {homepageSideBarLinks.map((item, index) =&gt; {
-              return (
-                &lt;Link
-                  key={index}
-                  className='flex items-center justify-start w-full px-5 py-3 my-2 font-thin capitalize text-primary dark:text-white '
-                  href={item.url}
-                &gt;
-                  {item.icon}
-                  &lt;span className='mx-4 text-base font-normal'&gt;
-                    {item.text}
-                  &lt;/span&gt;
-                &lt;/Link&gt;
-              );
-            })}
-          &lt;/div&gt;
+    const router = useRouter()
+    return (
+        &lt;div
+            role='dialog'
+            className={`${
+                showSidebar ? 'translate-x-0 ' : 'translate-x-full'
+            } duration-1000 transition-all ease-in-out h-full z-30 block smLaptop:hidden fixed top-20 right-0 w-full  `}
+        &gt;
+            &lt;div
+                onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.stopPropagation()}</span>
+                className={`  h-full bg-white text-inherit dark:bg-primary pb-[7rem] overflow-auto scroll-auto dark:border-t-grey dark:border-t shadow-lg  w-full  `}
+            &gt;
+                &lt;nav className='flex flex-col justify-between h-full '&gt;
+                    &lt;div&gt;
+                        {homepageSideBarLinks.map((item, index) =&gt; {
+                            return (
+                                &lt;Link
+                                    key={index}
+                                    className='flex items-center justify-start w-full px-5 py-3 my-2 font-thin capitalize text-primary dark:text-white '
+                                    href={item.url}
+                                &gt;
+                                    {item.icon}
+                                    &lt;span className='mx-4 text-base font-normal'&gt;
+                                        {item.text}
+                                    &lt;/span&gt;
+                                &lt;/Link&gt;
+                            )
+                        })}
+                    &lt;/div&gt;
 &nbsp;
-          &lt;div className='col px-4 space-y-5'&gt;
-            &lt;HomeNavButton onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signin')} </span>className='inv'&gt;Sign in&lt;/HomeNavButton&gt;
-            &lt;HomeNavButton onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signup')} </span>className='inv'&gt;Sign up&lt;/HomeNavButton&gt;
-          &lt;/div&gt;
-&nbsp;
-        &lt;/nav&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  );
+                    &lt;div className='col px-4 space-y-5'&gt;
+                        &lt;HomeNavButton
+                            onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signin')}</span>
+                            className='inv'
+                        &gt;
+                            Sign in
+                        &lt;/HomeNavButton&gt;
+                        &lt;HomeNavButton
+                            onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/auth/signup')}</span>
+                            className='inv'
+                        &gt;
+                            Sign up
+                        &lt;/HomeNavButton&gt;
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -217,7 +241,7 @@ export default function HomepageSideBar({ showSidebar }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-18T20:38:19.847Z
+                at 2023-05-19T11:06:37.522Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

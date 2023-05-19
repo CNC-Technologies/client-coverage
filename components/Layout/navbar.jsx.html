@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">89.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/70</span>
+                <span class='fraction'>62/69</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">89.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>65/70</span>
+                <span class='fraction'>62/69</span>
             </div>
         
             
@@ -132,8 +132,7 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -143,8 +142,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -169,15 +166,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -202,76 +201,74 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { usePathname } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { usePathname } from 'next/navigation'
+import { useEffect, useMemo, useState } from 'react'
 &nbsp;
-import HomepageSideBar from './navbar/homepageSidebar';
+import HomepageSideBar from './navbar/homepageSidebar'
 &nbsp;
-import HomepageMobileNav from './navbar/MobileNavigation';
+import HomepageMobileNav from './navbar/MobileNavigation'
 &nbsp;
-import HomepageDesktopNav from './navbar/DesktopNavigation';
-&nbsp;
+import HomepageDesktopNav from './navbar/DesktopNavigation'
 &nbsp;
 export default function Navbar({ activeClass }) {
-  
-  const pathname = usePathname(); 
+    const pathname = usePathname()
 &nbsp;
-  const [scrollPastSection, setScrollPastSection] = useState(false);
+    const [scrollPastSection, setScrollPastSection] = useState(false)
 &nbsp;
-  const defaultColors = useMemo(
-    () =&gt; ({
-      name: 'Search for an event',
-      background: 'primary',
-      secondary: 'white',
-      logo: 'white',
-      text: 'white',
-      signUpText: 'primary',
-      hamburger: 'white',
-    }),
-    [],
-  );
+    const defaultColors = useMemo(
+        () =&gt; ({
+            name: 'Search for an event',
+            background: 'primary',
+            secondary: 'white',
+            logo: 'white',
+            text: 'white',
+            signUpText: 'primary',
+            hamburger: 'white',
+        }),
+        [],
+    )
 &nbsp;
-  useEffect(() =&gt; {
-    const handleScroll = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (pathname === '/') {</span>
-<span class="cstat-no" title="statement not covered" >        const aboutSection = document.getElementById('exploreText');</span>
-<span class="cstat-no" title="statement not covered" >        const isPastSection = aboutSection.offsetTop - 200 &lt;= window.scrollY;</span>
-<span class="cstat-no" title="statement not covered" >        setScrollPastSection(isPastSection);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-    };
+    useEffect(() =&gt; {
+        const handleScroll = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (pathname === '/') {</span>
+<span class="cstat-no" title="statement not covered" >                const aboutSection = document.getElementById('exploreText')</span>
+<span class="cstat-no" title="statement not covered" >                const isPastSection =</span>
+<span class="cstat-no" title="statement not covered" >                    aboutSection.offsetTop - 200 &lt;= window.scrollY</span>
+<span class="cstat-no" title="statement not covered" >                setScrollPastSection(isPastSection)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
-    window.addEventListener('scroll', handleScroll);
-    return () =&gt; window.removeEventListener('scroll', handleScroll);
-  }, [pathname, defaultColors]);
+        window.addEventListener('scroll', handleScroll)
+        return () =&gt; window.removeEventListener('scroll', handleScroll)
+    }, [pathname, defaultColors])
 &nbsp;
-  // Mobile view sidebar
-  const [showSidebar, setShowSidebar] = useState(false);
-  const handleSidebarToggle = () =&gt; {
-    setShowSidebar(!showSidebar);
-  };
+    // Mobile view sidebar
+    const [showSidebar, setShowSidebar] = useState(false)
+    const handleSidebarToggle = () =&gt; {
+        setShowSidebar(!showSidebar)
+    }
 &nbsp;
-  return (
-    &lt;&gt;
-      &lt;div className={activeClass}&gt;
-        {/* Desktop View  */}
-        &lt;HomepageDesktopNav
-          scrollPastSection={scrollPastSection}
-          pathname={pathname}
-        /&gt;
+    return (
+        &lt;&gt;
+            &lt;div className={activeClass}&gt;
+                {/* Desktop View  */}
+                &lt;HomepageDesktopNav
+                    scrollPastSection={scrollPastSection}
+                    pathname={pathname}
+                /&gt;
 &nbsp;
-        {/* Mobile View  */}
-        &lt;HomepageMobileNav
-          scrollPastSection={scrollPastSection}
-          handleSidebarToggle={handleSidebarToggle}
-          pathname={pathname}
-          showSidebar={showSidebar}
-        /&gt;
+                {/* Mobile View  */}
+                &lt;HomepageMobileNav
+                    scrollPastSection={scrollPastSection}
+                    handleSidebarToggle={handleSidebarToggle}
+                    pathname={pathname}
+                    showSidebar={showSidebar}
+                /&gt;
 &nbsp;
-        &lt;HomepageSideBar showSidebar={showSidebar} /&gt;
-      &lt;/div&gt;
-    &lt;/&gt;
-  );
+                &lt;HomepageSideBar showSidebar={showSidebar} /&gt;
+            &lt;/div&gt;
+        &lt;/&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -280,7 +277,7 @@ export default function Navbar({ activeClass }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-18T20:38:19.847Z
+                at 2023-05-19T11:06:37.522Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
