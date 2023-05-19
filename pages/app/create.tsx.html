@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.61% </span>
+                <span class="strong">78.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>66/78</span>
+                <span class='fraction'>60/76</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.61% </span>
+                <span class="strong">78.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>66/78</span>
+                <span class='fraction'>60/76</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -139,9 +139,7 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -197,11 +195,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -212,8 +205,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -274,25 +270,23 @@ export default function CreatePage() {
                     })}
                 &lt;/div&gt;
 &nbsp;
-                &lt;ParentModal
-                    isOpen={create}
-                    handleClose={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/app/create')}</span>
-                    extraClasses={undefined}
-                &gt;
-                    {categories.map((item, idx) =&gt; {
-                        if (item.name === create) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                    data-testid={`dialog-child-${item.name}`}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+                {categories.map((item, idx) =&gt; {
+                    if (item.name === create) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;ParentModal</span>
+<span class="cstat-no" title="statement not covered" >                                isOpen={create}</span>
+<span class="cstat-no" title="statement not covered" >                                handleClose={<span class="fstat-no" title="function not covered" >() =&gt; router.push('/app/create')}</span></span>
+<span class="cstat-no" title="statement not covered" >                                extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div data-testid={`dialog-child-${item.name}`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;item.component /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-                        return
-                    })}
-                &lt;/ParentModal&gt;
+<span class="cstat-no" title="statement not covered" >                            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+                    return
+                })}
             &lt;/div&gt;
         &lt;/AppLayout&gt;
     )
@@ -304,7 +298,7 @@ export default function CreatePage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-19T11:06:37.522Z
+                at 2023-05-19T21:30:22.991Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
