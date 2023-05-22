@@ -135,42 +135,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import HeroContent from './heroContent';</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import HeroContent from './heroContent'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { heroPoster, heroVideo } from '@/constants/app/defaults';</span>
+<span class="cstat-no" title="statement not covered" >import { heroPoster, heroVideo } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const Hero = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;section className='relative h-screen'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='absolute top-0 left-0 w-full h-full bg-black opacity-50 dark:bg-white dark:opacity-100'&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='absolute top-0 left-0 z-10 w-full h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;video</span>
-<span class="cstat-no" title="statement not covered" >            className='object-cover w-full h-full'</span>
-<span class="cstat-no" title="statement not covered" >            poster={heroPoster}</span>
-<span class="cstat-no" title="statement not covered" >            preload='auto'</span>
-<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line react/no-unknown-property</span>
-<span class="cstat-no" title="statement not covered" >            playsInline</span>
-<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line react/no-unknown-property</span>
-<span class="cstat-no" title="statement not covered" >            webkit-playsinline='true'</span>
-<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line react/no-unknown-property</span>
-<span class="cstat-no" title="statement not covered" >            x5-playsinline='true'</span>
-<span class="cstat-no" title="statement not covered" >            autoPlay={true}</span>
-<span class="cstat-no" title="statement not covered" >            muted={true}</span>
-<span class="cstat-no" title="statement not covered" >            loop={true}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;source src={heroVideo} type='video/mp4' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/video&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='bg-primary/30 flex flex-col items-center justify-center h-full absolute z-10  w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-mobile:-translate-y-[65%]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;HeroContent /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/section&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;section className='relative h-screen'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='absolute top-0 left-0 w-full h-full dark-overlay'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='absolute top-0 left-0 z-10 w-full h-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;video</span>
+<span class="cstat-no" title="statement not covered" >                        className='object-cover w-full h-full'</span>
+<span class="cstat-no" title="statement not covered" >                        poster={heroPoster}</span>
+<span class="cstat-no" title="statement not covered" >                        preload='auto'</span>
+<span class="cstat-no" title="statement not covered" >                        // eslint-disable-next-line react/no-unknown-property</span>
+<span class="cstat-no" title="statement not covered" >                        playsInline</span>
+<span class="cstat-no" title="statement not covered" >                        // eslint-disable-next-line react/no-unknown-property</span>
+<span class="cstat-no" title="statement not covered" >                        webkit-playsinline='true'</span>
+<span class="cstat-no" title="statement not covered" >                        // eslint-disable-next-line react/no-unknown-property</span>
+<span class="cstat-no" title="statement not covered" >                        x5-playsinline='true'</span>
+<span class="cstat-no" title="statement not covered" >                        autoPlay={true}</span>
+<span class="cstat-no" title="statement not covered" >                        muted={true}</span>
+<span class="cstat-no" title="statement not covered" >                        loop={true}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;source src={heroVideo} type='video/mp4' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/video&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='dark-overlay flex flex-col items-center justify-center h-full absolute z-10  w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;HeroContent /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/section&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default Hero;</span>
+<span class="cstat-no" title="statement not covered" >export default Hero</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -178,7 +178,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-22T09:19:38.807Z
+                at 2023-05-22T09:23:58.370Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

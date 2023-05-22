@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/193</span>
+                <span class='fraction'>0/179</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/193</span>
+                <span class='fraction'>0/179</span>
             </div>
         
             
@@ -242,35 +242,7 @@
 <a name='L177'></a><a href='#L177'>177</a>
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
-<a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a>
-<a name='L182'></a><a href='#L182'>182</a>
-<a name='L183'></a><a href='#L183'>183</a>
-<a name='L184'></a><a href='#L184'>184</a>
-<a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a>
-<a name='L187'></a><a href='#L187'>187</a>
-<a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a>
-<a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a>
-<a name='L194'></a><a href='#L194'>194</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L180'></a><a href='#L180'>180</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -450,6 +422,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useState, useEffect } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    GoogleMap,</span>
@@ -460,17 +433,21 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
 <span class="cstat-no" title="statement not covered" >import { MiniPlaceCard } from '@/components/Places/placeCard'</span>
-<span class="cstat-no" title="statement not covered" >import useDimension from '@/hooks/useDimension'</span>
+<span class="cstat-no" title="statement not covered" >// import useDimension from '@/hooks/useDimension'</span>
 <span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import PlaceFilters from '@/components/SearchBar/SearchResultPages/Filters/PlaceFilters'</span>
+<span class="cstat-no" title="statement not covered" >import EventFilters from '@/components/SearchBar/SearchResultPages/Filters/EventFilters'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SearchWithFilter({ changeResultView, queryParam }) {</span>
-<span class="cstat-no" title="statement not covered" >    const { width } = useDimension()</span>
+<span class="cstat-no" title="statement not covered" >    // const { width } = useDimension()</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const filterName = router.query.filter</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [searchResults, setSearchResults] = useState&lt;Place[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedEvent, setSelectedEvent] = useState&lt;Place | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const [hoveredMarker, setHoveredMarker] = useState&lt;Place | null&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" >    const [filter, setFilter] = useState&lt;string[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // Simulating API call or filtering logic to get search results</span>
@@ -489,6 +466,8 @@
 <span class="cstat-no" title="statement not covered" >    const handleMarkerMouseOut = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setHoveredMarker(null)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const [filter, setFilter] = useState&lt;string[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleFilterChange = (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const { value, checked } = event.target</span>
@@ -511,133 +490,112 @@
 <span class="cstat-no" title="statement not covered" >    const mapKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div style={{ width: width ? width : 'w-full' }} className='flex '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* Left side - Event list */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='w-[400px] p-4 overflow-y-auto  h-screen text-primary'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-center px-2 my-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;h2 className='text-xl font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Search results for {queryParam.replaceAll('_', ' ')}{' '}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid grid-cols-1 gap-5 mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {filteredResults.map((place, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                className={`${</span>
-<span class="cstat-no" title="statement not covered" >                                    selectedEvent === place</span>
-<span class="cstat-no" title="statement not covered" >                                        ? 'border-2 border-blue-300'</span>
-<span class="cstat-no" title="statement not covered" >                                        : ''</span>
-<span class="cstat-no" title="statement not covered" >                                } h-fit`}</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; handleMarkerClick(place)}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;MiniPlaceCard place={place} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ))}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            // style={{ width: width ? width : 'w-full' }}</span>
+<span class="cstat-no" title="statement not covered" >            className='flex max-md:flex-col h-screen'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* Navigation bar for mobile view  */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between w-full h-14 bg-white shadow dark:text-primary md:hidden px-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; router.back()}</span>
+<span class="cstat-no" title="statement not covered" >                    className='rounded-full p-1 border border-grey'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ChevronLeftIcon className='text-primary h-5 w-5' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {/* Right side - Map */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='w-3/4 h-screen flex flex-col relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-full flex flex-nowrap items-center gap-4 p-3  dark:border-b dark:border-white/50'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;SearchBar /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='w-fit'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={changeResultView}</span>
-<span class="cstat-no" title="statement not covered" >                                className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Hide Map</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='w-fit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={changeResultView}</span>
+<span class="cstat-no" title="statement not covered" >                        className='orange-fill max-mobile:h-8 flex items-center'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm md:text-base'&gt;Hide Map&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {/* Left side - Event list */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='md:w-[400px] w-full md:overflow-y-auto md:h-screen h-fit max-md:py-1 text-primary'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className=' md:hidden block w-full   py-2  dark:border-b dark:border-white/50 px-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SearchBar /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;LoadScript googleMapsApiKey={`${mapKey}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;GoogleMap</span>
-<span class="cstat-no" title="statement not covered" >                            mapContainerClassName='flex-1 smoothen'</span>
-<span class="cstat-no" title="statement not covered" >                            center={</span>
-<span class="cstat-no" title="statement not covered" >                                selectedEvent</span>
-<span class="cstat-no" title="statement not covered" >                                    ? selectedEvent.coords</span>
-<span class="cstat-no" title="statement not covered" >                                    : filteredResults[0]?.coords</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                            zoom={selectedEvent ? 16 : 12}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center px-2 md:p-2 md:my-3 sticky top-0 bg-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h2 className='text-lg md:text-xl font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Search results for {queryParam.replaceAll('_', ' ')}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='md:grid md:grid-cols-1 flex overflow-x-auto gap-3 max-md:border md:gap-5 md:mt-2 px-4 py-3 md:p-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {filteredResults.map((place, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`${</span>
+<span class="cstat-no" title="statement not covered" >                                selectedEvent === place</span>
+<span class="cstat-no" title="statement not covered" >                                    ? 'md:border-2 border-4 rounded-lg border-blue-300'</span>
+<span class="cstat-no" title="statement not covered" >                                    : ''</span>
+<span class="cstat-no" title="statement not covered" >                            } h-fit`}</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleMarkerClick(place)}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {filteredResults.map((place, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Marker</span>
-<span class="cstat-no" title="statement not covered" >                                    key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                    position={place.coords}</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; handleMarkerClick(place)}</span>
-<span class="cstat-no" title="statement not covered" >                                    onMouseOver={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        handleMarkerMouseOver(place)</span>
-<span class="cstat-no" title="statement not covered" >                                    }</span>
-<span class="cstat-no" title="statement not covered" >                                    // onMouseOut={handleMarkerMouseOut}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {hoveredMarker === place &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;InfoWindow</span>
-<span class="cstat-no" title="statement not covered" >                                            onCloseClick={handleMarkerMouseOut}</span>
-<span class="cstat-no" title="statement not covered" >                                            position={place.coords}</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;MiniPlaceCard place={place} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/InfoWindow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/Marker&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ))}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/GoogleMap&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/LoadScript&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;MiniPlaceCard place={place} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ))}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-2 absolute left-2 bottom-4 bg-white p-2 shadow-md'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='font-bold'&gt;Filter:&lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='hotel'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Hotels&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='churches'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Churches&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='gyms'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Gyms&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='restaurant'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Restaurants&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='tourist centers'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Tourist Centers&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label className='flex items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                type='checkbox'</span>
-<span class="cstat-no" title="statement not covered" >                                value='park'</span>
-<span class="cstat-no" title="statement not covered" >                                onChange={handleFilterChange}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='ml-2'&gt;Parks&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/label&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* Right side - Map */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full md:w-3/4 md:h-screen max-md:flex-1 flex flex-col relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='hidden md:flex w-full  flex-nowrap items-center gap-4 p-3  dark:border-b dark:border-white/50'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SearchBar /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-fit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={changeResultView}</span>
+<span class="cstat-no" title="statement not covered" >                            className='orange-fill'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Hide Map</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;LoadScript googleMapsApiKey={`${mapKey}`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;GoogleMap</span>
+<span class="cstat-no" title="statement not covered" >                        mapContainerClassName='flex-1 smoothen'</span>
+<span class="cstat-no" title="statement not covered" >                        center={</span>
+<span class="cstat-no" title="statement not covered" >                            selectedEvent</span>
+<span class="cstat-no" title="statement not covered" >                                ? selectedEvent.coords</span>
+<span class="cstat-no" title="statement not covered" >                                : filteredResults[0]?.coords</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        zoom={selectedEvent ? 16 : 12}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {filteredResults.map((place, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Marker</span>
+<span class="cstat-no" title="statement not covered" >                                key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                position={place.coords}</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; handleMarkerClick(place)}</span>
+<span class="cstat-no" title="statement not covered" >                                onMouseOver={() =&gt; handleMarkerMouseOver(place)}</span>
+<span class="cstat-no" title="statement not covered" >                                // onMouseOut={handleMarkerMouseOut}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {hoveredMarker === place &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;InfoWindow</span>
+<span class="cstat-no" title="statement not covered" >                                        onCloseClick={handleMarkerMouseOut}</span>
+<span class="cstat-no" title="statement not covered" >                                        position={place.coords}</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;MiniPlaceCard place={place} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/InfoWindow&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Marker&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        ))}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/GoogleMap&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/LoadScript&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                {filterName === 'places' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;PlaceFilters handleFilterChange={handleFilterChange} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                {filterName === 'events' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;EventFilters handleFilterChange={handleFilterChange} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -649,7 +607,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-22T09:19:38.807Z
+                at 2023-05-22T09:23:58.370Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
