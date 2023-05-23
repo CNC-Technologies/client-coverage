@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.96% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>49/57</span>
+                <span class='fraction'>0/57</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.96% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>49/57</span>
+                <span class='fraction'>0/57</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,34 +120,7 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -155,56 +128,83 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
-&nbsp;
-import Link from 'next/link'
-&nbsp;
-import links from '@/constants/footer/mobileFooterLInks'
-import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'
-&nbsp;
-export default function UsersLayoutMobileFooter() {
-    const [activeLink, setActiveLink] = useState(0)
-    const { hidden, pathname } = useDisplayElementsInAppLayout()
-&nbsp;
-    if (hidden) {
-        return &lt;div className='hidden'&gt;&lt;/div&gt;
-    }
-&nbsp;
-    return (
-        &lt;&gt;
-            &lt;div className='h-16 mobile:h-20  bg-primary  border-t-[12px] border-white dark:border-primary dark:text-primary text-white w-full fixed z-[999] bottom-0 left-0  flex md:hidden items-center justify-around'&gt;
-                {links.map((item, index) =&gt; {
-                    return (
-                        &lt;div
-                            onClick={<span class="fstat-no" title="function not covered" >() =&gt; setActiveLink(index)}</span>
-                            key={index}
-                            className={`flex flex-col gap-1 justify-center w-[90px] max-mobile:w-[80px] max-mobile:h-[80px] h-[90px] transition duration-500 ease-out transform ${
-                                index === activeLink ? ` relative  ` : ''
-                            }`}
-                        &gt;
-                            {pathname === item.url<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import links from '@/constants/footer/mobileFooterLInks'</span>
+<span class="cstat-no" title="statement not covered" >import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function UsersLayoutMobileFooter() {</span>
+<span class="cstat-no" title="statement not covered" >    const [activeLink, setActiveLink] = useState(0)</span>
+<span class="cstat-no" title="statement not covered" >    const { hidden, pathname } = useDisplayElementsInAppLayout()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (hidden) {</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;div className='hidden'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='h-16 mobile:h-20  bg-primary  border-t-[12px] border-white dark:border-primary dark:text-primary text-white w-full fixed z-[999] bottom-0 left-0  flex md:hidden items-center justify-around'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {links.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setActiveLink(index)}</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`flex flex-col gap-1 justify-center w-[90px] max-mobile:w-[80px] max-mobile:h-[80px] h-[90px] transition duration-500 ease-out transform ${</span>
+<span class="cstat-no" title="statement not covered" >                                index === activeLink ? ` relative  ` : ''</span>
+<span class="cstat-no" title="statement not covered" >                            }`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {pathname === item.url &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                    className={` absolute w-[90px] max-mobile:w-[80px] max-mobile:h-[80px] h-[90px] -top-[25px] mobile:-top-[35px]  bg-primary dark:bg-grey p-0 mobile:p-3 rounded-full border-[10px] border-[#fff] dark:border-primary  active-footerNav left-0   transform ease-in-out transition duration-500 ${</span>
 <span class="cstat-no" title="statement not covered" >                                        pathname === item.url</span>
@@ -212,28 +212,28 @@ export default function UsersLayoutMobileFooter() {
 <span class="cstat-no" title="statement not covered" >                                            : 'opacity-0'</span>
 <span class="cstat-no" title="statement not covered" >                                    }`}</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;&lt;/div&gt;</span>
-                            )}
-&nbsp;
-                            &lt;Link
-                                href={item.url}
-                                className={`z-20 text-white dark:text-white/70 transition translate-x-[2px] max-[340px]:translate-x-[5px] xmobile:translate-x-0 duration-500 ease-in-out transform ${
-                                    pathname === item.url
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ? 'relative top-1/2 left-0 -translate-y-[65px] mobile:-translate-y-[80px] '</span></span>
-                                        : ''
-                                }`}
-                            &gt;
-                                {item.icon}
-                                &lt;p className='text-center  max-xmd:text-sm max-mobile:text-xs mt-1 font-medium'&gt;
-                                    {item.name}
-                                &lt;/p&gt;
-                            &lt;/Link&gt;
-                        &lt;/div&gt;
-                    )
-                })}
-            &lt;/div&gt;
-        &lt;/&gt;
-    )
-}
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                href={item.url}</span>
+<span class="cstat-no" title="statement not covered" >                                className={`z-20 text-white dark:text-white/70 transition translate-x-[2px] max-[340px]:translate-x-[5px] xmobile:translate-x-0 duration-500 ease-in-out transform ${</span>
+<span class="cstat-no" title="statement not covered" >                                    pathname === item.url</span>
+<span class="cstat-no" title="statement not covered" >                                        ? 'relative top-1/2 left-0 -translate-y-[65px] mobile:-translate-y-[80px] '</span>
+<span class="cstat-no" title="statement not covered" >                                        : ''</span>
+<span class="cstat-no" title="statement not covered" >                                }`}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.icon}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='text-center  max-xmd:text-sm max-mobile:text-xs mt-1 font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -241,7 +241,7 @@ export default function UsersLayoutMobileFooter() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T15:28:56.001Z
+                at 2023-05-23T19:28:49.947Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

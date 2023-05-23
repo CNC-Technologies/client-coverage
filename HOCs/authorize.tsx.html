@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.73% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/46</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.05% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/17</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.73% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/46</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,27 +109,13 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -142,65 +128,97 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ReactNode, useContext } from 'react'
-// import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
-import { useAuth0 } from '@auth0/auth0-react'
-&nbsp;
-import { setToken } from '@/store/slices/auth.slice'
-import { RootState } from '@/store'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { setUser } from '@/store/slices/auth.slice'</span></span></span></span></span></span></span></span></span>
-import { AuthenticationContext } from '@/components/context-containers/Authentication.context'
-&nbsp;
-export default function authorize(Component) {
-    const AuthorizedComponent = ({ children, ...props }) =&gt; {
-        const { handleAuth0Login } = useContext(AuthenticationContext) as any
-        const dispatch = useDispatch()
-        // const router = useRouter()
-        // const user = useSelector((state: RootState) =&gt; state.auth.user)
-        const token = useSelector((state: RootState) =&gt; state.auth.token)
-        const { isAuthenticated, getAccessTokenSilently } = useAuth0()
-&nbsp;
-        async function checkAndSetToken() {
-            if (!token) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useAuth0 } from '@auth0/auth0-react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useDispatch, useSelector } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { BounceLoader } from 'react-spinners'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import { setToken } from '@/store/slices/auth.slice'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function authorize(Component) {</span>
+<span class="cstat-no" title="statement not covered" >    const AuthorizedComponent = ({ children, ...props }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const dispatch = useDispatch()</span>
+<span class="cstat-no" title="statement not covered" >        const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >        // const user = useSelector((state: RootState) =&gt; state.auth.user)</span>
+<span class="cstat-no" title="statement not covered" >        const token = useSelector((state: RootState) =&gt; state.auth.token)</span>
+<span class="cstat-no" title="statement not covered" >        const { isAuthenticated, isLoading, getAccessTokenSilently } =</span>
+<span class="cstat-no" title="statement not covered" >            useAuth0()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        async function checkAndSetToken() {</span>
+<span class="cstat-no" title="statement not covered" >            if (!token) {</span>
 <span class="cstat-no" title="statement not covered" >                if (isAuthenticated) {</span>
 <span class="cstat-no" title="statement not covered" >                    const retrievedToken = await getAccessTokenSilently()</span>
 <span class="cstat-no" title="statement not covered" >                    dispatch(setToken(retrievedToken))</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    if (typeof window !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >                        // let redirectUrl = `/auth/signin?redirect=${window.location.pathname}`</span>
-<span class="cstat-no" title="statement not covered" >                        // router.push(redirectUrl)</span>
-<span class="cstat-no" title="statement not covered" >                        await handleAuth0Login()</span>
+<span class="cstat-no" title="statement not covered" >                    if (!isLoading) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (typeof window !== 'undefined')</span>
+<span class="cstat-no" title="statement not covered" >                            router.push('/auth/signin')</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    return null</span>
+<span class="cstat-no" title="statement not covered" >                    return &lt;div&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-        }
-&nbsp;
-        checkAndSetToken()
-&nbsp;
-        return (
-            &lt;Component auth={{ token }} {...props}&gt;
-                &lt;&gt;{children as ReactNode}&lt;/&gt;
-            &lt;/Component&gt;
-        )
-    }
-&nbsp;
-    return AuthorizedComponent
-}
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (isLoading)</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col-center h-screen'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;BounceLoader color='rgb(25, 48, 60)' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        checkAndSetToken()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Component auth={{ token }} {...props}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {children}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Component&gt;</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return AuthorizedComponent</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -208,7 +226,7 @@ export default function authorize(Component) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T15:28:56.001Z
+                at 2023-05-23T19:28:49.947Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.21% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/56</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/9</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.21% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/56</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -119,118 +119,118 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
-&nbsp;
-import { PlusIcon } from '@/constants/icons/icons'
-&nbsp;
-import { floatingMenu } from '@/constants/app/FloatingButtonMenu'
-import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'
-export default function MobileFloatingButtonMenu() {
-    const [floatingButtonMenu, setFloatingButtonMenu] = useState(false)
-    const { hidden } = useDisplayElementsInAppLayout()
-&nbsp;
-    return (
-        &lt;div className='md:hidden'&gt;
-            &lt;div
-                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButtonMenu(!floatingButtonMenu)}</span>
-                className={`fixed ${
-                    hidden
-                        ? 'bottom-6 mobile:bottom-[1.5rem]'
-                        : 'bottom-16 mobile:bottom-[5.5rem]'
-                } right-4 flex justify-center items-center z-[1000] ${
-                    floatingButtonMenu<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bg-orange/70' </span>: 'bg-orange'
-                } text-primary rounded-full h-14 w-14 shadow-lg`}
-            &gt;
-                &lt;PlusIcon className='w-6 h-6' /&gt;
-            &lt;/div&gt;
-&nbsp;
-            &lt;div
-                onClick={<span class="fstat-no" title="function not covered" >() =&gt; setFloatingButtonMenu(false)}</span>
-                className={`absolute ${
-                    hidden
-                        ? 'bottom-20 mobile:bottom-24'
-                        : 'bottom-32 mobile:bottom-40'
-                }  right-4 ${
-                    floatingButtonMenu<span class="branch-0 cbranch-no" title="branch not covered" > ? 'z-[1000]' </span>: '-z-10'
-                }  h-fit py-3 w-fit flex justify-end px-1`}
-            &gt;
-                &lt;div className='grid gap-3 place-items-end'&gt;
-                    {floatingMenu.map((item, idx) =&gt; {
-                        return (
-                            &lt;div
-                                key={idx}
-                                className={` ${
-                                    floatingButtonMenu
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ? 'translate-x-0 opacity-100 '</span></span>
-                                        : '-translate-x-full opacity-0 '
-                                } transition duration-500  ease-in-out rounded-3xl px-4 py-2 w-fit flex gap-3  items-center bg-orange text-white`}
-                            &gt;
-                                &lt;item.icon className='w-4 h-4' /&gt;
-                                &lt;p className='whitespace-nowrap'&gt;{item.name}&lt;/p&gt;
-                            &lt;/div&gt;
-                        )
-                    })}
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    )
-}
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { floatingMenu } from '@/constants/app/FloatingButtonMenu'</span>
+<span class="cstat-no" title="statement not covered" >import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'</span>
+<span class="cstat-no" title="statement not covered" >export default function MobileFloatingButtonMenu() {</span>
+<span class="cstat-no" title="statement not covered" >    const [floatingButtonMenu, setFloatingButtonMenu] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const { hidden } = useDisplayElementsInAppLayout()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='md:hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setFloatingButtonMenu(!floatingButtonMenu)}</span>
+<span class="cstat-no" title="statement not covered" >                className={`fixed ${</span>
+<span class="cstat-no" title="statement not covered" >                    hidden</span>
+<span class="cstat-no" title="statement not covered" >                        ? 'bottom-6 mobile:bottom-[1.5rem]'</span>
+<span class="cstat-no" title="statement not covered" >                        : 'bottom-16 mobile:bottom-[5.5rem]'</span>
+<span class="cstat-no" title="statement not covered" >                } right-4 flex justify-center items-center z-[1000] ${</span>
+<span class="cstat-no" title="statement not covered" >                    floatingButtonMenu ? 'bg-orange/70' : 'bg-orange'</span>
+<span class="cstat-no" title="statement not covered" >                } text-primary rounded-full h-14 w-14 shadow-lg`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;PlusIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setFloatingButtonMenu(false)}</span>
+<span class="cstat-no" title="statement not covered" >                className={`absolute ${</span>
+<span class="cstat-no" title="statement not covered" >                    hidden</span>
+<span class="cstat-no" title="statement not covered" >                        ? 'bottom-20 mobile:bottom-24'</span>
+<span class="cstat-no" title="statement not covered" >                        : 'bottom-32 mobile:bottom-40'</span>
+<span class="cstat-no" title="statement not covered" >                }  right-4 ${</span>
+<span class="cstat-no" title="statement not covered" >                    floatingButtonMenu ? 'z-[1000]' : '-z-10'</span>
+<span class="cstat-no" title="statement not covered" >                }  h-fit py-3 w-fit flex justify-end px-1`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-3 place-items-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {floatingMenu.map((item, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                                    floatingButtonMenu</span>
+<span class="cstat-no" title="statement not covered" >                                        ? 'translate-x-0 opacity-100 '</span>
+<span class="cstat-no" title="statement not covered" >                                        : '-translate-x-full opacity-0 '</span>
+<span class="cstat-no" title="statement not covered" >                                } transition duration-500  ease-in-out rounded-3xl px-4 py-2 w-fit flex gap-3  items-center bg-orange text-white`}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-4 h-4' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='whitespace-nowrap'&gt;{item.name}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -238,7 +238,7 @@ export default function MobileFloatingButtonMenu() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T15:28:56.001Z
+                at 2023-05-23T19:28:49.947Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
