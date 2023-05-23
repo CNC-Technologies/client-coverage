@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.41% </span>
+                <span class="strong">71.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>32/43</span>
+                <span class='fraction'>33/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">47.05% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>8/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.41% </span>
+                <span class="strong">71.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>32/43</span>
+                <span class='fraction'>33/46</span>
             </div>
         
             
@@ -106,13 +106,17 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -125,6 +129,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -149,19 +155,21 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ReactNode } from 'react'
-import { useRouter } from 'next/router'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ReactNode, useContext } from 'react'
+// import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 &nbsp;
 import { setToken } from '@/store/slices/auth.slice'
 import { RootState } from '@/store'
-// import { setUser } from '@/store/slices/auth.slice'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { setUser } from '@/store/slices/auth.slice'</span></span></span></span></span></span></span></span></span>
+import { AuthenticationContext } from '@/components/context-containers/Authentication.context'
 &nbsp;
 export default function authorize(Component) {
     const AuthorizedComponent = ({ children, ...props }) =&gt; {
+        const { handleAuth0Login } = useContext(AuthenticationContext) as any
         const dispatch = useDispatch()
-        const router = useRouter()
+        // const router = useRouter()
         // const user = useSelector((state: RootState) =&gt; state.auth.user)
         const token = useSelector((state: RootState) =&gt; state.auth.token)
         const { isAuthenticated, getAccessTokenSilently } = useAuth0()
@@ -173,8 +181,9 @@ export default function authorize(Component) {
 <span class="cstat-no" title="statement not covered" >                    dispatch(setToken(retrievedToken))</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    if (typeof window !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >                        let redirectUrl = `/auth/signin?redirect=${window.location.pathname}`</span>
-<span class="cstat-no" title="statement not covered" >                        router.push(redirectUrl)</span>
+<span class="cstat-no" title="statement not covered" >                        // let redirectUrl = `/auth/signin?redirect=${window.location.pathname}`</span>
+<span class="cstat-no" title="statement not covered" >                        // router.push(redirectUrl)</span>
+<span class="cstat-no" title="statement not covered" >                        await handleAuth0Login()</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                    return null</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
@@ -199,7 +208,7 @@ export default function authorize(Component) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T11:41:22.787Z
+                at 2023-05-23T15:28:56.001Z
             </div>
         <script src="../prettify.js"></script>
         <script>

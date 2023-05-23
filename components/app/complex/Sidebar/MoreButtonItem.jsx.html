@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.2% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/53</span>
+                <span class='fraction'>8/48</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.2% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/53</span>
+                <span class='fraction'>8/48</span>
             </div>
         
             
@@ -111,23 +111,13 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -170,16 +160,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useContext } from 'react'
 &nbsp;
 import moreButtonLinks from '@/constants/sidebar/moreButtonLink'
+import { AuthenticationContext } from '@/components/context-containers/Authentication.context'
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function MoreButtonItem({</span>
 <span class="cstat-no" title="statement not covered" >    linkItem,</span>
 <span class="cstat-no" title="statement not covered" >    index,</span>
 <span class="cstat-no" title="statement not covered" >    toggleAppThemeMode,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    const { logout } = useAuth0()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleAuth0Logout } = useContext(AuthenticationContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (linkItem.url)</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -195,13 +186,7 @@ export default <span class="fstat-no" title="function not covered" >function Mor
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    else if (linkItem.text === 'Logout')</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                onClick={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    logout({</span>
-<span class="cstat-no" title="statement not covered" >                        logoutParams: { returnTo: window.location.origin },</span>
-<span class="cstat-no" title="statement not covered" >                    })</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div onClick={handleAuth0Logout}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;MainComponent linkItem={linkItem} index={index} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -229,7 +214,7 @@ export default <span class="fstat-no" title="function not covered" >function Mor
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-23T11:41:22.787Z
+                at 2023-05-23T15:28:56.001Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
