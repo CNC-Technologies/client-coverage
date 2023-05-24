@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/60</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/60</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -118,12 +118,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -178,21 +173,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useAuth0 } from '@auth0/auth0-react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useAuth0 } from '@auth0/auth0-react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useContext } from 'react'</span>
 <span class="cstat-no" title="statement not covered" >import { useDispatch, useSelector } from 'react-redux'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { BounceLoader } from 'react-spinners'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import { setToken, setUser } from '@/store/slices/auth.slice'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { AuthenticationContext } from '@/components/context-containers/Authentication.context'</span>
+<span class="cstat-no" title="statement not covered" >import PageLoader from '@/components/PageLoader'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function authorize(Component) {</span>
 <span class="cstat-no" title="statement not covered" >    const AuthorizedComponent = ({ children, ...props }) =&gt; {</span>
@@ -214,25 +203,21 @@
 <span class="cstat-no" title="statement not covered" >                        verified: user?.email_verified,</span>
 <span class="cstat-no" title="statement not covered" >                        picture: user?.picture,</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    dispatch(setUser(userData))</span>
 <span class="cstat-no" title="statement not covered" >                    dispatch(setToken(retrievedToken))</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    if (!isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >                        if (typeof window !== 'undefined') handleAuth0Login()</span>
+<span class="cstat-no" title="statement not covered" >                    if (!isLoading &amp;&amp; typeof window !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                        await handleAuth0Login()</span>
+<span class="cstat-no" title="statement not covered" >                        return &lt;PageLoader full /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    return &lt;div&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (isLoading)</span>
-<span class="cstat-no" title="statement not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-center h-screen'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;BounceLoader color='rgb(25, 48, 60)' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        checkAndSetToken()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (isLoading || !isAuthenticated) return &lt;PageLoader full /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Component auth={{ token }} {...props}&gt;</span>
@@ -250,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-24T09:06:37.338Z
+                at 2023-05-24T17:03:30.202Z
             </div>
         <script src="../prettify.js"></script>
         <script>

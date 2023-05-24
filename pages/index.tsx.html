@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -115,7 +115,10 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,13 +170,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import AOS from 'aos'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import AOS from 'aos'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import 'aos/dist/aos.css'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import { useAuth0 } from '@auth0/auth0-react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import BusinessesSupport from '@/components/Homepage/businessesSupport'</span>
 <span class="cstat-no" title="statement not covered" >import CategoriesForYou from '@/components/Homepage/categories/categoriesForYou'</span>
@@ -184,6 +189,7 @@
 <span class="cstat-no" title="statement not covered" >import SearchForEvents from '@/components/Homepage/searchForEvents'</span>
 <span class="cstat-no" title="statement not covered" >import Testimonials from '@/components/Homepage/testimonials/testimonials'</span>
 <span class="cstat-no" title="statement not covered" >import UnauthenticatedLayout from '@/components/Layout/UnauthenticatedLayout'</span>
+<span class="cstat-no" title="statement not covered" >import PageLoader from '@/components/PageLoader'</span>
 <span class="cstat-no" title="statement not covered" >// import CookieService from '@/services/Cookie.service'</span>
 <span class="cstat-no" title="statement not covered" >// import { tokenKey } from '@/constants/cookieKeys.constant'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -195,10 +201,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const token = useSelector((state: RootState) =&gt; state.auth.token)</span>
+<span class="cstat-no" title="statement not covered" >    const { isAuthenticated, isLoading } = useAuth0()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (token) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isLoading) return &lt;PageLoader full /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (typeof window !== 'undefined' &amp;&amp; isAuthenticated) {</span>
 <span class="cstat-no" title="statement not covered" >        router.replace('/app')</span>
+<span class="cstat-no" title="statement not covered" >        return null</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -226,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-24T09:06:37.338Z
+                at 2023-05-24T17:03:30.202Z
             </div>
         <script src="../prettify.js"></script>
         <script>
