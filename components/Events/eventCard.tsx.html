@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.2% </span>
+                <span class="strong">75.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>91/121</span>
+                <span class='fraction'>93/123</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.2% </span>
+                <span class="strong">75.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>91/121</span>
+                <span class='fraction'>93/123</span>
             </div>
         
             
@@ -184,7 +184,10 @@
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -251,6 +254,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
@@ -305,7 +309,8 @@
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Image from 'next/image'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
+import Image from 'next/image'
 &nbsp;
 import { useRouter } from 'next/router'
 &nbsp;
@@ -333,13 +338,13 @@ export default function EventCard({ event }) {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? `/business/events/${event?.title}`</span></span>
             : `/app/events/${event?.title}`
 &nbsp;
-    const routeTo = (<span class="fstat-no" title="function not covered" >page) =&gt; router.push(`${detailsRoute}/${page}`)</span>
+    const routeTo = (<span class="fstat-no" title="function not covered" >page: string) =&gt; router.push(`${detailsRoute}/${page}`)</span>
     return (
         &lt;div className='flex flex-col w-full rounded-xl bg-primary'&gt;
             &lt;div className='relative h-[12rem] mobile:h-[15rem]'&gt;
-                &lt;div className='absolute top-0 left-0 flex items-center justify-between w-full px-3 py-3 text-sm rounded-t-xl pointer-events-none'&gt;
+                &lt;div className='absolute top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-3 text-sm rounded-t-xl '&gt;
                     &lt;div className='flex items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-primary dark:bg-darkGrey dark:text-[rgb(25,_48,_60)]'&gt;
-                        &lt;p className='font-medium '&gt;${event?.price}&lt;/p&gt;
+                        &lt;p className='font-semibold '&gt;${event?.price}&lt;/p&gt;
                     &lt;/div&gt;
 &nbsp;
                     {configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
@@ -384,7 +389,7 @@ export default function EventCard({ event }) {
                     quality={75}
                     width={100}
                     height={100}
-                    className='object-cover object-center w-full h-full rounded-xl cursor-pointer'
+                    className='object-cover object-center w-full h-full z-10 rounded-xl cursor-pointer'
                     onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push(detailsRoute)}</span>
                 /&gt;
                 {/* &lt;/Link&gt; */}
@@ -396,9 +401,10 @@ export default function EventCard({ event }) {
                 &lt;/div&gt;
             &lt;/div&gt;
             {/* &lt;Link href={detailsRoute}&gt; */}
-            &lt;div
+            &lt;Link
+                href={detailsRoute}
                 className='w-full px-3 py-3 text-white h-fit rounded-b-xl cursor-pointer'
-                onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push(detailsRoute)}</span>
+                // onClick={() =&gt; router.push(detailsRoute)}
             &gt;
                 &lt;Truncate outerClass='font-medium'&gt;{event?.title}&lt;/Truncate&gt;
                 {/* &lt;p className='font-medium truncate'&gt;&lt;/p&gt; */}
@@ -421,7 +427,7 @@ export default function EventCard({ event }) {
                         )
                     })}
                 &lt;/div&gt;
-            &lt;/div&gt;
+            &lt;/Link&gt;
             {/* &lt;/Link&gt; */}
         &lt;/div&gt;
     )
@@ -433,7 +439,7 @@ export default function EventCard({ event }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-24T20:57:15.080Z
+                at 2023-05-25T20:39:58.131Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
