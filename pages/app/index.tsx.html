@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/88</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/88</span>
             </div>
         
             
@@ -147,7 +147,11 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -231,83 +235,91 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import EventsList from '@/components/app/complex/EventsList'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import PeopleList from '@/components/app/complex/PeopleList'</span>
-<span class="cstat-no" title="statement not covered" >import PlacesList from '@/components/app/complex/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >// import ReelsList from '@/components/app/complex/ReelsList';</span>
-<span class="cstat-no" title="statement not covered" >import SinglePost from '@/components/app/complex/SinglePost'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import SponsoredPost from '@/components/app/complex/SponsoredPost'</span>
 <span class="cstat-no" title="statement not covered" >import Stories from '@/components/app/complex/Stories'</span>
-<span class="cstat-no" title="statement not covered" >import TopActivities from '@/components/app/complex/TopActivities'</span>
 <span class="cstat-no" title="statement not covered" >import WhatToDo from '@/components/app/complex/WhatToDo'</span>
+<span class="cstat-no" title="statement not covered" >import FeedItem from '@/components/app/compound/feeds/FeedItem'</span>
 <span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
+<span class="cstat-no" title="statement not covered" >import { feeds } from '@/constants/MockData/HomepageFeeds'</span>
+<span class="cstat-no" title="statement not covered" >import mockedPosts from '@/constants/MockData/Posts'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function HomePage() {</span>
+<span class="cstat-no" title="statement not covered" >    const [feedList, setFeedList] = useState&lt;any&gt;([])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const rearrangeFeeds = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // Clone the original array to avoid mutating it</span>
+<span class="cstat-no" title="statement not covered" >            const rearrangedFeeds = [...feeds, ...mockedPosts]</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Shuffle the array randomly using the Fisher-Yates algorithm</span>
+<span class="cstat-no" title="statement not covered" >            for (let i = rearrangedFeeds.length - 1; i &gt; 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >                const j = Math.floor(Math.random() * (i + 1))</span>
+<span class="cstat-no" title="statement not covered" >                ;[rearrangedFeeds[i], rearrangedFeeds[j]] = [</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[j],</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[i],</span>
+<span class="cstat-no" title="statement not covered" >                ]</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Find the first two items that are either events or places</span>
+<span class="cstat-no" title="statement not covered" >            let firstEventIndex = -1</span>
+<span class="cstat-no" title="statement not covered" >            let firstPlaceIndex = -1</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; rearrangedFeeds.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                if (rearrangedFeeds[i].type === 'events') {</span>
+<span class="cstat-no" title="statement not covered" >                    firstEventIndex = i</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; rearrangedFeeds.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                if (rearrangedFeeds[i].type === 'places') {</span>
+<span class="cstat-no" title="statement not covered" >                    firstPlaceIndex = i</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Swap the first event item with the first item in the array</span>
+<span class="cstat-no" title="statement not covered" >            if (firstEventIndex !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                ;[rearrangedFeeds[0], rearrangedFeeds[firstEventIndex]] = [</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[firstEventIndex],</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[0],</span>
+<span class="cstat-no" title="statement not covered" >                ]</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Swap the first place item with the second item in the array</span>
+<span class="cstat-no" title="statement not covered" >            if (firstPlaceIndex !== -1 &amp;&amp; firstPlaceIndex !== firstEventIndex) {</span>
+<span class="cstat-no" title="statement not covered" >                ;[rearrangedFeeds[1], rearrangedFeeds[firstPlaceIndex]] = [</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[firstPlaceIndex],</span>
+<span class="cstat-no" title="statement not covered" >                    rearrangedFeeds[1],</span>
+<span class="cstat-no" title="statement not covered" >                ]</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            setFeedList(rearrangedFeeds)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        rearrangeFeeds()</span>
+<span class="cstat-no" title="statement not covered" >    }, [])</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mb-8'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Stories /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;WhatToDo /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;WhatToDo /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-5 grid-cols-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {feedList.map((feed: any, index: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return &lt;FeedItem key={index} feed={feed} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlacesList</span>
-<span class="cstat-no" title="statement not covered" >                        mainTitle='Trending this week'</span>
-<span class="cstat-no" title="statement not covered" >                        title='Restaurants'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;EventsList</span>
-<span class="cstat-no" title="statement not covered" >                        title='Upcoming Pop Events'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;EventsList title='Upcoming Movies' gridLayout={false} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col space-y-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl font-semibold'&gt;Pop-culture&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SinglePost /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlacesList</span>
-<span class="cstat-no" title="statement not covered" >                        title='Popular Destination'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;EventsList</span>
-<span class="cstat-no" title="statement not covered" >                        title='Fashion Week Events'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlacesList title='Wild Trips' gridLayout={false} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='my-16'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;TopActivities /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;EventsList title='Tech Events' gridLayout={false} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;EventsList</span>
-<span class="cstat-no" title="statement not covered" >                        title='Discover new interests'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlacesList</span>
-<span class="cstat-no" title="statement not covered" >                        title='Places to eat in Abuja'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PeopleList title='Connect With Users' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* &lt;div className='my-20'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;SponsoredPost /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt; */}</span>
@@ -322,7 +334,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:38:18.485Z
+                at 2023-05-29T11:44:59.767Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

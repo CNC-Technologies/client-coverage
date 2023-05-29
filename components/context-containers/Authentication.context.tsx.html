@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.81% </span>
+                <span class="strong">29.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/55</span>
+                <span class='fraction'>16/55</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.81% </span>
+                <span class="strong">29.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/55</span>
+                <span class='fraction'>16/55</span>
             </div>
         
             
@@ -130,10 +130,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -180,8 +180,12 @@ import { ToastContext } from '@/components/context-containers/Toast.context'
 import { tokenKey, userKey } from '@/constants/cookieKeys.constant'
 import CookieService from '@/services/Cookie.service'
 &nbsp;
-export const AuthenticationContext = createContext&lt;{}&gt;({
-    handleOpenAuth: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
+export const AuthenticationContext = createContext&lt;{
+    logout: () =&gt; void
+    login: () =&gt; void
+}&gt;({
+    logout: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
+    login: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
 })
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function AuthenticationContextProvider({</span>
@@ -190,16 +194,12 @@ export default <span class="fstat-no" title="function not covered" >function Aut
 <span class="cstat-no" title="statement not covered" >    children: ReactNode</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
-<span class="cstat-no" title="statement not covered" >    const { loginWithRedirect, logout } = useAuth0()</span>
-<span class="cstat-no" title="statement not covered" >    const handleAuth0Login = async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const { loginWithRedirect, logout: auth0Logout } = useAuth0()</span>
+<span class="cstat-no" title="statement not covered" >    const login = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            await loginWithRedirect({</span>
 <span class="cstat-no" title="statement not covered" >                authorizationParams: {</span>
-<span class="cstat-no" title="statement not covered" >                    // audience: 'http://localhost:3000',</span>
 <span class="cstat-no" title="statement not covered" >                    scope: 'offline_access',</span>
-<span class="cstat-no" title="statement not covered" >                    // response_type: 'code',</span>
-<span class="cstat-no" title="statement not covered" >                    // redirect_uri: 'http://localhost:3000',</span>
-<span class="cstat-no" title="statement not covered" >                    // state: 'PLACIO_STATE',</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
@@ -208,9 +208,9 @@ export default <span class="fstat-no" title="function not covered" >function Aut
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleAuth0Logout = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const logout = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            logout({</span>
+<span class="cstat-no" title="statement not covered" >            auth0Logout({</span>
 <span class="cstat-no" title="statement not covered" >                logoutParams: { returnTo: window.location.origin },</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            CookieService.remover(tokenKey)</span>
@@ -221,7 +221,7 @@ export default <span class="fstat-no" title="function not covered" >function Aut
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const value = { handleAuth0Login, handleAuth0Logout }</span>
+<span class="cstat-no" title="statement not covered" >    const value = { login, logout }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;AuthenticationContext.Provider value={value}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {children}</span>
@@ -235,7 +235,7 @@ export default <span class="fstat-no" title="function not covered" >function Aut
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:38:18.485Z
+                at 2023-05-29T11:44:59.767Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
