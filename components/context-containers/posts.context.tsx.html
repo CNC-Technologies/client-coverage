@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for constants/MockData/Posts.ts</title>
+    <title>Code coverage report for components/context-containers/posts.context.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">constants/MockData</a> Posts.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/context-containers</a> posts.context.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/110</span>
+                <span class='fraction'>0/102</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/110</span>
+                <span class='fraction'>0/102</span>
             </div>
         
             
@@ -165,23 +165,7 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -284,26 +268,36 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { faker } from '@faker-js/faker'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { v4 as uuidv4 } from 'uuid'</span>
+<span class="cstat-no" title="statement not covered" >import React, { createContext, useContext, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useAuth0 } from '@auth0/auth0-react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
-<span class="cstat-no" title="statement not covered" >import { samplePlaceImages } from '@/constants/MockData/PlaceDetails/PlaceDetailsImages'</span>
-<span class="cstat-no" title="statement not covered" >// Generate a single comment</span>
-<span class="cstat-no" title="statement not covered" >const generateComment = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const comment = {</span>
-<span class="cstat-no" title="statement not covered" >        accountID: uuidv4(),</span>
-<span class="cstat-no" title="statement not covered" >        content: faker.lorem.sentence(),</span>
-<span class="cstat-no" title="statement not covered" >        createdAt: faker.date.past().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >        id: uuidv4(),</span>
-<span class="cstat-no" title="statement not covered" >        postID: '',</span>
-<span class="cstat-no" title="statement not covered" >        updatedAt: faker.date.recent().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >import { Comment, Post } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import mockedPosts from '@/constants/MockData/Posts'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return comment</span>
+<span class="cstat-no" title="statement not covered" >type PostsContextValue = {</span>
+<span class="cstat-no" title="statement not covered" >    posts: Post[]</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    createPost: (post: Post) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    likePost: (postID: string) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    addComment: (postID: string, comment: Comment) =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Generate a single like</span>
+<span class="cstat-no" title="statement not covered" >const PostsContext = createContext&lt;PostsContextValue&gt;({</span>
+<span class="cstat-no" title="statement not covered" >    posts: [],</span>
+<span class="cstat-no" title="statement not covered" >    createPost: () =&gt; {},</span>
+<span class="cstat-no" title="statement not covered" >    likePost: () =&gt; {},</span>
+<span class="cstat-no" title="statement not covered" >    addComment: () =&gt; {},</span>
+<span class="cstat-no" title="statement not covered" >})</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const usePostsContext = () =&gt; useContext(PostsContext)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >type PostsProviderProps = {</span>
+<span class="cstat-no" title="statement not covered" >    children: React.ReactNode</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const generateLike = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const like = {</span>
 <span class="cstat-no" title="statement not covered" >        accountID: uuidv4(),</span>
@@ -316,83 +310,65 @@
 <span class="cstat-no" title="statement not covered" >    return like</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Generate a single media</span>
-<span class="cstat-no" title="statement not covered" >const generateMedia = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const media = {</span>
-<span class="cstat-no" title="statement not covered" >        createdAt: faker.date.past().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >        id: uuidv4(),</span>
-<span class="cstat-no" title="statement not covered" >        mediaType: 'image',</span>
-<span class="cstat-no" title="statement not covered" >        postID: '',</span>
-<span class="cstat-no" title="statement not covered" >        updatedAt: faker.date.recent().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >        url: samplePlaceImages[</span>
-<span class="cstat-no" title="statement not covered" >            Math.floor(Math.random() * samplePlaceImages.length)</span>
-<span class="cstat-no" title="statement not covered" >        ],</span>
+<span class="cstat-no" title="statement not covered" >export const PostsProvider = ({ children }: PostsProviderProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const { user } = useAuth0()</span>
+<span class="cstat-no" title="statement not covered" >    const [posts, setPosts] = useState&lt;Post[]&gt;(mockedPosts)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const createPost = (post: Post) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; [...prevPosts, post])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return media</span>
+<span class="cstat-no" title="statement not covered" >    const likePost = (postID: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return prevPosts.map((post) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (post.id === postID) {</span>
+<span class="cstat-no" title="statement not covered" >                    const isLiked = post.likes.some(</span>
+<span class="cstat-no" title="statement not covered" >                        (like) =&gt; like.accountID === user?.sub,</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    if (isLiked) {</span>
+<span class="cstat-no" title="statement not covered" >                        const updatedLikes = post.likes.filter(</span>
+<span class="cstat-no" title="statement not covered" >                            (like) =&gt; like.accountID !== user?.sub,</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                        return { ...post, likes: updatedLikes }</span>
+<span class="cstat-no" title="statement not covered" >                    } else {</span>
+<span class="cstat-no" title="statement not covered" >                        const updatedLikes = [...post.likes, generateLike()]</span>
+<span class="cstat-no" title="statement not covered" >                        return { ...post, likes: updatedLikes }</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                return post</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const addComment = (postID: string, comment: Comment) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return prevPosts.map((post) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (post.id === postID) {</span>
+<span class="cstat-no" title="statement not covered" >                    const updatedComments: Comment[] = [</span>
+<span class="cstat-no" title="statement not covered" >                        ...post.comments,</span>
+<span class="cstat-no" title="statement not covered" >                        comment,</span>
+<span class="cstat-no" title="statement not covered" >                    ]</span>
+<span class="cstat-no" title="statement not covered" >                    return { ...post, comments: updatedComments }</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                return post</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const contextValue: PostsContextValue = {</span>
+<span class="cstat-no" title="statement not covered" >        posts,</span>
+<span class="cstat-no" title="statement not covered" >        createPost,</span>
+<span class="cstat-no" title="statement not covered" >        likePost,</span>
+<span class="cstat-no" title="statement not covered" >        addComment,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PostsContext.Provider value={contextValue}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PostsContext.Provider&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Generate a single post with comments, likes, and medias</span>
-<span class="cstat-no" title="statement not covered" >const generatePost = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const post: Post = {</span>
-<span class="cstat-no" title="statement not covered" >        accountID: uuidv4(),</span>
-<span class="cstat-no" title="statement not covered" >        comments: [],</span>
-<span class="cstat-no" title="statement not covered" >        content: faker.lorem.paragraph(),</span>
-<span class="cstat-no" title="statement not covered" >        createdAt: faker.date.past().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >        id: uuidv4(),</span>
-<span class="cstat-no" title="statement not covered" >        likes: [],</span>
-<span class="cstat-no" title="statement not covered" >        medias: [],</span>
-<span class="cstat-no" title="statement not covered" >        updatedAt: faker.date.recent().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >        type: 'post',</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Generate random username and user profile picture for the post</span>
-<span class="cstat-no" title="statement not covered" >    const username = faker.internet.userName()</span>
-<span class="cstat-no" title="statement not covered" >    const profilePicture = faker.internet.avatar()</span>
-<span class="cstat-no" title="statement not covered" >    post.username = username</span>
-<span class="cstat-no" title="statement not covered" >    post.profilePicture = profilePicture</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Generate comments for the post</span>
-<span class="cstat-no" title="statement not covered" >    const numComments = faker.number.int({ min: 5, max: 10 })</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; numComments; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const comment = generateComment()</span>
-<span class="cstat-no" title="statement not covered" >        comment.postID = post.id</span>
-<span class="cstat-no" title="statement not covered" >        post.comments.push(comment)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Generate likes for the post</span>
-<span class="cstat-no" title="statement not covered" >    const numLikes = faker.number.int({ min: 10, max: 100 })</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; numLikes; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const like = generateLike()</span>
-<span class="cstat-no" title="statement not covered" >        like.postID = post.id</span>
-<span class="cstat-no" title="statement not covered" >        post.likes.push(like)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Generate medias for the post</span>
-<span class="cstat-no" title="statement not covered" >    const numMedias = faker.number.int({ min: 0, max: 3 })</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; numMedias; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const media = generateMedia()</span>
-<span class="cstat-no" title="statement not covered" >        media.postID = post.id</span>
-<span class="cstat-no" title="statement not covered" >        post.medias.push(media)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return post</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Generate multiple posts</span>
-<span class="cstat-no" title="statement not covered" >const generatePosts = (count: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const posts: Post[] = []</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; count; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const post = generatePost()</span>
-<span class="cstat-no" title="statement not covered" >        posts.push(post)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return posts</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Generate 7 posts</span>
-<span class="cstat-no" title="statement not covered" >const mockedPosts = generatePosts(7)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default mockedPosts</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

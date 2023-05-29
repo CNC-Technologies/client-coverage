@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -151,7 +151,11 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -243,19 +247,21 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import SponsoredPost from '@/components/app/complex/SponsoredPost'</span>
 <span class="cstat-no" title="statement not covered" >import Stories from '@/components/app/complex/Stories'</span>
-<span class="cstat-no" title="statement not covered" >import WhatToDo from '@/components/app/complex/WhatToDo'</span>
+<span class="cstat-no" title="statement not covered" >// import WhatToDo from '@/components/app/complex/WhatToDo'</span>
 <span class="cstat-no" title="statement not covered" >import FeedItem from '@/components/app/compound/feeds/FeedItem'</span>
 <span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
 <span class="cstat-no" title="statement not covered" >import { feeds } from '@/constants/MockData/HomepageFeeds'</span>
-<span class="cstat-no" title="statement not covered" >import mockedPosts from '@/constants/MockData/Posts'</span>
+<span class="cstat-no" title="statement not covered" >import { usePostsContext } from '@/components/context-containers/posts.context'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function HomePage() {</span>
 <span class="cstat-no" title="statement not covered" >    const [feedList, setFeedList] = useState&lt;any&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { posts } = usePostsContext()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const rearrangeFeeds = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            // Clone the original array to avoid mutating it</span>
-<span class="cstat-no" title="statement not covered" >            const rearrangedFeeds = [...feeds, ...mockedPosts]</span>
+<span class="cstat-no" title="statement not covered" >            const rearrangedFeeds = [...feeds, ...posts]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // Shuffle the array randomly using the Fisher-Yates algorithm</span>
 <span class="cstat-no" title="statement not covered" >            for (let i = rearrangedFeeds.length - 1; i &gt; 0; i--) {</span>
@@ -304,15 +310,15 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        rearrangeFeeds()</span>
-<span class="cstat-no" title="statement not covered" >    }, [])</span>
+<span class="cstat-no" title="statement not covered" >    }, [posts])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mb-8'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mb-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Stories /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;WhatToDo /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;WhatToDo /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-5 grid-cols-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {feedList.map((feed: any, index: number) =&gt; {</span>
@@ -334,7 +340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:44:59.767Z
+                at 2023-05-29T17:38:47.766Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

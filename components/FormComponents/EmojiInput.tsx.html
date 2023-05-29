@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -111,29 +111,7 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,7 +160,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import EmojiPicker from 'emoji-picker-react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" >import { FaTimes } from 'react-icons/fa'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
@@ -190,29 +167,18 @@
 <span class="cstat-no" title="statement not covered" >export default function EmojiInput({</span>
 <span class="cstat-no" title="statement not covered" >    placeholder = 'Enter text...',</span>
 <span class="cstat-no" title="statement not covered" >    rows = 1,</span>
-<span class="cstat-no" title="statement not covered" >}: {</span>
-<span class="cstat-no" title="statement not covered" >    placeholder?: string</span>
-<span class="cstat-no" title="statement not covered" >    rows?: number</span>
+<span class="cstat-no" title="statement not covered" >    postMessage,</span>
+<span class="cstat-no" title="statement not covered" >    handleInputChange,</span>
+<span class="cstat-no" title="statement not covered" >    handleEmojiClick,</span>
+<span class="cstat-no" title="statement not covered" >    showEmojiPicker,</span>
+<span class="cstat-no" title="statement not covered" >    setShowEmojiPicker,</span>
+<span class="cstat-no" title="statement not covered" >    toggleEmojiView,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    const [message, setMessage] = useState('')</span>
-<span class="cstat-no" title="statement not covered" >    const [showEmojiPicker, setShowEmojiPicker] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleMessageChange = (e: any) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setMessage(e.target.value)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleEmojiClick = (emoji: any) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        toggleEmojiView()</span>
-<span class="cstat-no" title="statement not covered" >        setMessage(message + emoji.emoji)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const toggleEmojiView = () =&gt; setShowEmojiPicker(!showEmojiPicker)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='row w-full space-x-1 px-1 border rounded'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='row w-full space-x-1 relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {showEmojiPicker &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute z-10 w-fit h-fit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute bottom-0 z-10 w-fit h-fit'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='row justify-end'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;IconButton onClick={toggleEmojiView}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FaTimes /&gt;</span>
@@ -221,7 +187,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;EmojiPicker onEmojiClick={handleEmojiClick} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col absolute bottom-0 left-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;IconButton</span>
 <span class="cstat-no" title="statement not covered" >                        className='border-transparent'</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={toggleEmojiView}</span>
@@ -230,10 +196,11 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;textarea</span>
-<span class="cstat-no" title="statement not covered" >                    value={message}</span>
-<span class="cstat-no" title="statement not covered" >                    onChange={handleMessageChange}</span>
+<span class="cstat-no" title="statement not covered" >                    onFocus={() =&gt; setShowEmojiPicker(false)}</span>
+<span class="cstat-no" title="statement not covered" >                    value={postMessage}</span>
+<span class="cstat-no" title="statement not covered" >                    onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                    rows={rows}</span>
-<span class="cstat-no" title="statement not covered" >                    className='flex-1 border-transparent placeholder:text-sm border border-primary rounded-md py-2'</span>
+<span class="cstat-no" title="statement not covered" >                    className='flex-1 placeholder:text-sm border rounded-md py-2 px-1 focus:outline-none'</span>
 <span class="cstat-no" title="statement not covered" >                    placeholder={placeholder}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;&lt;/textarea&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -247,7 +214,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:44:59.767Z
+                at 2023-05-29T17:38:47.766Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

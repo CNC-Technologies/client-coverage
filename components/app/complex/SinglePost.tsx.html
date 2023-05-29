@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/126</span>
+                <span class='fraction'>0/140</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/126</span>
+                <span class='fraction'>0/140</span>
             </div>
         
             
@@ -189,7 +189,35 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -316,6 +344,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useAuth0 } from '@auth0/auth0-react'</span>
 <span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
@@ -335,12 +364,20 @@
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { formatMonthAndDate } from '@/utils/dateFormat'</span>
 <span class="cstat-no" title="statement not covered" >import PostMedias from '@/components/app/compound/Post/PostMedias'</span>
+<span class="cstat-no" title="statement not covered" >import { usePostsContext } from '@/components/context-containers/posts.context'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SinglePost({ post }: { post: Post | null }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [commentsModal, setCommentsModal] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const { user } = useAuth0()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { likePost } = usePostsContext()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const checkLiked = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return post?.likes.find((like) =&gt; like.accountID === user?.sub) ?? false</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='pb-3 space-y-3 border-b col border-grey'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='pb-3 my-2 space-y-3 border-b col border-grey'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* Post creator profile*/}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='items-center space-x-3 row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Link href={`/${post?.username}`}&gt;</span>
@@ -380,11 +417,16 @@
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* Second row */}</span>
+<span class="cstat-no" title="statement not covered" >            {/* Engagements (Likes and comments) */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='items-center justify-between row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='items-center space-x-3 row text-primary'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center space-x-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;LikeItem background={true} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div onClick={() =&gt; likePost(post?.id as string)}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;LikeItem</span>
+<span class="cstat-no" title="statement not covered" >                                background={true}</span>
+<span class="cstat-no" title="statement not covered" >                                likedByMe={checkLiked() as boolean}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm font-medium'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {post?.likes?.length}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
@@ -414,7 +456,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Comment Section */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;CommentField /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;CommentField postId={post?.id} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Comments Modal  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;ParentModal</span>
@@ -434,7 +476,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='sticky border-t  bg-white py-2 bottom-0 left-0 w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;CommentField /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;CommentField postId={post?.id} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
@@ -448,7 +490,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:44:59.767Z
+                at 2023-05-29T17:38:47.766Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/206</span>
+                <span class='fraction'>0/207</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/206</span>
+                <span class='fraction'>0/207</span>
             </div>
         
             
@@ -269,7 +269,9 @@
 <a name='L204'></a><a href='#L204'>204</a>
 <a name='L205'></a><a href='#L205'>205</a>
 <a name='L206'></a><a href='#L206'>206</a>
-<a name='L207'></a><a href='#L207'>207</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -476,26 +478,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext, useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useAuth0 } from '@auth0/auth0-react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import apiRes from '../helpers/apiRes'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
-<span class="cstat-no" title="statement not covered" >import { tokenKey } from '@/constants/cookieKeys.constant'</span>
+<span class="cstat-no" title="statement not covered" >// import { tokenKey } from '@/constants/cookieKeys.constant'</span>
 <span class="cstat-no" title="statement not covered" >import AxiosService from '@/services/Axios.service'</span>
-<span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
+<span class="cstat-no" title="statement not covered" >// import CookieService from '@/services/Cookie.service'</span>
 <span class="cstat-no" title="statement not covered" >import { AuthenticationContext } from '@/components/context-containers/Authentication.context'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface dataInterface {</span>
-<span class="cstat-no" title="statement not covered" >    data: any</span>
-<span class="cstat-no" title="statement not covered" >    token: string</span>
-<span class="cstat-no" title="statement not covered" >    url: string</span>
+<span class="cstat-no" title="statement not covered" >    data?: any</span>
+<span class="cstat-no" title="statement not covered" >    token?: string</span>
+<span class="cstat-no" title="statement not covered" >    url?: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >interface noDataInterface {</span>
-<span class="cstat-no" title="statement not covered" >    token: string</span>
-<span class="cstat-no" title="statement not covered" >    url: string</span>
+<span class="cstat-no" title="statement not covered" >    token?: string</span>
+<span class="cstat-no" title="statement not covered" >    url?: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useSecureRequest(url: string = '') {</span>
+<span class="cstat-no" title="statement not covered" >    const { getAccessTokenSilently } = useAuth0()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { logout } = useContext(AuthenticationContext)</span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -519,8 +524,8 @@
 <span class="cstat-no" title="statement not covered" >        data = {},</span>
 <span class="cstat-no" title="statement not covered" >        token = '',</span>
 <span class="cstat-no" title="statement not covered" >        url: passedUrl = '',</span>
-<span class="cstat-no" title="statement not covered" >    }: dataInterface) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : CookieService.getter(tokenKey)</span>
+<span class="cstat-no" title="statement not covered" >    }: dataInterface = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : getAccessTokenSilently()</span>
 <span class="cstat-no" title="statement not covered" >        if (!resolvedToken) {</span>
 <span class="cstat-no" title="statement not covered" >            return apiRes(false, 'Login token no found!', null)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -559,8 +564,8 @@
 <span class="cstat-no" title="statement not covered" >        data = {},</span>
 <span class="cstat-no" title="statement not covered" >        token = '',</span>
 <span class="cstat-no" title="statement not covered" >        url: passedUrl = '',</span>
-<span class="cstat-no" title="statement not covered" >    }: dataInterface) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : CookieService.getter(tokenKey)</span>
+<span class="cstat-no" title="statement not covered" >    }: dataInterface = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : getAccessTokenSilently()</span>
 <span class="cstat-no" title="statement not covered" >        if (!resolvedToken) {</span>
 <span class="cstat-no" title="statement not covered" >            return apiRes(false, 'Login token not found!', null)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -599,8 +604,8 @@
 <span class="cstat-no" title="statement not covered" >        data = {},</span>
 <span class="cstat-no" title="statement not covered" >        token = '',</span>
 <span class="cstat-no" title="statement not covered" >        url: passedUrl = '',</span>
-<span class="cstat-no" title="statement not covered" >    }: dataInterface) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : CookieService.getter(tokenKey)</span>
+<span class="cstat-no" title="statement not covered" >    }: dataInterface = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : getAccessTokenSilently()</span>
 <span class="cstat-no" title="statement not covered" >        if (!resolvedToken) {</span>
 <span class="cstat-no" title="statement not covered" >            return apiRes(false, 'Login token undefined or null!', null)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -637,10 +642,8 @@
 <span class="cstat-no" title="statement not covered" >    const get = async ({</span>
 <span class="cstat-no" title="statement not covered" >        token = '',</span>
 <span class="cstat-no" title="statement not covered" >        url: passedUrl = '',</span>
-<span class="cstat-no" title="statement not covered" >    }: noDataInterface) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const resolvedToken = token</span>
-<span class="cstat-no" title="statement not covered" >            ? token</span>
-<span class="cstat-no" title="statement not covered" >            : await CookieService.getter(tokenKey)</span>
+<span class="cstat-no" title="statement not covered" >    }: noDataInterface = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : await getAccessTokenSilently()</span>
 <span class="cstat-no" title="statement not covered" >        if (!resolvedToken) {</span>
 <span class="cstat-no" title="statement not covered" >            return apiRes(false, 'Login token undefined or null!', null)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -688,7 +691,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T11:44:59.767Z
+                at 2023-05-29T17:38:47.766Z
             </div>
         <script src="../prettify.js"></script>
         <script>
