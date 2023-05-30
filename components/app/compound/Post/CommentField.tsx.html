@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -122,7 +122,33 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -192,8 +218,18 @@
 <span class="cstat-no" title="statement not covered" >    const { user } = useAuth0()</span>
 <span class="cstat-no" title="statement not covered" >    const { addComment } = usePostsContext()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const options = { timeZone: 'UTC' }</span>
-<span class="cstat-no" title="statement not covered" >    const today = new Date().toLocaleDateString('en-US', options)</span>
+<span class="cstat-no" title="statement not covered" >    const options: Intl.DateTimeFormatOptions = {</span>
+<span class="cstat-no" title="statement not covered" >        timeZone: 'Africa/Lagos',</span>
+<span class="cstat-no" title="statement not covered" >        year: 'numeric',</span>
+<span class="cstat-no" title="statement not covered" >        month: '2-digit',</span>
+<span class="cstat-no" title="statement not covered" >        day: '2-digit',</span>
+<span class="cstat-no" title="statement not covered" >        hour: '2-digit',</span>
+<span class="cstat-no" title="statement not covered" >        minute: '2-digit',</span>
+<span class="cstat-no" title="statement not covered" >        second: '2-digit',</span>
+<span class="cstat-no" title="statement not covered" >        hour12: false,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const today = new Date().toLocaleString('en-US', options)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [comment, setComment] = useState({</span>
 <span class="cstat-no" title="statement not covered" >        accountID: `${user?.sub}`,</span>
@@ -202,6 +238,8 @@
 <span class="cstat-no" title="statement not covered" >        id: '',</span>
 <span class="cstat-no" title="statement not covered" >        postID: '',</span>
 <span class="cstat-no" title="statement not covered" >        updatedAt: '',</span>
+<span class="cstat-no" title="statement not covered" >        username: user?.name,</span>
+<span class="cstat-no" title="statement not covered" >        profilePicture: user?.picture,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    const handleInputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setComment({ ...comment, content: event.target.value })</span>
@@ -209,6 +247,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSubmit = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        addComment(postId, comment)</span>
+<span class="cstat-no" title="statement not covered" >        setComment({ ...comment, content: '' })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleKeyDown = (event: KeyboardEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
@@ -247,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T17:38:47.766Z
+                at 2023-05-30T16:00:33.666Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

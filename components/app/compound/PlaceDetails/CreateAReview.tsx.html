@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/151</span>
+                <span class='fraction'>0/161</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/151</span>
+                <span class='fraction'>0/161</span>
             </div>
         
             
@@ -214,7 +214,27 @@
 <a name='L149'></a><a href='#L149'>149</a>
 <a name='L150'></a><a href='#L150'>150</a>
 <a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -377,10 +397,16 @@
 <span class="cstat-no" title="statement not covered" >import CreateReviewFormValidator from '@/utils/FormValidators/CreateReview/CreateReviewForm'</span>
 <span class="cstat-no" title="statement not covered" >import { updateFormState } from '@/utils/formUtils'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >interface Photo {</span>
+<span class="cstat-no" title="statement not covered" >    name: string</span>
+<span class="cstat-no" title="statement not covered" >    preview: string</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CreateAReview() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { writeReview } = router.query</span>
 <span class="cstat-no" title="statement not covered" >    const placeName = (router.query.details as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Create review form</span>
 <span class="cstat-no" title="statement not covered" >    const [reviewForm, setReviewForm] = useState({</span>
@@ -503,7 +529,11 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/h5&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='mt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;DragDropImageUpload /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;DragDropImageUpload</span>
+<span class="cstat-no" title="statement not covered" >                                    handleFileChange={() =&gt; null}</span>
+<span class="cstat-no" title="statement not covered" >                                    selectedPhotos={selectedPhotos}</span>
+<span class="cstat-no" title="statement not covered" >                                    setSelectedPhotos={setSelectedPhotos}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -523,7 +553,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T17:38:47.766Z
+                at 2023-05-30T16:00:33.666Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
