@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.24% </span>
+                <span class="strong">59.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>83/145</span>
+                <span class='fraction'>79/133</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.24% </span>
+                <span class="strong">59.39% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>83/145</span>
+                <span class='fraction'>79/133</span>
             </div>
         
             
@@ -196,19 +196,7 @@
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a>
-<a name='L145'></a><a href='#L145'>145</a>
-<a name='L146'></a><a href='#L146'>146</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -319,9 +307,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -339,15 +324,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -355,25 +331,25 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
 &nbsp;
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 &nbsp;
-import { useAuth0 } from '@auth0/auth0-react'
 &nbsp;
 import { PulseLoader } from 'react-spinners'
+&nbsp;
+import { useUser } from '@auth0/nextjs-auth0/client'
 &nbsp;
 import HomeNavButton from '../../FormComponents/HomeNavButton'
 &nbsp;
 import { ChevronDownIcon } from '@/constants/icons/icons'
 &nbsp;
 import SearchBar from '@/components/SearchBar/SearchBar'
-import { AuthenticationContext } from '@/components/context-containers/Authentication.context'
 import NavbarLogo from '@/components/navLogo'
 import homepageNavigationLinks from '@/constants/navbar/homepageNavigationLinks'
 &nbsp;
 export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
     const [hoveredElement, setHoveredElement] = useState(null)
-    const { login } = useContext(AuthenticationContext)
-    const { isAuthenticated, isLoading } = useAuth0()
+    const { user, isLoading } = useUser();
+&nbsp;
     return (
         &lt;nav
             className={`${
@@ -463,36 +439,24 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
                         &lt;/div&gt;
                     )}
 &nbsp;
-                    {isLoading ? (
-                        &lt;div&gt;
-                            &lt;PulseLoader size={7} color='white' /&gt;
-                        &lt;/div&gt;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    ) : (</span></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {isAuthenticated ? (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;Link href='/app'&gt;App&lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex items-center gap-2 desktop:gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;HomeNavButton</span>
-<span class="cstat-no" title="statement not covered" >                                        onClick={login}</span>
-<span class="cstat-no" title="statement not covered" >                                        dataTestid='login-btn'</span>
-<span class="cstat-no" title="statement not covered" >                                        className={scrollPastSection &amp;&amp; 'inv'}</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Login</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/HomeNavButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;HomeNavButton</span>
-<span class="cstat-no" title="statement not covered" >                                        onClick={login}</span>
-<span class="cstat-no" title="statement not covered" >                                        dataTestid='signup-btn'</span>
-<span class="cstat-no" title="statement not covered" >                                        className={scrollPastSection &amp;&amp; 'inv'}</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Sign up</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/HomeNavButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/&gt;</span>
-                    )}
+                    {isLoading ? &lt;div&gt;&lt;PulseLoader size={7} color='white' /&gt;&lt;/div&gt;<span class="branch-0 cbranch-no" title="branch not covered" > : &lt;&gt;{user ? &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link href='/app'&gt;App&lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;:&lt;div className='flex items-center gap-2 desktop:gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;HomeNavButton</span>
+<span class="cstat-no" title="statement not covered" >                            href='/api/auth/login'</span>
+<span class="cstat-no" title="statement not covered" >                            dataTestid='login-btn'</span>
+<span class="cstat-no" title="statement not covered" >                            className={scrollPastSection &amp;&amp; 'inv'}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Login</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/HomeNavButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;HomeNavButton</span>
+<span class="cstat-no" title="statement not covered" >                            href='/api/auth/login'</span>
+<span class="cstat-no" title="statement not covered" >                            dataTestid='signup-btn'</span>
+<span class="cstat-no" title="statement not covered" >                            className={scrollPastSection &amp;&amp; 'inv'}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Sign up</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/HomeNavButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;}&lt;/&gt;}</span>
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/nav&gt;
@@ -505,7 +469,7 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-30T16:00:33.666Z
+                at 2023-05-31T06:23:48.433Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
