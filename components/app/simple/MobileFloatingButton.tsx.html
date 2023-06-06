@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -154,7 +154,23 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -288,52 +304,60 @@
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='md:hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setFloatingButtonMenu(!floatingButtonMenu)}</span>
-<span class="cstat-no" title="statement not covered" >                className={`fixed ${</span>
-<span class="cstat-no" title="statement not covered" >                    hidden ? 'bottom-4 ' : 'bottom-16 mobile:bottom-[5.5rem]'</span>
-<span class="cstat-no" title="statement not covered" >                } right-4 flex justify-center items-center z-[1000] bg-orange dark:bg-bright-blue text-primary dark:text-primary rounded-full h-14 w-14 shadow-lg`}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {!hidden ? (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlusIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ) : (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;HomeOutlineIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* {router.pathname !== '/app/reels' &amp;&amp; ( */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='md:hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; setFloatingButtonMenu(!floatingButtonMenu)}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`fixed ${</span>
+<span class="cstat-no" title="statement not covered" >                        hidden</span>
+<span class="cstat-no" title="statement not covered" >                            ? 'bottom-4 '</span>
+<span class="cstat-no" title="statement not covered" >                            : 'bottom-16 mobile:bottom-[5.5rem]'</span>
+<span class="cstat-no" title="statement not covered" >                    }   right-4 flex justify-center items-center z-[1000] bg-orange dark:bg-bright-blue text-primary dark:text-primary rounded-full h-14 w-14 shadow-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {!hidden ? (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ) : (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;HomeOutlineIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setFloatingButtonMenu(false)}</span>
-<span class="cstat-no" title="statement not covered" >                className={`absolute ${</span>
-<span class="cstat-no" title="statement not covered" >                    hidden ? 'bottom-20' : 'bottom-32 mobile:bottom-40'</span>
-<span class="cstat-no" title="statement not covered" >                }  right-4 ${</span>
-<span class="cstat-no" title="statement not covered" >                    floatingButtonMenu ? 'z-[1000]' : '-z-10'</span>
-<span class="cstat-no" title="statement not covered" >                }  h-fit py-3 w-fit flex justify-end px-1`}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-3 place-items-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {floatingMenu.map((item, idx: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={</span>
-<span class="cstat-no" title="statement not covered" >                                    item.url</span>
-<span class="cstat-no" title="statement not covered" >                                        ? () =&gt; router.push(`${item.url}`)</span>
-<span class="cstat-no" title="statement not covered" >                                        : () =&gt; null</span>
-<span class="cstat-no" title="statement not covered" >                                }</span>
-<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                                    floatingButtonMenu</span>
-<span class="cstat-no" title="statement not covered" >                                        ? 'translate-x-0 opacity-100 '</span>
-<span class="cstat-no" title="statement not covered" >                                        : '-translate-x-full opacity-0 '</span>
-<span class="cstat-no" title="statement not covered" >                                } transition duration-500  ease-in-out rounded-3xl px-4 py-2 w-fit flex gap-3  items-center bg-orange text-white`}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-4 h-4' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;p className='whitespace-nowrap'&gt;{item.name}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; setFloatingButtonMenu(false)}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`absolute ${</span>
+<span class="cstat-no" title="statement not covered" >                        hidden ? 'bottom-20' : 'bottom-32 mobile:bottom-40'</span>
+<span class="cstat-no" title="statement not covered" >                    }  right-4 ${</span>
+<span class="cstat-no" title="statement not covered" >                        floatingButtonMenu ? 'z-[1000]' : '-z-10'</span>
+<span class="cstat-no" title="statement not covered" >                    }  h-fit py-3 w-fit flex justify-end px-1`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid gap-3 place-items-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {floatingMenu.map((item, idx: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            return (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                    onClick={</span>
+<span class="cstat-no" title="statement not covered" >                                        item.url</span>
+<span class="cstat-no" title="statement not covered" >                                            ? () =&gt; router.push(`${item.url}`)</span>
+<span class="cstat-no" title="statement not covered" >                                            : () =&gt; null</span>
+<span class="cstat-no" title="statement not covered" >                                    }</span>
+<span class="cstat-no" title="statement not covered" >                                    key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                    className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                                        floatingButtonMenu</span>
+<span class="cstat-no" title="statement not covered" >                                            ? 'translate-x-0 opacity-100 '</span>
+<span class="cstat-no" title="statement not covered" >                                            : '-translate-x-full opacity-0 '</span>
+<span class="cstat-no" title="statement not covered" >                                    } transition duration-500  ease-in-out rounded-3xl px-4 py-2 w-fit flex gap-3  items-center bg-orange text-white`}</span>
+<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;item.icon className='w-4 h-4' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;p className='whitespace-nowrap'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* )} */}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -343,7 +367,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

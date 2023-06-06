@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -113,7 +113,11 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -169,13 +173,13 @@
 <span class="cstat-no" title="statement not covered" >import { homepageCategories } from '@/constants/homepage/Categories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function DesktopCategories() {</span>
-<span class="cstat-no" title="statement not covered" >    const categorieClasses = {</span>
+<span class="cstat-no" title="statement not covered" >    const categoriesClasses = {</span>
 <span class="cstat-no" title="statement not covered" >        middleLink:</span>
-<span class="cstat-no" title="statement not covered" >            'hover:scale-125 duration-700 transition-transform ease-in-out hover:z-10 h-60 w-60 max-desktop:h-48 max-desktop:w-48 rounded-3xl col-start-3 col-span-2 bg-white text-primary flex flex-col',</span>
+<span class="cstat-no" title="statement not covered" >            'hover:scale-110 duration-700 transition-transform ease-in-out hover:z-10 h-60 w-60 max-desktop:h-48 max-desktop:w-48 rounded-3xl col-start-3 col-span-2 bg-white text-primary flex flex-col',</span>
 <span class="cstat-no" title="statement not covered" >        linkTag:</span>
-<span class="cstat-no" title="statement not covered" >            'hover:scale-150 duration-700 transition-transform ease-in-out hover:z-10 h-44 w-44 max-desktop:h-32 max-desktop:w-full rounded-3xl bg-white text-primary flex flex-col',</span>
-<span class="cstat-no" title="statement not covered" >        pTag: 'mt-1 font-bold text-sm max-desktop:text-xs flex-1 flex justify-center items-center',</span>
-<span class="cstat-no" title="statement not covered" >        imageTag: 'w-full h-[70%] object-cover object-center rounded-t-3xl',</span>
+<span class="cstat-no" title="statement not covered" >            'hover:scale-110 duration-700 transition-transform ease-in-out hover:z-10 h-44 w-44 max-desktop:h-32 max-desktop:w-full rounded-3xl bg-white text-primary flex flex-col',</span>
+<span class="cstat-no" title="statement not covered" >        pTag: 'mt-1 font-bold max-desktop:text-xs  flex justify-center items-center',</span>
+<span class="cstat-no" title="statement not covered" >        imageTag: 'w-full h-[83%] object-cover object-center rounded-t-3xl',</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -187,8 +191,8 @@
 <span class="cstat-no" title="statement not covered" >                        href={`/explore/?search=${item.name}`}</span>
 <span class="cstat-no" title="statement not covered" >                        className={`${</span>
 <span class="cstat-no" title="statement not covered" >                            index !== 2</span>
-<span class="cstat-no" title="statement not covered" >                                ? categorieClasses.linkTag</span>
-<span class="cstat-no" title="statement not covered" >                                : categorieClasses.middleLink</span>
+<span class="cstat-no" title="statement not covered" >                                ? categoriesClasses.linkTag</span>
+<span class="cstat-no" title="statement not covered" >                                : categoriesClasses.middleLink</span>
 <span class="cstat-no" title="statement not covered" >                        } ${item.class} `}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
@@ -198,14 +202,16 @@
 <span class="cstat-no" title="statement not covered" >                            quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                            width={100}</span>
 <span class="cstat-no" title="statement not covered" >                            height={100}</span>
-<span class="cstat-no" title="statement not covered" >                            className={categorieClasses.imageTag}</span>
+<span class="cstat-no" title="statement not covered" >                            className={categoriesClasses.imageTag}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='relative flex items-center justify-center flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='absolute top-0 flex items-center justify-center w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-grey left-1/2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='relative flex items-center justify-center '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {/* &lt;div className='absolute top-0 flex items-center justify-center w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-grey left-1/2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-5 h-5 text-primary' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className={categorieClasses.pTag}&gt;{item.name}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;p className={categoriesClasses.pTag}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
@@ -220,7 +226,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

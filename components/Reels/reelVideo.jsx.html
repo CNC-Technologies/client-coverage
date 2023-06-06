@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/50</span>
+                <span class='fraction'>34/50</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/50</span>
+                <span class='fraction'>34/50</span>
             </div>
         
             
@@ -128,7 +128,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -163,55 +163,55 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
 &nbsp;
-import { PlaySolidIcon } from '@/constants/icons/icons';
+import { PlaySolidIcon } from '@/constants/icons/icons'
 export default function ReelVideo({ isMute, videoIndex }) {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const handlePlayPause = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const video = document.getElementById(`reels-video${videoIndex}`);</span>
-<span class="cstat-no" title="statement not covered" >    // console.log(video);</span>
-<span class="cstat-no" title="statement not covered" >    if (video.paused) {</span>
-<span class="cstat-no" title="statement not covered" >      setIsPlaying(true);</span>
-<span class="cstat-no" title="statement not covered" >      video.play();</span>
-<span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >      setIsPlaying(false);</span>
-<span class="cstat-no" title="statement not covered" >      video.pause();</span>
+    const [isPlaying, setIsPlaying] = useState(true)
+    const handlePlayPause = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const video = document.getElementById(`reels-video${videoIndex}`)</span>
+<span class="cstat-no" title="statement not covered" >        // console.log(video);</span>
+<span class="cstat-no" title="statement not covered" >        if (video.paused) {</span>
+<span class="cstat-no" title="statement not covered" >            setIsPlaying(true)</span>
+<span class="cstat-no" title="statement not covered" >            video.play()</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >            setIsPlaying(false)</span>
+<span class="cstat-no" title="statement not covered" >            video.pause()</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-  };
-  return (
-    &lt;&gt;
-      &lt;video
-        onClick={handlePlayPause}
-        id={`reels-video${videoIndex}`}
-        className='object-cover w-full h-full mobile:rounded-md'
-        // poster='/Videos/poster.png'
-        preload='auto'
-        // eslint-disable-next-line react/no-unknown-property
-        playsInline
-        // eslint-disable-next-line react/no-unknown-property
-        webkit-playsinline='true'
-        // eslint-disable-next-line react/no-unknown-property
-        x5-playsinline='true'
-        autoPlay
-        muted={isMute}
-        loop={true}
-      &gt;
-        &lt;source
-          src='https://res.cloudinary.com/dgenknzfn/video/upload/v1680468449/herro_zxy6xv.mp4'
-          type='video/mp4'
-        /&gt;
-      &lt;/video&gt;
-      {!isPlaying<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >          onClick={handlePlayPause}</span>
-<span class="cstat-no" title="statement not covered" >          className='absolute flex items-center justify-center p-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-grey/70 top-1/2 left-1/2 '</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;PlaySolidIcon className='w-6 h-6 text-primary ' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-      )}
-    &lt;/&gt;
-  );
+    return (
+        &lt;&gt;
+            &lt;video
+                onClick={handlePlayPause}
+                id={`reels-video${videoIndex}`}
+                className='object-cover w-full h-full xmd:rounded-md'
+                // poster='/Videos/poster.png'
+                preload='auto'
+                // eslint-disable-next-line react/no-unknown-property
+                playsInline
+                // eslint-disable-next-line react/no-unknown-property
+                webkit-playsinline='true'
+                // eslint-disable-next-line react/no-unknown-property
+                x5-playsinline='true'
+                autoPlay
+                muted={isMute}
+                loop={true}
+            &gt;
+                &lt;source
+                    src='https://res.cloudinary.com/dgenknzfn/video/upload/v1680468449/herro_zxy6xv.mp4'
+                    type='video/mp4'
+                /&gt;
+            &lt;/video&gt;
+            {!isPlaying<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={handlePlayPause}</span>
+<span class="cstat-no" title="statement not covered" >                    className='absolute flex items-center justify-center p-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-grey/70 top-1/2 left-1/2 '</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;PlaySolidIcon className='w-6 h-6 text-primary ' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+            )}
+        &lt;/&gt;
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -220,7 +220,7 @@ export default function ReelVideo({ isMute, videoIndex }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

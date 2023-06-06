@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/95</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/95</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -150,23 +150,7 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -254,15 +238,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRef } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SectionHeading from './sectionHeading'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import HomeNavButton from '@/components/FormComponents/HomeNavButton'</span>
+<span class="cstat-no" title="statement not covered" >// import HomeNavButton from '@/components/FormComponents/HomeNavButton'</span>
 <span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
 <span class="cstat-no" title="statement not covered" >import useImageCarousel from '@/hooks/useimageSlider'</span>
 <span class="cstat-no" title="statement not covered" >export default function BusinessesSupport({ setActiveClass }) {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
 <span class="cstat-no" title="statement not covered" >    const idClass = 'theme-gold-inv'</span>
 <span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
@@ -315,33 +301,23 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={`absolute smoothen w-[30%] max-desktop:w-[40%] max-laptop:w-[50%] max-md:w-[70%] max-xmd:w-[85%] h-fit top-[55%] transition-transform duration-1000 ease-in-out ${</span>
-<span class="cstat-no" title="statement not covered" >                        activeIndex === 0</span>
-<span class="cstat-no" title="statement not covered" >                            ? 'left-32 max-desktop:left-16 max-xmd:left-10  max-mobile:left-6 text-left'</span>
-<span class="cstat-no" title="statement not covered" >                            : 'right-32 max-desktop:right-16 text-right max-md:left-16 max-xmd:left-10 max-mobile:left-6'</span>
-<span class="cstat-no" title="statement not covered" >                    } -translate-y-1/2 z-10`}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`absolute smoothen desktop:w-[40%]  md:w-[50%] xmd:w-[70%] w-[85%] h-fit top-[35%] transition-transform duration-1000 ease-in-out left-32 max-desktop:left-16 max-xmd:left-10  max-mobile:left-6 text-left-translate-y-1/2 z-10`}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-white'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SectionHeading</span>
 <span class="cstat-no" title="statement not covered" >                            heading={'Businesses Support'}</span>
-<span class="cstat-no" title="statement not covered" >                            subtext={</span>
-<span class="cstat-no" title="statement not covered" >                                'Businesses can create events, and also list their business in their prefered location'</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            subtext={`Boost your business with Placio's unwavering support. From enhanced visibility to targeted promotions, our platform empowers businesses to thrive and connect with their ideal customers. Experience the difference of Placio's dedicated business support and unlock new growth opportunities today.`}</span>
 <span class="cstat-no" title="statement not covered" >                            removeShadow={undefined}</span>
-<span class="cstat-no" title="statement not covered" >                            right={!(activeIndex === 0)}</span>
+<span class="cstat-no" title="statement not covered" >                            // right={!(activeIndex === 0)}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        className={`flex gap-6 mt-24 max-desktop:mt-12 ${</span>
-<span class="cstat-no" title="statement not covered" >                            activeIndex === 0</span>
-<span class="cstat-no" title="statement not covered" >                                ? ''</span>
-<span class="cstat-no" title="statement not covered" >                                : 'justify-end max-md:justify-start'</span>
-<span class="cstat-no" title="statement not covered" >                        }`}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;HomeNavButton href='/auth/signin'&gt;Login&lt;/HomeNavButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;HomeNavButton href='/auth/signup'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Sign up</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/HomeNavButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex justify-left max-md:justify-center mt-14'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                            className={`bg-white/90 hover:bg-white text-primary font-bold py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; router.push('/api/auth/login')}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Sign Up</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -355,7 +331,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

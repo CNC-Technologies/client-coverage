@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/business/team.tsx</title>
+    <title>Code coverage report for constants/MockData/Testimonials.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">pages/business</a> team.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">constants/MockData</a> Testimonials.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -93,7 +93,9 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -123,36 +125,40 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
-<span class="cstat-no" title="statement not covered" >import TeamList from '@/components/business/complex/team/TeamList'</span>
-<span class="cstat-no" title="statement not covered" >import AddTeamMemberDialog from '@/components/business/dialogs/AddTeamMember.dialog'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function TeamPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const [addMemberDialog, setAddMemberDialog] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    const openAddMemberDialog = () =&gt; setAddMemberDialog(true)</span>
-<span class="cstat-no" title="statement not covered" >    const closeAddMemberDialog = () =&gt; setAddMemberDialog(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;AppLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='items-start row mb-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='w-28'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Button onClick={openAddMemberDialog}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className='text-xs'&gt;Add Member&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;AddTeamMemberDialog</span>
-<span class="cstat-no" title="statement not covered" >                    dialogOpened={addMemberDialog}</span>
-<span class="cstat-no" title="statement not covered" >                    closeDialog={closeAddMemberDialog}</span>
-<span class="cstat-no" title="statement not covered" >                    title='Add Team Member'</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;TeamList /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/AppLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >export const TestimonialsList = [</span></span></span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        username: 'Emily123',</span>
+<span class="cstat-no" title="statement not covered" >        location: 'New York City, USA',</span>
+<span class="cstat-no" title="statement not covered" >        img: `https://res.cloudinary.com/placio/image/upload/v1682977948/user-media-content/homepage/user1_izikqx.svg`,</span>
+<span class="cstat-no" title="statement not covered" >        testimony: `Placio has been a game-changer for me. I've discovered amazing events and connected with like-minded people in my city. It's the go-to platform for anyone looking to explore and make meaningful connections.`,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        username: 'TravelerKate',</span>
+<span class="cstat-no" title="statement not covered" >        location: 'London, UK',</span>
+<span class="cstat-no" title="statement not covered" >        img: `https://res.cloudinary.com/placio/image/upload/v1682977949/user-media-content/homepage/user2_jyjq3q.svg`,</span>
+<span class="cstat-no" title="statement not covered" >        testimony: `As a frequent traveler, Placio has become my trusted companion. It helps me find unique events and hidden gems in every city I visit. Thanks to Placio, I've had unforgettable experiences and made lifelong friends along the way.`,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        username: 'SportsFanatic',</span>
+<span class="cstat-no" title="statement not covered" >        location: 'Los Angeles, USA',</span>
+<span class="cstat-no" title="statement not covered" >        img: `https://res.cloudinary.com/placio/image/upload/v1682977949/user-media-content/homepage/user3_dhlgl7.svg`,</span>
+<span class="cstat-no" title="statement not covered" >        testimony: `Being a sports enthusiast, Placio keeps me up-to-date with all the latest games, matches, and sporting events happening in my area. It's my go-to platform for finding and attending thrilling sports events.`,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        username: 'ArtLover2023',</span>
+<span class="cstat-no" title="statement not covered" >        location: 'Paris, France',</span>
+<span class="cstat-no" title="statement not covered" >        img: `https://res.cloudinary.com/placio/image/upload/v1682977951/user-media-content/homepage/user4_wiylnn.svg`,</span>
+<span class="cstat-no" title="statement not covered" >        testimony: `Placio has broadened my horizons in the art scene. It's a treasure trove of exhibitions, galleries, and cultural events. Thanks to Placio, I've discovered new artists and immersed myself in the vibrant art culture of my city.`,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        username: 'FoodieExplorer',</span>
+<span class="cstat-no" title="statement not covered" >        location: 'Tokyo, Japan',</span>
+<span class="cstat-no" title="statement not covered" >        img: `https://res.cloudinary.com/placio/image/upload/v1682977950/user-media-content/homepage/user5_krig0m.svg`,</span>
+<span class="cstat-no" title="statement not covered" >        testimony: `Placio is a food lover's paradise. It helps me explore diverse culinary experiences, from food festivals to hidden local eateries. Placio's recommendations have never disappointed, and it has become an essential tool for my foodie adventures.`,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >]</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

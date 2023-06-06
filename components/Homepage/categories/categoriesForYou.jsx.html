@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -137,11 +137,7 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -229,7 +225,7 @@
 <span class="cstat-no" title="statement not covered" >    const idClass = 'theme-maroon-inv'</span>
 <span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
 <span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
-<span class="cstat-no" title="statement not covered" >    </span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
@@ -240,21 +236,19 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-center w-full max-width px-6 mobile:px-10 md:px-14  flex gap-8 laptop:gap-4 desktop:gap-12 items-center max-[980px]:flex-col '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col flex-1 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Categories for you{' '}</span>
+<span class="cstat-no" title="statement not covered" >                        Categories for you</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='desktop:w-[80%] lgMobile:px-6 mt-4 mx-auto text-center italic text-sm xmobile:text-base laptop:text-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Where would you like to go to next? A bar, the museum,</span>
-<span class="cstat-no" title="statement not covered" >                        an hotel, a restaurant.....how about you try “a</span>
-<span class="cstat-no" title="statement not covered" >                        breakfast spot”.....and see what you’ll find.</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='desktop:w-[80%] lgMobile:px-6 mt-4 mx-auto text-center text-sm xmobile:text-base laptop:text-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {`Discover curated categories tailored just for you,</span>
+<span class="cstat-no" title="statement not covered" >                        allowing you to effortlessly navigate through a world of</span>
+<span class="cstat-no" title="statement not covered" >                        options and find exactly what you're looking for. From</span>
+<span class="cstat-no" title="statement not covered" >                        art and culture to sports and entertainment.`}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='md:flex hidden justify-center mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            type='submit'</span>
-<span class="cstat-no" title="statement not covered" >                            className={`inv py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                router.push('/explore?search=a_breakfast_spot')</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            className={`inv hover:brightness-150 py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; router.push('/explore')}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Explore</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
@@ -279,8 +273,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex md:hidden justify-center my-8'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                        type='submit'</span>
-<span class="cstat-no" title="statement not covered" >                        className={`bg-deepMaroon text-faintOrange py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`inv hover:brightness-150 py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; router.push('/explore')}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Explore</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
@@ -298,7 +292,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

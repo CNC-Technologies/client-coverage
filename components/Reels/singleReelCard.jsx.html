@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.26% </span>
+                <span class="strong">96.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>103/107</span>
+                <span class='fraction'>104/108</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.26% </span>
+                <span class="strong">96.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>103/107</span>
+                <span class='fraction'>104/108</span>
             </div>
         
             
@@ -170,7 +170,8 @@
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -183,7 +184,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -206,6 +206,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -277,112 +279,113 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ReelVideo from './reelVideo';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ReelVideo from './reelVideo'
 &nbsp;
-import Avatar from '@/components/app/simple/Avatar';
-&nbsp;
+import Avatar from '@/components/app/simple/Avatar'
 &nbsp;
 import {
-  BookmarkOutlineIcon,
-  HeartOutlineIcon,
-  HorzMenuSolidIcon,
-  ShareOutlineIcon,
-  SoundMutedOutlineIcon,
-  SoundOutlineIcon,
-} from '@/constants/icons/icons';
+    BookmarkOutlineIcon,
+    HeartOutlineIcon,
+    HorzMenuSolidIcon,
+    ShareOutlineIcon,
+    SoundMutedOutlineIcon,
+    SoundOutlineIcon,
+} from '@/constants/icons/icons'
 export default function SingleReelCard({
-  videoIndex,
-  isMute,
-  handleMuting,
-  mini = false,
+    videoIndex,
+    isMute,
+    handleMuting,
+    mini = false,
 }) {
-  return (
-    &lt;div
-      role={'single-reel'}
-      className='max-w-[30rem]  extraLarge:max-w-[50rem] h-full  mx-auto flex w-full'
-    &gt;
-      &lt;div className='relative items-end w-full h-full rounded-md shadow-2xl'&gt;
-        &lt;button
-          role={'mute-button'}
-          onClick={handleMuting}
-          className={`bg-primary/30 rounded-full p-1 flex z-20 cursor-pointer  justify-center items-center absolute ${
-            mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'top-2 right-2' </span>: 'top-3 right-5'
-          }`}
-        &gt;
-          {isMute ? (
-            &lt;SoundOutlineIcon className='w-5 h-5 text-white' /&gt;
-          ) : (
-            &lt;SoundMutedOutlineIcon className='w-5 h-5 text-white' /&gt;
-          )}
-        &lt;/button&gt;
-&nbsp;
-        &lt;ReelVideo isMute={isMute} videoIndex={videoIndex} /&gt;
-&nbsp;
+    return (
         &lt;div
-          className={`absolute ${
-            mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bottom-2 left-2' </span>: 'bottom-6 left-5'
-          } w-1/2 h-fit text-white`}
+            role={'single-reel'}
+            className='max-w-[30rem]  extraLarge:max-w-[50rem] mb-20 h-full  mx-auto flex w-full'
         &gt;
-          &lt;div className='items-center space-x-3 cursor-pointer row '&gt;
-            &lt;Avatar size={mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'xs' </span>: 'md'} /&gt;
-            &lt;p className={`${mini<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; 'text-sm'} </span>font-semibold`}&gt;Ikupolati&lt;/p&gt;
-          &lt;/div&gt;
+            &lt;div className='relative items-end w-full h-full rounded-md shadow-2xl'&gt;
+                &lt;button
+                    role={'mute-button'}
+                    onClick={handleMuting}
+                    className={`bg-primary/30 rounded-full p-1 flex z-20 cursor-pointer  justify-center items-center absolute ${
+                        mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'top-2 right-2' </span>: 'top-3 right-5'
+                    }`}
+                &gt;
+                    {isMute ? (
+                        &lt;SoundOutlineIcon className='w-5 h-5 text-white' /&gt;
+                    ) : (
+                        &lt;SoundMutedOutlineIcon className='w-5 h-5 text-white' /&gt;
+                    )}
+                &lt;/button&gt;
 &nbsp;
-          &lt;div className={`truncate ${mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'text-xs' </span>: 'text-sm'}`}&gt;
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
-            fugiat eos cum ad accusantium, facilis laudantium maxime corporis
-            ipsam quibusd
-          &lt;/div&gt;
-        &lt;/div&gt;
+                &lt;ReelVideo isMute={isMute} videoIndex={videoIndex} /&gt;
 &nbsp;
-        &lt;div
-          className={`absolute z-20 ${
-            mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bottom-2 right-2' </span>: 'bottom-5 right-5'
-          } text-white w-fit h-fit ${
-            !mini &amp;&amp; 'px-2 py-4'
-          } flex flex-col gap-7 items-center`}
-        &gt;
-          &lt;div className='flex flex-col items-center justify-center gap-1 w-fit'&gt;
-            &lt;HeartOutlineIcon
-              className={`${
-                mini
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                  ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
-                  : 'w-5 h-5 mobile:h-7 mobile:w-7'
-              }`}
-            /&gt;
-            &lt;p className='text-sm'&gt;37.1k&lt;/p&gt;
-          &lt;/div&gt;
-          &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
-            &lt;ShareOutlineIcon
-              className={`${
-                mini
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                  ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
-                  : 'w-5 h-5 mobile:h-7 mobile:w-7'
-              }`}
-            /&gt;
-          &lt;/div&gt;
-          &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
-            &lt;BookmarkOutlineIcon
-              className={`${
-                mini
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                  ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
-                  : 'w-5 h-5 mobile:h-7 mobile:w-7'
-              }`}
-            /&gt;
-          &lt;/div&gt;
-          &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
-            &lt;HorzMenuSolidIcon
-              className={`${
-                mini
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                  ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
-                  : 'w-5 h-5 mobile:h-7 mobile:w-7'
-              }`}
-            /&gt;
-          &lt;/div&gt;
+                &lt;div
+                    className={`absolute ${
+                        mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bottom-2 left-2' </span>: 'bottom-6 left-5'
+                    } w-1/2 h-fit text-white`}
+                &gt;
+                    &lt;div className='items-center space-x-3 cursor-pointer row '&gt;
+                        &lt;Avatar size={mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'xs' </span>: 'md'} /&gt;
+                        &lt;p className={`${mini<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; 'text-sm'} </span>font-semibold`}&gt;
+                            Ikupolati
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+&nbsp;
+                    &lt;div className={`truncate ${mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'text-xs' </span>: 'text-sm'}`}&gt;
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Quis fugiat eos cum ad accusantium, facilis
+                        laudantium maxime corporis ipsam quibusd
+                    &lt;/div&gt;
+                &lt;/div&gt;
+&nbsp;
+                &lt;div
+                    className={`absolute z-20 ${
+                        mini<span class="branch-0 cbranch-no" title="branch not covered" > ? 'bottom-2 right-2' </span>: 'bottom-5 right-5'
+                    } text-white w-fit h-fit ${
+                        !mini &amp;&amp; 'px-2 py-4'
+                    } flex flex-col gap-7 items-center`}
+                &gt;
+                    &lt;div className='flex flex-col items-center justify-center gap-1 w-fit'&gt;
+                        &lt;HeartOutlineIcon
+                            className={`${
+                                mini
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
+                                    : 'w-5 h-5 mobile:h-7 mobile:w-7'
+                            }`}
+                        /&gt;
+                        &lt;p className='text-sm'&gt;37.1k&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
+                        &lt;ShareOutlineIcon
+                            className={`${
+                                mini
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
+                                    : 'w-5 h-5 mobile:h-7 mobile:w-7'
+                            }`}
+                        /&gt;
+                    &lt;/div&gt;
+                    &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
+                        &lt;BookmarkOutlineIcon
+                            className={`${
+                                mini
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
+                                    : 'w-5 h-5 mobile:h-7 mobile:w-7'
+                            }`}
+                        /&gt;
+                    &lt;/div&gt;
+                    &lt;div className='flex flex-col items-center justify-center w-fit'&gt;
+                        &lt;HorzMenuSolidIcon
+                            className={`${
+                                mini
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'w-3 h-3 mobile:h-5 mobile:w-5'</span></span>
+                                    : 'w-5 h-5 mobile:h-7 mobile:w-7'
+                            }`}
+                        /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  );
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -391,7 +394,7 @@ export default function SingleReelCard({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

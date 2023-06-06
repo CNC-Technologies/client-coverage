@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -114,7 +114,9 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -165,56 +167,60 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function UsersPictures({ activeIndex, imageSrc }) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex flex-col items-center w-[60%] desktop:w-[20rem] lgDesktop:w-[25rem] mx-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {[...Array(5)].map((_, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            key={index}</span>
-<span class="cstat-no" title="statement not covered" >            className={`h-16 w-16 desktop:h-20 desktop:w-20 lgDesktop:h-24 lgDesktop:w-24  border-4 transition-all duration-500 ease-in-out border-white dark:border-white/70 rounded-full ${</span>
-<span class="cstat-no" title="statement not covered" >              index === 0</span>
-<span class="cstat-no" title="statement not covered" >                ? 'self-end mr-4'</span>
-<span class="cstat-no" title="statement not covered" >                : index === 1</span>
-<span class="cstat-no" title="statement not covered" >                ? 'self-start'</span>
-<span class="cstat-no" title="statement not covered" >                : index === 2</span>
-<span class="cstat-no" title="statement not covered" >                ? 'max-desktop:h-20 max-desktop:w-20 max-lgDesktop:h-24 max-lgDesktop:w-24 lgDesktop:h-32 lgDesktop:w-32 max-[1430px]:w-28 max-[1430px]:h-28  self-end mb-8'</span>
-<span class="cstat-no" title="statement not covered" >                : index === 3</span>
-<span class="cstat-no" title="statement not covered" >                ? 'self-start'</span>
-<span class="cstat-no" title="statement not covered" >                : 'self-end mr-4'</span>
-<span class="cstat-no" title="statement not covered" >            }`}</span>
-<span class="cstat-no" title="statement not covered" >            style={{</span>
-<span class="cstat-no" title="statement not covered" >              transform: `scale(${index === 2 ? 1.5 : 1})`,</span>
-<span class="cstat-no" title="statement not covered" >            }}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >              src={imageSrc(index)}</span>
-<span class="cstat-no" title="statement not covered" >              alt='App mockup'</span>
-<span class="cstat-no" title="statement not covered" >              width={100}</span>
-<span class="cstat-no" title="statement not covered" >              height={100}</span>
-<span class="cstat-no" title="statement not covered" >              className='w-full h-full object-center object-contain '</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        ))}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex flex-col items-center w-[60%] desktop:w-[20rem] lgDesktop:w-[25rem] mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {[...Array(5)].map((_, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`h-16 w-16 desktop:h-20 desktop:w-20 lgDesktop:h-24 lgDesktop:w-24  border-4 transition-all duration-500 ease-in-out border-white dark:border-white/70 rounded-full ${</span>
+<span class="cstat-no" title="statement not covered" >                            index === 0</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'self-end mr-4'</span>
+<span class="cstat-no" title="statement not covered" >                                : index === 1</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'self-start'</span>
+<span class="cstat-no" title="statement not covered" >                                : index === 2</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'max-desktop:h-20 max-desktop:w-20 max-lgDesktop:h-24 max-lgDesktop:w-24 lgDesktop:h-32 lgDesktop:w-32 max-[1430px]:w-28 max-[1430px]:h-28  self-end mb-8'</span>
+<span class="cstat-no" title="statement not covered" >                                : index === 3</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'self-start'</span>
+<span class="cstat-no" title="statement not covered" >                                : 'self-end mr-4'</span>
+<span class="cstat-no" title="statement not covered" >                        }`}</span>
+<span class="cstat-no" title="statement not covered" >                        style={{</span>
+<span class="cstat-no" title="statement not covered" >                            transform: `scale(${index === 2 ? 1.5 : 1})`,</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                            src={imageSrc(index)}</span>
+<span class="cstat-no" title="statement not covered" >                            alt='App mockup'</span>
+<span class="cstat-no" title="statement not covered" >                            width={100}</span>
+<span class="cstat-no" title="statement not covered" >                            height={100}</span>
+<span class="cstat-no" title="statement not covered" >                            className='w-full h-full object-center object-contain '</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ))}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 w-fit flex flex-col items-center justify-between h-[25rem] desktop:h-[30rem]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='absolute top-0 left-1/2 w-0.5 h-full bg-white dark:bg-white/70 transform -translate-x-1/2'&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='flex flex-col py-10 justify-between h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {[...Array(5)].map((_, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >              key={index}</span>
-<span class="cstat-no" title="statement not covered" >              className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                index === activeIndex ? 'bg-secondary' : 'bg-primary'</span>
-<span class="cstat-no" title="statement not covered" >              } w-5 h-5 lgDesktop:w-6 lgDesktop:h-6 rounded-full transition-colors duration-500 ease-in-out border-2 border-white z-10`}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          ))}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 w-fit flex flex-col items-center justify-between h-[25rem] desktop:h-[30rem]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='absolute top-0 left-1/2 w-0.5 h-full bg-white dark:bg-white/70 transform -translate-x-1/2'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col py-10 justify-between h-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {[...Array(5)].map((_, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                                index === activeIndex</span>
+<span class="cstat-no" title="statement not covered" >                                    ? 'bg-secondary'</span>
+<span class="cstat-no" title="statement not covered" >                                    : 'bg-primary'</span>
+<span class="cstat-no" title="statement not covered" >                            } w-5 h-5 lgDesktop:w-6 lgDesktop:h-6 rounded-full transition-colors duration-500 ease-in-out border-2 border-white z-10`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ))}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -223,7 +229,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T09:53:05.190Z
+                at 2023-06-06T13:45:57.646Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
