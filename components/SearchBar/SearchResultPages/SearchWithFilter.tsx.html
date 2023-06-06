@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/178</span>
+                <span class='fraction'>0/185</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/178</span>
+                <span class='fraction'>0/185</span>
             </div>
         
             
@@ -241,7 +241,14 @@
 <a name='L176'></a><a href='#L176'>176</a>
 <a name='L177'></a><a href='#L177'>177</a>
 <a name='L178'></a><a href='#L178'>178</a>
-<a name='L179'></a><a href='#L179'>179</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -419,25 +426,39 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useState, useEffect } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import React, { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    GoogleMap,</span>
+<span class="cstat-no" title="statement not covered" >    InfoWindow,</span>
 <span class="cstat-no" title="statement not covered" >    LoadScript,</span>
 <span class="cstat-no" title="statement not covered" >    Marker,</span>
-<span class="cstat-no" title="statement not covered" >    InfoWindow,</span>
 <span class="cstat-no" title="statement not covered" >} from '@react-google-maps/api'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
+<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { MiniPlaceCard } from '@/components/Places/placeCard'</span>
+<span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
 <span class="cstat-no" title="statement not covered" >// import useDimension from '@/hooks/useDimension'</span>
-<span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceFilters from '@/components/SearchBar/SearchResultPages/Filters/PlaceFilters'</span>
-<span class="cstat-no" title="statement not covered" >import EventFilters from '@/components/SearchBar/SearchResultPages/Filters/EventFilters'</span>
+<span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
 <span class="cstat-no" title="statement not covered" >import { googleMapAPIKey } from '@/constants/env.config'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const PlaceFilters = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import('@/components/SearchBar/SearchResultPages/Filters/PlaceFilters'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
+<span class="cstat-no" title="statement not covered" >const EventFilters = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import('@/components/SearchBar/SearchResultPages/Filters/EventFilters'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SearchWithFilter({ changeResultView, queryParam }) {</span>
 <span class="cstat-no" title="statement not covered" >    // const { width } = useDimension()</span>
@@ -604,7 +625,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T06:03:22.240Z
+                at 2023-06-06T09:24:19.834Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

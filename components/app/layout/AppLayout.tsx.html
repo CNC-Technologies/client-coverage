@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/128</span>
+                <span class='fraction'>0/141</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/128</span>
+                <span class='fraction'>0/141</span>
             </div>
         
             
@@ -191,7 +191,33 @@
 <a name='L126'></a><a href='#L126'>126</a>
 <a name='L127'></a><a href='#L127'>127</a>
 <a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -320,6 +346,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { ThemeProvider } from 'next-themes'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ReactNode, useEffect, useState } from 'react'</span>
@@ -327,22 +354,34 @@
 <span class="cstat-no" title="statement not covered" >import { AppLayoutProps } from '@/interfaces/layouts.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import LeftSidebar from '@/components/app/complex/Sidebar/LeftSidebar'</span>
-<span class="cstat-no" title="statement not covered" >import RightSidebar from '@/components/app/complex/Sidebar/RightSidebar'</span>
 <span class="cstat-no" title="statement not covered" >import UsersLayoutMobileFooter from '@/components/app/layout/InnerLayouts/usersLayoutMobileFooter'</span>
-<span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
-<span class="cstat-no" title="statement not covered" >import useDimension from '@/hooks/useDimension'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import UsersLayoutMobileNavbar from '@/components/app/layout/InnerLayouts/usersLayoutMobileNavbar'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import MobileSettingsLayout from '@/components/app/layout/InnerLayouts/MobileSettingsLayout/MainLayout'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import MobileProfileNavbar from '@/components/app/layout/InnerLayouts/MobileProfileLayout/Navbar'</span>
 <span class="cstat-no" title="statement not covered" >import MobileFloatingButton from '@/components/app/simple/MobileFloatingButton'</span>
+<span class="cstat-no" title="statement not covered" >import useDimension from '@/hooks/useDimension'</span>
 <span class="cstat-no" title="statement not covered" >import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
 <span class="cstat-no" title="statement not covered" >import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const RightSidebar = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import('@/components/app/complex/Sidebar/RightSidebar'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const SearchBar = dynamic(import('@/components/SearchBar/SearchBar'))</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const UsersLayoutMobileNavbar = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import('@/components/app/layout/InnerLayouts/usersLayoutMobileNavbar'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const MobileProfileNavbar = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import('@/components/app/layout/InnerLayouts/MobileProfileLayout/Navbar'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const MobileSettingsLayout = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    import(</span>
+<span class="cstat-no" title="statement not covered" >        '@/components/app/layout/InnerLayouts/MobileSettingsLayout/MainLayout'</span>
+<span class="cstat-no" title="statement not covered" >    ),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >function AppLayout({</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
@@ -454,7 +493,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T06:03:22.240Z
+                at 2023-06-06T09:24:19.834Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

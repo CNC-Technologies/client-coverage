@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/295</span>
+                <span class='fraction'>0/300</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/295</span>
+                <span class='fraction'>0/300</span>
             </div>
         
             
@@ -358,7 +358,17 @@
 <a name='L293'></a><a href='#L293'>293</a>
 <a name='L294'></a><a href='#L294'>294</a>
 <a name='L295'></a><a href='#L295'>295</a>
-<a name='L296'></a><a href='#L296'>296</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -655,26 +665,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ImageSelectItem from './ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import VenueLocation from './VenueLocation'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    MapMarkerOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    PlusIcon,</span>
-<span class="cstat-no" title="statement not covered" >    TicketSolidIcon,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import { updateFormState } from '@/utils/formUtils'</span>
 <span class="cstat-no" title="statement not covered" >import Button, {</span>
 <span class="cstat-no" title="statement not covered" >    IconButton,</span>
 <span class="cstat-no" title="statement not covered" >    OutlineButton,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import TicketTypes from '@/components/app/compound/CreatePage/Event/TicketTypes'</span>
-<span class="cstat-no" title="statement not covered" >import { Event } from '@/interfaces/types'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    MapMarkerOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    PlusIcon,</span>
+<span class="cstat-no" title="statement not covered" >    TicketSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { Event } from '@/interfaces/types'</span>
+<span class="cstat-no" title="statement not covered" >import { updateFormState } from '@/utils/formUtils'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import TicketPolicyVenue from '@/utils/FormValidators/EventCreation/ticketPolicyVenue'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const VenueLocation = dynamic(() =&gt; import('./VenueLocation'))</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const InputField = dynamic(</span>
+<span class="cstat-no" title="statement not covered" >    () =&gt; import('@/components/FormComponents/InputField'),</span>
+<span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function EventTicketAndVenue() {</span>
 <span class="cstat-no" title="statement not covered" >    const { errors, validate, validateCoverImage } = TicketPolicyVenue()</span>
@@ -955,7 +970,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T06:03:22.240Z
+                at 2023-06-06T09:24:19.834Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
