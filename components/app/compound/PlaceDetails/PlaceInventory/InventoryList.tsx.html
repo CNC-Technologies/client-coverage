@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -127,7 +127,29 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -193,15 +215,26 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { foodMenu } from '@/constants/MockData/MenuList'</span>
 <span class="cstat-no" title="statement not covered" >import InventoryCard from '@/components/app/compound/PlaceDetails/PlaceInventory/InventoryCard'</span>
-<span class="cstat-no" title="statement not covered" >import { placeDetail } from '@/constants/routerLinks/Links'</span>
+<span class="cstat-no" title="statement not covered" >import { placeBusinessDetail, placeDetail } from '@/constants/routerLinks/Links'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >export default function InventoryList({ gridLayout }) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const placeName = router.query.details</span>
+<span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // * Place details url based on a user being logged in and based on the configKey</span>
+<span class="cstat-no" title="statement not covered" >    const detailsLink = !user</span>
+<span class="cstat-no" title="statement not covered" >        ? `/places/${placeName}`</span>
+<span class="cstat-no" title="statement not covered" >        : configKey === 'business'</span>
+<span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${placeName}`</span>
+<span class="cstat-no" title="statement not covered" >        : `${placeDetail}${placeName}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const horizontalClass =</span>
 <span class="cstat-no" title="statement not covered" >        'row space-x-3 desktop:space-x-5 overflow-x-scroll  scroll-smooth '</span>
@@ -220,7 +253,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`${placeDetail}${placeName}/inventory`}</span>
+<span class="cstat-no" title="statement not covered" >                        href={`${detailsLink}/inventory`}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-primary'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
@@ -262,7 +295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-06T17:52:20.615Z
+                at 2023-06-09T10:14:39.170Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
