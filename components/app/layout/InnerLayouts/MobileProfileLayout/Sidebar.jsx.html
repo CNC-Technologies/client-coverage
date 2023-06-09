@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/206</span>
+                <span class='fraction'>0/207</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/206</span>
+                <span class='fraction'>0/207</span>
             </div>
         
             
@@ -269,7 +269,8 @@
 <a name='L204'></a><a href='#L204'>204</a>
 <a name='L205'></a><a href='#L205'>205</a>
 <a name='L206'></a><a href='#L206'>206</a>
-<a name='L207'></a><a href='#L207'>207</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -475,29 +476,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link';</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar';</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    CloseOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    ActivityIcon,</span>
 <span class="cstat-no" title="statement not covered" >    BellOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    BriefCaseOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ChevronRightIcon,</span>
-<span class="cstat-no" title="statement not covered" >    SettingsOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    QuestionMarkIcon,</span>
-<span class="cstat-no" title="statement not covered" >    ShieldSolidIcon,</span>
-<span class="cstat-no" title="statement not covered" >    ActivityIcon,</span>
-<span class="cstat-no" title="statement not covered" >    PersonCircleOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    CloseOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    LogoutOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >    PersonCircleOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    QuestionMarkIcon,</span>
+<span class="cstat-no" title="statement not covered" >    SettingsOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    ShieldSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons';</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { AuthenticationContext } from '@/components/context-containers/Authentication.context'</span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button';</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MobileProfileSidebar({ showSidebar, closeSidebar }) {</span>
-<span class="cstat-no" title="statement not covered" >    // const router = useRouter();</span>
-<span class="cstat-no" title="statement not covered" >    const { logout } = useContext(AuthenticationContext)</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter();</span>
+<span class="cstat-no" title="statement not covered" >    const logout  = () =&gt; router.push('/api/auth/logout')</span>
+<span class="cstat-no" title="statement not covered" >    </span>
 <span class="cstat-no" title="statement not covered" >    const generalRoute = '/app/settings'</span>
 <span class="cstat-no" title="statement not covered" >    const navigationLinks = [</span>
 <span class="cstat-no" title="statement not covered" >        {</span>
@@ -688,7 +691,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-09T10:14:39.170Z
+                at 2023-06-09T11:17:07.825Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

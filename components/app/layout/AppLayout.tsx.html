@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/144</span>
+                <span class='fraction'>0/141</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/144</span>
+                <span class='fraction'>0/141</span>
             </div>
         
             
@@ -204,13 +204,7 @@
 <a name='L139'></a><a href='#L139'>139</a>
 <a name='L140'></a><a href='#L140'>140</a>
 <a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a>
-<a name='L145'></a><a href='#L145'>145</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L142'></a><a href='#L142'>142</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -357,6 +351,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ReactNode, useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { withPageAuthRequired } from '@auth0/nextjs-auth0/client'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { AppLayoutProps } from '@/interfaces/layouts.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import LeftSidebar from '@/components/app/complex/Sidebar/LeftSidebar'</span>
@@ -385,18 +381,12 @@
 <span class="cstat-no" title="statement not covered" >    import('@/components/app/layout/InnerLayouts/MobileProfileLayout/Navbar'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const MobileSettingsLayout = dynamic(</span>
-<span class="cstat-no" title="statement not covered" >    import(</span>
-<span class="cstat-no" title="statement not covered" >        '@/components/app/layout/InnerLayouts/MobileSettingsLayout/MainLayout'</span>
-<span class="cstat-no" title="statement not covered" >    ),</span>
-<span class="cstat-no" title="statement not covered" >)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function AppLayout({</span>
+<span class="cstat-no" title="statement not covered" >let AppLayout = ({</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >    showRightSidebar,</span>
 <span class="cstat-no" title="statement not covered" >    title = appTitle,</span>
 <span class="cstat-no" title="statement not covered" >    description = appDescription,</span>
-<span class="cstat-no" title="statement not covered" >}: AppLayoutProps) {</span>
+<span class="cstat-no" title="statement not covered" >}: AppLayoutProps) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const { height, width } = useDimension()</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { pathname } = router</span>
@@ -413,11 +403,12 @@
 <span class="cstat-no" title="statement not covered" >        &lt;ThemeProvider enableSystem={true} attribute='class'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;SEOHead title={title} description={description} icon={appIcon} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-primary'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {(pathname?.includes('settings') ||</span>
-<span class="cstat-no" title="statement not covered" >                    pathname?.includes('notification')) &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                showBelowScreenSize ? (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;MobileSettingsLayout&gt;{children}&lt;/MobileSettingsLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                {</span>
+<span class="cstat-no" title="statement not covered" >                    // (pathname?.includes('settings') ||</span>
+<span class="cstat-no" title="statement not covered" >                    //     pathname?.includes('notification')) &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                    // showBelowScreenSize ? (</span>
+<span class="cstat-no" title="statement not covered" >                    //     &lt;MobileSettingsLayout&gt;{children}&lt;/MobileSettingsLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    // ) :</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                        className='row justify-between max-w-[120rem] mx-auto bg-secondary/10 dark:bg-[#000]'</span>
 <span class="cstat-no" title="statement not covered" >                        style={{ height: height ? height : '100vh' }}</span>
@@ -485,7 +476,7 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;MobileFloatingButton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/ThemeProvider&gt;</span>
@@ -493,8 +484,8 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// export default AppLayout</span>
-<span class="cstat-no" title="statement not covered" >// export default withPageAuthRequired(AppLayout)</span>
-<span class="cstat-no" title="statement not covered" >export default authorize(AppLayout)</span>
+<span class="cstat-no" title="statement not covered" >export default withPageAuthRequired(authorize(AppLayout))</span>
+<span class="cstat-no" title="statement not covered" >// export default authorize(AppLayout)</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -502,7 +493,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-09T10:14:39.170Z
+                at 2023-06-09T11:17:07.825Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
