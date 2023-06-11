@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -127,13 +127,7 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -230,10 +224,10 @@
 <span class="cstat-no" title="statement not covered" >import store from '@/store/index'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// * Toastify class</span>
-<span class="cstat-no" title="statement not covered" >import { PostsProvider } from '@/components/context-containers/posts.context'</span>
-<span class="cstat-no" title="statement not covered" >import 'react-toastify/dist/ReactToastify.css'</span>
 <span class="cstat-no" title="statement not covered" >import { AuthModalProvider } from '@/components/context-containers/AuthModal.context'</span>
+<span class="cstat-no" title="statement not covered" >import { PostsProvider } from '@/components/context-containers/posts.context'</span>
 <span class="cstat-no" title="statement not covered" >import AuthModal from '@/components/modals/AuthModal'</span>
+<span class="cstat-no" title="statement not covered" >import 'react-toastify/dist/ReactToastify.css'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function App({ Component, pageProps }: AppProps) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -241,24 +235,21 @@
 <span class="cstat-no" title="statement not covered" >            &lt;PageLoader /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Provider store={store}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;ToastContextProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;AuthModalProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;AuthModal /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ConfirmationDialogContextProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MailDialogContextProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PostsProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;ThemeProvider</span>
-<span class="cstat-no" title="statement not covered" >                                    enableSystem={true}</span>
-<span class="cstat-no" title="statement not covered" >                                    attribute='class'</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;Component {...pageProps} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/ThemeProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/PostsProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/MailDialogContextProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/ConfirmationDialogContextProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ConfirmationDialogContextProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;MailDialogContextProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;PostsProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;ThemeProvider</span>
+<span class="cstat-no" title="statement not covered" >                                        enableSystem={true}</span>
+<span class="cstat-no" title="statement not covered" >                                        attribute='class'</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Component {...pageProps} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/ThemeProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/PostsProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/MailDialogContextProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/ConfirmationDialogContextProvider&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/AuthModalProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >                </span>
 <span class="cstat-no" title="statement not covered" >                &lt;/ToastContextProvider&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Provider&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/UserProvider&gt;</span>
@@ -271,7 +262,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-09T11:17:07.825Z
+                at 2023-06-11T11:02:05.630Z
             </div>
         <script src="../prettify.js"></script>
         <script>
