@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/224</span>
+                <span class='fraction'>0/212</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/224</span>
+                <span class='fraction'>0/212</span>
             </div>
         
             
@@ -275,31 +275,7 @@
 <a name='L210'></a><a href='#L210'>210</a>
 <a name='L211'></a><a href='#L211'>211</a>
 <a name='L212'></a><a href='#L212'>212</a>
-<a name='L213'></a><a href='#L213'>213</a>
-<a name='L214'></a><a href='#L214'>214</a>
-<a name='L215'></a><a href='#L215'>215</a>
-<a name='L216'></a><a href='#L216'>216</a>
-<a name='L217'></a><a href='#L217'>217</a>
-<a name='L218'></a><a href='#L218'>218</a>
-<a name='L219'></a><a href='#L219'>219</a>
-<a name='L220'></a><a href='#L220'>220</a>
-<a name='L221'></a><a href='#L221'>221</a>
-<a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a>
-<a name='L225'></a><a href='#L225'>225</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L213'></a><a href='#L213'>213</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -551,6 +527,7 @@
 <span class="cstat-no" title="statement not covered" >interface PostForm {</span>
 <span class="cstat-no" title="statement not covered" >    userId: string</span>
 <span class="cstat-no" title="statement not covered" >    content: string</span>
+<span class="cstat-no" title="statement not covered" >    medias: Media[]</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CreatePostForm({ handleCloseModal }) {</span>
@@ -561,11 +538,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
-<span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
+<span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postForm, setPostForm] = useState&lt;PostForm&gt;({</span>
 <span class="cstat-no" title="statement not covered" >        userId: CookieService.getter('user-id'),</span>
 <span class="cstat-no" title="statement not covered" >        content: '',</span>
+<span class="cstat-no" title="statement not covered" >        medias: [],</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postError, setPostError] = useState('')</span>
@@ -591,25 +569,25 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * create-post request</span>
-<span class="cstat-no" title="statement not covered" >    const { post, loading } = useSecureRequest(`${baseURL}/posts/`)</span>
+<span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest(`${baseURL}/posts/`)</span>
 <span class="cstat-no" title="statement not covered" >    const { handleUpload } = UploadForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const uploadImagesToCloudinary = async (): Promise&lt;Media[]&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const uploadImagesToCloudinary = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (imageForUpload) {</span>
-<span class="cstat-no" title="statement not covered" >            const res = await handleUpload(imageForUpload).catch((error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                throw error</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >            const res = await handleUpload(imageForUpload)</span>
+<span class="cstat-no" title="statement not covered" >            if (res)</span>
+<span class="cstat-no" title="statement not covered" >                setPostForm({</span>
+<span class="cstat-no" title="statement not covered" >                    ...postForm,</span>
+<span class="cstat-no" title="statement not covered" >                    medias: res,</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            return res</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return [] // Return an empty array if there is no image to upload</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const createPost = async (data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const createPost = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // * Form validator</span>
-<span class="cstat-no" title="statement not covered" >        if (data.content || data.medias.length) {</span>
-<span class="cstat-no" title="statement not covered" >            const res = await post({ data: data })</span>
-<span class="cstat-no" title="statement not covered" >            setReqLoading(loading)</span>
+<span class="cstat-no" title="statement not covered" >        if (postForm.content || postForm.medias.length) {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await post({ data: postForm })</span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
 <span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
@@ -621,9 +599,9 @@
 <span class="cstat-no" title="statement not covered" >                setPostForm({</span>
 <span class="cstat-no" title="statement not covered" >                    userId: '',</span>
 <span class="cstat-no" title="statement not covered" >                    content: '',</span>
+<span class="cstat-no" title="statement not covered" >                    medias: [],</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >                setSelectedPhotos([])</span>
-<span class="cstat-no" title="statement not covered" >                setImageForUpload(null)</span>
 <span class="cstat-no" title="statement not covered" >                showToast('success', 'Post has been created')</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -632,32 +610,19 @@
 <span class="cstat-no" title="statement not covered" >    const handleSubmit = async (event: React.FormEvent) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >        const imageUrls = await uploadImagesToCloudinary()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            // await uploadImagesToCloudinary()</span>
-<span class="cstat-no" title="statement not covered" >            // console.log(postForm.medias)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const imageUrls: Media[] = await uploadImagesToCloudinary()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const data = {</span>
-<span class="cstat-no" title="statement not covered" >                ...postForm,</span>
-<span class="cstat-no" title="statement not covered" >                medias: imageUrls,</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            // Perform additional validations or actions based on the uploaded images</span>
-<span class="cstat-no" title="statement not covered" >            if (imageUrls?.length || postForm.content) {</span>
-<span class="cstat-no" title="statement not covered" >                await createPost(data).catch(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                setPostError('You have to input either a text or an image')</span>
-<span class="cstat-no" title="statement not covered" >                setTimeout(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >                }, 3000)</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >            // Handle the error from uploadImagesToCloudinary function</span>
-<span class="cstat-no" title="statement not covered" >            showToast('error', 'Error uploading images')</span>
+<span class="cstat-no" title="statement not covered" >        // Statement to make sure the images uploaded to cloudinary and returns the necessary url</span>
+<span class="cstat-no" title="statement not covered" >        if (imageUrls?.length) {</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >            createPost()</span>
+<span class="cstat-no" title="statement not covered" >        } else if (!imageUrls?.length &amp;&amp; postForm.content) {</span>
+<span class="cstat-no" title="statement not covered" >            createPost()</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >            setPostError('You have to input either a text or an image')</span>
+<span class="cstat-no" title="statement not covered" >            setTimeout(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >            }, 3000)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -712,7 +677,6 @@
 <span class="cstat-no" title="statement not covered" >                    selectedPhotos={selectedPhotos}</span>
 <span class="cstat-no" title="statement not covered" >                    setSelectedPhotos={setSelectedPhotos}</span>
 <span class="cstat-no" title="statement not covered" >                    handleFileChange={handleMediaUpload}</span>
-<span class="cstat-no" title="statement not covered" >                    videoControl={true}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -742,7 +706,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T17:52:07.967Z
+                at 2023-06-13T17:52:40.933Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

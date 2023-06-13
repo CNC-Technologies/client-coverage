@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.61% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/67</span>
+                <span class='fraction'>49/63</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.61% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/67</span>
+                <span class='fraction'>49/63</span>
             </div>
         
             
@@ -126,12 +126,7 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">52x</span>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -160,7 +155,6 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -173,24 +167,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -208,8 +200,7 @@
         &lt;button
             type='submit'
             {...props}
-            disabled={loading}
-            className={`disabled:bg-primary/70 disabled:cursor-not-allowed w-full px-4 py-2  font-semibold text-center primary-fill rounded-lg shadow-md h-10  focus:outline-none ${className}`}
+            className={`disabled:bg-primary/30 disabled:cursor-not-allowed w-full px-4 py-2  font-semibold text-center primary-fill rounded-lg shadow-md h-10  focus:outline-none ${className}`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{name || children}&lt;/&gt;}
         &lt;/button&gt;
@@ -221,7 +212,6 @@ export function OutlineButton({ children, loading = false, ...props }) {
         &lt;button
             type='submit'
             {...props}
-            disabled={loading}
             className={`w-full px-4 py-2  max-mobile:text-base font-semibold text-center  rounded-lg shadow-md h-10 primary-outline focus:outline-none`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{children}&lt;/&gt;}
@@ -234,7 +224,6 @@ export <span class="fstat-no" title="function not covered" >function BlackButton
 <span class="cstat-no" title="statement not covered" >        &lt;button</span>
 <span class="cstat-no" title="statement not covered" >            type='submit'</span>
 <span class="cstat-no" title="statement not covered" >            {...props}</span>
-<span class="cstat-no" title="statement not covered" >            disabled={loading}</span>
 <span class="cstat-no" title="statement not covered" >            className={`w-full px-8 py-2  font-semibold text-center cursor-pointer text-white rounded-lg shadow-md h-10 bg-black dark:bg-grey dark:hover:bg-white/30  hover:bg-gray-800 smoothen focus:outline-none`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            {loading ? &lt;Spinner /&gt; : &lt;&gt;{children}&lt;/&gt;}</span>
@@ -251,7 +240,6 @@ export function IconButton({
     return (
         &lt;button
             {...props}
-            disabled={loading}
             className={`items-center justify-center p-1 transition-all duration-200 border rounded-full w-fit h-fit dark:border-none row hover:brightness-100 focus:outline-none ${className}`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{children}&lt;/&gt;}
@@ -271,7 +259,7 @@ export <span class="fstat-no" title="function not covered" >function Spinner() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T17:52:07.967Z
+                at 2023-06-13T17:52:40.933Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
