@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/102</span>
+                <span class='fraction'>0/103</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/102</span>
+                <span class='fraction'>0/103</span>
             </div>
         
             
@@ -165,7 +165,9 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -327,31 +329,32 @@
 <span class="cstat-no" title="statement not covered" >            return res.status(400).json({ message: 'No media attached!' })</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        let mediaPromises</span>
+<span class="cstat-no" title="statement not covered" >        const filesToUpload = Array.isArray(files.media)</span>
+<span class="cstat-no" title="statement not covered" >            ? Object.values(files.media)</span>
+<span class="cstat-no" title="statement not covered" >            : Object.values(files)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (Array.isArray(files.media)) {</span>
-<span class="cstat-no" title="statement not covered" >            mediaPromises = Object.values(files.media).map((file) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                return cloudinary.v2.uploader</span>
-<span class="cstat-no" title="statement not covered" >                    .upload(file.filepath)</span>
-<span class="cstat-no" title="statement not covered" >                    .catch((err) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >                            `Error uploading file: ${file.originalFilename}`,</span>
-<span class="cstat-no" title="statement not covered" >                            err,</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })</span>
+<span class="cstat-no" title="statement not covered" >        const mediaPromises = filesToUpload.map((file) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const resourceType =</span>
+<span class="cstat-no" title="statement not covered" >                file.mimetype &amp;&amp; file.mimetype.startsWith('image/')</span>
+<span class="cstat-no" title="statement not covered" >                    ? 'image'</span>
+<span class="cstat-no" title="statement not covered" >                    : 'video'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            return new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                cloudinary.v2.uploader.upload(</span>
+<span class="cstat-no" title="statement not covered" >                    file.filepath,</span>
+<span class="cstat-no" title="statement not covered" >                    { resource_type: resourceType },</span>
+<span class="cstat-no" title="statement not covered" >                    (err, result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (err) return reject(err)</span>
+<span class="cstat-no" title="statement not covered" >                        resolve(result)</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            }).catch((err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                throw new Error(</span>
+<span class="cstat-no" title="statement not covered" >                    `Error uploading file: ${file.originalFilename}`,</span>
+<span class="cstat-no" title="statement not covered" >                    err,</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            mediaPromises = Object.values(files).map((file) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                return cloudinary.v2.uploader</span>
-<span class="cstat-no" title="statement not covered" >                    .upload(file.filepath)</span>
-<span class="cstat-no" title="statement not covered" >                    .catch((err) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >                            `Error uploading file: ${file.originalFilename}`,</span>
-<span class="cstat-no" title="statement not covered" >                            err,</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const mediaResponses = await Promise.all(mediaPromises)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -376,7 +379,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T07:16:16.037Z
+                at 2023-06-13T17:51:59.487Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

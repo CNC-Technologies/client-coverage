@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/216</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/216</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -279,7 +279,17 @@
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
 <a name='L216'></a><a href='#L216'>216</a>
-<a name='L217'></a><a href='#L217'>217</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -528,14 +538,18 @@
 <span class="cstat-no" title="statement not covered" >        showToast('error', message)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleErrors = async (status: number, data: any = null) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (status === 401) {</span>
+<span class="cstat-no" title="statement not covered" >    const handleErrors = async (response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const errorMessage =</span>
+<span class="cstat-no" title="statement not covered" >            typeof response.data === 'string'</span>
+<span class="cstat-no" title="statement not covered" >                ? response.data</span>
+<span class="cstat-no" title="statement not covered" >                : 'Unspecified error'</span>
+<span class="cstat-no" title="statement not covered" >        if (response.status &amp;&amp; response.status === 401) {</span>
 <span class="cstat-no" title="statement not covered" >            throwError('Sorry, your session has expired.')</span>
 <span class="cstat-no" title="statement not covered" >            logout()</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            throwError('Unknown error!')</span>
+<span class="cstat-no" title="statement not covered" >            throwError(errorMessage)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return apiRes(false, 'Unknown error!', data)</span>
+<span class="cstat-no" title="statement not covered" >        return apiRes(false, errorMessage, null)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * The function that gets the user's token from the auth0's session</span>
@@ -543,7 +557,7 @@
 <span class="cstat-no" title="statement not covered" >        const res = await fetch('/api/auth/token')</span>
 <span class="cstat-no" title="statement not covered" >        const { status, accessToken } = await res.json()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (status === 401) handleErrors(401)</span>
+<span class="cstat-no" title="statement not covered" >        if (status === 401) handleErrors({ status: 401 })</span>
 <span class="cstat-no" title="statement not covered" >        return accessToken</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -579,11 +593,11 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * respond if api request response was not</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(response.status, response.data)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(response)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (err: any) {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            // * Error handling</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response?.status)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -619,11 +633,11 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * respond if api request response was not</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(response.status, response.data)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(response)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (err: any) {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            // * Error handling</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response?.status)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -658,11 +672,11 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * respond if api request response was not</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(response.status, response.data)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(response)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (err: any) {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            // * Error handling</span>
-<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response?.status)</span>
+<span class="cstat-no" title="statement not covered" >            return await handleErrors(err?.response)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -683,6 +697,7 @@
 <span class="cstat-no" title="statement not covered" >                method: 'GET',</span>
 <span class="cstat-no" title="statement not covered" >                url: resolvedUrl,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * extract message from response</span>
@@ -694,11 +709,11 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * respond if api request response was not</span>
-<span class="cstat-no" title="statement not covered" >            return handleErrors(response.status, response.data)</span>
+<span class="cstat-no" title="statement not covered" >            return handleErrors(response)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (err: any) {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            // * Error handling</span>
-<span class="cstat-no" title="statement not covered" >            return handleErrors(err?.response?.status)</span>
+<span class="cstat-no" title="statement not covered" >            return handleErrors(err?.response)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -718,7 +733,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-13T07:16:16.037Z
+                at 2023-06-13T17:51:59.487Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
