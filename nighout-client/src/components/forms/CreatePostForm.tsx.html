@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/224</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/224</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -284,13 +284,7 @@
 <a name='L219'></a><a href='#L219'>219</a>
 <a name='L220'></a><a href='#L220'>220</a>
 <a name='L221'></a><a href='#L221'>221</a>
-<a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a>
-<a name='L225'></a><a href='#L225'>225</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L222'></a><a href='#L222'>222</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -527,7 +521,6 @@
 <span class="cstat-no" title="statement not covered" >    ChevronDownIcon,</span>
 <span class="cstat-no" title="statement not covered" >    CloseOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >// import { today } from '@/utils/dateFormat'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { baseURL } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
@@ -544,12 +537,12 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface Media {</span>
-<span class="cstat-no" title="statement not covered" >    mediaType: string</span>
+<span class="cstat-no" title="statement not covered" >    type: string</span>
 <span class="cstat-no" title="statement not covered" >    url: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface PostForm {</span>
-<span class="cstat-no" title="statement not covered" >    userId: string</span>
+<span class="cstat-no" title="statement not covered" >    user_id: string</span>
 <span class="cstat-no" title="statement not covered" >    content: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -564,13 +557,14 @@
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postForm, setPostForm] = useState&lt;PostForm&gt;({</span>
-<span class="cstat-no" title="statement not covered" >        userId: CookieService.getter('user-id'),</span>
+<span class="cstat-no" title="statement not covered" >        user_id: CookieService.getter('user-id'),</span>
 <span class="cstat-no" title="statement not covered" >        content: '',</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postError, setPostError] = useState('')</span>
 <span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // * Function to handle input change</span>
 <span class="cstat-no" title="statement not covered" >    const handleInputChange = (e: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setPostError('')</span>
 <span class="cstat-no" title="statement not covered" >        setPostForm({ ...postForm, content: e.target.value })</span>
@@ -619,7 +613,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                // * Clear postForm</span>
 <span class="cstat-no" title="statement not covered" >                setPostForm({</span>
-<span class="cstat-no" title="statement not covered" >                    userId: '',</span>
+<span class="cstat-no" title="statement not covered" >                    user_id: '',</span>
 <span class="cstat-no" title="statement not covered" >                    content: '',</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >                setSelectedPhotos([])</span>
@@ -634,9 +628,6 @@
 <span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            // await uploadImagesToCloudinary()</span>
-<span class="cstat-no" title="statement not covered" >            // console.log(postForm.medias)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const imageUrls: Media[] = await uploadImagesToCloudinary()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const data = {</span>
@@ -742,7 +733,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-15T19:42:14.958Z
+                at 2023-06-15T19:44:06.115Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
