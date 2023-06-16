@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>91/91</span>
+                <span class='fraction'>104/104</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>91/91</span>
+                <span class='fraction'>104/104</span>
             </div>
         
             
@@ -154,7 +154,22 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -196,6 +211,17 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -250,57 +276,70 @@ import { ChangeEvent, KeyboardEvent, useState } from 'react'
 &nbsp;
 import Avatar from '@/components/app/simple/Avatar'
 import { SendSolidIcon } from '@/constants/icons/icons'
-import { usePostsContext } from '@/components/context-containers/posts.context'
-import { Comment } from '@/interfaces/posts.interface'
+// import { usePostsContext } from '@/components/context-containers/posts.context'
+// import { Comment } from '@/interfaces/posts.interface'
+// import useSecureRequest from '@/hooks/useRequest'
+// import { baseURL } from '@/constants/env.config'
 &nbsp;
 interface CommentFieldProps {
     postId: string
     // eslint-disable-next-line no-unused-vars
-    createComment: (postID: string, comment: Comment) =&gt; void
+    createComment: (postID: string, comment: string) =&gt; void
 }
 &nbsp;
 export default function CommentField({
-    postId,
+    postId = '',
     // eslint-disable-next-line no-unused-vars
     createComment = <span class="fstat-no" title="function not covered" >(postId, comment) =&gt; null,</span>
 }: CommentFieldProps) {
     const { user } = useUser()
-    const { addComment } = usePostsContext()
+    // const { addComment } = usePostsContext()
     // createComment = addComment
 &nbsp;
-    const options: Intl.DateTimeFormatOptions = {
-        timeZone: 'Africa/Lagos',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-    }
+    // const options: Intl.DateTimeFormatOptions = {
+    //     timeZone: 'Africa/Lagos',
+    //     year: 'numeric',
+    //     month: '2-digit',
+    //     day: '2-digit',
+    //     hour: '2-digit',
+    //     minute: '2-digit',
+    //     second: '2-digit',
+    //     hour12: false,
+    // }
 &nbsp;
-    const today = new Date().toLocaleString('en-US', options)
+    // const today = new Date().toLocaleString('en-US', options)
 &nbsp;
     const [comment, setComment] = useState('')
     const handleInputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
         setComment(event.target.value)
     }
 &nbsp;
-    const handleSubmit = () =&gt; {
+    // const { post } = useSecureRequest(`${baseURL}/comments/`)
+&nbsp;
+    const handleSubmit = async () =&gt; {
         if (comment) {
-            const newComment = {
-                accountID: `${user?.sub}`,
-                content: comment,
-                createdAt: today,
-                id: '',
-                postID: postId,
-                updatedAt: '',
-                username: `${user?.name}`,
-                profilePicture: `${user?.picture}`,
-            }
-            addComment(postId, newComment)
+            // const newComment = {
+            //     accountID: `${user?.sub}`,
+            //     content: comment,
+            //     createdAt: today,
+            //     id: '',
+            //     postID: postId,
+            //     updatedAt: '',
+            //     username: `${user?.name}`,
+            //     profilePicture: `${user?.picture}`,
+            // }
+            // const data = {
+            //     content: comment,
+            //     postId,
+            // }
+            // const res = await post({ data: data })
+            // console.log(res)
+&nbsp;
+            // addComment(postId, newComment)
+&nbsp;
             // This function is for test purpose, would later be removed
-            createComment(postId, newComment)
+            createComment(postId, comment)
+&nbsp;
             setComment('')
         }
     }
@@ -343,7 +382,7 @@ export default function CommentField({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-16T11:24:03.924Z
+                at 2023-06-16T11:24:35.343Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
