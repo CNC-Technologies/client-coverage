@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/201</span>
+                <span class='fraction'>0/199</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/201</span>
+                <span class='fraction'>0/199</span>
             </div>
         
             
@@ -262,11 +262,7 @@
 <a name='L197'></a><a href='#L197'>197</a>
 <a name='L198'></a><a href='#L198'>198</a>
 <a name='L199'></a><a href='#L199'>199</a>
-<a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L200'></a><a href='#L200'>200</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -468,49 +464,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    ActivityIcon,</span>
 <span class="cstat-no" title="statement not covered" >    BellOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    BriefCaseOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ChevronRightIcon,</span>
 <span class="cstat-no" title="statement not covered" >    CloseOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    LogoutOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    QuestionMarkIcon,</span>
-<span class="cstat-no" title="statement not covered" >    SettingsOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    ShieldSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >import ReportProblemItem from '@/components/ReportProblem'</span>
+<span class="cstat-no" title="statement not covered" >import { profileSidebarNavigationLinks } from '@/constants/app/Profile/SidebarNavigationLinks'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MobileProfileSidebar({ showSidebar, closeSidebar }) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const logout = () =&gt; router.push('/api/auth/logout')</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const generalRoute = '/app/settings'</span>
-<span class="cstat-no" title="statement not covered" >    const navigationLinks = [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Settings',</span>
-<span class="cstat-no" title="statement not covered" >            icon: SettingsOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >            url: `${generalRoute}?tab=0`,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Privacy and Security',</span>
-<span class="cstat-no" title="statement not covered" >            icon: ShieldSolidIcon,</span>
-<span class="cstat-no" title="statement not covered" >            url: `${generalRoute}/privacy-and-security`,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Help',</span>
-<span class="cstat-no" title="statement not covered" >            icon: QuestionMarkIcon,</span>
-<span class="cstat-no" title="statement not covered" >            url: `${generalRoute}/help`,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Login Activity',</span>
-<span class="cstat-no" title="statement not covered" >            icon: ActivityIcon,</span>
-<span class="cstat-no" title="statement not covered" >            url: `#`,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" >    // * Report a problem state</span>
+<span class="cstat-no" title="statement not covered" >    const [reportDialog, setReportDialog] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >            role='dialog'</span>
@@ -622,47 +596,67 @@
 <span class="cstat-no" title="statement not covered" >                            General</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/h5&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        {navigationLinks.map((item, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        {profileSidebarNavigationLinks.map((item, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                    href={item.url}</span>
-<span class="cstat-no" title="statement not covered" >                                    key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                    className='flex gap-6 items-center my-2 justify-between'</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex gap-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='p-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;item.icon className='h-8 w-8' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div key={idx}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.url ? (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Link href={item.url}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ) : item.name === 'Logout' ? (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div onClick={logout}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;p className='font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ) : item.name === 'Report a problem' ? (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                setReportDialog(true)</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;ChevronRightIcon className='h-8 w-8' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div onClick={() =&gt; null}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )</span>
 <span class="cstat-no" title="statement not covered" >                        })}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={logout}</span>
 <span class="cstat-no" title="statement not covered" >                            className='flex gap-6 items-center my-2 justify-between'</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex gap-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='p-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;LogoutOutlineIcon className='h-8 w-8' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p className='font-semibold'&gt;Logout&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ChevronRightIcon className='h-8 w-8' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {/* Report a problem modal  */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ParentModal</span>
+<span class="cstat-no" title="statement not covered" >                isOpen={reportDialog}</span>
+<span class="cstat-no" title="statement not covered" >                handleClose={() =&gt; setReportDialog(false)}</span>
+<span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ReportProblemItem /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function LinkItem({ item }) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='flex gap-6 items-center my-2 justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex gap-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='p-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;item.icon className='h-6 w-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='font-semibold'&gt;{item.name}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;ChevronRightIcon className='h-6 w-6' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -673,7 +667,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-15T19:44:06.115Z
+                at 2023-06-16T11:24:03.924Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
