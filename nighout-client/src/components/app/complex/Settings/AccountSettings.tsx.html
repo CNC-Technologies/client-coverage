@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/181</span>
+                <span class='fraction'>0/180</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/181</span>
+                <span class='fraction'>0/180</span>
             </div>
         
             
@@ -243,9 +243,7 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a>
-<a name='L182'></a><a href='#L182'>182</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -427,27 +425,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ChangeEvent, useContext, useRef, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { ChangeEvent, useContext, useRef } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import SettingsSectionLayout from '@/components/app/layout/InnerLayouts/SettingsSectionLayout'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
-<span class="cstat-no" title="statement not covered" >import { defaultAvatar, defaultCoverPhoto } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    CloseOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    EditIcon,</span>
 <span class="cstat-no" title="statement not covered" >    VerifiedIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
-<span class="cstat-no" title="statement not covered" >import { AccountSettingsInterface } from '@/interfaces/settings.interface'</span>
-<span class="cstat-no" title="statement not covered" >import PageLoader from '@/components/PageLoader'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    AccountSettingsInterface,</span>
+<span class="cstat-no" title="statement not covered" >    imagesType,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/interfaces/settings.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AccountSettings({</span>
-<span class="cstat-no" title="statement not covered" >    cover_image = defaultCoverPhoto,</span>
+<span class="cstat-no" title="statement not covered" >    prevImages,</span>
+<span class="cstat-no" title="statement not covered" >    setPrevImages,</span>
+<span class="cstat-no" title="statement not covered" >    setImages,</span>
+<span class="cstat-no" title="statement not covered" >    cover_image,</span>
 <span class="cstat-no" title="statement not covered" >    setState = () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >    picture = defaultAvatar,</span>
+<span class="cstat-no" title="statement not covered" >    picture,</span>
 <span class="cstat-no" title="statement not covered" >    email,</span>
 <span class="cstat-no" title="statement not covered" >    verify_email,</span>
 <span class="cstat-no" title="statement not covered" >    name,</span>
@@ -455,56 +456,50 @@
 <span class="cstat-no" title="statement not covered" >}: AccountSettingsInterface) {</span>
 <span class="cstat-no" title="statement not covered" >    const toastContext = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const pictureInputRef = useRef&lt;HTMLInputElement&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const coverInputRef = useRef&lt;HTMLInputElement&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [prevPicture, setPrevPicture] = useState('')</span>
-<span class="cstat-no" title="statement not covered" >    const [prevCover, setPrevCover] = useState('')</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [loading, setLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const triggerPictureFileSelector = () =&gt; pictureInputRef?.current?.click()</span>
 <span class="cstat-no" title="statement not covered" >    const triggerCoverFileSelector = () =&gt; coverInputRef?.current?.click()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    async function selectImage(key: string, e) {</span>
+<span class="cstat-no" title="statement not covered" >    async function selectImage(key: string, e: ChangeEvent&lt;HTMLInputElement&gt;) {</span>
 <span class="cstat-no" title="statement not covered" >        const file = e?.target?.files</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (file) {</span>
-<span class="cstat-no" title="statement not covered" >            setLoading(true)</span>
-<span class="cstat-no" title="statement not covered" >            const res = await handleUpload(file).catch((error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                throw error</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >            const img = res[0]</span>
-<span class="cstat-no" title="statement not covered" >            if (key.includes('cover')) {</span>
-<span class="cstat-no" title="statement not covered" >                if (prevCover) handleDelete(prevCover)</span>
-<span class="cstat-no" title="statement not covered" >                setPrevCover(cover_image)</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                if (prevPicture) handleDelete(prevPicture)</span>
-<span class="cstat-no" title="statement not covered" >                setPrevPicture(picture)</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            setState(key, img.url)</span>
-<span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >        if (!file) toastContext.showToast('error', 'No file was selected.')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const url = URL.createObjectURL(file![0])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (key.includes('cover')) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!prevImages?.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >                setPrevImages!((prev) =&gt; ({ ...prev, cover_image }))</span>
+<span class="cstat-no" title="statement not covered" >            setImages!((prev: imagesType) =&gt; ({ ...prev, cover_image: file }))</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            toastContext.showToast('error', 'No file was selected.')</span>
+<span class="cstat-no" title="statement not covered" >            if (!prevImages?.picture)</span>
+<span class="cstat-no" title="statement not covered" >                setPrevImages!((prev) =&gt; ({ ...prev, picture }))</span>
+<span class="cstat-no" title="statement not covered" >            setImages!((prev: imagesType) =&gt; ({ ...prev, picture: file }))</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        setState(key, url)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function handleDeselect(key: string) {</span>
-<span class="cstat-no" title="statement not covered" >        const prev = key.includes('cover') ? prevCover : prevPicture</span>
-<span class="cstat-no" title="statement not covered" >        const present = key.includes('cover') ? cover_image : picture</span>
-<span class="cstat-no" title="statement not covered" >        setState(key, prev)</span>
-<span class="cstat-no" title="statement not covered" >        handleDelete(present)</span>
 <span class="cstat-no" title="statement not covered" >        if (key.includes('cover')) {</span>
-<span class="cstat-no" title="statement not covered" >            setPrevCover('')</span>
+<span class="cstat-no" title="statement not covered" >            if (coverInputRef?.current?.value) coverInputRef.current.value = ''</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            setPrevPicture('')</span>
+<span class="cstat-no" title="statement not covered" >            if (pictureInputRef?.current?.value)</span>
+<span class="cstat-no" title="statement not covered" >                pictureInputRef.current.value = ''</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const prev = key.includes('cover')</span>
+<span class="cstat-no" title="statement not covered" >            ? prevImages!.cover_image</span>
+<span class="cstat-no" title="statement not covered" >            : prevImages!.picture</span>
+<span class="cstat-no" title="statement not covered" >        setState(key, prev)</span>
+<span class="cstat-no" title="statement not covered" >        if (key.includes('cover')) {</span>
+<span class="cstat-no" title="statement not covered" >            setPrevImages!((prev) =&gt; ({ ...prev, cover_image: '' }))</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >            setPrevImages!((prev) =&gt; ({ ...prev, picture: '' }))</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;SettingsSectionLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {loading &amp;&amp; &lt;PageLoader full /&gt;}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;input</span>
 <span class="cstat-no" title="statement not covered" >                ref={pictureInputRef}</span>
 <span class="cstat-no" title="statement not covered" >                type='file'</span>
@@ -523,49 +518,25 @@
 <span class="cstat-no" title="statement not covered" >                    selectImage('accountSettings.cover_image', e)</span>
 <span class="cstat-no" title="statement not covered" >                }}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='h-28 md:h-56 overflow-hidden relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                        src={cover_image}</span>
-<span class="cstat-no" title="statement not covered" >                        height={100}</span>
-<span class="cstat-no" title="statement not covered" >                        unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                        width={100}</span>
-<span class="cstat-no" title="statement not covered" >                        alt='User cover image'</span>
-<span class="cstat-no" title="statement not covered" >                        className='object-cover h-full w-full my-auto rounded-lg'</span>
-<span class="cstat-no" title="statement not covered" >                        priority</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute bottom-2 right-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {prevCover ? (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;IconButton</span>
-<span class="cstat-no" title="statement not covered" >                                variant='solid'</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    handleDeselect(</span>
-<span class="cstat-no" title="statement not covered" >                                        'accountSettings.cover_image',</span>
-<span class="cstat-no" title="statement not covered" >                                    )</span>
-<span class="cstat-no" title="statement not covered" >                                }</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;CloseOutlineIcon size={24} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;IconButton</span>
-<span class="cstat-no" title="statement not covered" >                                variant='solid'</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={triggerCoverFileSelector}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;EditIcon size={24} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='absolute md:-bottom-12 -bottom-9 left-1/2 -translate-x-1/2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='rounded-full relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Avatar size='2xl' img={picture} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='absolute bottom-0 right-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {prevPicture ? (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='relative mt-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='h-28 md:h-56 overflow-hidden relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                            src={cover_image!}</span>
+<span class="cstat-no" title="statement not covered" >                            height={100}</span>
+<span class="cstat-no" title="statement not covered" >                            unoptimized</span>
+<span class="cstat-no" title="statement not covered" >                            width={100}</span>
+<span class="cstat-no" title="statement not covered" >                            alt='User cover image'</span>
+<span class="cstat-no" title="statement not covered" >                            className='object-cover h-full w-full my-auto rounded-lg'</span>
+<span class="cstat-no" title="statement not covered" >                            priority</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='absolute bottom-2 right-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {prevImages!.cover_image ? (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;IconButton</span>
 <span class="cstat-no" title="statement not covered" >                                    variant='solid'</span>
 <span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        handleDeselect(</span>
-<span class="cstat-no" title="statement not covered" >                                            'accountSettings.picture',</span>
+<span class="cstat-no" title="statement not covered" >                                            'accountSettings.cover_image',</span>
 <span class="cstat-no" title="statement not covered" >                                        )</span>
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
@@ -574,35 +545,61 @@
 <span class="cstat-no" title="statement not covered" >                            ) : (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;IconButton</span>
 <span class="cstat-no" title="statement not covered" >                                    variant='solid'</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={triggerPictureFileSelector}</span>
+<span class="cstat-no" title="statement not covered" >                                    onClick={triggerCoverFileSelector}</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;EditIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute md:-bottom-12 -bottom-9 left-1/2 -translate-x-1/2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='rounded-full relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Avatar size='2xl' img={picture} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='absolute bottom-0 right-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {prevImages!.picture ? (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;IconButton</span>
+<span class="cstat-no" title="statement not covered" >                                        variant='solid'</span>
+<span class="cstat-no" title="statement not covered" >                                        onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            handleDeselect(</span>
+<span class="cstat-no" title="statement not covered" >                                                'accountSettings.picture',</span>
+<span class="cstat-no" title="statement not covered" >                                            )</span>
+<span class="cstat-no" title="statement not covered" >                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;CloseOutlineIcon size={24} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;IconButton</span>
+<span class="cstat-no" title="statement not covered" >                                        variant='solid'</span>
+<span class="cstat-no" title="statement not covered" >                                        onClick={triggerPictureFileSelector}</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;EditIcon size={24} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center pt-4 row items-center justify-center space-x-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;{email}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {verify_email &amp;&amp; &lt;VerifiedIcon className='text-blue-500' /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                    value={name}</span>
+<span class="cstat-no" title="statement not covered" >                    onChange={({ target: { value } }) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        setState('accountSettings.name', value)</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                    placeholder='Full name'</span>
+<span class="cstat-no" title="statement not covered" >                    required</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                    value={username}</span>
+<span class="cstat-no" title="statement not covered" >                    onChange={({ target: { value } }) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        setState('accountSettings.username', value)</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                    placeholder='Username'</span>
+<span class="cstat-no" title="statement not covered" >                    required</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center pt-4 row items-center justify-center space-x-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;{email}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {verify_email &amp;&amp; &lt;VerifiedIcon className='text-blue-500' /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                value={name}</span>
-<span class="cstat-no" title="statement not covered" >                onChange={({ target: { value } }) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    setState('accountSettings.name', value)</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                placeholder='Full name'</span>
-<span class="cstat-no" title="statement not covered" >                required</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                value={username}</span>
-<span class="cstat-no" title="statement not covered" >                onChange={({ target: { value } }) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    setState('accountSettings.username', value)</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                placeholder='Username'</span>
-<span class="cstat-no" title="statement not covered" >                required</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/SettingsSectionLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -613,7 +610,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-16T11:24:35.343Z
+                at 2023-06-17T05:06:27.195Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
