@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.73% </span>
+                <span class="strong">4.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/134</span>
+                <span class='fraction'>6/137</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.73% </span>
+                <span class="strong">4.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/134</span>
+                <span class='fraction'>6/137</span>
             </div>
         
             
@@ -197,11 +197,17 @@
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -333,7 +339,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Editor, RichUtils } from 'draft-js'
 &nbsp;
-const controlsStyle = 'text-gray-400 px-3 py-1 bg-gray-100 rounded-sm'
+const controlsStyle =
+    'text-gray-500 dark:text-gray-50 px-3 py-1 dark:bg-white/20 bg-gray-100 rounded'
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function RichTextEditor({ mailText, setMailText }) {</span>
 <span class="cstat-no" title="statement not covered" >    const handleKeyCommand = (command, editorState) =&gt; {</span>
@@ -396,7 +403,7 @@ export default <span class="fstat-no" title="function not covered" >function Ric
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full overflow-y-scroll h-[340px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full overflow-y-scroll'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='mt-1 mb-2 space-x-1 row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;button className={controlsStyle} onClick={onBoldClick}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;b&gt;B&lt;/b&gt;</span>
@@ -456,12 +463,14 @@ export default <span class="fstat-no" title="function not covered" >function Ric
 <span class="cstat-no" title="statement not covered" >                    H6</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/button&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Editor</span>
-<span class="cstat-no" title="statement not covered" >                editorState={mailText}</span>
-<span class="cstat-no" title="statement not covered" >                onChange={setMailText}</span>
-<span class="cstat-no" title="statement not covered" >                handleKeyCommand={handleKeyCommand}</span>
-<span class="cstat-no" title="statement not covered" >                placeholder='Enter your message...'</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='h-[320px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Editor</span>
+<span class="cstat-no" title="statement not covered" >                    editorState={mailText}</span>
+<span class="cstat-no" title="statement not covered" >                    onChange={setMailText}</span>
+<span class="cstat-no" title="statement not covered" >                    handleKeyCommand={handleKeyCommand}</span>
+<span class="cstat-no" title="statement not covered" >                    placeholder='Enter your message...'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -472,7 +481,7 @@ export default <span class="fstat-no" title="function not covered" >function Ric
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-17T05:06:27.195Z
+                at 2023-06-19T14:06:29.691Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
