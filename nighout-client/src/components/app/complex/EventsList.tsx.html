@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.25% </span>
+                <span class="strong">87.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>89/102</span>
+                <span class='fraction'>93/106</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.25% </span>
+                <span class="strong">87.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>89/102</span>
+                <span class='fraction'>93/106</span>
             </div>
         
             
@@ -165,7 +165,11 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -176,6 +180,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -232,6 +238,7 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -245,6 +252,7 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -284,16 +292,18 @@ export default function EventList({
     gridLayout = false,
 }) {
     const router = useRouter()
+    const { configKey } = useLayoutConfig()
+&nbsp;
     const horizontalClass =
         'row space-x-3 desktop:space-x-5 overflow-x-scroll scroll-smooth '
 &nbsp;
-    const gridClass =
-        'grid grid-cols-1 sm:grid-cols-2 desktop:grid-cols-3 min-lg:grid-cols-4 min-[1800px]:grid-cols-4 gap-5'
+    const gridClass = `grid grid-cols-1 sm:grid-cols-2 ${
+        configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > ? 'desktop:grid-cols-3' </span>: ''
+    }  gap-3 lgMobile:gap-5`
 &nbsp;
     // * Reduced events to a maximum of 6 event items
     const eventsToShow = mockedEvents.slice(0, 6)
 &nbsp;
-    const { configKey } = useLayoutConfig()
     const { user } = useUser()
 &nbsp;
     // * See More url based on a user being logged in and based on the configKey
@@ -328,26 +338,28 @@ export default function EventList({
                     &lt;/Link&gt;
                 )}
             &lt;/div&gt;
-            &lt;div
-                className={`w-full mt-2 ${
-                    !gridLayout ? horizontalClass<span class="branch-0 cbranch-no" title="branch not covered" > : gridClass</span>
-                }  py-2 md:py-5`}
-            &gt;
-                {eventsToShow.map((event, index) =&gt; {
-                    return (
-                        &lt;div
-                            data-testid='event-card'
-                            key={index}
-                            className={`${
-                                !gridLayout
-                                    ? 'min-w-[18rem] lgMobile:min-w-[22rem] md:min-w-[330px]'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    : ''</span></span>
-                            }`}
-                        &gt;
-                            &lt;EventCard event={event} /&gt;
-                        &lt;/div&gt;
-                    )
-                })}
+            &lt;div className='grid grid-cols-1'&gt;
+                &lt;div
+                    className={`w-full mt-2 ${
+                        !gridLayout ? horizontalClass<span class="branch-0 cbranch-no" title="branch not covered" > : gridClass</span>
+                    }  py-2 md:py-5`}
+                &gt;
+                    {eventsToShow.map((event, index) =&gt; {
+                        return (
+                            &lt;div
+                                data-testid='event-card'
+                                key={index}
+                                className={`${
+                                    !gridLayout
+                                        ? 'min-w-[18rem] lgMobile:min-w-[22rem] md:min-w-[330px]'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        : ''</span></span>
+                                }`}
+                            &gt;
+                                &lt;EventCard event={event} /&gt;
+                            &lt;/div&gt;
+                        )
+                    })}
+                &lt;/div&gt;
             &lt;/div&gt;
 &nbsp;
             {gridLayout<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
@@ -376,7 +388,7 @@ export default function EventList({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T12:52:23.514Z
+                at 2023-06-20T14:41:31.783Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
