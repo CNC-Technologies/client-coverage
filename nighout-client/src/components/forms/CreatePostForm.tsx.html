@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/292</span>
+                <span class='fraction'>0/305</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/292</span>
+                <span class='fraction'>0/305</span>
             </div>
         
             
@@ -355,7 +355,33 @@
 <a name='L290'></a><a href='#L290'>290</a>
 <a name='L291'></a><a href='#L291'>291</a>
 <a name='L292'></a><a href='#L292'>292</a>
-<a name='L293'></a><a href='#L293'>293</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -699,6 +725,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
+<span class="cstat-no" title="statement not covered" >    const [deletedImages, setDeletedImages] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postForm, setPostForm] = useState&lt;PostForm&gt;({</span>
 <span class="cstat-no" title="statement not covered" >        user_id: CookieService.getter('user-id'),</span>
@@ -724,6 +751,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (edit &amp;&amp; postId) {</span>
+<span class="cstat-no" title="statement not covered" >            setAddMedia(true)</span>
 <span class="cstat-no" title="statement not covered" >            fetchPost()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }, [edit, postId])</span>
@@ -748,7 +776,7 @@
 <span class="cstat-no" title="statement not covered" >        setImageForUpload(files)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const uploadImagesToCloudinary = async (): Promise&lt;Media[]&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (imageForUpload) {</span>
@@ -759,6 +787,10 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return [] // Return an empty array if there is no image to upload</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const setImagesForDelete = (image: Photo) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setDeletedImages([...deletedImages, image])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createPost = async (data) =&gt; {</span>
@@ -843,6 +875,17 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                if (imageUrls.length || postForm.content) {</span>
 <span class="cstat-no" title="statement not covered" >                    await editPost(data)</span>
+<span class="cstat-no" title="statement not covered" >                    // To delete images from the cloudinary storage</span>
+<span class="cstat-no" title="statement not covered" >                    if (deletedImages.length) {</span>
+<span class="cstat-no" title="statement not covered" >                        for (</span>
+<span class="cstat-no" title="statement not covered" >                            let index = 0;</span>
+<span class="cstat-no" title="statement not covered" >                            index &lt; deletedImages.length;</span>
+<span class="cstat-no" title="statement not covered" >                            index++</span>
+<span class="cstat-no" title="statement not covered" >                        ) {</span>
+<span class="cstat-no" title="statement not covered" >                            const imageUrl = deletedImages[index].URL</span>
+<span class="cstat-no" title="statement not covered" >                            handleDelete(imageUrl)</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    setPostError('You have to input either a text or an image')</span>
 <span class="cstat-no" title="statement not covered" >                    setTimeout(() =&gt; {</span>
@@ -856,11 +899,6 @@
 <span class="cstat-no" title="statement not covered" >            setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const test = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     console.log('preview', selectedPhotos)</span>
-<span class="cstat-no" title="statement not covered" >    //     console.log('forUpload', imageForUpload)</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [postAudience, setPostAudience] = useState('everyone')</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -917,6 +955,7 @@
 <span class="cstat-no" title="statement not covered" >                    optionalAltText={edit ? `${user?.name}` : ''}</span>
 <span class="cstat-no" title="statement not covered" >                    imageForUpload={imageForUpload}</span>
 <span class="cstat-no" title="statement not covered" >                    setImageForUpload={setImageForUpload}</span>
+<span class="cstat-no" title="statement not covered" >                    setImagesForDelete={setImagesForDelete}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -946,7 +985,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T07:27:10.752Z
+                at 2023-06-20T12:52:04.687Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
