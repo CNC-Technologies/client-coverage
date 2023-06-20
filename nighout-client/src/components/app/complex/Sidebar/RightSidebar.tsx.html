@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -114,7 +114,17 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,28 +177,33 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { usePathname } from 'next/navigation'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ChatSidebar from '@/components/app/compound/Sidebar/ChatSidebar'</span>
 <span class="cstat-no" title="statement not covered" >import RightSidebarChildren from '@/components/app/compound/Sidebar/RightSidebarChildren'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
+<span class="cstat-no" title="statement not covered" >import AvatarSkeleton from '@/components/skeletons/AvatarSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { businessHomeLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function RightSidebar() {</span>
-<span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
+<span class="cstat-no" title="statement not covered" >    // const { user } = useUser()</span>
+<span class="cstat-no" title="statement not covered" >    const { user, loading } = useGetUser()</span>
 <span class="cstat-no" title="statement not covered" >    const pathname = usePathname()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='px-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* User's name */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='items-center space-y-2 col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Avatar img={user?.picture || defaultAvatar} size='xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {loading ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;AvatarSkeleton size='xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Avatar img={user?.picture || defaultAvatar} size='xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='text-lg'&gt;{user?.name}&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='text-sm'&gt;0 Followers&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -223,7 +238,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T14:41:31.783Z
+                at 2023-06-20T14:41:36.791Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
