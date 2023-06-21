@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/56</span>
+                <span class='fraction'>0/51</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/56</span>
+                <span class='fraction'>0/51</span>
             </div>
         
             
@@ -114,12 +114,7 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -170,43 +165,36 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useEffect } from 'react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useDispatch, useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { userRoute } from '@/constants/app/routes'</span>
-<span class="cstat-no" title="statement not covered" >import { userIdKey, userKey } from '@/constants/cookieKeys.constant'</span>
+<span class="cstat-no" title="statement not covered" >import { userKey } from '@/constants/cookieKeys.constant'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import { setUser } from '@/store/slices/user.slice'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useGetUser() {</span>
-<span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
 <span class="cstat-no" title="statement not covered" >    const dispatch = useDispatch()</span>
-<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest(userRoute)</span>
-<span class="cstat-no" title="statement not covered" >    const { get: getUserReq, loading } = useSecureRequest(userRoute)</span>
-<span class="cstat-no" title="statement not covered" >    const userInfo = useSelector((state: RootState) =&gt; state.user.user)</span>
+<span class="cstat-no" title="statement not covered" >    const { get, loading } = useSecureRequest(userRoute)</span>
+<span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const getUserDetails = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (user) {</span>
-<span class="cstat-no" title="statement not covered" >            const res = await get()</span>
-<span class="cstat-no" title="statement not covered" >            CookieService.setter(userIdKey, res?.data?.id)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return null</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    // const getUserDetails = async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     if (user) {</span>
+<span class="cstat-no" title="statement not covered" >    //         const res = await get()</span>
+<span class="cstat-no" title="statement not covered" >    //         CookieService.setter(userIdKey, res?.data?.id)</span>
+<span class="cstat-no" title="statement not covered" >    //     }</span>
+<span class="cstat-no" title="statement not covered" >    //     return null</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    async function getUser() {</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof window === 'undefined') return</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const userDetails = CookieService.getter(userKey)</span>
 <span class="cstat-no" title="statement not covered" >        if (!userDetails || userDetails === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >            const fetchedUser = await getUserReq()</span>
+<span class="cstat-no" title="statement not covered" >            const fetchedUser = await get()</span>
 <span class="cstat-no" title="statement not covered" >            if (!fetchedUser.success) {</span>
 <span class="cstat-no" title="statement not covered" >                return dispatch(setUser(null))</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -219,16 +207,13 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // Make sure getUser is not called if the userInfo is already set</span>
-<span class="cstat-no" title="statement not covered" >        if (!userInfo) {</span>
-<span class="cstat-no" title="statement not covered" >            getUser()</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }, [userInfo])</span>
+<span class="cstat-no" title="statement not covered" >        getUser()</span>
+<span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" >        getUserDetails,</span>
+<span class="cstat-no" title="statement not covered" >        getUser,</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
-<span class="cstat-no" title="statement not covered" >        user: userInfo,</span>
+<span class="cstat-no" title="statement not covered" >        user,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -238,7 +223,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T09:15:52.880Z
+                at 2023-06-21T15:04:30.335Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
