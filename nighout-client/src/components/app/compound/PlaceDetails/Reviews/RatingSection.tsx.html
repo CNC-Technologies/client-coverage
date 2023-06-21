@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -94,7 +94,15 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -134,21 +142,25 @@
 <span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='mt-8'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='mt-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h6 className='font-medium text-lg mb-4'&gt;Overall ratings&lt;/h6&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h6 className='font-semibold text-lg mb-4'&gt;Overall ratings&lt;/h6&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='w-fit grid gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full grid gap-2 max-w-[40rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {mockedRatings.map((rating, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    return (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div key={index} className='grid grid-cols-5 gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='w-fit'&gt;{rating.name}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='col-span-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div key={index} className='flex flex-nowrap gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;p className='w-[25%] xmobile:w-[20%] lgMobile:w-[15%]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {rating.name}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;RatingBar</span>
 <span class="cstat-no" title="statement not covered" >                                    rating={rating.ratings / totalRatings}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-light'&gt;{rating.ratings}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-light w-[5%]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {rating.ratings}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                })}</span>
@@ -163,7 +175,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T17:19:37.018Z
+                at 2023-06-21T09:15:52.880Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
