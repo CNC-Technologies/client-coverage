@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.78% </span>
+                <span class="strong">90.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>197/217</span>
+                <span class='fraction'>202/222</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.91% </span>
+                <span class="strong">70.83% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/23</span>
+                <span class='fraction'>17/24</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.78% </span>
+                <span class="strong">90.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>197/217</span>
+                <span class='fraction'>202/222</span>
             </div>
         
             
@@ -280,7 +280,12 @@
 <a name='L215'></a><a href='#L215'>215</a>
 <a name='L216'></a><a href='#L216'>216</a>
 <a name='L217'></a><a href='#L217'>217</a>
-<a name='L218'></a><a href='#L218'>218</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -414,6 +419,7 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -443,6 +449,8 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -455,6 +463,8 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -590,7 +600,7 @@ export default function PostMedias({
 <span class="cstat-no" title="statement not covered" >                                    // onClick={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    //     router.push(`${pathname}?media=true`)</span>
 <span class="cstat-no" title="statement not covered" >                                    // }</span>
-<span class="cstat-no" title="statement not covered" >                                    className='white-fill flex space-x-2'</span>
+<span class="cstat-no" title="statement not covered" >                                    className='grey-fill flex space-x-2'</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;All photos ({medias.length})&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;GridSolidIcon className='text-xl' /&gt;</span>
@@ -627,6 +637,7 @@ export default function PostMedias({
                                         media={media}
                                         index={100 + idx}
                                         username={username}
+                                        objectContain
                                     /&gt;
                                     &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
                                 &lt;/SwiperSlide&gt;
@@ -652,10 +663,12 @@ function MediaTag({
     media,
     index,
     username,
+    objectContain = false,
 }: {
     media: Media
     index: number
     username: string
+    objectContain?: boolean
 }) {
     const videoRef = useRef&lt;HTMLVideoElement | null&gt;(null)
 &nbsp;
@@ -676,7 +689,9 @@ function MediaTag({
                     unoptimized
                     height={100}
                     width={100}
-                    className={`w-full h-full object-cover object-center  `}
+                    className={`w-full h-full ${
+                        objectContain<span class="branch-0 cbranch-no" title="branch not covered" > ? 'object-contain' </span>: 'object-cover'
+                    }  object-center  `}
                     src={media.URL}
                     alt={`${username}'s post on placio`}
                 /&gt;
@@ -721,7 +736,7 @@ function MediaTag({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-22T13:40:30.518Z
+                at 2023-06-22T14:54:09.692Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
