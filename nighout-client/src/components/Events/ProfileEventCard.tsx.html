@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.73% </span>
+                <span class="strong">97.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>78/79</span>
+                <span class='fraction'>83/85</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.73% </span>
+                <span class="strong">97.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>78/79</span>
+                <span class='fraction'>83/85</span>
             </div>
         
             
@@ -142,7 +142,13 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -166,6 +172,12 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -239,15 +251,21 @@ export default function ProfileEventCard({ category }) {
                     ? '/app/create?create=Event&amp;edit=true'
                     : '/app/profile/event'
             }
-            className='flex flex-col w-full cursor-pointer rounded-2xl bg-primary'
+            className='flex flex-col w-full cursor-pointer rounded-2xl bg-white'
         &gt;
-            &lt;div className='relative h-[15rem]'&gt;
+            &lt;div className='relative h-[12rem]'&gt;
                 &lt;div className='absolute top-0 left-0 flex items-center justify-between w-full px-3 py-3 text-sm rounded-t-xl'&gt;
                     &lt;div&gt;&lt;/div&gt;
                     &lt;div
-                        className={`flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-orange`}
+                        className={`flex items-center justify-center px-3 py-2 rounded-lg shadow-lg  ${
+                            category === 'drafts'
+                                ? 'bg-yellow'
+                                : category === 'upcoming events'
+                                ? 'bg-green-300'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                : 'bg-grey'</span></span>
+                        } dark:text-dark-charcoal font-semibold`}
                     &gt;
-                        &lt;p className='text-primary capitalize dark:text-[rgb(25,_48,_60)] font-medium'&gt;
+                        &lt;p className=' capitalize  font-medium'&gt;
                             {category === 'drafts'
                                 ? 'draft'
                                 : category === 'upcoming events'
@@ -269,7 +287,7 @@ export default function ProfileEventCard({ category }) {
                 /&gt;
             &lt;/div&gt;
 &nbsp;
-            &lt;div className='w-full px-3 py-3 text-white h-fit rounded-b-xl'&gt;
+            &lt;div className='w-full px-3 py-3  h-fit rounded-b-xl'&gt;
                 &lt;p className='text-lg font-medium truncate'&gt;Event Title&lt;/p&gt;
                 &lt;div className='flex items-center gap-1 my-2'&gt;
                     &lt;CalendarSolidIcon className='w-5 h-5 text-orange' /&gt;
@@ -290,9 +308,9 @@ export default function ProfileEventCard({ category }) {
                     &lt;div className='my-3 flex justify-end'&gt;
                         &lt;div
                             data-testid='settings-icon'
-                            className='border border-orange p-1 rounded-md'
+                            className='border border-orange dark:border-primary p-1 rounded-md'
                         &gt;
-                            &lt;SettingsOutlineIcon className='w-6 h-6 text-orange' /&gt;
+                            &lt;SettingsOutlineIcon className='w-6 h-6 text-orange dark:text-primary' /&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 )}
@@ -307,7 +325,7 @@ export default function ProfileEventCard({ category }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

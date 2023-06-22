@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/151</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/151</span>
             </div>
         
             
@@ -210,7 +210,11 @@
 <a name='L145'></a><a href='#L145'>145</a>
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -357,152 +361,160 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SmallButton from '@/components/Buttons/smallButtons';</span>
+<span class="cstat-no" title="statement not covered" >import SmallButton from '@/components/Buttons/smallButtons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SectionHeading from '@/components/Homepage/sectionHeading';</span>
+<span class="cstat-no" title="statement not covered" >import SectionHeading from '@/components/Homepage/sectionHeading'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ChevronDownIcon } from '@/constants/icons/icons';</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronDownIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function TrendingEvents() {</span>
-<span class="cstat-no" title="statement not covered" >  const filters = ['All', 'Last 24hr', 'Last 48hr', 'Last 72hr'];</span>
-<span class="cstat-no" title="statement not covered" >  const [activeFilter, setActiveFilter] = useState('All');</span>
-<span class="cstat-no" title="statement not covered" >  const [showFilterMenu, setShowFilterMenu] = useState(false);</span>
-<span class="cstat-no" title="statement not covered" >  const toggleFilterMenu = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setShowFilterMenu(!showFilterMenu);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >    const filters = ['All', 'Last 24hr', 'Last 48hr', 'Last 72hr']</span>
+<span class="cstat-no" title="statement not covered" >    const [activeFilter, setActiveFilter] = useState('All')</span>
+<span class="cstat-no" title="statement not covered" >    const [showFilterMenu, setShowFilterMenu] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const toggleFilterMenu = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setShowFilterMenu(!showFilterMenu)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const selecteFilter = (filter) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setActiveFilter(filter);</span>
-<span class="cstat-no" title="statement not covered" >    toggleFilterMenu();</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  const trendingItems = [</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Club Spartacus',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/club.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Sport Center',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/sportCenter.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Eatery',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/eatery.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Club Spartacus',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/club.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Sport Center',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/sportCenter.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >      name: 'Eatery',</span>
-<span class="cstat-no" title="statement not covered" >      decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >      image: '/Images/homepage/eatery.svg',</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >  ];</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className='px-16 py-10 max-width max-md:px-10 max-mobile:px-6'&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;SectionHeading text={'Trending this week'} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p className='mt-1 max-md:hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            See the most trending events happening</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='items-center hidden gap-3 text-white md:flex max-laptop:gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {filters.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" >              &lt;span</span>
-<span class="cstat-no" title="statement not covered" >                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setActiveFilter(item)}</span>
-<span class="cstat-no" title="statement not covered" >                className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                  item === activeFilter ? 'bg-primary' : 'bg-gray-400'</span>
-<span class="cstat-no" title="statement not covered" >                } p-2 rounded-lg max-desktop:text-sm font-medium cursor-pointer`}</span>
-<span class="cstat-no" title="statement not covered" >              &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {item}</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            );</span>
-<span class="cstat-no" title="statement not covered" >          })}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='relative inline-block text-left md:hidden '&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;button</span>
-<span class="cstat-no" title="statement not covered" >            type='button'</span>
-<span class="cstat-no" title="statement not covered" >            className='flex items-center justify-between h-10 gap-3 px-4 py-2 text-base font-medium bg-white border border-gray-300 rounded-md max-mobile:h-7 max-mobile:text-sm max-mobile:gap-2 text-primary'</span>
-<span class="cstat-no" title="statement not covered" >            id='options-menu'</span>
-<span class="cstat-no" title="statement not covered" >            onClick={toggleFilterMenu}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            {activeFilter}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ChevronDownIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {showFilterMenu &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='absolute z-[1000] right-0 w-[130%] max-mobile:w-[150%] h-fit mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;div className='py-1 ' role='menu'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {filters.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                  return (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                      key={index}</span>
-<span class="cstat-no" title="statement not covered" >                      href='#'</span>
-<span class="cstat-no" title="statement not covered" >                      className='block px-4 py-2 text-gray-700 text-md hover:bg-gray-100 hover:text-gray-900 '</span>
-<span class="cstat-no" title="statement not covered" >                      role='menuitem'</span>
-<span class="cstat-no" title="statement not covered" >                      onClick={() =&gt; selecteFilter(item)}</span>
+<span class="cstat-no" title="statement not covered" >    const selecteFilter = (filter) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setActiveFilter(filter)</span>
+<span class="cstat-no" title="statement not covered" >        toggleFilterMenu()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const trendingItems = [</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Club Spartacus',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/club.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Sport Center',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/sportCenter.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Eatery',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/eatery.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Club Spartacus',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/club.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Sport Center',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/sportCenter.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            name: 'Eatery',</span>
+<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/eatery.svg',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='px-16 py-10 max-width max-md:px-10 max-mobile:px-6'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;SectionHeading text={'Trending this week'} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='mt-1 max-md:hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        See the most trending events happening</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='items-center hidden gap-3 text-white md:flex max-laptop:gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {filters.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span</span>
+<span class="cstat-no" title="statement not covered" >                                key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; setActiveFilter(item)}</span>
+<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                                    item === activeFilter</span>
+<span class="cstat-no" title="statement not covered" >                                        ? 'bg-dark-charcoal'</span>
+<span class="cstat-no" title="statement not covered" >                                        : 'bg-gray-400'</span>
+<span class="cstat-no" title="statement not covered" >                                } p-2 rounded-lg max-desktop:text-sm font-medium cursor-pointer`}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='relative inline-block text-left md:hidden '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                        type='button'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center justify-between h-10 gap-3 px-4 py-2 text-base font-medium bg-white border border-gray-300 rounded-md max-mobile:h-7 max-mobile:text-sm max-mobile:gap-2 '</span>
+<span class="cstat-no" title="statement not covered" >                        id='options-menu'</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={toggleFilterMenu}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                      &lt;span&gt;{item}&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                  );</span>
+<span class="cstat-no" title="statement not covered" >                        {activeFilter}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChevronDownIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {showFilterMenu &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='absolute z-[1000] right-0 w-[130%] max-mobile:w-[150%] h-fit mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='py-1 ' role='menu'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {filters.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                    return (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                            href='#'</span>
+<span class="cstat-no" title="statement not covered" >                                            className='block px-4 py-2 text-gray-700 text-md hover:bg-gray-100 hover:text-gray-900 '</span>
+<span class="cstat-no" title="statement not covered" >                                            role='menuitem'</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt; selecteFilter(item)}</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;span&gt;{item}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )</span>
+<span class="cstat-no" title="statement not covered" >                                })}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-10 grid place-content-stretch grid-cols-3 max-[750px]:grid-cols-2 max-xxmobile:grid-cols-1 max-[750px]:w-[95%] max-xmd:w-full gap-12 max-desktop:gap-8 max-[920px]:gap-x-6 max-md:gap-4 max-xmobile:gap-3 max-w-[85rem] mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {trendingItems.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            className='bg-dark-charcoal px-3 py-4 h-fit rounded-lg cursor-pointer transition ease-in-out duration-700 md:hover:scale-[1.04]'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='h-40 max-md:h-32 max-xxmobile:h-24'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;img</span>
+<span class="cstat-no" title="statement not covered" >                                    src={item.image}</span>
+<span class="cstat-no" title="statement not covered" >                                    alt={item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                    className='object-cover w-full h-full rounded-lg'</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='my-4 text-white max-laptop:my-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;h3 className='truncate text-[1.8rem] max-desktop:text-2xl max-laptop:text-xl max-mobile:text-lg max-xmobile:text-base font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/h3&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='mt-1 max-desktop:text-sm max-md:text-xs max-desktop:leading-snug line-clamp-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Lorem ipsum dolor sit amet consectetur</span>
+<span class="cstat-no" title="statement not covered" >                                    adipisicing elit. Saepe voluptates omnis</span>
+<span class="cstat-no" title="statement not covered" >                                    illo laudantium quaerat provident, esse</span>
+<span class="cstat-no" title="statement not covered" >                                    recusandae fugit vero distinctio illum hic</span>
+<span class="cstat-no" title="statement not covered" >                                    culpa,</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                })}</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          )}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='mt-10 grid place-content-stretch grid-cols-3 max-[750px]:grid-cols-2 max-xxmobile:grid-cols-1 max-[750px]:w-[95%] max-xmd:w-full gap-12 max-desktop:gap-8 max-[920px]:gap-x-6 max-md:gap-4 max-xmobile:gap-3 max-w-[85rem] mx-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {trendingItems.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >              key={index}</span>
-<span class="cstat-no" title="statement not covered" >              className='bg-primary px-3 py-4 h-fit rounded-lg cursor-pointer transition ease-in-out duration-700 md:hover:scale-[1.04]'</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;div className='h-40 max-md:h-32 max-xxmobile:h-24'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;img</span>
-<span class="cstat-no" title="statement not covered" >                  src={item.image}</span>
-<span class="cstat-no" title="statement not covered" >                  alt={item.name}</span>
-<span class="cstat-no" title="statement not covered" >                  className='object-cover w-full h-full rounded-lg'</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-center mt-6 md:mt-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;SmallButton</span>
+<span class="cstat-no" title="statement not covered" >                    name={'See More'}</span>
+<span class="cstat-no" title="statement not covered" >                    bgColor={'primary'}</span>
+<span class="cstat-no" title="statement not covered" >                    textColor={'white'}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;div className='my-4 text-white max-laptop:my-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h3 className='truncate text-[1.8rem] max-desktop:text-2xl max-laptop:text-xl max-mobile:text-lg max-xmobile:text-base font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                  {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='mt-1 max-desktop:text-sm max-md:text-xs max-desktop:leading-snug line-clamp-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe</span>
-<span class="cstat-no" title="statement not covered" >                  voluptates omnis illo laudantium quaerat provident, esse</span>
-<span class="cstat-no" title="statement not covered" >                  recusandae fugit vero distinctio illum hic culpa,</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >        })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='flex justify-center mt-6 md:mt-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;SmallButton</span>
-<span class="cstat-no" title="statement not covered" >          name={'See More'}</span>
-<span class="cstat-no" title="statement not covered" >          bgColor={'primary'}</span>
-<span class="cstat-no" title="statement not covered" >          textColor={'white'}</span>
-<span class="cstat-no" title="statement not covered" >        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -511,7 +523,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

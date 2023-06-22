@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.61% </span>
+                <span class="strong">87.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>92/105</span>
+                <span class='fraction'>93/106</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.61% </span>
+                <span class="strong">87.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>92/105</span>
+                <span class='fraction'>93/106</span>
             </div>
         
             
@@ -168,7 +168,8 @@
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -179,6 +180,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -296,7 +298,8 @@ export default function EventList({
         'row space-x-3 desktop:space-x-5 overflow-x-scroll scroll-smooth '
 &nbsp;
     const gridClass =
-        'grid grid-cols-1 sm:grid-cols-2 desktop:grid-cols-3 min-lg:grid-cols-4 min-[1800px]:grid-cols-4 gap-5'
+        'grid grid-cols-1 sm:grid-cols-2 desktop:grid-cols-3 gap-3'
+    // 'grid grid-cols-1 sm:grid-cols-2 desktop:grid-cols-3 min-lg:grid-cols-4 min-[1800px]:grid-cols-4 gap-5'
 &nbsp;
     // * Reduced events to a maximum of 6 event items
     const eventsToShow = mockedEvents.slice(0, 6)
@@ -311,7 +314,7 @@ export default function EventList({
         : `/app/events/categories?name=${mainTitle ? mainTitle : title}`
 &nbsp;
     return (
-        &lt;div className='w-full my-6 text-primary eventsList'&gt;
+        &lt;div className='w-full my-6 eventsList'&gt;
             &lt;div className='flex items-center justify-between'&gt;
                 &lt;div&gt;
                     {mainTitle &amp;&amp; (
@@ -328,7 +331,7 @@ export default function EventList({
                 {!gridLayout &amp;&amp; (
                     &lt;Link
                         href={seeMoreRoute}
-                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-primary'
+                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-text'
                     &gt;
                         &lt;span&gt;See more&lt;/span&gt;
                         &lt;ArrowRightOutlineIcon className='text-base mobile:text-xl' /&gt;
@@ -360,11 +363,11 @@ export default function EventList({
             &lt;/div&gt;
 &nbsp;
             {gridLayout<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center mt-6'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center mt-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {/* {!showMore &amp;&amp; ( */}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push(seeMoreRoute)}</span></span>
-<span class="cstat-no" title="statement not covered" >                        className={`primary-fill dark:bg-bright-blue py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`orange-fill text-dark-charcoal py-2 w-32 shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        See More</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
@@ -385,7 +388,7 @@ export default function EventList({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

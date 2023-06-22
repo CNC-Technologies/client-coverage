@@ -115,31 +115,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import RatingStars from '@/components/ratingStars';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { MapMarkerSolidIcon } from '@/constants/icons/icons';</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import RatingStars from '@/components/ratingStars'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { MapMarkerSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceCard({ place }) {</span>
-<span class="cstat-no" title="statement not covered" >  const { image, rating, name, location } = place;</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >      style={{ backgroundImage: `url('${image}')` }}</span>
-<span class="cstat-no" title="statement not covered" >      className='relative bg-cover bg-center bg-no-repeat flex-1 max-md:flex-none max-md:w-[40%] max-xmd:w-[46%] max-lgMobile:w-[52%] max-mobile:w-[58%] max-xmobile:w-[65%]   py-4 h-[45vh] max-laptop:h-[40vh] max-lgMobile:h-[35vh] max-xmobile:h-[32vh] rounded-lg cursor-pointer transition ease-in-out duration-700 md:hover:scale-[1.04]'</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className='absolute bottom-8 max-xmobile:bottom-4 w-[90%] left-1/2 -translate-x-1/2 h-fit p-4 max-desktop:py-2 rounded-lg bg-white text-primary shadow-xl  '&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;h3 className='text-2xl font-semibold truncate max-desktop:text-xl max-mobile:text-lg '&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {name}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;RatingStars rating={rating} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    const { image, rating, name, location } = place</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            style={{ backgroundImage: `url('${image}')` }}</span>
+<span class="cstat-no" title="statement not covered" >            className='relative bg-cover bg-center bg-no-repeat flex-1 max-md:flex-none max-md:w-[40%] max-xmd:w-[46%] max-lgMobile:w-[52%] max-mobile:w-[58%] max-xmobile:w-[65%]   py-4 h-[45vh] max-laptop:h-[40vh] max-lgMobile:h-[35vh] max-xmobile:h-[32vh] rounded-lg cursor-pointer transition ease-in-out duration-700 md:hover:scale-[1.04]'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='absolute bottom-8 max-xmobile:bottom-4 w-[90%] left-1/2 -translate-x-1/2 h-fit p-4 max-desktop:py-2 rounded-lg bg-white  shadow-xl  '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h3 className='text-2xl font-semibold truncate max-desktop:text-xl max-mobile:text-lg '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {name}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/h3&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;RatingStars rating={rating} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='flex items-center gap-2 mt-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;MapMarkerSolidIcon className='w-5 h-5 text-primary max-desktop:h-4 max-desktop:w-4' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p className='text-lg max-desktop:text-base max-md:text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {location}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center gap-2 mt-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;MapMarkerSolidIcon className='w-5 h-5  max-desktop:h-4 max-desktop:w-4' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg max-desktop:text-base max-md:text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {location}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -148,7 +148,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

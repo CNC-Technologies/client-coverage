@@ -547,7 +547,7 @@
 <span class="cstat-no" title="statement not covered" >        return null</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full cursor-pointer places rounded-xl bg-primary placeCard'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full cursor-pointer places rounded-xl bg-white placeCard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[13rem] mobile:h-[16rem] xmd:h-[15rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute z-10 top-0 left-0 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
@@ -555,7 +555,7 @@
 <span class="cstat-no" title="statement not covered" >                            /\s+/g,</span>
 <span class="cstat-no" title="statement not covered" >                            '_',</span>
 <span class="cstat-no" title="statement not covered" >                        )}`}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-white text-primary dark:bg-darkGrey dark:text-primary'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-white dark:bg-darkGrey dark:text-dark-charcoal'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='font-semibold'&gt;{place?.category}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
@@ -565,7 +565,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;MenuList</span>
 <span class="cstat-no" title="statement not covered" >                            menuButton={</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex pointer-events-auto items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-primary dark:bg-darkGrey dark:text-[rgb(25,_48,_60)]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex pointer-events-auto items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white dark:bg-darkGrey dark:text-[rgb(25,_48,_60)]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;p className='font-medium'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;HorzMenuSolidIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
@@ -610,7 +610,7 @@
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full px-3 py-3 text-white h-fit rounded-b-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full px-3 py-3  h-fit rounded-b-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-between gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Truncate outerClass='font-medium text-base'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {place?.name}</span>
@@ -635,7 +635,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                        href={detailsLink}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center px-3 py-1 rounded-lg white-fill'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center px-3 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        See details</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
@@ -656,7 +656,7 @@
 <span class="cstat-no" title="statement not covered" >        : `${placeDetail}${place?.name.replaceAll(/\s+/g, '_')}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='shadow-md text-primary rounded-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='shadow-md rounded-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex space-x-1 md:space-x-3 h-24 md:h-28 rounded-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='w-20 mobile:w-24 md:w-32'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
@@ -703,7 +703,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.68% </span>
+                <span class="strong">93.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>193/206</span>
+                <span class='fraction'>186/199</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.68% </span>
+                <span class="strong">93.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>193/206</span>
+                <span class='fraction'>186/199</span>
             </div>
         
             
@@ -262,14 +262,7 @@
 <a name='L197'></a><a href='#L197'>197</a>
 <a name='L198'></a><a href='#L198'>198</a>
 <a name='L199'></a><a href='#L199'>199</a>
-<a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a>
-<a name='L203'></a><a href='#L203'>203</a>
-<a name='L204'></a><a href='#L204'>204</a>
-<a name='L205'></a><a href='#L205'>205</a>
-<a name='L206'></a><a href='#L206'>206</a>
-<a name='L207'></a><a href='#L207'>207</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L200'></a><a href='#L200'>200</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -340,11 +333,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -366,15 +354,13 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -529,25 +515,20 @@ export default function PreLiveDetails({
 &nbsp;
             &lt;div&gt;
                 &lt;div className='flex gap-2 items-center my-5'&gt;
-                    &lt;div className='rounded bg-primary dark:bg-white/70 dark:text-grey text-orange p-1'&gt;
+                    &lt;div className='rounded eventCreationIcons p-1'&gt;
                         &lt;ListPlusIcon className='w-6 h-6' /&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;h6 className='font-semibold text-xl text-primary'&gt;
-                        Video Source
-                    &lt;/h6&gt;
+                    &lt;h6 className='font-semibold text-xl '&gt;Video Source&lt;/h6&gt;
                 &lt;/div&gt;
                 &lt;div className='mt-4 space-y-2 grid'&gt;
-                    &lt;label
-                        htmlFor='audioDevice'
-                        className='font-medium text-gray-500'
-                    &gt;
+                    &lt;label htmlFor='audioDevice' className='font-medium '&gt;
                         Audio Device:
                     &lt;/label&gt;
                     &lt;select
                         data-testid='audio-device'
                         id='audioDevice'
-                        className='bg-white border h-14 rounded-lg border-primary px-4 py-2'
+                        className='bg-white border h-14 rounded-lg px-4 py-2'
                         onChange={handleAudioDeviceChange}
                     &gt;
                         {audioDevices.map((device) =&gt; (
@@ -562,16 +543,13 @@ export default function PreLiveDetails({
                 &lt;/div&gt;
 &nbsp;
                 &lt;div className='mt-4 space-y-2 grid'&gt;
-                    &lt;label
-                        htmlFor='videoDevice'
-                        className='font-medium text-gray-500'
-                    &gt;
+                    &lt;label htmlFor='videoDevice' className='font-medium '&gt;
                         Video Device:
                     &lt;/label&gt;
                     &lt;select
                         data-testid='video-device'
                         id='videoDevice'
-                        className='bg-white border h-14 rounded-lg border-primary px-4 py-2'
+                        className='bg-white border h-14 rounded-lg px-4 py-2'
                         onChange={handleVideoDeviceChange}
                     &gt;
                         {videoDevices.map((device) =&gt; (
@@ -587,7 +565,7 @@ export default function PreLiveDetails({
                         &lt;input
                             id='toggleVideo'
                             type='checkbox'
-                            className='form-checkbox h-5 w-5 text-gray-600'
+                            className='form-checkbox h-5 w-5 '
                             checked={isVideoOn}
                             onChange={handleToggleVideo}
                         /&gt;
@@ -602,11 +580,11 @@ export default function PreLiveDetails({
 &nbsp;
             &lt;div&gt;
                 &lt;div className='flex gap-2 items-center my-5'&gt;
-                    &lt;div className='rounded bg-primary dark:bg-white/70 dark:text-grey text-orange p-1'&gt;
+                    &lt;div className='rounded eventCreationIcons p-1'&gt;
                         &lt;ListPlusIcon className='w-6 h-6' /&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;h6 className='font-semibold text-xl text-primary'&gt;
+                    &lt;h6 className='font-semibold text-xl '&gt;
                         Add Stream details
                     &lt;/h6&gt;
                 &lt;/div&gt;
@@ -674,6 +652,7 @@ export default function PreLiveDetails({
                     // disabled={!isFormFilled()}
                     onClick={handleSubmit}
                     name={'Save and continue'}
+                    className='orange-fill'
                 &gt;
                     Save and continue
                 &lt;/Button&gt;
@@ -688,7 +667,7 @@ export default function PreLiveDetails({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

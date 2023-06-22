@@ -369,7 +369,7 @@
 <span class="cstat-no" title="statement not covered" >                        alt='Avatar'</span>
 <span class="cstat-no" title="statement not covered" >                        className='object-cover object-center w-full h-full'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute -translate-x-1/2 -translate-y-1/2 border-2 rounded-full h-28 w-28 border-primary top-full left-1/2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute -translate-x-1/2 -translate-y-1/2 border-2 rounded-full h-28 w-28  top-full left-1/2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                            height={100}</span>
 <span class="cstat-no" title="statement not covered" >                            width={100}</span>
@@ -395,15 +395,15 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-center mt-3 space-x-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button className='w-32 h-12 px-3 text-center  rounded-3xl primary-fill'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button className='w-32 h-12 px-3 text-center  rounded-3xl orange-fill'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Follow</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button className='w-32 h-12 px-3 text-center bg-transparent border rounded-3xl hover:bg-grey dark:border-darkGrey/70 dark:hover:bg-white/40 border-primary text-primary'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button className='w-32 h-12 px-3 text-center bg-transparent  rounded-3xl orange-outline '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Message</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='p-5 mt-5 bg-darkGrey dark:bg-primary '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='p-5 mt-5 bg-darkGrey dark:bg-dark-primary '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-lg font-semibold'&gt;Bio&lt;/h3&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className='mt-2 text-sm mobile:text-base'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Lorem ipsum dolor sit amet, consectetur adipisicing</span>
@@ -419,7 +419,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {showLeftButton &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 left-0 px-[0.15rem] py-1 text-primary dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 left-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleScroll(-100)}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;ChevronLeftIcon className='w-6 h-6' /&gt;</span>
@@ -427,7 +427,7 @@
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {showRightButton &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 right-0 px-[0.15rem] py-1 text-primary dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 right-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleScroll(100)}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;ChevronRightIcon className='w-6 h-6' /&gt;</span>
@@ -445,8 +445,8 @@
 <span class="cstat-no" title="statement not covered" >                                    key={index}</span>
 <span class="cstat-no" title="statement not covered" >                                    className={` ${</span>
 <span class="cstat-no" title="statement not covered" >                                        activeTab === index</span>
-<span class="cstat-no" title="statement not covered" >                                            ? 'underlineFull text-primary dark:text-white '</span>
-<span class="cstat-no" title="statement not covered" >                                            : 'hover:bg-secondary/10 dark:hover:bg-white/40 text-primary/50 dark:text-white/70'</span>
+<span class="cstat-no" title="statement not covered" >                                            ? 'underlineFull  dark:text-white '</span>
+<span class="cstat-no" title="statement not covered" >                                            : 'hover:bg-secondary/10 dark:hover:bg-white/40 text-dark-charcoal/50 dark:text-white/70'</span>
 <span class="cstat-no" title="statement not covered" >                                    } cursor-pointer p-2 rounded-lg font-medium `}</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    {item.name}</span>
@@ -472,7 +472,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

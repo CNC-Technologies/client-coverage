@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.38% </span>
+                <span class="strong">77.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/72</span>
+                <span class='fraction'>60/77</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.38% </span>
+                <span class="strong">77.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/72</span>
+                <span class='fraction'>60/77</span>
             </div>
         
             
@@ -135,7 +135,12 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
@@ -166,6 +171,11 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,24 +191,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -219,20 +229,25 @@
             type='submit'
             {...props}
             disabled={loading}
-            className={`disabled:bg-primary/70 disabled:cursor-not-allowed w-full px-4 py-2  font-semibold text-center primary-fill rounded-lg shadow-md h-10  focus:outline-none ${className}`}
+            className={`disabled:bg-dark/70 disabled:cursor-not-allowed w-full px-4 py-2  font-semibold text-center primary-fill rounded-lg shadow-md h-10  focus:outline-none ${className}`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{name || children}&lt;/&gt;}
         &lt;/button&gt;
     )
 }
 &nbsp;
-export function OutlineButton({ children, loading = false, ...props }) {
+export function OutlineButton({
+    children,
+    className = '',
+    loading = false,
+    ...props
+}) {
     return (
         &lt;button
             type='submit'
             {...props}
             disabled={loading}
-            className={`w-full px-4 py-2  max-mobile:text-base font-semibold text-center  rounded-lg shadow-md h-10 primary-outline focus:outline-none`}
+            className={`${className} w-full px-4 py-2  max-mobile:text-base font-semibold text-center  rounded-lg shadow-md h-10 primary-outline focus:outline-none`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{children}&lt;/&gt;}
         &lt;/button&gt;
@@ -264,7 +279,7 @@ export function IconButton({
             {...props}
             disabled={loading}
             className={`items-center justify-center p-1 transition-all duration-200 border  rounded-full w-fit h-fit dark:border-none row hover:brightness-100 focus:outline-none ${
-                variant === 'solid'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; 'bg-primary'</span>
+                variant === 'solid'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; 'bg-dark-charcoal'</span>
             } ${className}`}
         &gt;
             {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{children}&lt;/&gt;}
@@ -286,7 +301,7 @@ export <span class="fstat-no" title="function not covered" >function Spinner({ b
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-21T15:45:50.207Z
+                at 2023-06-22T04:02:17.918Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
