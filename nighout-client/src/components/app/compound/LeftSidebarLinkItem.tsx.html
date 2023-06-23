@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/forms/CreateResourceForm.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/app/compound/LeftSidebarLinkItem.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/forms</a> CreateResourceForm.tsx</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/app/compound</a> LeftSidebarLinkItem.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -102,7 +102,16 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -141,42 +150,60 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
+<span class="cstat-no" title="statement not covered" >function checkIfActive(path: string, link: string) {</span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+<span class="cstat-no" title="statement not covered" >        path === '/app' ||</span>
+<span class="cstat-no" title="statement not covered" >        link === '/app' ||</span>
+<span class="cstat-no" title="statement not covered" >        path === '/business' ||</span>
+<span class="cstat-no" title="statement not covered" >        link === '/business'</span>
+<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >        return path === link</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return path.startsWith(link)</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import PillList from '@/components/business/compound/PillList'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const InputField = dynamic(import('@/components/FormComponents/InputField'))</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const options = [</span>
-<span class="cstat-no" title="statement not covered" >    { label: 'Items', value: 'items' },</span>
-<span class="cstat-no" title="statement not covered" >    { label: 'Speakers', value: 'speakers' },</span>
-<span class="cstat-no" title="statement not covered" >]</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function CreateResourceForm() {</span>
-<span class="cstat-no" title="statement not covered" >    const [activePill, setActivePill] = useState(options[0].value)</span>
+<span class="cstat-no" title="statement not covered" >export default function LeftSidebarLinkItem({ linkItem, action }) {</span>
+<span class="cstat-no" title="statement not covered" >    const { pathname } = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    if (linkItem.link)</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Link href={linkItem.link}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;MainComponent</span>
+<span class="cstat-no" title="statement not covered" >                    active={checkIfActive(pathname, linkItem.link)}</span>
+<span class="cstat-no" title="statement not covered" >                    linkItem={linkItem}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;PillList</span>
-<span class="cstat-no" title="statement not covered" >                options={options}</span>
-<span class="cstat-no" title="statement not covered" >                activePill={activePill}</span>
-<span class="cstat-no" title="statement not covered" >                setActivePill={setActivePill}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {activePill === options[0].value &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InputField label='Name' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InputField label='Short Description' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InputField label='Quantity' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >            {activePill === options[1].value &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InputField label="Search by User's Name" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Button&gt;Create&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;MainComponent</span>
+<span class="cstat-no" title="statement not covered" >            active={checkIfActive(pathname, linkItem.link)}</span>
+<span class="cstat-no" title="statement not covered" >            linkItem={linkItem}</span>
+<span class="cstat-no" title="statement not covered" >            action={action}</span>
+<span class="cstat-no" title="statement not covered" >        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function MainComponent({ linkItem, action = () =&gt; null, active = false }) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            onClick={action}</span>
+<span class="cstat-no" title="statement not covered" >            className={`${</span>
+<span class="cstat-no" title="statement not covered" >                active &amp;&amp; 'bg-primary/20'</span>
+<span class="cstat-no" title="statement not covered" >            } hover:bg-primary/30 row space-x-5 items-center cursor-pointer py-3 rounded-r-xl pl-3 mr-3 smoothen`}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;linkItem.icon size={22} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span&gt;{linkItem.name}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -189,14 +216,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-06-23T10:42:41.254Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../../../sorter.js"></script>
+        <script src="../../../../../block-navigation.js"></script>
     </body>
 </html>
     
