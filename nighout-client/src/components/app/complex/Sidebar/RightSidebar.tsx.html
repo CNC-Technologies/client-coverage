@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/67</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/67</span>
             </div>
         
             
@@ -126,7 +126,15 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,7 +207,7 @@
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import AvatarSkeleton from '@/components/skeletons/AvatarSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar } from '@/constants/app/defaults'</span>
-<span class="cstat-no" title="statement not covered" >import { businessHomeLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import { appProfileLink, businessHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import { RootState } from '@/store'</span>
@@ -211,18 +219,22 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='px-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='sticky top-0 z-10 bg-white pb-3 border-b'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='sticky z-[1] top-0 bg-white pb-3 border-b'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {/* User's name */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='items-center space-y-2 col'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {loading ? (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;AvatarSkeleton size='xl' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    ) : (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Avatar</span>
-<span class="cstat-no" title="statement not covered" >                            img={user?.picture || defaultAvatar}</span>
-<span class="cstat-no" title="statement not covered" >                            size='xl'</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link href={appProfileLink}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                img={user?.picture || defaultAvatar}</span>
+<span class="cstat-no" title="statement not covered" >                                size='xl'</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-lg'&gt;{user?.name}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Link href={appProfileLink}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-lg'&gt;{user?.name}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-sm'&gt;0 Followers&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -259,7 +271,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-25T11:56:12.740Z
+                at 2023-06-25T11:56:25.359Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
