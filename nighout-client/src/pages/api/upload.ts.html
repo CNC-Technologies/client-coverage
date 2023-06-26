@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/116</span>
+                <span class='fraction'>0/121</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/116</span>
+                <span class='fraction'>0/121</span>
             </div>
         
             
@@ -179,7 +179,12 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -295,7 +300,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import cloudinary from 'cloudinary'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { withApiAuthRequired } from '@auth0/nextjs-auth0'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import cloudinary from 'cloudinary'</span>
 <span class="cstat-no" title="statement not covered" >import { extractPublicId } from 'cloudinary-build-url'</span>
 <span class="cstat-no" title="statement not covered" >import { IncomingForm } from 'formidable'</span>
 <span class="cstat-no" title="statement not covered" >import { NextApiRequest, NextApiResponse } from 'next'</span>
@@ -331,86 +342,90 @@
 <span class="cstat-no" title="statement not covered" >    files: Files</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default async (req: NextApiRequest, res: NextApiResponse) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (req.method === 'POST') {</span>
-<span class="cstat-no" title="statement not covered" >        const data: FormidableData = await new Promise((resolve, reject) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const form = new IncomingForm()</span>
-<span class="cstat-no" title="statement not covered" >            const files = {}</span>
+<span class="cstat-no" title="statement not covered" >export default withApiAuthRequired(</span>
+<span class="cstat-no" title="statement not covered" >    async (req: NextApiRequest, res: NextApiResponse) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (req.method === 'POST') {</span>
+<span class="cstat-no" title="statement not covered" >            const data: FormidableData = await new Promise(</span>
+<span class="cstat-no" title="statement not covered" >                (resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    const form = new IncomingForm()</span>
+<span class="cstat-no" title="statement not covered" >                    const files = {}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            form.on('file', (field, file) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (!files[field]) {</span>
-<span class="cstat-no" title="statement not covered" >                    files[field] = []</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                files[field].push(file)</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >                    form.on('file', (field, file) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!files[field]) {</span>
+<span class="cstat-no" title="statement not covered" >                            files[field] = []</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        files[field].push(file)</span>
+<span class="cstat-no" title="statement not covered" >                    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            form.parse(req, (err, fields) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (err) return reject(err)</span>
-<span class="cstat-no" title="statement not covered" >                resolve({ fields, files })</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const files = data.files</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (!files) {</span>
-<span class="cstat-no" title="statement not covered" >            return res.status(400).json({ message: 'No media attached!' })</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const filesToUpload = Array.isArray(files.media)</span>
-<span class="cstat-no" title="statement not covered" >            ? Object.values(files.media)</span>
-<span class="cstat-no" title="statement not covered" >            : Object.values(files)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const mediaPromises = filesToUpload.map((file) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const resourceType =</span>
-<span class="cstat-no" title="statement not covered" >                file.mimetype &amp;&amp; file.mimetype.startsWith('image/')</span>
-<span class="cstat-no" title="statement not covered" >                    ? 'image'</span>
-<span class="cstat-no" title="statement not covered" >                    : 'video'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return new Promise((resolve, reject) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                cloudinary.v2.uploader.upload(</span>
-<span class="cstat-no" title="statement not covered" >                    file.filepath,</span>
-<span class="cstat-no" title="statement not covered" >                    { resource_type: resourceType },</span>
-<span class="cstat-no" title="statement not covered" >                    (err, result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    form.parse(req, (err, fields) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        if (err) return reject(err)</span>
-<span class="cstat-no" title="statement not covered" >                        resolve(result)</span>
-<span class="cstat-no" title="statement not covered" >                    },</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            }).catch((err) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >                    `Error uploading file: ${file.originalFilename}`,</span>
-<span class="cstat-no" title="statement not covered" >                    err,</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                        resolve({ fields, files })</span>
+<span class="cstat-no" title="statement not covered" >                    })</span>
+<span class="cstat-no" title="statement not covered" >                },</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const files = data.files</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            if (!files) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.status(400).json({ message: 'No media attached!' })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const filesToUpload = Array.isArray(files.media)</span>
+<span class="cstat-no" title="statement not covered" >                ? Object.values(files.media)</span>
+<span class="cstat-no" title="statement not covered" >                : Object.values(files)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const mediaPromises = filesToUpload.map((file) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                const resourceType =</span>
+<span class="cstat-no" title="statement not covered" >                    file.mimetype &amp;&amp; file.mimetype.startsWith('image/')</span>
+<span class="cstat-no" title="statement not covered" >                        ? 'image'</span>
+<span class="cstat-no" title="statement not covered" >                        : 'video'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                return new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    cloudinary.v2.uploader.upload(</span>
+<span class="cstat-no" title="statement not covered" >                        file.filepath,</span>
+<span class="cstat-no" title="statement not covered" >                        { resource_type: resourceType },</span>
+<span class="cstat-no" title="statement not covered" >                        (err, result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            if (err) return reject(err)</span>
+<span class="cstat-no" title="statement not covered" >                            resolve(result)</span>
+<span class="cstat-no" title="statement not covered" >                        },</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                }).catch((err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    throw new Error(</span>
+<span class="cstat-no" title="statement not covered" >                        `Error uploading file: ${file.originalFilename}`,</span>
+<span class="cstat-no" title="statement not covered" >                        err,</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const mediaResponses = await Promise.all(mediaPromises)</span>
+<span class="cstat-no" title="statement not covered" >            const mediaResponses = await Promise.all(mediaPromises)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const mediaUrls = mediaResponses.map(</span>
-<span class="cstat-no" title="statement not covered" >            ({ secure_url, resource_type }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                return {</span>
-<span class="cstat-no" title="statement not covered" >                    type: resource_type,</span>
-<span class="cstat-no" title="statement not covered" >                    url: secure_url,</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >            const mediaUrls = mediaResponses.map(</span>
+<span class="cstat-no" title="statement not covered" >                ({ secure_url, resource_type }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return {</span>
+<span class="cstat-no" title="statement not covered" >                        type: resource_type,</span>
+<span class="cstat-no" title="statement not covered" >                        url: secure_url,</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                },</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        res.status(200).json({ mediaUrls })</span>
-<span class="cstat-no" title="statement not covered" >    } else if (req.method === 'DELETE') {</span>
-<span class="cstat-no" title="statement not covered" >        const { url } = req.query</span>
+<span class="cstat-no" title="statement not covered" >            res.status(200).json({ mediaUrls })</span>
+<span class="cstat-no" title="statement not covered" >        } else if (req.method === 'DELETE') {</span>
+<span class="cstat-no" title="statement not covered" >            const { url } = req.query</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const publicId = extractPublicId(`${url}` || '')</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            await cloudinary.v2.uploader.destroy(publicId)</span>
-<span class="cstat-no" title="statement not covered" >            res.status(200).json({ message: 'Image deleted successfully' })</span>
-<span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >            res.status(500).json({</span>
-<span class="cstat-no" title="statement not covered" >                error: 'An error occurred while deleting the image',</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >            const publicId = extractPublicId(`${url}` || '')</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >                await cloudinary.v2.uploader.destroy(publicId)</span>
+<span class="cstat-no" title="statement not covered" >                res.status(200).json({ message: 'Image deleted successfully' })</span>
+<span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >                res.status(500).json({</span>
+<span class="cstat-no" title="statement not covered" >                    error: 'An error occurred while deleting the image',</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >            res.status(405).json({ message: 'We only accept POST' })</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >        res.status(405).json({ message: 'We only accept POST' })</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >)</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -418,7 +433,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-25T11:56:38.234Z
+                at 2023-06-26T16:04:21.822Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
