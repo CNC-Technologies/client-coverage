@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -122,7 +122,39 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,16 +214,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import CreateEventItem from '@/components/app/complex/CreatePage/Event'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import CreatePlacesItem from '@/components/app/complex/CreatePage/Places'</span>
 <span class="cstat-no" title="statement not covered" >// import CreateGoLiveItem from '@/components/app/complex/CreatePage/GoLive'</span>
 <span class="cstat-no" title="statement not covered" >import CreatePostItem from '@/components/app/complex/CreatePage/Post'</span>
 <span class="cstat-no" title="statement not covered" >import CreateReelItem from '@/components/app/complex/CreatePage/Reels'</span>
 <span class="cstat-no" title="statement not covered" >import CreateStoryItem from '@/components/app/complex/CreatePage/Story'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    VideoOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    EventIcon,</span>
+<span class="cstat-no" title="statement not covered" >    PlacesSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >    PostIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ReelsSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >    StoryIcon,</span>
+<span class="cstat-no" title="statement not covered" >    VideoOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >// import { Element } from '@/interfaces/types'</span>
 <span class="cstat-no" title="statement not covered" >interface Categories {</span>
@@ -200,6 +234,7 @@
 <span class="cstat-no" title="statement not covered" >    desc: String</span>
 <span class="cstat-no" title="statement not covered" >    component: any</span>
 <span class="cstat-no" title="statement not covered" >    color: string</span>
+<span class="cstat-no" title="statement not covered" >    businessOnly: boolean</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >const categories: Categories[] = [</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
@@ -208,6 +243,7 @@
 <span class="cstat-no" title="statement not covered" >        desc: 'Create a post concerning events and places.',</span>
 <span class="cstat-no" title="statement not covered" >        component: CreatePostItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-purple',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Story',</span>
@@ -215,6 +251,7 @@
 <span class="cstat-no" title="statement not covered" >        desc: 'Create a story for your followers to last 24hrs.',</span>
 <span class="cstat-no" title="statement not covered" >        component: CreateStoryItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-maroon',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Go Live',</span>
@@ -222,6 +259,7 @@
 <span class="cstat-no" title="statement not covered" >        desc: 'Create an instant live event.',</span>
 <span class="cstat-no" title="statement not covered" >        component: null,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-green',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Event',</span>
@@ -229,6 +267,15 @@
 <span class="cstat-no" title="statement not covered" >        desc: 'Create a scheduled event for your followers and users of placio.',</span>
 <span class="cstat-no" title="statement not covered" >        component: CreateEventItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-gold',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        name: 'Places',</span>
+<span class="cstat-no" title="statement not covered" >        icon: PlacesSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >        desc: 'Create a place attached to your business.',</span>
+<span class="cstat-no" title="statement not covered" >        component: CreatePlacesItem,</span>
+<span class="cstat-no" title="statement not covered" >        color: 'bg-gray-300',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: true,</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Reels',</span>
@@ -236,6 +283,7 @@
 <span class="cstat-no" title="statement not covered" >        desc: 'Upload short video contents for the amusement of your followers.',</span>
 <span class="cstat-no" title="statement not covered" >        component: CreateReelItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-charcoal dark:text-dark-charcoal',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >]</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -247,7 +295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-26T16:04:29.516Z
+                at 2023-06-26T16:47:47.788Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

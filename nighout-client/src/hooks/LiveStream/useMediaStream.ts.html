@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.63% </span>
+                <span class="strong">10.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/83</span>
+                <span class='fraction'>9/89</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.63% </span>
+                <span class="strong">10.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/83</span>
+                <span class='fraction'>9/89</span>
             </div>
         
             
@@ -146,7 +146,13 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -154,6 +160,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -229,14 +236,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from 'react'
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useEffect, useState } from 'react'
 &nbsp;
+import { ToastContext } from '@/components/context-containers/Toast.context'
 import {
     MediaDevice,
     MediaStreamConstraints,
 } from '@/interfaces/livestream.interface'
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function useMediaStream() {</span>
+<span class="cstat-no" title="statement not covered" >    const toastContext = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" >    const [stream, setStream] = useState&lt;MediaStream | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const [audioDevices, setAudioDevices] = useState&lt;MediaDevice[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [videoDevices, setVideoDevices] = useState&lt;MediaDevice[]&gt;([])</span>
@@ -248,33 +262,37 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >    // UseEffect to start and select stream source</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        async function startStream() {</span>
-<span class="cstat-no" title="statement not covered" >            const devices = await navigator.mediaDevices.enumerateDevices()</span>
-<span class="cstat-no" title="statement not covered" >            const audioDevices = devices.filter(</span>
-<span class="cstat-no" title="statement not covered" >                (device) =&gt; device.kind === 'audioinput',</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            const videoDevices = devices.filter(</span>
-<span class="cstat-no" title="statement not covered" >                (device) =&gt; device.kind === 'videoinput',</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            setAudioDevices(audioDevices)</span>
-<span class="cstat-no" title="statement not covered" >            setVideoDevices(videoDevices)</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >                const devices = await navigator.mediaDevices.enumerateDevices()</span>
+<span class="cstat-no" title="statement not covered" >                const audioDevices = devices.filter(</span>
+<span class="cstat-no" title="statement not covered" >                    (device) =&gt; device.kind === 'audioinput',</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                const videoDevices = devices.filter(</span>
+<span class="cstat-no" title="statement not covered" >                    (device) =&gt; device.kind === 'videoinput',</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                setAudioDevices(audioDevices)</span>
+<span class="cstat-no" title="statement not covered" >                setVideoDevices(videoDevices)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const constraints: MediaStreamConstraints = {</span>
-<span class="cstat-no" title="statement not covered" >                audio: {</span>
-<span class="cstat-no" title="statement not covered" >                    deviceId:</span>
-<span class="cstat-no" title="statement not covered" >                        selectedAudioDevice?.deviceId ||</span>
-<span class="cstat-no" title="statement not covered" >                        audioDevices[0]?.deviceId,</span>
-<span class="cstat-no" title="statement not covered" >                },</span>
-<span class="cstat-no" title="statement not covered" >                video: {</span>
-<span class="cstat-no" title="statement not covered" >                    deviceId:</span>
-<span class="cstat-no" title="statement not covered" >                        selectedVideoDevice?.deviceId ||</span>
-<span class="cstat-no" title="statement not covered" >                        videoDevices[0]?.deviceId,</span>
-<span class="cstat-no" title="statement not covered" >                },</span>
+<span class="cstat-no" title="statement not covered" >                const constraints: MediaStreamConstraints = {</span>
+<span class="cstat-no" title="statement not covered" >                    audio: {</span>
+<span class="cstat-no" title="statement not covered" >                        deviceId:</span>
+<span class="cstat-no" title="statement not covered" >                            selectedAudioDevice?.deviceId ||</span>
+<span class="cstat-no" title="statement not covered" >                            audioDevices[0]?.deviceId,</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
+<span class="cstat-no" title="statement not covered" >                    video: {</span>
+<span class="cstat-no" title="statement not covered" >                        deviceId:</span>
+<span class="cstat-no" title="statement not covered" >                            selectedVideoDevice?.deviceId ||</span>
+<span class="cstat-no" title="statement not covered" >                            videoDevices[0]?.deviceId,</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                const stream = await navigator.mediaDevices.getUserMedia(</span>
+<span class="cstat-no" title="statement not covered" >                    constraints,</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                setStream(stream)</span>
+<span class="cstat-no" title="statement not covered" >            } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >                toastContext.showToast('error', err.message)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const stream = await navigator.mediaDevices.getUserMedia(</span>
-<span class="cstat-no" title="statement not covered" >                constraints,</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            setStream(stream)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        startStream()</span>
@@ -319,7 +337,7 @@ export default <span class="fstat-no" title="function not covered" >function use
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-26T16:04:29.516Z
+                at 2023-06-26T16:47:47.788Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
