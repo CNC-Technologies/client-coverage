@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.78% </span>
+                <span class="strong">12.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/305</span>
+                <span class='fraction'>39/307</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.78% </span>
+                <span class="strong">12.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>39/305</span>
+                <span class='fraction'>39/307</span>
             </div>
         
             
@@ -368,7 +368,9 @@
 <a name='L303'></a><a href='#L303'>303</a>
 <a name='L304'></a><a href='#L304'>304</a>
 <a name='L305'></a><a href='#L305'>305</a>
-<a name='L306'></a><a href='#L306'>306</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -408,6 +410,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -714,7 +718,7 @@ interface PostForm {
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function CreatePostForm({ handleCloseModal }) {</span>
 <span class="cstat-no" title="statement not covered" >    // * create-post request</span>
-<span class="cstat-no" title="statement not covered" >    const { post, loading, get, patch } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { post, loading, get, put } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [addMedia, setAddMedia] = useState(false)</span>
@@ -802,13 +806,14 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const editPost = async (data) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // * Form validator</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (data.content) {</span>
-<span class="cstat-no" title="statement not covered" >            const res = await patch({ url: editPostRoute(`${postId}`) })</span>
+<span class="cstat-no" title="statement not covered" >            const res = await put({</span>
+<span class="cstat-no" title="statement not covered" >                url: editPostRoute(`${postId}`),</span>
+<span class="cstat-no" title="statement not covered" >                data: data,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(loading)</span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >                // * Route to homepage</span>
-<span class="cstat-no" title="statement not covered" >                router.push('/app')</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -932,6 +937,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;EmojiInput</span>
 <span class="cstat-no" title="statement not covered" >                handleEmojiClick={handleEmojiClick}</span>
 <span class="cstat-no" title="statement not covered" >                handleInputChange={handleInputChange}</span>
@@ -985,7 +991,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-26T16:47:47.788Z
+                at 2023-06-27T11:10:41.148Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
