@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/292</span>
+                <span class='fraction'>0/294</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/292</span>
+                <span class='fraction'>0/294</span>
             </div>
         
             
@@ -355,7 +355,11 @@
 <a name='L290'></a><a href='#L290'>290</a>
 <a name='L291'></a><a href='#L291'>291</a>
 <a name='L292'></a><a href='#L292'>292</a>
-<a name='L293'></a><a href='#L293'>293</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -652,7 +656,7 @@
 <span class="cstat-no" title="statement not covered" >    ticketCategory: string</span>
 <span class="cstat-no" title="statement not covered" >    ticketQuantity: string</span>
 <span class="cstat-no" title="statement not covered" >    // currency: string</span>
-<span class="cstat-no" title="statement not covered" >    ticketPrice: string</span>
+<span class="cstat-no" title="statement not covered" >    price: string</span>
 <span class="cstat-no" title="statement not covered" >    validityStartDate: string</span>
 <span class="cstat-no" title="statement not covered" >    validityStartTime: string</span>
 <span class="cstat-no" title="statement not covered" >    validityEndDate: string</span>
@@ -673,7 +677,7 @@
 <span class="cstat-no" title="statement not covered" >        ticketCategory: '',</span>
 <span class="cstat-no" title="statement not covered" >        ticketQuantity: '',</span>
 <span class="cstat-no" title="statement not covered" >        // currency: '',</span>
-<span class="cstat-no" title="statement not covered" >        ticketPrice: '',</span>
+<span class="cstat-no" title="statement not covered" >        price: '',</span>
 <span class="cstat-no" title="statement not covered" >        validityStartDate: '',</span>
 <span class="cstat-no" title="statement not covered" >        validityStartTime: '',</span>
 <span class="cstat-no" title="statement not covered" >        validityEndDate: '',</span>
@@ -734,17 +738,19 @@
 <span class="cstat-no" title="statement not covered" >                    }))</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                break</span>
-<span class="cstat-no" title="statement not covered" >            case 'ticketPrice':</span>
-<span class="cstat-no" title="statement not covered" >                if (value.trim() === '' &amp;&amp; ticketType === 'Paid') {</span>
-<span class="cstat-no" title="statement not covered" >                    setErrors((prevErrors) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                        ...prevErrors,</span>
-<span class="cstat-no" title="statement not covered" >                        ticketPrice: 'Ticket price is required',</span>
-<span class="cstat-no" title="statement not covered" >                    }))</span>
-<span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    setErrors((prevErrors) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                        ...prevErrors,</span>
-<span class="cstat-no" title="statement not covered" >                        ticketPrice: '',</span>
-<span class="cstat-no" title="statement not covered" >                    }))</span>
+<span class="cstat-no" title="statement not covered" >            case 'price':</span>
+<span class="cstat-no" title="statement not covered" >                if (!!value) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (value?.trim() === '' &amp;&amp; ticketType === 'Paid') {</span>
+<span class="cstat-no" title="statement not covered" >                        setErrors((prevErrors) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >                            ...prevErrors,</span>
+<span class="cstat-no" title="statement not covered" >                            price: 'Ticket price is required',</span>
+<span class="cstat-no" title="statement not covered" >                        }))</span>
+<span class="cstat-no" title="statement not covered" >                    } else {</span>
+<span class="cstat-no" title="statement not covered" >                        setErrors((prevErrors) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >                            ...prevErrors,</span>
+<span class="cstat-no" title="statement not covered" >                            price: '',</span>
+<span class="cstat-no" title="statement not covered" >                        }))</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                break</span>
 <span class="cstat-no" title="statement not covered" >            case 'validityStartDate':</span>
@@ -946,7 +952,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-27T16:35:55.208Z
+                at 2023-06-27T16:50:25.504Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

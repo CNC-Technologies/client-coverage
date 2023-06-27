@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -145,13 +145,7 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -237,7 +231,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface Errors {</span>
 <span class="cstat-no" title="statement not covered" >    externalLinks: string</span>
-<span class="cstat-no" title="statement not covered" >    venueAddress: string</span>
+<span class="cstat-no" title="statement not covered" >    location: string</span>
 <span class="cstat-no" title="statement not covered" >    coverImage: string | null</span>
 <span class="cstat-no" title="statement not covered" >    tags: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -245,7 +239,7 @@
 <span class="cstat-no" title="statement not covered" >const TicketPolicyVenue = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const [errors, setErrors] = useState&lt;Errors&gt;({</span>
 <span class="cstat-no" title="statement not covered" >        externalLinks: '',</span>
-<span class="cstat-no" title="statement not covered" >        venueAddress: '',</span>
+<span class="cstat-no" title="statement not covered" >        location: '',</span>
 <span class="cstat-no" title="statement not covered" >        coverImage: '',</span>
 <span class="cstat-no" title="statement not covered" >        tags: '',</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
@@ -264,10 +258,7 @@
 <span class="cstat-no" title="statement not covered" >        return null</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const validateVenueAddress = (</span>
-<span class="cstat-no" title="statement not covered" >        value: string | null,</span>
-<span class="cstat-no" title="statement not covered" >        selectedTab: string,</span>
-<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const validatelocation = (value: string | null, selectedTab: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (selectedTab === 'In person' &amp;&amp; !value) {</span>
 <span class="cstat-no" title="statement not covered" >            return 'Venue address should not be empty'</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -301,12 +292,12 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const validate = (</span>
-<span class="cstat-no" title="statement not covered" >        { externalLinks, venueAddress, coverImage, tags }: Errors,</span>
+<span class="cstat-no" title="statement not covered" >        { externalLinks, location, coverImage, tags }: Errors,</span>
 <span class="cstat-no" title="statement not covered" >        selectedTab: string,</span>
 <span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const newErrors = {</span>
 <span class="cstat-no" title="statement not covered" >            externalLinks: validateExternalLinks(externalLinks),</span>
-<span class="cstat-no" title="statement not covered" >            venueAddress: validateVenueAddress(venueAddress, selectedTab),</span>
+<span class="cstat-no" title="statement not covered" >            location: validatelocation(location, selectedTab),</span>
 <span class="cstat-no" title="statement not covered" >            coverImage: validateCoverImage(coverImage),</span>
 <span class="cstat-no" title="statement not covered" >            tags: validateTags(tags),</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -325,7 +316,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-27T16:35:55.208Z
+                at 2023-06-27T16:50:25.504Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

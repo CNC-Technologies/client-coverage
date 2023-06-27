@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/constants/MockData/CategoriesList.ts</title>
+    <title>Code coverage report for nighout-client/src/store/slices/events.slice.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/constants/MockData</a> CategoriesList.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/store/slices</a> events.slice.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>47/47</span>
+                <span class='fraction'>65/68</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>47/47</span>
+                <span class='fraction'>65/68</span>
             </div>
         
             
@@ -110,7 +110,28 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -157,53 +178,95 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">interface Category {
-    name: string
-    image: string
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+&nbsp;
+import { eventsKey } from '@/constants/cookieKeys.constant'
+import CookieService from '@/services/Cookie.service'
+&nbsp;
+export interface EventInterface {
+    host: string
+    title: string
+    type: string
+    description: string
+&nbsp;
+    timeZone: string
+    startDate: string
+    startTime: string
+    endDate: string
+    endTime: string
+&nbsp;
+    imageSrc: string
+&nbsp;
+    venue: string
+    venueLocation: string
+    venueTitle: string
+    venueAddress: string
+    venueCountry: string
+    venueState: string
+    venueCity: string
+    externalLink: string
+    tags: string | string[]
+    ticketCategory: string
+    ticketQuantity: string
+    currency: string
+    ticketPrice: string
+    validityStartDate: string
+    validityStartTime: string
+    validityEndDate: string
+    validityEndTime: string
+    salesStartDate: string
+    salesStartTime: string
+    salesEndDate: string
+    salesEndTime: string
+    discount: string
+    minOrderLimit: string
+    maxOrderLimit: string
+    saleChannel: string
+    numberOfOnlineTickets: string
 }
 &nbsp;
-export const MockedCategories: Category[] = [
-    {
-        name: 'Food',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927563/user-media-content/categories/food_bajmzc.jpg',
+interface initialStateInterface {
+    events: EventInterface[]
+}
+&nbsp;
+const initialState: initialStateInterface = {
+    events: CookieService.getter(eventsKey) || [],
+}
+&nbsp;
+const eventsSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+        addEvent: <span class="fstat-no" title="function not covered" >(state: any, action: PayloadAction&lt;EventInterface&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            state.events = [...state.events, action.payload]</span>
+<span class="cstat-no" title="statement not covered" >            CookieService.setter(eventsKey, state.events)</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
     },
-    {
-        name: 'Sports',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927559/user-media-content/categories/sport_hsp8jc.jpg',
-    },
-    {
-        name: 'Music',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927559/user-media-content/categories/music_htb3sq.jpg',
-    },
-    {
-        name: 'Arts',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927566/user-media-content/categories/art_o1g9pw.jpg',
-    },
-    {
-        name: 'Movies',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927557/user-media-content/categories/movies_t7yifd.jpg',
-    },
-    {
-        name: 'Fashion',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927564/user-media-content/categories/fashion_rpvzmi.jpg',
-    },
-    {
-        name: 'Travel',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927557/user-media-content/categories/travel_pg3oxw.jpg',
-    },
-    {
-        name: 'Technology',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927749/user-media-content/categories/tech_m2exf9.jpg',
-    },
-    {
-        name: 'Nature',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927562/user-media-content/categories/nature_ym8wcs.jpg',
-    },
-    {
-        name: 'Fitness',
-        image: 'https://res.cloudinary.com/placio/image/upload/v1682927561/user-media-content/categories/fitness_ezqti2.jpg',
-    },
-]
+})
+&nbsp;
+export const { addEvent } = eventsSlice.actions
+export default eventsSlice.reducer
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
