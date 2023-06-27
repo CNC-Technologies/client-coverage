@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/147</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/147</span>
             </div>
         
             
@@ -199,7 +199,29 @@
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -343,12 +365,21 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SelectField from '@/components/FormComponents/SelectField'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceInterface } from '@/store/slices/places.slice'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const InputField = dynamic(</span>
 <span class="cstat-no" title="statement not covered" >    () =&gt; import('@/components/FormComponents/InputField'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function Location({ formState, setFormState, handleSubmit }) {</span>
+<span class="cstat-no" title="statement not covered" >export default function Location({</span>
+<span class="cstat-no" title="statement not covered" >    formState,</span>
+<span class="cstat-no" title="statement not covered" >    setFormState,</span>
+<span class="cstat-no" title="statement not covered" >    handleSubmit,</span>
+<span class="cstat-no" title="statement not covered" >}: {</span>
+<span class="cstat-no" title="statement not covered" >    formState: PlaceInterface</span>
+<span class="cstat-no" title="statement not covered" >    setFormState: Function</span>
+<span class="cstat-no" title="statement not covered" >    handleSubmit: Function</span>
+<span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    // function to handle input change</span>
 <span class="cstat-no" title="statement not covered" >    const handleInputChange: React.ChangeEventHandler&lt;HTMLInputElement&gt; = (</span>
 <span class="cstat-no" title="statement not covered" >        event,</span>
@@ -373,18 +404,20 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='venue-address'</span>
-<span class="cstat-no" title="statement not covered" >                            name='placeAddress'</span>
-<span class="cstat-no" title="statement not covered" >                            label={'Address'}</span>
-<span class="cstat-no" title="statement not covered" >                            placeholder={'Address'}</span>
+<span class="cstat-no" title="statement not covered" >                            name='location'</span>
+<span class="cstat-no" title="statement not covered" >                            label={'Street Address'}</span>
+<span class="cstat-no" title="statement not covered" >                            placeholder={</span>
+<span class="cstat-no" title="statement not covered" >                                'Number 30 Sesame street, Gwarimpa, Abuja.'</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={formState?.placeAddress}</span>
+<span class="cstat-no" title="statement not covered" >                            value={formState?.location}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SelectField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='venue-country'</span>
-<span class="cstat-no" title="statement not covered" >                            name='placeCountry'</span>
+<span class="cstat-no" title="statement not covered" >                            name='country'</span>
 <span class="cstat-no" title="statement not covered" >                            label={'Country'}</span>
 <span class="cstat-no" title="statement not covered" >                            options={[</span>
 <span class="cstat-no" title="statement not covered" >                                { value: 'Nigeria' },</span>
@@ -392,7 +425,7 @@
 <span class="cstat-no" title="statement not covered" >                                { value: 'Germany' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange as any}</span>
-<span class="cstat-no" title="statement not covered" >                            value={formState?.placeCountry}</span>
+<span class="cstat-no" title="statement not covered" >                            value={formState?.country}</span>
 <span class="cstat-no" title="statement not covered" >                            error={''}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -400,7 +433,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SelectField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='venue-state'</span>
-<span class="cstat-no" title="statement not covered" >                            name='placeState'</span>
+<span class="cstat-no" title="statement not covered" >                            name='state'</span>
 <span class="cstat-no" title="statement not covered" >                            label={'State '}</span>
 <span class="cstat-no" title="statement not covered" >                            options={[</span>
 <span class="cstat-no" title="statement not covered" >                                { value: 'Abuja' },</span>
@@ -408,7 +441,7 @@
 <span class="cstat-no" title="statement not covered" >                                { value: 'Abia' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange as any}</span>
-<span class="cstat-no" title="statement not covered" >                            value={formState?.placeState}</span>
+<span class="cstat-no" title="statement not covered" >                            value={formState?.state}</span>
 <span class="cstat-no" title="statement not covered" >                            error={''}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -416,11 +449,11 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='venue-city'</span>
-<span class="cstat-no" title="statement not covered" >                            name='placeCity'</span>
+<span class="cstat-no" title="statement not covered" >                            name='city'</span>
 <span class="cstat-no" title="statement not covered" >                            label={'City/Town'}</span>
 <span class="cstat-no" title="statement not covered" >                            placeholder={'City'}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={formState?.placeCity}</span>
+<span class="cstat-no" title="statement not covered" >                            value={formState?.city}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -478,7 +511,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-27T11:11:49.488Z
+                at 2023-06-27T14:39:58.513Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
