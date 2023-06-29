@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.18% </span>
+                <span class="strong">93.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>164/176</span>
+                <span class='fraction'>173/185</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.18% </span>
+                <span class="strong">93.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>164/176</span>
+                <span class='fraction'>173/185</span>
             </div>
         
             
@@ -239,7 +239,16 @@
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
 <a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -358,6 +367,7 @@
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -377,6 +387,14 @@
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -523,6 +541,7 @@ export default function CalendarItem() {
                     &gt;
                         &lt;p className='text-sm'&gt;{daysOfWeek[date.getDay()]}&lt;/p&gt;
                         &lt;p
+                            data-testid={`date-${date.getDate()}`}
                             className={`xmd:mt-3 ${
                                 isActive ? 'font-bold' : ''
                             } ${isToday ? 'text-red-500' : ''}`}
@@ -560,20 +579,27 @@ export default function CalendarItem() {
     return (
         &lt;div className='xDesktop:mx-12  xDesktop:p-6 py-3'&gt;
             &lt;div className='flex justify-between items-center mb-4 bg-grey px-3 py-2 rounded-2xl'&gt;
-                &lt;IconButton onClick={handlePrevMonth} data-testid='prev-button'&gt;
+                &lt;IconButton
+                    onClick={handlePrevMonth}
+                    data-testid='prev-month-button'
+                &gt;
                     &lt;ArrowLeftCircleOutlineIcon className='text-orange text-xl' /&gt;
                 &lt;/IconButton&gt;
 &nbsp;
-                &lt;h2 className='font-semibold text-lg'&gt;
+                &lt;h2 data-testid='month-year' className='font-semibold text-lg'&gt;
                     {months[activeDate.getMonth()]}, {activeDate.getFullYear()}
                 &lt;/h2&gt;
-                &lt;IconButton onClick={handleNextMonth} data-testid='next-button'&gt;
+                &lt;IconButton
+                    onClick={handleNextMonth}
+                    data-testid='next-month-button'
+                &gt;
                     &lt;ArrowRightCircleOutlineIcon className='text-orange text-xl' /&gt;
                 &lt;/IconButton&gt;
             &lt;/div&gt;
 &nbsp;
             &lt;div className='flex gap-1 xmd:gap-2 relative bg-white shadow-md items-center justify-center rounded-lg overflow-x-scroll hideScrollbar mx-auto py-4 px-2 '&gt;
                 &lt;IconButton
+                    data-testid='prev- day-button'
                     onClick={handlePrevDate}
                     className='navigationButtons max-xlaptop:left-0 '
                 &gt;
@@ -582,6 +608,7 @@ export default function CalendarItem() {
                 {renderCalendar()}
 &nbsp;
                 &lt;IconButton
+                    data-testid='next- month-button'
                     onClick={handleNextDate}
                     className='navigationButtons max-xlaptop:right-0 '
                 &gt;
@@ -598,7 +625,7 @@ export default function CalendarItem() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-29T09:22:22.999Z
+                at 2023-06-29T15:10:47.391Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
