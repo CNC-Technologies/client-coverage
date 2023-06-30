@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/299</span>
+                <span class='fraction'>0/309</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/299</span>
+                <span class='fraction'>0/309</span>
             </div>
         
             
@@ -362,7 +362,27 @@
 <a name='L297'></a><a href='#L297'>297</a>
 <a name='L298'></a><a href='#L298'>298</a>
 <a name='L299'></a><a href='#L299'>299</a>
-<a name='L300'></a><a href='#L300'>300</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -669,6 +689,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import TicketTypesForm from '@/utils/FormValidators/EventCreation/ticketTypesForm'</span>
+<span class="cstat-no" title="statement not covered" >import { updateFormState } from '@/utils/formUtils'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const InputField = dynamic(</span>
 <span class="cstat-no" title="statement not covered" >    () =&gt; import('@/components/FormComponents/InputField'),</span>
@@ -678,45 +699,61 @@
 <span class="cstat-no" title="statement not covered" >    () =&gt; import('@/components/FormComponents/SelectField'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function TicketTypes({ handleInputChange, ticketAndVenueForm }) {</span>
+<span class="cstat-no" title="statement not covered" >// eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >export default function TicketTypes({ setEvent, event, handleClose }) {</span>
 <span class="cstat-no" title="statement not covered" >    const ticketTypes = ['Free', 'Paid']</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(ticketTypes[0])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const changeActiveTab = (tab: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setActiveTab(tab)</span>
+<span class="cstat-no" title="statement not covered" >        setTicketForm({ ...ticketForm, type: tab })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Form validator hook</span>
 <span class="cstat-no" title="statement not covered" >    const { errors, validateField, validateForm } = TicketTypesForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const ticketForm = {</span>
-<span class="cstat-no" title="statement not covered" >        ticketCategory: ticketAndVenueForm?.ticketCategory,</span>
-<span class="cstat-no" title="statement not covered" >        ticketQuantity: ticketAndVenueForm?.ticketQuantity,</span>
-<span class="cstat-no" title="statement not covered" >        // currency: ticketAndVenueForm?.currency,</span>
-<span class="cstat-no" title="statement not covered" >        price: ticketAndVenueForm?.price,</span>
-<span class="cstat-no" title="statement not covered" >        validityStartDate: ticketAndVenueForm?.validityStartDate,</span>
-<span class="cstat-no" title="statement not covered" >        validityStartTime: ticketAndVenueForm?.validityStartTime,</span>
-<span class="cstat-no" title="statement not covered" >        validityEndDate: ticketAndVenueForm?.validityEndDate,</span>
-<span class="cstat-no" title="statement not covered" >        validityEndTime: ticketAndVenueForm?.validityEndTime,</span>
-<span class="cstat-no" title="statement not covered" >        salesStartDate: ticketAndVenueForm?.salesStartDate,</span>
-<span class="cstat-no" title="statement not covered" >        salesStartTime: ticketAndVenueForm?.salesStartTime,</span>
-<span class="cstat-no" title="statement not covered" >        salesEndDate: ticketAndVenueForm?.salesEndDate,</span>
-<span class="cstat-no" title="statement not covered" >        salesEndTime: ticketAndVenueForm?.salesEndTime,</span>
-<span class="cstat-no" title="statement not covered" >        discount: ticketAndVenueForm?.discount,</span>
-<span class="cstat-no" title="statement not covered" >        minOrderLimit: ticketAndVenueForm?.minOrderLimit,</span>
-<span class="cstat-no" title="statement not covered" >        maxOrderLimit: ticketAndVenueForm?.maxOrderLimit,</span>
-<span class="cstat-no" title="statement not covered" >        saleChannel: ticketAndVenueForm?.saleChannel,</span>
-<span class="cstat-no" title="statement not covered" >        numberOfOnlineTickets: ticketAndVenueForm?.numberOfOnlineTickets,</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const [ticketForm, setTicketForm] = useState({</span>
+<span class="cstat-no" title="statement not covered" >        type: activeTab,</span>
+<span class="cstat-no" title="statement not covered" >        ticketCategory: '',</span>
+<span class="cstat-no" title="statement not covered" >        ticketQuantity: '',</span>
+<span class="cstat-no" title="statement not covered" >        // currency: '',</span>
+<span class="cstat-no" title="statement not covered" >        ticketPrice: '',</span>
+<span class="cstat-no" title="statement not covered" >        validityStartDate: '',</span>
+<span class="cstat-no" title="statement not covered" >        validityStartTime: '',</span>
+<span class="cstat-no" title="statement not covered" >        validityEndDate: '',</span>
+<span class="cstat-no" title="statement not covered" >        validityEndTime: '',</span>
+<span class="cstat-no" title="statement not covered" >        salesStartDate: '',</span>
+<span class="cstat-no" title="statement not covered" >        salesStartTime: '',</span>
+<span class="cstat-no" title="statement not covered" >        salesEndDate: '',</span>
+<span class="cstat-no" title="statement not covered" >        salesEndTime: '',</span>
+<span class="cstat-no" title="statement not covered" >        discount: '',</span>
+<span class="cstat-no" title="statement not covered" >        minOrderLimit: '',</span>
+<span class="cstat-no" title="statement not covered" >        maxOrderLimit: '',</span>
+<span class="cstat-no" title="statement not covered" >        saleChannel: '',</span>
+<span class="cstat-no" title="statement not covered" >        numberOfOnlineTickets: '',</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleInputsOnChange: React.ChangeEventHandler&lt;</span>
 <span class="cstat-no" title="statement not covered" >        HTMLInputElement | HTMLSelectElement</span>
 <span class="cstat-no" title="statement not covered" >    &gt; = (event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        handleInputChange(event)</span>
 <span class="cstat-no" title="statement not covered" >        validateField(event?.target.name, event?.target.value, activeTab)</span>
+<span class="cstat-no" title="statement not covered" >        updateFormState(</span>
+<span class="cstat-no" title="statement not covered" >            event?.target.name,</span>
+<span class="cstat-no" title="statement not covered" >            event?.target.value,</span>
+<span class="cstat-no" title="statement not covered" >            ticketForm,</span>
+<span class="cstat-no" title="statement not covered" >            setTicketForm,</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSubmit = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // event.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >        const isValid = validateForm(ticketForm, activeTab)</span>
 <span class="cstat-no" title="statement not covered" >        if (isValid) {</span>
-<span class="cstat-no" title="statement not covered" >            // Submit the form</span>
+<span class="cstat-no" title="statement not covered" >            setEvent((prevTickets) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >                ...prevTickets,</span>
+<span class="cstat-no" title="statement not covered" >                tickets: [...prevTickets.tickets, ticketForm],</span>
+<span class="cstat-no" title="statement not covered" >            }))</span>
+<span class="cstat-no" title="statement not covered" >            handleClose()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -727,13 +764,16 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='py-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='whitespace-normal break-words'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {JSON.stringify(ticketForm)}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;h4 className='text-lg font-semibold  text-center'&gt;Ticket Types&lt;/h4&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='mt-2 flex gap-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {ticketTypes.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    return (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setActiveTab(item)}</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; changeActiveTab(item)}</span>
 <span class="cstat-no" title="statement not covered" >                            key={index}</span>
 <span class="cstat-no" title="statement not covered" >                            className={`cursor-pointer flex justify-center items-center rounded md text-center px-5 py-2 ${</span>
 <span class="cstat-no" title="statement not covered" >                                activeTab === item</span>
@@ -761,7 +801,7 @@
 <span class="cstat-no" title="statement not covered" >                                { value: 'Gold' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.ticketCategory}</span>
+<span class="cstat-no" title="statement not covered" >                            value={ticketForm.ticketCategory}</span>
 <span class="cstat-no" title="statement not covered" >                            error={errors.ticketCategory}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -774,7 +814,7 @@
 <span class="cstat-no" title="statement not covered" >                        label={'Available quantity *'}</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder={'20'}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.ticketQuantity}</span>
+<span class="cstat-no" title="statement not covered" >                        value={ticketForm.ticketQuantity}</span>
 <span class="cstat-no" title="statement not covered" >                        error={errors.ticketQuantity}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -792,18 +832,18 @@
 <span class="cstat-no" title="statement not covered" >                                    { value: 'EUR' },</span>
 <span class="cstat-no" title="statement not covered" >                                ]}</span>
 <span class="cstat-no" title="statement not covered" >                                onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                value={ticketAndVenueForm.currency}</span>
+<span class="cstat-no" title="statement not covered" >                                value={ticketForm.currency}</span>
 <span class="cstat-no" title="statement not covered" >                                error={errors.currency}</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                name='price'</span>
+<span class="cstat-no" title="statement not covered" >                                name='ticketPrice'</span>
 <span class="cstat-no" title="statement not covered" >                                label={'Price *'}</span>
 <span class="cstat-no" title="statement not covered" >                                placeholder={'5,000'}</span>
 <span class="cstat-no" title="statement not covered" >                                onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                value={ticketAndVenueForm.price}</span>
-<span class="cstat-no" title="statement not covered" >                                error={errors.price}</span>
+<span class="cstat-no" title="statement not covered" >                                value={ticketForm.ticketPrice}</span>
+<span class="cstat-no" title="statement not covered" >                                error={errors.ticketPrice}</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -825,7 +865,7 @@
 <span class="cstat-no" title="statement not covered" >                                    type='date'</span>
 <span class="cstat-no" title="statement not covered" >                                    label={'Start date *'}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                    value={ticketAndVenueForm.validityStartDate}</span>
+<span class="cstat-no" title="statement not covered" >                                    value={ticketForm.validityStartDate}</span>
 <span class="cstat-no" title="statement not covered" >                                    error={errors.validityStartDate}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
@@ -836,7 +876,7 @@
 <span class="cstat-no" title="statement not covered" >                                    type='time'</span>
 <span class="cstat-no" title="statement not covered" >                                    label={'Start time *'}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                    value={ticketAndVenueForm.validityStartTime}</span>
+<span class="cstat-no" title="statement not covered" >                                    value={ticketForm.validityStartTime}</span>
 <span class="cstat-no" title="statement not covered" >                                    error={errors.validityStartTime}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
@@ -849,7 +889,7 @@
 <span class="cstat-no" title="statement not covered" >                                    type='date'</span>
 <span class="cstat-no" title="statement not covered" >                                    label={'End date *'}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                    value={ticketAndVenueForm.validityEndDate}</span>
+<span class="cstat-no" title="statement not covered" >                                    value={ticketForm.validityEndDate}</span>
 <span class="cstat-no" title="statement not covered" >                                    error={errors.validityEndDate}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
@@ -860,7 +900,7 @@
 <span class="cstat-no" title="statement not covered" >                                    type='time'</span>
 <span class="cstat-no" title="statement not covered" >                                    label={'End time *'}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                    value={ticketAndVenueForm.validityEndTime}</span>
+<span class="cstat-no" title="statement not covered" >                                    value={ticketForm.validityEndTime}</span>
 <span class="cstat-no" title="statement not covered" >                                    error={errors.validityEndTime}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
@@ -886,9 +926,7 @@
 <span class="cstat-no" title="statement not covered" >                                            type='date'</span>
 <span class="cstat-no" title="statement not covered" >                                            label={'Start date *'}</span>
 <span class="cstat-no" title="statement not covered" >                                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                            value={</span>
-<span class="cstat-no" title="statement not covered" >                                                ticketAndVenueForm.salesStartDate</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            value={ticketForm.salesStartDate}</span>
 <span class="cstat-no" title="statement not covered" >                                            error={errors.salesStartDate}</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
@@ -899,9 +937,7 @@
 <span class="cstat-no" title="statement not covered" >                                            type='time'</span>
 <span class="cstat-no" title="statement not covered" >                                            label={'Start time *'}</span>
 <span class="cstat-no" title="statement not covered" >                                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                            value={</span>
-<span class="cstat-no" title="statement not covered" >                                                ticketAndVenueForm.salesStartTime</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            value={ticketForm.salesStartTime}</span>
 <span class="cstat-no" title="statement not covered" >                                            error={errors.salesStartTime}</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
@@ -914,9 +950,7 @@
 <span class="cstat-no" title="statement not covered" >                                            type='date'</span>
 <span class="cstat-no" title="statement not covered" >                                            label={'End date *'}</span>
 <span class="cstat-no" title="statement not covered" >                                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                            value={</span>
-<span class="cstat-no" title="statement not covered" >                                                ticketAndVenueForm.salesEndDate</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            value={ticketForm.salesEndDate}</span>
 <span class="cstat-no" title="statement not covered" >                                            error={errors.salesEndDate}</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
@@ -927,9 +961,7 @@
 <span class="cstat-no" title="statement not covered" >                                            type='time'</span>
 <span class="cstat-no" title="statement not covered" >                                            label={'End time *'}</span>
 <span class="cstat-no" title="statement not covered" >                                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                            value={</span>
-<span class="cstat-no" title="statement not covered" >                                                ticketAndVenueForm.salesEndTime</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            value={ticketForm.salesEndTime}</span>
 <span class="cstat-no" title="statement not covered" >                                            error={errors.salesEndTime}</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
@@ -938,7 +970,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;AdvancedOptions</span>
 <span class="cstat-no" title="statement not covered" >                            handleInputsOnChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                            ticketAndVenueForm={ticketAndVenueForm}</span>
+<span class="cstat-no" title="statement not covered" >                            ticketForm={ticketForm}</span>
 <span class="cstat-no" title="statement not covered" >                            errors={errors}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
@@ -953,9 +985,7 @@
 <span class="cstat-no" title="statement not covered" >                    onClick={handleSubmit}</span>
 <span class="cstat-no" title="statement not covered" >                    name={'Add Ticket'}</span>
 <span class="cstat-no" title="statement not covered" >                    className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;Add Ticket&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -967,7 +997,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-29T15:10:47.391Z
+                at 2023-06-30T06:07:49.702Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

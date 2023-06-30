@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.7% </span>
+                <span class="strong">13.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/307</span>
+                <span class='fraction'>41/310</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.7% </span>
+                <span class="strong">13.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>39/307</span>
+                <span class='fraction'>41/310</span>
             </div>
         
             
@@ -370,7 +370,12 @@
 <a name='L305'></a><a href='#L305'>305</a>
 <a name='L306'></a><a href='#L306'>306</a>
 <a name='L307'></a><a href='#L307'>307</a>
-<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -410,6 +415,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -684,6 +690,8 @@ import dynamic from 'next/dynamic'
 &nbsp;
 import { useSelector } from 'react-redux'
 &nbsp;
+import { toast } from 'react-toastify'
+&nbsp;
 import EmojiInput from '@/components/FormComponents/EmojiInput'
 import Button, { IconButton } from '@/components/FormComponents/button'
 import Avatar from '@/components/app/simple/Avatar'
@@ -732,7 +740,6 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >    const [postAudience, setPostAudience] = useState('everyone')</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
-<span class="cstat-no" title="statement not covered" >    const [deletedImages, setDeletedImages] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [postForm, setPostForm] = useState&lt;PostForm&gt;({</span>
 <span class="cstat-no" title="statement not covered" >        user_id: user.id,</span>
 <span class="cstat-no" title="statement not covered" >        content: '',</span>
@@ -763,7 +770,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        setImageForUpload(files)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleUpload } = UploadForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const uploadImagesToCloudinary = async (): Promise&lt;Media[]&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (imageForUpload) {</span>
@@ -776,21 +783,28 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        return [] // Return an empty array if there is no image to upload</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const setImagesForDelete = (image: Photo) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setDeletedImages([...deletedImages, image])</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createPost = async (data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // ! Display toast notification with progress bar</span>
+<span class="cstat-no" title="statement not covered" >        const toastId = toast('Submitting...', { autoClose: false })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        // * Form validator</span>
 <span class="cstat-no" title="statement not covered" >        if (data.content || data.medias.length) {</span>
+<span class="cstat-no" title="statement not covered" >            // * Route to homepage</span>
+<span class="cstat-no" title="statement not covered" >            router.push('/app')</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const res = await post({ data: data, url: createPostRoute })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(loading)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >                // Update the toast notification when the submission is successful</span>
+<span class="cstat-no" title="statement not covered" >                toast.update(toastId, {</span>
+<span class="cstat-no" title="statement not covered" >                    render: 'Submission successful!',</span>
+<span class="cstat-no" title="statement not covered" >                    type: toast.TYPE.SUCCESS,</span>
+<span class="cstat-no" title="statement not covered" >                    autoClose: 3000,</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                // * Route to homepage</span>
-<span class="cstat-no" title="statement not covered" >                router.push('/app')</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                // * Clear postForm</span>
 <span class="cstat-no" title="statement not covered" >                setPostForm({</span>
@@ -800,6 +814,13 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                setSelectedPhotos([])</span>
 <span class="cstat-no" title="statement not covered" >                setImageForUpload(null)</span>
 <span class="cstat-no" title="statement not covered" >                showToast('success', 'Post has been created')</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >                // Handle errors and update the toast notification accordingly</span>
+<span class="cstat-no" title="statement not covered" >                toast.update(toastId, {</span>
+<span class="cstat-no" title="statement not covered" >                    render: 'Post Creation failed!',</span>
+<span class="cstat-no" title="statement not covered" >                    type: toast.TYPE.ERROR,</span>
+<span class="cstat-no" title="statement not covered" >                    autoClose: 3000,</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -863,17 +884,6 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                if (imageUrls.length || postForm.content) {</span>
 <span class="cstat-no" title="statement not covered" >                    await editPost(data)</span>
-<span class="cstat-no" title="statement not covered" >                    // To delete images from the cloudinary storage</span>
-<span class="cstat-no" title="statement not covered" >                    if (deletedImages.length) {</span>
-<span class="cstat-no" title="statement not covered" >                        for (</span>
-<span class="cstat-no" title="statement not covered" >                            let index = 0;</span>
-<span class="cstat-no" title="statement not covered" >                            index &lt; deletedImages.length;</span>
-<span class="cstat-no" title="statement not covered" >                            index++</span>
-<span class="cstat-no" title="statement not covered" >                        ) {</span>
-<span class="cstat-no" title="statement not covered" >                            const imageUrl = deletedImages[index].URL</span>
-<span class="cstat-no" title="statement not covered" >                            handleDelete(imageUrl)</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    setPostError('You have to input either a text or an image')</span>
 <span class="cstat-no" title="statement not covered" >                    setTimeout(() =&gt; {</span>
@@ -961,7 +971,6 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                    optionalAltText={postId ? `${user?.name}` : ''}</span>
 <span class="cstat-no" title="statement not covered" >                    imageForUpload={imageForUpload}</span>
 <span class="cstat-no" title="statement not covered" >                    setImageForUpload={setImageForUpload}</span>
-<span class="cstat-no" title="statement not covered" >                    setImagesForDelete={setImagesForDelete}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -991,7 +1000,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-29T15:10:47.391Z
+                at 2023-06-30T06:07:49.702Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

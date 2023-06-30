@@ -304,7 +304,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AdvancedOptions({</span>
 <span class="cstat-no" title="statement not covered" >    handleInputsOnChange,</span>
-<span class="cstat-no" title="statement not covered" >    ticketAndVenueForm,</span>
+<span class="cstat-no" title="statement not covered" >    ticketForm,</span>
 <span class="cstat-no" title="statement not covered" >    errors,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const [active, setActive] = useState(true)</span>
@@ -326,7 +326,7 @@
 <span class="cstat-no" title="statement not covered" >                        label={'Discount'}</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder={'Enter a discount price for your Ticket'}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.discount}</span>
+<span class="cstat-no" title="statement not covered" >                        value={ticketForm.discount}</span>
 <span class="cstat-no" title="statement not covered" >                        error={errors.discount}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -346,7 +346,7 @@
 <span class="cstat-no" title="statement not covered" >                                { value: '6' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.minOrderLimit}</span>
+<span class="cstat-no" title="statement not covered" >                            value={ticketForm.minOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                            error={errors.minOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -364,7 +364,7 @@
 <span class="cstat-no" title="statement not covered" >                                { value: '6' },</span>
 <span class="cstat-no" title="statement not covered" >                            ]}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.maxOrderLimit}</span>
+<span class="cstat-no" title="statement not covered" >                            value={ticketForm.maxOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                            error={errors.maxOrderLimit}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -381,12 +381,12 @@
 <span class="cstat-no" title="statement not covered" >                            { value: 'Hybrid' },</span>
 <span class="cstat-no" title="statement not covered" >                        ]}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                        value={ticketAndVenueForm.saleChannel}</span>
+<span class="cstat-no" title="statement not covered" >                        value={ticketForm.saleChannel}</span>
 <span class="cstat-no" title="statement not covered" >                        error={errors.saleChannel}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {ticketAndVenueForm.saleChannel === 'Hybrid' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {ticketForm.saleChannel === 'Hybrid' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            type='number'</span>
@@ -396,7 +396,7 @@
 <span class="cstat-no" title="statement not covered" >                                'Enter number of tickets you want to sell online'</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputsOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={ticketAndVenueForm.numberOfOnlineTickets}</span>
+<span class="cstat-no" title="statement not covered" >                            value={ticketForm.numberOfOnlineTickets}</span>
 <span class="cstat-no" title="statement not covered" >                            error={errors.numberOfOnlineTickets}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -412,7 +412,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-29T15:10:47.391Z
+                at 2023-06-30T06:07:49.702Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
