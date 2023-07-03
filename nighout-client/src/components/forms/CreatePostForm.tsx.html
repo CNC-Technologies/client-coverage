@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.69% </span>
+                <span class="strong">12.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/323</span>
+                <span class='fraction'>40/319</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.69% </span>
+                <span class="strong">12.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/323</span>
+                <span class='fraction'>40/319</span>
             </div>
         
             
@@ -382,12 +382,7 @@
 <a name='L317'></a><a href='#L317'>317</a>
 <a name='L318'></a><a href='#L318'>318</a>
 <a name='L319'></a><a href='#L319'>319</a>
-<a name='L320'></a><a href='#L320'>320</a>
-<a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a>
-<a name='L324'></a><a href='#L324'>324</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L320'></a><a href='#L320'>320</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -428,9 +423,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -710,7 +702,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 &nbsp;
 import dynamic from 'next/dynamic'
 &nbsp;
@@ -723,7 +715,6 @@ import Button, { IconButton } from '@/components/FormComponents/button'
 import Avatar from '@/components/app/simple/Avatar'
 import MenuList from '@/components/app/simple/MenuList'
 &nbsp;
-import { ToastContext } from '@/components/context-containers/Toast.context'
 import { createPostRoute, editPostRoute } from '@/constants/app/routes'
 import { baseURL } from '@/constants/env.config'
 import {
@@ -760,9 +751,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const { user } = useUser()</span>
-<span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const [isEditMode, setIsEditMode] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [postAudience, setPostAudience] = useState('everyone')</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
@@ -836,10 +825,8 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                    user_id: '',</span>
 <span class="cstat-no" title="statement not covered" >                    content: '',</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                setSelectedPhotos([])</span>
-<span class="cstat-no" title="statement not covered" >                setImageForUpload(null)</span>
-<span class="cstat-no" title="statement not covered" >                showToast('success', 'Post has been edited')</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            return res</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -848,15 +835,19 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        // ! Display toast notification with progress bar</span>
-<span class="cstat-no" title="statement not covered" >        const toastId = toast('Submitting...', {</span>
-<span class="cstat-no" title="statement not covered" >            autoClose: false,</span>
-<span class="cstat-no" title="statement not covered" >            position: 'top-center',</span>
-<span class="cstat-no" title="statement not covered" >            className: 'toastify-custom',</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >        const toastId = toast(</span>
+<span class="cstat-no" title="statement not covered" >            ` ${!isEditMode ? 'Creating Post...' : 'Editing Post...'}`,</span>
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >                autoClose: false,</span>
+<span class="cstat-no" title="statement not covered" >                position: 'top-center',</span>
+<span class="cstat-no" title="statement not covered" >                className: 'toastify-custom',</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (selectedPhotos.length || postForm.content) {</span>
 <span class="cstat-no" title="statement not covered" >            // * Route to homepage</span>
-<span class="cstat-no" title="statement not covered" >            router.push('/app')</span>
+<span class="cstat-no" title="statement not covered" >            if (!isEditMode) router.push('/app')</span>
+<span class="cstat-no" title="statement not covered" >            else handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                const imageUrls: Media[] = await uploadImagesToCloudinary()</span>
@@ -897,23 +888,14 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    // For editing existing posts</span>
-<span class="cstat-no" title="statement not covered" >                    data.medias = [</span>
-<span class="cstat-no" title="statement not covered" >                        ...imageUrls,</span>
-<span class="cstat-no" title="statement not covered" >                        ...selectedPhotos.map((photo) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                            type: photo?.MediaType,</span>
-<span class="cstat-no" title="statement not covered" >                            url: photo?.URL,</span>
-<span class="cstat-no" title="statement not covered" >                        })),</span>
-<span class="cstat-no" title="statement not covered" >                    ]</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    if (imageUrls.length || postForm.content) {</span>
-<span class="cstat-no" title="statement not covered" >                        await editPost(data)</span>
-<span class="cstat-no" title="statement not covered" >                    } else {</span>
-<span class="cstat-no" title="statement not covered" >                        setPostError(</span>
-<span class="cstat-no" title="statement not covered" >                            'You have to input either a text or an image',</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                        setTimeout(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                            setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >                        }, 3000)</span>
+<span class="cstat-no" title="statement not covered" >                    const res = await editPost(data)</span>
+<span class="cstat-no" title="statement not covered" >                    if (res?.success) {</span>
+<span class="cstat-no" title="statement not covered" >                        // Update the toast notification when the submission is successful</span>
+<span class="cstat-no" title="statement not covered" >                        toast.update(toastId, {</span>
+<span class="cstat-no" title="statement not covered" >                            render: 'Post has been edited',</span>
+<span class="cstat-no" title="statement not covered" >                            type: toast.TYPE.SUCCESS,</span>
+<span class="cstat-no" title="statement not covered" >                            autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" >                        })</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
@@ -923,7 +905,6 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                    type: toast.TYPE.ERROR,</span>
 <span class="cstat-no" title="statement not covered" >                    autoClose: 5000,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                // showToast('error', '')</span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
@@ -933,7 +914,6 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                autoClose: 5000,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >            router.push('/app/create?create=Post')</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -943,10 +923,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
 <span class="cstat-no" title="statement not covered" >                setPostForm({ ...postForm, content: res.data?.Content })</span>
-<span class="cstat-no" title="statement not covered" >                const newImagesArr = res?.data?.edges?.medias.map((image) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return { MediaType: image.MediaType, URL: image.URL }</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                setSelectedPhotos([...newImagesArr])</span>
+<span class="cstat-no" title="statement not covered" >                setIsEditMode(true)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -999,26 +976,37 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                error={postError}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {addMedia &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DragDropImageUpload</span>
-<span class="cstat-no" title="statement not covered" >                    accept='all'</span>
-<span class="cstat-no" title="statement not covered" >                    selectedPhotos={selectedPhotos}</span>
-<span class="cstat-no" title="statement not covered" >                    setSelectedPhotos={setSelectedPhotos}</span>
-<span class="cstat-no" title="statement not covered" >                    handleMediaChange={handleMediaChange}</span>
-<span class="cstat-no" title="statement not covered" >                    videoControl={true}</span>
-<span class="cstat-no" title="statement not covered" >                    // ! get user details from the right place not auth0</span>
-<span class="cstat-no" title="statement not covered" >                    optionalAltText={postId ? `${user?.name}` : ''}</span>
-<span class="cstat-no" title="statement not covered" >                    imageForUpload={imageForUpload}</span>
-<span class="cstat-no" title="statement not covered" >                    setImageForUpload={setImageForUpload}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* Boolean check to hide the media section if the user is on edit-mode  */}</span>
+<span class="cstat-no" title="statement not covered" >            {!isEditMode &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {addMedia &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;DragDropImageUpload</span>
+<span class="cstat-no" title="statement not covered" >                            accept='all'</span>
+<span class="cstat-no" title="statement not covered" >                            selectedPhotos={selectedPhotos}</span>
+<span class="cstat-no" title="statement not covered" >                            setSelectedPhotos={setSelectedPhotos}</span>
+<span class="cstat-no" title="statement not covered" >                            handleMediaChange={handleMediaChange}</span>
+<span class="cstat-no" title="statement not covered" >                            videoControl={true}</span>
+<span class="cstat-no" title="statement not covered" >                            // ! get user details from the right place not auth0</span>
+<span class="cstat-no" title="statement not covered" >                            optionalAltText={postId ? `${user?.name}` : ''}</span>
+<span class="cstat-no" title="statement not covered" >                            imageForUpload={imageForUpload}</span>
+<span class="cstat-no" title="statement not covered" >                            setImageForUpload={setImageForUpload}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;IconButton</span>
+<span class="cstat-no" title="statement not covered" >                            className='pl-2 grey-fill'</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={toggleAddMedia}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {!addMedia ? (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;CameraOutlineIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;CloseOutlineIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='px-2 text-xs'&gt;Media&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='row space-x-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;IconButton className='pl-2 grey-fill' onClick={toggleAddMedia}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {!addMedia ? &lt;CameraOutlineIcon /&gt; : &lt;CloseOutlineIcon /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;span className='px-2 text-xs'&gt;Media&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row justify-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button</span>
@@ -1039,7 +1027,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-03T11:15:56.326Z
+                at 2023-07-03T13:30:30.167Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
