@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/constants/app/defaults.ts</title>
+    <title>Code coverage report for nighout-client/src/store/slices/activeBusiness.slice.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/constants/app</a> defaults.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/store/slices</a> activeBusiness.slice.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>17/20</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>17/20</span>
             </div>
         
             
@@ -83,15 +83,7 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -103,50 +95,34 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const storyImageDuration = 5000
-export const heroPoster =
-    'https://res.cloudinary.com/dgenknzfn/image/upload/v1680468634/poster_hlyjhq.png'
-export const heroVideo =
-    'https://res.cloudinary.com/dgenknzfn/video/upload/v1680468449/herro_zxy6xv.mp4'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createSlice } from '@reduxjs/toolkit'
 &nbsp;
-export const desktopMockupImage1 =
-    'https://res.cloudinary.com/placio/image/upload/v1682979473/user-media-content/homepage/desktop-mockup1_y0hmtf.svg'
-export const desktopMockupImage2 =
-    'https://res.cloudinary.com/placio/image/upload/v1682979474/user-media-content/homepage/desktop-mockup2_cnuyzk.svg'
+import { activeBusinessKey } from '@/constants/cookieKeys.constant'
+import CookieService from '@/services/Cookie.service'
 &nbsp;
-export const searchForEvent =
-    'https://res.cloudinary.com/placio/image/upload/v1682977928/user-media-content/homepage/events_yd0c6i.svg'
+const activeBusinessSlice = createSlice({
+    name: 'active-business',
+    initialState: {
+        activeBusiness: CookieService.getter(activeBusinessKey) || null,
+    },
+    reducers: {
+        setActiveBusiness: <span class="fstat-no" title="function not covered" >(state, action) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            state.activeBusiness = action.payload</span>
+<span class="cstat-no" title="statement not covered" >            CookieService.setter(activeBusinessKey, action.payload)</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+    },
+})
 &nbsp;
-export const homepageReelSection =
-    'https://res.cloudinary.com/placio/image/upload/v1682977948/user-media-content/homepage/reelsSection_vyvjqd.svg'
-&nbsp;
-export const defaultAvatar =
-    'https://res.cloudinary.com/placio/image/upload/v1688396707/defaults/default-avatar_k8jbpm.png'
-&nbsp;
-export const defaultCoverPhoto =
-    'https://res.cloudinary.com/placio/image/upload/v1687253342/defaults/default_image_svpyst.png'
-&nbsp;
-export const defaultPicture =
-    'https://res.cloudinary.com/placio/image/upload/v1688398764/defaults/defaultPicture_ojrfcm.png'
-&nbsp;
-export const samplePlace =
-    'https://res.cloudinary.com/placio/image/upload/v1682773463/Event%20Images/hero_nh8sez.svg'
+export const { setActiveBusiness } = activeBusinessSlice.actions
+export default activeBusinessSlice.reducer
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
