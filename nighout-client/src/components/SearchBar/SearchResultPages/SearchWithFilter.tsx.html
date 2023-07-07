@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/185</span>
+                <span class='fraction'>0/191</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/185</span>
+                <span class='fraction'>0/191</span>
             </div>
         
             
@@ -248,7 +248,13 @@
 <a name='L183'></a><a href='#L183'>183</a>
 <a name='L184'></a><a href='#L184'>184</a>
 <a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -433,35 +439,34 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import dynamic from 'next/dynamic'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" >import React, { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    GoogleMap,</span>
-<span class="cstat-no" title="statement not covered" >    InfoWindow,</span>
-<span class="cstat-no" title="statement not covered" >    LoadScript,</span>
-<span class="cstat-no" title="statement not covered" >    Marker,</span>
-<span class="cstat-no" title="statement not covered" >} from '@react-google-maps/api'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
+<span class="cstat-no" title="statement not covered" >import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'</span>
+<span class="cstat-no" title="statement not covered" >// import L from 'leaflet'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { MiniPlaceCard } from '@/components/Places/placeCard'</span>
 <span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >// import useDimension from '@/hooks/useDimension'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
-<span class="cstat-no" title="statement not covered" >import { googleMapAPIKey } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const PlaceFilters = dynamic(</span>
-<span class="cstat-no" title="statement not covered" >    import('@/components/SearchBar/SearchResultPages/Filters/PlaceFilters'),</span>
+<span class="cstat-no" title="statement not covered" >    () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        import('@/components/SearchBar/SearchResultPages/Filters/PlaceFilters'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" >const EventFilters = dynamic(</span>
-<span class="cstat-no" title="statement not covered" >    import('@/components/SearchBar/SearchResultPages/Filters/EventFilters'),</span>
+<span class="cstat-no" title="statement not covered" >    () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        import('@/components/SearchBar/SearchResultPages/Filters/EventFilters'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SearchWithFilter({ changeResultView, queryParam }) {</span>
-<span class="cstat-no" title="statement not covered" >    // const { width } = useDimension()</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const filterName = router.query.filter</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -470,7 +475,6 @@
 <span class="cstat-no" title="statement not covered" >    const [hoveredMarker, setHoveredMarker] = useState&lt;Place | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // Simulating API call or filtering logic to get search results</span>
 <span class="cstat-no" title="statement not covered" >        setSearchResults(mockedPlaces)</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -507,13 +511,47 @@
 <span class="cstat-no" title="statement not covered" >              )</span>
 <span class="cstat-no" title="statement not covered" >            : searchResults</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const MapComponent = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const map = useMap()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (selectedEvent) {</span>
+<span class="cstat-no" title="statement not covered" >                map.setView(selectedEvent.coords, 16)</span>
+<span class="cstat-no" title="statement not covered" >            } else if (filteredResults[0]) {</span>
+<span class="cstat-no" title="statement not covered" >                map.setView(filteredResults[0].coords, 12)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }, [map, selectedEvent, filteredResults])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {filteredResults.map((place, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Marker</span>
+<span class="cstat-no" title="statement not covered" >                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                        position={place.coords}</span>
+<span class="cstat-no" title="statement not covered" >                        eventHandlers={{</span>
+<span class="cstat-no" title="statement not covered" >                            click: () =&gt; handleMarkerClick(place),</span>
+<span class="cstat-no" title="statement not covered" >                            mouseover: () =&gt; handleMarkerMouseOver(place),</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {hoveredMarker === place &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Popup</span>
+<span class="cstat-no" title="statement not covered" >                                eventHandlers={{</span>
+<span class="cstat-no" title="statement not covered" >                                    click: () =&gt; handleMarkerMouseOut(),</span>
+<span class="cstat-no" title="statement not covered" >                                }}</span>
+<span class="cstat-no" title="statement not covered" >                                position={place.coords}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;MiniPlaceCard place={place} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Popup&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Marker&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ))}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            // style={{ width: width ? width : 'w-full' }}</span>
-<span class="cstat-no" title="statement not covered" >            className='flex max-md:flex-col h-screen'</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* Navigation bar for mobile view  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between w-full h-14 bg-white shadow  md:hidden px-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='flex max-md:flex-col h-screen'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between w-full h-14 bg-white shadow md:hidden px-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; router.back()}</span>
 <span class="cstat-no" title="statement not covered" >                    className='rounded-full p-1 border border-grey'</span>
@@ -531,13 +569,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* Left side - Event list */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='md:w-[400px] w-full md:overflow-y-auto md:h-screen h-fit max-md:py-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className=' md:hidden block w-full   py-2  dark:border-b dark:border-white/50 px-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;SearchBar /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='text-center px-2 md:p-2 md:my-3 sticky top-0 bg-white'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h2 className='text-lg md:text-xl font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Search results for {queryParam.replaceAll('_', ' ')}</span>
@@ -561,10 +593,9 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* Right side - Map */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='w-full md:w-3/4 md:h-screen max-md:flex-1 flex flex-col relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='hidden md:flex w-full  flex-nowrap items-center gap-4 p-3  dark:border-b dark:border-white/50'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='hidden md:flex w-full  flex-nowrap items-center gap-4 p-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SearchBar /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='w-fit'&gt;</span>
@@ -576,36 +607,23 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;LoadScript googleMapsApiKey={`${googleMapAPIKey}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;GoogleMap</span>
-<span class="cstat-no" title="statement not covered" >                        mapContainerClassName='flex-1 smoothen'</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 smoothen'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;MapContainer</span>
 <span class="cstat-no" title="statement not covered" >                        center={</span>
 <span class="cstat-no" title="statement not covered" >                            selectedEvent</span>
 <span class="cstat-no" title="statement not covered" >                                ? selectedEvent.coords</span>
 <span class="cstat-no" title="statement not covered" >                                : filteredResults[0]?.coords</span>
 <span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        zoom={selectedEvent ? 16 : 12}</span>
+<span class="cstat-no" title="statement not covered" >                        style={{ height: '100%', width: '100%' }}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {filteredResults.map((place, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Marker</span>
-<span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                position={place.coords}</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; handleMarkerClick(place)}</span>
-<span class="cstat-no" title="statement not covered" >                                onMouseOver={() =&gt; handleMarkerMouseOver(place)}</span>
-<span class="cstat-no" title="statement not covered" >                                // onMouseOut={handleMarkerMouseOut}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {hoveredMarker === place &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;InfoWindow</span>
-<span class="cstat-no" title="statement not covered" >                                        onCloseClick={handleMarkerMouseOut}</span>
-<span class="cstat-no" title="statement not covered" >                                        position={place.coords}</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;MiniPlaceCard place={place} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/InfoWindow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                )}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/Marker&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ))}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/GoogleMap&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/LoadScript&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;MapComponent /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TileLayer</span>
+<span class="cstat-no" title="statement not covered" >                            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span>
+<span class="cstat-no" title="statement not covered" >                            attribution="Map data © &lt;a href='https://openstreetmap.org'&gt;OpenStreetMap&lt;/a&gt; contributors"</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/MapContainer&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {filterName === 'places' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;PlaceFilters handleFilterChange={handleFilterChange} /&gt;</span>
@@ -625,7 +643,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-07T14:47:23.018Z
+                at 2023-07-07T15:30:14.298Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
