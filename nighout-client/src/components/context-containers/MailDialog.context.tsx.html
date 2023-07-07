@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.44% </span>
+                <span class="strong">18.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/108</span>
+                <span class='fraction'>20/107</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.44% </span>
+                <span class="strong">18.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/108</span>
+                <span class='fraction'>20/107</span>
             </div>
         
             
@@ -170,9 +170,7 @@
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -280,7 +278,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Transition } from '@headlessui/react'
-import { EditorState } from 'draft-js'
 import { Fragment, createContext, useState } from 'react'
 &nbsp;
 import RichTextEditor from '@/components/FormComponents/RichTextEditor'
@@ -304,7 +301,7 @@ export default <span class="fstat-no" title="function not covered" >function Mai
 <span class="cstat-no" title="statement not covered" >}: MailDialogProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const [minimize, minimizeSetter] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [mailDialogDisplay, mailDialogDisplaySetter] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    const [mailText, setMailText] = useState(() =&gt; EditorState.createEmpty())</span>
+<span class="cstat-no" title="statement not covered" >    const [mailText, setMailText] = useState('')</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const toggleMinimize = () =&gt; minimizeSetter(!minimize)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -359,12 +356,12 @@ export default <span class="fstat-no" title="function not covered" >function Mai
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                        className={`overflow-hidden slow-smoothen w-full ${</span>
+<span class="cstat-no" title="statement not covered" >                                        className={`overflow-hidden slow-smoothen w-full col ${</span>
 <span class="cstat-no" title="statement not covered" >                                            minimize ? 'h-0' : 'h-96'</span>
 <span class="cstat-no" title="statement not covered" >                                        }`}</span>
 <span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='h-full col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='flex-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex-1 col'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='flex-1 col'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;RichTextEditor</span>
 <span class="cstat-no" title="statement not covered" >                                                    mailText={mailText}</span>
 <span class="cstat-no" title="statement not covered" >                                                    setMailText={setMailText}</span>
@@ -394,7 +391,7 @@ export default <span class="fstat-no" title="function not covered" >function Mai
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-06T14:26:36.704Z
+                at 2023-07-07T11:07:16.108Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
