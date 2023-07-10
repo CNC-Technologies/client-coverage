@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/192</span>
+                <span class='fraction'>0/198</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/192</span>
+                <span class='fraction'>0/198</span>
             </div>
         
             
@@ -255,7 +255,19 @@
 <a name='L190'></a><a href='#L190'>190</a>
 <a name='L191'></a><a href='#L191'>191</a>
 <a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -477,6 +489,7 @@
 <span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [settingsData, setSettingsData] = useState({</span>
+<span class="cstat-no" title="statement not covered" >        id: '',</span>
 <span class="cstat-no" title="statement not covered" >        picture: defaultPicture,</span>
 <span class="cstat-no" title="statement not covered" >        cover_image: defaultCoverPhoto,</span>
 <span class="cstat-no" title="statement not covered" >        name: '',</span>
@@ -536,6 +549,7 @@
 <span class="cstat-no" title="statement not covered" >                cover_image: res?.data?.cover_image || defaultCoverPhoto,</span>
 <span class="cstat-no" title="statement not covered" >                ...res.data,</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            // delete newSettingsData.id</span>
 <span class="cstat-no" title="statement not covered" >            setSettingsData(newSettingsData)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -579,16 +593,20 @@
 <span class="cstat-no" title="statement not covered" >                cover_image: '',</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const businessId = finalSettingsData?.id</span>
+<span class="cstat-no" title="statement not covered" >            // delete finalSettingsData?.id</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const updateBusinessRes = await businessSettingsReq.patch({</span>
-<span class="cstat-no" title="statement not covered" >                url: businessRoute,</span>
+<span class="cstat-no" title="statement not covered" >                url: businessRoute + businessId,</span>
 <span class="cstat-no" title="statement not covered" >                data: finalSettingsData,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            dispatch(setActiveBusiness(updateBusinessRes.data))</span>
+<span class="cstat-no" title="statement not covered" >            if (updateBusinessRes.success) {</span>
+<span class="cstat-no" title="statement not covered" >                dispatch(setActiveBusiness(updateBusinessRes.data))</span>
+<span class="cstat-no" title="statement not covered" >                return showToast('success', 'Data saved successfully.')</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            !updateBusinessRes.success</span>
-<span class="cstat-no" title="statement not covered" >                ? showToast('error', updateBusinessRes.message)</span>
-<span class="cstat-no" title="statement not covered" >                : showToast('success', 'Data saved successfully.')</span>
+<span class="cstat-no" title="statement not covered" >            showToast('error', updateBusinessRes.message)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (err) {</span>
 <span class="cstat-no" title="statement not covered" >            showToast('error', `${err}`)</span>
 <span class="cstat-no" title="statement not covered" >        } finally {</span>
@@ -603,7 +621,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;AppLayout pageTitle='Settings'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {businessSettingsReq.loading ? (</span>
+<span class="cstat-no" title="statement not covered" >            {businessSettingsReq.loading &amp;&amp; !savingSettings ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;SettingsSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white  p-3 rounded'&gt;</span>
@@ -646,7 +664,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-07T15:30:14.298Z
+                at 2023-07-10T11:36:34.772Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

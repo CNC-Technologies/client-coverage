@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/interfaces/reviews.interface.ts</title>
+    <title>Code coverage report for nighout-client/src/pages/500.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">nighout-client/src/interfaces</a> reviews.interface.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">nighout-client/src/pages</a> 500.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -76,7 +76,12 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -89,18 +94,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >export interface Review {</span></span></span>
-<span class="cstat-no" title="statement not covered" >    username: string</span>
-<span class="cstat-no" title="statement not covered" >    rating: number</span>
-<span class="cstat-no" title="statement not covered" >    topic: string</span>
-<span class="cstat-no" title="statement not covered" >    date: string</span>
-<span class="cstat-no" title="statement not covered" >    content: string</span>
-<span class="cstat-no" title="statement not covered" >    imagesUrl: string[]</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export interface Rating {</span>
-<span class="cstat-no" title="statement not covered" >    name: string</span>
-<span class="cstat-no" title="statement not covered" >    ratings: number</span>
+<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
+<span class="cstat-no" title="statement not covered" >import ServerError from '@/lotties/500.json'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function InternalServerError() {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='h-screen col-center text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;LottiePlayer animationData={ServerError} size='lg' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='font-bold text-dark dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                There was an internal server error, go back to{' '}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Link href={'/'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;span className='underline'&gt;home.&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
