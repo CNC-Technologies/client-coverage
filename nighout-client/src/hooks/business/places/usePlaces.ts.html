@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -88,7 +88,17 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -113,29 +123,49 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import { bizEventsPlacesRoute, placeRoute } from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
+<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function usePlaces() {</span>
-<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { get, loading, deleteReq } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const [placesList, setPlacesList] = useState([])</span>
-<span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const getPlaces = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
-<span class="cstat-no" title="statement not covered" >        const res = await get({ url: 'route for getting biz places' })</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(res);</span>
+<span class="cstat-no" title="statement not covered" >        const business = CookieService.getter('business')</span>
+<span class="cstat-no" title="statement not covered" >        const res = await get({ url: bizEventsPlacesRoute(business?.id) })</span>
 <span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >            setPlacesList(res.data)</span>
-<span class="cstat-no" title="statement not covered" >            setReqLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >            setPlacesList(res.data.places)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const deletePlace = async (id: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const res = await deleteReq({ url: placeRoute(`${id}`) })</span>
+<span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            showToast('success', 'Place deleted successfully')</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        placesList,</span>
-<span class="cstat-no" title="statement not covered" >        reqLoading,</span>
+<span class="cstat-no" title="statement not covered" >        loading,</span>
 <span class="cstat-no" title="statement not covered" >        getPlaces,</span>
+<span class="cstat-no" title="statement not covered" >        deletePlace,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -145,7 +175,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-10T12:34:35.760Z
+                at 2023-07-10T14:46:30.607Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
