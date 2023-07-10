@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/191</span>
+                <span class='fraction'>0/211</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/191</span>
+                <span class='fraction'>0/211</span>
             </div>
         
             
@@ -254,7 +254,27 @@
 <a name='L189'></a><a href='#L189'>189</a>
 <a name='L190'></a><a href='#L190'>190</a>
 <a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -445,16 +465,38 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import dynamic from 'next/dynamic'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import L from 'leaflet'</span></span></span>
+<span class="cstat-no" title="statement not covered" >// import markerIcon from 'leaflet/dist/images/marker-icon.png'</span>
+<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" >import React, { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'</span>
-<span class="cstat-no" title="statement not covered" >// import L from 'leaflet'</span>
+<span class="cstat-no" title="statement not covered" >import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { MiniPlaceCard } from '@/components/Places/placeCard'</span>
-<span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import { MiniPlaceCard } from '@/components/Places/placeCard'</span>
 <span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
+<span class="cstat-no" title="statement not covered" >import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
+<span class="cstat-no" title="statement not covered" >import { mapMarker } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const PlaceFilters = dynamic(</span>
@@ -522,6 +564,12 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }, [map, selectedEvent, filteredResults])</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const markerIconConst = L.icon({</span>
+<span class="cstat-no" title="statement not covered" >            iconUrl: mapMarker,</span>
+<span class="cstat-no" title="statement not covered" >            iconRetinaUrl: mapMarker,</span>
+<span class="cstat-no" title="statement not covered" >            iconSize: [25, 25],</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {filteredResults.map((place, index) =&gt; (</span>
@@ -532,9 +580,11 @@
 <span class="cstat-no" title="statement not covered" >                            click: () =&gt; handleMarkerClick(place),</span>
 <span class="cstat-no" title="statement not covered" >                            mouseover: () =&gt; handleMarkerMouseOver(place),</span>
 <span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                        icon={markerIconConst}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {hoveredMarker === place &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Popup</span>
+<span class="cstat-no" title="statement not covered" >                                className='p-0'</span>
 <span class="cstat-no" title="statement not covered" >                                eventHandlers={{</span>
 <span class="cstat-no" title="statement not covered" >                                    click: () =&gt; handleMarkerMouseOut(),</span>
 <span class="cstat-no" title="statement not covered" >                                }}</span>
@@ -609,6 +659,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 smoothen'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;MapContainer</span>
+<span class="cstat-no" title="statement not covered" >                        id='mapid'</span>
 <span class="cstat-no" title="statement not covered" >                        center={</span>
 <span class="cstat-no" title="statement not covered" >                            selectedEvent</span>
 <span class="cstat-no" title="statement not covered" >                                ? selectedEvent.coords</span>
@@ -617,11 +668,20 @@
 <span class="cstat-no" title="statement not covered" >                        zoom={selectedEvent ? 16 : 12}</span>
 <span class="cstat-no" title="statement not covered" >                        style={{ height: '100%', width: '100%' }}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MapComponent /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;TileLayer</span>
+<span class="cstat-no" title="statement not covered" >                            attribution='&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</span>
+<span class="cstat-no" title="statement not covered" >                            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {/* &lt;TileLayer</span>
 <span class="cstat-no" title="statement not covered" >                            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span>
 <span class="cstat-no" title="statement not covered" >                            attribution="Map data © &lt;a href='https://openstreetmap.org'&gt;OpenStreetMap&lt;/a&gt; contributors"</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                        {/* &lt;Marker position={[51.513, -0.09]}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Popup className='p-0' position={[51.513, -0.09]}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Whatever</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Popup&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Marker&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;MapComponent /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/MapContainer&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -643,7 +703,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-10T14:46:30.607Z
+                at 2023-07-10T16:04:00.681Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
