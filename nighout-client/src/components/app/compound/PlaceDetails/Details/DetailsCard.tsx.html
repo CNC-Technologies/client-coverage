@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -138,25 +138,7 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -236,13 +218,13 @@
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    InfoCircleOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    HomeOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    ClockOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    EmailOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    TelePhoneOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    PlacesSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import AvailabilityItem from '@/components/app/compound/PlaceDetails/Details/AvailabilityItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsCard() {</span>
+<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsCard({ place }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-5 p-4 rounded-md bg-white dark:bg-dark-primary'&gt;</span>
@@ -253,64 +235,55 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;HomeOutlineIcon className='h-6 w-6 text-orange' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='font-medium md:text-lg'&gt;About&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='mt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Lorem ipsum dolor sit amet, consectetur adipisicing</span>
-<span class="cstat-no" title="statement not covered" >                        elit. Sunt cumque, dolorem necessitatibus placeat,</span>
-<span class="cstat-no" title="statement not covered" >                        impedit in soluta quo voluptate est velit ullam porro</span>
-<span class="cstat-no" title="statement not covered" >                        illo aliquam nobis beatae dignissimos eius assumenda a.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='mt-2'&gt;{place?.description}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Email section  */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;EmailOutlineIcon className='h-6 w-6 text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;Slenz_Tv@ gmail.com&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;{place?.email}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Phone number section  */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;TelePhoneOutlineIcon className='h-6 w-6 text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;07012345678&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;{place?.phone}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Website section  */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlacesSolidIcon className='h-6 w-6 text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Link href={'https://business.placio.io/'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        business.placio.io</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {place?.website &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlacesSolidIcon className='h-6 w-6 text-orange' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link href={place?.website}&gt;{place?.website}&lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Working hours section  */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-wrap items-center gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ClockOutlineIcon className='h-6 w-6 text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='font-medium'&gt;Closed&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;11:00 AM - 9:00 PM (Mon-Sun)&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className=' ml-1 text-sm font-medium underline cursor-pointer'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Full details</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                &lt;AvailabilityItem availability={place?.availability} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Additional Info section  */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;InfoCircleOutlineIcon className='h-5 w-5 mx-1 text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p className='font-medium md:text-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Additional Information</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {place?.additional_info &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex items-center gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;InfoCircleOutlineIcon className='h-5 w-5 mx-1 text-orange' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-medium md:text-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Additional Information</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ul className='mt-2 list-inside list-disc '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {[...Array(3)].map((_, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;li className='ml-3 text-sm' key={index}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    Lorem ipsum dolor sit amet, consectetur</span>
-<span class="cstat-no" title="statement not covered" >                                    adipisicing</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )</span>
-<span class="cstat-no" title="statement not covered" >                        })}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/ul&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ul className='mt-2 list-inside list-disc '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {[...Array(3)].map((_, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                return (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;li className='ml-3 text-sm' key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        Lorem ipsum dolor sit amet, consectetur</span>
+<span class="cstat-no" title="statement not covered" >                                        adipisicing</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/li&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )</span>
+<span class="cstat-no" title="statement not covered" >                            })}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/ul&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -322,7 +295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

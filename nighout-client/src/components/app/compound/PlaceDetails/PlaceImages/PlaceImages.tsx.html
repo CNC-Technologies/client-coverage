@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/169</span>
+                <span class='fraction'>0/184</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/169</span>
+                <span class='fraction'>0/184</span>
             </div>
         
             
@@ -232,7 +232,37 @@
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -409,7 +439,7 @@
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import AllImagesLayout from '@/components/app/compound/PlaceDetails/PlaceImages/AllImagesLayout'</span>
 <span class="cstat-no" title="statement not covered" >import ImagesModal from '@/components/app/compound/PlaceDetails/PlaceImages/ImagesModal'</span>
-<span class="cstat-no" title="statement not covered" >import { samplePlaceImages } from '@/constants/MockData/PlaceDetails/PlaceDetailsImages'</span>
+<span class="cstat-no" title="statement not covered" >// import { samplePlaceImages } from '@/constants/MockData/PlaceDetails/PlaceDetailsImages'</span>
 <span class="cstat-no" title="statement not covered" >import { samplePlace } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    CameraOutlineIcon,</span>
@@ -420,14 +450,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const Image = dynamic(import('next/image'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsImages() {</span>
+<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsImages({ place }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedImageIndex, setSelectedImageIndex] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    const [isOpen, setIsOpen] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const pathname = router.asPath</span>
 <span class="cstat-no" title="statement not covered" >    const { media } = router.query</span>
-<span class="cstat-no" title="statement not covered" >    const placeName = router.query.details</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const closeDialog = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const newPath = pathname.split('?')[0]</span>
@@ -444,13 +473,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handlePreviousClick = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setSelectedImageIndex((prevIndex) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >            prevIndex === 0 ? samplePlaceImages.length - 1 : prevIndex - 1,</span>
+<span class="cstat-no" title="statement not covered" >            prevIndex === 0 ? place?.images?.length - 1 : prevIndex - 1,</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleNextClick = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setSelectedImageIndex((prevIndex) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >            prevIndex === samplePlaceImages.length - 1 ? 0 : prevIndex + 1,</span>
+<span class="cstat-no" title="statement not covered" >            prevIndex === place?.images?.length - 1 ? 0 : prevIndex + 1,</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -472,22 +501,24 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;ChevronRightIcon className='w-8 h-8' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='absolute top-0 bottom-0 left-0 right-0 w-full h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {samplePlaceImages.map((image, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                                    key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                    className={`w-full h-full object-cover object-center  ${</span>
-<span class="cstat-no" title="statement not covered" >                                        index === selectedImageIndex</span>
-<span class="cstat-no" title="statement not covered" >                                            ? ''</span>
-<span class="cstat-no" title="statement not covered" >                                            : 'hidden'</span>
-<span class="cstat-no" title="statement not covered" >                                    }`}</span>
-<span class="cstat-no" title="statement not covered" >                                    src={image}</span>
-<span class="cstat-no" title="statement not covered" >                                    alt={'place name'}</span>
-<span class="cstat-no" title="statement not covered" >                                    priority={true}</span>
-<span class="cstat-no" title="statement not covered" >                                    quality={75}</span>
-<span class="cstat-no" title="statement not covered" >                                    width={100}</span>
-<span class="cstat-no" title="statement not covered" >                                    height={100}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ))}</span>
+<span class="cstat-no" title="statement not covered" >                            {place?.images?.map(</span>
+<span class="cstat-no" title="statement not covered" >                                (image: string, index: number) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                        className={`w-full h-full object-cover object-center  ${</span>
+<span class="cstat-no" title="statement not covered" >                                            index === selectedImageIndex</span>
+<span class="cstat-no" title="statement not covered" >                                                ? ''</span>
+<span class="cstat-no" title="statement not covered" >                                                : 'hidden'</span>
+<span class="cstat-no" title="statement not covered" >                                        }`}</span>
+<span class="cstat-no" title="statement not covered" >                                        src={image}</span>
+<span class="cstat-no" title="statement not covered" >                                        alt={`${place?.name} images on Placio`}</span>
+<span class="cstat-no" title="statement not covered" >                                        priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                                        quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                                        width={100}</span>
+<span class="cstat-no" title="statement not covered" >                                        height={100}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                ),</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='absolute bottom-3 right-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;Button</span>
@@ -531,7 +562,7 @@
 <span class="cstat-no" title="statement not covered" >            {/* Thumbnails  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-col-1 mt-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='w-full overflow-x-scroll row gap-1 xlaptop:mt-2 scroll-smooth'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {samplePlaceImages.map((image, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.images?.map((image: string, index: number) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='col' key={index}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                className={`relative h-24 w-28  ${</span>
@@ -547,7 +578,7 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                                    className='object-cover w-full h-full dark:border-transparent rounded-lg  '</span>
 <span class="cstat-no" title="statement not covered" >                                    src={image}</span>
-<span class="cstat-no" title="statement not covered" >                                    alt='category'</span>
+<span class="cstat-no" title="statement not covered" >                                    alt={`${place?.name} images on Placio`}</span>
 <span class="cstat-no" title="statement not covered" >                                    priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                                    quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                                    width={100}</span>
@@ -556,6 +587,20 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    ))}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col ml-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            className={`flex justify-center items-center h-24 w-28 px-2 bg-grey rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    router.push(`${pathname}?media=true`)</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                className='orange-fill w-fit p-2 rounded-lg font-semibold text-sm'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p&gt;See more&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -565,7 +610,7 @@
 <span class="cstat-no" title="statement not covered" >                handleClose={() =&gt; router.push(closeDialog())}</span>
 <span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;AllImagesLayout placeName={placeName} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;AllImagesLayout place={place} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ImagesModal&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -577,7 +622,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

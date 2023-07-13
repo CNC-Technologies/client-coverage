@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/105</span>
+                <span class='fraction'>0/91</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/105</span>
+                <span class='fraction'>0/91</span>
             </div>
         
             
@@ -154,35 +154,7 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -289,8 +261,7 @@
 <span class="cstat-no" title="statement not covered" >import PlacesFloatingCartButton from '@/components/app/compound/PlaceDetails/placesCart/FloatingCartButton'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
-<span class="cstat-no" title="statement not covered" >// import useSecureRequest from '@/hooks/useRequest'</span>
-<span class="cstat-no" title="statement not covered" >// import { placeRoute } from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/business/places/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesDetailsComplex() {</span>
 <span class="cstat-no" title="statement not covered" >    // A particaular place's cart</span>
@@ -299,27 +270,14 @@
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const placeId = router.query.details as string</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const { get, loading } = useSecureRequest()</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [openCart, setOpenCart] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [inCart, setInCart] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const [placeDetails, setPlaceDetails] = useState(null)</span>
+<span class="cstat-no" title="statement not covered" >    const { getPlaceDetails, placeDetails } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const getPlaceDetails = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     const res = await get({</span>
-<span class="cstat-no" title="statement not covered" >    //         url: placeRoute('e99d523b-4c67-4f52-8361-27357f44001f'),</span>
-<span class="cstat-no" title="statement not covered" >    //     })</span>
-<span class="cstat-no" title="statement not covered" >    //     console.log(res.data)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    //     if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >    //         setPlaceDetails(res.data)</span>
-<span class="cstat-no" title="statement not covered" >    //     }</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     getPlaceDetails()</span>
-<span class="cstat-no" title="statement not covered" >    // }, [placeId])</span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (placeId) getPlaceDetails(placeId)</span>
+<span class="cstat-no" title="statement not covered" >    }, [placeId])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // THis is for the cart of a particular place</span>
 <span class="cstat-no" title="statement not covered" >    // * This may removed later</span>
@@ -333,7 +291,7 @@
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='grid gap-6 grid-cols-1 relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* Place Heading */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetailsHeading /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetailsHeading place={placeDetails} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Cart components  */}</span>
 <span class="cstat-no" title="statement not covered" >            {inCart &amp;&amp; (</span>
@@ -350,13 +308,13 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Place images  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetailsImages /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetailsImages place={placeDetails} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Menu list  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;InventoryList gridLayout={false} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Details  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetails /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlaceDetails place={placeDetails} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Amenities  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;PlaceAmenities /&gt;</span>
@@ -365,7 +323,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;PlaceReviews /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* FAQs  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;PlaceFAQ /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlaceFAQ place={placeDetails} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Other categories of Places  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
@@ -385,7 +343,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

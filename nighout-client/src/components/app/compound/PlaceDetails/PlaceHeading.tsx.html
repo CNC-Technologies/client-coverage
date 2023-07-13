@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
@@ -106,12 +106,7 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -154,28 +149,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import OverlappingAvatars from '@/components/app/simple/OverlappingAvatars'</span>
 <span class="cstat-no" title="statement not covered" >import ShareButton from '@/components/app/simple/ShareButton'</span>
 <span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/ratingStars'</span>
 <span class="cstat-no" title="statement not covered" >import { ForwardOutlineIcon, MapMarkerSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsHeading() {</span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const placeName = (router.query.details as string) || ''</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function PlaceDetailsHeading({ place }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-between '&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h2 className='text-2xl font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {placeName?.replaceAll('_', ' ')}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h2 className='text-2xl font-semibold capitalize'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.name}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/h2&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;RatingStars rating={4} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex space-x-2 items-center'&gt;</span>
@@ -184,7 +169,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex space-x-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;MapMarkerSolidIcon className='text-xl text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='font-medium'&gt;Abuja&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='font-medium'&gt;{place?.location}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -194,8 +179,8 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;ShareButton</span>
 <span class="cstat-no" title="statement not covered" >                    content={{</span>
-<span class="cstat-no" title="statement not covered" >                        url: 'https://google.com',</span>
-<span class="cstat-no" title="statement not covered" >                        text: 'Shogo logo bangoshe',</span>
+<span class="cstat-no" title="statement not covered" >                        url: `https://placio.io/places/${place?.id}`,</span>
+<span class="cstat-no" title="statement not covered" >                        text: `Visit ${place?.name} on Placio.`,</span>
 <span class="cstat-no" title="statement not covered" >                    }}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button className='h-10 flex gap-1 items-center rounded-3xl px-4 text-center orange-outline'&gt;</span>
@@ -214,7 +199,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

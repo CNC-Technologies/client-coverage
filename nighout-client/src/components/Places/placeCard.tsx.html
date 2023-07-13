@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/237</span>
+                <span class='fraction'>0/242</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/237</span>
+                <span class='fraction'>0/242</span>
             </div>
         
             
@@ -300,7 +300,17 @@
 <a name='L235'></a><a href='#L235'>235</a>
 <a name='L236'></a><a href='#L236'>236</a>
 <a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -570,6 +580,7 @@
 <span class="cstat-no" title="statement not covered" >    placesCategories,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const MenuList = dynamic(import('@/components/app/simple/MenuList'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -594,10 +605,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Place details url based on a user being logged in and based on the configKey</span>
 <span class="cstat-no" title="statement not covered" >    const detailsLink = !user</span>
-<span class="cstat-no" title="statement not covered" >        ? `/places/${place?.name?.replaceAll(/\s+/g, '_')}`</span>
+<span class="cstat-no" title="statement not covered" >        ? `/places/${place?.id}`</span>
 <span class="cstat-no" title="statement not covered" >        : configKey === 'business'</span>
-<span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${place?.name?.replaceAll(/\s+/g, '_')}`</span>
-<span class="cstat-no" title="statement not covered" >        : `${placeDetail}${place?.name?.replaceAll(/\s+/g, '_')}`</span>
+<span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${place?.id}`</span>
+<span class="cstat-no" title="statement not covered" >        : `${placeDetail}${place?.id}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // const [showNewPlaceForm, setShowNewPlaceForm] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -673,7 +684,11 @@
 <span class="cstat-no" title="statement not covered" >                    extraClass={'rounded-t-xl'}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                    src={place?.cover_image}</span>
+<span class="cstat-no" title="statement not covered" >                    src={</span>
+<span class="cstat-no" title="statement not covered" >                        place?.cover_image ||</span>
+<span class="cstat-no" title="statement not covered" >                        place?.images?.[0] ||</span>
+<span class="cstat-no" title="statement not covered" >                        defaultPicture</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                    alt={'category'}</span>
 <span class="cstat-no" title="statement not covered" >                    priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                    quality={50}</span>
@@ -781,7 +796,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

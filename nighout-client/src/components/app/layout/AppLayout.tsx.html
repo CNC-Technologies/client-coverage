@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/174</span>
+                <span class='fraction'>0/175</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/174</span>
+                <span class='fraction'>0/175</span>
             </div>
         
             
@@ -237,7 +237,9 @@
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -415,7 +417,7 @@
 <span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ReactNode, useContext } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { ReactNode } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { withPageAuthRequired } from '@auth0/nextjs-auth0/client'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -433,7 +435,7 @@
 <span class="cstat-no" title="statement not covered" >import authorize from '@/HOCs/authorize'</span>
 <span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
-<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
+<span class="cstat-no" title="statement not covered" >// import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import { appHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
@@ -461,7 +463,7 @@
 <span class="cstat-no" title="statement not covered" >        (state: RootState) =&gt; state.activeBusiness.activeBusiness,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { toggleConstantLottieToast } = useContext(ToastContext)</span>
+<span class="cstat-no" title="statement not covered" >    // const { toggleConstantLottieToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { height } = useDimension()</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
@@ -563,20 +565,21 @@
 <span class="cstat-no" title="statement not covered" >                        {/* Desktop Right Sidebar */}</span>
 <span class="cstat-no" title="statement not covered" >                        {layoutConfig.showRightSidebar &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                                    pathname === '/app/chat' ? ' border-l' : ''</span>
-<span class="cstat-no" title="statement not covered" >                                } sidebar bg-white text-dark-charcoal`}</span>
+<span class="cstat-no" title="statement not covered" >                                className={` sidebar bg-white text-dark-charcoal`}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                                {/* &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        toggleConstantLottieToast('loading')</span>
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    Toast</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/button&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;RightSidebar /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                        {/* {!layoutConfig.showRightSidebar &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className={`sidebar bg-white`}&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )} */}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -592,7 +595,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-13T10:23:30.974Z
+                at 2023-07-13T19:25:49.323Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
