@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">61.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>68/85</span>
+                <span class='fraction'>52/85</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">61.17% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>68/85</span>
+                <span class='fraction'>52/85</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -176,22 +176,22 @@
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -260,23 +260,23 @@ export default function Button({
     )
 }
 &nbsp;
-export function OutlineButton({
-    children,
-    className = '',
-    loading = false,
-    ...props
-}) {
-    return (
-        &lt;button
-            type='submit'
-            {...props}
-            disabled={loading}
-            className={`${className} w-full px-4 py-2  max-mobile:text-base font-semibold text-center  rounded-lg shadow-md h-10 orange-outline focus:outline-none`}
-        &gt;
-            {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{children}&lt;/&gt;}
-        &lt;/button&gt;
-    )
-}
+export <span class="fstat-no" title="function not covered" >function OutlineButton({</span>
+<span class="cstat-no" title="statement not covered" >    children,</span>
+<span class="cstat-no" title="statement not covered" >    className = '',</span>
+<span class="cstat-no" title="statement not covered" >    loading = false,</span>
+<span class="cstat-no" title="statement not covered" >    ...props</span>
+<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;button</span>
+<span class="cstat-no" title="statement not covered" >            type='submit'</span>
+<span class="cstat-no" title="statement not covered" >            {...props}</span>
+<span class="cstat-no" title="statement not covered" >            disabled={loading}</span>
+<span class="cstat-no" title="statement not covered" >            className={`${className} w-full px-4 py-2  max-mobile:text-base font-semibold text-center  rounded-lg shadow-md h-10 orange-outline focus:outline-none`}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {loading ? &lt;Spinner /&gt; : &lt;&gt;{children}&lt;/&gt;}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export <span class="fstat-no" title="function not covered" >function BlackButton({ children, loading = false, ...props }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -325,7 +325,7 @@ export <span class="fstat-no" title="function not covered" >function Spinner({ b
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-12T12:52:12.111Z
+                at 2023-07-13T10:23:22.607Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

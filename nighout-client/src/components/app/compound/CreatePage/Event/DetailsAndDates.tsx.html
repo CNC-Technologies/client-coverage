@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>246/246</span>
+                <span class='fraction'>244/244</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>246/246</span>
+                <span class='fraction'>244/244</span>
             </div>
         
             
@@ -307,9 +307,7 @@
 <a name='L242'></a><a href='#L242'>242</a>
 <a name='L243'></a><a href='#L243'>243</a>
 <a name='L244'></a><a href='#L244'>244</a>
-<a name='L245'></a><a href='#L245'>245</a>
-<a name='L246'></a><a href='#L246'>246</a>
-<a name='L247'></a><a href='#L247'>247</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L245'></a><a href='#L245'>245</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -340,11 +338,11 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -354,9 +352,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -559,7 +555,7 @@
 &nbsp;
 import InputField from '@/components/FormComponents/InputField'
 import SelectField from '@/components/FormComponents/SelectField'
-import Button, { OutlineButton } from '@/components/FormComponents/button'
+import Button from '@/components/FormComponents/button'
 import { ClockOutlineIcon, ListPlusIcon } from '@/constants/icons/icons'
 import { updateFormState } from '@/utils/formUtils'
 &nbsp;
@@ -567,7 +563,7 @@ import EventDetailsFormValidator from '@/utils/FormValidators/EventCreation/even
 &nbsp;
 export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
     // Form validator hook
-    const { errors, validateField, validateForm } = EventDetailsFormValidator()
+    const { errors, validateField } = EventDetailsFormValidator()
 &nbsp;
     // Form state
     // const [event, setEvent] = useState({
@@ -592,11 +588,12 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
 &nbsp;
     const handleSubmit = (e: Event) =&gt; {
         e.preventDefault()
-        const isValid = validateForm(event)
-        if (isValid) {
-            // Submit the form
-            nextStep()
-        }
+        // ! Need to re-work on the form validators
+        // const isValid = validateForm(event)
+        // if (isValid) {
+        // Submit the form
+        nextStep()
+        // }
 &nbsp;
         // handleSignIn(); // Call handleSignIn function here
     }
@@ -628,7 +625,7 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
                 &lt;/div&gt;
 &nbsp;
                 &lt;div className='px-2 mobile:px-4 py-2 grid gap-2'&gt;
-                    &lt;div&gt;
+                    {/* &lt;div&gt;
                         &lt;InputField
                             data-testid='Event host'
                             name='host'
@@ -638,7 +635,7 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
                             value={event.host}
                             error={errors.eventHost}
                         /&gt;
-                    &lt;/div&gt;
+                    &lt;/div&gt; */}
                     &lt;div&gt;
                         &lt;InputField
                             data-testid='Event name'
@@ -654,18 +651,18 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
                     &lt;div&gt;
                         &lt;SelectField
                             data-testid='Event type'
-                            name='type'
+                            name='eventType'
                             label={'Event type'}
                             options={[
-                                { value: 'Wade Cooper' },
-                                { value: 'Arlene Mccoy' },
+                                { value: 'Free' },
+                                { value: 'Paid' },
                                 { value: 'Devon Webb' },
                                 { value: 'Tom Cook' },
                                 { value: 'Tanya Fox' },
                                 { value: 'Hellen Schmidt' },
                             ]}
                             onChange={handleInputChange}
-                            value={event.type}
+                            value={event.eventType}
                             error={errors.eventType}
                         /&gt;
                     &lt;/div&gt;
@@ -706,12 +703,15 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
                             name='timeZone'
                             label={'Time zone'}
                             options={[
-                                { value: 'Wade Cooper' },
-                                { value: 'Arlene Mccoy' },
-                                { value: 'Devon Webb' },
-                                { value: 'Tom Cook' },
-                                { value: 'Tanya Fox' },
-                                { value: 'Hellen Schmidt' },
+                                { value: 'GMT' },
+                                { value: 'UTC' },
+                                { value: 'EST' },
+                                { value: 'CST' },
+                                { value: 'PST' },
+                                { value: 'IST' },
+                                { value: 'CET' },
+                                { value: 'JST' },
+                                { value: 'AEDT' },
                             ]}
                             onChange={handleInputChange}
                             value={event.timeZone}
@@ -782,20 +782,14 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
             &lt;hr className='my-5 border-darkGrey' /&gt;
 &nbsp;
             &lt;div className='flex flex-col w-full px-2 mobile:px-4 gap-4'&gt;
-                &lt;OutlineButton
-                    name={'Save and finish later'}
-                    className='orange-outline'
-                &gt;
-                    Save and finish later
-                &lt;/OutlineButton&gt;
-&nbsp;
                 &lt;Button
                     // disabled={!isFormFilled()}
                     onClick={handleSubmit}
-                    name={'Save and continue'}
+                    name={'Save and Continue'}
                     className='orange-fill'
+                    data-testid='next-button1'
                 &gt;
-                    Save and continue
+                    Save and Continue
                 &lt;/Button&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -808,7 +802,7 @@ export default function EventDetailsAndDates({ nextStep, event, setEvent }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-12T12:52:12.111Z
+                at 2023-07-13T10:23:22.607Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

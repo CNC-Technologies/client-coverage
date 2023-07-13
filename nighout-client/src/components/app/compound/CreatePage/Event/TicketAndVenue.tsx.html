@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/347</span>
+                <span class='fraction'>0/356</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/347</span>
+                <span class='fraction'>0/356</span>
             </div>
         
             
@@ -410,7 +410,25 @@
 <a name='L345'></a><a href='#L345'>345</a>
 <a name='L346'></a><a href='#L346'>346</a>
 <a name='L347'></a><a href='#L347'>347</a>
-<a name='L348'></a><a href='#L348'>348</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -763,23 +781,21 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ImageSelectItem from './ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Button, {</span>
-<span class="cstat-no" title="statement not covered" >    IconButton,</span>
-<span class="cstat-no" title="statement not covered" >    OutlineButton,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import TicketTypes from '@/components/app/compound/CreatePage/Event/TicketTypes'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >// import TicketTypes from '@/components/app/compound/CreatePage/Event/TicketTypes'</span>
+<span class="cstat-no" title="statement not covered" >// import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    MapMarkerOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    PlusIcon,</span>
-<span class="cstat-no" title="statement not covered" >    TicketSolidIcon,</span>
-<span class="cstat-no" title="statement not covered" >    DeleteIcon,</span>
+<span class="cstat-no" title="statement not covered" >    // PlusIcon,</span>
+<span class="cstat-no" title="statement not covered" >    // TicketSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >    // DeleteIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { Event } from '@/interfaces/types'</span>
 <span class="cstat-no" title="statement not covered" >import { updateFormState } from '@/utils/formUtils'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import TicketPolicyVenue from '@/utils/FormValidators/EventCreation/ticketPolicyVenue'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" >import { EventInterface } from '@/store/slices/events.slice'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const VenueLocation = dynamic(() =&gt; import('./VenueLocation'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -787,7 +803,19 @@
 <span class="cstat-no" title="statement not covered" >    () =&gt; import('@/components/FormComponents/InputField'),</span>
 <span class="cstat-no" title="statement not covered" >)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function EventTicketAndVenue({ event, setEvent, handleSubmit }) {</span>
+<span class="cstat-no" title="statement not covered" >interface EventTicketAndVenueProps {</span>
+<span class="cstat-no" title="statement not covered" >    event: EventInterface</span>
+<span class="cstat-no" title="statement not covered" >    setEvent: React.Dispatch&lt;React.SetStateAction&lt;EventInterface&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >    nextStep</span>
+<span class="cstat-no" title="statement not covered" >    setCoverImage: React.Dispatch&lt;React.SetStateAction&lt;any&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function EventTicketAndVenue({</span>
+<span class="cstat-no" title="statement not covered" >    event,</span>
+<span class="cstat-no" title="statement not covered" >    setEvent,</span>
+<span class="cstat-no" title="statement not covered" >    nextStep,</span>
+<span class="cstat-no" title="statement not covered" >    setCoverImage,</span>
+<span class="cstat-no" title="statement not covered" >}: EventTicketAndVenueProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const { errors, validate, validateCoverImage } = TicketPolicyVenue()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
@@ -795,11 +823,12 @@
 <span class="cstat-no" title="statement not covered" >    const eventVenues = ['Virtual', 'In person', 'Hybrid']</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [selectedFile, setSelectedFile] = useState&lt;string | null&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" >    const [showTicketForm, setShowTicketForm] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    // const [showTicketForm, setShowTicketForm] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Function to handle file upload</span>
 <span class="cstat-no" title="statement not covered" >    const handleFileInputChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const file = e.target.files?.[0]</span>
+<span class="cstat-no" title="statement not covered" >        setCoverImage(file)</span>
 <span class="cstat-no" title="statement not covered" >        if (!file) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        setSelectedFile(null)</span>
@@ -822,7 +851,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // function to handle venue selection</span>
 <span class="cstat-no" title="statement not covered" >    const handleVenueSelect = (name: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setEvent({ ...event, venue: name })</span>
+<span class="cstat-no" title="statement not covered" >        setEvent({ ...event, venueType: name })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // function to handle input change</span>
@@ -835,24 +864,23 @@
 <span class="cstat-no" title="statement not covered" >    const handleSubmitWrapper = (e: Event) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        e.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >        const venue = {</span>
-<span class="cstat-no" title="statement not covered" >            externalLinks: event.externalLink,</span>
 <span class="cstat-no" title="statement not covered" >            location: event.location,</span>
 <span class="cstat-no" title="statement not covered" >            coverImage: selectedFile,</span>
 <span class="cstat-no" title="statement not covered" >            tags: event.tags,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const isValid = validate(venue, event.venue)</span>
+<span class="cstat-no" title="statement not covered" >        const isValid = validate(venue, event.venueType)</span>
 <span class="cstat-no" title="statement not covered" >        if (isValid) {</span>
 <span class="cstat-no" title="statement not covered" >            // submit the form</span>
-<span class="cstat-no" title="statement not covered" >            handleSubmit()</span>
+<span class="cstat-no" title="statement not covered" >            nextStep()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const deleteTicket = (indexToDelete: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const filteredTickets = event?.tickets.filter(</span>
-<span class="cstat-no" title="statement not covered" >            (_, index: number) =&gt; index !== indexToDelete,</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        setEvent({ ...event, tickets: filteredTickets })</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    // const deleteTicket = (indexToDelete: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     const filteredTickets = event?.tickets.filter(</span>
+<span class="cstat-no" title="statement not covered" >    //         (_, index: number) =&gt; index !== indexToDelete,</span>
+<span class="cstat-no" title="statement not covered" >    //     )</span>
+<span class="cstat-no" title="statement not covered" >    //     setEvent({ ...event, tickets: filteredTickets })</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
@@ -879,7 +907,7 @@
 <span class="cstat-no" title="statement not covered" >                                role={item}</span>
 <span class="cstat-no" title="statement not covered" >                                key={index}</span>
 <span class="cstat-no" title="statement not covered" >                                className={`flex justify-center disabled:bg-grey/70 disabled:border-grey disabled:cursor-not-allowed w-full max-mobile:text-sm items-center rounded md text-center px-5 py-2 ${</span>
-<span class="cstat-no" title="statement not covered" >                                    event.venue === item</span>
+<span class="cstat-no" title="statement not covered" >                                    event.venueType === item</span>
 <span class="cstat-no" title="statement not covered" >                                        ? 'orange-fill cursor-pointer'</span>
 <span class="cstat-no" title="statement not covered" >                                        : 'orange-outline '</span>
 <span class="cstat-no" title="statement not covered" >                                }  `}</span>
@@ -898,28 +926,28 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {event.venue !== 'In person' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {event.venueType !== 'In person' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-6'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {event.venue === 'Hybrid' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        {event.venueType === 'Hybrid' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='text-lg text-center  font-medium mb-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                For Virtual event attendees</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='External event link'</span>
-<span class="cstat-no" title="statement not covered" >                            name='externalLink'</span>
+<span class="cstat-no" title="statement not covered" >                            name='url'</span>
 <span class="cstat-no" title="statement not covered" >                            label={'External event link'}</span>
-<span class="cstat-no" title="statement not covered" >                            value={event.externalLink}</span>
+<span class="cstat-no" title="statement not covered" >                            value={event.url}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                            error={errors.externalLinks}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {event.venue !== 'Virtual' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {event.venueType !== 'Virtual' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;VenueLocation</span>
 <span class="cstat-no" title="statement not covered" >                        errors={errors}</span>
 <span class="cstat-no" title="statement not covered" >                        ticketAndVenueForm={event}</span>
+<span class="cstat-no" title="statement not covered" >                        setEvent={setEvent}</span>
 <span class="cstat-no" title="statement not covered" >                        handleInputChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
@@ -976,134 +1004,133 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-darkGrey' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* Ticket Type section */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='px-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex gap-2 items-center  my-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='eventCreationIcons'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TicketSolidIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;h6 className='font-semibold text-xl max-mobile:text-lg '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Ticket types</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/h6&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {event.tickets.length === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-dark-charcoal/70 dark:text-white/70 max-lgMobile:text-sm mt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        You have the choice to decide whether you want your</span>
-<span class="cstat-no" title="statement not covered" >                        event to be a free ticket event or a ticketed event with</span>
-<span class="cstat-no" title="statement not covered" >                        sales.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {/* Created Ticket Items  */}</span>
-<span class="cstat-no" title="statement not covered" >                {event.tickets.length !== 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;table className='w-full  max-tablet:overflow-x-auto text-sm text-left  '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;thead className='text-xs border-t border-b'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;tr className=''&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;th scope='col' className=' px-2 py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Ticket</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;th scope='col' className='px-2 py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Price</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;th scope='col' className='px-2 py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Action</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;tbody className='mt-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {event.tickets.map((ticket, index: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                    return (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;tr key={index}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;td className='p-2    '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;p className='font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    {ticket?.type === 'Free'</span>
-<span class="cstat-no" title="statement not covered" >                                                        ? ticket?.type</span>
-<span class="cstat-no" title="statement not covered" >                                                        : ticket?.ticketCategory}</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;p className='text-xs font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    VALID TILL:{' '}</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;span className='font-normal'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                                            ticket?.validityEndDate</span>
-<span class="cstat-no" title="statement not covered" >                                                        }{' '}</span>
-<span class="cstat-no" title="statement not covered" >                                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                                            ticket?.validityEndTime</span>
-<span class="cstat-no" title="statement not covered" >                                                        }</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;/span&gt;{' '}</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;td className=' px-4 smoothen  py-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {!ticket.ticketPrice</span>
-<span class="cstat-no" title="statement not covered" >                                                    ? 0</span>
-<span class="cstat-no" title="statement not covered" >                                                    : ticket.ticketPrice}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;td className=' px-4 smoothen  py-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;DeleteIcon</span>
-<span class="cstat-no" title="statement not covered" >                                                    onClick={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        deleteTicket(index)</span>
-<span class="cstat-no" title="statement not covered" >                                                    }</span>
-<span class="cstat-no" title="statement not covered" >                                                    className='text-xl cursor-pointer text-red-500 '</span>
-<span class="cstat-no" title="statement not covered" >                                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )</span>
-<span class="cstat-no" title="statement not covered" >                                })}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/tbody&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/table&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-4 flex  justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;IconButton</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; setShowTicketForm(true)}</span>
-<span class="cstat-no" title="statement not covered" >                        className={</span>
-<span class="cstat-no" title="statement not covered" >                            'flex items-center gap-2 orange-fill text-lg max-mobile:text-base font-semibold text-center rounded-lg shadow-md h-14 px-4'</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='w-5 h-5 ' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p&gt;Create Ticket&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;ParentModal</span>
-<span class="cstat-no" title="statement not covered" >                    isOpen={showTicketForm}</span>
-<span class="cstat-no" title="statement not covered" >                    handleClose={() =&gt; setShowTicketForm(false)}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-6'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TicketTypes</span>
-<span class="cstat-no" title="statement not covered" >                            handleClose={() =&gt; setShowTicketForm(false)}</span>
-<span class="cstat-no" title="statement not covered" >                            setEvent={setEvent}</span>
-<span class="cstat-no" title="statement not covered" >                            event={event}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/ParentModal&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-darkGrey' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex w-full flex-col mt-4 px-4 gap-8'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;OutlineButton</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;OutlineButton</span>
 <span class="cstat-no" title="statement not covered" >                    name={'Save and finish later'}</span>
 <span class="cstat-no" title="statement not covered" >                    className='orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Save and finish later</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/OutlineButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    </span>
+<span class="cstat-no" title="statement not covered" >                &lt;/OutlineButton&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                    // disabled={!isFormFilled()}</span>
 <span class="cstat-no" title="statement not covered" >                    onClick={handleSubmitWrapper}</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Publish event now!'}</span>
+<span class="cstat-no" title="statement not covered" >                    name={'Save and Continue'}</span>
 <span class="cstat-no" title="statement not covered" >                    className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Publish event now!</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    /* Ticket Type section */</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >//    &lt;div className='px-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    &lt;div className='flex gap-2 items-center  my-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;div className='eventCreationIcons'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;TicketSolidIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >//        &lt;h6 className='font-semibold text-xl max-mobile:text-lg '&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            Ticket types</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/h6&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >//    {event.tickets.length === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;p className='text-dark-charcoal/70 dark:text-white/70 max-lgMobile:text-sm mt-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            You have the choice to decide whether you want your</span>
+<span class="cstat-no" title="statement not covered" >//            event to be a free ticket event or a ticketed event with</span>
+<span class="cstat-no" title="statement not covered" >//            sales.</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >//    {event.tickets.length !== 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;table className='w-full  max-tablet:overflow-x-auto text-sm text-left  '&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                &lt;thead className='text-xs border-t border-b'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                    &lt;tr className=''&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;th scope='col' className=' px-2 py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                            Ticket</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;/th&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;th scope='col' className='px-2 py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                            Price</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;/th&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;th scope='col' className='px-2 py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                            Action</span>
+<span class="cstat-no" title="statement not covered" >//                        &lt;/th&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                    &lt;/tr&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                &lt;/thead&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                &lt;tbody className='mt-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                    {event.tickets.map((ticket, index: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >//                        return (</span>
+<span class="cstat-no" title="statement not covered" >//                            &lt;tr key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;td className='p-2    '&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                    &lt;p className='font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                        {ticket?.type === 'Free'</span>
+<span class="cstat-no" title="statement not covered" >//                                            ? ticket?.type</span>
+<span class="cstat-no" title="statement not covered" >//                                            : ticket?.ticketCategory}</span>
+<span class="cstat-no" title="statement not covered" >//                                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                    &lt;p className='text-xs font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                        VALID TILL:{' '}</span>
+<span class="cstat-no" title="statement not covered" >//                                        &lt;span className='font-normal'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                            {</span>
+<span class="cstat-no" title="statement not covered" >//                                                ticket?.validityEndDate</span>
+<span class="cstat-no" title="statement not covered" >//                                            }{' '}</span>
+<span class="cstat-no" title="statement not covered" >//                                            {</span>
+<span class="cstat-no" title="statement not covered" >//                                                ticket?.validityEndTime</span>
+<span class="cstat-no" title="statement not covered" >//                                            }</span>
+<span class="cstat-no" title="statement not covered" >//                                        &lt;/span&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >//                                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;/td&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;td className=' px-4 smoothen  py-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                    {!ticket.ticketPrice</span>
+<span class="cstat-no" title="statement not covered" >//                                        ? 0</span>
+<span class="cstat-no" title="statement not covered" >//                                        : ticket.ticketPrice}</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;/td&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;td className=' px-4 smoothen  py-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                    &lt;DeleteIcon</span>
+<span class="cstat-no" title="statement not covered" >//                                        onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                            deleteTicket(index)</span>
+<span class="cstat-no" title="statement not covered" >//                                        }</span>
+<span class="cstat-no" title="statement not covered" >//                                        className='text-xl cursor-pointer text-red-500 '</span>
+<span class="cstat-no" title="statement not covered" >//                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                                &lt;/td&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                            &lt;/tr&gt;</span>
+<span class="cstat-no" title="statement not covered" >//                        )</span>
+<span class="cstat-no" title="statement not covered" >//                    })}</span>
+<span class="cstat-no" title="statement not covered" >//                &lt;/tbody&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;/table&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >//    &lt;div className='mt-4 flex  justify-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;IconButton</span>
+<span class="cstat-no" title="statement not covered" >//            onClick={() =&gt; setShowTicketForm(true)}</span>
+<span class="cstat-no" title="statement not covered" >//            className={</span>
+<span class="cstat-no" title="statement not covered" >//                'flex items-center gap-2 orange-fill text-lg max-mobile:text-base font-semibold text-center rounded-lg shadow-md h-14 px-4'</span>
+<span class="cstat-no" title="statement not covered" >//            }</span>
+<span class="cstat-no" title="statement not covered" >//        &gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;PlusIcon className='w-5 h-5 ' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;p&gt;Create Ticket&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >//    &lt;ParentModal</span>
+<span class="cstat-no" title="statement not covered" >//        isOpen={showTicketForm}</span>
+<span class="cstat-no" title="statement not covered" >//        handleClose={() =&gt; setShowTicketForm(false)}</span>
+<span class="cstat-no" title="statement not covered" >//    &gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;div className='mt-6'&gt;</span>
+<span class="cstat-no" title="statement not covered" >//            &lt;TicketTypes</span>
+<span class="cstat-no" title="statement not covered" >//                handleClose={() =&gt; setShowTicketForm(false)}</span>
+<span class="cstat-no" title="statement not covered" >//                setEvent={setEvent}</span>
+<span class="cstat-no" title="statement not covered" >//                event={event}</span>
+<span class="cstat-no" title="statement not covered" >//            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >//        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >//    &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >// &lt;/div&gt;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -1111,7 +1138,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-12T12:52:12.111Z
+                at 2023-07-13T10:23:22.607Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
