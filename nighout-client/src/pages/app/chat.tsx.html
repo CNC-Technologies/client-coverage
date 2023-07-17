@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/55</span>
+                <span class='fraction'>0/51</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/55</span>
+                <span class='fraction'>0/51</span>
             </div>
         
             
@@ -114,15 +114,7 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,7 +169,6 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ChatConversations from '@/components/app/compound/Chat/ChatConversations'</span>
 <span class="cstat-no" title="statement not covered" >import ChatFriendsList from '@/components/app/compound/Chat/ChatFriendsList'</span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
 <span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
 <span class="cstat-no" title="statement not covered" >import emptyLarge from '@/lotties/empty-large.json'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -189,43 +180,40 @@
 <span class="cstat-no" title="statement not covered" >        router.push('/app/chat')</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='max-mobile:px-5 mobile:px-7 md:px-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {query?.get('chat') ? (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='hidden md:block'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ChatConversations closeSection={closeSection} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout showRightSidebar={true}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='max-mobile:px-5 mobile:px-7 md:px-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {query?.get('chat') ? (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='hidden md:block'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChatConversations closeSection={closeSection} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='block md:hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='bg-black/20 absolute w-full h-full top-0 left-0 pt-6 z-[1000]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='bg-white pt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;ChatConversations</span>
-<span class="cstat-no" title="statement not covered" >                                        closeSection={closeSection}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='block md:hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='bg-black/20 absolute w-full h-full top-0 left-0 pt-6 z-[1000]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='bg-white pt-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;ChatConversations</span>
+<span class="cstat-no" title="statement not covered" >                                    closeSection={closeSection}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ) : (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='hidden md:flex flex-col items-center h-96 justify-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;LottiePlayer</span>
-<span class="cstat-no" title="statement not covered" >                                size='sm'</span>
-<span class="cstat-no" title="statement not covered" >                                animationData={emptyLarge}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='py-5 text-dark dark:text-white font-bold text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Empty! Start a new conversation.</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >            ) : (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='hidden md:flex flex-col items-center h-96 justify-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;LottiePlayer size='sm' animationData={emptyLarge} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='py-5 text-dark dark:text-white font-bold text-base'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Empty! Start a new conversation.</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='block md:hidden mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ChatFriendsList /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='block md:hidden mt-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChatFriendsList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -235,7 +223,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

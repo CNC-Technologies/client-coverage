@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -137,9 +137,7 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -214,12 +212,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import React, { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import { Swiper, SwiperSlide } from 'swiper/react'</span>
+<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" >import { Mousewheel } from 'swiper'</span>
+<span class="cstat-no" title="statement not covered" >import { Swiper, SwiperSlide } from 'swiper/react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import SingleReelCard from '@/components/Reels/singleReelCard'</span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
 <span class="cstat-no" title="statement not covered" >import mockReels from '@/constants/MockData/ReelsList'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ReelsVideoPage() {</span>
@@ -240,52 +237,52 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex h-full  my-auto w-full justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Swiper</span>
-<span class="cstat-no" title="statement not covered" >                    direction={'vertical'}</span>
-<span class="cstat-no" title="statement not covered" >                    slidesPerView={1}</span>
-<span class="cstat-no" title="statement not covered" >                    spaceBetween={30}</span>
-<span class="cstat-no" title="statement not covered" >                    mousewheel={true}</span>
-<span class="cstat-no" title="statement not covered" >                    pagination={{</span>
-<span class="cstat-no" title="statement not covered" >                        clickable: true,</span>
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                    modules={[Mousewheel]}</span>
-<span class="cstat-no" title="statement not covered" >                    className='h-screen w-full'</span>
-<span class="cstat-no" title="statement not covered" >                    onSlideChange={(swiper) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        const activeSlide = swiper.slides[swiper.activeIndex]</span>
-<span class="cstat-no" title="statement not covered" >                        const reelId = activeSlide.getAttribute('data-reel-id')</span>
-<span class="cstat-no" title="statement not covered" >                        setActiveReelId(reelId)</span>
-<span class="cstat-no" title="statement not covered" >                        router.push(`/app/reels/${reelId}`)</span>
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                    initialSlide={</span>
-<span class="cstat-no" title="statement not covered" >                        activeReelId</span>
-<span class="cstat-no" title="statement not covered" >                            ? mockReels.findIndex(</span>
-<span class="cstat-no" title="statement not covered" >                                  (reel) =&gt; reel.id === activeReelId,</span>
-<span class="cstat-no" title="statement not covered" >                              )</span>
-<span class="cstat-no" title="statement not covered" >                            : 0</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {mockReels.map((reel, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;SwiperSlide</span>
-<span class="cstat-no" title="statement not covered" >                                id={`page${index + 1}`}</span>
-<span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                className='h-fit'</span>
-<span class="cstat-no" title="statement not covered" >                                data-reel-id={reel.id}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;SingleReelCard</span>
-<span class="cstat-no" title="statement not covered" >                                    reel={reel}</span>
-<span class="cstat-no" title="statement not covered" >                                    isMute={isMute}</span>
-<span class="cstat-no" title="statement not covered" >                                    handleMuting={handleMuting}</span>
-<span class="cstat-no" title="statement not covered" >                                    isActive={reel.id === activeReelId}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/SwiperSlide&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Swiper&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout showRightSidebar={true}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='flex h-full  my-auto w-full justify-center items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Swiper</span>
+<span class="cstat-no" title="statement not covered" >                direction={'vertical'}</span>
+<span class="cstat-no" title="statement not covered" >                slidesPerView={1}</span>
+<span class="cstat-no" title="statement not covered" >                spaceBetween={30}</span>
+<span class="cstat-no" title="statement not covered" >                mousewheel={true}</span>
+<span class="cstat-no" title="statement not covered" >                pagination={{</span>
+<span class="cstat-no" title="statement not covered" >                    clickable: true,</span>
+<span class="cstat-no" title="statement not covered" >                }}</span>
+<span class="cstat-no" title="statement not covered" >                modules={[Mousewheel]}</span>
+<span class="cstat-no" title="statement not covered" >                className='h-screen w-full'</span>
+<span class="cstat-no" title="statement not covered" >                onSlideChange={(swiper) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    const activeSlide = swiper.slides[swiper.activeIndex]</span>
+<span class="cstat-no" title="statement not covered" >                    const reelId = activeSlide.getAttribute('data-reel-id')</span>
+<span class="cstat-no" title="statement not covered" >                    setActiveReelId(reelId)</span>
+<span class="cstat-no" title="statement not covered" >                    router.push(`/app/reels/${reelId}`)</span>
+<span class="cstat-no" title="statement not covered" >                }}</span>
+<span class="cstat-no" title="statement not covered" >                initialSlide={</span>
+<span class="cstat-no" title="statement not covered" >                    activeReelId</span>
+<span class="cstat-no" title="statement not covered" >                        ? mockReels.findIndex(</span>
+<span class="cstat-no" title="statement not covered" >                              (reel) =&gt; reel.id === activeReelId,</span>
+<span class="cstat-no" title="statement not covered" >                          )</span>
+<span class="cstat-no" title="statement not covered" >                        : 0</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {mockReels.map((reel, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SwiperSlide</span>
+<span class="cstat-no" title="statement not covered" >                            id={`page${index + 1}`}</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            className='h-fit'</span>
+<span class="cstat-no" title="statement not covered" >                            data-reel-id={reel.id}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;SingleReelCard</span>
+<span class="cstat-no" title="statement not covered" >                                reel={reel}</span>
+<span class="cstat-no" title="statement not covered" >                                isMute={isMute}</span>
+<span class="cstat-no" title="statement not covered" >                                handleMuting={handleMuting}</span>
+<span class="cstat-no" title="statement not covered" >                                isActive={reel.id === activeReelId}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/SwiperSlide&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Swiper&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -295,7 +292,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

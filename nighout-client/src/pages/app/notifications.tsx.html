@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/112</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/112</span>
             </div>
         
             
@@ -175,9 +175,7 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -291,9 +289,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useRef, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface NotificationTab {</span>
 <span class="cstat-no" title="statement not covered" >    name: string</span>
@@ -335,71 +332,71 @@
 <span class="cstat-no" title="statement not covered" >        handleScrollButtons()</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true} pageTitle={'Notifications'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='fixed md:sticky max-md:border-t max-md:w-full  top-16 left-0 md:-top-7 bg-white z-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {showLeftButton &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 left-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleScroll(-100)}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ChevronLeftIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {showRightButton &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 right-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleScroll(100)}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ChevronRightIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        ref={tabListRef}</span>
-<span class="cstat-no" title="statement not covered" >                        onScroll={handleScrollButtons}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex w-full max-md:px-7 max-mobile:px-5  gap-1 p-1 pb-1 overflow-x-auto transition ease-in-out border-b whitespace-nowrap scroll-smooth hideScrollbar border-grey'</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout showRightSidebar={true} pageTitle={'Notifications'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className=' '&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='fixed md:sticky max-md:border-t max-md:w-full  top-16 left-0 md:-top-7 bg-white z-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {showLeftButton &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                        className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 left-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; handleScroll(-100)}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {notificationTabs.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; setActiveTab(index)}</span>
-<span class="cstat-no" title="statement not covered" >                                    key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                    className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                                        activeTab === index</span>
-<span class="cstat-no" title="statement not covered" >                                            ? 'underlineFull text-dark-charcoal '</span>
-<span class="cstat-no" title="statement not covered" >                                            : 'hover:bg-secondary/10 dark:hover:bg-white/40 text-dark-charcoal/50 dark:text-white/70'</span>
-<span class="cstat-no" title="statement not covered" >                                    } cursor-pointer p-2 rounded-lg font-medium `}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )</span>
-<span class="cstat-no" title="statement not covered" >                        })}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='grid  mt-14 md:mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {[...Array(15)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChevronLeftIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                {showRightButton &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                        className='max-[455px]:block hidden absolute h-full w-fit bg-darkGrey/70 z-10 top-0 right-0 px-[0.15rem] py-1  dark:bg-white/30 hover:bg-gray-300 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; handleScroll(100)}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChevronRightIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    ref={tabListRef}</span>
+<span class="cstat-no" title="statement not covered" >                    onScroll={handleScrollButtons}</span>
+<span class="cstat-no" title="statement not covered" >                    className='flex w-full max-md:px-7 max-mobile:px-5  gap-1 p-1 pb-1 overflow-x-auto transition ease-in-out border-b whitespace-nowrap scroll-smooth hideScrollbar border-grey'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {notificationTabs.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                className='flex  py-3 px-2 rounded-md gap-3 items-center  cursor-pointer evenOddList'</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; setActiveTab(index)}</span>
+<span class="cstat-no" title="statement not covered" >                                key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                                    activeTab === index</span>
+<span class="cstat-no" title="statement not covered" >                                        ? 'underlineFull text-dark-charcoal '</span>
+<span class="cstat-no" title="statement not covered" >                                        : 'hover:bg-secondary/10 dark:hover:bg-white/40 text-dark-charcoal/50 dark:text-white/70'</span>
+<span class="cstat-no" title="statement not covered" >                                } cursor-pointer p-2 rounded-lg font-medium `}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Avatar size='lg' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;h5 className='font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        New songs addedby Artist blah</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/h5&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p className='text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Listen to the latest release from blah</span>
-<span class="cstat-no" title="statement not covered" >                                        lorem ipsium and stuff</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.name}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" >                    })}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid  mt-14 md:mt-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {[...Array(15)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                            className='flex  py-3 px-2 rounded-md gap-3 items-center  cursor-pointer evenOddList'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Avatar size='lg' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;h5 className='font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    New songs addedby Artist blah</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/h5&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Listen to the latest release from blah lorem</span>
+<span class="cstat-no" title="statement not covered" >                                    ipsium and stuff</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -409,7 +406,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

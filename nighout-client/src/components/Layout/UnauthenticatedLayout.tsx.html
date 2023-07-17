@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -126,7 +126,29 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -195,28 +217,39 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Footer from '@/components/Layout/footer'</span>
 <span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
-<span class="cstat-no" title="statement not covered" >import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'</span>
+<span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import useHandleColorChange from '@/hooks/useHandleColorChange'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const Navbar = dynamic(import('@/components/Layout/navbar'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function UnauthenticatedLayout({</span>
+<span class="cstat-no" title="statement not covered" >    // title = appTitle,</span>
+<span class="cstat-no" title="statement not covered" >    // description = appDescription,</span>
+<span class="cstat-no" title="statement not covered" >    // activeClass = 'theme-stale-inv',</span>
+<span class="cstat-no" title="statement not covered" >    // setActiveClass,</span>
+<span class="cstat-no" title="statement not covered" >    // marginalize,</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
-<span class="cstat-no" title="statement not covered" >    title = appTitle,</span>
-<span class="cstat-no" title="statement not covered" >    description = appDescription,</span>
-<span class="cstat-no" title="statement not covered" >    activeClass = 'theme-stale-inv',</span>
-<span class="cstat-no" title="statement not covered" >    setActiveClass,</span>
-<span class="cstat-no" title="statement not covered" >    marginalize,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    children: any</span>
-<span class="cstat-no" title="statement not covered" >    title?: string</span>
-<span class="cstat-no" title="statement not covered" >    description?: string</span>
-<span class="cstat-no" title="statement not covered" >    activeClass?: string</span>
-<span class="cstat-no" title="statement not covered" >    setActiveClass?: any</span>
-<span class="cstat-no" title="statement not covered" >    marginalize?: boolean</span>
+<span class="cstat-no" title="statement not covered" >    // title?: string</span>
+<span class="cstat-no" title="statement not covered" >    // description?: string</span>
+<span class="cstat-no" title="statement not covered" >    // activeClass?: string</span>
+<span class="cstat-no" title="statement not covered" >    // setActiveClass?: any</span>
+<span class="cstat-no" title="statement not covered" >    // marginalize?: boolean</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >        layoutProps: {</span>
+<span class="cstat-no" title="statement not covered" >            title,</span>
+<span class="cstat-no" title="statement not covered" >            description,</span>
+<span class="cstat-no" title="statement not covered" >            unauthenticated: { activeClass, setActiveClass, marginalize },</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    } = useSelector((state: RootState) =&gt; state.layoutProps)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
 <span class="cstat-no" title="statement not covered" >    const idClass = activeClass</span>
 <span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
@@ -259,7 +292,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

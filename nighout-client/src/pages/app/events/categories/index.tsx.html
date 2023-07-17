@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/21</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/21</span>
             </div>
         
             
@@ -84,15 +84,7 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -114,28 +106,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import EventCategoriesPageComplex from '@/components/Events/EventCategoriesPageComplex'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import UnauthenticatedLayout from '@/components/Layout/UnauthenticatedLayout'</span>
-<span class="cstat-no" title="statement not covered" >import PageLoader from '@/components/PageLoader'</span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
-<span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function EventCategoriesPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const { user, loading } = useGetUser()</span>
+<span class="cstat-no" title="statement not covered" >    // const { user, loading } = useGetUser()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (typeof window === 'undefined') return null</span>
+<span class="cstat-no" title="statement not covered" >    // if (typeof window === 'undefined') return null</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (loading) return &lt;PageLoader full /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    // if (loading) return &lt;PageLoader full /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (user)</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;AppLayout showRightSidebar={true} pageTitle={'Event Category'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;EventCategoriesPageComplex /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/AppLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    // if (user)</span>
+<span class="cstat-no" title="statement not covered" >    //     return (</span>
+<span class="cstat-no" title="statement not covered" >    //         &lt;AppLayout showRightSidebar={true} pageTitle={'Event Category'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >    //             &lt;EventCategoriesPageComplex /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    //         &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >    //     )</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;UnauthenticatedLayout marginalize&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;EventCategoriesPageComplex unauthenticated /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/UnauthenticatedLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;UnauthenticatedLayout marginalize&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;EventCategoriesPageComplex unauthenticated /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;/UnauthenticatedLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -145,7 +133,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

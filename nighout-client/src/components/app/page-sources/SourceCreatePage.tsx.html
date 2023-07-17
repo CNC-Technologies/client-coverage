@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/93</span>
+                <span class='fraction'>0/92</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/93</span>
+                <span class='fraction'>0/92</span>
             </div>
         
             
@@ -155,9 +155,7 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -251,7 +249,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import categories from '@/constants/app/CreateCategories'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
@@ -278,68 +275,68 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;AppLayout showRightSidebar={true}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 lgMobile:grid-cols-2  gap-5 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {categories.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        if (item.businessOnly &amp;&amp; configKey !== 'business')</span>
-<span class="cstat-no" title="statement not covered" >                            return null</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                data-testid={`create-category-${index}`}</span>
-<span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; handleOpenModal(item.name)}</span>
-<span class="cstat-no" title="statement not covered" >                                className={`${item.color} hover:scale-105 dark:brightness-90 h-44 px-4 py-2 rounded-lg cursor-pointer flex flex-col transition duration-500 ease-in-out`}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='h-14 w-14'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;item.icon className='w-full h-full' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;h4</span>
-<span class="cstat-no" title="statement not covered" >                                        data-testid={`${item.name}`}</span>
-<span class="cstat-no" title="statement not covered" >                                        className='text-xl font-medium'</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/h4&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p</span>
-<span class="cstat-no" title="statement not covered" >                                        data-testid={`${item.desc}`}</span>
-<span class="cstat-no" title="statement not covered" >                                        className='text-sm'</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {item.desc}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout showRightSidebar={true}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 lgMobile:grid-cols-2  gap-5 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {categories.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (item.businessOnly &amp;&amp; configKey !== 'business')</span>
+<span class="cstat-no" title="statement not covered" >                        return null</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            data-testid={`create-category-${index}`}</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; handleOpenModal(item.name)}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`${item.color} hover:scale-105 dark:brightness-90 h-44 px-4 py-2 rounded-lg cursor-pointer flex flex-col transition duration-500 ease-in-out`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='h-14 w-14'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-full h-full' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                {categories.map((item, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    if (item.name === create || item.name === edit) {</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ParentModal</span>
-<span class="cstat-no" title="statement not covered" >                                isOpen={create || edit}</span>
-<span class="cstat-no" title="statement not covered" >                                handleClose={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    router.push(</span>
-<span class="cstat-no" title="statement not covered" >                                        configKey === 'business'</span>
-<span class="cstat-no" title="statement not covered" >                                            ? '/business/create'</span>
-<span class="cstat-no" title="statement not covered" >                                            : '/app/create',</span>
-<span class="cstat-no" title="statement not covered" >                                    )</span>
-<span class="cstat-no" title="statement not covered" >                                }</span>
-<span class="cstat-no" title="statement not covered" >                                extraClasses={undefined}</span>
-<span class="cstat-no" title="statement not covered" >                                key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div data-testid={`dialog-child-${item.name}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;item.component</span>
-<span class="cstat-no" title="statement not covered" >                                        handleCloseModal={handleCloseModal}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/ParentModal&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    return</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;h4</span>
+<span class="cstat-no" title="statement not covered" >                                    data-testid={`${item.name}`}</span>
+<span class="cstat-no" title="statement not covered" >                                    className='text-xl font-medium'</span>
+<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/h4&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p</span>
+<span class="cstat-no" title="statement not covered" >                                    data-testid={`${item.desc}`}</span>
+<span class="cstat-no" title="statement not covered" >                                    className='text-sm'</span>
+<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.desc}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                })}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {categories.map((item, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (item.name === create || item.name === edit) {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ParentModal</span>
+<span class="cstat-no" title="statement not covered" >                            isOpen={create || edit}</span>
+<span class="cstat-no" title="statement not covered" >                            handleClose={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                router.push(</span>
+<span class="cstat-no" title="statement not covered" >                                    configKey === 'business'</span>
+<span class="cstat-no" title="statement not covered" >                                        ? '/business/create'</span>
+<span class="cstat-no" title="statement not covered" >                                        : '/app/create',</span>
+<span class="cstat-no" title="statement not covered" >                                )</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >                            key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div data-testid={`dialog-child-${item.name}`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;item.component</span>
+<span class="cstat-no" title="statement not covered" >                                    handleCloseModal={handleCloseModal}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                return</span>
+<span class="cstat-no" title="statement not covered" >            })}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -349,7 +346,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:47:04.810Z
+                at 2023-07-17T15:53:11.293Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
