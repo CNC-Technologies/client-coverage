@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/107</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/107</span>
             </div>
         
             
@@ -147,7 +147,53 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -237,7 +283,8 @@
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    associatePlaceFaq,</span>
 <span class="cstat-no" title="statement not covered" >    bizEventsPlacesRoute,</span>
-<span class="cstat-no" title="statement not covered" >    faqsRoute,</span>
+<span class="cstat-no" title="statement not covered" >    businessFaqsRoute,</span>
+<span class="cstat-no" title="statement not covered" >    faqRoute,</span>
 <span class="cstat-no" title="statement not covered" >    placeRoute,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
@@ -246,14 +293,14 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function usePlaces() {</span>
 <span class="cstat-no" title="statement not covered" >    const business = CookieService.getter('business')</span>
-<span class="cstat-no" title="statement not covered" >    const { get, loading, deleteReq, post } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { get, loading, deleteReq, post, patch } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const [places, setPlaces] = useState([])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const [faqs, setFaqs] = useState([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [placeDetails, setPlaceDetails] = useState&lt;any&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const [setReq]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const getPlaces = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const res = await get({</span>
@@ -281,10 +328,12 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const getAllFaqs = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     const res = await get({ url: faqsRoute(business.id) })</span>
-<span class="cstat-no" title="statement not covered" >    //     // console.log(res.data)</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >    const getAllFaqs = async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const res = await get({ url: businessFaqsRoute(business.id) })</span>
+<span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            setFaqs(res.data)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleCreateFaq = async (</span>
 <span class="cstat-no" title="statement not covered" >        formData: FaqsFormProps,</span>
@@ -292,7 +341,7 @@
 <span class="cstat-no" title="statement not covered" >        closeModal: () =&gt; void,</span>
 <span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const createRes = await post({</span>
-<span class="cstat-no" title="statement not covered" >            url: faqsRoute(business.id),</span>
+<span class="cstat-no" title="statement not covered" >            url: businessFaqsRoute(business.id),</span>
 <span class="cstat-no" title="statement not covered" >            data: formData,</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >        const associateRes = await post({</span>
@@ -304,15 +353,35 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handleEditFaq = async (</span>
+<span class="cstat-no" title="statement not covered" >        formData: FaqsFormProps,</span>
+<span class="cstat-no" title="statement not covered" >        faqID: string,</span>
+<span class="cstat-no" title="statement not covered" >        closeModal: () =&gt; void,</span>
+<span class="cstat-no" title="statement not covered" >        fetchFAQs: () =&gt; void,</span>
+<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const res = await patch({</span>
+<span class="cstat-no" title="statement not covered" >            url: faqRoute(faqID),</span>
+<span class="cstat-no" title="statement not covered" >            data: formData,</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            showToast('success', 'FAQ edited successfully')</span>
+<span class="cstat-no" title="statement not covered" >            closeModal()</span>
+<span class="cstat-no" title="statement not covered" >            // So it triggers only when the form data was editted not when the dialog closes</span>
+<span class="cstat-no" title="statement not covered" >            fetchFAQs()</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        places,</span>
 <span class="cstat-no" title="statement not covered" >        placeDetails,</span>
+<span class="cstat-no" title="statement not covered" >        faqs,</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
 <span class="cstat-no" title="statement not covered" >        getPlaces,</span>
 <span class="cstat-no" title="statement not covered" >        getPlaceDetails,</span>
 <span class="cstat-no" title="statement not covered" >        deletePlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleCreateFaq,</span>
-<span class="cstat-no" title="statement not covered" >        // getAllFaqs,</span>
+<span class="cstat-no" title="statement not covered" >        handleEditFaq,</span>
+<span class="cstat-no" title="statement not covered" >        getAllFaqs,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -322,7 +391,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T15:53:11.293Z
+                at 2023-07-17T17:09:15.602Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
