@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>141/141</span>
+                <span class='fraction'>126/126</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>141/141</span>
+                <span class='fraction'>126/126</span>
             </div>
         
             
@@ -189,24 +189,7 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -242,19 +225,6 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -347,10 +317,8 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 &nbsp;
-import Avatar from '@/components/app/simple/Avatar'
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
@@ -379,7 +347,7 @@ export default function ImagesList({ images }) {
     return (
         &lt;&gt;
             &lt;ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 400: 2, 800: 3, 1200: 4 }}
+                columnsCountBreakPoints={{ 350: 1, 400: 2, 800: 2, 1200: 3 }}
             &gt;
                 &lt;Masonry gutter='0.8rem'&gt;
                     {images?.map((image: string, index: number) =&gt; (
@@ -396,19 +364,6 @@ export default function ImagesList({ images }) {
                                 height={100}
                                 className='object-cover w-full'
                             /&gt;
-                            &lt;div className='dark-overlay absolute left-0 bottom-0 w-full h-fit py-2 px-1 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300'&gt;
-                                &lt;div className='flex space-x-2'&gt;
-                                    &lt;Link href={`/user`}&gt;
-                                        &lt;Avatar /&gt;
-                                    &lt;/Link&gt;
-                                    &lt;div className='text-sm w-full grid grid-cols-1'&gt;
-                                        &lt;p className=' font-medium truncate w-full'&gt;
-                                            Username
-                                        &lt;/p&gt;
-                                        &lt;p className='text-xs'&gt;4th May 2023&lt;/p&gt;
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                            &lt;/div&gt;
                         &lt;/div&gt;
                     ))}
                 &lt;/Masonry&gt;
@@ -493,7 +448,7 @@ function GalleryViewer({ images, selectedIndex, onClose }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-14T18:51:42.100Z
+                at 2023-07-17T15:47:04.810Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

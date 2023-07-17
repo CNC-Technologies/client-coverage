@@ -496,7 +496,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const getCurrentTime = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const currentDateTime = new Date()</span>
-<span class="cstat-no" title="statement not covered" >        const dayIndex = currentDateTime.getDay()</span>
+<span class="cstat-no" title="statement not covered" >        const dayIndex = (currentDateTime.getDay() + 6) % 7 // Adjust the day index</span>
 <span class="cstat-no" title="statement not covered" >        const currentTime =</span>
 <span class="cstat-no" title="statement not covered" >            currentDateTime.getHours() * 100 + currentDateTime.getMinutes()</span>
 <span class="cstat-no" title="statement not covered" >        return { dayIndex, currentTime }</span>
@@ -504,10 +504,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const isWithinOpeningHours = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const { dayIndex, currentTime } = getCurrentTime()</span>
-<span class="cstat-no" title="statement not covered" >        //   const availability = availability;</span>
 <span class="cstat-no" title="statement not covered" >        setCurrentDay(dayIndex)</span>
-<span class="cstat-no" title="statement not covered" >        if (availability &amp;&amp; availability[dayIndex]) {</span>
-<span class="cstat-no" title="statement not covered" >            const { openingTime, closingTime } = availability[dayIndex]</span>
+<span class="cstat-no" title="statement not covered" >        if (availability &amp;&amp; availability[daysOrder[dayIndex]]) {</span>
+<span class="cstat-no" title="statement not covered" >            const { openingTime, closingTime } =</span>
+<span class="cstat-no" title="statement not covered" >                availability[daysOrder[dayIndex]]</span>
 <span class="cstat-no" title="statement not covered" >            if (openingTime &amp;&amp; closingTime) {</span>
 <span class="cstat-no" title="statement not covered" >                const opening = parseInt(openingTime.replace(':', ''), 10)</span>
 <span class="cstat-no" title="statement not covered" >                const closing = parseInt(closingTime.replace(':', ''), 10)</span>
@@ -519,7 +519,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setIsOpen(isWithinOpeningHours())</span>
-<span class="cstat-no" title="statement not covered" >    }, [])</span>
+<span class="cstat-no" title="statement not covered" >    }, [availability]) // Trigger useEffect when availability changes</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const formatTime = (time: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const [hours, minutes] = time.split(':')</span>
@@ -646,6 +646,16 @@
 <span class="cstat-no" title="statement not covered" >                                                            {day}</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;/td&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                                                        {availabilityTimes.openingTime ? (</span>
+<span class="cstat-no" title="statement not covered" >                                                            &lt;td&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                                {formatTime(</span>
+<span class="cstat-no" title="statement not covered" >                                                                    availabilityTimes.openingTime,</span>
+<span class="cstat-no" title="statement not covered" >                                                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                                            &lt;/td&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                                            &lt;td&gt;--&lt;/td&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                                        {availabilityTimes.closingTime ? (</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;td&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                                {formatTime(</span>
@@ -654,16 +664,6 @@
 <span class="cstat-no" title="statement not covered" >                                                            &lt;/td&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        ) : (</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;td&gt;--&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                                        {availabilityTimes.openingTime ? (</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                                {formatTime(</span>
-<span class="cstat-no" title="statement not covered" >                                                                    availabilityTimes.openingTime,</span>
-<span class="cstat-no" title="statement not covered" >                                                                )}</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;div&gt;--&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        )}</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;/tr&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                )</span>
@@ -685,7 +685,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-14T18:51:42.100Z
+                at 2023-07-17T15:47:04.810Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

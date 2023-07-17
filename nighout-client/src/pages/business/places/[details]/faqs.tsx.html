@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/93</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/93</span>
             </div>
         
             
@@ -148,7 +148,23 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -238,11 +254,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import AccordionItem from '@/components/AccordionItem'</span>
 <span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
-<span class="cstat-no" title="statement not covered" >import { mockedPlacesFaqs } from '@/constants/MockData/PlaceDetails/FAQs'</span>
 <span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/business/places/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
-<span class="cstat-no" title="statement not covered" >import CreateFAQs from '@/components/forms/business/CreateFAQs'</span>
+<span class="cstat-no" title="statement not covered" >import CreateFAQs, {</span>
+<span class="cstat-no" title="statement not covered" >    FaqsFormProps,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/components/forms/business/CreateFAQs'</span>
 <span class="cstat-no" title="statement not covered" >import { placeFaqs } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function FaqsPage() {</span>
@@ -266,10 +283,15 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { getPlaceDetails, placeDetails } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" >    // const { getAllFaqs } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (placeId) getPlaceDetails(placeId)</span>
 <span class="cstat-no" title="statement not covered" >    }, [placeId])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     getAllFaqs()</span>
+<span class="cstat-no" title="statement not covered" >    // }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function toggleActive(title: string) {</span>
 <span class="cstat-no" title="statement not covered" >        if (active === title) return setActive('')</span>
@@ -299,17 +321,19 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='mt-6 space-y-3 col px-4 py-6 bg-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {mockedPlacesFaqs.map((item, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;AccordionItem</span>
-<span class="cstat-no" title="statement not covered" >                        key={index}</span>
-<span class="cstat-no" title="statement not covered" >                        title={item.title}</span>
-<span class="cstat-no" title="statement not covered" >                        setActive={toggleActive}</span>
-<span class="cstat-no" title="statement not covered" >                        active={active === item.title}</span>
-<span class="cstat-no" title="statement not covered" >                        contentClass='h-fit'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {item.description}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/AccordionItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ))}</span>
+<span class="cstat-no" title="statement not covered" >                {placeDetails?.edges?.faqs?.map(</span>
+<span class="cstat-no" title="statement not covered" >                    (faq: FaqsFormProps, index: number) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;AccordionItem</span>
+<span class="cstat-no" title="statement not covered" >                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                            faq={faq}</span>
+<span class="cstat-no" title="statement not covered" >                            setActive={toggleActive}</span>
+<span class="cstat-no" title="statement not covered" >                            active={active === faq.question}</span>
+<span class="cstat-no" title="statement not covered" >                            contentClass='h-fit'</span>
+<span class="cstat-no" title="statement not covered" >                            business</span>
+<span class="cstat-no" title="statement not covered" >                            fetchFAQs={() =&gt; getPlaceDetails(placeId)}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ),</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;ParentModal isOpen={create} handleClose={closeShowNewFaqForm}&gt;</span>
@@ -325,7 +349,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-14T18:51:42.100Z
+                at 2023-07-17T15:47:04.810Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
