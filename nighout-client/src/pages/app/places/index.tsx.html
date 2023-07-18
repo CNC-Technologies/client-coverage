@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/109</span>
+                <span class='fraction'>0/118</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/109</span>
+                <span class='fraction'>0/118</span>
             </div>
         
             
@@ -172,7 +172,16 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -281,17 +290,33 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import ConnectWithUserList from '@/components/app/complex/ConnectWithUserList'</span>
-<span class="cstat-no" title="statement not covered" >import PeopleList from '@/components/app/complex/PeopleList'</span>
+<span class="cstat-no" title="statement not covered" >// import ConnectWithUserList from '@/components/app/complex/ConnectWithUserList'</span>
+<span class="cstat-no" title="statement not covered" >// import PeopleList from '@/components/app/complex/PeopleList'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesList from '@/components/app/complex/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >import Banner from '@/components/app/compound/Banner'</span>
+<span class="cstat-no" title="statement not covered" >// import Banner from '@/components/app/compound/Banner'S</span>
 <span class="cstat-no" title="statement not covered" >import PlacesTagItem from '@/components/app/compound/PlacesTagItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { categoryTags } from '@/constants/app/Places/CategoryTags'</span>
+<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Page() {</span>
+<span class="cstat-no" title="statement not covered" >    const { getPlaces, places, loading } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        getPlaces()</span>
+<span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        // &lt;AppLayout showRightSidebar={true} pageTitle={'Places'}&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
@@ -311,9 +336,9 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='text-lg md:text-2xl text-center mt-3 md:my-7'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Let&amp;apos;s Personalize Your Experience</span>
+<span class="cstat-no" title="statement not covered" >                    {` Let's Personalize Your Experience`}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col  px-5 place-items-center mb-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1  px-5 place-items-center mb-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex px-5 gap-3 mobile:gap-5 xDesktop:justify-center overflow-x-auto  py-3 w-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {categoryTags.map((item) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;PlacesTagItem key={item.id} item={item} /&gt;</span>
@@ -327,10 +352,12 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;PlacesList</span>
 <span class="cstat-no" title="statement not covered" >                        title='Recommended Places'</span>
 <span class="cstat-no" title="statement not covered" >                        description='Places you might like...'</span>
-<span class="cstat-no" title="statement not covered" >                        gridLayout={false}</span>
+<span class="cstat-no" title="statement not covered" >                        gridLayout</span>
+<span class="cstat-no" title="statement not covered" >                        places={places}</span>
+<span class="cstat-no" title="statement not covered" >                        loading={loading}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Banner</span>
 <span class="cstat-no" title="statement not covered" >                        title='Your next family trip starts here.'</span>
 <span class="cstat-no" title="statement not covered" >                        description='Restaurants, hotels, travel...'</span>
@@ -384,7 +411,7 @@
 <span class="cstat-no" title="statement not covered" >                        title='Pla-rides'</span>
 <span class="cstat-no" title="statement not covered" >                        description='For tours and travels'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
@@ -397,7 +424,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T17:09:15.602Z
+                at 2023-07-18T20:21:00.925Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

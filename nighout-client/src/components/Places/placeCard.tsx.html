@@ -675,7 +675,7 @@
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full cursor-pointer places rounded-xl bg-white placeCard'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full h-full cursor-pointer places rounded-xl bg-white placeCard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[13rem] mobile:h-[16rem] xmd:h-[15rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute z-10 top-0 left-0 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {place?.type &amp;&amp; (</span>
@@ -734,14 +734,14 @@
 <span class="cstat-no" title="statement not covered" >                    className='block object-cover object-center w-full h-full max-laptop:hidden rounded-t-xl posterImage'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;ImageSliderWIthNavigation</span>
-<span class="cstat-no" title="statement not covered" >                    images={place?.images?.slice(0, 4)}</span>
+<span class="cstat-no" title="statement not covered" >                    images={place?.images?.slice(0, 4) || [defaultPicture]}</span>
 <span class="cstat-no" title="statement not covered" >                    extraClass={'rounded-t-xl'}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='w-full px-3 py-3  h-fit rounded-b-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-between gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Truncate outerClass='font-medium text-base'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Truncate outerClass='font-medium capitalize text-base'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {place?.name}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Truncate&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-1 h-fit'&gt;</span>
@@ -756,15 +756,15 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-between w-full my-3 text-xs xmd:text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-1 my-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-4 h-4 text-orange' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-between space-x-3 flex-nowrap w-full items-start my-3 text-xs xmd:text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-start space-x-1 my-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-5 h-5 text-orange' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='text-xs '&gt;{place?.location}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                        href={detailsLink}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center px-3 py-1 rounded-lg orange-outline'</span>
+<span class="cstat-no" title="statement not covered" >                        className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        See details</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
@@ -832,7 +832,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T17:09:15.602Z
+                at 2023-07-18T20:21:00.925Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
