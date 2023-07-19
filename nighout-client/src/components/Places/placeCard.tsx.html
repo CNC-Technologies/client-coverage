@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/254</span>
+                <span class='fraction'>0/262</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/254</span>
+                <span class='fraction'>0/262</span>
             </div>
         
             
@@ -317,7 +317,23 @@
 <a name='L252'></a><a href='#L252'>252</a>
 <a name='L253'></a><a href='#L253'>253</a>
 <a name='L254'></a><a href='#L254'>254</a>
-<a name='L255'></a><a href='#L255'>255</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -580,6 +596,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
 <span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ImageSliderWIthNavigation from '@/components/Sliders/ImageSliderWIthNavigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -607,16 +624,10 @@
 <span class="cstat-no" title="statement not covered" >} from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const MenuList = dynamic(import('@/components/app/simple/MenuList'))</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// interface Place {</span>
-<span class="cstat-no" title="statement not covered" >//     id: Number</span>
-<span class="cstat-no" title="statement not covered" >//     name: string</span>
-<span class="cstat-no" title="statement not covered" >//     category: string</span>
-<span class="cstat-no" title="statement not covered" >//     images: string[]</span>
-<span class="cstat-no" title="statement not covered" >//     location: string</span>
-<span class="cstat-no" title="statement not covered" >// }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceCard({</span>
 <span class="cstat-no" title="statement not covered" >    place,</span>
@@ -627,7 +638,7 @@
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { showConfirmDelete } = useContext(ConfirmationDialogContext)</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
-<span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
+<span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Place details url based on a user being logged in and based on the configKey</span>
 <span class="cstat-no" title="statement not covered" >    const detailsLink = !user</span>
@@ -636,9 +647,16 @@
 <span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${place?.id}`</span>
 <span class="cstat-no" title="statement not covered" >        : `${placeDetail}${place?.id}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const [showNewPlaceForm, setShowNewPlaceForm] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { editPlace } = router.query</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { handleLikePlace } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // ! For checking if the user has liked the place before.</span>
+<span class="cstat-no" title="statement not covered" >    // const checkLiked = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     return (</span>
+<span class="cstat-no" title="statement not covered" >    //         place?.likes?.find((like) =&gt; like.accountID === user?.sub) ?? false</span>
+<span class="cstat-no" title="statement not covered" >    //     )</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function openShowNewPlaceForm() {</span>
 <span class="cstat-no" title="statement not covered" >        //Add the query parameter</span>
@@ -678,19 +696,25 @@
 <span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full h-full cursor-pointer places rounded-xl bg-white placeCard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[13rem] mobile:h-[16rem] xmd:h-[15rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute z-10 top-0 left-0 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                            href={`${placesCategories}?name=${place?.type?.replaceAll(</span>
-<span class="cstat-no" title="statement not covered" >                                /\s+/g,</span>
-<span class="cstat-no" title="statement not covered" >                                '_',</span>
-<span class="cstat-no" title="statement not covered" >                            )}`}</span>
-<span class="cstat-no" title="statement not covered" >                            className='flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-white dark:bg-darkGrey dark:text-dark-charcoal'</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-semibold'&gt;{place?.type}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {place?.type &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                href={`${placesCategories}?name=${place?.type?.replaceAll(</span>
+<span class="cstat-no" title="statement not covered" >                                    /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >                                    '_',</span>
+<span class="cstat-no" title="statement not covered" >                                )}`}</span>
+<span class="cstat-no" title="statement not covered" >                                className='flex items-center justify-center px-3 py-2 rounded-lg shadow-lg bg-white dark:bg-darkGrey dark:text-dark-charcoal'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='font-semibold'&gt;{place?.type}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    {configKey !== 'business' &amp;&amp; &lt;LikeItem /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    {configKey !== 'business' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;LikeItem</span>
+<span class="cstat-no" title="statement not covered" >                            likeAction={() =&gt; handleLikePlace(place?.id)}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {configKey === 'business' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;MenuList</span>
 <span class="cstat-no" title="statement not covered" >                            leftSided</span>
@@ -832,7 +856,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-19T15:41:41.893Z
+                at 2023-07-19T15:41:59.582Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
