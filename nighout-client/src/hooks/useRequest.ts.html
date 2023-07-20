@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.67% </span>
+                <span class="strong">23.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>67/283</span>
+                <span class='fraction'>66/280</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.67% </span>
+                <span class="strong">23.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>67/283</span>
+                <span class='fraction'>66/280</span>
             </div>
         
             
@@ -343,11 +343,7 @@
 <a name='L278'></a><a href='#L278'>278</a>
 <a name='L279'></a><a href='#L279'>279</a>
 <a name='L280'></a><a href='#L280'>280</a>
-<a name='L281'></a><a href='#L281'>281</a>
-<a name='L282'></a><a href='#L282'>282</a>
-<a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L281'></a><a href='#L281'>281</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -408,6 +404,7 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -578,9 +575,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -649,7 +643,6 @@ interface dataInterface {
     showError?: boolean
 }
 interface noDataInterface {
-    auth?: boolean
     token?: string
     url?: string
     showError?: boolean
@@ -694,6 +687,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >        const res = await fetch('/api/auth/token')</span>
 <span class="cstat-no" title="statement not covered" >        const { status, accessToken } = await res.json()</span>
 <span class="cstat-no" title="statement not covered" >        if (status === 401) handleErrors({ status } as AxiosResponse, true)</span>
+<span class="cstat-no" title="statement not covered" >        // console.log(accessToken)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return accessToken</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -861,17 +855,14 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     const get = <span class="fstat-no" title="function not covered" >async ({</span>
-<span class="cstat-no" title="statement not covered" >        auth = true,</span>
 <span class="cstat-no" title="statement not covered" >        token = '',</span>
 <span class="cstat-no" title="statement not covered" >        url: passedUrl = '',</span>
 <span class="cstat-no" title="statement not covered" >        showError = true,</span>
 <span class="cstat-no" title="statement not covered" >    }: noDataInterface = {}): Promise&lt;ResponseInterface&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        let resolvedToken</span>
-<span class="cstat-no" title="statement not covered" >        if (auth) resolvedToken = token ? token : await getToken()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // if (!resolvedToken) {</span>
-<span class="cstat-no" title="statement not covered" >        //     return resolvedToken = ''</span>
-<span class="cstat-no" title="statement not covered" >        // }</span>
+<span class="cstat-no" title="statement not covered" >        const resolvedToken = token ? token : await getToken()</span>
+<span class="cstat-no" title="statement not covered" >        if (!resolvedToken) {</span>
+<span class="cstat-no" title="statement not covered" >            return apiRes(false, 'Login token undefined or null!', null)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const resolvedUrl = passedUrl ? passedUrl : url</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
@@ -919,7 +910,7 @@ export default function useSecureRequest(url: string = '') {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-20T12:41:53.196Z
+                at 2023-07-20T12:42:01.686Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
