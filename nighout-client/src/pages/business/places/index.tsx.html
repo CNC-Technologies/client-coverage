@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/62</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/62</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -125,7 +125,21 @@
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -195,8 +209,9 @@
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/business/places/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceInterface } from '@/store/slices/places.slice'</span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const { places, loading, getPlaces, deletePlace } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" >    const { places, loading, getPlaces, deletePlace, setPlaces } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { create } = router.query</span>
@@ -217,6 +232,10 @@
 <span class="cstat-no" title="statement not covered" >        getPlaces()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handleAddPlace = (newPlace: PlaceInterface) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setPlaces([newPlace, ...places])</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        getPlaces()</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
@@ -235,15 +254,17 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;PlacesList</span>
 <span class="cstat-no" title="statement not covered" >                gridLayout</span>
-<span class="cstat-no" title="statement not covered" >                places={places}</span>
+<span class="cstat-no" title="statement not covered" >                places={places as any}</span>
 <span class="cstat-no" title="statement not covered" >                loading={loading}</span>
 <span class="cstat-no" title="statement not covered" >                //These next two props are only for business accounts</span>
 <span class="cstat-no" title="statement not covered" >                deletePlace={handleDeletePlace}</span>
 <span class="cstat-no" title="statement not covered" >                fetchPlaces={getPlaces}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;ParentModal isOpen={create} handleClose={closeShowNewPlaceForm}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;CreatePlacesItem handleCloseModal={closeShowNewPlaceForm} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;CreatePlacesItem</span>
+<span class="cstat-no" title="statement not covered" >                    handleAddPlace={handleAddPlace}</span>
+<span class="cstat-no" title="statement not covered" >                    handleCloseModal={closeShowNewPlaceForm}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
@@ -256,7 +277,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-20T16:06:25.245Z
+                at 2023-07-21T11:03:49.277Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
