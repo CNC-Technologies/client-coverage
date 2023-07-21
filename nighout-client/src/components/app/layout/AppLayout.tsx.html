@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/192</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/192</span>
             </div>
         
             
@@ -238,7 +238,41 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -436,8 +470,9 @@
 <span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >// import { ToastContext } from '@/components/context-containers/Toast.context'</span>
-<span class="cstat-no" title="statement not covered" >import { appHomeLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import { appHomeLink, businessPlacesLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
@@ -524,15 +559,31 @@
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {configKey === 'business' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='hidden-md-row justify-end py-3 px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;Link href={appHomeLink}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='col items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;Avatar img={user?.picture} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {/* &lt;div className='font-bold text-sm text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='hidden-md-row py-3 px-5 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {router.pathname.includes(</span>
+<span class="cstat-no" title="statement not covered" >                                        businessPlacesLink,</span>
+<span class="cstat-no" title="statement not covered" >                                    ) &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                        router.pathname !==</span>
+<span class="cstat-no" title="statement not covered" >                                            businessPlacesLink &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;Link href={businessPlacesLink}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='row items-center space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;ChevronLeftIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;h2 className='text-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        Settings</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;/h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        )}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='ml-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Link href={appHomeLink}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='col items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;Avatar img={user?.picture} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {/* &lt;div className='font-bold text-sm text-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                @{user?.username}</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
@@ -595,7 +646,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-21T14:57:25.270Z
+                at 2023-07-21T16:10:56.441Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
