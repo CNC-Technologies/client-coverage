@@ -747,7 +747,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >                    await resolvedToken,</span>
 <span class="cstat-no" title="statement not covered" >                )({</span>
 <span class="cstat-no" title="statement not covered" >                    method: 'POST',</span>
-<span class="cstat-no" title="statement not covered" >                    url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                    url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >                    data,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
@@ -755,7 +755,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >                    await resolvedToken,</span>
 <span class="cstat-no" title="statement not covered" >                )({</span>
 <span class="cstat-no" title="statement not covered" >                    method: 'POST',</span>
-<span class="cstat-no" title="statement not covered" >                    url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                    url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >                    data,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -797,7 +797,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >                await resolvedToken,</span>
 <span class="cstat-no" title="statement not covered" >            )({</span>
 <span class="cstat-no" title="statement not covered" >                method: 'DELETE',</span>
-<span class="cstat-no" title="statement not covered" >                url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >                data,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
@@ -837,7 +837,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >                await resolvedToken,</span>
 <span class="cstat-no" title="statement not covered" >            )({</span>
 <span class="cstat-no" title="statement not covered" >                method: 'PATCH',</span>
-<span class="cstat-no" title="statement not covered" >                url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >                data,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
@@ -877,7 +877,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >                await resolvedToken,</span>
 <span class="cstat-no" title="statement not covered" >            )({</span>
 <span class="cstat-no" title="statement not covered" >                method: 'PUT',</span>
-<span class="cstat-no" title="statement not covered" >                url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >                data,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
@@ -918,7 +918,7 @@ export default function useSecureRequest(url: string = '') {
 <span class="cstat-no" title="statement not covered" >            setLoading(true)</span>
 <span class="cstat-no" title="statement not covered" >            const response = await AxiosService.secureInstance(resolvedToken)({</span>
 <span class="cstat-no" title="statement not covered" >                method: 'GET',</span>
-<span class="cstat-no" title="statement not covered" >                url: resolvedUrl,</span>
+<span class="cstat-no" title="statement not covered" >                url: `/api/v1/${resolvedUrl}`,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
@@ -958,7 +958,7 @@ export default function useSecureRequest(url: string = '') {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-25T13:38:18.192Z
+                at 2023-07-25T15:26:10.083Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

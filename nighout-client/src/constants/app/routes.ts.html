@@ -185,7 +185,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { baseURL } from '@/constants/env.config'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import { baseURL } from '@/constants/env.config'
 &nbsp;
 export const tokenRoute = '/api/auth/token'
 export const userRoute = '/users/'
@@ -193,29 +193,29 @@ export const userDataRoute = (<span class="fstat-no" title="function not covered
 export const appDataRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/users/${id}/appdata`</span>
 &nbsp;
 //Posts Routes
-export const postsRoute = `${baseURL}/users/posts`
-export const createPostRoute = `${baseURL}/posts/`
-export const editPostRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `${baseURL}/posts/${id}`</span>
-export const commentsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `${baseURL}/comments/${id}`</span>
-export const deletePostRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `${baseURL}/posts/${id}`</span>
+export const postsRoute = `/users/posts`
+export const createPostRoute = `/posts/`
+export const editPostRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/posts/${id}`</span>
+export const commentsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/comments/${id}`</span>
+export const deletePostRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/posts/${id}`</span>
 &nbsp;
 //Places Routes
 export const placesRoute = <span class="fstat-no" title="function not covered" >(queryTitle: string, queryValue: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/places?${queryTitle}=${queryValue}`</span>
 export const allPlacesRoute = '/places/all'
-export const likePlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt; `likes/place/${placeID}`</span>
+export const likePlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt; `/likes/place/${placeID}`</span>
 export const checkLikePlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `likes/place/check/${placeID}`</span>
+<span class="cstat-no" title="statement not covered" >    `/likes/place/check/${placeID}`</span>
 export const followPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt; `follow/place/${placeID}`</span>
 export const unFollowPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `unfollow/place/${placeID}`</span>
+<span class="cstat-no" title="statement not covered" >    `/unfollow/place/${placeID}`</span>
 export const checkFollowPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `follow/check/place/${placeID}`</span>
+<span class="cstat-no" title="statement not covered" >    `/follow/check/place/${placeID}`</span>
 &nbsp;
 export const createReviewRoute = <span class="fstat-no" title="function not covered" >(type: string, id: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `reviews/?type=${type}&amp;id=${id}`</span>
+<span class="cstat-no" title="statement not covered" >    `/reviews/?type=${type}&amp;id=${id}`</span>
 export const reviewsRoute = <span class="fstat-no" title="function not covered" >(type: string, id: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `reviews/${id}/by-type/?type=${type}`</span>
+<span class="cstat-no" title="statement not covered" >    `/reviews/${id}/by-type/?type=${type}`</span>
 &nbsp;
 // ---- BUSINESS ROUTES
 export const businessRoute = '/business/'
@@ -224,28 +224,28 @@ export const bizEventsPlacesRoute = <span class="fstat-no" title="function not c
 <span class="cstat-no" title="statement not covered" >    `/business/${business_id}/associated?relatedType=${type}`</span>
 //Places Routes
 export const newPlace = (<span class="fstat-no" title="function not covered" >business_id: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/places/?business_id=${business_id}`</span>
-export const placeRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `${baseURL}/places/${id}` </span>//To delete, get and update
+<span class="cstat-no" title="statement not covered" >    `/places/?business_id=${business_id}`</span>
+export const placeRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/places/${id}` </span>//To delete, get and update
 export const associatePlaceFaq = <span class="fstat-no" title="function not covered" >(faqID: string, placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/faq/${faqID}/place/${placeID}`</span>
+<span class="cstat-no" title="statement not covered" >    `/faq/${faqID}/place/${placeID}`</span>
 &nbsp;
 // Events Routes
 export const newEvent = (<span class="fstat-no" title="function not covered" >businessId: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/events/?businessId=${businessId}`</span>
+<span class="cstat-no" title="statement not covered" >    `/events/?businessId=${businessId}`</span>
 &nbsp;
 // Team Member
 export const teamMemberRoute = <span class="fstat-no" title="function not covered" >(businessId: string, userId: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/business/${businessId}/team-members/${userId}`</span>
+<span class="cstat-no" title="statement not covered" >    `/business/${businessId}/team-members/${userId}`</span>
 export const teamMembersRoute = (<span class="fstat-no" title="function not covered" >businessId: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/business/${businessId}/team-members`</span>
+<span class="cstat-no" title="statement not covered" >    `/business/${businessId}/team-members`</span>
 &nbsp;
 // Search Routes
 export const searchRoute = <span class="fstat-no" title="function not covered" >(type: string, text: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `${baseURL}/search/db?type=${type}&amp;searchText=${text}`</span>
+<span class="cstat-no" title="statement not covered" >    `/search/db?type=${type}&amp;searchText=${text}`</span>
 &nbsp;
 //Faqs
-export const businessFaqsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `${baseURL}/faq/business/${id}`</span>
-export const faqRoute = (<span class="fstat-no" title="function not covered" >faqID: string) =&gt; `${baseURL}/faq/${faqID}`</span>
+export const businessFaqsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/faq/business/${id}`</span>
+export const faqRoute = (<span class="fstat-no" title="function not covered" >faqID: string) =&gt; `/faq/${faqID}`</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -253,7 +253,7 @@ export const faqRoute = (<span class="fstat-no" title="function not covered" >fa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-25T13:38:18.192Z
+                at 2023-07-25T15:26:10.083Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
