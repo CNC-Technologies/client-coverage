@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.86% </span>
+                <span class="strong">79.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>103/134</span>
+                <span class='fraction'>99/124</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">80.95% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/18</span>
+                <span class='fraction'>17/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.86% </span>
+                <span class="strong">79.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>103/134</span>
+                <span class='fraction'>99/124</span>
             </div>
         
             
@@ -187,19 +187,7 @@
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L125'></a><a href='#L125'>125</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -214,16 +202,16 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -252,7 +240,6 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -307,13 +294,6 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -335,29 +315,27 @@
 &nbsp;
 import Avatar from '@/components/app/simple/Avatar'
 import RatingStars from '@/components/ratingStars'
-import {
-    GridSolidIcon,
-    ThumbsDownOutlineIcon,
-    ThumbsUpOutlineIcon,
-} from '@/constants/icons/icons'
+import { GridSolidIcon } from '@/constants/icons/icons'
 import Button from '@/components/FormComponents/button'
+import LikeItem from '@/components/app/compound/PlaceDetails/Reviews/LikeItem'
+import DislikeItem from '@/components/app/compound/PlaceDetails/Reviews/DislikeItem'
 &nbsp;
 const Image = dynamic(import('next/image'<span class="fstat-no" title="function not covered" >))</span>
 &nbsp;
 export default function SingleReviewItem({ review }) {
     const gridClass = (index: number) =&gt; {
         let style: any
-        if (review?.imagesUrl<span class="branch-0 cbranch-no" title="branch not covered" >?.length)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            if (review?.imagesUrl?.length &gt;= 3) {</span>
-<span class="cstat-no" title="statement not covered" >                style = `${index === 0 ? 'row-span-2' : 'col-span-2'}`</span>
-<span class="cstat-no" title="statement not covered" >            } else if (review?.imagesUrl?.length === 2) {</span>
+        if (review?.edges?.medias?.length) {
+            if (review?.edges?.medias?.length &gt;= 3) {
+                style = `${index === 0 ? 'row-span-2' : 'col-span-2'}`
+            }<span class="branch-0 cbranch-no" title="branch not covered" > else if (review?.edges?.medias?.length === 2) {</span>
 <span class="cstat-no" title="statement not covered" >                style = `row-span-2`</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >                style = `w-full`</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return style</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+&nbsp;
+            return style
+        }
     }
 &nbsp;
     function formatDate(dateString: string) {
@@ -377,16 +355,15 @@ export default function SingleReviewItem({ review }) {
                 &lt;/div&gt;
                 &lt;div className='grid gap-2 w-full'&gt;
                     &lt;p className='font-semibold'&gt;
-                        {review?.edges?.user?.username}
+                        @{review?.edges?.user?.username}
                     &lt;/p&gt;
                     &lt;div className='flex flex-wrap gap-2 items-center'&gt;
                         &lt;RatingStars rating={review?.score} /&gt;
-                        &lt;p&gt;Reviewed {formatDate(review?.createdAt)}&lt;/p&gt;
                     &lt;/div&gt;
                     {/* &lt;h3 className='text-lg font-medium'&gt;{review.topic}&lt;/h3&gt; */}
                     &lt;p&gt;{review?.content}&lt;/p&gt;
 &nbsp;
-                    {review?.edges?.medias?.length !== 0 &amp;&amp; (
+                    {review?.edges?.medias &amp;&amp; (
                         &lt;div
                             className={`flex overflow-auto h-60 w-full ${
                                 review?.edges?.medias?.length === 1
@@ -407,7 +384,7 @@ export default function SingleReviewItem({ review }) {
                                             &lt;Image
                                                 src={image?.URL}
                                                 alt={'Review'}
-                                                priority
+                                                priority={true}
                                                 quality={75}
                                                 width={100}
                                                 height={100}
@@ -443,21 +420,14 @@ export default function SingleReviewItem({ review }) {
                         &lt;/div&gt;
                     )}
 &nbsp;
-                    &lt;div className='flex space-x-4 font-light text-lg'&gt;
-                        &lt;div className='row items-center space-x-2'&gt;
-                            &lt;ThumbsUpOutlineIcon
-                                data-testid='thumbs-up-icon'
-                                className='text-green-500 font-light'
-                            /&gt;
-                            &lt;p&gt;10&lt;/p&gt;
+                    &lt;div className='flex justify-between items-center'&gt;
+                        &lt;div className='flex space-x-4 font-light text-lg'&gt;
+                            &lt;LikeItem reviewId={review?.id} /&gt;
+                            &lt;DislikeItem reviewId={review?.id} /&gt;
                         &lt;/div&gt;
-                        &lt;div className='row items-center space-x-2'&gt;
-                            &lt;ThumbsDownOutlineIcon
-                                data-testid='thumbs-down-icon'
-                                className='text-red-500 font-light'
-                            /&gt;
-                            &lt;p&gt;3&lt;/p&gt;
-                        &lt;/div&gt;
+                        &lt;p className='text-sm opacity-70'&gt;
+                            {formatDate(review?.createdAt)}
+                        &lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -472,7 +442,7 @@ export default function SingleReviewItem({ review }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T12:33:47.272Z
+                at 2023-07-26T15:45:49.411Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
