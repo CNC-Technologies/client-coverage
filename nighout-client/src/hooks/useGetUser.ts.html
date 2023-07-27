@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/80</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/80</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -135,15 +135,7 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -215,20 +207,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import axios from 'axios'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" >import axios from 'axios'</span>
 <span class="cstat-no" title="statement not covered" >import { useEffect } from 'react'</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useDispatch, useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// import { userRoute } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import { userKey } from '@/constants/cookieKeys.constant'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest, { getToken } from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
@@ -236,7 +219,13 @@
 <span class="cstat-no" title="statement not covered" >import { setUser } from '@/store/slices/user.slice'</span>
 <span class="cstat-no" title="statement not covered" >import { baseURL } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function useGetUser() {</span>
+<span class="cstat-no" title="statement not covered" >interface generalHookArg {</span>
+<span class="cstat-no" title="statement not covered" >    customErrorResponse: Function</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function useGetUser(</span>
+<span class="cstat-no" title="statement not covered" >    arg: generalHookArg | undefined = undefined,</span>
+<span class="cstat-no" title="statement not covered" >) {</span>
 <span class="cstat-no" title="statement not covered" >    const dispatch = useDispatch()</span>
 <span class="cstat-no" title="statement not covered" >    const { loading } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
@@ -244,8 +233,7 @@
 <span class="cstat-no" title="statement not covered" >    function setUserInfo(user) {</span>
 <span class="cstat-no" title="statement not covered" >        dispatch(setUser(user))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // async function fetchUserInfo(options = {}) {</span>
+<span class="cstat-no" title="statement not covered" >  </span>
 <span class="cstat-no" title="statement not covered" >    async function fetchUserInfo() {</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            const fetchedUser = await axios.get(`${baseURL}/users/`, {</span>
@@ -256,17 +244,9 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            return fetchedUser.data</span>
 <span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >            // Handle error</span>
-<span class="cstat-no" title="statement not covered" >            // console.error('Error fetching reviews:', error)</span>
+<span class="cstat-no" title="statement not covered" >            arg &amp;&amp; arg?.customErrorResponse()</span>
+<span class="cstat-no" title="statement not covered" >            return null</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // const fetchedUser = await get({ ...options, url: userRoute })</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(fetchedUser)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // if (!fetchedUser.success) {</span>
-<span class="cstat-no" title="statement not covered" >        //     return null</span>
-<span class="cstat-no" title="statement not covered" >        // }</span>
-<span class="cstat-no" title="statement not covered" >        // return fetchedUser.data</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function savedInfoIsChanged(savedInfo, fetchedInfo) {</span>
@@ -293,10 +273,6 @@
 <span class="cstat-no" title="statement not covered" >        return true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // getUser()</span>
-<span class="cstat-no" title="statement not covered" >    }, [])</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        getUser,</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
@@ -310,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T14:41:49.137Z
+                at 2023-07-27T14:57:26.133Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
