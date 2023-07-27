@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/284</span>
+                <span class='fraction'>0/283</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/284</span>
+                <span class='fraction'>0/283</span>
             </div>
         
             
@@ -346,9 +346,7 @@
 <a name='L281'></a><a href='#L281'>281</a>
 <a name='L282'></a><a href='#L282'>282</a>
 <a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a>
-<a name='L285'></a><a href='#L285'>285</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L284'></a><a href='#L284'>284</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -636,7 +634,7 @@
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
-<span class="cstat-no" title="statement not covered" >import { useContext, useEffect } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useContext } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
 <span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
@@ -695,8 +693,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { editPlace } = router.query</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleLikePlace, handleUnlikePlace, checkLiked, likedByMe } =</span>
-<span class="cstat-no" title="statement not covered" >        usePlaces()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleLikePlace, handleUnlikePlace } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function openShowNewPlaceForm() {</span>
 <span class="cstat-no" title="statement not covered" >        //Add the query parameter</span>
@@ -733,10 +730,6 @@
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        checkLiked(place?.id)</span>
-<span class="cstat-no" title="statement not covered" >    }, [place])</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='relative flex flex-col w-full h-full cursor-pointer places rounded-xl bg-white placeCard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[13rem] mobile:h-[16rem] xmd:h-[15rem]'&gt;</span>
@@ -757,7 +750,11 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    {configKey !== 'business' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;LikeItem</span>
-<span class="cstat-no" title="statement not covered" >                            likedByMe={likedByMe}</span>
+<span class="cstat-no" title="statement not covered" >                            likedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                                place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                    ? place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                    : false</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                            likeAction={() =&gt; handleLikePlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                            unlikeAction={() =&gt; handleUnlikePlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
@@ -922,7 +919,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T12:21:48.395Z
+                at 2023-07-27T14:41:49.137Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

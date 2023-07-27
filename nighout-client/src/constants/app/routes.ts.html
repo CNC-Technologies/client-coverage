@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.68% </span>
+                <span class="strong">74.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/64</span>
+                <span class='fraction'>49/66</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/25</span>
+                <span class='fraction'>0/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.68% </span>
+                <span class="strong">74.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/64</span>
+                <span class='fraction'>49/66</span>
             </div>
         
             
@@ -127,7 +127,9 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -147,17 +149,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -194,7 +198,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import { baseURL } from '@/constants/env.config'
 &nbsp;
 export const tokenRoute = '/api/auth/token'
-export const userRoute = '/users/'
+export const userRoute = 'users'
 export const userDataRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/users/${id}/metadata`</span>
 export const appDataRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/users/${id}/appdata`</span>
 &nbsp;
@@ -210,18 +214,20 @@ export const placesRoute = <span class="fstat-no" title="function not covered" >
 <span class="cstat-no" title="statement not covered" >    `/places?${queryTitle}=${queryValue}`</span>
 export const allPlacesRoute = '/places/all'
 export const likePlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt; `/likes/place/${placeID}`</span>
-export const checkLikePlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `/likes/place/check/${placeID}`</span>
+&nbsp;
 export const followPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt; `follow/place/${placeID}`</span>
 export const unFollowPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/unfollow/place/${placeID}`</span>
-export const checkFollowPlaceRoute = (<span class="fstat-no" title="function not covered" >placeID: string) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    `/follow/check/place/${placeID}`</span>
 &nbsp;
 export const createReviewRoute = <span class="fstat-no" title="function not covered" >(type: string, id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/reviews/?type=${type}&amp;id=${id}`</span>
-export const reviewsRoute = (type: string, id: string) =&gt;
-    `/reviews/${id}/by-type/?type=${type}&amp;limit=6`
+export const reviewsRoute = <span class="fstat-no" title="function not covered" >(</span>
+<span class="cstat-no" title="statement not covered" >    type: string,</span>
+<span class="cstat-no" title="statement not covered" >    id: string,</span>
+<span class="cstat-no" title="statement not covered" >    nextPageToken: string = '',</span>
+<span class="cstat-no" title="statement not covered" >    limit: number = 6,</span>
+<span class="cstat-no" title="statement not covered" >) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/reviews/${id}/by-type/?type=${type}&amp;limit=${limit}&amp;nextPageToken=${nextPageToken}`</span>
 export const likeReviewRoute = (<span class="fstat-no" title="function not covered" >reviewID: string) =&gt; `reviews/${reviewID}/like`</span>
 export const dislikeReviewRoute = (<span class="fstat-no" title="function not covered" >reviewID: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `reviews/${reviewID}/dislike`</span>
@@ -262,7 +268,7 @@ export const faqRoute = (<span class="fstat-no" title="function not covered" >fa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T12:21:48.395Z
+                at 2023-07-27T14:41:49.137Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/Homepage/sectionHeading.jsx</title>
+    <title>Code coverage report for nighout-client/src/interfaces/places/review.interface.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Homepage</a> sectionHeading.jsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/interfaces/places</a> review.interface.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
@@ -84,7 +84,16 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -105,26 +114,44 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >export default function SectionHeading({</span></span></span>
-<span class="cstat-no" title="statement not covered" >    heading,</span>
-<span class="cstat-no" title="statement not covered" >    subtext,</span>
-<span class="cstat-no" title="statement not covered" >    removeShadow,</span>
-<span class="cstat-no" title="statement not covered" >    right = false,</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className={right ? 'text-right' : 'text-left'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;h3</span>
-<span class="cstat-no" title="statement not covered" >                className={`text-4xl max-xmd:text-3xl font-semibold ${</span>
-<span class="cstat-no" title="statement not covered" >                    !removeShadow &amp;&amp; 'text-shadow-black'</span>
-<span class="cstat-no" title="statement not covered" >                } `}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {heading}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;p className='mt-3 text-xl font-medium max-md:text-lg max-xmd:text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {subtext}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >export interface Review {</span></span></span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    score: number</span>
+<span class="cstat-no" title="statement not covered" >    content: string</span>
+<span class="cstat-no" title="statement not covered" >    createdAt: string</span>
+<span class="cstat-no" title="statement not covered" >    edges: {</span>
+<span class="cstat-no" title="statement not covered" >        user: User</span>
+<span class="cstat-no" title="statement not covered" >        medias: Media[]</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >interface User {</span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    auth0_id: string</span>
+<span class="cstat-no" title="statement not covered" >    name: string</span>
+<span class="cstat-no" title="statement not covered" >    picture: string</span>
+<span class="cstat-no" title="statement not covered" >    cover_image: string</span>
+<span class="cstat-no" title="statement not covered" >    username: string</span>
+<span class="cstat-no" title="statement not covered" >    bio: string</span>
+<span class="cstat-no" title="statement not covered" >    edges: {} // You can define additional properties here if needed</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >interface Media {</span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    URL: string</span>
+<span class="cstat-no" title="statement not covered" >    MediaType: string</span>
+<span class="cstat-no" title="statement not covered" >    CreatedAt: string</span>
+<span class="cstat-no" title="statement not covered" >    UpdatedAt: string</span>
+<span class="cstat-no" title="statement not covered" >    edges: {} // You can define additional properties here if needed</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -132,11 +132,7 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -205,13 +201,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { IconButton } from '@/components/FormComponents/button'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import FollowButton from '@/components/app/simple/FollowButton'</span>
 <span class="cstat-no" title="statement not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span>
 <span class="cstat-no" title="statement not covered" >import OverlappingAvatars from '@/components/app/simple/OverlappingAvatars'</span>
@@ -226,18 +216,8 @@
 <span class="cstat-no" title="statement not covered" >        handleUnlikePlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnfollowPlace,</span>
-<span class="cstat-no" title="statement not covered" >        checkLiked,</span>
-<span class="cstat-no" title="statement not covered" >        checkFollow,</span>
-<span class="cstat-no" title="statement not covered" >        likedByMe,</span>
-<span class="cstat-no" title="statement not covered" >        followedByMe,</span>
 <span class="cstat-no" title="statement not covered" >    } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // console.log(likedByMe)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        checkLiked(place?.id)</span>
-<span class="cstat-no" title="statement not covered" >        checkFollow(place?.id)</span>
-<span class="cstat-no" title="statement not covered" >    }, [place])</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-between '&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
@@ -258,7 +238,11 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex space-x-3 items-center h-fit'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;LikeItem</span>
-<span class="cstat-no" title="statement not covered" >                        likedByMe={likedByMe}</span>
+<span class="cstat-no" title="statement not covered" >                        likedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                            place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                ? place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                : false</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        likeAction={() =&gt; handleLikePlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                        unlikeAction={() =&gt; handleUnlikePlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
@@ -274,7 +258,11 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/ShareButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;FollowButton</span>
-<span class="cstat-no" title="statement not covered" >                    followedByMe={followedByMe}</span>
+<span class="cstat-no" title="statement not covered" >                    followedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                        place?.followedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                            ? place?.followedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                            : false</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                    followAction={() =&gt; handleFollowPlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                    unFollowAction={() =&gt; handleUnfollowPlace(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -289,7 +277,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T12:21:48.395Z
+                at 2023-07-27T14:41:49.137Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
