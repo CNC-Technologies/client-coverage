@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/pages/app/reservations.tsx</title>
+    <title>Code coverage report for nighout-client/src/pages/business/places/[details]/dashboard/reviews.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/pages/app</a> reservations.tsx</h1>
+        <h1><a href="../../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/pages/business/places/[details]/dashboard</a> reviews.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -113,8 +113,7 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,56 +163,54 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import ReviewsList from '@/components/app/compound/PlaceDetails/Reviews/ReviewsList'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import DashboardItemCard from '@/components/business/compound/business/DashboardItemCard'</span>
+<span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
+<span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/ratingStars'</span>
+<span class="cstat-no" title="statement not covered" >import { PeopleSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import CalendarItem from '@/components/app/complex/CalendarItem'</span>
-<span class="cstat-no" title="statement not covered" >import ReservationEventsSection from '@/components/app/compound/reservations/events/EventSection'</span>
-<span class="cstat-no" title="statement not covered" >import ReservationPlacesSection from '@/components/app/compound/reservations/events/PlaceSection'</span>
-<span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
-<span class="cstat-no" title="statement not covered" >import { reservationTabs } from '@/constants/app/Settings/TabsList'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ReservationsPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
-<span class="cstat-no" title="statement not covered" >    const [dateToFetch, setDateToFetch] = useState(new Date())</span>
+<span class="cstat-no" title="statement not covered" >export default function Reviews() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout pageTitle={'Reservations'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' h-[20vh] md:h-[20vh] '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                    unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                    src={</span>
-<span class="cstat-no" title="statement not covered" >                        'https://res.cloudinary.com/placio/image/upload/v1687789425/user-media-content/reservations_th01sb.png'</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    alt={'Places featured image'}</span>
-<span class="cstat-no" title="statement not covered" >                    priority={true}</span>
-<span class="cstat-no" title="statement not covered" >                    quality={75}</span>
-<span class="cstat-no" title="statement not covered" >                    width={100}</span>
-<span class="cstat-no" title="statement not covered" >                    height={100}</span>
-<span class="cstat-no" title="statement not covered" >                    className='object-cover object-center w-full h-full'</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='dashboard'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-2 mb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white dark:bg-dark rounded-lg row justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 border-b'&gt;Reviews&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-44 h-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {/* &lt;SelectField options={[{ value: 'Filter' }]} /&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                    tabs={reservationTabs}</span>
-<span class="cstat-no" title="statement not covered" >                    setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                    activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 pr-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardItemCard</span>
+<span class="cstat-no" title="statement not covered" >                        card={{</span>
+<span class="cstat-no" title="statement not covered" >                            label: 'Total Reviews',</span>
+<span class="cstat-no" title="statement not covered" >                            digit: '10.0k',</span>
+<span class="cstat-no" title="statement not covered" >                            icon: PeopleSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 px-5 border-x col justify-between border-black/20'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='font-bold'&gt;Average Rating&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row items-center space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-3xl'&gt;4.0&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;RatingStars rating={3} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Average rating for this month</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 pl-5 '&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;CalendarItem</span>
-<span class="cstat-no" title="statement not covered" >                activeDate={dateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >                setActiveDate={setDateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {activeTab === 0 &amp;&amp; &lt;ReservationEventsSection /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                {activeTab === 1 &amp;&amp; &lt;ReservationPlacesSection /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='border-b border-black/40 pt-4 pb-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    User Reviews</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ReviewsList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -225,14 +222,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-07-31T17:40:23.931Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../../../../../sorter.js"></script>
+        <script src="../../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
