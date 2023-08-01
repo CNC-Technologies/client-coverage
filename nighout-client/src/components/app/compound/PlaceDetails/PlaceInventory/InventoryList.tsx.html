@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/98</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/98</span>
             </div>
         
             
@@ -139,7 +139,51 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -222,22 +266,33 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { foodMenu } from '@/constants/MockData/MenuList'</span>
-<span class="cstat-no" title="statement not covered" >import InventoryCard from '@/components/app/compound/PlaceDetails/PlaceInventory/InventoryCard'</span>
 <span class="cstat-no" title="statement not covered" >import { placeBusinessDetail, placeDetail } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
-<span class="cstat-no" title="statement not covered" >export default function InventoryList({ gridLayout }) {</span>
+<span class="cstat-no" title="statement not covered" >import MenuList from '@/components/app/compound/PlaceDetails/PlaceInventory/menu/MenuList'</span>
+<span class="cstat-no" title="statement not covered" >import RoomList from '@/components/app/compound/PlaceDetails/PlaceInventory/rooms/RoomList'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" >import SubscriptionList from '@/components/app/compound/PlaceDetails/PlaceInventory/subscriptions/SubscriptionList'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >interface InventoryListProps {</span>
+<span class="cstat-no" title="statement not covered" >    gridLayout?: boolean</span>
+<span class="cstat-no" title="statement not covered" >    place?: PlaceProps</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function InventoryList({</span>
+<span class="cstat-no" title="statement not covered" >    gridLayout = false,</span>
+<span class="cstat-no" title="statement not covered" >    place,</span>
+<span class="cstat-no" title="statement not covered" >}: InventoryListProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const placeName = router.query.details as string</span>
+<span class="cstat-no" title="statement not covered" >    const placeID = router.query.details as string</span>
 <span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Place details url based on a user being logged in and based on the configKey</span>
 <span class="cstat-no" title="statement not covered" >    const detailsLink = !user</span>
-<span class="cstat-no" title="statement not covered" >        ? `/places/${placeName}`</span>
+<span class="cstat-no" title="statement not covered" >        ? `/places/${placeID}`</span>
 <span class="cstat-no" title="statement not covered" >        : configKey === 'business'</span>
-<span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${placeName}`</span>
-<span class="cstat-no" title="statement not covered" >        : `${placeDetail}${placeName}`</span>
+<span class="cstat-no" title="statement not covered" >        ? `${placeBusinessDetail}${placeID}`</span>
+<span class="cstat-no" title="statement not covered" >        : `${placeDetail}${placeID}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const horizontalClass =</span>
 <span class="cstat-no" title="statement not covered" >        'row space-x-3 desktop:space-x-5 overflow-x-scroll  scroll-smooth '</span>
@@ -245,18 +300,35 @@
 <span class="cstat-no" title="statement not covered" >    const gridClass =</span>
 <span class="cstat-no" title="statement not covered" >        'grid grid-cols-1 lgMobile:grid-cols-2 md:grid-cols-2 min-[1260px]:grid-cols-3 min-[1800px]:grid-cols-4 gap-5'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const setInventoryHeading = (type: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        switch (type) {</span>
+<span class="cstat-no" title="statement not covered" >            case 'Restaurants/Eateries':</span>
+<span class="cstat-no" title="statement not covered" >                return 'Menu'</span>
+<span class="cstat-no" title="statement not covered" >            case 'Hospitality':</span>
+<span class="cstat-no" title="statement not covered" >                return 'Rooms'</span>
+<span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
+<span class="cstat-no" title="statement not covered" >                return 'Drinks'</span>
+<span class="cstat-no" title="statement not covered" >            case 'Recreation &amp; Fitness':</span>
+<span class="cstat-no" title="statement not covered" >                return 'Subscriptions'</span>
+<span class="cstat-no" title="statement not covered" >            default:</span>
+<span class="cstat-no" title="statement not covered" >                return 'Inventory'</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='w-full my-5 eventsList'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {!gridLayout &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='text-lg font-medium mobile:text-xl mobile:font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Inventory</span>
+<span class="cstat-no" title="statement not covered" >                            {setInventoryHeading(place?.type as string)}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`${detailsLink}/inventory`}</span>
+<span class="cstat-no" title="statement not covered" >                        href={`${detailsLink}/${setInventoryHeading(</span>
+<span class="cstat-no" title="statement not covered" >                            place?.type as string,</span>
+<span class="cstat-no" title="statement not covered" >                        )}`}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-text'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span&gt;See more&lt;/span&gt;</span>
@@ -270,18 +342,12 @@
 <span class="cstat-no" title="statement not covered" >                        gridLayout ? gridClass : horizontalClass</span>
 <span class="cstat-no" title="statement not covered" >                    }  py-2 md:py-4`}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {foodMenu.map((food, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                                    !gridLayout ? 'min-w-[230px]' : 'w-full'</span>
-<span class="cstat-no" title="statement not covered" >                                } `}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;InventoryCard inventory={food} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Restaurants/Eateries' &amp;&amp; &lt;MenuList /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Hospitality' &amp;&amp; &lt;RoomList /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Bars' &amp;&amp; &lt;MenuList /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Recreation &amp; Fitness' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SubscriptionList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -298,7 +364,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-31T17:40:23.931Z
+                at 2023-08-01T16:17:53.935Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
