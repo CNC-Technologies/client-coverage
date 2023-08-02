@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/66</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/66</span>
             </div>
         
             
@@ -113,7 +113,23 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -163,20 +179,52 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import ReviewsList from '@/components/app/compound/PlaceDetails/Reviews/ReviewsList'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >//</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import ReviewsList from '@/components/app/compound/PlaceDetails/Reviews/ReviewsList'</span>
+<span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import DashboardItemCard from '@/components/business/compound/business/DashboardItemCard'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
 <span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/ratingStars'</span>
 <span class="cstat-no" title="statement not covered" >import { PeopleSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const timeFrameTabs = [</span>
+<span class="cstat-no" title="statement not covered" >    { label: 'Last 24 hours' },</span>
+<span class="cstat-no" title="statement not covered" >    { label: 'Last week' },</span>
+<span class="cstat-no" title="statement not covered" >    { label: 'Last month' },</span>
+<span class="cstat-no" title="statement not covered" >    { label: 'Last year' },</span>
+<span class="cstat-no" title="statement not covered" >]</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Reviews() {</span>
+<span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='dashboard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-2 mb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white dark:bg-dark rounded-lg row justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white dark:bg-dark rounded-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 border-b'&gt;Reviews&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-44 h-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {/* &lt;SelectField options={[{ value: 'Filter' }]} /&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 text-sm font-base'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                            tabs={timeFrameTabs}</span>
+<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -220,7 +268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-01T21:40:39.051Z
+                at 2023-08-02T18:00:47.871Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
