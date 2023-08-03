@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -122,11 +122,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -185,44 +181,39 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQuery } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    allPlacesRoute,</span>
 <span class="cstat-no" title="statement not covered" >    followPlaceRoute,</span>
 <span class="cstat-no" title="statement not covered" >    likePlaceRoute,</span>
-<span class="cstat-no" title="statement not covered" >    placesRoute,</span>
+<span class="cstat-no" title="statement not covered" >    // placesRoute,</span>
 <span class="cstat-no" title="statement not covered" >    unFollowPlaceRoute,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function usePlaces() {</span>
 <span class="cstat-no" title="statement not covered" >    const { get, loading, post, deleteReq } = useSecureRequest()</span>
-<span class="cstat-no" title="statement not covered" >    const [places, setPlaces] = useState([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const getPlaces = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const res = await get({</span>
-<span class="cstat-no" title="statement not covered" >            url: allPlacesRoute,</span>
+<span class="cstat-no" title="statement not covered" >    const usePlacesList = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >            queryKey: ['allPlaces'],</span>
+<span class="cstat-no" title="statement not covered" >            queryFn: () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                get({</span>
+<span class="cstat-no" title="statement not covered" >                    url: allPlacesRoute,</span>
+<span class="cstat-no" title="statement not covered" >                }),</span>
+<span class="cstat-no" title="statement not covered" >            staleTime: 1000 * 60 * 5,</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // console.log(res)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >            setPlaces(res.data.data)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const getPlaceByQuery = async (queryTitle: string, queryValue: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const res = await get({ url: placesRoute(queryTitle, queryValue) })</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(res)</span>
-<span class="cstat-no" title="statement not covered" >        if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >            setPlaces(res.data)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    // * Not working yet...</span>
+<span class="cstat-no" title="statement not covered" >    // const getPlaceByQuery = async (queryTitle: string, queryValue: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     const res = await get({ url: placesRoute(queryTitle, queryValue) })</span>
+<span class="cstat-no" title="statement not covered" >    //     // console.log(res)</span>
+<span class="cstat-no" title="statement not covered" >    //     if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >    //         setPlaces(res.data)</span>
+<span class="cstat-no" title="statement not covered" >    //     }</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleLikePlace = async (placeID: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        await post({ url: likePlaceRoute(placeID) })</span>
@@ -241,11 +232,8 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" >        places,</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        getPlaces,</span>
-<span class="cstat-no" title="statement not covered" >        getPlaceByQuery,</span>
+<span class="cstat-no" title="statement not covered" >        usePlacesList,</span>
 <span class="cstat-no" title="statement not covered" >        handleLikePlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnlikePlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
@@ -259,7 +247,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-03T16:29:15.422Z
+                at 2023-08-03T16:29:27.418Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
