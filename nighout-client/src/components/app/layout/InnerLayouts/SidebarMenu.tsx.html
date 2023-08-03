@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/326</span>
+                <span class='fraction'>0/334</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/326</span>
+                <span class='fraction'>0/334</span>
             </div>
         
             
@@ -389,7 +389,23 @@
 <a name='L324'></a><a href='#L324'>324</a>
 <a name='L325'></a><a href='#L325'>325</a>
 <a name='L326'></a><a href='#L326'>326</a>
-<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -780,6 +796,11 @@
 <span class="cstat-no" title="statement not covered" >        handleClose()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const routeToPage = (link: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        router.push(link)</span>
+<span class="cstat-no" title="statement not covered" >        handleClose()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Logout function</span>
 <span class="cstat-no" title="statement not covered" >    const logout = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        router.push('/api/auth/logout')</span>
@@ -915,10 +936,9 @@
 <span class="cstat-no" title="statement not covered" >                                ? [userBusinesses[0], userBusinesses[1]]</span>
 <span class="cstat-no" title="statement not covered" >                                : userBusinesses</span>
 <span class="cstat-no" title="statement not covered" >                            ).map((item: any) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;BusinessListItem</span>
-<span class="cstat-no" title="statement not covered" >                                    key={item.id}</span>
-<span class="cstat-no" title="statement not covered" >                                    business={item}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div onClick={handleClose} key={item.id}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;BusinessListItem business={item} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            ))}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {userBusinesses.length &gt; 2 &amp;&amp; (</span>
@@ -964,9 +984,13 @@
 <span class="cstat-no" title="statement not covered" >                            return (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div key={idx}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    {item.link ? (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Link href={item.link}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                routeToPage(item.link)</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    ) : item.name === 'Logout' ? (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;div onClick={logout}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;LinkItem item={item} /&gt;</span>
@@ -1048,7 +1072,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-03T18:46:11.256Z
+                at 2023-08-03T19:57:24.045Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
