@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/122</span>
+                <span class='fraction'>0/135</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/122</span>
+                <span class='fraction'>0/135</span>
             </div>
         
             
@@ -185,7 +185,33 @@
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -318,31 +344,26 @@
 <span class="cstat-no" title="statement not covered" >import PlaceSettingsDetailsSkeleton from '@/components/skeletons/places/PlaceSettingsDetailsSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { businessHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { placeDetailsRoute } from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    businessPlaceSettingsDetails,</span>
+<span class="cstat-no" title="statement not covered" >    businessPlaceSettingsDetailsErrors,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/business/initialState'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import FormValidatorService from '@/services/FormValidator.service'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Index() {</span>
+<span class="cstat-no" title="statement not covered" >    const validator = new FormValidatorService()</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { get, loading } = useSecureRequest({ loadOnRender: true })</span>
-<span class="cstat-no" title="statement not covered" >    const [formState, setFormState] = useState({</span>
-<span class="cstat-no" title="statement not covered" >        name: '',</span>
-<span class="cstat-no" title="statement not covered" >        description: '',</span>
-<span class="cstat-no" title="statement not covered" >        location: '',</span>
-<span class="cstat-no" title="statement not covered" >        email: '',</span>
-<span class="cstat-no" title="statement not covered" >        phone: '',</span>
-<span class="cstat-no" title="statement not covered" >        website: '',</span>
-<span class="cstat-no" title="statement not covered" >        availability: {</span>
-<span class="cstat-no" title="statement not covered" >            sunday: '',</span>
-<span class="cstat-no" title="statement not covered" >            monday: '',</span>
-<span class="cstat-no" title="statement not covered" >            tuesday: '',</span>
-<span class="cstat-no" title="statement not covered" >            wednesday: '',</span>
-<span class="cstat-no" title="statement not covered" >            thursday: '',</span>
-<span class="cstat-no" title="statement not covered" >            friday: '',</span>
-<span class="cstat-no" title="statement not covered" >            saturday: '',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    const [formState, setFormState] = useState(businessPlaceSettingsDetails)</span>
+<span class="cstat-no" title="statement not covered" >    const [formErrors, setFormErrors] = useState(</span>
+<span class="cstat-no" title="statement not covered" >        businessPlaceSettingsDetailsErrors,</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSetForm = (key: string, value: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setFormState({ ...formState, [key]: value })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const getPlaceDetails = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!router?.query?.details) {</span>
 <span class="cstat-no" title="statement not covered" >            return router.push(businessHomeLink)</span>
@@ -352,6 +373,23 @@
 <span class="cstat-no" title="statement not covered" >        const res = await get({ url: placeDetailsRoute(businessId) })</span>
 <span class="cstat-no" title="statement not covered" >        if (res?.success) {</span>
 <span class="cstat-no" title="statement not covered" >            setFormState({ ...formState, ...res.data })</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const updatePlace = async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (</span>
+<span class="cstat-no" title="statement not covered" >            validator.validate({</span>
+<span class="cstat-no" title="statement not covered" >                validator: ['empty'],</span>
+<span class="cstat-no" title="statement not covered" >                data: formState.name,</span>
+<span class="cstat-no" title="statement not covered" >                setError: (err) =&gt; setFormErrors({ ...formErrors, name: err }),</span>
+<span class="cstat-no" title="statement not covered" >            }) &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            validator.validate({</span>
+<span class="cstat-no" title="statement not covered" >                validator: ['email'],</span>
+<span class="cstat-no" title="statement not covered" >                data: formState.email,</span>
+<span class="cstat-no" title="statement not covered" >                setError: (err) =&gt; setFormErrors({ ...formErrors, email: err }),</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        ) {</span>
+<span class="cstat-no" title="statement not covered" >            return true</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -376,6 +414,7 @@
 <span class="cstat-no" title="statement not covered" >                            onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                handleSetForm(e.target.name, e.target.value)</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            error={formErrors.name}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            label='Description'</span>
@@ -422,7 +461,7 @@
 <span class="cstat-no" title="statement not covered" >                            formState={formState}</span>
 <span class="cstat-no" title="statement not covered" >                            setFormState={handleSetForm}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Save&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button onClick={updatePlace}&gt;Save&lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -436,7 +475,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-03T12:48:48.238Z
+                at 2023-08-03T12:59:40.057Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
