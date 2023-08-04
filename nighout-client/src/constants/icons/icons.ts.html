@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>276/276</span>
+                <span class='fraction'>282/282</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>276/276</span>
+                <span class='fraction'>282/282</span>
             </div>
         
             
@@ -339,7 +339,19 @@
 <a name='L274'></a><a href='#L274'>274</a>
 <a name='L275'></a><a href='#L275'>275</a>
 <a name='L276'></a><a href='#L276'>276</a>
-<a name='L277'></a><a href='#L277'>277</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -643,6 +655,7 @@
 } from 'react-icons/ai'
 import {
     BiCopyright,
+    BiDetail,
     BiGift,
     BiLogOut,
     BiMailSend,
@@ -735,8 +748,10 @@ import {
     MdExplore,
     MdHotel,
     MdOutlineBusinessCenter,
+    MdOutlineInventory2,
     MdOutlineLocalBar,
     MdOutlineLocationOn,
+    MdOutlineNetworkWifi,
     MdOutlinePlaylistAdd,
     MdOutlineRssFeed,
     MdOutlineTakeoutDining,
@@ -758,37 +773,35 @@ import { SlVolume2, SlVolumeOff } from 'react-icons/sl'
 import { TbTruckDelivery } from 'react-icons/tb'
 &nbsp;
 export {
-    BiShoppingBag as ShoppingBagIcon,
-    FaBook as BookIcon,
     FiActivity as ActivityIcon,
     ImAddressBook as AddressBookSolidIcon,
+    MdOutlineNetworkWifi as AmenitiesIcon,
     AiFillApple as AppleSolidIcon,
     AiFillAppstore as AppstoreSolidIcon,
     BsArrowDownCircle as ArrowDownCircleOutlineIcon,
-    BsArrowRightCircle as ArrowRightCircleOutlineIcon,
     BsArrowLeftCircle as ArrowLeftCircleOutlineIcon,
+    BsArrowRightCircle as ArrowRightCircleOutlineIcon,
     AiOutlineArrowRight as ArrowRightOutlineIcon,
     BsArrowUpCircle as ArrowUpCircleOutlineIcon,
     MdSportsBar as BarIcon,
     RxHamburgerMenu as BarsIcon,
     AiOutlineBell as BellOutlineIcon,
     AiTwotoneBell as BellSolidIcon,
+    FaBook as BookIcon,
     BsBookmark as BookmarkOutlineIcon,
     MdOutlineBusinessCenter as BriefCaseOutlineIcon,
     BsCalendarDate as CalendarDateOutlineIcon,
     BsFillCalendarEventFill as CalendarSolidIcon,
     BsCamera as CameraOutlineIcon,
     AiOutlineShoppingCart as CartIcon,
-    BsGraphDownArrow as GraphDown,
-    BsGraphUpArrow as GraphUp,
     BiMailSend as ChannelIcon,
     BsChat as ChatOutlineIcon,
     BsChatFill as ChatSolidIcon,
     GoChecklist as CheckListIcon,
     FiChevronDown as ChevronDownIcon,
-    FiChevronUp as ChevronUpIcon,
     FiChevronLeft as ChevronLeftIcon,
     FiChevronRight as ChevronRightIcon,
+    FiChevronUp as ChevronUpIcon,
     BiTimeFive as ClockOutlineIcon,
     AiOutlineClose as CloseOutlineIcon,
     MdContentCopy as CopyOutlineIcon,
@@ -798,6 +811,7 @@ export {
     IoIosTrash as DeleteIcon,
     TbTruckDelivery as DeliveryIcon,
     BsPiggyBank as DepositIcon,
+    BiDetail as DetailsIcon,
     BsDot as DotSolidIcon,
     AiOutlineEdit as EditIcon,
     AiOutlineMail as EmailOutlineIcon,
@@ -814,7 +828,9 @@ export {
     BiGift as GiftOutlineIcon,
     IoLogoGooglePlaystore as GooglePlayStoreSolidIcon,
     FcGoogle as GoogleSolidIcon,
+    BsGraphDownArrow as GraphDown,
     GiHistogram as GraphIcon,
+    BsGraphUpArrow as GraphUp,
     RiGridFill as GridSolidIcon,
     CgGym as GymIcon,
     AiOutlineHeart as HeartOutlineIcon,
@@ -827,6 +843,7 @@ export {
     BsInfoCircle as InfoCircleOutlineIcon,
     RiInstagramFill as InstagramSolidIcon,
     AiFillInteraction as InteractionSolidIcon,
+    MdOutlineInventory2 as InventoryIcon,
     AiFillLike as LikeSolidIcon,
     FaLinkedinIn as LinkedinSolidIcon,
     MdOutlinePlaylistAdd as ListPlusIcon,
@@ -860,6 +877,7 @@ export {
     FiSettings as SettingsOutlineIcon,
     AiOutlineShareAlt as ShareOutlineIcon,
     BiShieldQuarter as ShieldSolidIcon,
+    BiShoppingBag as ShoppingBagIcon,
     BsEmojiSmile as SmilieOutlineIcon,
     SlVolumeOff as SoundMutedOutlineIcon,
     SlVolume2 as SoundOutlineIcon,
@@ -898,7 +916,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-03T19:57:24.045Z
+                at 2023-08-04T11:54:33.304Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

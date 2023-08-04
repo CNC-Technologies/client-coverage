@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/73</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/73</span>
             </div>
         
             
@@ -122,7 +122,21 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,7 +195,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQuery } from '@tanstack/react-query'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
@@ -193,6 +221,7 @@
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function usePlaces() {</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    const { get, loading, post, deleteReq } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const usePlacesList = () =&gt; {</span>
@@ -214,7 +243,6 @@
 <span class="cstat-no" title="statement not covered" >    //         setPlaces(res.data)</span>
 <span class="cstat-no" title="statement not covered" >    //     }</span>
 <span class="cstat-no" title="statement not covered" >    // }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleLikePlace = async (placeID: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        await post({ url: likePlaceRoute(placeID) })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -222,6 +250,20 @@
 <span class="cstat-no" title="statement not covered" >    const handleUnlikePlace = async (placeID: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        await deleteReq({ url: likePlaceRoute(placeID) })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const createPlaceLike = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: (placeID: string) =&gt; handleLikePlace(placeID),</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries(['allPlaces'], { exact: true })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const removePlaceLike = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: (placeID: string) =&gt; handleUnlikePlace(placeID),</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries(['allPlaces'], { exact: true })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleFollowPlace = async (placeID: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        await post({ url: followPlaceRoute(placeID) })</span>
@@ -233,9 +275,9 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
+<span class="cstat-no" title="statement not covered" >        createPlaceLike,</span>
+<span class="cstat-no" title="statement not covered" >        removePlaceLike,</span>
 <span class="cstat-no" title="statement not covered" >        usePlacesList,</span>
-<span class="cstat-no" title="statement not covered" >        handleLikePlace,</span>
-<span class="cstat-no" title="statement not covered" >        handleUnlikePlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnfollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -247,7 +289,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-03T19:57:24.045Z
+                at 2023-08-04T11:54:33.304Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
