@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
@@ -115,7 +115,53 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -171,10 +217,14 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    placesDashboardLinks,</span>
 <span class="cstat-no" title="statement not covered" >    placesSettingsLinks,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/business/placesSettingsLinks'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { PlacesSettingsLayoutProps } from '@/interfaces/layouts.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesSettingsLayout({</span>
@@ -183,9 +233,22 @@
 <span class="cstat-no" title="statement not covered" >}: PlacesSettingsLayoutProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const placeId = router.query.details</span>
+<span class="cstat-no" title="statement not covered" >    const [sidebar, setSidebar] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const toggleSidebar = () =&gt; setSidebar(!sidebar)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='row relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='sticky top-0 left-0 space-y-3 pr-4 group'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='w-10 bg-[whitesmoke] dark:bg-black md:hidden'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`space-y-3 pr-4 group bg-[whitesmoke] dark:bg-black ${</span>
+<span class="cstat-no" title="statement not covered" >                    sidebar ? 'w-44 md:w-10' : 'md:hover:w-32'</span>
+<span class="cstat-no" title="statement not covered" >                } md:hover:w-32 w-10 smoothen absolute bottom-0 top-0 left-0 md:static z-[2]`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;span className='md:hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;IconButton onClick={toggleSidebar}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {!sidebar ? &lt;ChevronRightIcon /&gt; : &lt;ChevronLeftIcon /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {(variant === 'settings'</span>
 <span class="cstat-no" title="statement not covered" >                    ? placesSettingsLinks</span>
 <span class="cstat-no" title="statement not covered" >                    : variant === 'dashboard'</span>
@@ -204,7 +267,13 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='col justify-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;item.icon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='w-0 group-hover:w-28 smoothen overflow-hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                        className={`${</span>
+<span class="cstat-no" title="statement not covered" >                                            sidebar</span>
+<span class="cstat-no" title="statement not covered" >                                                ? 'w-28 md:w-0'</span>
+<span class="cstat-no" title="statement not covered" >                                                : 'md:group-hover:w-28'</span>
+<span class="cstat-no" title="statement not covered" >                                        } md:group-hover:w-28 w-0 smoothen overflow-hidden`}</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        {item.label}</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
@@ -226,7 +295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-04T11:54:47.204Z
+                at 2023-08-04T13:35:45.560Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
