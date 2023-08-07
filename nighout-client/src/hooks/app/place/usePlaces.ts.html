@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -136,7 +136,21 @@
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -209,7 +223,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import {</span></span></span>
+<span class="cstat-no" title="statement not covered" >    useMutation,</span>
+<span class="cstat-no" title="statement not covered" >    useInfiniteQuery,</span>
+<span class="cstat-no" title="statement not covered" >    useQueryClient,</span>
+<span class="cstat-no" title="statement not covered" >} from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
@@ -219,19 +251,29 @@
 <span class="cstat-no" title="statement not covered" >    // placesRoute,</span>
 <span class="cstat-no" title="statement not covered" >    unFollowPlaceRoute,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export interface ApiResponse {</span>
+<span class="cstat-no" title="statement not covered" >    data: PlaceProps[]</span>
+<span class="cstat-no" title="statement not covered" >    message: string</span>
+<span class="cstat-no" title="statement not covered" >    nextPageToken: string</span>
+<span class="cstat-no" title="statement not covered" >    status: string</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function usePlaces() {</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    const { get, loading, post, deleteReq } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const usePlacesList = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        return useInfiniteQuery({</span>
 <span class="cstat-no" title="statement not covered" >            queryKey: ['allPlaces'],</span>
-<span class="cstat-no" title="statement not covered" >            queryFn: () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            getNextPageParam: (lastPage: ApiResponse) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                lastPage?.nextPageToken || '', // Update this to return the next page token from the API response</span>
+<span class="cstat-no" title="statement not covered" >            queryFn: ({ pageParam = '' }) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                get({</span>
-<span class="cstat-no" title="statement not covered" >                    url: allPlacesRoute,</span>
-<span class="cstat-no" title="statement not covered" >                }),</span>
-<span class="cstat-no" title="statement not covered" >            staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >                    url: allPlacesRoute(3, pageParam || ''), // Pass the pageParam to the API request</span>
+<span class="cstat-no" title="statement not covered" >                }).then((res) =&gt; res.data),</span>
+<span class="cstat-no" title="statement not covered" >            staleTime: Infinity,</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -289,7 +331,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-04T17:53:58.188Z
+                at 2023-08-07T13:58:38.577Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/128</span>
+                <span class='fraction'>0/137</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/128</span>
+                <span class='fraction'>0/137</span>
             </div>
         
             
@@ -191,7 +191,25 @@
 <a name='L126'></a><a href='#L126'>126</a>
 <a name='L127'></a><a href='#L127'>127</a>
 <a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -333,6 +351,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesList({</span>
 <span class="cstat-no" title="statement not covered" >    mainTitle = '',</span>
+<span class="cstat-no" title="statement not covered" >    placeCardRef,</span>
 <span class="cstat-no" title="statement not covered" >    title = '',</span>
 <span class="cstat-no" title="statement not covered" >    description = '',</span>
 <span class="cstat-no" title="statement not covered" >    gridLayout = false,</span>
@@ -341,6 +360,8 @@
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    deletePlace = (id: string) =&gt; {}, //This function is only for business accounts</span>
 <span class="cstat-no" title="statement not covered" >    fetchPlaces = () =&gt; {}, //This function is only for business accounts</span>
+<span class="cstat-no" title="statement not covered" >    // * For infinite scroll list</span>
+<span class="cstat-no" title="statement not covered" >    refetchMorePlaces,</span>
 <span class="cstat-no" title="statement not covered" >}: PlaceListProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -349,10 +370,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const gridClass =</span>
 <span class="cstat-no" title="statement not covered" >        'grid grid-cols-1 lgMobile:grid-cols-2 min-[830px]:grid-cols-1 min-[1020px]:grid-cols-2  min-[1345px]:grid-cols-3 gap-5 lgMobile:gap-3'</span>
-<span class="cstat-no" title="statement not covered" >    // 'grid grid-cols-1 mobile:grid-cols-2 desktop:grid-cols-3 min-lg:grid-cols-4 min-[1800px]:grid-cols-4 gap-3 lgMobile:gap-5'</span>
-<span class="cstat-no" title="statement not covered" >    // 'grid grid-cols-1 max-[768px]:grid-cols-2 max-[1515px]:grid-cols-3 min-[1515px]:grid-cols-4 gap-5'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const placesToShow = places?.slice(0, 6)</span>
+<span class="cstat-no" title="statement not covered" >    const placesToShow = places?.slice(0, 18)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (!places.length &amp;&amp; !loading &amp;&amp; configKey === 'business')</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -365,7 +384,7 @@
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className=''&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div ref={placeCardRef} className=''&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='justify-between gap-3 row flex-nowrap'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='font-medium mobile:font-semibold'&gt;</span>
@@ -409,12 +428,20 @@
 <span class="cstat-no" title="statement not covered" >                                        } h-full`}</span>
 <span class="cstat-no" title="statement not covered" >                                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;PlaceCard</span>
+<span class="cstat-no" title="statement not covered" >                                            placeCardRef={placeCardRef}</span>
 <span class="cstat-no" title="statement not covered" >                                            place={place}</span>
 <span class="cstat-no" title="statement not covered" >                                            // For businesses only</span>
 <span class="cstat-no" title="statement not covered" >                                            deletePlace={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                deletePlace(`${place?.id}`)</span>
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                            fetchPlaces={fetchPlaces}</span>
+<span class="cstat-no" title="statement not covered" >                                            isLast={</span>
+<span class="cstat-no" title="statement not covered" >                                                index ===</span>
+<span class="cstat-no" title="statement not covered" >                                                placesToShow.length - 1</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            refetchMorePlaces={</span>
+<span class="cstat-no" title="statement not covered" >                                                refetchMorePlaces</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
@@ -433,7 +460,7 @@
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {gridLayout &amp;&amp; places.length !== 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >            {/* {gridLayout &amp;&amp; places.length !== 0 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center mt-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link href={`/app/places/categories?name=${title}`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;button</span>
@@ -443,7 +470,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            )} */}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -454,7 +481,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-04T17:53:58.188Z
+                at 2023-08-07T13:58:38.577Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
