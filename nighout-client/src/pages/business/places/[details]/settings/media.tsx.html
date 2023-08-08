@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/70</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/70</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -127,13 +127,7 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -197,32 +191,37 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { TbPictureInPictureOn } from 'react-icons/tb'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import MenuList from '@/components/app/simple/MenuList'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
+<span class="cstat-no" title="statement not covered" >import ImageMediaList from '@/components/business/complex/places-settings/ImageMediaList'</span>
+<span class="cstat-no" title="statement not covered" >import VideoMediaList from '@/components/business/complex/places-settings/VideoMediaList'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
-<span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
-<span class="cstat-no" title="statement not covered" >import { ThreeDotsIcon, VideoOutlineIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import AddBusinessPlaceMediaModal from '@/components/modals/AddBusinessPlaceMediaModal'</span>
+<span class="cstat-no" title="statement not covered" >import MediaListSkeleton from '@/components/skeletons/places/MediaListSkeleton'</span>
+<span class="cstat-no" title="statement not covered" >import { VideoOutlineIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Media() {</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
+<span class="cstat-no" title="statement not covered" >    const [showDialog, setShowDialog] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const { data, isLoading } = usePlaceDetails()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-lg font-semibold'&gt;Places Media&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p&gt;Delete, archive or add new media.&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='col-md-row space-y-2 md:space-y-0 justify-between items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center md:text-start'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg font-semibold'&gt;Places Media&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;Delete, archive or add new media.&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='w-40'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Button onClick={() =&gt; setShowDialog(true)}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        New Media</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='my-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Tabs</span>
@@ -234,42 +233,25 @@
 <span class="cstat-no" title="statement not covered" >                    ]}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-3 pt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {Array(53)</span>
-<span class="cstat-no" title="statement not covered" >                    .fill(null)</span>
-<span class="cstat-no" title="statement not covered" >                    .map((item: any, i: number) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div key={i} className='h-[150px] w-full relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='absolute top-2 right-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;MenuList</span>
-<span class="cstat-no" title="statement not covered" >                                    leftSided</span>
-<span class="cstat-no" title="statement not covered" >                                    menuButton={</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;ThreeDotsIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    }</span>
-<span class="cstat-no" title="statement not covered" >                                    menuItems={[</span>
-<span class="cstat-no" title="statement not covered" >                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                            label: 'Archive',</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick: () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >                                        },</span>
-<span class="cstat-no" title="statement not covered" >                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                            label: 'Delete',</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick: () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >                                        },</span>
-<span class="cstat-no" title="statement not covered" >                                    ]}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                                src={defaultPicture}</span>
-<span class="cstat-no" title="statement not covered" >                                unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                                alt='Place media'</span>
-<span class="cstat-no" title="statement not covered" >                                width={100}</span>
-<span class="cstat-no" title="statement not covered" >                                height={100}</span>
-<span class="cstat-no" title="statement not covered" >                                className='object-cover h-full w-full rounded-lg'</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ))}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {isLoading &amp;&amp; &lt;MediaListSkeleton /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >            {activeTab === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ImageMediaList</span>
+<span class="cstat-no" title="statement not covered" >                    loading={isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                    images={data?.images ?? []}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            {activeTab === 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;VideoMediaList</span>
+<span class="cstat-no" title="statement not covered" >                    loading={isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                    videos={data?.videos ?? []}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;AddBusinessPlaceMediaModal</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={showDialog}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setShowDialog(false)}</span>
+<span class="cstat-no" title="statement not covered" >                title='Add media'</span>
+<span class="cstat-no" title="statement not covered" >                details='Show your potential customers what your place looks like.'</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -280,7 +262,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-07T13:59:20.050Z
+                at 2023-08-08T18:41:06.194Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
