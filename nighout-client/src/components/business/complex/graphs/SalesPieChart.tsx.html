@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/app/complex/Profile/Likes/LikedPosts.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/business/complex/graphs/SalesPieChart.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/app/complex/Profile/Likes</a> LikedPosts.tsx</h1>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/business/complex/graphs</a> SalesPieChart.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/39</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/39</span>
             </div>
         
             
@@ -93,7 +93,16 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -123,33 +132,51 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Pie, PieChart, ResponsiveContainer } from 'recharts'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SinglePost from '@/components/app/complex/SinglePost'</span>
-<span class="cstat-no" title="statement not covered" >import { usePostsContext } from '@/components/context-containers/posts.context'</span>
-<span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { placesDashboardChart } from '@/constants/business/graphDummyData'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function LikedPosts() {</span>
-<span class="cstat-no" title="statement not covered" >    const [postList, setPostList] = useState&lt;Post[]&gt;([])</span>
+<span class="cstat-no" title="statement not covered" >// const options = {}</span>
+<span class="cstat-no" title="statement not covered" >// const series = [44, 55, 41, 17, 15]</span>
+<span class="cstat-no" title="statement not covered" >// const labels = ['A', 'B', 'C', 'D', 'E']</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { posts } = usePostsContext()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setPostList(posts)</span>
-<span class="cstat-no" title="statement not covered" >    }, [posts])</span>
+<span class="cstat-no" title="statement not covered" >export default function SalesPieChart() {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof window === 'undefined') return null</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid md:gap-5 pb-20'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {postList.map((post, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;SinglePost</span>
-<span class="cstat-no" title="statement not covered" >                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                            post={post}</span>
-<span class="cstat-no" title="statement not covered" >                            fetchPosts={() =&gt; null}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;Chart</span>
+<span class="cstat-no" title="statement not covered" >                    options={{</span>
+<span class="cstat-no" title="statement not covered" >                        legend: {</span>
+<span class="cstat-no" title="statement not covered" >                            show: false,</span>
+<span class="cstat-no" title="statement not covered" >                        },</span>
+<span class="cstat-no" title="statement not covered" >                    }}</span>
+<span class="cstat-no" title="statement not covered" >                    series={series}</span>
+<span class="cstat-no" title="statement not covered" >                    type='donut'</span>
+<span class="cstat-no" title="statement not covered" >                    width='120'</span>
+<span class="cstat-no" title="statement not covered" >                /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ResponsiveContainer maxHeight={200}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;PieChart&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Pie</span>
+<span class="cstat-no" title="statement not covered" >                        data={placesDashboardChart}</span>
+<span class="cstat-no" title="statement not covered" >                        dataKey='value'</span>
+<span class="cstat-no" title="statement not covered" >                        nameKey='name'</span>
+<span class="cstat-no" title="statement not covered" >                        innerRadius={18}</span>
+<span class="cstat-no" title="statement not covered" >                        outerRadius={40}</span>
+<span class="cstat-no" title="statement not covered" >                        fill='#82ca9d'</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/PieChart&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/ResponsiveContainer&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -162,14 +189,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-08-09T13:26:59.214Z
             </div>
-        <script src="../../../../../../../prettify.js"></script>
+        <script src="../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../../../sorter.js"></script>
-        <script src="../../../../../../../block-navigation.js"></script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
