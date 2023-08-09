@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -77,34 +77,46 @@
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// Search Link</span></span></span>
-<span class="cstat-no" title="statement not covered" >export const searchLink = '/app/search'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// places links</span>
-<span class="cstat-no" title="statement not covered" >export const placesCategories = '/app/places/categories'</span>
-<span class="cstat-no" title="statement not covered" >export const placeDetail = '/app/places/'</span>
-<span class="cstat-no" title="statement not covered" >export const placeBusinessDetail = '/business/places/'</span>
-<span class="cstat-no" title="statement not covered" >export const placeBusinessSettings = (id: string) =&gt;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Search Link
+export const searchLink = '/app/search'
+&nbsp;
+// places links
+export const placesCategories = '/app/places/categories'
+export const placeDetail = '/app/places/'
+export const placeBusinessDetail = '/business/places/'
+export const placeBusinessSettings = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/settings`</span>
-<span class="cstat-no" title="statement not covered" >export const placeBusinessDashboard = (id: string) =&gt;</span>
+export const placeBusinessDashboard = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/dashboard`</span>
-<span class="cstat-no" title="statement not covered" >export const placeFaqs = (id: string) =&gt; `/business/places/${id}/faqs`</span>
-<span class="cstat-no" title="statement not covered" >export const placeAmenities = (id: string) =&gt; `/business/places/${id}/amenities`</span>
-<span class="cstat-no" title="statement not covered" >// export const placeInventory = '/app/pl'</span>
+export const eventBusinessSettings = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/business/events/${id}/settings`</span>
+export const eventBusinessDashboard = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/business/events/${id}/dashboard`</span>
+export const placeFaqs = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/business/places/${id}/faqs`</span>
+export const placeAmenities = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/business/places/${id}/amenities`</span>
+// export const placeInventory = '/app/pl'
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -112,7 +124,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-09T13:26:59.214Z
+                at 2023-08-09T14:02:05.485Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
