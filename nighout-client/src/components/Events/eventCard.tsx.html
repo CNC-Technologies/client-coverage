@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.67% </span>
+                <span class="strong">73.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>108/155</span>
+                <span class='fraction'>108/147</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.67% </span>
+                <span class="strong">73.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>108/155</span>
+                <span class='fraction'>108/147</span>
             </div>
         
             
@@ -210,15 +210,7 @@
 <a name='L145'></a><a href='#L145'>145</a>
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a>
-<a name='L149'></a><a href='#L149'>149</a>
-<a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a>
-<a name='L153'></a><a href='#L153'>153</a>
-<a name='L154'></a><a href='#L154'>154</a>
-<a name='L155'></a><a href='#L155'>155</a>
-<a name='L156'></a><a href='#L156'>156</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -269,14 +261,6 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -414,7 +398,7 @@ export default function EventCard({ event }) {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        ? `/business/events/${event?.title}`</span></span>
         : `/app/events/${event?.title}`
 &nbsp;
-    const routeTo = (<span class="fstat-no" title="function not covered" >page: string) =&gt; router.push(`${detailsRoute}/${page}`)</span>
+    // const routeTo = (page: string) =&gt; router.push(`${detailsRoute}/${page}`)
     return (
         &lt;div className='flex flex-col w-full rounded-xl bg-white'&gt;
             &lt;div className='relative h-[10rem] mobile:h-[12rem]'&gt;
@@ -436,14 +420,6 @@ export default function EventCard({ event }) {
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                            menuItems={[</span>
-<span class="cstat-no" title="statement not covered" >                                {</span>
-<span class="cstat-no" title="statement not covered" >                                    label: 'View Feedback',</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick: <span class="fstat-no" title="function not covered" >() =&gt; routeTo('feedback'),</span></span>
-<span class="cstat-no" title="statement not covered" >                                },</span>
-<span class="cstat-no" title="statement not covered" >                                {</span>
-<span class="cstat-no" title="statement not covered" >                                    label: 'View Channel',</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick: <span class="fstat-no" title="function not covered" >() =&gt; routeTo('channel'),</span></span>
-<span class="cstat-no" title="statement not covered" >                                },</span>
 <span class="cstat-no" title="statement not covered" >                                {</span>
 <span class="cstat-no" title="statement not covered" >                                    label: 'Mail Channel',</span>
 <span class="cstat-no" title="statement not covered" >                                    onClick: <span class="fstat-no" title="function not covered" >() =&gt; showMailDialog(),</span></span>
@@ -535,7 +511,7 @@ export default function EventCard({ event }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-09T17:22:38.245Z
+                at 2023-08-10T13:08:42.697Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
