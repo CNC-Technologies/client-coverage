@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -119,9 +119,7 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -179,7 +177,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import MenuList from '@/components/app/simple/MenuList'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ChannelMessageItem from '@/components/business/compound/channels/ChannelMessageItem'</span>
@@ -187,7 +184,7 @@
 <span class="cstat-no" title="statement not covered" >import DashboardCard from '@/components/business/compound/dashboard/DashboardCard'</span>
 <span class="cstat-no" title="statement not covered" >import UsersListDialog from '@/components/business/dialogs/UsersList.dialog'</span>
 <span class="cstat-no" title="statement not covered" >import { MailDialogContext } from '@/components/context-containers/MailDialog.context'</span>
-<span class="cstat-no" title="statement not covered" >import { ChannelIcon, HorzMenuSolidIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { HorzMenuSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ChannelsList() {</span>
 <span class="cstat-no" title="statement not covered" >    const { showMailDialog } = useContext(MailDialogContext)</span>
@@ -201,10 +198,6 @@
 <span class="cstat-no" title="statement not covered" >            moreBtnLink='/'</span>
 <span class="cstat-no" title="statement not covered" >            right={</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='items-center justify-center space-x-3 row'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;IconButton onClick={showMailDialog}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;ChannelIcon className='w-5 h-5 ' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className='px-2'&gt;Mail Channel&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;MenuList</span>
 <span class="cstat-no" title="statement not covered" >                        leftSided</span>
 <span class="cstat-no" title="statement not covered" >                        menuButton={</span>
@@ -216,6 +209,10 @@
 <span class="cstat-no" title="statement not covered" >                            {</span>
 <span class="cstat-no" title="statement not covered" >                                label: 'View Attendees',</span>
 <span class="cstat-no" title="statement not covered" >                                onClick: () =&gt; setShowUsersDialog(true),</span>
+<span class="cstat-no" title="statement not covered" >                            },</span>
+<span class="cstat-no" title="statement not covered" >                            {</span>
+<span class="cstat-no" title="statement not covered" >                                label: 'Mail Channel',</span>
+<span class="cstat-no" title="statement not covered" >                                onClick: () =&gt; showMailDialog(),</span>
 <span class="cstat-no" title="statement not covered" >                            },</span>
 <span class="cstat-no" title="statement not covered" >                        ]}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
@@ -241,7 +238,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-10T16:12:06.858Z
+                at 2023-08-13T11:34:49.442Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

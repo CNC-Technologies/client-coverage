@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.43% </span>
+                <span class="strong">8.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/53</span>
+                <span class='fraction'>5/59</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.43% </span>
+                <span class="strong">8.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/53</span>
+                <span class='fraction'>5/59</span>
             </div>
         
             
@@ -116,11 +116,23 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,6 +193,7 @@ export default <span class="fstat-no" title="function not covered" >function Das
 <span class="cstat-no" title="statement not covered" >    moreText = '',</span>
 <span class="cstat-no" title="statement not covered" >    right = null,</span>
 <span class="cstat-no" title="statement not covered" >    className = '',</span>
+<span class="cstat-no" title="statement not covered" >    breakHead,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    children: ReactNode</span>
 <span class="cstat-no" title="statement not covered" >    title?: string</span>
@@ -189,6 +202,7 @@ export default <span class="fstat-no" title="function not covered" >function Das
 <span class="cstat-no" title="statement not covered" >    moreText?: string</span>
 <span class="cstat-no" title="statement not covered" >    right?: ReactNode</span>
 <span class="cstat-no" title="statement not covered" >    className?: string</span>
+<span class="cstat-no" title="statement not covered" >    breakHead?: boolean</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
@@ -196,7 +210,11 @@ export default <span class="fstat-no" title="function not covered" >function Das
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            {title &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='border-b dark:border-none px-3 py-2 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-x-3  md:space-x-5 items-center md:space-y-0 row md:mb-0 mb-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        className={`space-x-3  md:space-x-5 items-center md:space-y-0 ${</span>
+<span class="cstat-no" title="statement not covered" >                            breakHead ? 'col-md-row' : 'row'</span>
+<span class="cstat-no" title="statement not covered" >                        } md:mb-0 mb-1`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-1 text-start'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='font-bold'&gt;{title}&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
@@ -229,7 +247,7 @@ export default <span class="fstat-no" title="function not covered" >function Das
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-10T16:12:06.858Z
+                at 2023-08-13T11:34:49.442Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
