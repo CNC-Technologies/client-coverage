@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/120</span>
+                <span class='fraction'>0/118</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/120</span>
+                <span class='fraction'>0/118</span>
             </div>
         
             
@@ -181,9 +181,7 @@
 <a name='L116'></a><a href='#L116'>116</a>
 <a name='L117'></a><a href='#L117'>117</a>
 <a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -301,22 +299,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import empty from '@/lotties/empty-large.json'</span>
 <span class="cstat-no" title="statement not covered" >import AccordionItem from '@/components/AccordionItem'</span>
-<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
+<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/business/places/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import CreateFAQs, {</span>
 <span class="cstat-no" title="statement not covered" >    FaqsFormProps,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/forms/business/CreateFAQs'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceFaqsSkeleton from '@/components/skeletons/places/PlaceFaqsSkeleton'</span>
-<span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { placeFaqs } from '@/constants/routerLinks/Links'</span>
-<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/business/places/usePlaces'</span>
-<span class="cstat-no" title="statement not covered" >import empty from '@/lotties/empty-large.json'</span>
+<span class="cstat-no" title="statement not covered" >import PlaceFaqsSkeleton from '@/components/skeletons/places/PlaceFaqsSkeleton'</span>
+<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function FaqsPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
@@ -355,7 +351,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='col-md-row justify-between space-x-4 flex-nowrap items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-between space-x-4 flex-nowrap items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        FAQ for {placeDetails?.name}</span>
@@ -367,15 +363,13 @@
 <span class="cstat-no" title="statement not covered" >                        .</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='row-center mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={openShowNewFaqForm}</span>
-<span class="cstat-no" title="statement not covered" >                        className={`primary-fill flex flex-nowrap items-center space-x-2 dark:bg-bright-blue py-2 w-fit shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='text-lg' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p className='whitespace-nowrap'&gt;New FAQ&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={openShowNewFaqForm}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`primary-fill flex flex-nowrap items-center space-x-2 dark:bg-bright-blue py-2 w-fit shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;PlusIcon className='text-lg' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='whitespace-nowrap'&gt;New FAQ&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
@@ -430,7 +424,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-13T11:34:49.442Z
+                at 2023-08-13T11:34:57.155Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
