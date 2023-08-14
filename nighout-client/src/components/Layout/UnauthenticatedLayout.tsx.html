@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/80</span>
+                <span class='fraction'>0/78</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/80</span>
+                <span class='fraction'>0/78</span>
             </div>
         
             
@@ -141,11 +141,7 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -256,11 +252,7 @@
 <span class="cstat-no" title="statement not covered" >    // marginalize?: boolean</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >        layoutProps: {</span>
-<span class="cstat-no" title="statement not covered" >            title,</span>
-<span class="cstat-no" title="statement not covered" >            description,</span>
-<span class="cstat-no" title="statement not covered" >            unauthenticated: { activeClass, marginalize },</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        layoutProps: { title, description, unauthenticated },</span>
 <span class="cstat-no" title="statement not covered" >    } = useSelector((state: RootState) =&gt; state.layoutProps)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const dispatch = useDispatch()</span>
@@ -269,7 +261,7 @@
 <span class="cstat-no" title="statement not covered" >        dispatch(setActiveUnAuthClass(color))</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * The next 3 lines handle changing the page color when the component is in view.</span>
-<span class="cstat-no" title="statement not covered" >    const idClass = activeClass</span>
+<span class="cstat-no" title="statement not covered" >    const idClass = unauthenticated?.activeClass</span>
 <span class="cstat-no" title="statement not covered" >    const containerRef = useRef(null)</span>
 <span class="cstat-no" title="statement not covered" >    useHandleColorChange(containerRef, idClass, setActiveClass)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -279,7 +271,9 @@
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;SEOHead title={title} description={description} icon={appIcon} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {showNavbar &amp;&amp; &lt;Navbar activeClass={activeClass} /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                {showNavbar &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Navbar activeClass={unauthenticated?.activeClass} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                    ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >                    className={`${</span>
@@ -287,7 +281,7 @@
 <span class="cstat-no" title="statement not covered" >                            ? 'mt-20 smLaptop:mt-24'</span>
 <span class="cstat-no" title="statement not covered" >                            : ''</span>
 <span class="cstat-no" title="statement not covered" >                    } ${</span>
-<span class="cstat-no" title="statement not covered" >                        marginalize &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                        unauthenticated?.marginalize &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                        'max-w-[90rem]  mx-auto general-padding py-4'</span>
 <span class="cstat-no" title="statement not covered" >                    } bg-secondary/10 `}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
@@ -295,7 +289,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {showNavbar &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Footer</span>
-<span class="cstat-no" title="statement not covered" >                        activeClass={activeClass}</span>
+<span class="cstat-no" title="statement not covered" >                        activeClass={unauthenticated?.activeClass}</span>
 <span class="cstat-no" title="statement not covered" >                        setActiveClass={setActiveClass}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
@@ -310,7 +304,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-13T11:34:57.155Z
+                at 2023-08-14T15:46:12.383Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
