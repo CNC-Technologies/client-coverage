@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -157,7 +157,29 @@
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -273,12 +295,24 @@
 <span class="cstat-no" title="statement not covered" >    options: {</span>
 <span class="cstat-no" title="statement not covered" >        chart: {</span>
 <span class="cstat-no" title="statement not covered" >            id: 'finance-graph',</span>
+<span class="cstat-no" title="statement not covered" >            toolbar: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        xaxis: {</span>
 <span class="cstat-no" title="statement not covered" >            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        bar: {</span>
 <span class="cstat-no" title="statement not covered" >            width: 20,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        dataLabels: {</span>
+<span class="cstat-no" title="statement not covered" >            enabled: false,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        tooltip: {</span>
+<span class="cstat-no" title="statement not covered" >            enabled: false,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        sparkLine: {</span>
+<span class="cstat-no" title="statement not covered" >            enabled: false,</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    series: [</span>
@@ -299,7 +333,7 @@
 <span class="cstat-no" title="statement not covered" >    const height = variant === 'md' ? 250 : variant === 'sm' ? 100 : 0</span>
 <span class="cstat-no" title="statement not covered" >    if (!window) return null</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='border'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;DashboardCard</span>
 <span class="cstat-no" title="statement not covered" >                title='Finances'</span>
 <span class="cstat-no" title="statement not covered" >                details={</span>
@@ -315,7 +349,6 @@
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='hidden'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ResponsiveContainer</span>
-<span class="cstat-no" title="statement not covered" >                        // width='100%'</span>
 <span class="cstat-no" title="statement not covered" >                        height={variant === 'full' ? '100%' : height}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;BarChart data={analyticsGraphData}&gt;</span>
@@ -352,7 +385,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-14T15:46:12.383Z
+                at 2023-08-14T15:46:51.412Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
