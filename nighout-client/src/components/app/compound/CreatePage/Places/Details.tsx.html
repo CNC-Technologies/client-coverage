@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/199</span>
+                <span class='fraction'>0/184</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/199</span>
+                <span class='fraction'>0/184</span>
             </div>
         
             
@@ -247,22 +247,7 @@
 <a name='L182'></a><a href='#L182'>182</a>
 <a name='L183'></a><a href='#L183'>183</a>
 <a name='L184'></a><a href='#L184'>184</a>
-<a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a>
-<a name='L187'></a><a href='#L187'>187</a>
-<a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a>
-<a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a>
-<a name='L194'></a><a href='#L194'>194</a>
-<a name='L195'></a><a href='#L195'>195</a>
-<a name='L196'></a><a href='#L196'>196</a>
-<a name='L197'></a><a href='#L197'>197</a>
-<a name='L198'></a><a href='#L198'>198</a>
-<a name='L199'></a><a href='#L199'>199</a>
-<a name='L200'></a><a href='#L200'>200</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -446,36 +431,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useEffect, useState } from 'react'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ImageSelectItem from '@/components/app/compound/CreatePage/Event/ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" >import PlaceCreateAccordion from '@/components/app/compound/CreatePage/Places/PlaceCreateAccordion'</span>
 <span class="cstat-no" title="statement not covered" >import { categoryTags } from '@/constants/app/Places/CategoryTags'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Details({</span>
-<span class="cstat-no" title="statement not covered" >    nextStep,</span>
 <span class="cstat-no" title="statement not covered" >    formState,</span>
 <span class="cstat-no" title="statement not covered" >    setFormState,</span>
 <span class="cstat-no" title="statement not covered" >    setCoverImage,</span>
-<span class="cstat-no" title="statement not covered" >    coverImagePreview = '',</span>
+<span class="cstat-no" title="statement not covered" >    errors,</span>
+<span class="cstat-no" title="statement not covered" >    validateField,</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const [categoryAccordion, setCategoryAccordion] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedFile, setSelectedFile] = useState&lt;string | null&gt;(null)</span>
@@ -506,34 +475,18 @@
 <span class="cstat-no" title="statement not covered" >    const handleInputChange: React.ChangeEventHandler&lt;</span>
 <span class="cstat-no" title="statement not covered" >        HTMLInputElement | HTMLSelectElement</span>
 <span class="cstat-no" title="statement not covered" >    &gt; = (event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        validateField(event.target.name, event.target.value)</span>
 <span class="cstat-no" title="statement not covered" >        setFormState(event?.target?.name, event?.target?.value)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleNext = (event: Event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >        nextStep()</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const selectCategory = (category: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        validateField('type', category)</span>
 <span class="cstat-no" title="statement not covered" >        if (formState.type === category) return setFormState('type', '')</span>
 <span class="cstat-no" title="statement not covered" >        category !== '' &amp;&amp; setFormState('type', category)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (coverImagePreview) setSelectedFile(coverImagePreview)</span>
-<span class="cstat-no" title="statement not covered" >    }, [coverImagePreview])</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='px-2 mobile:px-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h4 className='text-xl font-semibold'&gt;Place details&lt;/h4&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='font-light text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Fields marked * are required</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-3 border-darkGrey' /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='px-2 mobile:px-4 py-2 space-y-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='grid gap-2'&gt;</span>
@@ -544,7 +497,57 @@
 <span class="cstat-no" title="statement not covered" >                            placeholder={'Greenfield Hotels'}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={formState.name}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.name}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {/* Categories Accordion  */}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;PlaceCreateAccordion</span>
+<span class="cstat-no" title="statement not covered" >                                title='Category *'</span>
+<span class="cstat-no" title="statement not covered" >                                subtitle={</span>
+<span class="cstat-no" title="statement not covered" >                                    formState.type</span>
+<span class="cstat-no" title="statement not covered" >                                        ? formState.type</span>
+<span class="cstat-no" title="statement not covered" >                                        : 'Select a category that best suit your place'</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                active={categoryAccordion}</span>
+<span class="cstat-no" title="statement not covered" >                                setActive={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    setCategoryAccordion(!categoryAccordion)</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='col p-3 pt-2 border dark:border-none space-y-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {categoryTags.map((item) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                            key={item.id}</span>
+<span class="cstat-no" title="statement not covered" >                                            className={`border row smoothen space-x-2 border-dark mt-3 p-2 rounded-md cursor-pointer smoothen ${</span>
+<span class="cstat-no" title="statement not covered" >                                                item.label === formState.type &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                                'bg-dark text-white font-bold dark:border-orange'</span>
+<span class="cstat-no" title="statement not covered" >                                            }`}</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                                selectCategory(item.label)</span>
+<span class="cstat-no" title="statement not covered" >                                                setCategoryAccordion(</span>
+<span class="cstat-no" title="statement not covered" >                                                    !categoryAccordion,</span>
+<span class="cstat-no" title="statement not covered" >                                                )</span>
+<span class="cstat-no" title="statement not covered" >                                            }}</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='py-[3.5px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;item.icon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div&gt;{item.label}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    {item.details}</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ))}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/PlaceCreateAccordion&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {errors.type &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p className='error-text font-light text-sm mt-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {errors.type}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='place-email'</span>
@@ -553,6 +556,7 @@
 <span class="cstat-no" title="statement not covered" >                            placeholder={'example@gmail.com'}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={formState.email}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.email}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
@@ -562,22 +566,25 @@
 <span class="cstat-no" title="statement not covered" >                            placeholder={'01 023 565 45'}</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                            value={formState.phone}</span>
+<span class="cstat-no" title="statement not covered" >                            error={errors.phone}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                            data-testid='place-website'</span>
-<span class="cstat-no" title="statement not covered" >                            name='website'</span>
-<span class="cstat-no" title="statement not covered" >                            label={'Website url '}</span>
-<span class="cstat-no" title="statement not covered" >                            placeholder={'example.com'}</span>
+<span class="cstat-no" title="statement not covered" >                            data-testid='venue-address'</span>
+<span class="cstat-no" title="statement not covered" >                            name='location'</span>
+<span class="cstat-no" title="statement not covered" >                            label={'Full Address'}</span>
+<span class="cstat-no" title="statement not covered" >                            placeholder={</span>
+<span class="cstat-no" title="statement not covered" >                                'Number 30 Sesame street, Gwarimpa, Abuja.'</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                            onChange={handleInputChange}</span>
-<span class="cstat-no" title="statement not covered" >                            value={formState.website}</span>
+<span class="cstat-no" title="statement not covered" >                            value={formState?.location}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                            data-testid='place-description'</span>
 <span class="cstat-no" title="statement not covered" >                            name='description'</span>
 <span class="cstat-no" title="statement not covered" >                            type='textarea'</span>
-<span class="cstat-no" title="statement not covered" >                            label={'Description *'}</span>
+<span class="cstat-no" title="statement not covered" >                            label={'Description'}</span>
 <span class="cstat-no" title="statement not covered" >                            placeholder={</span>
 <span class="cstat-no" title="statement not covered" >                                'Write a description to well describe your place...'</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
@@ -586,39 +593,6 @@
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    {/* Categories ACcordion  */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlaceCreateAccordion</span>
-<span class="cstat-no" title="statement not covered" >                        title='Category *'</span>
-<span class="cstat-no" title="statement not covered" >                        subtitle='Select a category that best suit your place'</span>
-<span class="cstat-no" title="statement not covered" >                        active={categoryAccordion}</span>
-<span class="cstat-no" title="statement not covered" >                        setActive={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            setCategoryAccordion(!categoryAccordion)</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='col space-y-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {categoryTags.map((item) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    key={item.id}</span>
-<span class="cstat-no" title="statement not covered" >                                    className={`border row smoothen space-x-2 border-dark mt-3 p-2 rounded-md cursor-pointer smoothen ${</span>
-<span class="cstat-no" title="statement not covered" >                                        item.label === formState.type &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                                        'bg-dark text-white font-bold dark:border-orange'</span>
-<span class="cstat-no" title="statement not covered" >                                    }`}</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; selectCategory(item.label)}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='py-[3.5px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;item.icon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div&gt;{item.label}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {item.details}</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ))}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/PlaceCreateAccordion&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    {/* Cover Image section  */}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className=''&gt;</span>
@@ -626,7 +600,7 @@
 <span class="cstat-no" title="statement not covered" >                                Cover image</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;p className='font-light text-sm max-mobile:text-xs text-dark-charcoal/70 dark:text-white/70 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                (Upload a copy of your cover image)</span>
+<span class="cstat-no" title="statement not covered" >                                Upload a copy of your cover image</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -638,25 +612,6 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-5 border-darkGrey' /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex flex-col w-full px-2 mobile:px-4 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* &lt;OutlineButton</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Save and finish later'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='orange-outline'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Save and finish later</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/OutlineButton&gt; */}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                    onClick={handleNext}</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Save and continue'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Save and continue</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -667,7 +622,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-14T15:47:43.832Z
+                at 2023-08-15T22:07:03.909Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

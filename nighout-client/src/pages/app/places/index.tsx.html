@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -144,27 +144,7 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -249,8 +229,7 @@
 <span class="cstat-no" title="statement not covered" >import { useEffect, useRef, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlacesList from '@/components/app/complex/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >import PlacesTagItem from '@/components/app/compound/PlacesTagItem'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceCardSkeleton from '@/components/skeletons/places/PlaceCardSkeleton'</span>
+<span class="cstat-no" title="statement not covered" >import PlacesTagItem from '@/components/Places/PlacesTagItem'</span>
 <span class="cstat-no" title="statement not covered" >import { categoryTags } from '@/constants/app/Places/CategoryTags'</span>
 <span class="cstat-no" title="statement not covered" >import { usePlacesList } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
@@ -262,9 +241,6 @@
 <span class="cstat-no" title="statement not covered" >    const [nextPageToken, setNextPageToken] = useState('')</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const placeCardRef = useRef()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const gridClass =</span>
-<span class="cstat-no" title="statement not covered" >        'grid grid-cols-1 lgMobile:grid-cols-2 min-[830px]:grid-cols-1 min-[1020px]:grid-cols-2  min-[1345px]:grid-cols-3 gap-5 lgMobile:gap-3'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const fetchNextPage = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (nextPageToken !== '') {</span>
@@ -324,14 +300,8 @@
 <span class="cstat-no" title="statement not covered" >                    placeCardRef={placeCardRef}</span>
 <span class="cstat-no" title="statement not covered" >                    // * For infinite scroll list</span>
 <span class="cstat-no" title="statement not covered" >                    refetchMorePlaces={fetchNextPage}</span>
+<span class="cstat-no" title="statement not covered" >                    isFetchingNextPage={placesQuery.isFetchingNextPage}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className={`w-full mt-2 ${gridClass} py-2 md:py-5`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {placesQuery.isFetchingNextPage &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        // ! still increase the number to the limit we would be setting for the query</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlaceCardSkeleton num={3} width={'w-full'} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -343,7 +313,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-14T15:47:43.832Z
+                at 2023-08-15T22:07:03.909Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
