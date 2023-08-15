@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.56% </span>
+                <span class="strong">82.19% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>64/87</span>
+                <span class='fraction'>60/73</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.56% </span>
+                <span class="strong">82.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>64/87</span>
+                <span class='fraction'>60/73</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -136,23 +136,7 @@
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -174,24 +158,12 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -242,21 +214,17 @@ import { ChangeEvent, KeyboardEvent, useState } from 'react'
 &nbsp;
 import { Spinner } from '@/components/FormComponents/button'
 import Avatar from '@/components/app/simple/Avatar'
-import { commentsRoute } from '@/constants/app/routes'
 import { SendSolidIcon } from '@/constants/icons/icons'
-import useSecureRequest from '@/hooks/useRequest'
+import usePosts from '@/hooks/posts/usePosts'
+import { Post } from '@/interfaces/posts.interface'
 &nbsp;
 interface CommentFieldProps {
-    postId: string
-    createComment: () =&gt; void
-    fetchPosts: () =&gt; void
+    post: Post
     handleCloseModal: () =&gt; void
 }
 &nbsp;
 export default function CommentField({
-    postId = '',
-    createComment = <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
-    fetchPosts,
+    post,
     handleCloseModal = <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
 }: CommentFieldProps) {
     const { user } = useUser()
@@ -266,26 +234,16 @@ export default function CommentField({
         setComment(event.target.value)
     }
 &nbsp;
-    const { post, loading } = useSecureRequest()
+    const { commentOnPost } = usePosts({ post })
 &nbsp;
-    const handleSubmit = <span class="fstat-no" title="function not covered" >async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (comment) {</span>
-<span class="cstat-no" title="statement not covered" >            // This function is for test purpose, would later be removed</span>
-<span class="cstat-no" title="statement not covered" >            createComment()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const data = {</span>
-<span class="cstat-no" title="statement not covered" >                content: comment,</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            const res = await post({ data: data, url: commentsRoute(postId) })</span>
-<span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >                // Refetch posts</span>
-<span class="cstat-no" title="statement not covered" >                fetchPosts()</span>
-<span class="cstat-no" title="statement not covered" >                //Close Modal if modal is open</span>
-<span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            setComment('')</span>
+    const handleSubmit = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const mutationParam = {</span>
+<span class="cstat-no" title="statement not covered" >            content: comment,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        commentOnPost.mutateAsync(mutationParam as any).then(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            handleCloseModal</span>
+<span class="cstat-no" title="statement not covered" >            setComment('')</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     const handleKeyDown = (<span class="fstat-no" title="function not covered" >event: KeyboardEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
@@ -314,7 +272,7 @@ export default function CommentField({
                     onClick={handleSubmit}
                     className='border h-fit w-fit flex justify-center items-center hover:brightness-90 rounded-full p-1 cursor-pointer'
                 &gt;
-                    {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+                    {commentOnPost.isLoading<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Spinner borderColor='border-primary' /&gt;</span>
                     ) : (
                         &lt;SendSolidIcon className='w-5 h-5 ' /&gt;
@@ -331,7 +289,7 @@ export default function CommentField({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T22:07:21.733Z
+                at 2023-08-15T22:09:12.066Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
