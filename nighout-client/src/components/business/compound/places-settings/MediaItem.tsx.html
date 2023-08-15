@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/66</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/66</span>
             </div>
         
             
@@ -124,7 +124,17 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -198,6 +208,20 @@
 <span class="cstat-no" title="statement not covered" >    item: any</span>
 <span class="cstat-no" title="statement not covered" >    type: 'image' | 'video'</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    const optionsItems = [</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Delete',</span>
+<span class="cstat-no" title="statement not covered" >            onClick: () =&gt; null,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (type === 'image') {</span>
+<span class="cstat-no" title="statement not covered" >        optionsItems.push({</span>
+<span class="cstat-no" title="statement not covered" >            label: 'Set as Cover Photo',</span>
+<span class="cstat-no" title="statement not covered" >            onClick: () =&gt; null,</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='h-[150px] w-full relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;span className='absolute top-2 right-2'&gt;</span>
@@ -208,16 +232,7 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;ThreeDotsIcon color='white' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    menuItems={[</span>
-<span class="cstat-no" title="statement not covered" >                        {</span>
-<span class="cstat-no" title="statement not covered" >                            label: 'Archive',</span>
-<span class="cstat-no" title="statement not covered" >                            onClick: () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >                        },</span>
-<span class="cstat-no" title="statement not covered" >                        {</span>
-<span class="cstat-no" title="statement not covered" >                            label: 'Delete',</span>
-<span class="cstat-no" title="statement not covered" >                            onClick: () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >                        },</span>
-<span class="cstat-no" title="statement not covered" >                    ]}</span>
+<span class="cstat-no" title="statement not covered" >                    menuItems={optionsItems}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {type === 'image' &amp;&amp; (</span>
@@ -253,7 +268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T22:07:03.909Z
+                at 2023-08-15T22:07:21.733Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
