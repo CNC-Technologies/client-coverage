@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/185</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/185</span>
             </div>
         
             
@@ -238,7 +238,27 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -415,8 +435,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import _ from 'lodash'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import Button, { OutlineButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import OpeningHoursForm from '@/components/app/compound/CreatePage/Places/Availability'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
 <span class="cstat-no" title="statement not covered" >import PlaceSettingsDetailsSkeleton from '@/components/skeletons/places/PlaceSettingsDetailsSkeleton'</span>
@@ -447,7 +469,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSetForm = (key: string, value: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (key === 'features' || key === 'tags') {</span>
-<span class="cstat-no" title="statement not covered" >            value = value.split(',').map((item) =&gt; item.trim())</span>
+<span class="cstat-no" title="statement not covered" >            value = value.split(',').map((item) =&gt; _.startCase(item.trim()))</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        setFormState({ ...formState, [key]: value })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -457,9 +479,19 @@
 <span class="cstat-no" title="statement not covered" >    }, [data])</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='placeSettings'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-lg font-semibold'&gt;Place Details&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p&gt;Change your business details&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='row justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg font-semibold'&gt;Place Details&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;Change your business details&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='row items-center space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-32'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;OutlineButton&gt;Preview&lt;/OutlineButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-32'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Publish&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='py-5 w-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {isLoading ? (</span>
@@ -550,9 +582,7 @@
 <span class="cstat-no" title="statement not covered" >                                    label='Features'</span>
 <span class="cstat-no" title="statement not covered" >                                    name='features'</span>
 <span class="cstat-no" title="statement not covered" >                                    placeholder='Separate with commas'</span>
-<span class="cstat-no" title="statement not covered" >                                    value={</span>
-<span class="cstat-no" title="statement not covered" >                                        formState?.features?.join(', ') || ''</span>
-<span class="cstat-no" title="statement not covered" >                                    }</span>
+<span class="cstat-no" title="statement not covered" >                                    value={formState?.features?.join(',') || ''}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        handleSetForm(</span>
 <span class="cstat-no" title="statement not covered" >                                            e.target.name,</span>
@@ -564,7 +594,7 @@
 <span class="cstat-no" title="statement not covered" >                                    label='Tags'</span>
 <span class="cstat-no" title="statement not covered" >                                    placeholder='Separate with commas'</span>
 <span class="cstat-no" title="statement not covered" >                                    name='tags'</span>
-<span class="cstat-no" title="statement not covered" >                                    value={formState?.tags?.join(', ') || ''}</span>
+<span class="cstat-no" title="statement not covered" >                                    value={formState?.tags?.join(',') || ''}</span>
 <span class="cstat-no" title="statement not covered" >                                    onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        handleSetForm(</span>
 <span class="cstat-no" title="statement not covered" >                                            e.target.name,</span>
@@ -595,7 +625,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T22:09:12.066Z
+                at 2023-08-16T09:03:03.310Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
