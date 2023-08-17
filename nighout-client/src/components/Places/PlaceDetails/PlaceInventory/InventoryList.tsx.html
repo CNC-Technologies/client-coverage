@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/103</span>
+                <span class='fraction'>0/117</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/103</span>
+                <span class='fraction'>0/117</span>
             </div>
         
             
@@ -166,7 +166,21 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -269,20 +283,35 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
-<span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
 <span class="cstat-no" title="statement not covered" >// import { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ArrowRightOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { placeBusinessDetail, placeDetail } from '@/constants/routerLinks/Links'</span>
-<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import MenuList from '@/components/Places/PlaceDetails/PlaceInventory/menu/MenuList'</span>
 <span class="cstat-no" title="statement not covered" >import RoomList from '@/components/Places/PlaceDetails/PlaceInventory/rooms/RoomList'</span>
-<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import SubscriptionList from '@/components/Places/PlaceDetails/PlaceInventory/subscriptions/SubscriptionList'</span>
 <span class="cstat-no" title="statement not covered" >import TicketList from '@/components/Places/PlaceDetails/PlaceInventory/tickets/TicketList'</span>
+<span class="cstat-no" title="statement not covered" >import { placeBusinessDetail, placeDetail } from '@/constants/routerLinks/Links'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface InventoryListProps {</span>
 <span class="cstat-no" title="statement not covered" >    gridLayout?: boolean</span>
@@ -328,8 +357,25 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const returnInventoryListComponent = (type: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        switch (type) {</span>
+<span class="cstat-no" title="statement not covered" >            case 'Restaurants/Eateries':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;MenuList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            case 'Hospitality':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;RoomList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;MenuList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            case 'Recreation &amp; Fitness':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;SubscriptionList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            case 'Travel/Tour Operators':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;TicketList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            default:</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;MenuList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full my-5 eventsList'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className={`w-full ${!gridLayout &amp;&amp; 'my-5'} eventsList`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {!gridLayout &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
@@ -349,29 +395,25 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            {configKey === 'business' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-40'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;New Inventory&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={`w-full  ${</span>
+<span class="cstat-no" title="statement not covered" >                    className={`w-full ${</span>
 <span class="cstat-no" title="statement not covered" >                        gridLayout ? gridClass : horizontalClass</span>
 <span class="cstat-no" title="statement not covered" >                    }  py-2 md:py-4`}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Restaurants/Eateries' &amp;&amp; &lt;MenuList /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Hospitality' &amp;&amp; &lt;RoomList /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Bars' &amp;&amp; &lt;MenuList /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Recreation &amp; Fitness' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;SubscriptionList /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {place?.type === 'Travel/Tour Operators' &amp;&amp; &lt;TicketList /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {!place?.type &amp;&amp; &lt;MenuList /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    {returnInventoryListComponent(place?.type || '')}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// function Skeleton({gridLayout}) {</span>
-<span class="cstat-no" title="statement not covered" >//     return &lt;div className={`${!gridLayout ? 'w-[330px] animate-pulse h-[150px] bg-primary/70' : ''}`}&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >// }</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -379,7 +421,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-17T04:29:00.967Z
+                at 2023-08-17T04:29:14.478Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
