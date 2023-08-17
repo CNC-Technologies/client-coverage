@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/262</span>
+                <span class='fraction'>0/256</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/262</span>
+                <span class='fraction'>0/256</span>
             </div>
         
             
@@ -319,19 +319,7 @@
 <a name='L254'></a><a href='#L254'>254</a>
 <a name='L255'></a><a href='#L255'>255</a>
 <a name='L256'></a><a href='#L256'>256</a>
-<a name='L257'></a><a href='#L257'>257</a>
-<a name='L258'></a><a href='#L258'>258</a>
-<a name='L259'></a><a href='#L259'>259</a>
-<a name='L260'></a><a href='#L260'>260</a>
-<a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L257'></a><a href='#L257'>257</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -632,15 +620,6 @@
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    const { loading, post, deleteReq } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // * Not working yet...</span>
-<span class="cstat-no" title="statement not covered" >    // const getPlaceByQuery = async (queryTitle: string, queryValue: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     const res = await get({ url: placesRoute(queryTitle, queryValue) })</span>
-<span class="cstat-no" title="statement not covered" >    //     // console.log(res)</span>
-<span class="cstat-no" title="statement not covered" >    //     if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >    //         setPlaces(res.data)</span>
-<span class="cstat-no" title="statement not covered" >    //     }</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleLikePlace = async (placeID: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        await post({ url: likePlaceRoute(placeID) })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -695,7 +674,7 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function usePlaceDetails(enabled = true) {</span>
+<span class="cstat-no" title="statement not covered" >export function usePlaceDetails() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
@@ -712,8 +691,19 @@
 <span class="cstat-no" title="statement not covered" >            return res.data</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
-<span class="cstat-no" title="statement not covered" >        enabled,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useSetPlaceDetails() {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = new QueryClient()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return (placeDetails) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(</span>
+<span class="cstat-no" title="statement not covered" >            ['placeDetails', getPlaceId(router)],</span>
+<span class="cstat-no" title="statement not covered" >            placeDetails,</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function useUpdatePlaceDetails({</span>
@@ -804,22 +794,17 @@
 <span class="cstat-no" title="statement not covered" >    return { updatePlace, isLoading }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function useUploadPlaceMedia(placeData, selectedFiles, fileForUpload) {</span>
-<span class="cstat-no" title="statement not covered" >    // const { handleUpload } = UploadForm()</span>
-<span class="cstat-no" title="statement not covered" >    // const { updatePlace } = useUpdatePlaceDetails()</span>
+<span class="cstat-no" title="statement not covered" >export function useUploadPlaceMedia(setMedia, selectedFiles, fileForUpload) {</span>
 <span class="cstat-no" title="statement not covered" >    const toast = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" >    const [loading, setLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest(placeMediaRoute(getPlaceId(router)))</span>
-<span class="cstat-no" title="statement not covered" >    const queryClient = new QueryClient()</span>
-<span class="cstat-no" title="statement not covered" >    const [refetch, setRefetch] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    usePlaceDetails(refetch)</span>
+<span class="cstat-no" title="statement not covered" >    const updatePlace = useSetPlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    async function uploadMedia() {</span>
 <span class="cstat-no" title="statement not covered" >        if (!selectedFiles.length) return</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(true)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const formData = new FormData()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            for (let index = 0; index &lt; fileForUpload.length; index++) {</span>
@@ -832,15 +817,12 @@
 <span class="cstat-no" title="statement not covered" >                formDataReq: true,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            if (res?.success) {</span>
-<span class="cstat-no" title="statement not covered" >                setRefetch(true)</span>
 <span class="cstat-no" title="statement not covered" >                toast.showLottieToast('success')</span>
-<span class="cstat-no" title="statement not covered" >                queryClient.invalidateQueries({</span>
-<span class="cstat-no" title="statement not covered" >                    queryKey: ['placeDetails', getPlaceId(router)],</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >                setMedia(res?.data?.data?.edges?.medias)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                updatePlace(res?.data?.data)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        } catch (e) {</span>
-<span class="cstat-no" title="statement not covered" >            // console.log(e)</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            toast.showLottieToast('error')</span>
 <span class="cstat-no" title="statement not covered" >        } finally {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(false)</span>
@@ -856,7 +838,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-17T11:05:06.160Z
+                at 2023-08-17T16:52:15.707Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

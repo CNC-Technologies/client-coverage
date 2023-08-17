@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/80</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/80</span>
             </div>
         
             
@@ -136,7 +136,14 @@
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -209,7 +216,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { TbPictureInPictureOn } from 'react-icons/tb'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -227,7 +241,11 @@
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    const [showDialog, setShowDialog] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const { data, isLoading } = usePlaceDetails()</span>
-<span class="cstat-no" title="statement not covered" >    // console.log(data)</span>
+<span class="cstat-no" title="statement not covered" >    const [media, setMedia] = useState([])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setMedia(data?.edges?.medias || [])</span>
+<span class="cstat-no" title="statement not covered" >    }, [data])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='placeSettings'&gt;</span>
@@ -257,8 +275,9 @@
 <span class="cstat-no" title="statement not covered" >                &lt;ImageMediaList</span>
 <span class="cstat-no" title="statement not covered" >                    loading={isLoading}</span>
 <span class="cstat-no" title="statement not covered" >                    images={</span>
-<span class="cstat-no" title="statement not covered" >                        data?.edges?.medias?.filter(</span>
-<span class="cstat-no" title="statement not covered" >                            (item) =&gt; item.MediaType === 'image',</span>
+<span class="cstat-no" title="statement not covered" >                        media.filter(</span>
+<span class="cstat-no" title="statement not covered" >                            (item: { MediaType: string }) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                item.MediaType === 'image',</span>
 <span class="cstat-no" title="statement not covered" >                        ) ?? []</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -267,8 +286,9 @@
 <span class="cstat-no" title="statement not covered" >                &lt;VideoMediaList</span>
 <span class="cstat-no" title="statement not covered" >                    loading={isLoading}</span>
 <span class="cstat-no" title="statement not covered" >                    videos={</span>
-<span class="cstat-no" title="statement not covered" >                        data?.edges?.medias?.filter(</span>
-<span class="cstat-no" title="statement not covered" >                            (item) =&gt; item.MediaType === 'video',</span>
+<span class="cstat-no" title="statement not covered" >                        media.filter(</span>
+<span class="cstat-no" title="statement not covered" >                            (item: { MediaType: string }) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                item.MediaType === 'video',</span>
 <span class="cstat-no" title="statement not covered" >                        ) ?? []</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -278,6 +298,7 @@
 <span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setShowDialog(false)}</span>
 <span class="cstat-no" title="statement not covered" >                title='Add media'</span>
 <span class="cstat-no" title="statement not covered" >                details='Show your potential customers what your place looks like.'</span>
+<span class="cstat-no" title="statement not covered" >                setMedia={setMedia}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -289,7 +310,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-17T11:05:06.160Z
+                at 2023-08-17T16:52:15.707Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
