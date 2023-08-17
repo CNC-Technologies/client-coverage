@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/170</span>
+                <span class='fraction'>0/186</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/170</span>
+                <span class='fraction'>0/186</span>
             </div>
         
             
@@ -233,7 +233,39 @@
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
 <a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -425,15 +457,16 @@
 <span class="cstat-no" title="statement not covered" >    const { writeReview, id: reviewId } = router.query</span>
 <span class="cstat-no" title="statement not covered" >    const placeID = (router.query.details as string) || ''</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
-<span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState&lt;any&gt;()</span>
+<span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState&lt;File[] | null&gt;()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [isEdtMode, setIsEditMode] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Create review form</span>
-<span class="cstat-no" title="statement not covered" >    const [reviewForm, setReviewForm] = useState({</span>
+<span class="cstat-no" title="statement not covered" >    const defaultReviewForm = {</span>
 <span class="cstat-no" title="statement not covered" >        rating: 0,</span>
 <span class="cstat-no" title="statement not covered" >        reviewDesc: '',</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const [reviewForm, setReviewForm] = useState({ ...defaultReviewForm })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { errors, validateField, validateForm } = CreateReviewFormValidator()</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -476,10 +509,13 @@
 <span class="cstat-no" title="statement not covered" >            const files = imageForUpload</span>
 <span class="cstat-no" title="statement not covered" >            formData.append('content', reviewForm.reviewDesc)</span>
 <span class="cstat-no" title="statement not covered" >            formData.append('score', `${reviewForm.rating}`)</span>
-<span class="cstat-no" title="statement not covered" >            for (let index = 0; index &lt; files.length; index++) {</span>
-<span class="cstat-no" title="statement not covered" >                const file = files[index]</span>
-<span class="cstat-no" title="statement not covered" >                formData.append(`files`, file)</span>
+<span class="cstat-no" title="statement not covered" >            if (files) {</span>
+<span class="cstat-no" title="statement not covered" >                for (let index = 0; index &lt; files.length; index++) {</span>
+<span class="cstat-no" title="statement not covered" >                    const file = files[index]</span>
+<span class="cstat-no" title="statement not covered" >                    formData.append(`files`, file)</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            // files &amp;&amp; setHasImages(true) // Check if the request has images to be uploaded</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const res = await post({</span>
 <span class="cstat-no" title="statement not covered" >                url: createReviewRoute(type, id),</span>
@@ -489,15 +525,27 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
 <span class="cstat-no" title="statement not covered" >                handleCloseModal(placeID)</span>
+<span class="cstat-no" title="statement not covered" >                // display success toast</span>
 <span class="cstat-no" title="statement not covered" >                showToast('success', 'Review created successfully.')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                // Clear input fields</span>
+<span class="cstat-no" title="statement not covered" >                setReviewForm({ ...defaultReviewForm })</span>
+<span class="cstat-no" title="statement not covered" >                setImageForUpload(null)</span>
+<span class="cstat-no" title="statement not covered" >                setSelectedPhotos([])</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            return res.data</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createPlaceReview = useMutation({</span>
 <span class="cstat-no" title="statement not covered" >        mutationFn: ({ type, id }: { type: string; id: string }) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >            handleCreateReview(type, id),</span>
-<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess() {</span>
+<span class="cstat-no" title="statement not covered" >            // if (hasImages) {</span>
+<span class="cstat-no" title="statement not covered" >            //     console.log(data)</span>
+<span class="cstat-no" title="statement not covered" >            //     console.log(variables)</span>
+<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries(['place', `${placeID}`, 'reviews'], {</span>
 <span class="cstat-no" title="statement not covered" >                exact: true,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
@@ -580,7 +628,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-17T16:52:15.707Z
+                at 2023-08-17T18:44:48.900Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
