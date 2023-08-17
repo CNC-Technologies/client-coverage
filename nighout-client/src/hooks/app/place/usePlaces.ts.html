@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/277</span>
+                <span class='fraction'>0/262</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/277</span>
+                <span class='fraction'>0/262</span>
             </div>
         
             
@@ -325,37 +325,7 @@
 <a name='L260'></a><a href='#L260'>260</a>
 <a name='L261'></a><a href='#L261'>261</a>
 <a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a>
-<a name='L264'></a><a href='#L264'>264</a>
-<a name='L265'></a><a href='#L265'>265</a>
-<a name='L266'></a><a href='#L266'>266</a>
-<a name='L267'></a><a href='#L267'>267</a>
-<a name='L268'></a><a href='#L268'>268</a>
-<a name='L269'></a><a href='#L269'>269</a>
-<a name='L270'></a><a href='#L270'>270</a>
-<a name='L271'></a><a href='#L271'>271</a>
-<a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a>
-<a name='L274'></a><a href='#L274'>274</a>
-<a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a>
-<a name='L277'></a><a href='#L277'>277</a>
-<a name='L278'></a><a href='#L278'>278</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -725,7 +695,7 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function usePlaceDetails() {</span>
+<span class="cstat-no" title="statement not covered" >export function usePlaceDetails(enabled = true) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
@@ -742,6 +712,7 @@
 <span class="cstat-no" title="statement not covered" >            return res.data</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >        enabled,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -841,15 +812,13 @@
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest(placeMediaRoute(getPlaceId(router)))</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = new QueryClient()</span>
+<span class="cstat-no" title="statement not covered" >    const [refetch, setRefetch] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    usePlaceDetails(refetch)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    async function uploadMedia() {</span>
 <span class="cstat-no" title="statement not covered" >        if (!selectedFiles.length) return</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            setLoading(true)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // console.log(fileForUpload)</span>
-<span class="cstat-no" title="statement not covered" >            // console.log('Array', Array.isArray(Object.entries(fileForUpload)))</span>
-<span class="cstat-no" title="statement not covered" >            // return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const formData = new FormData()</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -863,26 +832,12 @@
 <span class="cstat-no" title="statement not covered" >                formDataReq: true,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            if (res?.success) {</span>
+<span class="cstat-no" title="statement not covered" >                setRefetch(true)</span>
 <span class="cstat-no" title="statement not covered" >                toast.showLottieToast('success')</span>
 <span class="cstat-no" title="statement not covered" >                queryClient.invalidateQueries({</span>
 <span class="cstat-no" title="statement not covered" >                    queryKey: ['placeDetails', getPlaceId(router)],</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // const res = await handleUpload(fileForUpload)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // const newImages: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >            // const newVideos: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >            // res.forEach((item: { type: string; url: string }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            //     if (item.type === 'image') newImages.push(item.url)</span>
-<span class="cstat-no" title="statement not covered" >            //     if (item.type === 'video') newVideos.push(item.url)</span>
-<span class="cstat-no" title="statement not covered" >            // })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // const formState = {</span>
-<span class="cstat-no" title="statement not covered" >            //     images: [...(placeData?.images || []), ...newImages],</span>
-<span class="cstat-no" title="statement not covered" >            //     videos: [...(placeData?.videos || []), ...newVideos],</span>
-<span class="cstat-no" title="statement not covered" >            // }</span>
-<span class="cstat-no" title="statement not covered" >            // await updatePlace(formState)</span>
 <span class="cstat-no" title="statement not covered" >        } catch (e) {</span>
 <span class="cstat-no" title="statement not covered" >            // console.log(e)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -901,7 +856,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-17T04:29:24.565Z
+                at 2023-08-17T11:05:06.160Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
