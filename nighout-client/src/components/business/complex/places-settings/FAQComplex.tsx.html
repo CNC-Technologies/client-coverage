@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/forms/CreatePage/Places.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/business/complex/places-settings/FAQComplex.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/forms/CreatePage</a> Places.tsx</h1>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/business/complex/places-settings</a> FAQComplex.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/115</span>
+                <span class='fraction'>0/121</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/115</span>
+                <span class='fraction'>0/121</span>
             </div>
         
             
@@ -178,7 +178,19 @@
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -294,118 +306,124 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useContext, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import Details from '@/components/app/compound/CreatePage/Places/Details'</span>
-<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
-<span class="cstat-no" title="statement not covered" >import { newPlace } from '@/constants/app/routes'</span>
-<span class="cstat-no" title="statement not covered" >import { placeBusinessSettings } from '@/constants/routerLinks/Links'</span>
-<span class="cstat-no" title="statement not covered" >import useCreatePlace from '@/hooks/business/places/useCreatePlace'</span>
-<span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
-<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
-<span class="cstat-no" title="statement not covered" >import CreatePlaceFormValidator from '@/utils/FormValidators/CreatePlaceForm'</span>
-<span class="cstat-no" title="statement not covered" >export default function CreatePlacesItem({</span>
-<span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
-<span class="cstat-no" title="statement not covered" >    handleAddPlace,</span>
-<span class="cstat-no" title="statement not covered" >}: {</span>
-<span class="cstat-no" title="statement not covered" >    handleCloseModal: any</span>
-<span class="cstat-no" title="statement not covered" >    handleAddPlace?: any</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >import AccordionItem from '@/components/AccordionItem'</span>
+<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
+<span class="cstat-no" title="statement not covered" >import CreateFAQs, {</span>
+<span class="cstat-no" title="statement not covered" >    FaqsFormProps,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/components/forms/business/CreateFAQs'</span>
+<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >import PlaceFaqsSkeleton from '@/components/skeletons/places/PlaceFaqsSkeleton'</span>
+<span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { placeFaqs } from '@/constants/routerLinks/Links'</span>
+<span class="cstat-no" title="statement not covered" >import empty from '@/lotties/empty-large.json'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function FAQComplex({ placeDetails, loading }) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const { post, loading } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { create } = router.query</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = router.query.details as string</span>
+<span class="cstat-no" title="statement not covered" >    const [active, setActive] = useState&lt;string&gt;('')</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
-<span class="cstat-no" title="statement not covered" >    const { formState, setFormState } = useCreatePlace()</span>
+<span class="cstat-no" title="statement not covered" >    // const [faqs, setFaqs] = useState([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [coverImage, setCoverImage] = useState(null)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { validateForm, errors, validateField } = CreatePlaceFormValidator()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    function handleDataChange(key: string, data: any) {</span>
-<span class="cstat-no" title="statement not covered" >        setFormState({ ...formState, [key]: data })</span>
+<span class="cstat-no" title="statement not covered" >    function openShowNewFaqForm() {</span>
+<span class="cstat-no" title="statement not covered" >        //Add the query parameter</span>
+<span class="cstat-no" title="statement not covered" >        const queryParam = { create: 'Faqs' }</span>
+<span class="cstat-no" title="statement not covered" >        router.push({</span>
+<span class="cstat-no" title="statement not covered" >            pathname: window?.location?.pathname || placeFaqs(placeId),</span>
+<span class="cstat-no" title="statement not covered" >            query: queryParam,</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const createPlace = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const isValid = validateForm(formState)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (isValid) {</span>
-<span class="cstat-no" title="statement not covered" >            let formData = {</span>
-<span class="cstat-no" title="statement not covered" >                ...formState,</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                // * upload images</span>
-<span class="cstat-no" title="statement not covered" >                if (coverImage) {</span>
-<span class="cstat-no" title="statement not covered" >                    const res = await handleUpload([coverImage]).catch(</span>
-<span class="cstat-no" title="statement not covered" >                        (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                            throw error</span>
-<span class="cstat-no" title="statement not covered" >                        },</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                    const img = res[0]?.url</span>
-<span class="cstat-no" title="statement not covered" >                    formData = { ...formData, cover_image: img }</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                //Create place</span>
-<span class="cstat-no" title="statement not covered" >                const res = await post({</span>
-<span class="cstat-no" title="statement not covered" >                    url: newPlace(formData.business_id),</span>
-<span class="cstat-no" title="statement not covered" >                    data: formData,</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                handleAddPlace &amp;&amp; handleAddPlace(res.data)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >                    showToast('success', 'Place created successfully.')</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    router.push(placeBusinessSettings(res.data?.id))</span>
-<span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    throw 'Error creating place'</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
-<span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >                // * Delete files if files were uploaded</span>
-<span class="cstat-no" title="statement not covered" >                if (formData.cover_image) handleDelete(formData.cover_image)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                showToast(</span>
-<span class="cstat-no" title="statement not covered" >                    'error',</span>
-<span class="cstat-no" title="statement not covered" >                    `There was an error while creating a place ${error}`,</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    function closeShowNewFaqForm() {</span>
+<span class="cstat-no" title="statement not covered" >        // Remove the query parameter</span>
+<span class="cstat-no" title="statement not covered" >        const { create, ...query } = router.query</span>
+<span class="cstat-no" title="statement not covered" >        router.push({ pathname: router.pathname, query })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // const { getPlaceDetails, placeDetails, loading } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // if (placeId) getPlaceDetails(placeId)</span>
+<span class="cstat-no" title="statement not covered" >    }, [placeId])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    function toggleActive(title: string) {</span>
+<span class="cstat-no" title="statement not covered" >        if (active === title) return setActive('')</span>
+<span class="cstat-no" title="statement not covered" >        setActive(title)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' gap-2 mobile:gap-4 sticky -top-3 py-3 bg-white dark:border-white z-30'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='text-lg font-semibold text-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Create a place</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className='font-medium mt-2 text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Fields marked * are required</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='col-md-row justify-between space-x-4 flex-nowrap items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        FAQ for {placeDetails?.name}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Create Frequently asked questions that your customers</span>
+<span class="cstat-no" title="statement not covered" >                        might ask related to{' '}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span className='font-bold'&gt;{placeDetails?.name}&lt;/span&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >                        .</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='row-center mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={openShowNewFaqForm}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`primary-fill flex flex-nowrap items-center space-x-2 dark:bg-bright-blue py-2 w-fit shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='text-lg' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='whitespace-nowrap'&gt;New FAQ&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='my-2 border py-4 rounded-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Details</span>
-<span class="cstat-no" title="statement not covered" >                    formState={formState}</span>
-<span class="cstat-no" title="statement not covered" >                    setFormState={handleDataChange}</span>
-<span class="cstat-no" title="statement not covered" >                    setCoverImage={setCoverImage}</span>
-<span class="cstat-no" title="statement not covered" >                    errors={errors}</span>
-<span class="cstat-no" title="statement not covered" >                    validateField={validateField}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`mt-6 space-y-3 col px-4 py-6 ${</span>
+<span class="cstat-no" title="statement not covered" >                    placeDetails?.edges?.faqs ? 'bg-white' : 'bg-transparent'</span>
+<span class="cstat-no" title="statement not covered" >                }`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {loading ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;PlaceFaqsSkeleton /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {placeDetails?.edges?.faqs &amp;&amp; !loading ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {placeDetails?.edges?.faqs?.map(</span>
+<span class="cstat-no" title="statement not covered" >                                    (faq: FaqsFormProps, index: number) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;AccordionItem</span>
+<span class="cstat-no" title="statement not covered" >                                            key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                            faq={faq}</span>
+<span class="cstat-no" title="statement not covered" >                                            setActive={toggleActive}</span>
+<span class="cstat-no" title="statement not covered" >                                            active={active === faq.question}</span>
+<span class="cstat-no" title="statement not covered" >                                            contentClass='h-fit'</span>
+<span class="cstat-no" title="statement not covered" >                                            business</span>
+<span class="cstat-no" title="statement not covered" >                                            faqs={</span>
+<span class="cstat-no" title="statement not covered" >                                                placeDetails?.edges?.faqs || []</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            fetchFAQs={</span>
+<span class="cstat-no" title="statement not covered" >                                                () =&gt; null</span>
+<span class="cstat-no" title="statement not covered" >                                                // getPlaceDetails(placeId)</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ),</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        ) : (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-center mt-14 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;LottiePlayer animationData={empty} size='md' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='font-bold text-lg text-red-500'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {`You don't have any FAQ yet`}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-5 border-darkGrey' /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex flex-col w-full px-2 mobile:px-4 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                    onClick={createPlace}</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Submit'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                    loading={loading}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ParentModal isOpen={create} handleClose={closeShowNewFaqForm}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;CreateFAQs handleClose={closeShowNewFaqForm} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -417,14 +435,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-08-22T12:29:25.962Z
             </div>
-        <script src="../../../../../prettify.js"></script>
+        <script src="../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../sorter.js"></script>
-        <script src="../../../../../block-navigation.js"></script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
