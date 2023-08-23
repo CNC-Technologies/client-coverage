@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/143</span>
+                <span class='fraction'>0/147</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/143</span>
+                <span class='fraction'>0/147</span>
             </div>
         
             
@@ -206,7 +206,15 @@
 <a name='L141'></a><a href='#L141'>141</a>
 <a name='L142'></a><a href='#L142'>142</a>
 <a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -357,7 +365,7 @@
 <span class="cstat-no" title="statement not covered" >import Toggle from '@/components/FormComponents/toggle'</span>
 <span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import { placioAmenities } from '@/constants/MockData/PlaceDetails/Amenities'</span>
-<span class="cstat-no" title="statement not covered" >import { useAddAmenitiesToPlace } from '@/hooks/business/places/useAmenities'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceAmenities } from '@/hooks/business/places/useAmenities'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceAmenities({</span>
@@ -371,11 +379,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [showDialog, setShowDialog] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [selectedAmenities, setSelectedAmenities] = useState&lt;</span>
-<span class="cstat-no" title="statement not covered" >        typeof amenities</span>
-<span class="cstat-no" title="statement not covered" >    &gt;([])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { mutate, isLoading } = useAddAmenitiesToPlace(selectedAmenities)</span>
+<span class="cstat-no" title="statement not covered" >    const [selectedAmenities, setSelectedAmenities] =</span>
+<span class="cstat-no" title="statement not covered" >        useState&lt;typeof amenities&gt;(amenities)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSelect = (selected) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const searchRes = selectedAmenities.find(</span>
@@ -396,24 +401,17 @@
 <span class="cstat-no" title="statement not covered" >        setSelectedAmenities(newSelected)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleSave = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(selectedAmenities)</span>
-<span class="cstat-no" title="statement not covered" >        mutate()</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;h5 className='text-lg font-semibold xxmd:text-xl'&gt;{title}&lt;/h5&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 mobile:grid-cols-2 xmd:grid-cols-3 desktop:grid-cols-4 grid-rows-4 gap-3 mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {amenities.slice(0, 8).map((amenity, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    {selectedAmenities.slice(0, 8).map((amenity, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;AmenityItem</span>
 <span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                name={amenity.name}</span>
-<span class="cstat-no" title="statement not covered" >                                icon={amenity.icon}</span>
-<span class="cstat-no" title="statement not covered" >                                handleDeselect={handleDeselect}</span>
-<span class="cstat-no" title="statement not covered" >                                handleSelect={handleSelect}</span>
+<span class="cstat-no" title="statement not covered" >                                amenity={amenity}</span>
+<span class="cstat-no" title="statement not covered" >                                selected={selectedAmenities}</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" >                    })}</span>
@@ -425,7 +423,7 @@
 <span class="cstat-no" title="statement not covered" >                            className='orange-fill'</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setShowDialog(true)}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {!!amenities.length</span>
+<span class="cstat-no" title="statement not covered" >                            {!!selectedAmenities.length</span>
 <span class="cstat-no" title="statement not covered" >                                ? 'See more'</span>
 <span class="cstat-no" title="statement not covered" >                                : 'Start selecting'}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
@@ -447,22 +445,13 @@
 <span class="cstat-no" title="statement not covered" >                            return (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;AmenityItem</span>
 <span class="cstat-no" title="statement not covered" >                                    key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                    name={amenity.name}</span>
-<span class="cstat-no" title="statement not covered" >                                    icon={amenity.icon}</span>
-<span class="cstat-no" title="statement not covered" >                                    handleDeselect={handleDeselect}</span>
+<span class="cstat-no" title="statement not covered" >                                    amenity={amenity}</span>
+<span class="cstat-no" title="statement not covered" >                                    selected={selectedAmenities}</span>
 <span class="cstat-no" title="statement not covered" >                                    handleSelect={handleSelect}</span>
+<span class="cstat-no" title="statement not covered" >                                    handleDeselect={handleDeselect}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )</span>
 <span class="cstat-no" title="statement not covered" >                        })}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mx-auto w-[50%] mobile:w-[30%] xlaptop:w-[20%] mt-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                            loading={isLoading}</span>
-<span class="cstat-no" title="statement not covered" >                            className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={handleSave}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Save</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
@@ -470,21 +459,44 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function AmenityItem({ name, icon, handleSelect, handleDeselect }) {</span>
-<span class="cstat-no" title="statement not covered" >    const IconComponent = ReactPiIcons[icon]</span>
-<span class="cstat-no" title="statement not covered" >    const [toggleStatus, setToggleStatus] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >function AmenityItem({</span>
+<span class="cstat-no" title="statement not covered" >    amenity,</span>
+<span class="cstat-no" title="statement not covered" >    selected,</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    handleSelect = (_) =&gt; {},</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    handleDeselect = (_) =&gt; {},</span>
+<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" >    const { addAmenity, removeAmenity, loading } = usePlaceAmenities()</span>
+<span class="cstat-no" title="statement not covered" >    const IconComponent = ReactPiIcons[amenity?.icon]</span>
+<span class="cstat-no" title="statement not covered" >    const [toggleStatus, setToggleStatus] = useState(</span>
+<span class="cstat-no" title="statement not covered" >        selected.find(</span>
+<span class="cstat-no" title="statement not covered" >            (item) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                amenity?.name === item.name &amp;&amp; amenity?.icon === item.icon,</span>
+<span class="cstat-no" title="statement not covered" >        ),</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    const handleToggle = (val) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setToggleStatus(val)</span>
-<span class="cstat-no" title="statement not covered" >        val ? handleSelect({ name, icon }) : handleDeselect({ name, icon })</span>
+<span class="cstat-no" title="statement not covered" >        val</span>
+<span class="cstat-no" title="statement not covered" >            ? (async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                  await addAmenity([amenity])</span>
+<span class="cstat-no" title="statement not covered" >                  handleSelect(amenity)</span>
+<span class="cstat-no" title="statement not covered" >              })()</span>
+<span class="cstat-no" title="statement not covered" >            : (async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                  await removeAmenity([amenity.id])</span>
+<span class="cstat-no" title="statement not covered" >                  handleDeselect(amenity)</span>
+<span class="cstat-no" title="statement not covered" >              })()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='row justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className={`row justify-between ${loading &amp;&amp; 'opacity-30'}`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row space-x-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;IconComponent className='text-orange text-xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p&gt;{name}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;p&gt;{amenity?.name}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {handleSelect &amp;&amp; handleDeselect &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >            {configKey === 'business' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Toggle</span>
+<span class="cstat-no" title="statement not covered" >                    disabled={loading}</span>
 <span class="cstat-no" title="statement not covered" >                    status={toggleStatus}</span>
 <span class="cstat-no" title="statement not covered" >                    action={() =&gt; handleToggle(!toggleStatus)}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -499,7 +511,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-22T12:29:42.656Z
+                at 2023-08-23T11:07:16.241Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
