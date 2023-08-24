@@ -153,49 +153,49 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
-<span class="cstat-no" title="statement not covered" >import WalletDashboardCard from '@/components/business/complex/wallet/WalletDashboardCard'</span>
-<span class="cstat-no" title="statement not covered" >import WalletExpenditure from '@/components/business/complex/wallet/WalletExpenditure'</span>
-<span class="cstat-no" title="statement not covered" >import WalletProfits from '@/components/business/complex/wallet/WalletProfits'</span>
-<span class="cstat-no" title="statement not covered" >import WalletTransactionHistory from '@/components/business/complex/wallet/WalletTransactionHistory'</span>
-<span class="cstat-no" title="statement not covered" >import PillList from '@/components/business/compound/PillList'</span>
-<span class="cstat-no" title="statement not covered" >import { businessPillOptions } from '@/constants/business/options'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import DashboardOrdersTable from '@/components/business/compound/business/DashboardOrdersTable'</span>
+<span class="cstat-no" title="statement not covered" >import DashboardInfoCardSm from '@/components/business/dashboard/DashboardInfoCardSm'</span>
+<span class="cstat-no" title="statement not covered" >import { Button } from '@/components/shadcn/ui/button'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function WalletPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const [activePill, setActivePill] = useState(businessPillOptions[0].value)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout pageTitle='Wallet'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-5 col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 gap-x-0 gap-y-5 md:gap-5 md:grid-cols-2 lg:grid-cols-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;WalletDashboardCard /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mb-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PillList</span>
-<span class="cstat-no" title="statement not covered" >                            activePill={activePill}</span>
-<span class="cstat-no" title="statement not covered" >                            setActivePill={setActivePill}</span>
-<span class="cstat-no" title="statement not covered" >                            options={businessPillOptions}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-1  col justify-start py-5 space-y-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-2xl font-bold dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Wallet balance</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Control your business&amp;apos; finances with your</span>
+<span class="cstat-no" title="statement not covered" >                            Placio Wallet.</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-5xl dark:text-white'&gt;$40,000&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid grid-cols-1 gap-5 md:grid-cols-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;WalletProfits /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;WalletExpenditure /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='md:col-span-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;FinanceGraph /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Withdraw&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button variant='outline'&gt;Deposit&lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCardSm</span>
+<span class="cstat-no" title="statement not covered" >                    title='Total Revenue'</span>
+<span class="cstat-no" title="statement not covered" >                    subtitle={'+20.1% from last month'}</span>
+<span class="cstat-no" title="statement not covered" >                    info={'$15,231.89'}</span>
+<span class="cstat-no" title="statement not covered" >                    color={'#4085f3'}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCardSm</span>
+<span class="cstat-no" title="statement not covered" >                    title='Total Expenditure'</span>
+<span class="cstat-no" title="statement not covered" >                    subtitle={'-20.1% from last month'}</span>
+<span class="cstat-no" title="statement not covered" >                    info={'$1,231.89'}</span>
+<span class="cstat-no" title="statement not covered" >                    color={'#de224b'}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;WalletTransactionHistory /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;FinanceGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DashboardOrdersTable /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -205,7 +205,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-24T11:05:06.652Z
+                at 2023-08-24T15:30:15.117Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
