@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/105</span>
+                <span class='fraction'>0/100</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/105</span>
+                <span class='fraction'>0/100</span>
             </div>
         
             
@@ -163,12 +163,7 @@
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
 <a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -268,26 +263,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import {</span></span></span>
-<span class="cstat-no" title="statement not covered" >    Bar,</span>
-<span class="cstat-no" title="statement not covered" >    BarChart,</span>
-<span class="cstat-no" title="statement not covered" >    CartesianGrid,</span>
-<span class="cstat-no" title="statement not covered" >    Legend,</span>
-<span class="cstat-no" title="statement not covered" >    ResponsiveContainer,</span>
-<span class="cstat-no" title="statement not covered" >    XAxis,</span>
-<span class="cstat-no" title="statement not covered" >    YAxis,</span>
-<span class="cstat-no" title="statement not covered" >} from 'recharts'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import dynamic from 'next/dynamic'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import DashboardCard from '@/components/business/compound/dashboard/DashboardCard'</span>
-<span class="cstat-no" title="statement not covered" >import { analyticsGraphData } from '@/constants/business/dummyResources'</span>
-<span class="cstat-no" title="statement not covered" >// import Chart from 'react-apexcharts'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    Card,</span>
+<span class="cstat-no" title="statement not covered" >    CardContent,</span>
+<span class="cstat-no" title="statement not covered" >    CardDescription,</span>
+<span class="cstat-no" title="statement not covered" >    CardHeader,</span>
+<span class="cstat-no" title="statement not covered" >    CardTitle,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/card'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const Chart = dynamic(import('react-apexcharts'), { ssr: false })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -299,11 +283,35 @@
 <span class="cstat-no" title="statement not covered" >                show: false,</span>
 <span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        grid: {</span>
+<span class="cstat-no" title="statement not covered" >            show: false,</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        xaxis: {</span>
-<span class="cstat-no" title="statement not covered" >            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],</span>
+<span class="cstat-no" title="statement not covered" >            show: false,</span>
+<span class="cstat-no" title="statement not covered" >            labels: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            axisBorder: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            axisTicks: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        yaxis: {</span>
+<span class="cstat-no" title="statement not covered" >            show: false,</span>
+<span class="cstat-no" title="statement not covered" >            labels: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            axisBorder: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            axisTicks: {</span>
+<span class="cstat-no" title="statement not covered" >                show: false,</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        bar: {</span>
-<span class="cstat-no" title="statement not covered" >            width: 20,</span>
+<span class="cstat-no" title="statement not covered" >            width: 15,</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        dataLabels: {</span>
 <span class="cstat-no" title="statement not covered" >            enabled: false,</span>
@@ -330,16 +338,20 @@
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    variant?: 'md' | 'sm' | 'full'</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    const height = variant === 'md' ? 250 : variant === 'sm' ? 100 : 0</span>
 <span class="cstat-no" title="statement not covered" >    if (!window) return null</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;DashboardCard</span>
-<span class="cstat-no" title="statement not covered" >                title='Finances'</span>
-<span class="cstat-no" title="statement not covered" >                details={</span>
-<span class="cstat-no" title="statement not covered" >                    variant === 'sm' ? '' : 'Graph of your revenue on Placio'</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Card className={'w-auto'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;CardHeader&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='row items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 space-y-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;CardTitle&gt;$4,000,000&lt;/CardTitle&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;CardDescription&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Revenue and Expenditure on Placio</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/CardDescription&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/CardHeader&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;CardContent className='grid gap-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Chart</span>
 <span class="cstat-no" title="statement not covered" >                    options={data.options}</span>
 <span class="cstat-no" title="statement not covered" >                    series={data.series}</span>
@@ -347,35 +359,8 @@
 <span class="cstat-no" title="statement not covered" >                    width='100%'</span>
 <span class="cstat-no" title="statement not covered" >                    height={variant === 'md' ? '200' : '300'}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ResponsiveContainer</span>
-<span class="cstat-no" title="statement not covered" >                        height={variant === 'full' ? '100%' : height}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;BarChart data={analyticsGraphData}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;CartesianGrid strokeDasharray='2 2' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;XAxis</span>
-<span class="cstat-no" title="statement not covered" >                                dataKey='name'</span>
-<span class="cstat-no" title="statement not covered" >                                tick={{ fontSize: 10, fontWeight: 'bold' }}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;YAxis</span>
-<span class="cstat-no" title="statement not covered" >                                tick={{ fontSize: 10, fontWeight: 'bold' }}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {variant === 'md' &amp;&amp; &lt;Legend /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Bar</span>
-<span class="cstat-no" title="statement not covered" >                                radius={[99, 99, 0, 0]}</span>
-<span class="cstat-no" title="statement not covered" >                                dataKey='revenue'</span>
-<span class="cstat-no" title="statement not covered" >                                fill='#a2e1e0'</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Bar</span>
-<span class="cstat-no" title="statement not covered" >                                radius={[99, 99, 0, 0]}</span>
-<span class="cstat-no" title="statement not covered" >                                dataKey='expenditure'</span>
-<span class="cstat-no" title="statement not covered" >                                fill='#FFA665'</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/BarChart&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/ResponsiveContainer&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/DashboardCard&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/CardContent&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/Card&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -385,7 +370,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-23T15:38:45.310Z
+                at 2023-08-24T10:56:34.341Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

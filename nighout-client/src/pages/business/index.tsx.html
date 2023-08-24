@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
@@ -90,7 +90,24 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -117,31 +134,65 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import DashboardEvents from '@/components/business/complex/dashboard/DashboardEvents'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import DashboardNotifications from '@/components/business/complex/dashboard/DashboardNotifications'</span>
-<span class="cstat-no" title="statement not covered" >import DashboardRecentUsers from '@/components/business/complex/dashboard/DashboardRecentUsers'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Calendar, MapPin, Users } from 'lucide-react'</span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
+<span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function IndexPage() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout pageTitle='Business Dashboard'&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='grid grid-cols-1 gap-x-0 gap-y-5 md:gap-5 md:grid-cols-2 lg:grid-cols-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 col-span-2 gap-5 md:grid-cols-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='md:col-span-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                    title='Attendees'</span>
+<span class="cstat-no" title="statement not covered" >                    description='Total number of attendees to your events'</span>
+<span class="cstat-no" title="statement not covered" >                    data='24,000'</span>
+<span class="cstat-no" title="statement not covered" >                    icon={&lt;Users /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                    title='Events'</span>
+<span class="cstat-no" title="statement not covered" >                    description='Total number of your events'</span>
+<span class="cstat-no" title="statement not covered" >                    data='23'</span>
+<span class="cstat-no" title="statement not covered" >                    icon={&lt;Calendar /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                    title='Places'</span>
+<span class="cstat-no" title="statement not covered" >                    description='Total number of your places'</span>
+<span class="cstat-no" title="statement not covered" >                    data='6'</span>
+<span class="cstat-no" title="statement not covered" >                    icon={&lt;MapPin /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 lg:grid-cols-4 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-full lg:col-span-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;FinanceGraph /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardNotifications /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardRecentUsers /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DashboardEvents /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                    title='Upcoming events'</span>
+<span class="cstat-no" title="statement not covered" >                    description='List of your upcoming events'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;&lt;/DashboardInfoCard&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                    title='Your places'</span>
+<span class="cstat-no" title="statement not covered" >                    description='See more of your places on placio'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;&lt;/DashboardInfoCard&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -151,7 +202,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-23T15:38:45.310Z
+                at 2023-08-24T10:56:34.341Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
