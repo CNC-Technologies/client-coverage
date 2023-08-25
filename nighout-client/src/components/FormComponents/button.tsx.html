@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.17% </span>
+                <span class="strong">73.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/85</span>
+                <span class='fraction'>56/76</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">42.85% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.17% </span>
+                <span class="strong">73.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/85</span>
+                <span class='fraction'>56/76</span>
             </div>
         
             
@@ -139,16 +139,9 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -171,27 +164,16 @@
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -233,7 +215,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// interface ButtonInterface extends ButtonHTMLAttributes&lt;HTMLButtonElement&gt; {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Button as ShadcnButton } from '@/components/shadcn/ui/button'
+&nbsp;
+// interface ButtonInterface extends ButtonHTMLAttributes&lt;HTMLButtonElement&gt; {
 //     name?: string
 //     children?: any
 //     className?: string
@@ -249,34 +233,23 @@ export default function Button({
     ...props
 }: any) {
     return (
-        &lt;button
+        &lt;ShadcnButton
             type='submit'
-            {...props}
             disabled={loading}
-            className={`disabled:opacity-50 disabled:cursor-not-allowed w-full px-4 py-2  font-medium text-center orange-fill rounded-lg shadow h-10  focus:outline-none ${className}`}
+            className={`disabled:opacity-50 disabled:cursor-not-allowed relative ${className}`}
+            {...props}
         &gt;
-            {loading<span class="branch-0 cbranch-no" title="branch not covered" > ? &lt;Spinner /&gt; </span>: &lt;&gt;{name || children}&lt;/&gt;}
-        &lt;/button&gt;
+            {loading<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;span className='absolute -translate-x-1/2 left-1/2 top-1/2 -translate-y-1/2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Spinner /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
+            )}
+            &lt;span className={loading<span class="branch-0 cbranch-no" title="branch not covered" > ? 'opacity-0' </span>: 'opacity-100'}&gt;
+                {name || children}
+            &lt;/span&gt;
+        &lt;/ShadcnButton&gt;
     )
 }
-&nbsp;
-export <span class="fstat-no" title="function not covered" >function OutlineButton({</span>
-<span class="cstat-no" title="statement not covered" >    children,</span>
-<span class="cstat-no" title="statement not covered" >    className = '',</span>
-<span class="cstat-no" title="statement not covered" >    loading = false,</span>
-<span class="cstat-no" title="statement not covered" >    ...props</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >            type='submit'</span>
-<span class="cstat-no" title="statement not covered" >            {...props}</span>
-<span class="cstat-no" title="statement not covered" >            disabled={loading}</span>
-<span class="cstat-no" title="statement not covered" >            className={`${className} w-full px-4 py-2  max-mobile:text-base font-medium text-center  rounded-lg shadow h-10 orange-outline focus:outline-none`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            {loading ? &lt;Spinner /&gt; : &lt;&gt;{children}&lt;/&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export <span class="fstat-no" title="function not covered" >function BlackButton({ children, loading = false, ...props }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -315,7 +288,7 @@ export <span class="fstat-no" title="function not covered" >function Spinner({ b
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >            className={`border-t-transparent dark:border-t-white/70 border-solid animate-spin  rounded-full ${borderColor} dark:border-dark-charcoal mx-auto border-2 h-5 w-5`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -325,7 +298,7 @@ export <span class="fstat-no" title="function not covered" >function Spinner({ b
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-24T15:30:15.117Z
+                at 2023-08-25T09:41:31.566Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
