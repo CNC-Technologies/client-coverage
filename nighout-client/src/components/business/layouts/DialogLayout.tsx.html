@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>78/78</span>
+                <span class='fraction'>85/85</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>78/78</span>
+                <span class='fraction'>85/85</span>
             </div>
         
             
@@ -141,7 +141,14 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -150,6 +157,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -223,7 +237,12 @@
 import { Fragment } from 'react'
 &nbsp;
 import { IconButton } from '@/components/FormComponents/button'
-import DashboardCard from '@/components/business/compound/dashboard/DashboardCard'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+} from '@/components/shadcn/ui/card'
 import { CloseOutlineIcon } from '@/constants/icons/icons'
 import { DialogLayoutProps } from '@/interfaces/layouts.interface'
 &nbsp;
@@ -233,8 +252,6 @@ export default function DialogLayout({
     children,
     title = 'Dialog',
     details = '',
-    moreBtnLink = '',
-    moreText = '',
 }: DialogLayoutProps) {
     return (
         &lt;&gt;
@@ -268,14 +285,17 @@ export default function DialogLayout({
                                 leaveTo='opacity-0 scale-95'
                             &gt;
                                 &lt;Dialog.Panel&gt;
-                                    &lt;div className='w-[90vw] md:w-[60vw] lg:w-[30vw]'&gt;
-                                        &lt;DashboardCard
-                                            title={title}
-                                            details={details}
-                                            moreBtnLink={moreBtnLink}
-                                            moreText={moreText}
-                                            className='max-h-[70vh]'
-                                            right={
+                                    &lt;Card className='max-h-[70vh]'&gt;
+                                        &lt;div className='w-[90vw] md:w-[60vw] lg:w-[30vw]'&gt;
+                                            &lt;CardHeader className='row items-center'&gt;
+                                                &lt;div className='flex-1 text-start'&gt;
+                                                    &lt;div&gt;{title}&lt;/div&gt;
+                                                    {details &amp;&amp; (
+                                                        &lt;CardDescription&gt;
+                                                            {details}
+                                                        &lt;/CardDescription&gt;
+                                                    )}
+                                                &lt;/div&gt;
                                                 &lt;div className='items-center space-x-3 row'&gt;
                                                     &lt;IconButton
                                                         onClick={closeDialog}
@@ -283,11 +303,12 @@ export default function DialogLayout({
                                                         &lt;CloseOutlineIcon className='w-5 h-5 text-red-500 dark:text-white' /&gt;
                                                     &lt;/IconButton&gt;
                                                 &lt;/div&gt;
-                                            }
-                                        &gt;
-                                            {children}
-                                        &lt;/DashboardCard&gt;
-                                    &lt;/div&gt;
+                                            &lt;/CardHeader&gt;
+                                            &lt;CardContent&gt;
+                                                {children}
+                                            &lt;/CardContent&gt;
+                                        &lt;/div&gt;
+                                    &lt;/Card&gt;
                                 &lt;/Dialog.Panel&gt;
                             &lt;/Transition.Child&gt;
                         &lt;/div&gt;
@@ -304,7 +325,7 @@ export default function DialogLayout({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T11:17:56.961Z
+                at 2023-08-25T12:12:49.722Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
