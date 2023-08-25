@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/78</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/78</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -141,7 +141,39 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -224,6 +256,14 @@
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
 <span class="cstat-no" title="statement not covered" >import DashboardTimeFrameTabs from '@/components/business/simple/places/DashboardTimeFrameTabs'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    Table,</span>
+<span class="cstat-no" title="statement not covered" >    TableBody,</span>
+<span class="cstat-no" title="statement not covered" >    TableCell,</span>
+<span class="cstat-no" title="statement not covered" >    TableHead,</span>
+<span class="cstat-no" title="statement not covered" >    TableHeader,</span>
+<span class="cstat-no" title="statement not covered" >    TableRow,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/table'</span>
 <span class="cstat-no" title="statement not covered" >import dashboardTableData from '@/constants/business/dashboardTableData'</span>
 <span class="cstat-no" title="statement not covered" >import { dashboardTimeFrameTabs } from '@/constants/business/options'</span>
 <span class="cstat-no" title="statement not covered" >import { HorzMenuSolidIcon } from '@/constants/icons/icons'</span>
@@ -234,6 +274,7 @@
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;DashboardInfoCard</span>
 <span class="cstat-no" title="statement not covered" >            title='Order List'</span>
+<span class="cstat-no" title="statement not covered" >            titleSize='sm'</span>
 <span class="cstat-no" title="statement not covered" >            icon={</span>
 <span class="cstat-no" title="statement not covered" >                &lt;DashboardTimeFrameTabs</span>
 <span class="cstat-no" title="statement not covered" >                    tabs={dashboardTimeFrameTabs}</span>
@@ -244,54 +285,61 @@
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='relative max-w-[100%] overflow-scroll grid grid-cols-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5 overflow-x-scroll min-w-[200px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;table className='whitespace-nowrap w-full text-center dark:text-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;tr className='text-sm font-normal border-b border-gray-800 text-gray-500'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3 text-start'&gt;No&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Date&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Customer Name&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Location&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Amount&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Order Status&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3'&gt;Order ID&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;td className='pb-3 text-end'&gt;Payment&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;tbody&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Table className='whitespace-nowrap w-full text-center dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TableHeader&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead&gt;No&lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Date</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Customer Name</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Location</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Amount</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Order Status</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Order ID</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableHead className='text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Payment</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableHead&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/TableHeader&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TableBody&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {dashboardTableData.map((item, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;tr</span>
-<span class="cstat-no" title="statement not covered" >                                    key={item.id}</span>
-<span class="cstat-no" title="statement not covered" >                                    className='border-b text-sm text-gray-600 border-gray-800 dark:text-white'</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 text-start'&gt;{i + 1}&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;{item.date}&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {item.customerName}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {item.address}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;{item.amount}&lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableRow key={item.id}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='text-start'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {i + 1}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;{item.date}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;{item.customerName}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;{item.address}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;{item.amount}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;div className='row space-x-1 justify-center items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;div className='p-1 bg-orange rounded-full' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;div className='py-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                {item.status}</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {item.orderId}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;td className='py-3 px-5 row justify-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell&gt;{item.orderId}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='row justify-end'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;HorzMenuSolidIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/tr&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableRow&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            ))}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/tbody&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/table&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/TableBody&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Table&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/DashboardInfoCard&gt;</span>
@@ -304,7 +352,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T12:12:49.722Z
+                at 2023-08-25T13:12:00.907Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
