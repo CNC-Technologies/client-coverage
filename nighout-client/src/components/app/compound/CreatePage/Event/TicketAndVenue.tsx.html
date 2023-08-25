@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/356</span>
+                <span class='fraction'>0/347</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/356</span>
+                <span class='fraction'>0/347</span>
             </div>
         
             
@@ -410,25 +410,7 @@
 <a name='L345'></a><a href='#L345'>345</a>
 <a name='L346'></a><a href='#L346'>346</a>
 <a name='L347'></a><a href='#L347'>347</a>
-<a name='L348'></a><a href='#L348'>348</a>
-<a name='L349'></a><a href='#L349'>349</a>
-<a name='L350'></a><a href='#L350'>350</a>
-<a name='L351'></a><a href='#L351'>351</a>
-<a name='L352'></a><a href='#L352'>352</a>
-<a name='L353'></a><a href='#L353'>353</a>
-<a name='L354'></a><a href='#L354'>354</a>
-<a name='L355'></a><a href='#L355'>355</a>
-<a name='L356'></a><a href='#L356'>356</a>
-<a name='L357'></a><a href='#L357'>357</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L348'></a><a href='#L348'>348</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -781,7 +763,6 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ImageSelectItem from './ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >// import TicketTypes from '@/components/app/compound/CreatePage/Event/TicketTypes'</span>
 <span class="cstat-no" title="statement not covered" >// import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
@@ -796,6 +777,7 @@
 <span class="cstat-no" title="statement not covered" >import TicketPolicyVenue from '@/utils/FormValidators/EventCreation/ticketPolicyVenue'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import { EventInterface } from '@/store/slices/events.slice'</span>
+<span class="cstat-no" title="statement not covered" >import { Button } from '@/components/shadcn/ui/button'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const VenueLocation = dynamic(() =&gt; import('./VenueLocation'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -887,10 +869,10 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='px-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex gap-2 items-center  my-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='eventCreationIcons'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-5 h-5' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;h6 className='font-semibold text-xl max-mobile:text-lg '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h6 className='font-semibold text-lg max-mobile:text-lg '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Set up your event venue</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h6&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -898,7 +880,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mt-6 flex max-lgMobile:flex-col gap-2 lgMobile:gap-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {eventVenues.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                                disabled={</span>
 <span class="cstat-no" title="statement not covered" >                                    configKey !== 'business' &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                                    item !== 'Virtual'</span>
@@ -915,7 +897,7 @@
 <span class="cstat-no" title="statement not covered" >                                // { border border-primary/30 text-primary/30 cursor-not-allowed}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                {item}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" >                    })}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -959,10 +941,10 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='px-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex gap-2 items-center  my-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='eventCreationIcons'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-6 h-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;MapMarkerOutlineIcon className='w-5 h-5' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;h6 className='font-semibold text-xl max-mobile:text-lg '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h6 className='font-semibold text-lg max-mobile:text-lg '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Others</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h6&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -1002,24 +984,15 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-darkGrey' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;hr className='my-8 border-darkGrey' /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-darkGrey' /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex w-full flex-col mt-4 px-4 gap-8'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* &lt;OutlineButton</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Save and finish later'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='orange-outline'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    </span>
-<span class="cstat-no" title="statement not covered" >                &lt;/OutlineButton&gt; */}</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex w-full flex-col mt-6 px-4 gap-8'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                    // disabled={!isFormFilled()}</span>
-<span class="cstat-no" title="statement not covered" >                    onClick={handleSubmitWrapper}</span>
-<span class="cstat-no" title="statement not covered" >                    name={'Save and Continue'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; handleSubmitWrapper}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    Save and Continue</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -1138,7 +1111,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T13:12:00.907Z
+                at 2023-08-25T13:27:08.729Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
