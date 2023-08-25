@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/54</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/54</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -117,7 +117,9 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,6 +179,7 @@
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import ChangeTeamMemberPermissions from '@/components/business/dialogs/ChangeTeamMemberPermissions'</span>
 <span class="cstat-no" title="statement not covered" >import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'</span>
+<span class="cstat-no" title="statement not covered" >import { TableCell, TableRow } from '@/components/shadcn/ui/table'</span>
 <span class="cstat-no" title="statement not covered" >import { DeleteIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function TeamMemberItem({ teamMember }) {</span>
@@ -188,18 +191,21 @@
 <span class="cstat-no" title="statement not covered" >    const saveNewPermission = () =&gt; {}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='dashboard-list-item'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='items-center p-2 space-x-3 space-y-2 text-center col-md-row md:space-y-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={`flex-1 w-full truncate font-bold col-md-row space-x-3 items-center`}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Avatar img={teamMember.edges.user.picture} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;{teamMember.edges.user.name}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className={`flex-1 w-full truncate`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {teamMember.role}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='justify-center flex-1 row'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TableCell className=''&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                        className={`flex-1 w-full truncate font-bold col-md-row space-x-3 items-center`}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Avatar img={teamMember.edges.user.picture} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;{teamMember.edges.user.name}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TableCell className=''&gt;{teamMember.role}&lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TableCell className=' whitespace-nowrap'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    Joined Monday, 23rd January.</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TableCell className='w-24'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;span</span>
 <span class="cstat-no" title="statement not covered" >                        className='underline text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 hover:text-blue-500 text-sm cursor-pointer'</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={toggleChangePermissions}</span>
@@ -212,17 +218,14 @@
 <span class="cstat-no" title="statement not covered" >                        save={saveNewPermission}</span>
 <span class="cstat-no" title="statement not covered" >                        saving={false}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 text-[10px] text-gray-400 text-center md:text-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='row justify-center md:justify-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;IconButton onClick={showConfirmDelete}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;DeleteIcon className='text-red-400 h-4 w-4' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Joined Monday, 23rd January.</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TableCell className='w-20 row-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;IconButton onClick={showConfirmDelete}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;DeleteIcon className='text-red-400' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -232,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T13:27:08.729Z
+                at 2023-08-25T15:29:35.310Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
