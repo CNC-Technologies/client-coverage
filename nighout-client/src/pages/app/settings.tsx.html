@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/266</span>
+                <span class='fraction'>0/281</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/266</span>
+                <span class='fraction'>0/281</span>
             </div>
         
             
@@ -329,7 +329,37 @@
 <a name='L264'></a><a href='#L264'>264</a>
 <a name='L265'></a><a href='#L265'>265</a>
 <a name='L266'></a><a href='#L266'>266</a>
-<a name='L267'></a><a href='#L267'>267</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -604,6 +634,7 @@
 <span class="cstat-no" title="statement not covered" >import GeneralSettings from '@/components/app/complex/Settings/GeneralSettings'</span>
 <span class="cstat-no" title="statement not covered" >import Help from '@/components/app/complex/Settings/Help'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
+<span class="cstat-no" title="statement not covered" >import VerticalTabs from '@/components/app/simple/VerticalTabs'</span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import SettingsSkeleton from '@/components/skeletons/SettingsSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { settingsTabs } from '@/constants/app/Settings/TabsList'</span>
@@ -824,37 +855,51 @@
 <span class="cstat-no" title="statement not covered" >            {loading ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;SettingsSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white  p-3 rounded'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='sticky -top-5 bg-white z-[1] pt-3 mb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                            tabs={settingsTabs}</span>
-<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;AccountSettings</span>
-<span class="cstat-no" title="statement not covered" >                            prevImages={prevImages}</span>
-<span class="cstat-no" title="statement not covered" >                            setPrevImages={setPrevImages}</span>
-<span class="cstat-no" title="statement not covered" >                            setImages={setImages}</span>
-<span class="cstat-no" title="statement not covered" >                            setState={setSettingsDataHandler}</span>
-<span class="cstat-no" title="statement not covered" >                            {...settingsData.accountSettings}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 1 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;GeneralSettings</span>
-<span class="cstat-no" title="statement not covered" >                            setState={setSettingsDataHandler}</span>
-<span class="cstat-no" title="statement not covered" >                            {...settingsData?.generalSettings}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 2 &amp;&amp; &lt;Help /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {stateChanged &amp;&amp; activeTab &lt; 2 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='row justify-center mt-3 w-full md:w-3/5 space-y-3 mx-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Button loading={savingData} onClick={saveSettings}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Save Changes</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-5 gap-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='sticky top-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                                    tabs={settingsTabs}</span>
+<span class="cstat-no" title="statement not covered" >                                    setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                                    activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;VerticalTabs</span>
+<span class="cstat-no" title="statement not covered" >                                tabs={settingsTabs}</span>
+<span class="cstat-no" title="statement not covered" >                                setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                                activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;AccountSettings</span>
+<span class="cstat-no" title="statement not covered" >                                prevImages={prevImages}</span>
+<span class="cstat-no" title="statement not covered" >                                setPrevImages={setPrevImages}</span>
+<span class="cstat-no" title="statement not covered" >                                setImages={setImages}</span>
+<span class="cstat-no" title="statement not covered" >                                setState={setSettingsDataHandler}</span>
+<span class="cstat-no" title="statement not covered" >                                {...settingsData.accountSettings}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;GeneralSettings</span>
+<span class="cstat-no" title="statement not covered" >                                setState={setSettingsDataHandler}</span>
+<span class="cstat-no" title="statement not covered" >                                {...settingsData?.generalSettings}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 2 &amp;&amp; &lt;Help /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        {stateChanged &amp;&amp; activeTab &lt; 2 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='row justify-center mt-3 w-full md:w-3/5 space-y-3 mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                                    loading={savingData}</span>
+<span class="cstat-no" title="statement not covered" >                                    onClick={saveSettings}</span>
+<span class="cstat-no" title="statement not covered" >                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Save Changes</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
@@ -868,7 +913,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T17:10:12.988Z
+                at 2023-08-25T19:59:20.524Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
