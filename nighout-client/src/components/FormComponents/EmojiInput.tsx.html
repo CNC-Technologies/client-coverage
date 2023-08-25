@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.78% </span>
+                <span class="strong">16.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/57</span>
+                <span class='fraction'>10/59</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.78% </span>
+                <span class="strong">16.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/57</span>
+                <span class='fraction'>10/59</span>
             </div>
         
             
@@ -120,7 +120,9 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -129,6 +131,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,6 +186,7 @@
 import dynamic from 'next/dynamic'
 &nbsp;
 import { IconButton } from '@/components/FormComponents/button'
+import InputField from '@/components/FormComponents/InputField'
 &nbsp;
 const EmojiPicker = dynamic(import('emoji-picker-react'<span class="fstat-no" title="function not covered" >))</span>
 &nbsp;
@@ -198,7 +203,7 @@ export default <span class="fstat-no" title="function not covered" >function Emo
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='row w-full space-x-1 relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className=' w-full space-x-1 relative'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {showEmojiPicker &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute bottom-0 z-10 w-fit h-fit'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='row justify-end'&gt;</span>
@@ -217,14 +222,15 @@ export default <span class="fstat-no" title="function not covered" >function Emo
 <span class="cstat-no" title="statement not covered" >                        😀</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;textarea</span>
+<span class="cstat-no" title="statement not covered" >                &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                    type='textarea'</span>
 <span class="cstat-no" title="statement not covered" >                    onFocus={() =&gt; setShowEmojiPicker(false)}</span>
 <span class="cstat-no" title="statement not covered" >                    value={postMessage}</span>
 <span class="cstat-no" title="statement not covered" >                    onChange={handleInputChange}</span>
 <span class="cstat-no" title="statement not covered" >                    rows={rows}</span>
-<span class="cstat-no" title="statement not covered" >                    className='flex-1 placeholder:text-sm border rounded-md py-2 px-1 focus:outline-none'</span>
+<span class="cstat-no" title="statement not covered" >                    className='placeholder:text-sm border rounded-md py-2 px-1 focus:outline-none w-full'</span>
 <span class="cstat-no" title="statement not covered" >                    placeholder={placeholder}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;&lt;/textarea&gt;</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {error &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;p className='error-text text-center font-light text-sm mt-1'&gt;</span>
@@ -241,7 +247,7 @@ export default <span class="fstat-no" title="function not covered" >function Emo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T15:29:35.310Z
+                at 2023-08-25T17:10:12.988Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

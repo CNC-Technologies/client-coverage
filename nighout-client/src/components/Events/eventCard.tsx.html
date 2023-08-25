@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.46% </span>
+                <span class="strong">73.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>108/147</span>
+                <span class='fraction'>117/160</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.46% </span>
+                <span class="strong">73.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>108/147</span>
+                <span class='fraction'>117/160</span>
             </div>
         
             
@@ -210,7 +210,21 @@
 <a name='L145'></a><a href='#L145'>145</a>
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -261,6 +275,7 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -283,6 +298,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -324,6 +342,8 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
@@ -352,6 +372,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -382,6 +408,7 @@ import {
     eventBusinessSettings,
 } from '@/constants/routerLinks/Links'
 import useLayoutConfig from '@/hooks/useLayoutConfig'
+import { Card, CardContent } from '@/components/shadcn/ui/card'
 &nbsp;
 const MenuList = dynamic(import('@/components/app/simple/MenuList'<span class="fstat-no" title="function not covered" >))</span>
 &nbsp;
@@ -400,108 +427,120 @@ export default function EventCard({ event }) {
 &nbsp;
     // const routeTo = (page: string) =&gt; router.push(`${detailsRoute}/${page}`)
     return (
-        &lt;div className='flex flex-col w-full rounded-xl bg-white'&gt;
-            &lt;div className='relative h-[10rem] mobile:h-[12rem]'&gt;
-                &lt;div className='absolute top-0 left-0 flex items-center justify-between w-full px-3 py-3 text-sm rounded-t-xl '&gt;
-                    &lt;div className='flex items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-dark-charcoal dark:bg-darkGrey dark:text-dark-charcoal'&gt;
-                        &lt;p className='font-semibold '&gt;${event?.price}&lt;/p&gt;
-                    &lt;/div&gt;
+        &lt;&gt;
+            &lt;Card className='flex flex-col w-full rounded-xl dark:bg-primary/5 border-0 dark:border-[0.5px] shadow-none'&gt;
+                &lt;div className='relative h-[10rem] mobile:h-[12rem]'&gt;
+                    &lt;div className='absolute top-0 left-0 flex items-center justify-between w-full px-3 py-3 text-sm rounded-t-xl '&gt;
+                        &lt;div className='flex items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-dark-charcoal dark:bg-darkGrey dark:text-dark-charcoal'&gt;
+                            &lt;p className='font-semibold '&gt;${event?.price}&lt;/p&gt;
+                        &lt;/div&gt;
 &nbsp;
-                    {configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MenuList</span>
-<span class="cstat-no" title="statement not covered" >                            leftSided</span>
-<span class="cstat-no" title="statement not covered" >                            menuButton={</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex pointer-events-auto items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-dark-charcoal dark:bg-darkGrey dark:text-[rgb(25,_48,_60)]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;p className='font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;HorzMenuSolidIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
+                        {configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;MenuList</span>
+<span class="cstat-no" title="statement not covered" >                                leftSided</span>
+<span class="cstat-no" title="statement not covered" >                                menuButton={</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex pointer-events-auto items-center justify-center px-2 py-1 rounded-lg shadow-lg bg-white text-dark-charcoal dark:bg-darkGrey dark:text-[rgb(25,_48,_60)]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;p className='font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;HorzMenuSolidIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                            menuItems={[</span>
-<span class="cstat-no" title="statement not covered" >                                {</span>
-<span class="cstat-no" title="statement not covered" >                                    label: 'Mail Channel',</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick: <span class="fstat-no" title="function not covered" >() =&gt; showMailDialog(),</span></span>
-<span class="cstat-no" title="statement not covered" >                                },</span>
-<span class="cstat-no" title="statement not covered" >                                {</span>
-<span class="cstat-no" title="statement not covered" >                                    label: 'Delete Event',</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick: <span class="fstat-no" title="function not covered" >() =&gt; null,</span></span>
-<span class="cstat-no" title="statement not covered" >                                },</span>
-<span class="cstat-no" title="statement not covered" >                            ]}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-                    )}
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                menuItems={[</span>
+<span class="cstat-no" title="statement not covered" >                                    {</span>
+<span class="cstat-no" title="statement not covered" >                                        label: 'Mail Channel',</span>
+<span class="cstat-no" title="statement not covered" >                                        onClick: <span class="fstat-no" title="function not covered" >() =&gt; showMailDialog(),</span></span>
+<span class="cstat-no" title="statement not covered" >                                    },</span>
+<span class="cstat-no" title="statement not covered" >                                    {</span>
+<span class="cstat-no" title="statement not covered" >                                        label: 'Delete Event',</span>
+<span class="cstat-no" title="statement not covered" >                                        onClick: <span class="fstat-no" title="function not covered" >() =&gt; null,</span></span>
+<span class="cstat-no" title="statement not covered" >                                    },</span>
+<span class="cstat-no" title="statement not covered" >                                ]}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+                        )}
 &nbsp;
-                    {configKey !== 'business' &amp;&amp; &lt;LikeItem /&gt;}
-                &lt;/div&gt;
-                {/* &lt;Link href={detailsRoute}&gt; */}
-                &lt;Image
-                    src={event?.imageSrc}
-                    alt={'category'}
-                    priority={true}
-                    quality={75}
-                    width={100}
-                    height={100}
-                    className='object-cover object-center w-full h-full z-10 rounded-xl cursor-pointer'
-                    onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push(detailsRoute)}</span>
-                /&gt;
-                {/* &lt;/Link&gt; */}
-                &lt;div className='absolute bottom-0 left-0 pointer-events-none flex flex-wrap justify-between w-full px-3 py-2 '&gt;
-                    &lt;div className='bg-white dark:bg-darkGrey pointer-events-auto text-dark-charcoal dark:text-dark-charcoal shadow-lg py-1 px-2 xmobile:px-4 text-sm rounded-lg flex flex-col justify-center items-center'&gt;
-                        &lt;p className='font-semibold'&gt;31&lt;/p&gt;
-                        &lt;p className=''&gt;Mar&lt;/p&gt;
+                        {configKey !== 'business' &amp;&amp; &lt;LikeItem /&gt;}
+                    &lt;/div&gt;
+                    {/* &lt;Link href={detailsRoute}&gt; */}
+                    &lt;Image
+                        src={event?.imageSrc}
+                        alt={'category'}
+                        priority={true}
+                        quality={75}
+                        width={100}
+                        height={100}
+                        className='object-cover object-center w-full h-full z-10 rounded-t-xl cursor-pointer'
+                        onClick={<span class="fstat-no" title="function not covered" >() =&gt; router.push(detailsRoute)}</span>
+                    /&gt;
+                    {/* &lt;/Link&gt; */}
+                    &lt;div className='absolute bottom-0 left-0 pointer-events-none flex flex-wrap justify-between w-full px-3 py-2 '&gt;
+                        &lt;div className='bg-white dark:bg-darkGrey pointer-events-auto text-dark-charcoal dark:text-dark-charcoal shadow-lg py-1 px-2 xmobile:px-4 text-sm rounded-lg flex flex-col justify-center items-center'&gt;
+                            &lt;p className='font-semibold'&gt;31&lt;/p&gt;
+                            &lt;p className=''&gt;Mar&lt;/p&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-            &lt;/div&gt;
-            {/* &lt;Link href={detailsRoute}&gt; */}
-            &lt;Link
-                href={detailsRoute}
-                className='w-full px-3 py-3 text-dark-charcoal h-fit rounded-b-xl cursor-pointer'
-                // onClick={() =&gt; router.push(detailsRoute)}
-            &gt;
-                &lt;Truncate outerClass='font-medium'&gt;{event?.title}&lt;/Truncate&gt;
-                {/* &lt;p className='font-medium truncate'&gt;&lt;/p&gt; */}
-                &lt;div className='flex items-center gap-1 my-1'&gt;
-                    &lt;MapMarkerOutlineIcon className='w-4 h-4 text-orange' /&gt;
-                    &lt;p className='text-xs '&gt;{event?.location}&lt;/p&gt;
-                &lt;/div&gt;
+                &lt;CardContent className='px-3'&gt;
+                    {/* &lt;Link href={detailsRoute}&gt; */}
+                    &lt;Link
+                        href={detailsRoute}
+                        className='w-full px-3 py-3 text-dark-charcoal h-fit rounded-b-xl cursor-pointer'
+                        // onClick={() =&gt; router.push(detailsRoute)}
+                    &gt;
+                        &lt;Truncate outerClass='font-medium'&gt;
+                            {event?.title}
+                        &lt;/Truncate&gt;
+                        {/* &lt;p className='font-medium truncate'&gt;&lt;/p&gt; */}
+                        &lt;div className='flex items-center gap-1 my-1'&gt;
+                            &lt;MapMarkerOutlineIcon className='w-4 h-4 text-orange' /&gt;
+                            &lt;p className='text-xs '&gt;{event?.location}&lt;/p&gt;
+                        &lt;/div&gt;
 &nbsp;
-                &lt;OverlappingAvatars /&gt;
+                        &lt;OverlappingAvatars /&gt;
 &nbsp;
-                {configKey !== 'business' &amp;&amp; (
-                    &lt;div className='flex w-full gap-2 my-3 overflow-x-scroll text-xs hideScrollbar scroll-smooth xmd:text-sm'&gt;
-                        {event?.tags.map((item: string, index: number) =&gt; {
-                            return (
-                                &lt;div
-                                    key={index}
-                                    className='px-2 py-1 text-xs capitalize border rounded-md whitespace-nowrap orange-outline '
-                                &gt;
-                                    {item}
-                                &lt;/div&gt;
-                            )
-                        })}
-                    &lt;/div&gt;
-                )}
-            &lt;/Link&gt;
-            {configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-end space-x-3 px-3 pb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={eventBusinessDashboard(event?.id || 'random_id')}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Dashboard</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
+                        {configKey !== 'business' &amp;&amp; (
+                            &lt;div className='flex w-full gap-2 my-3 overflow-x-scroll text-xs hideScrollbar scroll-smooth xmd:text-sm'&gt;
+                                {event?.tags.map(
+                                    (item: string, index: number) =&gt; {
+                                        return (
+                                            &lt;div
+                                                key={index}
+                                                className='px-2 py-1 text-xs capitalize border rounded-md whitespace-nowrap orange-outline '
+                                            &gt;
+                                                {item}
+                                            &lt;/div&gt;
+                                        )
+                                    },
+                                )}
+                            &lt;/div&gt;
+                        )}
+                    &lt;/Link&gt;
+                    {configKey === 'business'<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='row justify-end space-x-3 px-3 pb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                href={eventBusinessDashboard(</span>
+<span class="cstat-no" title="statement not covered" >                                    event?.id || 'random_id',</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Dashboard</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={eventBusinessSettings(event?.id || 'random_id')}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Settings</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-            )}
-            {/* &lt;/Link&gt; */}
-        &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                href={eventBusinessSettings(</span>
+<span class="cstat-no" title="statement not covered" >                                    event?.id || 'random_id',</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Settings</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+                    )}
+                    {/* &lt;/Link&gt; */}
+                &lt;/CardContent&gt;
+            &lt;/Card&gt;
+        &lt;/&gt;
     )
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -511,7 +550,7 @@ export default function EventCard({ event }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T15:29:35.310Z
+                at 2023-08-25T17:10:12.988Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
