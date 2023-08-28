@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/212</span>
+                <span class='fraction'>0/214</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/212</span>
+                <span class='fraction'>0/214</span>
             </div>
         
             
@@ -275,7 +275,11 @@
 <a name='L210'></a><a href='#L210'>210</a>
 <a name='L211'></a><a href='#L211'>211</a>
 <a name='L212'></a><a href='#L212'>212</a>
-<a name='L213'></a><a href='#L213'>213</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -653,24 +657,26 @@
 <span class="cstat-no" title="statement not covered" >            {businessSettingsReq.loading &amp;&amp; !savingSettings ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;SettingsSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-5 gap-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-2 md:grid-cols-5 gap-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-2 lg:col-span-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='sticky top-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='md:hidden'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;Tabs</span>
 <span class="cstat-no" title="statement not covered" >                                    tabs={businessSettingsTabs}</span>
 <span class="cstat-no" title="statement not covered" >                                    setActiveTab={setActiveTab}</span>
 <span class="cstat-no" title="statement not covered" >                                    activeTab={activeTab}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;VerticalTabs</span>
-<span class="cstat-no" title="statement not covered" >                                tabs={businessSettingsTabs}</span>
-<span class="cstat-no" title="statement not covered" >                                setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                                activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='hidden md:block'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;VerticalTabs</span>
+<span class="cstat-no" title="statement not covered" >                                    tabs={businessSettingsTabs}</span>
+<span class="cstat-no" title="statement not covered" >                                    setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                                    activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {activeTab === 0 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;BusinessAccountSettings</span>
 <span class="cstat-no" title="statement not covered" >                                business={settingsData}</span>
@@ -706,7 +712,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T11:24:55.076Z
+                at 2023-08-28T14:19:48.996Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
