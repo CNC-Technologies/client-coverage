@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/133</span>
+                <span class='fraction'>0/145</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/133</span>
+                <span class='fraction'>0/145</span>
             </div>
         
             
@@ -196,7 +196,31 @@
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -335,6 +359,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '../../../../hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import MoreButtonItem from './MoreButtonItem'</span>
@@ -348,9 +374,13 @@
 <span class="cstat-no" title="statement not covered" >import ReportProblemItem from '@/components/ReportProblem'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" >import CreateBusinessAccountModal from '@/components/modals/CreateBusinessAccountModal'</span>
+<span class="cstat-no" title="statement not covered" >import { appSettingsLink, businessSettingsLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function LeftSidebar({ sidebarLinks }) {</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [showMoreModal, setShowMoreModal] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const toggleMoreModal = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setShowMoreModal(!showMoreModal)</span>
@@ -361,6 +391,11 @@
 <span class="cstat-no" title="statement not covered" >    const toggleAppThemeMode = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setTheme(theme === 'light' ? 'dark' : 'light')</span>
 <span class="cstat-no" title="statement not covered" >        toggleMoreModal()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const logout = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        router.push('/api/auth/logout')</span>
+<span class="cstat-no" title="statement not covered" >        CookieService.remover(['user-id', 'user'])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // useEffect only runs on the client, so now we can safely show the UI</span>
@@ -415,19 +450,20 @@
 <span class="cstat-no" title="statement not covered" >                        onMouseLeave={() =&gt; setShowMoreModal(false)}</span>
 <span class="cstat-no" title="statement not covered" >                        className=' absolute bg-white dark:bg-black shadow-lg rounded-lg w-full h-fit bottom-[140%] right-0'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {moreButtonLinks.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        {moreButtonLinks(</span>
+<span class="cstat-no" title="statement not covered" >                            configKey === 'business'</span>
+<span class="cstat-no" title="statement not covered" >                                ? businessSettingsLink</span>
+<span class="cstat-no" title="statement not covered" >                                : appSettingsLink,</span>
+<span class="cstat-no" title="statement not covered" >                            () =&gt; setCreateBusinessAccount(true),</span>
+<span class="cstat-no" title="statement not covered" >                            toggleAppThemeMode,</span>
+<span class="cstat-no" title="statement not covered" >                            () =&gt; setReportDialog(true),</span>
+<span class="cstat-no" title="statement not covered" >                            logout,</span>
+<span class="cstat-no" title="statement not covered" >                        ).map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                            return (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div key={index}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;MoreButtonItem</span>
 <span class="cstat-no" title="statement not covered" >                                        linkItem={item}</span>
 <span class="cstat-no" title="statement not covered" >                                        index={index}</span>
-<span class="cstat-no" title="statement not covered" >                                        toggleAppThemeMode={toggleAppThemeMode}</span>
-<span class="cstat-no" title="statement not covered" >                                        reportProblem={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            setReportDialog(true)</span>
-<span class="cstat-no" title="statement not covered" >                                        }</span>
-<span class="cstat-no" title="statement not covered" >                                        createBusinessAccount={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            setCreateBusinessAccount(true)</span>
-<span class="cstat-no" title="statement not covered" >                                        }</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )</span>
@@ -469,7 +505,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T08:07:22.987Z
+                at 2023-08-28T08:21:09.747Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
