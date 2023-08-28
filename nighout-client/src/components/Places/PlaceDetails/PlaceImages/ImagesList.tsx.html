@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>104/104</span>
+                <span class='fraction'>105/105</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>104/104</span>
+                <span class='fraction'>105/105</span>
             </div>
         
             
@@ -167,7 +167,8 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -249,6 +250,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -279,7 +281,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 &nbsp;
 import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'
 import { Media } from '@/components/Places/PlaceDetails/PlaceImages/PlaceImages'
-import MediaViewerModal from '@/components/modals/MediaViewerModal'
+import { Dialog, DialogContent } from '@/components/shadcn/ui/dialog'
 &nbsp;
 // import { images } from '@/constants/MockData/PlaceDetails/PlaceDetailsImages'
 &nbsp;
@@ -317,61 +319,62 @@ export default function ImagesList({ medias }) {
                 &lt;/Masonry&gt;
             &lt;/ResponsiveMasonry&gt;
 &nbsp;
-            &lt;MediaViewerModal
-                isOpen={fullView}
-                handleClose={<span class="fstat-no" title="function not covered" >() =&gt; setFullView(false)}</span>
-                extraClasses={undefined}
-            &gt;
-                &lt;div className='w-full h-full'&gt;
-                    &lt;Swiper
-                        initialSlide={selectedIndex}
-                        loop={true}
-                        navigation={{
-                            prevEl: '.custom-prev-button',
-                            nextEl: '.custom-next-button',
-                        }}
-                        modules={[Navigation, Keyboard]}
-                        keyboard={{
-                            enabled: true,
-                        }}
-                        className='h-full w-full'
-                    &gt;
-                        {medias?.map((media: Media, idx: number) =&gt; {
-                            return (
-                                &lt;SwiperSlide key={100 + idx}&gt;
-                                    &lt;Image
-                                        data-testid={`selected-${idx}`}
-                                        className='w-full h-full object-contain'
-                                        src={medias[idx]?.URL}
-                                        alt={`Image ${idx}`}
-                                        unoptimized
-                                        priority={true}
-                                        quality={75}
-                                        width={100}
-                                        height={100}
-                                    /&gt;
-                                    &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
-                                &lt;/SwiperSlide&gt;
-                            )
-                        })}
+            &lt;Dialog open={fullView} onOpenChange={<span class="fstat-no" title="function not covered" >() =&gt; setFullView(false)}&gt;</span>
+                &lt;DialogContent
+                    data-testid='dialog'
+                    className=' h-full  max-h-[90%] md:w-[70%] mobile:w-[85%] w-[90%] rounded-lg px-2 mobile:p-4 col'
+                &gt;
+                    &lt;div className='w-full'&gt;
+                        &lt;Swiper
+                            initialSlide={selectedIndex}
+                            loop={true}
+                            navigation={{
+                                prevEl: '.custom-prev-button',
+                                nextEl: '.custom-next-button',
+                            }}
+                            modules={[Navigation, Keyboard]}
+                            keyboard={{
+                                enabled: true,
+                            }}
+                            className='h-full w-full'
+                        &gt;
+                            {medias?.map((_media: Media, idx: number) =&gt; {
+                                return (
+                                    &lt;SwiperSlide key={100 + idx}&gt;
+                                        &lt;Image
+                                            data-testid={`selected-${idx}`}
+                                            className='w-full h-full object-contain'
+                                            src={medias[idx]?.URL}
+                                            alt={`Image ${idx}`}
+                                            unoptimized
+                                            priority={true}
+                                            quality={75}
+                                            width={100}
+                                            height={100}
+                                        /&gt;
+                                        &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
+                                    &lt;/SwiperSlide&gt;
+                                )
+                            })}
 &nbsp;
-                        &lt;div&gt;
-                            &lt;button
-                                data-testid='prev-button'
-                                className='custom-prev-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 left-3 white-fill dark:bg-grey'
-                            &gt;
-                                &lt;ChevronLeftIcon className='w-8 h-8' /&gt;
-                            &lt;/button&gt;
-                            &lt;button
-                                data-testid='next-button'
-                                className='custom-next-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 right-3 white-fill dark:bg-grey'
-                            &gt;
-                                &lt;ChevronRightIcon className='w-8 h-8' /&gt;
-                            &lt;/button&gt;
-                        &lt;/div&gt;
-                    &lt;/Swiper&gt;
-                &lt;/div&gt;
-            &lt;/MediaViewerModal&gt;
+                            &lt;div&gt;
+                                &lt;button
+                                    data-testid='prev-button'
+                                    className='custom-prev-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 left-3 white-fill dark:bg-grey'
+                                &gt;
+                                    &lt;ChevronLeftIcon className='w-8 h-8' /&gt;
+                                &lt;/button&gt;
+                                &lt;button
+                                    data-testid='next-button'
+                                    className='custom-next-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 right-3 white-fill dark:bg-grey'
+                                &gt;
+                                    &lt;ChevronRightIcon className='w-8 h-8' /&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/Swiper&gt;
+                    &lt;/div&gt;
+                &lt;/DialogContent&gt;
+            &lt;/Dialog&gt;
         &lt;/&gt;
     )
 }
@@ -382,7 +385,7 @@ export default function ImagesList({ medias }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

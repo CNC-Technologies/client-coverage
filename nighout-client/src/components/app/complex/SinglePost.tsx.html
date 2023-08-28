@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.15% </span>
+                <span class="strong">81.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>202/252</span>
+                <span class='fraction'>220/270</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.15% </span>
+                <span class="strong">81.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>202/252</span>
+                <span class='fraction'>220/270</span>
             </div>
         
             
@@ -315,7 +315,30 @@
 <a name='L250'></a><a href='#L250'>250</a>
 <a name='L251'></a><a href='#L251'>251</a>
 <a name='L252'></a><a href='#L252'>252</a>
-<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -529,6 +552,8 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -547,6 +572,17 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -585,7 +621,6 @@ import CommentField from '@/components/app/compound/Post/CommentField'
 import CommentItem from '@/components/app/compound/Post/CommentItem'
 import MenuList from '@/components/app/simple/MenuList'
 import { usePostsContext } from '@/components/context-containers/posts.context'
-import ParentModal from '@/components/modals/parentModal'
 import {
     ChatOutlineIcon,
     ForwardOutlineIcon,
@@ -597,6 +632,12 @@ import { formatMonthAndDate } from '@/utils/dateFormat'
 import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'
 import CreatePostForm from '@/components/forms/CreatePostForm'
 import usePosts from '@/hooks/posts/usePosts'
+import {
+    Dialog,
+    DialogHeader,
+    DialogTitle,
+    DialogContent,
+} from '@/components/shadcn/ui/dialog'
 &nbsp;
 const PostMedias = dynamic(
     () =&gt; import('@/components/app/compound/Post/PostMedias'),
@@ -654,7 +695,7 @@ export default function SinglePost({
     // }
 &nbsp;
     return (
-        &lt;div className='mt-4 pb-3 space-y-3 border-b col dark:border-white/50'&gt;
+        &lt;div className='mt-4 pb-3 space-y-3 border-b col dark:border-grey/10'&gt;
             {/* Post creator profile*/}
             &lt;div className='items-center space-x-3 row'&gt;
                 &lt;Link href={`/${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}`</span>}&gt;
@@ -738,6 +779,7 @@ export default function SinglePost({
                         &lt;div
                             data-testid='comment-button'
                             onClick={() =&gt; setCommentsModal(true)}
+                            className='cursor-pointer'
                         &gt;
                             &lt;ChatOutlineIcon className='w-5 h-5' /&gt;
                         &lt;/div&gt;
@@ -769,53 +811,65 @@ export default function SinglePost({
             /&gt;
 &nbsp;
             {/* Comments Modal  */}
-            &lt;ParentModal
-                isOpen={commentsModal}
-                handleClose={<span class="fstat-no" title="function not covered" >() =&gt; setCommentsModal(false)}</span>
-                extraClasses={undefined}
+            &lt;Dialog
+                open={commentsModal}
+                onOpenChange={<span class="fstat-no" title="function not covered" >() =&gt; setCommentsModal(false)}</span>
             &gt;
-                &lt;div className='relative' data-testid='comments-modal'&gt;
-                    &lt;h4 className='text-center px-2 text-lg font-semibold sticky top-0 bg-white'&gt;
-                        Comments
-                    &lt;/h4&gt;
+                &lt;DialogContent className='max-h-[85%] '&gt;
+                    &lt;DialogHeader&gt;
+                        &lt;DialogTitle className='text-center'&gt;
+                            Comments
+                        &lt;/DialogTitle&gt;
+                    &lt;/DialogHeader&gt;
+                    &lt;div className='relative' data-testid='comments-modal'&gt;
+                        &lt;div className='mt-4 grid gap-2 max-h-[80%] overflow-auto custom-scrollbar'&gt;
+                            {post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.comments<span class="branch-0 cbranch-no" title="branch not covered" > </span>? (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {post?.edges?.comments?.map(</span>
+<span class="cstat-no" title="statement not covered" >                                        (comment: any, idx: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                            return (</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;CommentItem</span>
+<span class="cstat-no" title="statement not covered" >                                                    key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                                    comment={comment}</span>
+<span class="cstat-no" title="statement not covered" >                                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            )</span>
+<span class="cstat-no" title="statement not covered" >                                        },</span>
+<span class="cstat-no" title="statement not covered" >                                    )}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/&gt;</span>
+                            ) : (
+                                &lt;div className='mb-2'&gt;
+                                    &lt;p className='text-center text-secondary text-sm'&gt;
+                                        Be the first to comment on this post
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                            )}
+                        &lt;/div&gt;
 &nbsp;
-                    &lt;div className='mt-4 grid gap-2'&gt;
-                        {post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.comments<span class="branch-0 cbranch-no" title="branch not covered" > </span>? (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {post?.edges?.comments?.map(</span>
-<span class="cstat-no" title="statement not covered" >                                    (comment: any, idx: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                        return (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;CommentItem</span>
-<span class="cstat-no" title="statement not covered" >                                                key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                                comment={comment}</span>
-<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        )</span>
-<span class="cstat-no" title="statement not covered" >                                    },</span>
-<span class="cstat-no" title="statement not covered" >                                )}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-                        ) : (
-                            &lt;div className='mb-2'&gt;
-                                &lt;p className='text-center text-secondary text-sm'&gt;
-                                    Be the first to comment on this post
-                                &lt;/p&gt;
-                            &lt;/div&gt;
-                        )}
+                        &lt;div className=' border-t dark:border-t-grey/10  bg-white dark:bg-black py-2 bottom-0 left-0 w-full'&gt;
+                            &lt;CommentField
+                                post={post}
+                                // eslint-disable-next-line no-unused-vars
+                                handleCloseModal={<span class="fstat-no" title="function not covered" >() =&gt; null}</span>
+                            /&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
-&nbsp;
-                    &lt;div className='sticky border-t  bg-white py-2 bottom-0 left-0 w-full'&gt;
-                        &lt;CommentField
-                            post={post}
-                            // eslint-disable-next-line no-unused-vars
-                            handleCloseModal={<span class="fstat-no" title="function not covered" >() =&gt; null}</span>
-                        /&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/ParentModal&gt;
+                &lt;/DialogContent&gt;
+            &lt;/Dialog&gt;
 &nbsp;
             {/* Edit Post Modal  */}
-            &lt;ParentModal isOpen={editPost} handleClose={closeEditDialog}&gt;
-                &lt;CreatePostForm handleCloseModal={closeEditAndFetchPosts} /&gt;
-            &lt;/ParentModal&gt;
+            &lt;Dialog
+                open={editPost !== undefined}
+                onOpenChange={closeEditDialog}
+            &gt;
+                &lt;DialogContent className='max-h-[85%] overflow-y-auto custom-scrollbar '&gt;
+                    {/* &lt;DialogHeader&gt;
+                        &lt;DialogTitle className='text-center'&gt;
+                            Comments
+                        &lt;/DialogTitle&gt;
+                    &lt;/DialogHeader&gt; */}
+                    &lt;CreatePostForm handleCloseModal={closeEditAndFetchPosts} /&gt;
+                &lt;/DialogContent&gt;
+            &lt;/Dialog&gt;
         &lt;/div&gt;
     )
 }
@@ -826,7 +880,7 @@ export default function SinglePost({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

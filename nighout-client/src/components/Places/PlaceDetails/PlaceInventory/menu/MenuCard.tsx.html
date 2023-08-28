@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/79</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/79</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -142,7 +142,11 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -227,8 +231,10 @@
 <span class="cstat-no" title="statement not covered" >import ImageSliderWIthNavigation from '@/components/Sliders/ImageSliderWIthNavigation'</span>
 <span class="cstat-no" title="statement not covered" >import { MoneyStackIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import Truncate from '@/components/app/simple/Truncate'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >// import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import InventoryDetails from '@/components/Places/PlaceDetails/PlaceInventory/menu/MenuDetails'</span>
+<span class="cstat-no" title="statement not covered" >import { Card } from '@/components/shadcn/ui/card'</span>
+<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MenuCard({ inventory }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [showItem, setShowItem] = useState(false)</span>
@@ -243,7 +249,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='h-fit bg-white cursor-pointer rounded-xl shadow-md'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Card className='h-fit cursor-pointer rounded-xl border-0 dark:bg-primary/5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='relative h-[11rem] xmd:h-[13rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
@@ -284,19 +290,19 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Card&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;ParentModal</span>
-<span class="cstat-no" title="statement not covered" >                isOpen={showItem}</span>
-<span class="cstat-no" title="statement not covered" >                handleClose={closeItemDetails}</span>
-<span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={showItem}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={closeItemDetails}</span>
+<span class="cstat-no" title="statement not covered" >                title={inventory.name}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;InventoryDetails</span>
 <span class="cstat-no" title="statement not covered" >                    // handleAddToCart={handleAddToCart}</span>
 <span class="cstat-no" title="statement not covered" >                    inventory={inventory}</span>
 <span class="cstat-no" title="statement not covered" >                    handleClose={closeItemDetails}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -307,7 +313,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

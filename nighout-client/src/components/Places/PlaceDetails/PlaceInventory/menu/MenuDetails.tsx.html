@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.52% </span>
+                <span class="strong">85.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>260/304</span>
+                <span class='fraction'>258/302</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.48% </span>
+                <span class="strong">79.48% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>33/41</span>
+                <span class='fraction'>31/39</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.52% </span>
+                <span class="strong">85.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>260/304</span>
+                <span class='fraction'>258/302</span>
             </div>
         
             
@@ -365,9 +365,7 @@
 <a name='L300'></a><a href='#L300'>300</a>
 <a name='L301'></a><a href='#L301'>301</a>
 <a name='L302'></a><a href='#L302'>302</a>
-<a name='L303'></a><a href='#L303'>303</a>
-<a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L303'></a><a href='#L303'>303</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -400,11 +398,9 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -525,7 +521,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -605,6 +600,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -703,12 +699,10 @@ export default function MenuDetails({ inventory, handleClose }) {
     const [inventoryItem, setInventoryItem] = useState(inventory)
     const [selectedExtras, setSelectedExtras] = useState&lt;Extra[]&gt;([])
 &nbsp;
-    const isSelected = (item: Extra) =&gt;
-        selectedExtras?.find((extra) =&gt; extra.name === item.name)
+    const isSelected = (item: Extra): boolean =&gt;
+        !!selectedExtras?.find((extra) =&gt; extra.name === item.name)
 &nbsp;
     const handleExtraChange = (extra: Extra) =&gt; {
-        // const isSelected = selectedExtras.includes(extra)
-&nbsp;
         if (isSelected(extra)) {
             // If the extra is already selected, remove it
             setSelectedExtras((prevSelectedExtras) =&gt;
@@ -833,9 +827,8 @@ export default function MenuDetails({ inventory, handleClose }) {
 &nbsp;
     return (
         &lt;div&gt;
-            &lt;div className='text-lg font-semibold dialog-child-header text-center'&gt;
-                {inventoryItem?.name}
-                &lt;div className='mt-1 font-bold'&gt;${calculateTotalPrice()}&lt;/div&gt;
+            &lt;div className='text-lg font-semibold text-center'&gt;
+                &lt;div className='font-bold'&gt;${calculateTotalPrice()}&lt;/div&gt;
             &lt;/div&gt;
 &nbsp;
             {/* Inventory media  */}
@@ -904,12 +897,13 @@ export default function MenuDetails({ inventory, handleClose }) {
                                 &gt;
                                     &lt;div className='flex space-x-2'&gt;
                                         &lt;CheckBox
-                                            value={isSelected(extra) || false}
+                                            // value={isSelected(extra) || true}
                                             data-testid={`checkbox-${index}`}
                                             checked={isSelected(extra) || false}
-                                            onChange={() =&gt;
+                                            onCheckedChange={() =&gt;
                                                 handleExtraChange(extra)
                                             }
+                                            id={`${extra?.name}-${index}`}
                                         /&gt;
                                         &lt;p className='font-medium'&gt;
                                             {extra?.name}
@@ -982,7 +976,7 @@ export default function MenuDetails({ inventory, handleClose }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/137</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/137</span>
             </div>
         
             
@@ -199,7 +199,9 @@
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -346,6 +348,7 @@
 <span class="cstat-no" title="statement not covered" >    userDetails,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/Profile/Eventdetails/EventDetails'</span>
 <span class="cstat-no" title="statement not covered" >import { CopyOutlineIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { defaultCoverPhoto } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ProfileEventPage() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -355,7 +358,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                    height={100}</span>
 <span class="cstat-no" title="statement not covered" >                    width={100}</span>
-<span class="cstat-no" title="statement not covered" >                    src={'/Images/events/hero.svg'}</span>
+<span class="cstat-no" title="statement not covered" >                    src={defaultCoverPhoto}</span>
 <span class="cstat-no" title="statement not covered" >                    alt='Avatar'</span>
 <span class="cstat-no" title="statement not covered" >                    className='object-cover object-center w-full h-full'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -387,7 +390,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey dark:border-grey/10' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Event Progress section  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
@@ -398,7 +401,7 @@
 <span class="cstat-no" title="statement not covered" >                        return (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                className='rounded-md bg-white p-4  flex-1 justify-center place-items-center grid gap-2'</span>
+<span class="cstat-no" title="statement not covered" >                                className='rounded-md bg-white dark:bg-primary/5 border shadow dark:shadow-none dark:border-none p-4  flex-1 justify-center place-items-center grid gap-2'</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-6 h-6 text-orange' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;p&gt;{item.name}&lt;/p&gt;</span>
@@ -409,7 +412,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey dark:border-grey/10' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Users details  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
@@ -423,7 +426,7 @@
 <span class="cstat-no" title="statement not covered" >                    {userDetails.map((item, index) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                            className='rounded-md border p-2  w-full flex justify-between items-center gap-2'</span>
+<span class="cstat-no" title="statement not covered" >                            className='rounded-md border dark:border-grey/10 p-2  w-full flex justify-between items-center gap-2'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='flex gap-2 items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;item.icon className='w-6 h-6' /&gt;</span>
@@ -438,7 +441,7 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-8 border-grey dark:border-grey/10' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Share on other platforms  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
@@ -478,7 +481,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

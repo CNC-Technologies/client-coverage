@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -130,7 +130,35 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -198,7 +226,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >// import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -209,10 +237,11 @@
 <span class="cstat-no" title="statement not covered" >    const [activeLink, setActiveLink] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    const { hidden, pathname } = useDisplayElementsInAppLayout()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const activePath = router.pathname as string</span>
+<span class="cstat-no" title="statement not covered" >    // const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    // const activePath = router.pathname as string</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const isReelsPage = activePath.startsWith('/app/reels')</span>
+<span class="cstat-no" title="statement not covered" >    // ! Revert back to this later</span>
+<span class="cstat-no" title="statement not covered" >    // const isReelsPage = activePath.startsWith('/app/reels')</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (hidden) {</span>
 <span class="cstat-no" title="statement not covered" >        return &lt;div className='hidden'&gt;&lt;/div&gt;</span>
@@ -230,27 +259,40 @@
 <span class="cstat-no" title="statement not covered" >                                index === activeLink ? ` relative  ` : ''</span>
 <span class="cstat-no" title="statement not covered" >                            }`}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {(pathname === item.url ||</span>
-<span class="cstat-no" title="statement not covered" >                                (isReelsPage &amp;&amp; item.url === '/app/reels')) &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            {pathname === item.url &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                // ! Revert back to this later</span>
+<span class="cstat-no" title="statement not covered" >                                // (isReelsPage &amp;&amp; item.url === '/app/reels')) &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                    className={` absolute w-[90px] max-mobile:w-[80px] max-mobile:h-[80px] h-[90px] -top-[25px] mobile:-top-[35px]  bg-dark-charcoal dark:bg-darkGrey p-0 mobile:p-3 rounded-full border-[10px] border-[whitesmoke] dark:border-dark-primary  active-footerNav left-0   transform ease-in-out transition duration-500 ${</span>
-<span class="cstat-no" title="statement not covered" >                                        pathname === item.url ||</span>
-<span class="cstat-no" title="statement not covered" >                                        (isReelsPage &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                                            item.url === '/app/reels')</span>
+<span class="cstat-no" title="statement not covered" >                                        pathname === item.url</span>
 <span class="cstat-no" title="statement not covered" >                                            ? `opacity-100`</span>
 <span class="cstat-no" title="statement not covered" >                                            : 'opacity-0'</span>
 <span class="cstat-no" title="statement not covered" >                                    }`}</span>
+<span class="cstat-no" title="statement not covered" >                                    // ! Revert back to this later</span>
+<span class="cstat-no" title="statement not covered" >                                    // className={` absolute w-[90px] max-mobile:w-[80px] max-mobile:h-[80px] h-[90px] -top-[25px] mobile:-top-[35px]  bg-dark-charcoal dark:bg-darkGrey p-0 mobile:p-3 rounded-full border-[10px] border-[whitesmoke] dark:border-dark-primary  active-footerNav left-0   transform ease-in-out transition duration-500 ${</span>
+<span class="cstat-no" title="statement not covered" >                                    //     pathname === item.url ||</span>
+<span class="cstat-no" title="statement not covered" >                                    //     (isReelsPage &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                    //         item.url === '/app/reels')</span>
+<span class="cstat-no" title="statement not covered" >                                    //         ? `opacity-100`</span>
+<span class="cstat-no" title="statement not covered" >                                    //         : 'opacity-0'</span>
+<span class="cstat-no" title="statement not covered" >                                    // }`}</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                                href={item.url}</span>
 <span class="cstat-no" title="statement not covered" >                                className={`z-20 text-primary dark:text-dark-charcoal transition  xmobile:translate-x-0 duration-500 ease-in-out transform ${</span>
-<span class="cstat-no" title="statement not covered" >                                    pathname === item.url ||</span>
-<span class="cstat-no" title="statement not covered" >                                    (isReelsPage &amp;&amp; item.url === '/app/reels')</span>
+<span class="cstat-no" title="statement not covered" >                                    pathname === item.url</span>
 <span class="cstat-no" title="statement not covered" >                                        ? 'relative top-1/2 left-0 -translate-y-[65px] mobile:-translate-y-[80px] '</span>
 <span class="cstat-no" title="statement not covered" >                                        : ''</span>
 <span class="cstat-no" title="statement not covered" >                                }`}</span>
+<span class="cstat-no" title="statement not covered" >                                // ! Revert back to this later</span>
+<span class="cstat-no" title="statement not covered" >                                // className={`z-20 text-primary dark:text-dark-charcoal transition  xmobile:translate-x-0 duration-500 ease-in-out transform ${</span>
+<span class="cstat-no" title="statement not covered" >                                //     pathname === item.url ||</span>
+<span class="cstat-no" title="statement not covered" >                                //     (isReelsPage &amp;&amp; item.url === '/app/reels')</span>
+<span class="cstat-no" title="statement not covered" >                                //         ? 'relative top-1/2 left-0 -translate-y-[65px] mobile:-translate-y-[80px] '</span>
+<span class="cstat-no" title="statement not covered" >                                //         : ''</span>
+<span class="cstat-no" title="statement not covered" >                                // }`}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                {item.icon}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;p className='text-center  max-xmd:text-sm max-mobile:text-xs mt-1 font-medium'&gt;</span>
@@ -271,7 +313,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/198</span>
+                <span class='fraction'>0/203</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/198</span>
+                <span class='fraction'>0/203</span>
             </div>
         
             
@@ -261,7 +261,17 @@
 <a name='L196'></a><a href='#L196'>196</a>
 <a name='L197'></a><a href='#L197'>197</a>
 <a name='L198'></a><a href='#L198'>198</a>
-<a name='L199'></a><a href='#L199'>199</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -466,13 +476,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import AllImagesLayout from '@/components/Places/PlaceDetails/PlaceImages/AllImagesLayout'</span>
-<span class="cstat-no" title="statement not covered" >import ImagesModal from '@/components/Places/PlaceDetails/PlaceImages/ImagesModal'</span>
-<span class="cstat-no" title="statement not covered" >// import { samplePlaceImages } from '@/constants/MockData/PlaceDetails/PlaceDetailsImages'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    ChevronLeftIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ChevronRightIcon,</span>
 <span class="cstat-no" title="statement not covered" >    GridSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { Dialog, DialogContent } from '@/components/shadcn/ui/dialog'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const Image = dynamic(import('next/image'))</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -559,10 +568,12 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='absolute bottom-3 right-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; setImagesDialog(true)}</span>
-<span class="cstat-no" title="statement not covered" >                                    className='white-fill flex space-x-2'</span>
+<span class="cstat-no" title="statement not covered" >                                    className='white-fill  '</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;See all photos&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;GridSolidIcon className='text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex space-x-2 flex-nowrap'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;span&gt;See all photos&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;GridSolidIcon className='text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
@@ -581,7 +592,7 @@
 <span class="cstat-no" title="statement not covered" >                    return (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                            className='relative hidden col-span-1 row-span-2 cursor-pointer xlaptop:block hover:brightness-150 smoothen'</span>
+<span class="cstat-no" title="statement not covered" >                            className='relative hidden col-span-1 row-span-2 cursor-pointer xlaptop:block hover:brightness-125 smoothen'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                                src={media?.URL}</span>
@@ -603,7 +614,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* Thumbnails  */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-col-1 mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='w-full overflow-x-scroll row gap-1 xlaptop:mt-2 scroll-smooth'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='w-full overflow-x-scroll custom-scrollbar pb-1 row gap-1 xlaptop:mt-2 scroll-smooth'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {place?.edges?.medias?.map(</span>
 <span class="cstat-no" title="statement not covered" >                        (media: Media, index: number) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='col' key={index}&gt;</span>
@@ -647,13 +658,17 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* See all Images Modal  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ImagesModal</span>
-<span class="cstat-no" title="statement not covered" >                isOpen={imagesDialog}</span>
-<span class="cstat-no" title="statement not covered" >                handleClose={() =&gt; setImagesDialog(false)}</span>
-<span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Dialog</span>
+<span class="cstat-no" title="statement not covered" >                open={imagesDialog}</span>
+<span class="cstat-no" title="statement not covered" >                onOpenChange={() =&gt; setImagesDialog(false)}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;AllImagesLayout place={place} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/ImagesModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DialogContent</span>
+<span class="cstat-no" title="statement not covered" >                    data-testid='dialog'</span>
+<span class="cstat-no" title="statement not covered" >                    className=' max-h-[90%] overflow-auto custom-scrollbar w-full max-w-[60rem] rounded-lg px-2 mobile:p-4'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;AllImagesLayout place={place} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/DialogContent&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Dialog&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -664,7 +679,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.03% </span>
+                <span class="strong">90.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>203/223</span>
+                <span class='fraction'>207/229</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.03% </span>
+                <span class="strong">90.39% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>203/223</span>
+                <span class='fraction'>207/229</span>
             </div>
         
             
@@ -286,7 +286,13 @@
 <a name='L221'></a><a href='#L221'>221</a>
 <a name='L222'></a><a href='#L222'>222</a>
 <a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -385,6 +391,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -421,6 +429,10 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -516,13 +528,13 @@ import { SwiperSlide, Swiper } from 'swiper/react'
 import videojs from 'video.js'
 &nbsp;
 import { Media } from '@/interfaces/posts.interface'
-import MediaViewerModal from '@/components/modals/MediaViewerModal'
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
     GridSolidIcon,
 } from '@/constants/icons/icons'
 import Button from '@/components/FormComponents/button'
+import { Dialog, DialogContent } from '@/components/shadcn/ui/dialog'
 // import { PlaySolidIcon } from '@/constants/icons/icons'
 &nbsp;
 export default function PostMedias({
@@ -604,8 +616,10 @@ export default function PostMedias({
 <span class="cstat-no" title="statement not covered" >                                    // }</span>
 <span class="cstat-no" title="statement not covered" >                                    className='grey-fill flex space-x-2'</span>
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;All photos ({medias.length})&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;GridSolidIcon className='text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex space-x-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;All photos ({medias.length})&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;GridSolidIcon className='text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
                         )}
@@ -613,50 +627,54 @@ export default function PostMedias({
                 )
             })}
 &nbsp;
-            &lt;MediaViewerModal
-                isOpen={fullView}
-                handleClose={<span class="fstat-no" title="function not covered" >() =&gt; setFullView(false)}</span>
-                extraClasses={undefined}
-            &gt;
-                &lt;div className='w-full h-full'&gt;
-                    &lt;Swiper
-                        initialSlide={selectedIndex}
-                        loop={true}
-                        navigation={{
-                            prevEl: '.custom-prev-button',
-                            nextEl: '.custom-next-button',
-                        }}
-                        modules={[Navigation, Keyboard]}
-                        keyboard={{
-                            enabled: true,
-                        }}
-                        className='h-full w-full'
-                    &gt;
-                        {medias?.map((media: Media, idx: number) =&gt; {
-                            return (
-                                &lt;SwiperSlide key={100 + idx}&gt;
-                                    &lt;MediaTag
-                                        media={media}
-                                        index={100 + idx}
-                                        username={username}
-                                        objectContain
-                                    /&gt;
-                                    &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
-                                &lt;/SwiperSlide&gt;
-                            )
-                        })}
+            &lt;Dialog open={fullView} onOpenChange={<span class="fstat-no" title="function not covered" >() =&gt; setFullView(false)}&gt;</span>
+                &lt;DialogContent
+                    data-testid='dialog'
+                    className=' h-fit md:w-[70%] mobile:w-[85%] w-[90%] rounded-lg px-2 mobile:p-4 col'
+                &gt;
+                    &lt;div className='w-full h-full'&gt;
+                        &lt;Swiper
+                            initialSlide={selectedIndex}
+                            loop={true}
+                            navigation={{
+                                prevEl: '.custom-prev-button',
+                                nextEl: '.custom-next-button',
+                            }}
+                            modules={[Navigation, Keyboard]}
+                            keyboard={{
+                                enabled: true,
+                            }}
+                            className='h-full w-full items-center'
+                        &gt;
+                            {medias?.map((media: Media, idx: number) =&gt; {
+                                return (
+                                    &lt;SwiperSlide
+                                        key={100 + idx}
+                                        className='h-full'
+                                    &gt;
+                                        &lt;MediaTag
+                                            media={media}
+                                            index={100 + idx}
+                                            username={username}
+                                            objectContain
+                                        /&gt;
+                                        &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
+                                    &lt;/SwiperSlide&gt;
+                                )
+                            })}
 &nbsp;
-                        &lt;div&gt;
-                            &lt;button className='custom-prev-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 left-3 white-fill dark:bg-grey'&gt;
-                                &lt;ChevronLeftIcon className='w-8 h-8' /&gt;
-                            &lt;/button&gt;
-                            &lt;button className='custom-next-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 right-3 white-fill dark:bg-grey'&gt;
-                                &lt;ChevronRightIcon className='w-8 h-8' /&gt;
-                            &lt;/button&gt;
-                        &lt;/div&gt;
-                    &lt;/Swiper&gt;
-                &lt;/div&gt;
-            &lt;/MediaViewerModal&gt;
+                            &lt;div&gt;
+                                &lt;button className='custom-prev-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 left-3 white-fill dark:bg-grey'&gt;
+                                    &lt;ChevronLeftIcon className='w-8 h-8' /&gt;
+                                &lt;/button&gt;
+                                &lt;button className='custom-next-button fixed z-10 transform -translate-y-1/2 rounded-full shadow-sm top-1/2 right-3 white-fill dark:bg-grey'&gt;
+                                    &lt;ChevronRightIcon className='w-8 h-8' /&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/Swiper&gt;
+                    &lt;/div&gt;
+                &lt;/DialogContent&gt;
+            &lt;/Dialog&gt;
         &lt;/div&gt;
     )
 }
@@ -739,7 +757,7 @@ function MediaTag({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

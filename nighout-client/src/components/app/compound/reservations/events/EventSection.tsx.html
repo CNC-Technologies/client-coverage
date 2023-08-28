@@ -203,7 +203,7 @@
 <span class="cstat-no" title="statement not covered" >    ClockOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    MapMarkerSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { EventTabList } from '@/constants/app/reservations/tabLists'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ReservationEventsSection() {</span>
@@ -223,7 +223,7 @@
 <span class="cstat-no" title="statement not covered" >                    return (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                            className='shadow-sm rounded-md p-3 bg-white flex max-lgMobile:flex-col-reverse lgMobile:items-center gap-5'</span>
+<span class="cstat-no" title="statement not covered" >                            className='shadow-sm rounded-md p-3 dark:bg-primary/5 flex max-lgMobile:flex-col-reverse lgMobile:items-center gap-5'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='grid gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='flex gap-2 items-center'&gt;</span>
@@ -235,7 +235,7 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;Lagos&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex-1 lgMobile:pl-5 lgMobile:border-l-2 lgMobile:border-grey  flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex-1 lgMobile:pl-5 lgMobile:border-l-2 lgMobile:border-grey dark:lgMobile:border-grey/10 flex items-center justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='grid gap-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;h6 className='font-bold text-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        Timeless Album Launch</span>
@@ -244,15 +244,15 @@
 <span class="cstat-no" title="statement not covered" >                                        Event type: Concert</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;p className='font-light'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        Ticket type/id: Regular (01234567890)</span>
+<span class="cstat-no" title="statement not covered" >                                        Ticket type/id: Regular</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;IconButton className='orange-fill font-medium'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Button className=' font-medium'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex px-5 py-1 items-center gap-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;Edit&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;ChevronDownIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
@@ -268,7 +268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-25T19:59:20.524Z
+                at 2023-08-28T07:13:25.070Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
