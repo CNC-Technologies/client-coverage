@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/139</span>
+                <span class='fraction'>0/146</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/139</span>
+                <span class='fraction'>0/146</span>
             </div>
         
             
@@ -202,7 +202,21 @@
 <a name='L137'></a><a href='#L137'>137</a>
 <a name='L138'></a><a href='#L138'>138</a>
 <a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -426,7 +440,8 @@
 <span class="cstat-no" title="statement not covered" >                                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                            className={`border row flex-1 space-x-2 items-center border-dark mt-3 p-2 rounded-md cursor-pointer smoothen ${</span>
-<span class="cstat-no" title="statement not covered" >                                                active &amp;&amp; 'bg-dark text-white'</span>
+<span class="cstat-no" title="statement not covered" >                                                active &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                                'bg-dark text-white dark:bg-orange dark:text-black dark:border-transparent'</span>
 <span class="cstat-no" title="statement not covered" >                                            }`}</span>
 <span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                selectResource(`${item.id}`, 1)</span>
@@ -443,14 +458,20 @@
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;div&gt;{item.name}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                                    className={`${</span>
+<span class="cstat-no" title="statement not covered" >                                                        active</span>
+<span class="cstat-no" title="statement not covered" >                                                            ? 'text-black text-xs'</span>
+<span class="cstat-no" title="statement not covered" >                                                            : 'text-muted'</span>
+<span class="cstat-no" title="statement not covered" >                                                    }`}</span>
+<span class="cstat-no" title="statement not covered" >                                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    {item.quantity}</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        {active &amp;&amp; item.quantity &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                                                className='w-10 border border-dark rounded text-center'</span>
+<span class="cstat-no" title="statement not covered" >                                                className='w-20 border border-dark rounded text-center bg-transparent'</span>
 <span class="cstat-no" title="statement not covered" >                                                name={active.id}</span>
 <span class="cstat-no" title="statement not covered" >                                                type='number'</span>
 <span class="cstat-no" title="statement not covered" >                                                value={active.quantity}</span>
@@ -487,7 +508,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T08:21:09.747Z
+                at 2023-08-28T11:24:55.076Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
