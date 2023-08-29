@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/49</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/49</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -112,7 +112,29 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,10 +186,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" >//</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import randomColor from 'randomcolor'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
-<span class="cstat-no" title="statement not covered" >import RevenueGraph from '@/components/business/complex/graphs/RevenueGraph'</span>
-<span class="cstat-no" title="statement not covered" >import DashboardItemCard from '@/components/business/compound/business/DashboardItemCard'</span>
+<span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
 <span class="cstat-no" title="statement not covered" >import InsightsAnalyticsCard from '@/components/business/compound/business/InsightsAnalyticsCard'</span>
+<span class="cstat-no" title="statement not covered" >import DashboardInfoCardSm from '@/components/business/dashboard/DashboardInfoCardSm'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
 <span class="cstat-no" title="statement not covered" >import { insightDashboardCards } from '@/constants/business/dashboardCards'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -196,12 +220,21 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {insightDashboardCards.map((item) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardItemCard key={item.id} card={item} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCardSm</span>
+<span class="cstat-no" title="statement not covered" >                        key={item.id}</span>
+<span class="cstat-no" title="statement not covered" >                        title={item.label}</span>
+<span class="cstat-no" title="statement not covered" >                        color={randomColor({</span>
+<span class="cstat-no" title="statement not covered" >                            luminosity: 'light',</span>
+<span class="cstat-no" title="statement not covered" >                            hue: 'blue',</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                        info={item.digit}</span>
+<span class="cstat-no" title="statement not covered" >                        subtitle={item.timeFrame}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-6 gap-3 mt-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-1 md:col-span-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;RevenueGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;FinanceGraph /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-1 md:col-span-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;InsightsAnalyticsCard /&gt;</span>
@@ -217,7 +250,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-29T15:18:37.518Z
+                at 2023-08-29T15:18:55.232Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
