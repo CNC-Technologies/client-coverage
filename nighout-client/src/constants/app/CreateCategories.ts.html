@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -137,7 +137,21 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -232,6 +246,7 @@
 <span class="cstat-no" title="statement not covered" >    component: any</span>
 <span class="cstat-no" title="statement not covered" >    color: string</span>
 <span class="cstat-no" title="statement not covered" >    businessOnly: boolean</span>
+<span class="cstat-no" title="statement not covered" >    feature?: 'live' | 'development'</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >const categories: Categories[] = [</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
@@ -241,6 +256,7 @@
 <span class="cstat-no" title="statement not covered" >        component: CreatePostItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-purple',</span>
 <span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
+<span class="cstat-no" title="statement not covered" >        feature: 'live',</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    // {</span>
 <span class="cstat-no" title="statement not covered" >    //     name: 'Story',</span>
@@ -251,29 +267,34 @@
 <span class="cstat-no" title="statement not covered" >    //     businessOnly: false,</span>
 <span class="cstat-no" title="statement not covered" >    // },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
+<span class="cstat-no" title="statement not covered" >        name: 'Place',</span>
+<span class="cstat-no" title="statement not covered" >        icon: PlacesSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >        desc: 'Create a place attached to your business.',</span>
+<span class="cstat-no" title="statement not covered" >        component: CreatePlacesItem,</span>
+<span class="cstat-no" title="statement not covered" >        color: 'bg-maroon',</span>
+<span class="cstat-no" title="statement not covered" >        businessOnly: true,</span>
+<span class="cstat-no" title="statement not covered" >        feature: 'live',</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Go Live',</span>
 <span class="cstat-no" title="statement not covered" >        icon: VideoOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >        desc: 'Create an instant live event.',</span>
 <span class="cstat-no" title="statement not covered" >        component: null,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-green',</span>
 <span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
+<span class="cstat-no" title="statement not covered" >        feature: 'development',</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    {</span>
 <span class="cstat-no" title="statement not covered" >        name: 'Event',</span>
 <span class="cstat-no" title="statement not covered" >        icon: EventIcon,</span>
 <span class="cstat-no" title="statement not covered" >        desc: 'Create a scheduled event for your followers and users of placio.',</span>
 <span class="cstat-no" title="statement not covered" >        component: CreateEventItem,</span>
+<span class="cstat-no" title="statement not covered" >        // component: CreateEventItem,</span>
 <span class="cstat-no" title="statement not covered" >        color: 'bg-gold',</span>
 <span class="cstat-no" title="statement not covered" >        businessOnly: false,</span>
+<span class="cstat-no" title="statement not covered" >        feature: 'development',</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    {</span>
-<span class="cstat-no" title="statement not covered" >        name: 'Places',</span>
-<span class="cstat-no" title="statement not covered" >        icon: PlacesSolidIcon,</span>
-<span class="cstat-no" title="statement not covered" >        desc: 'Create a place attached to your business.',</span>
-<span class="cstat-no" title="statement not covered" >        component: CreatePlacesItem,</span>
-<span class="cstat-no" title="statement not covered" >        color: 'bg-maroon',</span>
-<span class="cstat-no" title="statement not covered" >        businessOnly: true,</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // {</span>
 <span class="cstat-no" title="statement not covered" >    //     name: 'Reels',</span>
 <span class="cstat-no" title="statement not covered" >    //     icon: ReelsSolidIcon,</span>
@@ -292,7 +313,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-29T15:19:35.766Z
+                at 2023-08-29T18:23:02.717Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

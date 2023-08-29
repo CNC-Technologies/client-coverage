@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/83</span>
+                <span class='fraction'>0/88</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/83</span>
+                <span class='fraction'>0/88</span>
             </div>
         
             
@@ -146,7 +146,17 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -231,6 +241,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useContext, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Details from '@/components/app/compound/CreatePage/Places/Details'</span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
@@ -238,6 +249,7 @@
 <span class="cstat-no" title="statement not covered" >import { placeBusinessSettings } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >export default function CreatePlacesItem({</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
 <span class="cstat-no" title="statement not covered" >    handleAddPlace,</span>
@@ -247,6 +259,9 @@
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { post, loading } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const activeBusiness = useSelector(</span>
+<span class="cstat-no" title="statement not covered" >        (state: RootState) =&gt; state.activeBusiness.activeBusiness,</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
@@ -269,7 +284,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            //Create place</span>
 <span class="cstat-no" title="statement not covered" >            const res = await post({</span>
-<span class="cstat-no" title="statement not covered" >                url: newPlace(formData.business_id),</span>
+<span class="cstat-no" title="statement not covered" >                url: newPlace(activeBusiness.id),</span>
 <span class="cstat-no" title="statement not covered" >                data: formData,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -319,7 +334,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-29T15:19:35.766Z
+                at 2023-08-29T18:23:02.717Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
