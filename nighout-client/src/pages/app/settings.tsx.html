@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/283</span>
+                <span class='fraction'>0/285</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/283</span>
+                <span class='fraction'>0/285</span>
             </div>
         
             
@@ -346,7 +346,11 @@
 <a name='L281'></a><a href='#L281'>281</a>
 <a name='L282'></a><a href='#L282'>282</a>
 <a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -635,8 +639,9 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import AccountSettings from '@/components/app/complex/Settings/AccountSettings'</span>
-<span class="cstat-no" title="statement not covered" >import GeneralSettings from '@/components/app/complex/Settings/GeneralSettings'</span>
 <span class="cstat-no" title="statement not covered" >import Help from '@/components/app/complex/Settings/Help'</span>
+<span class="cstat-no" title="statement not covered" >import Notifications from '@/components/app/complex/Settings/Notifications'</span>
+<span class="cstat-no" title="statement not covered" >import VideoAndAudio from '@/components/app/complex/Settings/VideoAndAudio'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import VerticalTabs from '@/components/app/simple/VerticalTabs'</span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
@@ -878,7 +883,7 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-3 xl:col-span-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {activeTab === 0 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;AccountSettings</span>
 <span class="cstat-no" title="statement not covered" >                                prevImages={prevImages}</span>
@@ -889,12 +894,13 @@
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                        {activeTab === 1 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;GeneralSettings</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Notifications</span>
 <span class="cstat-no" title="statement not covered" >                                setState={setSettingsDataHandler}</span>
 <span class="cstat-no" title="statement not covered" >                                {...settingsData?.generalSettings}</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                        {activeTab === 2 &amp;&amp; &lt;Help /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 2 &amp;&amp; &lt;VideoAndAudio /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 3 &amp;&amp; &lt;Help /&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                        {stateChanged &amp;&amp; activeTab &lt; 2 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='row justify-center mt-3 w-full md:w-3/5 space-y-3 mx-auto'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;Button</span>
@@ -919,7 +925,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T14:21:08.366Z
+                at 2023-08-29T15:18:37.518Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

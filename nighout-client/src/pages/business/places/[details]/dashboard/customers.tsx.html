@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -94,7 +94,9 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,31 +128,32 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import DashboardCustomersTable from '@/components/business/compound/business/DashboardCustomersTable'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import DashboardItemCard from '@/components/business/compound/business/DashboardItemCard'</span>
+<span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
+<span class="cstat-no" title="statement not covered" >import { Card } from '@/components/shadcn/ui/card'</span>
 <span class="cstat-no" title="statement not covered" >import { customersDashboardCards } from '@/constants/business/dashboardCards'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Customers() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-2 mb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white dark:bg-dark rounded-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 border-b'&gt;Customers&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Card&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2'&gt;Customers&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/Card&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {customersDashboardCards.map((item) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardItemCard key={item.id} card={item} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {customersDashboardCards.map((item, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        key={i}</span>
+<span class="cstat-no" title="statement not covered" >                        title={item.label}</span>
+<span class="cstat-no" title="statement not covered" >                        titleSize='sm'</span>
+<span class="cstat-no" title="statement not covered" >                        data={`${item.digit}`}</span>
+<span class="cstat-no" title="statement not covered" >                        icon={&lt;item.icon /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* &lt;div className='my-3 grid grid-cols-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;CustomersGraph /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-4'&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;DashboardCustomersTable /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
@@ -163,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T14:21:08.366Z
+                at 2023-08-29T15:18:37.518Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
