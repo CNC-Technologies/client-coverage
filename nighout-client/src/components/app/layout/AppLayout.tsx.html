@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/200</span>
+                <span class='fraction'>0/205</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/200</span>
+                <span class='fraction'>0/205</span>
             </div>
         
             
@@ -263,7 +263,17 @@
 <a name='L198'></a><a href='#L198'>198</a>
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -487,6 +497,7 @@
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >// import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import MobileFloatingButtonMenu from '@/components/app/simple/MobileFloatingButton'</span>
+<span class="cstat-no" title="statement not covered" >import { Tooltip } from '@/components/shadcn/ui/tooltip'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    appHomeLink,</span>
 <span class="cstat-no" title="statement not covered" >    businessEventsLink,</span>
@@ -621,11 +632,15 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='hidden-md-row py-3 px-5 items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;BusinessGoBackLink router={router} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='ml-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Link href={appHomeLink}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='col items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;Avatar img={user?.picture} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Tooltip content={'Go back to home'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;Link href={appHomeLink}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='col items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                                        img={user?.picture}</span>
+<span class="cstat-no" title="statement not covered" >                                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Tooltip&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )}</span>
@@ -670,7 +685,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-29T18:23:02.717Z
+                at 2023-08-30T15:09:17.622Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
