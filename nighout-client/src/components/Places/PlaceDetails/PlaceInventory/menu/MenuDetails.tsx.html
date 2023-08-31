@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.43% </span>
+                <span class="strong">85.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>258/302</span>
+                <span class='fraction'>270/314</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.48% </span>
+                <span class="strong">77.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>31/39</span>
+                <span class='fraction'>31/40</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.43% </span>
+                <span class="strong">85.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>258/302</span>
+                <span class='fraction'>270/314</span>
             </div>
         
             
@@ -365,7 +365,19 @@
 <a name='L300'></a><a href='#L300'>300</a>
 <a name='L301'></a><a href='#L301'>301</a>
 <a name='L302'></a><a href='#L302'>302</a>
-<a name='L303'></a><a href='#L303'>303</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -390,6 +402,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -416,6 +438,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -429,6 +452,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -670,6 +694,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
+import { useQueryClient } from '@tanstack/react-query'
 &nbsp;
 import { Navigation } from 'swiper'
 import { SwiperSlide, Swiper } from 'swiper/react'
@@ -684,6 +709,7 @@ import {
     PlusCircleOutlineIcon,
 } from '@/constants/icons/icons'
 import { addToCart } from '@/store/slices/placesCart.slice'
+import { PlaceInterface } from '@/store/slices/places.slice'
 &nbsp;
 interface Extra {
     name: string
@@ -694,7 +720,15 @@ interface Extra {
 export default function MenuDetails({ inventory, handleClose }) {
     const dispatch = useDispatch()
     const router = useRouter()
-    const placeName = router.query.details as string
+    const placeId = router.query.details as string
+&nbsp;
+    const queryClient = useQueryClient()
+&nbsp;
+    const placeDetails = queryClient.getQueryData([
+        'placeDetails',
+        placeId,
+    ]) as PlaceInterface
+    const placeName = placeDetails<span class="branch-0 cbranch-no" title="branch not covered" >?.name</span>
 &nbsp;
     const [inventoryItem, setInventoryItem] = useState(inventory)
     const [selectedExtras, setSelectedExtras] = useState&lt;Extra[]&gt;([])
@@ -717,6 +751,7 @@ export default function MenuDetails({ inventory, handleClose }) {
         }
     }
 &nbsp;
+    //Function to increase quantity of extras
     const handleIncrement = (extra: Extra) =&gt; {
         setSelectedExtras((prevSelectedExtras) =&gt; {
             const updatedExtras = prevSelectedExtras.map((item) =&gt; {
@@ -732,6 +767,7 @@ export default function MenuDetails({ inventory, handleClose }) {
         })
     }
 &nbsp;
+    //Function to decrease quantity of extras
     const handleDecrement = (extra: Extra) =&gt; {
         setSelectedExtras((prevSelectedExtras) =&gt; {
             const updatedExtras = prevSelectedExtras.map((item) =&gt; {
@@ -976,7 +1012,7 @@ export default function MenuDetails({ inventory, handleClose }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-30T15:56:10.975Z
+                at 2023-08-31T16:03:54.474Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
