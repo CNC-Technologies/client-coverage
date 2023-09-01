@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/44</span>
+                <span class='fraction'>0/45</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/44</span>
+                <span class='fraction'>0/45</span>
             </div>
         
             
@@ -107,7 +107,9 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -158,6 +160,7 @@
 <span class="cstat-no" title="statement not covered" >import UnauthenticatedLayout from '@/components/Layout/UnauthenticatedLayout'</span>
 <span class="cstat-no" title="statement not covered" >import PageLoader from '@/components/PageLoader'</span>
 <span class="cstat-no" title="statement not covered" >import AppLayout from '@/components/app/layout/AppLayout'</span>
+<span class="cstat-no" title="statement not covered" >import BusinessWebsiteLayout from '@/components/business-website/layouts/BusinessWebsiteLayout'</span>
 <span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import useProtectBlockedPages from '@/hooks/useProtectedBlockedPages'</span>
@@ -174,18 +177,17 @@
 <span class="cstat-no" title="statement not covered" >    const { user, isLoading } = useUser()</span>
 <span class="cstat-no" title="statement not covered" >    const { getUser, user: userFullData } = useGetUser()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const layoutConfig = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (user &amp;&amp; !userFullData) getUser() // ! getUser() fetching infinitely if server request fails and continues throwing errors infinitely. FIX IT.</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (isLoading || typeof window === 'undefined' || shouldProtect)</span>
 <span class="cstat-no" title="statement not covered" >        return &lt;PageLoader full /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (</span>
-<span class="cstat-no" title="statement not covered" >        !user &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >        (layoutConfig.configKey === 'app' ||</span>
-<span class="cstat-no" title="statement not covered" >            layoutConfig.configKey === 'business')</span>
-<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!!router?.query['business-username'])</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;BusinessWebsiteLayout&gt;{children}&lt;/BusinessWebsiteLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (!user &amp;&amp; (configKey === 'app' || configKey === 'business')) {</span>
 <span class="cstat-no" title="statement not covered" >        router.push('/')</span>
 <span class="cstat-no" title="statement not covered" >        return null</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -195,6 +197,7 @@
 <span class="cstat-no" title="statement not covered" >    else if (user &amp;&amp; filter &amp;&amp; map_view) return &lt;&gt;{children}&lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    return &lt;UnauthenticatedLayout&gt;{children}&lt;/UnauthenticatedLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >~``</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -202,7 +205,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-31T16:04:42.497Z
+                at 2023-09-01T16:47:41.813Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
