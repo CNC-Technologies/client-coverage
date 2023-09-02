@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.14% </span>
+                <span class="strong">32.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/82</span>
+                <span class='fraction'>29/89</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.14% </span>
+                <span class="strong">32.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/82</span>
+                <span class='fraction'>29/89</span>
             </div>
         
             
@@ -145,7 +145,14 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -172,6 +179,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -206,6 +214,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -246,6 +260,7 @@ interface DeleteDialogDetailsInterface {
 interface DeleteDialogInterface
     extends Omit&lt;DialogLayoutProps, 'children' | 'moreBtnLink' | 'moreText'&gt; {
     callback: () =&gt; void
+    loading?: boolean
 }
 &nbsp;
 export const ConfirmationDialogContext =
@@ -289,17 +304,23 @@ export default <span class="fstat-no" title="function not covered" >function Con
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function DeleteDialog(props: DeleteDialogInterface) {</span></span>
-<span class="cstat-no" title="statement not covered" >    const { callback, closeDialog } = props</span>
+<span class="cstat-no" title="statement not covered" >    const { callback, closeDialog, loading } = props</span>
+<span class="cstat-no" title="statement not covered" >    // const [reqLoading] = useState(loading ? loading : false)</span>
 <span class="cstat-no" title="statement not covered" >    const handleCallback = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        callback()</span>
-<span class="cstat-no" title="statement not covered" >        // ! Implement for a loading state</span>
+<span class="cstat-no" title="statement not covered" >        // if (!loading) {</span>
 <span class="cstat-no" title="statement not covered" >        closeDialog()</span>
+<span class="cstat-no" title="statement not covered" >        // }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;DialogLayout {...props}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='items-center py-3 space-x-5 row'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Button onClick={handleCallback} className='delete-fill'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-center items-center py-3 space-x-5 row'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                    loading={loading}</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={handleCallback}</span>
+<span class="cstat-no" title="statement not covered" >                    className='bg-red-500 hover:bg-red-500 font-semibold text-white'</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    Yes</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button variant='outline' onClick={props.closeDialog}&gt;</span>
@@ -316,7 +337,7 @@ export default <span class="fstat-no" title="function not covered" >function Con
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

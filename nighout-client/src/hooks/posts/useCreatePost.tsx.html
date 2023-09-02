@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.45% </span>
+                <span class="strong">12.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/273</span>
+                <span class='fraction'>33/272</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.45% </span>
+                <span class="strong">12.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/273</span>
+                <span class='fraction'>33/272</span>
             </div>
         
             
@@ -335,8 +335,7 @@
 <a name='L270'></a><a href='#L270'>270</a>
 <a name='L271'></a><a href='#L271'>271</a>
 <a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a>
-<a name='L274'></a><a href='#L274'>274</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L273'></a><a href='#L273'>273</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -369,7 +368,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -609,7 +607,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useRouter } from 'next/router'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 &nbsp;
@@ -621,15 +619,14 @@ import {
     useQueryClient,
 } from '@tanstack/react-query'
 &nbsp;
-import { toast } from 'react-toastify'
-&nbsp;
-import { createPostRoute, editPostRoute } from '@/constants/app/routes'
+import { createPostRoute, postRouteWithId } from '@/constants/app/routes'
 import UploadForm from '@/hooks/useFileUpload'
 import useSecureRequest from '@/hooks/useRequest'
 import { Photo } from '@/interfaces/dragDropImageUpload.interface'
 import { RootState } from '@/store'
 import { myActivities } from '@/constants/queryKeys'
 import { Post } from '@/interfaces/posts.interface'
+import { useToast } from '@/components/shadcn/ui/use-toast'
 &nbsp;
 interface Media {
     type: string
@@ -644,19 +641,23 @@ export interface PostForm {
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function useCreatePost({</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
+<span class="cstat-no" title="statement not covered" >    postId,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    postId?: string</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    // * create-post request</span>
-<span class="cstat-no" title="statement not covered" >    const { post, loading, put } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { post: postReq, loading, put } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { toast } = useToast()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [addMedia, setAddMedia] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const toggleAddMedia = () =&gt; setAddMedia(!addMedia)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    // const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [isEditMode, setIsEditMode] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
@@ -670,7 +671,7 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * For when the component is on edit state (i.e a user editing their post)</span>
-<span class="cstat-no" title="statement not covered" >    const { editPost: postId } = router.query</span>
+<span class="cstat-no" title="statement not covered" >    // const { editPost: postId } = router.query</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Function to handle input change</span>
 <span class="cstat-no" title="statement not covered" >    const handleInputChange = (e: any) =&gt; {</span>
@@ -714,7 +715,7 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >    const createPost = async (data) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // * Form validator</span>
 <span class="cstat-no" title="statement not covered" >        if (data.content || data.medias.length) {</span>
-<span class="cstat-no" title="statement not covered" >            const res = await post({ data: data, url: createPostRoute })</span>
+<span class="cstat-no" title="statement not covered" >            const res = await postReq({ data: data, url: createPostRoute })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(loading)</span>
 <span class="cstat-no" title="statement not covered" >            return res</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -725,12 +726,12 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (data.content) {</span>
 <span class="cstat-no" title="statement not covered" >            const res = await put({</span>
-<span class="cstat-no" title="statement not covered" >                url: editPostRoute(`${postId}`),</span>
+<span class="cstat-no" title="statement not covered" >                url: postRouteWithId(`${postId}`),</span>
 <span class="cstat-no" title="statement not covered" >                data: data,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(loading)</span>
 <span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >                handleCloseModal()</span>
+<span class="cstat-no" title="statement not covered" >                // handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                // * Clear postForm</span>
@@ -748,20 +749,14 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >        event?.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // ! Display toast notification with progress bar</span>
-<span class="cstat-no" title="statement not covered" >        const toastId = toast(</span>
-<span class="cstat-no" title="statement not covered" >            ` ${!isEditMode ? 'Creating Post...' : 'Editing Post...'}`,</span>
-<span class="cstat-no" title="statement not covered" >            {</span>
-<span class="cstat-no" title="statement not covered" >                autoClose: false,</span>
-<span class="cstat-no" title="statement not covered" >                position: 'top-center',</span>
-<span class="cstat-no" title="statement not covered" >                className: 'toastify-custom',</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        toast({</span>
+<span class="cstat-no" title="statement not covered" >            title: ` ${!isEditMode ? 'Creating Post...' : 'Editing Post...'}`,</span>
+<span class="cstat-no" title="statement not covered" >            description: '',</span>
+<span class="cstat-no" title="statement not covered" >            variant: 'default',</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (selectedPhotos.length || postForm.content) {</span>
-<span class="cstat-no" title="statement not covered" >            // * Route to homepage</span>
-<span class="cstat-no" title="statement not covered" >            if (!isEditMode) router.push('/app')</span>
-<span class="cstat-no" title="statement not covered" >            else handleCloseModal()</span>
+<span class="cstat-no" title="statement not covered" >            handleCloseModal()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                const imageUrls: Media[] = await uploadImagesToCloudinary()</span>
@@ -776,10 +771,10 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >                    const res = await createPost(data)</span>
 <span class="cstat-no" title="statement not covered" >                    if (res?.success) {</span>
 <span class="cstat-no" title="statement not covered" >                        // Update the toast notification when the submission is successful</span>
-<span class="cstat-no" title="statement not covered" >                        toast.update(toastId, {</span>
-<span class="cstat-no" title="statement not covered" >                            render: 'Post has been created',</span>
-<span class="cstat-no" title="statement not covered" >                            type: toast.TYPE.SUCCESS,</span>
-<span class="cstat-no" title="statement not covered" >                            autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" >                        toast({</span>
+<span class="cstat-no" title="statement not covered" >                            title: 'Post has been created',</span>
+<span class="cstat-no" title="statement not covered" >                            description: '',</span>
+<span class="cstat-no" title="statement not covered" >                            variant: 'success',</span>
 <span class="cstat-no" title="statement not covered" >                        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        setReqLoading(false)</span>
@@ -794,10 +789,10 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >                        setImageForUpload(null)</span>
 <span class="cstat-no" title="statement not covered" >                    } else {</span>
 <span class="cstat-no" title="statement not covered" >                        // Handle errors and update the toast notification accordingly</span>
-<span class="cstat-no" title="statement not covered" >                        toast.update(toastId, {</span>
-<span class="cstat-no" title="statement not covered" >                            render: 'Post Creation failed!',</span>
-<span class="cstat-no" title="statement not covered" >                            type: toast.TYPE.ERROR,</span>
-<span class="cstat-no" title="statement not covered" >                            autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" >                        toast({</span>
+<span class="cstat-no" title="statement not covered" >                            title: 'Post Creation failed!',</span>
+<span class="cstat-no" title="statement not covered" >                            description: '',</span>
+<span class="cstat-no" title="statement not covered" >                            variant: 'error',</span>
 <span class="cstat-no" title="statement not covered" >                        })</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
@@ -805,33 +800,35 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >                    const res = await editPost(data)</span>
 <span class="cstat-no" title="statement not covered" >                    if (res?.success) {</span>
 <span class="cstat-no" title="statement not covered" >                        // Update the toast notification when the submission is successful</span>
-<span class="cstat-no" title="statement not covered" >                        toast.update(toastId, {</span>
-<span class="cstat-no" title="statement not covered" >                            render: 'Post has been edited',</span>
-<span class="cstat-no" title="statement not covered" >                            type: toast.TYPE.SUCCESS,</span>
-<span class="cstat-no" title="statement not covered" >                            autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        toast({</span>
+<span class="cstat-no" title="statement not covered" >                            title: 'Post has been edited',</span>
+<span class="cstat-no" title="statement not covered" >                            description: '',</span>
+<span class="cstat-no" title="statement not covered" >                            variant: 'success',</span>
 <span class="cstat-no" title="statement not covered" >                        })</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >                // Handle the error from uploadImagesToCloudinary function</span>
-<span class="cstat-no" title="statement not covered" >                toast.update(toastId, {</span>
-<span class="cstat-no" title="statement not covered" >                    render: 'Error uploading images',</span>
-<span class="cstat-no" title="statement not covered" >                    type: toast.TYPE.ERROR,</span>
-<span class="cstat-no" title="statement not covered" >                    autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" >                toast({</span>
+<span class="cstat-no" title="statement not covered" >                    title: 'Error uploading images',</span>
+<span class="cstat-no" title="statement not covered" >                    description: '',</span>
+<span class="cstat-no" title="statement not covered" >                    variant: 'error',</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            toast.update(toastId, {</span>
-<span class="cstat-no" title="statement not covered" >                render: 'You have no input',</span>
-<span class="cstat-no" title="statement not covered" >                type: toast.TYPE.ERROR,</span>
-<span class="cstat-no" title="statement not covered" >                autoClose: 5000,</span>
+<span class="cstat-no" title="statement not covered" >            toast({</span>
+<span class="cstat-no" title="statement not covered" >                title: 'You have no input',</span>
+<span class="cstat-no" title="statement not covered" >                description: '',</span>
+<span class="cstat-no" title="statement not covered" >                variant: 'error',</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >            setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleSavePlace = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >    const handleSavePost = useMutation({</span>
 <span class="cstat-no" title="statement not covered" >        mutationFn: () =&gt; handleSubmit(),</span>
 <span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([myActivities], { exact: true })</span>
@@ -868,7 +865,7 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >        isEditMode,</span>
 <span class="cstat-no" title="statement not covered" >        handlePrivacy,</span>
 <span class="cstat-no" title="statement not covered" >        toggleAddMedia,</span>
-<span class="cstat-no" title="statement not covered" >        handleSavePlace,</span>
+<span class="cstat-no" title="statement not covered" >        handleSavePost,</span>
 <span class="cstat-no" title="statement not covered" >        postError,</span>
 <span class="cstat-no" title="statement not covered" >        reqLoading,</span>
 <span class="cstat-no" title="statement not covered" >        handleInputChange,</span>
@@ -889,7 +886,7 @@ export default <span class="fstat-no" title="function not covered" >function use
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

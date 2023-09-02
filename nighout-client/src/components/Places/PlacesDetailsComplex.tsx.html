@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/139</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/136</span>
+                <span class='fraction'>0/139</span>
             </div>
         
             
@@ -199,7 +199,13 @@
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -376,6 +382,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [openCart, setOpenCart] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [inCart, setInCart] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const [cartLength, setCartLength] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // const { getPlaceDetails, placeDetails } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" >    const { isLoading, data: placeDetails } = usePlaceDetails()</span>
@@ -386,33 +393,16 @@
 <span class="cstat-no" title="statement not covered" >        let storedCart = placesCart.placesCart</span>
 <span class="cstat-no" title="statement not covered" >        if (storedCart[placeName]) {</span>
 <span class="cstat-no" title="statement not covered" >            if (Object.keys(storedCart[placeName]).length !== 0) setInCart(true)</span>
+<span class="cstat-no" title="statement not covered" >            setCartLength(Object.keys(storedCart[placeName]).length)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }, [placeName, placesCart])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >            className={`${</span>
-<span class="cstat-no" title="statement not covered" >                !user ? 'max-w-[80rem] mx-auto py-5 general-padding' : ''</span>
+<span class="cstat-no" title="statement not covered" >                !user ? 'max-w-[80rem] mx-auto pt-5 general-padding' : ''</span>
 <span class="cstat-no" title="statement not covered" >            } relative`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            {inCart &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;PlacesFloatingCartButton</span>
-<span class="cstat-no" title="statement not covered" >                    handleOpenCart={() =&gt; setOpenCart(true)}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >            {placeDetails !== null &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {/* Cart components  */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DialogLayout</span>
-<span class="cstat-no" title="statement not covered" >                        dialogOpened={openCart}</span>
-<span class="cstat-no" title="statement not covered" >                        closeDialog={() =&gt; setOpenCart(false)}</span>
-<span class="cstat-no" title="statement not covered" >                        title={placeDetails?.name}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlacesCartList placeName={placeDetails?.name} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/DialogLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {isLoading ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;PlaceDetailsSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
@@ -468,6 +458,25 @@
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {inCart &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;PlacesFloatingCartButton</span>
+<span class="cstat-no" title="statement not covered" >                    handleOpenCart={() =&gt; setOpenCart(true)}</span>
+<span class="cstat-no" title="statement not covered" >                    noOfItems={cartLength}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            {placeDetails !== null &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {/* Cart components  */}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                        dialogOpened={openCart}</span>
+<span class="cstat-no" title="statement not covered" >                        closeDialog={() =&gt; setOpenCart(false)}</span>
+<span class="cstat-no" title="statement not covered" >                        title={placeDetails?.name}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlacesCartList placeName={placeDetails?.name} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/DialogLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -478,7 +487,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

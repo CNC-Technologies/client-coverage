@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/270</span>
+                <span class='fraction'>0/261</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/270</span>
+                <span class='fraction'>0/261</span>
             </div>
         
             
@@ -324,25 +324,7 @@
 <a name='L259'></a><a href='#L259'>259</a>
 <a name='L260'></a><a href='#L260'>260</a>
 <a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a>
-<a name='L264'></a><a href='#L264'>264</a>
-<a name='L265'></a><a href='#L265'>265</a>
-<a name='L266'></a><a href='#L266'>266</a>
-<a name='L267'></a><a href='#L267'>267</a>
-<a name='L268'></a><a href='#L268'>268</a>
-<a name='L269'></a><a href='#L269'>269</a>
-<a name='L270'></a><a href='#L270'>270</a>
-<a name='L271'></a><a href='#L271'>271</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L262'></a><a href='#L262'>262</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -628,18 +610,9 @@
 <span class="cstat-no" title="statement not covered" >import { appSettingsLink, businessSettingsLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import categories from '@/constants/app/CreateCategories'</span>
+<span class="cstat-no" title="statement not covered" >import categories, { Categories } from '@/constants/app/CreateCategories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    Dialog,</span>
-<span class="cstat-no" title="statement not covered" >    DialogContent,</span>
-<span class="cstat-no" title="statement not covered" >    // DialogDescription,</span>
-<span class="cstat-no" title="statement not covered" >    DialogHeader,</span>
-<span class="cstat-no" title="statement not covered" >    DialogTitle,</span>
-<span class="cstat-no" title="statement not covered" >    DialogTrigger,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/dialog'</span>
-<span class="cstat-no" title="statement not covered" >import { ScrollArea } from '@/components/shadcn/ui/scroll-area'</span>
-<span class="cstat-no" title="statement not covered" >import CreatePostItem from '@/components/forms/CreatePage/Post'</span>
+<span class="cstat-no" title="statement not covered" >import CreatePostForm from '@/components/forms/CreatePostForm'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function LeftSidebar({ sidebarLinks }) {</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
@@ -761,38 +734,47 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >function CreatePostButton() {</span>
+<span class="cstat-no" title="statement not covered" >    const [postDialog, setPostDialog] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Dialog&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;DialogTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                    // href={createLink}</span>
-<span class="cstat-no" title="statement not covered" >                    className='items-center inline py-3 mx-3 space-x-2 font-semibold cursor-pointer px-7 primary-fill row rounded-xl smoothen'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className='text-dark-charcoal dark:text-dark-charcoal'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Create</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='text-2xl font-bold text-dark-charcoal dark:text-dark-charcoal' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/DialogTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;DialogContent className='sm:max-w-[450px] extraLarge:max-w-[600px]  px-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DialogHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DialogTitle className='text-center'&gt;New Post&lt;/DialogTitle&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {/* &lt;DialogDescription&gt;&lt;/DialogDescription&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/DialogHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;ScrollArea</span>
-<span class="cstat-no" title="statement not covered" >                    aria-orientation='horizontal'</span>
-<span class="cstat-no" title="statement not covered" >                    className='max-h-[45rem] px-2 h-full w-full '</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;CreatePostItem /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/ScrollArea&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/DialogContent&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/Dialog&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                // href={createLink}</span>
+<span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setPostDialog(true)}</span>
+<span class="cstat-no" title="statement not covered" >                className='items-center inline py-3 mx-3 space-x-2 font-semibold cursor-pointer px-7 primary-fill row rounded-xl smoothen'</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-center items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;span className='text-dark-charcoal dark:text-dark-charcoal'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Create</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;PlusIcon className='text-2xl font-bold text-dark-charcoal dark:text-dark-charcoal' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={postDialog}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setPostDialog(false)}</span>
+<span class="cstat-no" title="statement not covered" >                title='New Post'</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;CreatePostForm handleCloseModal={() =&gt; setPostDialog(false)} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >function CreateDropDownButton() {</span>
+<span class="cstat-no" title="statement not covered" >    const [dialog, setDialog] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const [activeItem, setActiveItem] = useState&lt;Categories | null&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const openDialog = (item: Categories) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setDialog(true)</span>
+<span class="cstat-no" title="statement not covered" >        setActiveItem(item)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const closeDialog = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setDialog(false)</span>
+<span class="cstat-no" title="statement not covered" >        setActiveItem(null)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Popover className='relative'&gt;</span>
@@ -827,39 +809,20 @@
 <span class="cstat-no" title="statement not covered" >                                    {categories.map((item, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                        if (item.feature === 'live') {</span>
 <span class="cstat-no" title="statement not covered" >                                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;Dialog key={idx}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;DialogTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                                            // onClick={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            //     handleOpenModal(</span>
-<span class="cstat-no" title="statement not covered" >                                                            //         item.name,</span>
-<span class="cstat-no" title="statement not covered" >                                                            //     )</span>
-<span class="cstat-no" title="statement not covered" >                                                            // }</span>
-<span class="cstat-no" title="statement not covered" >                                                            className='-m-3 flex cursor-pointer items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50'</span>
-<span class="cstat-no" title="statement not covered" >                                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;item.icon className='text-xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;div className='ml-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                                &lt;p className='text-sm font-medium text-gray-900'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                                    {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                                                                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;/DialogTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;DialogContent className='sm:max-w-[450px] extraLarge:max-w-[600px]  px-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;DialogHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;DialogTitle className='text-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                                New {item.name}</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;/DialogTitle&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            {/* &lt;DialogDescription&gt;&lt;/DialogDescription&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;/DialogHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;ScrollArea</span>
-<span class="cstat-no" title="statement not covered" >                                                            aria-orientation='horizontal'</span>
-<span class="cstat-no" title="statement not covered" >                                                            className='max-h-[45rem] px-2 h-full w-full '</span>
-<span class="cstat-no" title="statement not covered" >                                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            &lt;item.component /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;/ScrollArea&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;/DialogContent&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;/Dialog&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                                    onClick={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        openDialog(item)</span>
+<span class="cstat-no" title="statement not covered" >                                                    }</span>
+<span class="cstat-no" title="statement not covered" >                                                    key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                                    className='-m-3 flex cursor-pointer items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50'</span>
+<span class="cstat-no" title="statement not covered" >                                                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;item.icon className='text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;div className='ml-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;p className='text-sm font-medium text-gray-900'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            {item.name}</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            )</span>
 <span class="cstat-no" title="statement not covered" >                                        }</span>
 <span class="cstat-no" title="statement not covered" >                                    })}</span>
@@ -870,6 +833,16 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {/* )} */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Popover&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={dialog &amp;&amp; activeItem !== null}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={closeDialog}</span>
+<span class="cstat-no" title="statement not covered" >                title={`New ${activeItem?.name}`}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {activeItem &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;activeItem.component handleCloseModal={closeDialog} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -880,7 +853,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

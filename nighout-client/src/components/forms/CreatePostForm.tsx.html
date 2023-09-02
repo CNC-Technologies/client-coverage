@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">13.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/132</span>
+                <span class='fraction'>18/134</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">13.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/132</span>
+                <span class='fraction'>18/134</span>
             </div>
         
             
@@ -195,7 +195,9 @@
 <a name='L130'></a><a href='#L130'>130</a>
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -214,6 +216,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -347,8 +351,10 @@ const DragDropImageUpload = dynamic(
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function CreatePostForm({</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
+<span class="cstat-no" title="statement not covered" >    existingPostID,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    existingPostID?: string</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >        user,</span>
@@ -358,7 +364,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        toggleEmojiView,</span>
 <span class="cstat-no" title="statement not covered" >        isEditMode,</span>
 <span class="cstat-no" title="statement not covered" >        toggleAddMedia,</span>
-<span class="cstat-no" title="statement not covered" >        handleSavePlace,</span>
+<span class="cstat-no" title="statement not covered" >        handleSavePost,</span>
 <span class="cstat-no" title="statement not covered" >        postError,</span>
 <span class="cstat-no" title="statement not covered" >        reqLoading,</span>
 <span class="cstat-no" title="statement not covered" >        handlePrivacy,</span>
@@ -371,7 +377,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        postId,</span>
 <span class="cstat-no" title="statement not covered" >        imageForUpload,</span>
 <span class="cstat-no" title="statement not covered" >        setImageForUpload,</span>
-<span class="cstat-no" title="statement not covered" >    } = useCreatePost({ handleCloseModal })</span>
+<span class="cstat-no" title="statement not covered" >    } = useCreatePost({ handleCloseModal, postId: existingPostID })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-5 pt-3 h-fit relative'&gt;</span>
@@ -450,7 +456,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row justify-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                    loading={reqLoading}</span>
-<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; handleSavePlace.mutate()}</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; handleSavePost.mutateAsync()}</span>
 <span class="cstat-no" title="statement not covered" >                    className='w-24'</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    Post</span>
@@ -466,7 +472,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

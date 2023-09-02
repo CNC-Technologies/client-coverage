@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.07% </span>
+                <span class="strong">74.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/63</span>
+                <span class='fraction'>66/89</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.07% </span>
+                <span class="strong">74.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/63</span>
+                <span class='fraction'>66/89</span>
             </div>
         
             
@@ -126,7 +126,34 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -154,11 +181,36 @@
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
@@ -197,6 +249,7 @@ import { myActivities } from '@/constants/queryKeys'
 import {
     commentsRoute,
     deletePostRoute,
+    // postRouteWithId,
     postsRoute,
 } from '@/constants/app/routes'
 import { ToastContext } from '@/components/context-containers/Toast.context'
@@ -215,6 +268,30 @@ export default function usePosts({ post }: { post?: Post }) {
 <span class="cstat-no" title="statement not covered" >        },</span>
     })
 &nbsp;
+    // !! This need to be brought back when the bug for post is fixed
+    // const fetchAndRevalidateSinglePost = async (id: string) =&gt; {
+    //     const res = await get({ url: postRouteWithId(id) })
+&nbsp;
+    //     if (!res?.success) {
+    //         throw new Error(res.message)
+    //     }
+&nbsp;
+    //     const cachedPosts = queryClient.getQueryData(['myPosts']) as Post[]
+    //     // console.log(cachedPosts)
+&nbsp;
+    //     if (cachedPosts) {
+    //         const updatedPosts = cachedPosts.map((item) =&gt; {
+    //             if (item.id === post?.id) {
+    //                 return { ...res.data }
+    //             }
+    //             return item
+    //         })
+    //         // console.log(updatedPosts)
+&nbsp;
+    //         queryClient.setQueryData(['myPosts'], updatedPosts)
+    //     }
+    // }
+&nbsp;
     const commentOnPost = useMutation({
         mutationFn: (<span class="fstat-no" title="function not covered" >data) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >            postReq({</span>
@@ -222,6 +299,7 @@ export default function usePosts({ post }: { post?: Post }) {
 <span class="cstat-no" title="statement not covered" >                url: commentsRoute(post?.id as string),</span>
             }),
         onSuccess: <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // fetchAndRevalidateSinglePost(post?.id as string)</span>
 <span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([myActivities], { exact: true })</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
     })
@@ -259,7 +337,7 @@ export <span class="fstat-no" title="function not covered" >function usePostList
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T16:48:08.654Z
+                at 2023-09-02T04:34:43.500Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
