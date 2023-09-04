@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.13% </span>
+                <span class="strong">11.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/272</span>
+                <span class='fraction'>34/302</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.13% </span>
+                <span class="strong">11.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/272</span>
+                <span class='fraction'>34/302</span>
             </div>
         
             
@@ -335,7 +335,37 @@
 <a name='L270'></a><a href='#L270'>270</a>
 <a name='L271'></a><a href='#L271'>271</a>
 <a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -368,6 +398,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -627,6 +687,7 @@ import { RootState } from '@/store'
 import { myActivities } from '@/constants/queryKeys'
 import { Post } from '@/interfaces/posts.interface'
 import { useToast } from '@/components/shadcn/ui/use-toast'
+import usePosts from '@/hooks/posts/usePosts'
 &nbsp;
 interface Media {
     type: string
@@ -692,6 +753,8 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >        setPostForm({ ...postForm, content: postForm.content + emoji.emoji })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { fetchAndRevalidateSinglePost } = usePosts({})</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Function to handle image/video upload</span>
 <span class="cstat-no" title="statement not covered" >    const handleMediaChange = (files) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setPostError('')</span>
@@ -749,11 +812,13 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >        event?.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        toast({</span>
-<span class="cstat-no" title="statement not covered" >            title: ` ${!isEditMode ? 'Creating Post...' : 'Editing Post...'}`,</span>
-<span class="cstat-no" title="statement not covered" >            description: '',</span>
-<span class="cstat-no" title="statement not covered" >            variant: 'default',</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >        !isEditMode &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            toast({</span>
+<span class="cstat-no" title="statement not covered" >                title: ` Creating Post...`,</span>
+<span class="cstat-no" title="statement not covered" >                // title: ` ${!isEditMode ? 'Creating Post...' : 'Editing Post...'}`,</span>
+<span class="cstat-no" title="statement not covered" >                description: '',</span>
+<span class="cstat-no" title="statement not covered" >                variant: 'default',</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (selectedPhotos.length || postForm.content) {</span>
 <span class="cstat-no" title="statement not covered" >            handleCloseModal()</span>
@@ -797,16 +862,7 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    // For editing existing posts</span>
-<span class="cstat-no" title="statement not covered" >                    const res = await editPost(data)</span>
-<span class="cstat-no" title="statement not covered" >                    if (res?.success) {</span>
-<span class="cstat-no" title="statement not covered" >                        // Update the toast notification when the submission is successful</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        toast({</span>
-<span class="cstat-no" title="statement not covered" >                            title: 'Post has been edited',</span>
-<span class="cstat-no" title="statement not covered" >                            description: '',</span>
-<span class="cstat-no" title="statement not covered" >                            variant: 'success',</span>
-<span class="cstat-no" title="statement not covered" >                        })</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                    await editPost(data)</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >                // Handle the error from uploadImagesToCloudinary function</span>
@@ -829,9 +885,43 @@ export default <span class="fstat-no" title="function not covered" >function use
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSavePost = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        onMutate: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (postId) {</span>
+<span class="cstat-no" title="statement not covered" >                //Update the content of the post before the request is made</span>
+<span class="cstat-no" title="statement not covered" >                const cachedPosts = queryClient.getQueryData([</span>
+<span class="cstat-no" title="statement not covered" >                    'myPosts',</span>
+<span class="cstat-no" title="statement not covered" >                ]) as Post[]</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                if (cachedPosts) {</span>
+<span class="cstat-no" title="statement not covered" >                    const updatedPosts = cachedPosts.map((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (item.id === postId) {</span>
+<span class="cstat-no" title="statement not covered" >                            return { ...item, Content: postForm.content }</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        return item</span>
+<span class="cstat-no" title="statement not covered" >                    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    queryClient.setQueryData(['myPosts'], updatedPosts)</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                // End of content update before request</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >                return null</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        mutationFn: () =&gt; handleSubmit(),</span>
 <span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([myActivities], { exact: true })</span>
+<span class="cstat-no" title="statement not covered" >            // not on edit mode</span>
+<span class="cstat-no" title="statement not covered" >            if (!postId) {</span>
+<span class="cstat-no" title="statement not covered" >                queryClient.invalidateQueries([myActivities], { exact: true })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onError: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // edit mode</span>
+<span class="cstat-no" title="statement not covered" >            if (postId) {</span>
+<span class="cstat-no" title="statement not covered" >                fetchAndRevalidateSinglePost(postId)</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >                // create mode</span>
+<span class="cstat-no" title="statement not covered" >                queryClient.invalidateQueries([myActivities], { exact: true })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -886,7 +976,7 @@ export default <span class="fstat-no" title="function not covered" >function use
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-04T12:42:25.977Z
+                at 2023-09-04T12:42:55.085Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
