@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/app/compound/Chat/ChatFriendsList.tsx</title>
+    <title>Code coverage report for nighout-client/src/pages/[businessUsername]/contact.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/app/compound/Chat</a> ChatFriendsList.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/pages/[businessUsername]</a> contact.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -111,7 +111,11 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,51 +163,59 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter, usePathname, useSearchParams } from 'next/navigation'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import dynamic from 'next/dynamic'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
+<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    FacebookSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >    InstagramSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >    TwitterSolidIcon,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ChatFriendsList() {</span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const pathname = usePathname()</span>
-<span class="cstat-no" title="statement not covered" >    const queryParam = useSearchParams()</span>
-<span class="cstat-no" title="statement not covered" >    const query = Number(queryParam?.get('chat'))</span>
-<span class="cstat-no" title="statement not covered" >    const openChat = (id: Number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        router.push(`${pathname}?chat=${id}`)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >const MapItem = dynamic(() =&gt; import('@/components/app/simple/MapItem'), {</span>
+<span class="cstat-no" title="statement not covered" >    ssr: false,</span>
+<span class="cstat-no" title="statement not covered" >})</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function Contact() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='grid truncate mt-2 w-full '&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {[...Array(15)].map((_, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                return (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; openChat(idx + 1)}</span>
-<span class="cstat-no" title="statement not covered" >                        key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                        className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                            query === idx + 1</span>
-<span class="cstat-no" title="statement not covered" >                                ? 'bg-primary/30 '</span>
-<span class="cstat-no" title="statement not covered" >                                : ' hover:bg-primary/10'</span>
-<span class="cstat-no" title="statement not covered" >                        } rounded-md flex cursor-pointer  px-1 py-2 items-center gap-3 w-full `}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Avatar /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex gap-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;h3 className='font-semibold text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    Username</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span className={` text-xs font-medium`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    40 mins</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='line-clamp-1 w-full text-xs'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Lorem ipsum dolor sit, amet consectetur</span>
-<span class="cstat-no" title="statement not covered" >                                adipisicing...</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-2 mx-20 bg-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='col'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {/* &lt;div className='absolute z-[1000] top-5 left-16 text-[#555] font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        WHERE TO FIND US</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;MapItem</span>
+<span class="cstat-no" title="statement not covered" >                        position={{</span>
+<span class="cstat-no" title="statement not covered" >                            lat: 9.0669,</span>
+<span class="cstat-no" title="statement not covered" >                            lng: 7.4838,</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                        fullHeight</span>
+<span class="cstat-no" title="statement not covered" >                        tooltip={&lt;div&gt;The Popup&lt;/div&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-4 px-5 py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-2xl'&gt;CONNECT&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row justify-center md:justify-start space-x-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;InstagramSolidIcon size={24} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TwitterSolidIcon size={24} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;FacebookSolidIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            })}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='border-[0.25px] border-[#eee]' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl'&gt;SEND A MESSAGE&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;InputField placeholder='Email' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;InputField placeholder='Subject' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;InputField placeholder='Message' type='textarea' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Send&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -216,14 +228,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-09-06T11:40:17.491Z
             </div>
-        <script src="../../../../../../prettify.js"></script>
+        <script src="../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../../sorter.js"></script>
-        <script src="../../../../../../block-navigation.js"></script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
     </body>
 </html>
     

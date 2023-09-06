@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/60</span>
+                <span class='fraction'>0/70</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/60</span>
+                <span class='fraction'>0/70</span>
             </div>
         
             
@@ -123,7 +123,17 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -183,9 +193,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { MapContainer, TileLayer, Marker } from 'react-leaflet'</span>
-<span class="cstat-no" title="statement not covered" >import L from 'leaflet'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import L from 'leaflet'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { ReactNode, useEffect, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { mapMarker } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -194,7 +214,17 @@
 <span class="cstat-no" title="statement not covered" >// import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'</span>
 <span class="cstat-no" title="statement not covered" >// import 'leaflet-defaulticon-compatibility'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const Map = ({ position }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >const Map = ({</span>
+<span class="cstat-no" title="statement not covered" >    position,</span>
+<span class="cstat-no" title="statement not covered" >    fullHeight = false,</span>
+<span class="cstat-no" title="statement not covered" >    popup = null,</span>
+<span class="cstat-no" title="statement not covered" >    tooltip = null,</span>
+<span class="cstat-no" title="statement not covered" >}: {</span>
+<span class="cstat-no" title="statement not covered" >    position: any</span>
+<span class="cstat-no" title="statement not covered" >    fullHeight?: boolean</span>
+<span class="cstat-no" title="statement not covered" >    popup?: ReactNode</span>
+<span class="cstat-no" title="statement not covered" >    tooltip?: ReactNode</span>
+<span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const markerIconConst = L.icon({</span>
 <span class="cstat-no" title="statement not covered" >        iconUrl: mapMarker,</span>
 <span class="cstat-no" title="statement not covered" >        iconRetinaUrl: mapMarker,</span>
@@ -208,7 +238,6 @@
 <span class="cstat-no" title="statement not covered" >            navigator.geolocation.getCurrentPosition(</span>
 <span class="cstat-no" title="statement not covered" >                (position) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    const { latitude, longitude } = position.coords</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    setUserLocation([latitude, longitude])</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >                (error) =&gt; {</span>
@@ -228,7 +257,7 @@
 <span class="cstat-no" title="statement not covered" >            center={position ? position : userLocation}</span>
 <span class="cstat-no" title="statement not covered" >            zoom={16}</span>
 <span class="cstat-no" title="statement not covered" >            scrollWheelZoom={true}</span>
-<span class="cstat-no" title="statement not covered" >            style={{ height: '400px', width: '100%' }}</span>
+<span class="cstat-no" title="statement not covered" >            style={{ height: fullHeight ? '100%' : '400px', width: '100%' }}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Marker</span>
@@ -236,7 +265,8 @@
 <span class="cstat-no" title="statement not covered" >                position={position}</span>
 <span class="cstat-no" title="statement not covered" >                draggable={false}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* &lt;Popup&gt;Hey ! I live here&lt;/Popup&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                {popup &amp;&amp; &lt;Popup&gt;{popup}&lt;/Popup&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                {tooltip &amp;&amp; &lt;Tooltip&gt;{tooltip}&lt;/Tooltip&gt;}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Marker&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/MapContainer&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -250,7 +280,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-06T11:39:30.643Z
+                at 2023-09-06T11:40:17.491Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
