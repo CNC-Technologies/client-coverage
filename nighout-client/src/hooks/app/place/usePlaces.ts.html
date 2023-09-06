@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/416</span>
+                <span class='fraction'>0/415</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/416</span>
+                <span class='fraction'>0/415</span>
             </div>
         
             
@@ -478,9 +478,7 @@
 <a name='L413'></a><a href='#L413'>413</a>
 <a name='L414'></a><a href='#L414'>414</a>
 <a name='L415'></a><a href='#L415'>415</a>
-<a name='L416'></a><a href='#L416'>416</a>
-<a name='L417'></a><a href='#L417'>417</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L416'></a><a href='#L416'>416</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1042,11 +1040,11 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function usePlaceDetails() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    // const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const id = getPlaceId(router)</span>
+<span class="cstat-no" title="statement not covered" >    const id = getPlaceId(router)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return useQuery({</span>
 <span class="cstat-no" title="statement not covered" >        queryKey: ['placeDetails', getPlaceId(router)],</span>
@@ -1062,30 +1060,29 @@
 <span class="cstat-no" title="statement not covered" >        // ! Come back and uncomment this when the edges bug is fixed.</span>
 <span class="cstat-no" title="statement not covered" >        // If the details already exist in the cached places, it would set the detail as initial data,</span>
 <span class="cstat-no" title="statement not covered" >        // and if not it runs the query function and gets the place from the database</span>
-<span class="cstat-no" title="statement not covered" >        // initialData: () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        //     const cachedPlaces = queryClient.getQueryData([</span>
-<span class="cstat-no" title="statement not covered" >        //         'allPlaces',</span>
-<span class="cstat-no" title="statement not covered" >        //     ]) as CachedData //actual data</span>
+<span class="cstat-no" title="statement not covered" >        initialData: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const cachedPlaces = queryClient.getQueryData([</span>
+<span class="cstat-no" title="statement not covered" >                'allPlaces',</span>
+<span class="cstat-no" title="statement not covered" >            ]) as CachedData //actual data</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //     const state = queryClient.getQueryState(['allPlaces']) // state of the data</span>
+<span class="cstat-no" title="statement not covered" >            const state = queryClient.getQueryState(['allPlaces']) // state of the data</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //     let isLessThanTenMinutes</span>
+<span class="cstat-no" title="statement not covered" >            let isLessThanTenMinutes</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //     if (state) {</span>
-<span class="cstat-no" title="statement not covered" >        //         isLessThanTenMinutes =</span>
-<span class="cstat-no" title="statement not covered" >        //             Date.now() - state?.dataUpdatedAt &gt;= 10 * 1000 // 10 minutes</span>
-<span class="cstat-no" title="statement not covered" >        //     }</span>
+<span class="cstat-no" title="statement not covered" >            if (state) {</span>
+<span class="cstat-no" title="statement not covered" >                isLessThanTenMinutes =</span>
+<span class="cstat-no" title="statement not covered" >                    Date.now() - state?.dataUpdatedAt &gt;= 10 * 1000 // 10 minutes</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //     // If the place detail exists and has not been cached for more than 10mins</span>
-<span class="cstat-no" title="statement not covered" >        //     if (cachedPlaces &amp;&amp; isLessThanTenMinutes) {</span>
+<span class="cstat-no" title="statement not covered" >            // If the place detail exists and has not been cached for more than 10mins</span>
+<span class="cstat-no" title="statement not covered" >            if (cachedPlaces &amp;&amp; isLessThanTenMinutes) {</span>
+<span class="cstat-no" title="statement not covered" >                const existingPlaceData = cachedPlaces?.pages</span>
+<span class="cstat-no" title="statement not covered" >                    .flatMap((page) =&gt; page?.data)</span>
+<span class="cstat-no" title="statement not covered" >                    .find((place) =&gt; place?.id === id)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //         const existingPlaceData = cachedPlaces?.pages</span>
-<span class="cstat-no" title="statement not covered" >        //             .flatMap((page) =&gt; page?.data)</span>
-<span class="cstat-no" title="statement not covered" >        //             .find((place) =&gt; place?.id === id)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        //         return existingPlaceData</span>
-<span class="cstat-no" title="statement not covered" >        //     }</span>
-<span class="cstat-no" title="statement not covered" >        // },</span>
+<span class="cstat-no" title="statement not covered" >                return existingPlaceData</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -1318,7 +1315,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-05T17:48:48.928Z
+                at 2023-09-06T11:39:30.643Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
