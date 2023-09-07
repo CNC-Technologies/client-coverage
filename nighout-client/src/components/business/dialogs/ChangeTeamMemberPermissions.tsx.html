@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/134</span>
+                <span class='fraction'>0/138</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/134</span>
+                <span class='fraction'>0/138</span>
             </div>
         
             
@@ -197,7 +197,15 @@
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -334,6 +342,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button, { IconButton } from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import Truncate from '@/components/app/simple/Truncate'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" >import { CloseOutlineIcon, PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -405,14 +414,17 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='font-bold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Selected User&amp;apos;s Permissions</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='row flex-wrap'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid grid-cols-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {userPermissions.map((permission, i) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                key={permission}</span>
-<span class="cstat-no" title="statement not covered" >                                className='row items-center space-x-1 mr-3 text-muted uppercase'</span>
+<span class="cstat-no" title="statement not covered" >                                className={`row items-center space-x-1 px-3 py-1 text-muted uppercase border-r ${</span>
+<span class="cstat-no" title="statement not covered" >                                    i !== userPermissions.length - 1 &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                    'border-r'</span>
+<span class="cstat-no" title="statement not covered" >                                }`}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='whitespace-nowrap'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {permission}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Truncate&gt;{permission}&lt;/Truncate&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;IconButton onClick={() =&gt; removePermission(i)}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;CloseOutlineIcon size={10} /&gt;</span>
@@ -472,7 +484,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-06T13:59:28.121Z
+                at 2023-09-07T16:27:22.281Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

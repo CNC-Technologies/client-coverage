@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/55</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/55</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -116,11 +116,7 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -184,15 +180,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function TeamMemberItem({ teamMember }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [changePermissions, setChangePermissions] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    const toggleChangePermissions = () =&gt;</span>
-<span class="cstat-no" title="statement not covered" >        setChangePermissions(!changePermissions)</span>
 <span class="cstat-no" title="statement not covered" >    const { showConfirmDelete } = useContext(ConfirmationDialogContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const saveNewPermission = () =&gt; {}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;TableRow onClick={() =&gt; setChangePermissions(true)}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;TableCell className=''&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                        className={`flex-1 w-full truncate font-bold col-md-row space-x-3 items-center`}</span>
@@ -208,16 +202,10 @@
 <span class="cstat-no" title="statement not covered" >                &lt;TableCell className='w-24'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;span</span>
 <span class="cstat-no" title="statement not covered" >                        className='underline text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 hover:text-blue-500 text-sm cursor-pointer'</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={toggleChangePermissions}</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; setChangePermissions(true)}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Permissions</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ChangeTeamMemberPermissions</span>
-<span class="cstat-no" title="statement not covered" >                        dialogOpened={changePermissions}</span>
-<span class="cstat-no" title="statement not covered" >                        closeDialog={toggleChangePermissions}</span>
-<span class="cstat-no" title="statement not covered" >                        save={saveNewPermission}</span>
-<span class="cstat-no" title="statement not covered" >                        saving={false}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;TableCell className='w-20 row-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;IconButton onClick={showConfirmDelete}&gt;</span>
@@ -225,6 +213,12 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/TableCell&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ChangeTeamMemberPermissions</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={changePermissions}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setChangePermissions(false)}</span>
+<span class="cstat-no" title="statement not covered" >                save={saveNewPermission}</span>
+<span class="cstat-no" title="statement not covered" >                saving={false}</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -235,7 +229,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-06T13:59:28.121Z
+                at 2023-09-07T16:27:22.281Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
