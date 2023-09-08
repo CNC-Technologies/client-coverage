@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -118,9 +118,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -175,63 +173,59 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// useFeeds.ts</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useQuery, useQueryClient } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useQueryClient, useQuery } from '@tanstack/react-query'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useWebSocket } from '@/components/context-containers/FeedsSocket.context'</span>
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { feedsURL } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useFeeds() {</span>
-<span class="cstat-no" title="statement not covered" >    const socket = useWebSocket()</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    //cached feeds</span>
+<span class="cstat-no" title="statement not covered" >    // Cached feeds</span>
 <span class="cstat-no" title="statement not covered" >    const cachedFeeds = queryClient.getQueryData(['feeds']) || []</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // const [socket, setSocket] = useState&lt;WebSocket | null&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const ws: WebSocket = new WebSocket(`${feedsURL}`)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // ws.onopen = (event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        //     console.log('WebSocket connection opened', event)</span>
+<span class="cstat-no" title="statement not covered" >        // }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // ws.onclose = (event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        //     console.log('WebSocket connection closed', event)</span>
+<span class="cstat-no" title="statement not covered" >        // }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        ws.onmessage = async (event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const data = JSON.parse(event.data)</span>
+<span class="cstat-no" title="statement not covered" >            const posts: Post[] = data?.posts || []</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const updatedFeeds = posts.map((post) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >                type: 'post',</span>
+<span class="cstat-no" title="statement not covered" >                ...post,</span>
+<span class="cstat-no" title="statement not covered" >            }))</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Update the query data without resetting it</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.setQueryData(['feeds'], [...updatedFeeds])</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // setSocket(ws)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (ws) {</span>
+<span class="cstat-no" title="statement not covered" >                ws.close()</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const feedsQuery = useQuery({</span>
 <span class="cstat-no" title="statement not covered" >        queryKey: ['feeds'],</span>
-<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            if (cachedFeeds) {</span>
-<span class="cstat-no" title="statement not covered" >                return cachedFeeds</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                if (socket &amp;&amp; socket.readyState === WebSocket.OPEN) {</span>
-<span class="cstat-no" title="statement not covered" >                    // You can use the socket here</span>
-<span class="cstat-no" title="statement not covered" >                    socket.send(JSON.stringify({ type: 'getFeeds' }))</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    socket.onmessage = async (event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        const data = JSON.parse(await event.data)</span>
-<span class="cstat-no" title="statement not covered" >                        // console.log('Received WebSocket message:', data)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        const posts: Post[] = data?.posts || []</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        const updatedPosts = posts.map((post) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                            type: 'post',</span>
-<span class="cstat-no" title="statement not covered" >                            ...post,</span>
-<span class="cstat-no" title="statement not covered" >                        }))</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        const updatedFeeds = [...updatedPosts]</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        // Get the existing cached feeds and update them</span>
-<span class="cstat-no" title="statement not covered" >                        // queryClient.setQueryData(['feeds'], updatedFeeds)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        return updatedFeeds</span>
-<span class="cstat-no" title="statement not covered" >                        // Update the query data without resetting it</span>
-<span class="cstat-no" title="statement not covered" >                        // updatedFeeds = cachedFeeds.map((feeds) =&gt; [</span>
-<span class="cstat-no" title="statement not covered" >                        //     ...combinedFeeds,</span>
-<span class="cstat-no" title="statement not covered" >                        //     ...feeds,</span>
-<span class="cstat-no" title="statement not covered" >                        // ])</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                } else return cachedFeeds</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        initialData: () =&gt; cachedFeeds,</span>
-<span class="cstat-no" title="statement not covered" >        staleTime: Infinity,</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: () =&gt; cachedFeeds, // Return cached data immediately</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: Infinity, // Prevent automatic refetching</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Expose the query result</span>
 <span class="cstat-no" title="statement not covered" >    return { feedsQuery }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -241,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-08T05:47:00.829Z
+                at 2023-09-08T13:02:00.509Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

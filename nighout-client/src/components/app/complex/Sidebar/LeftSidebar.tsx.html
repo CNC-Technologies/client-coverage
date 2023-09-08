@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/261</span>
+                <span class='fraction'>0/258</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/261</span>
+                <span class='fraction'>0/258</span>
             </div>
         
             
@@ -321,13 +321,7 @@
 <a name='L256'></a><a href='#L256'>256</a>
 <a name='L257'></a><a href='#L257'>257</a>
 <a name='L258'></a><a href='#L258'>258</a>
-<a name='L259'></a><a href='#L259'>259</a>
-<a name='L260'></a><a href='#L260'>260</a>
-<a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L259'></a><a href='#L259'>259</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -587,12 +581,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useTheme } from 'next-themes'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState, Fragment } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { Fragment, useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" >import { Popover, Transition } from '@headlessui/react'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '../../../../hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -604,13 +598,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import LeftSidebarLinkItem from '@/components/app/compound/LeftSidebarLinkItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import ReportProblemItem from '@/components/ReportProblem'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" >import CreateBusinessAccountModal from '@/components/modals/CreateBusinessAccountModal'</span>
+<span class="cstat-no" title="statement not covered" >import categories, { Categories } from '@/constants/app/CreateCategories'</span>
 <span class="cstat-no" title="statement not covered" >import { appSettingsLink, businessSettingsLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import CookieService from '@/services/Cookie.service'</span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import categories, { Categories } from '@/constants/app/CreateCategories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import CreatePostForm from '@/components/forms/CreatePostForm'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -639,9 +633,6 @@
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setMounted(true)</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const createLink =</span>
-<span class="cstat-no" title="statement not covered" >    //     configKey === 'business' ? '/business/create' : '/app/create'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Report a problem state</span>
 <span class="cstat-no" title="statement not covered" >    const [reportDialog, setReportDialog] = useState(false)</span>
@@ -853,7 +844,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-08T05:47:00.829Z
+                at 2023-09-08T13:02:00.509Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
