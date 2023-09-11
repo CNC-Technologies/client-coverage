@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/58</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/58</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -121,7 +121,17 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -197,6 +207,7 @@
 <span class="cstat-no" title="statement not covered" >import SwiperButtonPrev from './swiperButtons/previousButton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >export default function ImageSliderWIthNavigation({ images, extraClass }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
@@ -211,15 +222,17 @@
 <span class="cstat-no" title="statement not covered" >                modules={[Pagination, Navigation]}</span>
 <span class="cstat-no" title="statement not covered" >                className='h-full mySwiper  bg-transparent'</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;SwiperButtonPrev&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ChevronLeftIcon className='w-5 h-5  cursor-pointer ' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/SwiperButtonPrev&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {images?.length &gt; 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;SwiperButtonPrev&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChevronLeftIcon className='w-5 h-5  cursor-pointer ' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/SwiperButtonPrev&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >                {images?.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    return (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;SwiperSlide key={index}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                                // unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                                src={item}</span>
+<span class="cstat-no" title="statement not covered" >                                src={item?.URL || defaultPicture}</span>
 <span class="cstat-no" title="statement not covered" >                                alt={'activity'}</span>
 <span class="cstat-no" title="statement not covered" >                                priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                                quality={50}</span>
@@ -230,9 +243,11 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/SwiperSlide&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                })}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;SwiperButtonNext&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ChevronRightIcon className='w-5 h-5 cursor-pointer' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/SwiperButtonNext&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {images?.length &gt; 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;SwiperButtonNext&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ChevronRightIcon className='w-5 h-5 cursor-pointer' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/SwiperButtonNext&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Swiper&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -244,7 +259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-11T11:25:03.490Z
+                at 2023-09-11T11:25:22.802Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
