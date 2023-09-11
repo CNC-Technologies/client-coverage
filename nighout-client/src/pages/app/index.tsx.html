@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -147,7 +147,27 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -234,11 +254,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { useQueryClient } from '@tanstack/react-query';</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// import PullToRefresh from 'react-simple-pull-to-refresh'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import FeedItem from '@/components/app/compound/feeds/FeedItem'</span>
 <span class="cstat-no" title="statement not covered" >import SinglePost from '@/components/app/complex/SinglePost'</span>
 <span class="cstat-no" title="statement not covered" >import { Skeleton } from '@/components/shadcn/ui/skeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetPostDetails } from '@/hooks/posts/usePosts'</span>
 <span class="cstat-no" title="statement not covered" >import useFeeds from '@/hooks/app/useFeeds'</span>
+<span class="cstat-no" title="statement not covered" >import { Spinner } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// interface FeedsQuery {</span>
 <span class="cstat-no" title="statement not covered" >//     data: any[];</span>
@@ -250,32 +273,39 @@
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { post: postId } = router.query</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { feedsQuery } = useFeeds()</span>
-<span class="cstat-no" title="statement not covered" >    const { data: feeds = [], isLoading, error } = feedsQuery as any //! Find a solution to this type</span>
-<span class="cstat-no" title="statement not covered" >    //   const queryClient = useQueryClient();</span>
+<span class="cstat-no" title="statement not covered" >    const { feedsQuery, initialLoading } = useFeeds()</span>
+<span class="cstat-no" title="statement not covered" >    const { data: feeds = [] } = feedsQuery as any //! Find a solution to this type</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Check if data is loading</span>
-<span class="cstat-no" title="statement not covered" >    if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;div&gt;Loading...&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Handle errors</span>
-<span class="cstat-no" title="statement not covered" >    if (error) {</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;div&gt;Error&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    if (initialLoading) {</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-center items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Spinner borderColor='border-dark-charcoal' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-orange cursor-pointer'&gt;Refresh&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;PullToRefresh</span>
+<span class="cstat-no" title="statement not covered" >                onRefresh={refetchFeeds}</span>
+<span class="cstat-no" title="statement not covered" >                onFetchMore={refetchFeeds}</span>
+<span class="cstat-no" title="statement not covered" >                refreshingContent={</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Spinner borderColor='border-dark-charcoal' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                pullingContent={&lt;Spinner borderColor='border-dark-charcoal' /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >            &gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* If the URL has a postID in it  */}</span>
+<span class="cstat-no" title="statement not covered" >                {postId !== undefined &amp;&amp; &lt;PostItem postId={postId} /&gt;}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* If the URL has a postID in it  */}</span>
-<span class="cstat-no" title="statement not covered" >            {postId !== undefined &amp;&amp; &lt;PostItem postId={postId} /&gt;}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-5 grid-cols-1 post-max-width'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {feeds?.map((feed: any, index: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return &lt;FeedItem key={index} feed={feed} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                })}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-5 grid-cols-1 post-max-width'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {feeds?.map((feed: any, index: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return &lt;FeedItem key={index} feed={feed} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;/PullToRefresh&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -322,7 +352,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-08T13:02:00.509Z
+                at 2023-09-11T07:37:39.127Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
