@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/89</span>
+                <span class='fraction'>0/95</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/89</span>
+                <span class='fraction'>0/95</span>
             </div>
         
             
@@ -152,7 +152,19 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -296,38 +308,44 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='text-2xl font-bold'&gt;{info}&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;p className='text-xs text-muted-foreground'&gt;{subtitle}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='h-[80px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ResponsiveContainer width='100%' height='100%'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;LineChart</span>
-<span class="cstat-no" title="statement not covered" >                            data={data}</span>
-<span class="cstat-no" title="statement not covered" >                            margin={{</span>
-<span class="cstat-no" title="statement not covered" >                                top: 5,</span>
-<span class="cstat-no" title="statement not covered" >                                right: 10,</span>
-<span class="cstat-no" title="statement not covered" >                                left: 10,</span>
-<span class="cstat-no" title="statement not covered" >                                bottom: 0,</span>
-<span class="cstat-no" title="statement not covered" >                            }}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Line</span>
-<span class="cstat-no" title="statement not covered" >                                type='monotone'</span>
-<span class="cstat-no" title="statement not covered" >                                strokeWidth={2}</span>
-<span class="cstat-no" title="statement not covered" >                                dataKey='revenue'</span>
-<span class="cstat-no" title="statement not covered" >                                activeDot={{</span>
-<span class="cstat-no" title="statement not covered" >                                    r: 6,</span>
-<span class="cstat-no" title="statement not covered" >                                    style: {</span>
-<span class="cstat-no" title="statement not covered" >                                        fill: 'var(--theme-primary)',</span>
-<span class="cstat-no" title="statement not covered" >                                        opacity: 0.25,</span>
-<span class="cstat-no" title="statement not covered" >                                    },</span>
-<span class="cstat-no" title="statement not covered" >                                }}</span>
-<span class="cstat-no" title="statement not covered" >                                style={</span>
-<span class="cstat-no" title="statement not covered" >                                    {</span>
-<span class="cstat-no" title="statement not covered" >                                        stroke: color,</span>
-<span class="cstat-no" title="statement not covered" >                                    } as React.CSSProperties</span>
-<span class="cstat-no" title="statement not covered" >                                }</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/LineChart&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/ResponsiveContainer&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;SmLineGraph color={color} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/CardContent&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Card&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function SmLineGraph({ color }) {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;ResponsiveContainer width='100%' height='100%'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;LineChart</span>
+<span class="cstat-no" title="statement not covered" >                data={data}</span>
+<span class="cstat-no" title="statement not covered" >                margin={{</span>
+<span class="cstat-no" title="statement not covered" >                    top: 5,</span>
+<span class="cstat-no" title="statement not covered" >                    right: 10,</span>
+<span class="cstat-no" title="statement not covered" >                    left: 10,</span>
+<span class="cstat-no" title="statement not covered" >                    bottom: 0,</span>
+<span class="cstat-no" title="statement not covered" >                }}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Line</span>
+<span class="cstat-no" title="statement not covered" >                    type='monotone'</span>
+<span class="cstat-no" title="statement not covered" >                    strokeWidth={2}</span>
+<span class="cstat-no" title="statement not covered" >                    dataKey='revenue'</span>
+<span class="cstat-no" title="statement not covered" >                    activeDot={{</span>
+<span class="cstat-no" title="statement not covered" >                        r: 6,</span>
+<span class="cstat-no" title="statement not covered" >                        style: {</span>
+<span class="cstat-no" title="statement not covered" >                            fill: 'var(--theme-primary)',</span>
+<span class="cstat-no" title="statement not covered" >                            opacity: 0.25,</span>
+<span class="cstat-no" title="statement not covered" >                        },</span>
+<span class="cstat-no" title="statement not covered" >                    }}</span>
+<span class="cstat-no" title="statement not covered" >                    style={</span>
+<span class="cstat-no" title="statement not covered" >                        {</span>
+<span class="cstat-no" title="statement not covered" >                            stroke: color,</span>
+<span class="cstat-no" title="statement not covered" >                        } as React.CSSProperties</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/LineChart&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/ResponsiveContainer&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -337,7 +355,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-11T15:46:36.926Z
+                at 2023-09-11T15:46:54.008Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
