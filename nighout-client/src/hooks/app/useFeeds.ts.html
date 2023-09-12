@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/104</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/104</span>
             </div>
         
             
@@ -154,7 +154,33 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -246,18 +272,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useContext, useEffect, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
+<span class="cstat-no" title="statement not covered" >// import { ToastContext } from '@/components/context-containers/Toast.context';</span>
 <span class="cstat-no" title="statement not covered" >import { feedsURL } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { getToken } from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useFeeds() {</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" >    //   const { showToast } = useContext(ToastContext);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const [socket, setSocket] = useState&lt;WebSocket | null&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" >    const [error, setError] = useState('')</span>
+<span class="cstat-no" title="statement not covered" >    const [retryCount, setRetryCount] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // loading states</span>
 <span class="cstat-no" title="statement not covered" >    const [initialLoading, setInitialLoading] = useState(false)</span>
@@ -266,67 +293,74 @@
 <span class="cstat-no" title="statement not covered" >    // Cached feeds</span>
 <span class="cstat-no" title="statement not covered" >    const cachedFeeds = queryClient.getQueryData(['feeds']) || []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const refetchFeeds = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //     const message = {</span>
-<span class="cstat-no" title="statement not covered" >    //         type: 'getFeeds',</span>
-<span class="cstat-no" title="statement not covered" >    //     }</span>
-<span class="cstat-no" title="statement not covered" >    //     socket?.send(JSON.stringify(message))</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >    const token = async () =&gt; await getToken()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // If there's no feed in the cache</span>
+<span class="cstat-no" title="statement not covered" >        setError('')</span>
+<span class="cstat-no" title="statement not covered" >        // If there's no feed in the cache and retryCount &gt; 0 (retry button clicked)</span>
 <span class="cstat-no" title="statement not covered" >        if (!Array.isArray(cachedFeeds) || cachedFeeds.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            setInitialLoading(true)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const ws: WebSocket = new WebSocket(`${feedsURL}`)</span>
+<span class="cstat-no" title="statement not covered" >        const connectWebSocket = async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >                const tokenValue = await token()</span>
+<span class="cstat-no" title="statement not covered" >                const url = `${feedsURL}?token=Bearer ${tokenValue}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        ws.addEventListener('open', () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const message = {</span>
-<span class="cstat-no" title="statement not covered" >                type: 'getFeeds',</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >                const ws: WebSocket = new WebSocket(url)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            ws.send(JSON.stringify(message))</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >                // ws.addEventListener('open', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                //     const message = {</span>
+<span class="cstat-no" title="statement not covered" >                //         type: 'getFeeds',</span>
+<span class="cstat-no" title="statement not covered" >                //     }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        ws.addEventListener('message', (event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setIsLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >                //     ws.send(JSON.stringify(message))</span>
+<span class="cstat-no" title="statement not covered" >                // })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const data = JSON.parse(event.data)</span>
-<span class="cstat-no" title="statement not covered" >            const posts: Post[] = data?.posts || []</span>
-<span class="cstat-no" title="statement not covered" >            const updatedFeeds = posts.map((post) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                type: 'post',</span>
-<span class="cstat-no" title="statement not covered" >                ...post,</span>
-<span class="cstat-no" title="statement not covered" >            }))</span>
+<span class="cstat-no" title="statement not covered" >                ws.addEventListener('message', (event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    setIsLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // Update the query data without resetting it</span>
-<span class="cstat-no" title="statement not covered" >            queryClient.setQueryData(['feeds'], [...updatedFeeds])</span>
+<span class="cstat-no" title="statement not covered" >                    const data = JSON.parse(event.data)</span>
+<span class="cstat-no" title="statement not covered" >                    const posts: Post[] = data?.posts || []</span>
+<span class="cstat-no" title="statement not covered" >                    const updatedFeeds = posts.map((post) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >                        type: 'post',</span>
+<span class="cstat-no" title="statement not covered" >                        ...post,</span>
+<span class="cstat-no" title="statement not covered" >                    }))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // Set initial loading false after getting the data</span>
-<span class="cstat-no" title="statement not covered" >            setInitialLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >            setIsLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >                    // Update the query data without resetting it</span>
+<span class="cstat-no" title="statement not covered" >                    queryClient.setQueryData(['feeds'], [...updatedFeeds])</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        ws.addEventListener('error', () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            // console.log('WebSocket connection error', event)</span>
-<span class="cstat-no" title="statement not covered" >            if (!Array.isArray(cachedFeeds) || cachedFeeds.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >                showToast('error', 'Error fetching feeds')</span>
-<span class="cstat-no" title="statement not covered" >                setIsLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >                    // Set initial loading false after getting the data</span>
+<span class="cstat-no" title="statement not covered" >                    setInitialLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                    setIsLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // ws.addEventListener('close', (event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        //     console.log('WebSocket connection closed', event)</span>
-<span class="cstat-no" title="statement not covered" >        // })</span>
+<span class="cstat-no" title="statement not covered" >                ws.addEventListener('error', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (</span>
+<span class="cstat-no" title="statement not covered" >                        !Array.isArray(cachedFeeds) ||</span>
+<span class="cstat-no" title="statement not covered" >                        cachedFeeds.length === 0</span>
+<span class="cstat-no" title="statement not covered" >                    ) {</span>
+<span class="cstat-no" title="statement not covered" >                        setTimeout(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            setError('Error fetching feeds')</span>
+<span class="cstat-no" title="statement not covered" >                            setInitialLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                            setIsLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                        }, 3000)</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // setSocket(ws)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            if (ws) {</span>
-<span class="cstat-no" title="statement not covered" >                ws.close()</span>
+<span class="cstat-no" title="statement not covered" >                return () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (ws) {</span>
+<span class="cstat-no" title="statement not covered" >                        ws.close()</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >                // console.error('Error connecting to WebSocket:', error)</span>
+<span class="cstat-no" title="statement not covered" >                setError('Error fetching feeds')</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }, [])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        connectWebSocket()</span>
+<span class="cstat-no" title="statement not covered" >    }, [retryCount])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const feedsQuery = useQuery({</span>
 <span class="cstat-no" title="statement not covered" >        queryKey: ['feeds'],</span>
@@ -334,7 +368,12 @@
 <span class="cstat-no" title="statement not covered" >        staleTime: Infinity, // Prevent automatic refetching</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { feedsQuery, initialLoading, isLoading }</span>
+<span class="cstat-no" title="statement not covered" >    const handleRetryClick = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Increment the retryCount when the retry button is clicked</span>
+<span class="cstat-no" title="statement not covered" >        setRetryCount(retryCount + 1)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return { feedsQuery, initialLoading, isLoading, error, handleRetryClick }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -343,7 +382,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-11T15:46:54.008Z
+                at 2023-09-12T10:54:29.051Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
