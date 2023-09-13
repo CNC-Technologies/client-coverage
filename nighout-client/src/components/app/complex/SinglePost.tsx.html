@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.96% </span>
+                <span class="strong">78.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>237/312</span>
+                <span class='fraction'>246/312</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/11</span>
+                <span class='fraction'>4/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.96% </span>
+                <span class="strong">78.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>237/312</span>
+                <span class='fraction'>246/312</span>
             </div>
         
             
@@ -415,6 +415,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -504,6 +509,11 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -546,22 +556,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -580,6 +574,9 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -594,6 +591,9 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -702,7 +702,6 @@ import ShareButton from '@/components/app/simple/ShareButton'
 &nbsp;
 import CommentField from '@/components/app/compound/Post/CommentField'
 import CommentItem from '@/components/app/compound/Post/CommentItem'
-import MenuList from '@/components/app/simple/MenuList'
 import {
     ChatOutlineIcon,
     ForwardOutlineIcon,
@@ -721,6 +720,12 @@ import {
     DialogContent,
 } from '@/components/shadcn/ui/dialog'
 import { usePostsContext } from '@/components/context-containers/posts.context'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/shadcn/ui/dropdown-menu'
 &nbsp;
 const PostMedias = dynamic(
     () =&gt; import('@/components/app/compound/Post/PostMedias'),
@@ -787,9 +792,9 @@ export default function SinglePost({
     // }
 &nbsp;
     return (
-        &lt;div className='mt-4 pb-3 space-y-3 border-b col dark:border-grey/10'&gt;
+        &lt;div className=' pb-3 px-2 pr-3 py-5 border-b col dark:border-grey/10 '&gt;
             &lt;div className='flex items-start space-x-3'&gt;
-                &lt;div&gt;
+                &lt;div onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.preventDefault()}&gt;</span>
                     &lt;Link href={`/${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}`</span>}&gt;
                         &lt;Avatar img={post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.picture} </span>size='md' /&gt;
                     &lt;/Link&gt;
@@ -801,6 +806,7 @@ export default function SinglePost({
                         &lt;div className='flex-1 col'&gt;
                             &lt;div className='flex items-center gap-2'&gt;
                                 &lt;Link
+                                    onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.preventDefault()}</span>
                                     href={`/${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}`</span>}
                                     className='font-semibold'
                                 &gt;
@@ -817,29 +823,33 @@ export default function SinglePost({
 &nbsp;
                         {userId === post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.id<span class="branch-0 cbranch-no" title="branch not covered" > </span>&amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;MenuList</span>
-<span class="cstat-no" title="statement not covered" >                                    menuButton={</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;DropdownMenu&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;DropdownMenuTrigger className='focus:outline-none focus:ring-0'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;IconButton className='grey-outline'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;ThreeDotsIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    }</span>
-<span class="cstat-no" title="statement not covered" >                                    menuItems={[</span>
-<span class="cstat-no" title="statement not covered" >                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                            label: 'Edit post',</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick: openEditDialog,</span>
-<span class="cstat-no" title="statement not covered" >                                        },</span>
-<span class="cstat-no" title="statement not covered" >                                        {</span>
-<span class="cstat-no" title="statement not covered" >                                            label: 'Delete post',</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick: <span class="fstat-no" title="function not covered" >() =&gt;</span></span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/DropdownMenuTrigger&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;DropdownMenuContent&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;DropdownMenuItem</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={openEditDialog}</span>
+<span class="cstat-no" title="statement not covered" >                                            className='text-sm cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Edit post</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/DropdownMenuItem&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;DropdownMenuItem</span>
+<span class="cstat-no" title="statement not covered" >                                            onClick={<span class="fstat-no" title="function not covered" >() =&gt;</span></span>
 <span class="cstat-no" title="statement not covered" >                                                showConfirmDelete({</span>
 <span class="cstat-no" title="statement not covered" >                                                    callback: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                                        deletePost.mutate()</span>
 <span class="cstat-no" title="statement not covered" >                                                    },</span>
-<span class="cstat-no" title="statement not covered" >                                                }),</span>
-<span class="cstat-no" title="statement not covered" >                                        },</span>
-<span class="cstat-no" title="statement not covered" >                                    ]}</span>
-<span class="cstat-no" title="statement not covered" >                                    leftSided</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                })</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                            className='text-sm cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Delete post</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/DropdownMenuItem&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/DropdownMenuContent&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/DropdownMenu&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
                         )}
                     &lt;/div&gt;
@@ -856,23 +866,7 @@ export default function SinglePost({
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='my-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                className={`h-32 flex p-1 border dark:border-grey/10 rounded-md space-x-3 my-3`}</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {/* {loading ? (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex w-full h-full justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Spinner borderColor='border-dark-charcoal' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {storedSharedItem?.type === 'post' ? (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;PostPreviewItem post={storedSharedItem} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                ) : storedSharedItem?.type === 'place' ? (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;PlacePreviewItem</span>
-<span class="cstat-no" title="statement not covered" >                                        place={storedSharedItem}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                ) : null}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )} */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
                     )}
 &nbsp;
@@ -891,7 +885,10 @@ export default function SinglePost({
                             &lt;div className='flex items-center space-x-1 '&gt;
                                 &lt;div
                                     data-testid='like-button'
-                                    onClick={<span class="fstat-no" title="function not covered" >() =&gt; likePost(post?.id as string)}</span>
+                                    onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                        e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >                                        likePost(post?.id as string)</span>
+<span class="cstat-no" title="statement not covered" >                                    }}</span>
                                 &gt;
                                     &lt;LikeItem
                                         background={true}
@@ -905,7 +902,10 @@ export default function SinglePost({
                             &lt;div className='flex items-center space-x-1'&gt;
                                 &lt;div
                                     data-testid='comment-button'
-                                    onClick={() =&gt; setCommentsModal(true)}
+                                    onClick={(e) =&gt; {
+                                        e.preventDefault()
+                                        setCommentsModal(true)
+                                    }}
                                     className='cursor-pointer'
                                 &gt;
                                     &lt;ChatOutlineIcon className='w-5 h-5' /&gt;
@@ -926,7 +926,7 @@ export default function SinglePost({
                             type='post'
                             dataItem={post}
                         &gt;
-                            &lt;div&gt;
+                            &lt;div onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.preventDefault()}&gt;</span>
                                 {/* Share */}
                                 &lt;ForwardOutlineIcon className='h-6 w-6' /&gt;
                             &lt;/div&gt;
@@ -1006,7 +1006,7 @@ export default function SinglePost({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-12T18:57:30.901Z
+                at 2023-09-13T09:50:30.153Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
