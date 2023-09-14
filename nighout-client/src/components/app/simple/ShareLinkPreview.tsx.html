@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.67% </span>
+                <span class="strong">14.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/117</span>
+                <span class='fraction'>16/108</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.67% </span>
+                <span class="strong">14.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/117</span>
+                <span class='fraction'>16/108</span>
             </div>
         
             
@@ -171,16 +171,7 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -194,15 +185,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -340,22 +322,11 @@ const LinkPreview = <span class="fstat-no" title="function not covered" >({ url 
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* {metadata &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                    href={metadata.url}</span>
-<span class="cstat-no" title="statement not covered" >                    target='_blank'</span>
-<span class="cstat-no" title="statement not covered" >                    className='text-blue-500 single-line-text-truncate'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {metadata.url}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )} */}</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {metadata ? (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='rounded-xl py-2 bg-grey/70 dark:bg-grey/10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='rounded-xl pb-2 bg-grey/70 dark:bg-grey/10'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {metadata.title &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    metadata.description &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    metadata.imageUrl &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    metadata.videoUrl ? (</span>
+<span class="cstat-no" title="statement not covered" >                    (metadata.imageUrl || metadata.videoUrl) ? (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                            href={metadata.url}</span>
 <span class="cstat-no" title="statement not covered" >                            target='_blank'</span>
@@ -378,9 +349,11 @@ const LinkPreview = <span class="fstat-no" title="function not covered" >({ url 
 <span class="cstat-no" title="statement not covered" >                                &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    {metadata.imageUrl ? (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;img</span>
+<span class="cstat-no" title="statement not covered" >                                            width={100}</span>
+<span class="cstat-no" title="statement not covered" >                                            height={100}</span>
 <span class="cstat-no" title="statement not covered" >                                            src={metadata.imageUrl}</span>
 <span class="cstat-no" title="statement not covered" >                                            alt='Preview'</span>
-<span class="cstat-no" title="statement not covered" >                                            className='h-56 rounded-t-xl'</span>
+<span class="cstat-no" title="statement not covered" >                                            className='h-56 w-full object-cover object-center rounded-t-xl'</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    ) : null}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/&gt;</span>
@@ -421,7 +394,7 @@ export default LinkPreview
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-14T07:10:06.494Z
+                at 2023-09-14T22:01:31.061Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.43% </span>
+                <span class="strong">13.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/134</span>
+                <span class='fraction'>19/138</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.43% </span>
+                <span class="strong">13.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/134</span>
+                <span class='fraction'>19/138</span>
             </div>
         
             
@@ -197,7 +197,12 @@
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -216,6 +221,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -344,6 +352,7 @@ import {
     CloseOutlineIcon,
 } from '@/constants/icons/icons'
 import useCreatePost from '@/hooks/posts/useCreatePost'
+import { Post } from '@/interfaces/posts.interface'
 &nbsp;
 const DragDropImageUpload = dynamic(
 <span class="cstat-no" title="statement not covered" >    import('@/components/FormComponents/DragDropImageUpload'<span class="fstat-no" title="function not covered" >),</span></span>
@@ -351,10 +360,10 @@ const DragDropImageUpload = dynamic(
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function CreatePostForm({</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
-<span class="cstat-no" title="statement not covered" >    existingPostID,</span>
+<span class="cstat-no" title="statement not covered" >    existingPost,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal: () =&gt; void</span>
-<span class="cstat-no" title="statement not covered" >    existingPostID?: string</span>
+<span class="cstat-no" title="statement not covered" >    existingPost?: Post</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >        user,</span>
@@ -377,10 +386,13 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >        postId,</span>
 <span class="cstat-no" title="statement not covered" >        imageForUpload,</span>
 <span class="cstat-no" title="statement not covered" >        setImageForUpload,</span>
-<span class="cstat-no" title="statement not covered" >    } = useCreatePost({ handleCloseModal, postId: existingPostID })</span>
+<span class="cstat-no" title="statement not covered" >    } = useCreatePost({ handleCloseModal, post: existingPost })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-5 pt-3 h-fit relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            onClick={(e) =&gt; e.stopPropagation()}</span>
+<span class="cstat-no" title="statement not covered" >            className='space-y-5 pt-3 h-fit relative'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex space-x-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Avatar img={`${user?.picture}`} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
@@ -472,7 +484,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-14T07:10:06.494Z
+                at 2023-09-14T22:01:31.061Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
