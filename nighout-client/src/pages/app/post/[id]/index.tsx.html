@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/99</span>
+                <span class='fraction'>0/93</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/99</span>
+                <span class='fraction'>0/93</span>
             </div>
         
             
@@ -156,19 +156,7 @@
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -267,6 +255,8 @@
 <span class="cstat-no" title="statement not covered" >import { Skeleton } from '@/components/shadcn/ui/skeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetPostDetails } from '@/hooks/posts/usePosts'</span>
 <span class="cstat-no" title="statement not covered" >import SinglePost from '@/components/app/complex/SinglePost'</span>
+<span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
+<span class="cstat-no" title="statement not covered" >import { appDescription } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// export const metadata = {</span>
 <span class="cstat-no" title="statement not covered" >//     openGraph: {</span>
@@ -301,28 +291,20 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* {data &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Head&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta</span>
-<span class="cstat-no" title="statement not covered" >                        property='title'</span>
-<span class="cstat-no" title="statement not covered" >                        content={`${post?.edges?.user?.username}'s post`}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta</span>
-<span class="cstat-no" title="statement not covered" >                        property='og:title'</span>
-<span class="cstat-no" title="statement not covered" >                        content={`${post?.edges?.user?.username}'s post`}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta</span>
-<span class="cstat-no" title="statement not covered" >                        property='og:description'</span>
-<span class="cstat-no" title="statement not covered" >                        content={post?.Content?.slice(0, 100)}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta</span>
-<span class="cstat-no" title="statement not covered" >                        property='og:image'</span>
-<span class="cstat-no" title="statement not covered" >                        content={post?.edges?.medias[0]?.URL}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta property='og:url' content={`/app/post/${post?.id}`} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;meta property='og:type' content='website' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Head&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )} */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;SEOHead</span>
+<span class="cstat-no" title="statement not covered" >                title={</span>
+<span class="cstat-no" title="statement not covered" >                    post</span>
+<span class="cstat-no" title="statement not covered" >                        ? `${post?.edges?.user?.username}'s post on Placio`</span>
+<span class="cstat-no" title="statement not covered" >                        : 'Single post'</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                description={post ? post.Content : appDescription}</span>
+<span class="cstat-no" title="statement not covered" >                ogImage={</span>
+<span class="cstat-no" title="statement not covered" >                    post &amp;&amp; post?.edges?.medias</span>
+<span class="cstat-no" title="statement not covered" >                        ? `${post?.edges?.medias[0]?.URL}`</span>
+<span class="cstat-no" title="statement not covered" >                        : ''</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {!isLoading ? (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;SinglePost post={post} fetchPosts={() =&gt; null} /&gt;</span>
@@ -367,7 +349,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-13T09:50:30.153Z
+                at 2023-09-14T07:10:06.494Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
