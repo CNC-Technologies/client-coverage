@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -128,13 +128,7 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,51 +193,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Metadata as NextMetadata } from 'next'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Head from 'next/head'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Head from 'next/head'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { appDescription, appTitle } from '@/constants/headDefaults'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >interface Metadata extends NextMetadata {</span>
+<span class="cstat-no" title="statement not covered" >interface SEOHeadProps {</span>
+<span class="cstat-no" title="statement not covered" >    title: string</span>
+<span class="cstat-no" title="statement not covered" >    description: string</span>
+<span class="cstat-no" title="statement not covered" >    icon?: string</span>
+<span class="cstat-no" title="statement not covered" >    ogImage?: string</span>
 <span class="cstat-no" title="statement not covered" >    url?: string</span>
-<span class="cstat-no" title="statement not covered" >    openGraph?: {</span>
-<span class="cstat-no" title="statement not covered" >        type?: string</span>
-<span class="cstat-no" title="statement not covered" >        title?: string</span>
-<span class="cstat-no" title="statement not covered" >        description?: string</span>
-<span class="cstat-no" title="statement not covered" >        image?: {</span>
-<span class="cstat-no" title="statement not covered" >            url?: string</span>
-<span class="cstat-no" title="statement not covered" >            width?: number</span>
-<span class="cstat-no" title="statement not covered" >            height?: number</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >export interface SEOHeadProps {</span>
-<span class="cstat-no" title="statement not covered" >    metadata: Metadata</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function SEOHead({ metadata }: SEOHeadProps) {</span>
-<span class="cstat-no" title="statement not covered" >    const hostname =</span>
-<span class="cstat-no" title="statement not covered" >        typeof window !== 'undefined'</span>
-<span class="cstat-no" title="statement not covered" >            ? window.location.origin</span>
-<span class="cstat-no" title="statement not covered" >            : 'https://www.placio.io'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let placioImage =</span>
-<span class="cstat-no" title="statement not covered" >        'https://res.cloudinary.com/placio/image/upload/v1683026908/user-media-content/favicon_cy5xrp.png'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let title = metadata?.title ? `${metadata?.title}` : appTitle</span>
-<span class="cstat-no" title="statement not covered" >    let description = metadata?.description</span>
-<span class="cstat-no" title="statement not covered" >        ? `${metadata?.description}`</span>
-<span class="cstat-no" title="statement not covered" >        : appDescription</span>
-<span class="cstat-no" title="statement not covered" >    let icon = placioImage</span>
-<span class="cstat-no" title="statement not covered" >    let url = `${hostname}/${metadata?.url ? metadata?.url : ''}`</span>
-<span class="cstat-no" title="statement not covered" >    let ogImage = metadata?.openGraph?.image?.url || placioImage</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function SEOHead({</span>
+<span class="cstat-no" title="statement not covered" >    title,</span>
+<span class="cstat-no" title="statement not covered" >    description,</span>
+<span class="cstat-no" title="statement not covered" >    url = 'https://www.placio.io',</span>
+<span class="cstat-no" title="statement not covered" >    icon = 'https://res.cloudinary.com/placio/image/upload/v1683026908/user-media-content/favicon_cy5xrp.png',</span>
+<span class="cstat-no" title="statement not covered" >    ogImage = 'https://res.cloudinary.com/placio/image/upload/v1683026908/user-media-content/favicon_cy5xrp.png',</span>
+<span class="cstat-no" title="statement not covered" >}: SEOHeadProps) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;Head&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;title&gt;{title}&lt;/title&gt;</span>
@@ -254,7 +220,7 @@
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {/* &lt;!-- Primary Meta Tags --&gt; */}</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;title&gt;Placio.io&lt;/title&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;meta name='title' content={title} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;meta name='description' content={description} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -272,7 +238,23 @@
 <span class="cstat-no" title="statement not covered" >            &lt;meta property='twitter:description' content={description} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;meta property='twitter:image' content={ogImage} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;meta name='description' content={description} /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;link rel='icon' href={icon} /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;meta property='og:title' content={title} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta property='og:description' content={description} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta property='og:site_name' content={'Placio'} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta property='og:type' content='website' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta</span>
+<span class="cstat-no" title="statement not covered" >                property='og:url'</span>
+<span class="cstat-no" title="statement not covered" >                content={</span>
+<span class="cstat-no" title="statement not covered" >                    typeof window !== 'undefined'</span>
+<span class="cstat-no" title="statement not covered" >                        ? `${window.location}`</span>
+<span class="cstat-no" title="statement not covered" >                        : 'https://www.placio.io'</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta property='og:image' content={ogImage} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;meta property='og:image:secure_url' content={ogImage} /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Head&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -283,7 +265,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-18T18:05:14.222Z
+                at 2023-09-18T18:05:52.200Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

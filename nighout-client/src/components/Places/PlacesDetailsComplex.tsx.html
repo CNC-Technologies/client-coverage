@@ -380,21 +380,14 @@
 <span class="cstat-no" title="statement not covered" >import PlaceReviews from '@/components/Places/PlaceDetails/Reviews/PlaceReviews'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesCartList from '@/components/Places/PlaceDetails/placesCart/CartItem'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesFloatingCartButton from '@/components/Places/PlaceDetails/placesCart/FloatingCartButton'</span>
+<span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" >import PlaceDetailsSkeleton from '@/components/skeletons/places/PlaceDetailsSkeleton'</span>
-<span class="cstat-no" title="statement not covered" >// import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceInterface } from '@/store/slices/places.slice'</span>
-<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PlacesDetailsComplex({</span>
-<span class="cstat-no" title="statement not covered" >    placeDetails,</span>
-<span class="cstat-no" title="statement not covered" >    isLoading,</span>
-<span class="cstat-no" title="statement not covered" >}: {</span>
-<span class="cstat-no" title="statement not covered" >    placeDetails: PlaceProps</span>
-<span class="cstat-no" title="statement not covered" >    isLoading: boolean</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    // const [loading, setLoading] = useState(isLoading)</span>
+<span class="cstat-no" title="statement not covered" >export default function PlacesDetailsComplex() {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" >    // A particaular place's cart</span>
 <span class="cstat-no" title="statement not covered" >    const placesCart = useSelector((state: RootState) =&gt; state.placesCart)</span>
@@ -415,6 +408,7 @@
 <span class="cstat-no" title="statement not covered" >    const [cartLength, setCartLength] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // const { getPlaceDetails, placeDetails } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" >    const { isLoading, data: placeDetails } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // THis is for the cart of a particular place</span>
 <span class="cstat-no" title="statement not covered" >    // * This may removed later</span>
@@ -432,6 +426,16 @@
 <span class="cstat-no" title="statement not covered" >                !user ? 'max-w-[80rem] mx-auto pt-5 general-padding' : ''</span>
 <span class="cstat-no" title="statement not covered" >            } relative`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;SEOHead</span>
+<span class="cstat-no" title="statement not covered" >                title={placeDetails?.name}</span>
+<span class="cstat-no" title="statement not covered" >                description={placeDetails?.description}</span>
+<span class="cstat-no" title="statement not covered" >                ogImage={</span>
+<span class="cstat-no" title="statement not covered" >                    placeDetails?.edges?.medias?.find(</span>
+<span class="cstat-no" title="statement not covered" >                        (media) =&gt; media.MediaType === 'image',</span>
+<span class="cstat-no" title="statement not covered" >                    ).URL</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            {isLoading ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;PlaceDetailsSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
@@ -466,11 +470,7 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;PlaceDetails place={placeDetails} /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            {/* Amenities  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {placeDetails?.edges?.amenities &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlaceAmenities</span>
-<span class="cstat-no" title="statement not covered" >                                    amenities={placeDetails?.edges?.amenities}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;PlaceAmenities /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            {/* Reviews  */}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;PlaceReviews place={placeDetails} /&gt;</span>
@@ -520,7 +520,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-18T18:05:14.222Z
+                at 2023-09-18T18:05:52.200Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
