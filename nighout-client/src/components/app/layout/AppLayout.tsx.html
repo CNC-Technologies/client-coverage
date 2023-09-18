@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/220</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/220</span>
+                <span class='fraction'>0/221</span>
             </div>
         
             
@@ -283,7 +283,9 @@
 <a name='L218'></a><a href='#L218'>218</a>
 <a name='L219'></a><a href='#L219'>219</a>
 <a name='L220'></a><a href='#L220'>220</a>
-<a name='L221'></a><a href='#L221'>221</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -523,7 +525,7 @@
 <span class="cstat-no" title="statement not covered" >import { useDisplayElementsInAppLayout } from '@/hooks/useDisplayElementsInAppLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import authorize from '@/HOCs/authorize'</span>
-<span class="cstat-no" title="statement not covered" >import SEOHead from '@/components/SEOHead'</span>
+<span class="cstat-no" title="statement not covered" >// import SEOHead from '@/components/SEOHead'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >// import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import MobileFloatingButtonMenu from '@/components/app/simple/MobileFloatingButton'</span>
@@ -533,7 +535,7 @@
 <span class="cstat-no" title="statement not covered" >    businessEventsLink,</span>
 <span class="cstat-no" title="statement not covered" >    businessPlacesLink,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/links'</span>
-<span class="cstat-no" title="statement not covered" >import { appDescription, appIcon, appTitle } from '@/constants/headDefaults'</span>
+<span class="cstat-no" title="statement not covered" >// import { appDescription, appTitle } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import { BellOutlineIcon, ChevronLeftIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import useGetUser from '@/hooks/useGetUser'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
@@ -592,8 +594,8 @@
 <span class="cstat-no" title="statement not covered" >const AppLayout = ({</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >    showRightSidebar,</span>
-<span class="cstat-no" title="statement not covered" >    title = appTitle,</span>
-<span class="cstat-no" title="statement not covered" >    description = appDescription,</span>
+<span class="cstat-no" title="statement not covered" >    // title = appTitle,</span>
+<span class="cstat-no" title="statement not covered" >    // description = appDescription,</span>
 <span class="cstat-no" title="statement not covered" >    pageTitle,</span>
 <span class="cstat-no" title="statement not covered" >}: AppLayoutProps) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const activeBusiness = useSelector(</span>
@@ -611,6 +613,7 @@
 <span class="cstat-no" title="statement not covered" >    const { hidden } = useDisplayElementsInAppLayout()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // * Validating the render of a business page before rendering</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (!activeBusiness &amp;&amp; configKey === 'business') {</span>
 <span class="cstat-no" title="statement not covered" >        router.push(appHomeLink)</span>
 <span class="cstat-no" title="statement not covered" >        return null</span>
@@ -621,7 +624,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;SEOHead title={title} description={description} icon={appIcon} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;SEOHead title={title} description={description} icon={appIcon} /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='text-dark-charcoal h-full w-full overflow-y-auto"'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
@@ -730,7 +733,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-15T16:05:41.628Z
+                at 2023-09-18T18:05:14.222Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
