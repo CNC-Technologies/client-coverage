@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.55% </span>
+                <span class="strong">30.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>59/187</span>
+                <span class='fraction'>60/194</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.55% </span>
+                <span class="strong">30.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>59/187</span>
+                <span class='fraction'>60/194</span>
             </div>
         
             
@@ -250,7 +250,15 @@
 <a name='L185'></a><a href='#L185'>185</a>
 <a name='L186'></a><a href='#L186'>186</a>
 <a name='L187'></a><a href='#L187'>187</a>
-<a name='L188'></a><a href='#L188'>188</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -271,17 +279,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -454,8 +468,10 @@ import {
 } from '@/interfaces/apiRequest.interface'
 import { handleErrors, throwError } from '@/utils/errorHandlers/handleReqErrors'
 import { logErrorsWithSentry } from '@/utils/errorHandlers/logErrorsToSentry'
+import CookieService from '@/services/Cookie.service'
 &nbsp;
 export const logout = (<span class="fstat-no" title="function not covered" >router) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    CookieService.remover(['user-id', 'user'])</span>
 <span class="cstat-no" title="statement not covered" >    router.push('/api/auth/logout')</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -469,15 +485,20 @@ export const resolveUrl = <span class="fstat-no" title="function not covered" >(
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export <span class="fstat-no" title="function not covered" >async function getToken() {</span>
-<span class="cstat-no" title="statement not covered" >    const res = await fetch('/api/auth/token')</span>
-<span class="cstat-no" title="statement not covered" >    if (!res.ok) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error('Network response was not ok')</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const { status, accessToken } = await res.json()</span>
-<span class="cstat-no" title="statement not covered" >    if (status === 401)</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error('Unauthorized access, please login again.')</span>
-<span class="cstat-no" title="statement not covered" >    // handleErrors({ status } as AxiosResponse, showToast, true, router) // TODO: fix this</span>
-<span class="cstat-no" title="statement not covered" >    return accessToken</span>
+<span class="cstat-no" title="statement not covered" >    const user = CookieService.getter('user')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // To handle not getting of token when the user is not logged in</span>
+<span class="cstat-no" title="statement not covered" >    if (user &amp;&amp; user !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        const res = await fetch('/api/auth/token')</span>
+<span class="cstat-no" title="statement not covered" >        if (!res.ok) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error('Network response was not ok')</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const { status, accessToken } = await res.json()</span>
+<span class="cstat-no" title="statement not covered" >        if (status === 401)</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error('Unauthorized access, please login again.')</span>
+<span class="cstat-no" title="statement not covered" >        // handleErrors({ status } as AxiosResponse, showToast, true, router) // TODO: fix this</span>
+<span class="cstat-no" title="statement not covered" >        return accessToken</span>
+<span class="cstat-no" title="statement not covered" >    } else return ''</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const makeRequest = <span class="fstat-no" title="function not covered" >async (</span>
@@ -631,7 +652,7 @@ export default function useSecureRequest(arg: UseRequestArg = '') {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-18T18:18:10.508Z
+                at 2023-09-19T15:16:03.924Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
