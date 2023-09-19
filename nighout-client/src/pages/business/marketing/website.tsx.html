@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
@@ -93,7 +93,17 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,7 +134,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import Editor from '@/components/business-website/web-builder/editor'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
+<span class="cstat-no" title="statement not covered" >import EditWebsiteForm from '@/components/forms/business/EditWebsiteForm'</span>
+<span class="cstat-no" title="statement not covered" >import Sheet from '@/components/shadcn/ui/sheet'</span>
 <span class="cstat-no" title="statement not covered" >// import { defaultCoverPhoto } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { marketingSidebarLinks } from '@/constants/business/marketingLinks'</span>
 <span class="cstat-no" title="statement not covered" >// import Image from 'next/image'</span>
@@ -133,24 +146,26 @@
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='w-full col h-full space-y-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='row'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SideButtonItem&gt;Publish&lt;/SideButtonItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SideButtonItem&gt;Edit&lt;/SideButtonItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SideButtonItem&gt;Save&lt;/SideButtonItem&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-end space-x-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Button&gt;Archive&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Sheet</span>
+<span class="cstat-no" title="statement not covered" >                        title='Edit your website'</span>
+<span class="cstat-no" title="statement not covered" >                        trigger={&lt;Button&gt;Edit&lt;/Button&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;EditWebsiteForm /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Sheet&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-black/10 rounded-lg h-full w-full flex-1 min-h-[74vh]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-3 text-muted'&gt;Preview with iFrame&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-black/10 rounded-lg h-full w-full flex-1 min-h-[74vh] overflow-hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;iframe</span>
+<span class="cstat-no" title="statement not covered" >                        src='https://placio.io/randomBusiness'</span>
+<span class="cstat-no" title="statement not covered" >                        title='Business website preview'</span>
+<span class="cstat-no" title="statement not covered" >                        height={'100%'}</span>
+<span class="cstat-no" title="statement not covered" >                        width={'100%'}</span>
+<span class="cstat-no" title="statement not covered" >                        className='scrollbar-none'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;&lt;/iframe&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function SideButtonItem({ children }) {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='px-5 py-1 cursor-pointer hover:bg-black/5 rounded-lg smoothen text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {children}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -160,7 +175,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-19T15:16:30.145Z
+                at 2023-09-19T15:16:56.662Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
