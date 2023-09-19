@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.72% </span>
+                <span class="strong">58.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>157/272</span>
+                <span class='fraction'>167/284</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/24</span>
+                <span class='fraction'>9/25</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.72% </span>
+                <span class="strong">58.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>157/272</span>
+                <span class='fraction'>167/284</span>
             </div>
         
             
@@ -335,7 +335,20 @@
 <a name='L270'></a><a href='#L270'>270</a>
 <a name='L271'></a><a href='#L271'>271</a>
 <a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -379,6 +392,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -476,10 +492,18 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -607,7 +631,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Image from 'next/image'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useSelector } from 'react-redux'
+import Image from 'next/image'
 import {
     EmailIcon,
     EmailShareButton,
@@ -638,6 +663,7 @@ import { Post } from '@/interfaces/posts.interface'
 import { MapMarkerSolidIcon } from '@/constants/icons/icons'
 import { defaultPicture } from '@/constants/app/defaults'
 import { PlaceProps } from '@/interfaces/places/place.interface'
+import { RootState } from '@/store'
 &nbsp;
 export interface SharedItemProps {
     image: string
@@ -666,6 +692,8 @@ export default function ShareButton({
     dataItem,
 }: ShareButtonProps) {
     const [showDialog, setShowDialog] = useState(false)
+&nbsp;
+    const user = useSelector((state: RootState) =&gt; state.user.user)
 &nbsp;
     const openDialog = <span class="fstat-no" title="function not covered" >() =&gt; setShowDialog(true)</span>
     const closeDialog = <span class="fstat-no" title="function not covered" >() =&gt; setShowDialog(false)</span>
@@ -736,35 +764,43 @@ export default function ShareButton({
                     title={`Share this ${type}`}
                     description='You can share this content on placio or any social media of your choosing.'
                 &gt;
-                    &lt;InputField
-                        ref={inputRef}
-                        onChange={(<span class="fstat-no" title="function not covered" >e) =&gt; setComment(e.target.value)}</span>
-                        type='text'
-                        placeholder='Add caption...'
-                        className=' border-none  focus:outline-none focus:ring-0 focus:border-none'
-                    /&gt;
+                    {user &amp;&amp; (
+                        &lt;&gt;
+                            &lt;InputField
+                                ref={inputRef}
+                                onChange={(<span class="fstat-no" title="function not covered" >e) =&gt; setComment(e.target.value)}</span>
+                                type='text'
+                                placeholder='Add caption...'
+                                className=' border-none  focus:outline-none focus:ring-0 focus:border-none'
+                            /&gt;
 &nbsp;
-                    {dataItem &amp;&amp; (
-                        &lt;div&gt;
-                            &lt;div className='border my-2 border-grey shadow-md dark:border-grey/10 py-2 px-1 rounded-md'&gt;
-                                {type === 'place'<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;PlacePreviewItem place={sharedContent()} /&gt;</span>
-                                ) : type === 'post' ? (
-                                    &lt;PostPreviewItem post={sharedContent()} /&gt;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                ) : null}</span></span>
-                            &lt;/div&gt;
-                            &lt;div className='flex justify-end mt-3'&gt;
-                                &lt;Button
-                                    onClick={shareOnPlacio}
-                                    loading={handleSavePost.isLoading}
-                                    className='px-5'
-                                &gt;
-                                    Post
-                                &lt;/Button&gt;
-                            &lt;/div&gt;
+                            {dataItem &amp;&amp; (
+                                &lt;div&gt;
+                                    &lt;div className='border my-2 border-grey shadow-md dark:border-grey/10 py-2 px-1 rounded-md'&gt;
+                                        {type === 'place'<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;PlacePreviewItem</span>
+<span class="cstat-no" title="statement not covered" >                                                place={sharedContent()}</span>
+<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
+                                        ) : type === 'post' ? (
+                                            &lt;PostPreviewItem
+                                                post={sharedContent()}
+                                            /&gt;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        ) : null}</span></span>
+                                    &lt;/div&gt;
+                                    &lt;div className='flex justify-end mt-3'&gt;
+                                        &lt;Button
+                                            onClick={shareOnPlacio}
+                                            loading={handleSavePost.isLoading}
+                                            className='px-5'
+                                        &gt;
+                                            Post
+                                        &lt;/Button&gt;
+                                    &lt;/div&gt;
 &nbsp;
-                            &lt;hr className='border-grey dark:border-grey/10 my-2' /&gt;
-                        &lt;/div&gt;
+                                    &lt;hr className='border-grey dark:border-grey/10 my-2' /&gt;
+                                &lt;/div&gt;
+                            )}
+                        &lt;/&gt;
                     )}
                     &lt;div className='row justify-center space-x-3 p-3'&gt;
                         {socials.map((item, i) =&gt; (
@@ -886,7 +922,7 @@ export <span class="fstat-no" title="function not covered" >function PlacePrevie
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-19T15:17:11.319Z
+                at 2023-09-19T17:59:54.490Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

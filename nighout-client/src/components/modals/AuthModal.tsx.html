@@ -157,7 +157,7 @@
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import AuthModalContext from '@/components/context-containers/AuthModal.context'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
+<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AuthModal() {</span>
 <span class="cstat-no" title="statement not covered" >    const { authModalVisible, hideAuthModal } = useContext(AuthModalContext)</span>
@@ -165,13 +165,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ParentModal</span>
-<span class="cstat-no" title="statement not covered" >                isOpen={authModalVisible}</span>
-<span class="cstat-no" title="statement not covered" >                handleClose={hideAuthModal}</span>
-<span class="cstat-no" title="statement not covered" >                extraClasses={undefined}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={authModalVisible}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={hideAuthModal}</span>
+<span class="cstat-no" title="statement not covered" >                title={''}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='my-5' data-testid='auth-modal'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='font-bold text-center text-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='font-medium text-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        You need to be authenticated to perform this action</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center justify-center mt-5 gap-2 desktop:gap-4'&gt;</span>
@@ -179,7 +179,7 @@
 <span class="cstat-no" title="statement not covered" >                            href={`/api/auth/login-with-redirect?returnTo=${encodeURIComponent(</span>
 <span class="cstat-no" title="statement not covered" >                                currentUrl,</span>
 <span class="cstat-no" title="statement not covered" >                            )}`}</span>
-<span class="cstat-no" title="statement not covered" >                            className='flex items-center py-2 w-28 text-center justify-center text-lg rounded-lg primary-outline'</span>
+<span class="cstat-no" title="statement not covered" >                            className='flex items-center py-2 w-28 text-center justify-center  rounded-lg primary-outline'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Login</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
@@ -188,13 +188,13 @@
 <span class="cstat-no" title="statement not covered" >                            href={`/api/auth/signup-with-redirect?returnTo=${encodeURIComponent(</span>
 <span class="cstat-no" title="statement not covered" >                                currentUrl,</span>
 <span class="cstat-no" title="statement not covered" >                            )}`}</span>
-<span class="cstat-no" title="statement not covered" >                            className='flex items-center py-2 w-28 text-center justify-center text-lg rounded-lg primary-fill'</span>
+<span class="cstat-no" title="statement not covered" >                            className='flex items-center py-2 w-28 text-center justify-center  rounded-lg primary-fill'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Sign up</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -205,7 +205,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-19T15:17:11.319Z
+                at 2023-09-19T17:59:54.490Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
