@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.03% </span>
+                <span class="strong">57.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>177/305</span>
+                <span class='fraction'>177/309</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">38.46% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>5/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.03% </span>
+                <span class="strong">57.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>177/305</span>
+                <span class='fraction'>177/309</span>
             </div>
         
             
@@ -368,7 +368,11 @@
 <a name='L303'></a><a href='#L303'>303</a>
 <a name='L304'></a><a href='#L304'>304</a>
 <a name='L305'></a><a href='#L305'>305</a>
-<a name='L306'></a><a href='#L306'>306</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -483,6 +487,10 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -738,8 +746,8 @@ export default function ShareButton({
 &nbsp;
     const user = useSelector((state: RootState) =&gt; state.user.user)
 &nbsp;
-    const openDialog = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        e.stopPropagation()</span>
+    const openDialog = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // e.stopPropagation()</span>
 <span class="cstat-no" title="statement not covered" >        setShowDialog(true)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const closeDialog = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
@@ -789,7 +797,11 @@ export default function ShareButton({
             let postText
             if (containsSharedItem) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                if (!mainContent || mainContent === '\n')</span>
-<span class="cstat-no" title="statement not covered" >                    postText = `${postOwner} shared ${sharedObject?.username}'s post`</span>
+<span class="cstat-no" title="statement not covered" >                    postText = `${</span>
+<span class="cstat-no" title="statement not covered" >                        sharedObject?.type === 'place'</span>
+<span class="cstat-no" title="statement not covered" >                            ? `${`${postOwner} shared a place`}`</span>
+<span class="cstat-no" title="statement not covered" >                            : `${`${postOwner} shared ${sharedObject?.username}'s post`}`</span>
+<span class="cstat-no" title="statement not covered" >                    }  `</span>
 <span class="cstat-no" title="statement not covered" >                else postText = (dataItem as Post)?.Content</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             content = {
@@ -822,7 +834,7 @@ export default function ShareButton({
                     {children}
                 &lt;/span&gt;
                 &lt;DialogLayout
-                    closeDialog={<span class="fstat-no" title="function not covered" >() =&gt; closeDialog}</span>
+                    closeDialog={closeDialog}
                     dialogOpened={showDialog}
                     title={`Share this ${type}`}
                     description='You can share this content on placio or any social media of your choosing.'
@@ -985,7 +997,7 @@ export <span class="fstat-no" title="function not covered" >function PlacePrevie
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-20T15:57:57.150Z
+                at 2023-09-21T15:02:42.814Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

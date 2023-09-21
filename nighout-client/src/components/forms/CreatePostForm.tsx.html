@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.42% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/175</span>
+                <span class='fraction'>23/184</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.42% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/175</span>
+                <span class='fraction'>23/184</span>
             </div>
         
             
@@ -238,7 +238,19 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -259,6 +271,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -427,7 +445,10 @@ import {
 } from '@/constants/icons/icons'
 import useCreatePost from '@/hooks/posts/useCreatePost'
 import { Post } from '@/interfaces/posts.interface'
-import { PostPreviewItem } from '@/components/app/simple/ShareButton'
+import {
+    PlacePreviewItem,
+    PostPreviewItem,
+} from '@/components/app/simple/ShareButton'
 &nbsp;
 const DragDropImageUpload = dynamic(
 <span class="cstat-no" title="statement not covered" >    import('@/components/FormComponents/DragDropImageUpload'<span class="fstat-no" title="function not covered" >),</span></span>
@@ -521,7 +542,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                                onClick={() =&gt; setRemoveSharedItem(false)}</span>
 <span class="cstat-no" title="statement not covered" >                                className='z-10 cursor-pointer text-sm p-1 leading-none  whitespace-nowrap bg-grey dark:bg-grey/80 dark:text-black shadow-md rounded-md'</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;p&gt;Retrieve shared post&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;p&gt;Retrieve shared {sharedObject?.type}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    ) : (</span>
@@ -534,12 +555,18 @@ export default <span class="fstat-no" title="function not covered" >function Cre
 <span class="cstat-no" title="statement not covered" >                                &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='absolute -top-5 transition-all duration-300 ease-in-out right-0  hidden group-hover:flex'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='z-10 text-sm p-1 leading-none  whitespace-nowrap bg-grey dark:bg-grey/80 dark:text-black shadow-md rounded-md'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;Remove shared post&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Remove shared {sharedObject?.type}</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PostPreviewItem post={sharedObject} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {sharedObject?.type === 'post' ? (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;PostPreviewItem post={sharedObject} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;PlacePreviewItem place={sharedObject} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
@@ -595,7 +622,7 @@ export default <span class="fstat-no" title="function not covered" >function Cre
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-20T15:57:57.150Z
+                at 2023-09-21T15:02:42.814Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
