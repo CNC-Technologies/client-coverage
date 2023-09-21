@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.58% </span>
+                <span class="strong">76.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>270/348</span>
+                <span class='fraction'>282/367</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.09% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/21</span>
+                <span class='fraction'>8/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.58% </span>
+                <span class="strong">76.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>270/348</span>
+                <span class='fraction'>282/367</span>
             </div>
         
             
@@ -411,7 +411,26 @@
 <a name='L346'></a><a href='#L346'>346</a>
 <a name='L347'></a><a href='#L347'>347</a>
 <a name='L348'></a><a href='#L348'>348</a>
-<a name='L349'></a><a href='#L349'>349</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -711,6 +730,20 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -727,6 +760,11 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -1057,53 +1095,72 @@ export default function SinglePost({
                             &lt;/div&gt;
                         &lt;/div&gt;
 &nbsp;
-                        &lt;ShareButton
-                            content={{
-                                url: `https://placio.io/app?post=${post?.id}`,
-                                text:
-                                    (post?.Content?.slice(0, 100) as string) +
-                                    (post?.Content?.length &gt; 100<span class="branch-0 cbranch-no" title="branch not covered" > ? '...' </span>: ''),
-                            }}
-                            type='post'
-                            dataItem={post}
+                        &lt;span
+                            onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >                                e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >                            }}</span>
                         &gt;
-                            &lt;div onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.preventDefault()}&gt;</span>
-                                {/* Share */}
-                                &lt;ForwardOutlineIcon className='h-5 w-5' /&gt;
-                            &lt;/div&gt;
-                        &lt;/ShareButton&gt;
+                            &lt;ShareButton
+                                content={{
+                                    url: `https://placio.io/app?post=${post?.id}`,
+                                    text:
+                                        (post?.Content?.slice(
+                                            0,
+                                            100,
+                                        ) as string) +
+                                        (post?.Content?.length &gt; 100
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                            ? '...'</span></span>
+                                            : ''),
+                                }}
+                                type='post'
+                                dataItem={post}
+                            &gt;
+                                &lt;div onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; e.preventDefault()}&gt;</span>
+                                    {/* Share */}
+                                    &lt;ForwardOutlineIcon className='h-5 w-5' /&gt;
+                                &lt;/div&gt;
+                            &lt;/ShareButton&gt;
+                        &lt;/span&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
 &nbsp;
             {/* Comments Modal  */}
-            &lt;Dialog open={commentsModal} onOpenChange={closeCommentsModal}&gt;
-                &lt;DialogContent className='max-h-[85%] '&gt;
-                    &lt;DialogHeader&gt;
-                        &lt;DialogTitle className='text-center'&gt;
-                            {`Comments on ${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}'</span>s post`}
-                        &lt;/DialogTitle&gt;
-                    &lt;/DialogHeader&gt;
-                    &lt;div className='relative' data-testid='comments-modal'&gt;
-                        &lt;div className=' border-t dark:border-t-grey/10  bg-white dark:bg-black py-2 bottom-0 left-0 w-full'&gt;
-                            &lt;CommentField
-                                post={post}
-                                handleCloseModal={closeCommentsModal}
-                            /&gt;
+            &lt;span
+                onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >                    e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >                }}</span>
+            &gt;
+                &lt;Dialog open={commentsModal} onOpenChange={closeCommentsModal}&gt;
+                    &lt;DialogContent className='max-h-[85%] '&gt;
+                        &lt;DialogHeader&gt;
+                            &lt;DialogTitle className='text-center'&gt;
+                                {`Comments on ${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}'</span>s post`}
+                            &lt;/DialogTitle&gt;
+                        &lt;/DialogHeader&gt;
+                        &lt;div className='relative' data-testid='comments-modal'&gt;
+                            &lt;div className=' border-t dark:border-t-grey/10  bg-white dark:bg-black py-2 bottom-0 left-0 w-full'&gt;
+                                &lt;CommentField
+                                    post={post}
+                                    handleCloseModal={closeCommentsModal}
+                                /&gt;
+                            &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/DialogContent&gt;
-            &lt;/Dialog&gt;
+                    &lt;/DialogContent&gt;
+                &lt;/Dialog&gt;
 &nbsp;
-            {/* Edit Post Modal  */}
-            &lt;Dialog open={editDialog} onOpenChange={<span class="fstat-no" title="function not covered" >() =&gt; closeEditDialog}&gt;</span>
-                &lt;DialogContent className='max-h-[85%] overflow-y-auto custom-scrollbar '&gt;
-                    &lt;CreatePostForm
-                        handleCloseModal={<span class="fstat-no" title="function not covered" >() =&gt; closeEditAndFetchPosts}</span>
-                        existingPost={post}
-                    /&gt;
-                &lt;/DialogContent&gt;
-            &lt;/Dialog&gt;
+                {/* Edit Post Modal  */}
+                &lt;Dialog open={editDialog} onOpenChange={closeEditDialog}&gt;
+                    &lt;DialogContent className='max-h-[85%] overflow-y-auto custom-scrollbar '&gt;
+                        &lt;CreatePostForm
+                            handleCloseModal={<span class="fstat-no" title="function not covered" >() =&gt; closeEditAndFetchPosts}</span>
+                            existingPost={post}
+                        /&gt;
+                    &lt;/DialogContent&gt;
+                &lt;/Dialog&gt;
+            &lt;/span&gt;
         &lt;/div&gt;
     )
 }
@@ -1114,7 +1171,7 @@ export default function SinglePost({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-21T15:02:42.814Z
+                at 2023-09-21T15:03:45.844Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
