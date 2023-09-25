@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/107</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/107</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -170,7 +170,19 @@
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -278,17 +290,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useContext, useEffect, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import { feedsURL } from '@/constants/env.config'</span>
-<span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { getToken } from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useFeeds() {</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [error, setError] = useState('')</span>
 <span class="cstat-no" title="statement not covered" >    const [retryCount, setRetryCount] = useState(0)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // loading states</span>
 <span class="cstat-no" title="statement not covered" >    const [initialLoading, setInitialLoading] = useState(false)</span>
@@ -297,7 +315,7 @@
 <span class="cstat-no" title="statement not covered" >    // Cached feeds</span>
 <span class="cstat-no" title="statement not covered" >    const cachedFeeds = queryClient.getQueryData(['feeds']) || []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const token = async () =&gt; await getToken()</span>
+<span class="cstat-no" title="statement not covered" >    const token = async () =&gt; await getToken(showToast, router)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setError('')</span>
@@ -391,7 +409,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-25T11:08:18.749Z
+                at 2023-09-25T11:10:05.408Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
