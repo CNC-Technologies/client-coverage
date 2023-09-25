@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/94</span>
             </div>
         
             
@@ -151,7 +151,19 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -254,7 +266,7 @@
 <span class="cstat-no" title="statement not covered" >import { dashboardCustomerTableName } from '@/constants/business/options'</span>
 <span class="cstat-no" title="statement not covered" >import { HorzMenuSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function DashboardCustomersTable() {</span>
+<span class="cstat-no" title="statement not covered" >export default function DashboardCustomersTable({ noData }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(</span>
 <span class="cstat-no" title="statement not covered" >        dashboardCustomerTableName[0].value,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -288,39 +300,45 @@
 <span class="cstat-no" title="statement not covered" >                                History</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/TableHead&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/TableRow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {dashboardTableData.map((item, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;TableRow key={item.id}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;{i + 1}&lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.date}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.customerName}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.address}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.amount}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='row space-x-1 justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='p-1 bg-orange rounded-full' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {item.status}</span>
+<span class="cstat-no" title="statement not covered" >                        {noData ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='py-10'&gt;No data to show&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        ) : (</span>
+<span class="cstat-no" title="statement not covered" >                            dashboardTableData.map((item, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TableRow key={item.id}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {i + 1}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.date}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.customerName}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.address}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.amount}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='row space-x-1 justify-center items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='p-1 bg-orange rounded-full' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {item.status}</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {item.orderId}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;TableCell className='py-3 row justify-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;HorzMenuSolidIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/TableCell&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/TableRow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ))}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {item.orderId}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;TableCell className='py-3 row justify-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;HorzMenuSolidIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/TableCell&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/TableRow&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            ))</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Table&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -334,7 +352,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-22T13:44:09.639Z
+                at 2023-09-25T11:08:18.749Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

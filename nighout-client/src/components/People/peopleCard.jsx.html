@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/58</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/58</span>
             </div>
         
             
@@ -121,13 +121,7 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -191,28 +185,27 @@
 <span class="cstat-no" title="statement not covered" >import { Card } from '../shadcn/ui/card'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PeopleCard({ user }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Card className='flex flex-col cursor-pointer h-[18rem] relative w-full rounded-xl dark:bg-primary/5 border-0 dark:border-[0.5px] shadow-none'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='absolute top-0 left-0 z-20 w-full h-full rounded-xl '&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[40%]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Card className='flex flex-col cursor-pointer h-[17rem] relative w-full rounded-xl dark:bg-primary/5 border-[0.5px] dark:border-[0.5px] shadow-none'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;div className='absolute top-0 left-0 z-20 w-full h-full rounded-xl '&gt;&lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='relative h-[7rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                    src={</span>
-<span class="cstat-no" title="statement not covered" >                        'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/gym_ptlk40.svg'</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    alt={'user cover'}</span>
+<span class="cstat-no" title="statement not covered" >                    src={user?.cover_image || appIcon}</span>
+<span class="cstat-no" title="statement not covered" >                    alt={`${user?.username} cover on placio`}</span>
 <span class="cstat-no" title="statement not covered" >                    priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                    quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                    width={100}</span>
 <span class="cstat-no" title="statement not covered" >                    height={100}</span>
-<span class="cstat-no" title="statement not covered" >                    className='object-cover object-center w-full h-full rounded-t-xl'</span>
+<span class="cstat-no" title="statement not covered" >                    className='object-cover border-b object-center w-full h-full rounded-t-xl'</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute z-10 -translate-y-1/2 top-full left-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-16 h-16 border-2 border-white dark:border-grey/10 rounded-full shadow-lg cursor-pointer'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-16 h-16 border border-white dark:border-grey/10 rounded-full shadow-lg cursor-pointer'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                            src={user?.picture.medium}</span>
-<span class="cstat-no" title="statement not covered" >                            alt={'user profile'}</span>
+<span class="cstat-no" title="statement not covered" >                            src={user?.picture || appIcon}</span>
+<span class="cstat-no" title="statement not covered" >                            alt={` ${user?.username} user profile on placio`}</span>
 <span class="cstat-no" title="statement not covered" >                            priority={true}</span>
 <span class="cstat-no" title="statement not covered" >                            quality={75}</span>
 <span class="cstat-no" title="statement not covered" >                            width={100}</span>
@@ -225,22 +218,20 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex-1 gap-1 px-3 py-3  rounded-b-xl '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button className='flex items-center text-sm space-x-1 px-3 py-2 font-medium rounded-3xl orange-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;button className='flex items-center text-sm space-x-1 px-3 py-1 font-medium rounded-3xl orange-outline'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='w-4 h-4' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p&gt;Follow&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-1 mt-2 z-30'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid mt-2 z-30'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`/${user?.name.first}`}</span>
-<span class="cstat-no" title="statement not covered" >                        className='font-medium '</span>
+<span class="cstat-no" title="statement not covered" >                        href={`/user/${user?.username}`}</span>
+<span class="cstat-no" title="statement not covered" >                        className='font-semibold '</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {user?.name.first} {user?.name.last}</span>
+<span class="cstat-no" title="statement not covered" >                        {user?.name}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='truncate text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {user?.location.city} {user?.location.country}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-sm text-muted'&gt;711k followers&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='truncate text-sm'&gt;@{user?.username}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-sm text-muted mt-1'&gt;711k followers&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Card&gt;</span>
@@ -253,7 +244,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-22T13:44:09.639Z
+                at 2023-09-25T11:08:18.749Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
