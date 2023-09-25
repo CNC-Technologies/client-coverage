@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/301</span>
+                <span class='fraction'>0/307</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/301</span>
+                <span class='fraction'>0/307</span>
             </div>
         
             
@@ -364,7 +364,19 @@
 <a name='L299'></a><a href='#L299'>299</a>
 <a name='L300'></a><a href='#L300'>300</a>
 <a name='L301'></a><a href='#L301'>301</a>
-<a name='L302'></a><a href='#L302'>302</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -755,19 +767,25 @@
 <span class="cstat-no" title="statement not covered" >            onClick={handleClose}</span>
 <span class="cstat-no" title="statement not covered" >            className={`${</span>
 <span class="cstat-no" title="statement not covered" >                showSidebar ? 'block ' : 'hidden'</span>
-<span class="cstat-no" title="statement not covered" >            } dark-overlay h-full z-[9999] block smLaptop:hidden fixed top-0 left-0 w-full`}</span>
+<span class="cstat-no" title="statement not covered" >            } bg-white/80 backdrop-blur-sm ${</span>
+<span class="cstat-no" title="statement not covered" >                showSidebar</span>
+<span class="cstat-no" title="statement not covered" >                    ? ' animate-in fade-in-0 slide-in-from-right '</span>
+<span class="cstat-no" title="statement not covered" >                    : ' animate-out fade-out-0 slide-out-to-right duration-300'</span>
+<span class="cstat-no" title="statement not covered" >            } dark:bg-slate-950/80 h-full z-[1010] block smLaptop:hidden fixed inset-0 top-0 left-0 w-full`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                onClick={(e) =&gt; e.stopPropagation()}</span>
 <span class="cstat-no" title="statement not covered" >                onScroll={(e) =&gt; e.preventDefault()}</span>
-<span class="cstat-no" title="statement not covered" >                className={`${</span>
-<span class="cstat-no" title="statement not covered" >                    showSidebar ? 'translate-x-0 ' : 'translate-x-full'</span>
-<span class="cstat-no" title="statement not covered" >                } transition-transform duration-1000 relative left-0 ease-in-out h-full bg-white dark:bg-black  overflow-auto scroll-auto  shadow-lg w-full max-w-[80%] ml-auto`}</span>
+<span class="cstat-no" title="statement not covered" >                className={`  ${</span>
+<span class="cstat-no" title="statement not covered" >                    showSidebar</span>
+<span class="cstat-no" title="statement not covered" >                        ? 'animate-in duration-500 '</span>
+<span class="cstat-no" title="statement not covered" >                        : 'animate-out duration-300'</span>
+<span class="cstat-no" title="statement not covered" >                }  shadow-lg transition  relative left-0 ease-in-out h-full bg-white dark:bg-black  overflow-auto scroll-auto   w-full max-w-[80%] ml-auto`}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='sticky top-0 left-0 h-fit py-3 z-40 bg-white dark:bg-black w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute  bg-transparent  top-0 left-0 w-full h-12 px-3 mobile:px-5 flex justify-between items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='sticky top-0 left-0 h-fit py-3  bg-white dark:bg-black w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute  bg-transparent  top-0 right-0 w-full h-12 px-3 mobile:px-5 flex justify-end items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div onClick={handleClose}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;CloseOutlineIcon className=' h-5 w-5' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;CloseOutlineIcon className=' h-4 w-4' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='pt-1 flex flex-col items-center justify-center font-semibold gap-1 h-full'&gt;</span>
@@ -973,7 +991,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-25T11:10:05.408Z
+                at 2023-09-25T12:46:43.346Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
