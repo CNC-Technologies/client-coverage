@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>0/79</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>0/79</span>
             </div>
         
             
@@ -138,7 +138,15 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -235,7 +243,7 @@
 <span class="cstat-no" title="statement not covered" >        `${window.location.protocol}//${window.location.hostname}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-between '&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='flex justify-between space-x-3 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;h2 className='text-2xl font-semibold capitalize'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {place?.name}</span>
@@ -251,30 +259,34 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex space-x-3 items-center h-fit'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;LikeItem</span>
-<span class="cstat-no" title="statement not covered" >                        likedByMe={</span>
-<span class="cstat-no" title="statement not covered" >                            place?.likedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                                ? place?.likedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                                : false</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                        likeAction={() =&gt; createPlaceLike.mutate(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                        unlikeAction={() =&gt; removePlaceLike.mutate(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='flex max-mobile:flex-col max-mobile:space-y-2 mobile:space-x-3 items-center h-fit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center space-x-2 mobile:space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;LikeItem</span>
+<span class="cstat-no" title="statement not covered" >                            likedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                                place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                    ? place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                    : false</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            likeAction={() =&gt; createPlaceLike.mutate(place?.id)}</span>
+<span class="cstat-no" title="statement not covered" >                            unlikeAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                removePlaceLike.mutate(place?.id)</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ShareButton</span>
+<span class="cstat-no" title="statement not covered" >                        content={{</span>
+<span class="cstat-no" title="statement not covered" >                            url: `${baseUrl}/places/${place?.id}`,</span>
+<span class="cstat-no" title="statement not covered" >                            text: `Visit ${place?.name} on Placio.`,</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                        type='place'</span>
+<span class="cstat-no" title="statement not covered" >                        dataItem={place}</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;IconButton className=' flex gap-1 items-center rounded-full justify-center text-center primary-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;ForwardOutlineIcon className='h-6 w-6' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/ShareButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;ShareButton</span>
-<span class="cstat-no" title="statement not covered" >                    content={{</span>
-<span class="cstat-no" title="statement not covered" >                        url: `${baseUrl}/places/${place?.id}`,</span>
-<span class="cstat-no" title="statement not covered" >                        text: `Visit ${place?.name} on Placio.`,</span>
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                    type='place'</span>
-<span class="cstat-no" title="statement not covered" >                    dataItem={place}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;IconButton className=' flex gap-1 items-center rounded-full justify-center text-center primary-outline'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;ForwardOutlineIcon className='h-6 w-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/ShareButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;FollowButton</span>
 <span class="cstat-no" title="statement not covered" >                    followedByMe={</span>
 <span class="cstat-no" title="statement not covered" >                        place?.followedByCurrentUser</span>
@@ -295,7 +307,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-25T12:46:43.346Z
+                at 2023-09-25T15:42:35.044Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
