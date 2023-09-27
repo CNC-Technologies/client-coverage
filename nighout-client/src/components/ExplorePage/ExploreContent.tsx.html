@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/116</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/116</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -176,13 +176,7 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -312,10 +306,10 @@
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" >    const [hoveredElement, setHoveredElement] = useState&lt;number | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const categories = [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'events',</span>
-<span class="cstat-no" title="statement not covered" >            image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/event_vxebm2.svg',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        // {</span>
+<span class="cstat-no" title="statement not covered" >        //     name: 'events',</span>
+<span class="cstat-no" title="statement not covered" >        //     image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/event_vxebm2.svg',</span>
+<span class="cstat-no" title="statement not covered" >        // },</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        {</span>
 <span class="cstat-no" title="statement not covered" >            name: 'places',</span>
@@ -323,22 +317,19 @@
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'people',</span>
+<span class="cstat-no" title="statement not covered" >            name: 'users',</span>
 <span class="cstat-no" title="statement not covered" >            image: 'https://res.cloudinary.com/placio/image/upload/v1683018229/user-media-content/people_fatl98.svg',</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className={` ${!layout ? 'md:py-10' : ''} relative `}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                    !layout</span>
-<span class="cstat-no" title="statement not covered" >                        ? `-top-[20px] md:top-20 bg-white dark:bg-black general-padding`</span>
-<span class="cstat-no" title="statement not covered" >                        : '-top-7'</span>
-<span class="cstat-no" title="statement not covered" >                } block  z-20 sticky  py-3 md:hidden w-full dark:border-b dark:border-none`}</span>
-<span class="cstat-no" title="statement not covered" >            &gt; */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;SearchBar mobileViewClass='top-14 bg-white dark:bg-black general-padding block  z-20 sticky  py-3 md:hidden w-full dark:border-b dark:border-none' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {/* &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;SearchBar</span>
+<span class="cstat-no" title="statement not covered" >                mobileViewClass={` ${</span>
+<span class="cstat-no" title="statement not covered" >                    user ? 'top-16' : 'top-20'</span>
+<span class="cstat-no" title="statement not covered" >                }  bg-white dark:bg-black general-padding block  z-20 sticky  py-3 md:hidden w-full dark:border-b dark:border-none`}</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                className={` ${</span>
 <span class="cstat-no" title="statement not covered" >                    !layout</span>
@@ -346,19 +337,19 @@
 <span class="cstat-no" title="statement not covered" >                        : 'w-full'</span>
 <span class="cstat-no" title="statement not covered" >                } `}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mb-2  xmd:mb-10 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mb-2 mt-3 xmd:mb-10 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h2 className='text-xl max-mobile:text-center xmd:text-2xl md:text-3xl   flex justify-center items-center font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Experience Placio at its finest.</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h2&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex max-md:flex-wrap justify-center items-center gap-4 smLaptop:gap-6 lgDesktop:gap-7 my-2 md:my-6 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='flex max-md:flex-wrap max-w-[60rem] mx-auto justify-center items-center gap-4 smLaptop:gap-6 lgDesktop:gap-7 my-2 md:my-6 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {categories.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                                href={`/explore/${item.name}`}</span>
 <span class="cstat-no" title="statement not covered" >                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                className='h-[10rem]  xmd:h-[14rem] desktop:h-[18rem] w-full mobile:w-[85%] xmd:w-[45%] md:w-[30%] lgDesktop:w-[25%] rounded-xl relative cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                                className='h-[10rem]  xmd:h-[14rem] desktop:h-[18rem] w-full  rounded-xl relative cursor-pointer'</span>
 <span class="cstat-no" title="statement not covered" >                                onMouseOver={() =&gt; setHoveredElement(index)}</span>
 <span class="cstat-no" title="statement not covered" >                                onMouseLeave={() =&gt; setHoveredElement(null)}</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
@@ -418,7 +409,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-27T21:02:53.054Z
+                at 2023-09-27T21:03:08.613Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
