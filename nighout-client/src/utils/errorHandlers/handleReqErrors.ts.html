@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.72% </span>
+                <span class="strong">14.03% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/51</span>
+                <span class='fraction'>8/57</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.72% </span>
+                <span class="strong">14.03% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/51</span>
+                <span class='fraction'>8/57</span>
             </div>
         
             
@@ -114,7 +114,14 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -123,6 +130,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -168,6 +180,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import apiRes from '@/helpers/apiRes'
 import { logout } from '@/hooks/useRequest'
 import { ResponseInterface } from '@/interfaces/apiRequest.interface'
+import CookieService from '@/services/Cookie.service'
 &nbsp;
 export const throwError = <span class="fstat-no" title="function not covered" >(showToast, message: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    showToast('error', message)</span>
@@ -182,6 +195,8 @@ export const handleErrors = <span class="fstat-no" title="function not covered" 
 <span class="cstat-no" title="statement not covered" >    let errorMessage = 'Unspecified error'</span>
 <span class="cstat-no" title="statement not covered" >    let errorCode</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const user = CookieService.getter('user')</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (error) {</span>
 <span class="cstat-no" title="statement not covered" >        errorMessage = error.data.message || error.data.error</span>
 <span class="cstat-no" title="statement not covered" >        errorCode = error.status</span>
@@ -194,9 +209,12 @@ export const handleErrors = <span class="fstat-no" title="function not covered" 
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (errorCode) {</span>
 <span class="cstat-no" title="statement not covered" >        if (errorCode === 401) {</span>
-<span class="cstat-no" title="statement not covered" >            showError &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                throwError(showToast, 'Sorry, your session has expired.')</span>
-<span class="cstat-no" title="statement not covered" >            logout(router)</span>
+<span class="cstat-no" title="statement not covered" >            if (user) {</span>
+<span class="cstat-no" title="statement not covered" >                showError &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                    throwError(showToast, 'Sorry, your session has expired.')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                logout(router)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        } else if (errorCode === 403) {</span>
 <span class="cstat-no" title="statement not covered" >            showError &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                throwError(</span>
@@ -223,7 +241,7 @@ export const handleErrors = <span class="fstat-no" title="function not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-29T11:12:19.302Z
+                at 2023-09-29T11:51:11.846Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
