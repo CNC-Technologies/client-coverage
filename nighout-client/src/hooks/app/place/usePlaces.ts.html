@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/434</span>
+                <span class='fraction'>0/431</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/434</span>
+                <span class='fraction'>0/431</span>
             </div>
         
             
@@ -494,10 +494,7 @@
 <a name='L429'></a><a href='#L429'>429</a>
 <a name='L430'></a><a href='#L430'>430</a>
 <a name='L431'></a><a href='#L431'>431</a>
-<a name='L432'></a><a href='#L432'>432</a>
-<a name='L433'></a><a href='#L433'>433</a>
-<a name='L434'></a><a href='#L434'>434</a>
-<a name='L435'></a><a href='#L435'>435</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L432'></a><a href='#L432'>432</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -928,10 +925,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import {</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import axios from 'axios'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    useInfiniteQuery,</span>
 <span class="cstat-no" title="statement not covered" >    useMutation,</span>
 <span class="cstat-no" title="statement not covered" >    useQuery,</span>
@@ -957,6 +952,7 @@
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import FormValidatorService from '@/services/FormValidator.service'</span>
+<span class="cstat-no" title="statement not covered" >import { baseURL } from '@/constants/env.config'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export interface ApiResponse {</span>
 <span class="cstat-no" title="statement not covered" >    data: PlaceProps[]</span>
@@ -1053,16 +1049,6 @@
 <span class="cstat-no" title="statement not covered" >        await deleteReq({ url: unFollowPlaceRoute(placeID) })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const getPlaceDetails = async (placeId: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const res = await get({</span>
-<span class="cstat-no" title="statement not covered" >            url: placeDetailsRoute(placeId),</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        if (!res?.success) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error(res.message)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return res.data</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
 <span class="cstat-no" title="statement not covered" >        createPlaceLike,</span>
@@ -1070,8 +1056,13 @@
 <span class="cstat-no" title="statement not covered" >        usePlacesList,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnfollowPlace,</span>
-<span class="cstat-no" title="statement not covered" >        getPlaceDetails,</span>
+<span class="cstat-no" title="statement not covered" >        // getPlaceDetails,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const getPlaceDetails = async (placeId: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const res = await axios.get(`${baseURL}/places/${placeId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return res.data</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export const usePlacesList = () =&gt; {</span>
@@ -1372,7 +1363,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-27T21:03:08.613Z
+                at 2023-09-29T11:12:19.302Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
