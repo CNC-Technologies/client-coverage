@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/92</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/92</span>
             </div>
         
             
@@ -147,7 +147,23 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -235,20 +251,28 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import randomcolor from 'randomcolor'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import DashboardInfoCardSm from '@/components/business/dashboard/DashboardInfoCardSm'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import { appHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { marketingSidebarLinks } from '@/constants/business/marketingLinks'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    ChatOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >    EyeSolidIcon,</span>
 <span class="cstat-no" title="statement not covered" >    ThumbsUpOutlineIcon,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import useCurrency from '@/hooks/useCurrency'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function SinglePost() {</span>
-<span class="cstat-no" title="statement not covered" >    const curr = useCurrency()</span>
+<span class="cstat-no" title="statement not covered" >export { default } from '@/pages/app/post/[id]'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function SinglePost() {</span>
+<span class="cstat-no" title="statement not covered" >    const { query, push } = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    if (!query?.id) return push(appHomeLink)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // const curr = useCurrency()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='col-md-row space-y-5 md:space-y-0 md:space-x-5'&gt;</span>
@@ -296,12 +320,12 @@
 <span class="cstat-no" title="statement not covered" >                        subtitle={'Number of interactions with this post today'}</span>
 <span class="cstat-no" title="statement not covered" >                        info={'300'}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCardSm</span>
+<span class="cstat-no" title="statement not covered" >                    {/* &lt;DashboardInfoCardSm</span>
 <span class="cstat-no" title="statement not covered" >                        color={randomcolor()}</span>
 <span class="cstat-no" title="statement not covered" >                        title={'Current Ad spend'}</span>
 <span class="cstat-no" title="statement not covered" >                        subtitle={'Amount of money spent based on impressions'}</span>
 <span class="cstat-no" title="statement not covered" >                        info={curr + '8,000'}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCardSm</span>
 <span class="cstat-no" title="statement not covered" >                        color={randomcolor()}</span>
 <span class="cstat-no" title="statement not covered" >                        title={'Click rate'}</span>
@@ -322,7 +346,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-03T12:20:42.019Z
+                at 2023-10-03T12:21:10.621Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
