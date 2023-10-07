@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.25% </span>
+                <span class="strong">32.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>124/362</span>
+                <span class='fraction'>124/378</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.25% </span>
+                <span class="strong">32.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>124/362</span>
+                <span class='fraction'>124/378</span>
             </div>
         
             
@@ -425,7 +425,23 @@
 <a name='L360'></a><a href='#L360'>360</a>
 <a name='L361'></a><a href='#L361'>361</a>
 <a name='L362'></a><a href='#L362'>362</a>
-<a name='L363'></a><a href='#L363'>363</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -537,6 +553,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -764,6 +783,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -859,6 +891,9 @@ export default function SearchResult({
 <span class="cstat-no" title="statement not covered" >                                                            business={result}</span>
 <span class="cstat-no" title="statement not covered" >                                                            showTag={</span>
 <span class="cstat-no" title="statement not covered" >                                                                filter === 'all'</span>
+<span class="cstat-no" title="statement not covered" >                                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                                            closeModal={</span>
+<span class="cstat-no" title="statement not covered" >                                                                closeModalAndClearText</span>
 <span class="cstat-no" title="statement not covered" >                                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    )}</span>
@@ -1126,9 +1161,22 @@ export default function SearchResult({
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function BusinessResultItem({ business, showTag }) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function BusinessResultItem({ business, showTag, closeModal }) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" >    const { saveSearchText } = useSearchHistory()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const onNavigate = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['business', business?.id], business)</span>
+<span class="cstat-no" title="statement not covered" >        saveSearchText(business?.name)</span>
+<span class="cstat-no" title="statement not covered" >        closeModal()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='px-2 py-1 bg-transparent hover:bg-grey/50 dark:hover:bg-grey/5 rounded-md cursor-pointer flex items-center justify-between space-x-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >            href={`/business-profile/${business?.id}`}</span>
+<span class="cstat-no" title="statement not covered" >            onClick={onNavigate}</span>
+<span class="cstat-no" title="statement not covered" >            className='px-2 py-1 bg-transparent hover:bg-grey/50 dark:hover:bg-grey/5 rounded-md cursor-pointer flex items-center justify-between space-x-4'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex space-x-2 items-center max-w-[85%]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                    src={business?.cover_image || appIcon}</span>
@@ -1146,7 +1194,7 @@ export default function SearchResult({
 <span class="cstat-no" title="statement not covered" >                    business</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/Badge&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -1156,7 +1204,7 @@ export default function SearchResult({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-06T16:07:27.316Z
+                at 2023-10-07T10:39:20.176Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
