@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -260,7 +260,7 @@ type PostsContextValue = {
     // eslint-disable-next-line no-unused-vars
     createPost: (post: Post) =&gt; void
     // eslint-disable-next-line no-unused-vars
-    likePost: (postID: string) =&gt; void
+    // likePost: (postID: string) =&gt; void
     // eslint-disable-next-line no-unused-vars
     addComment: (postID: string, comment: Comment) =&gt; void
 }
@@ -268,7 +268,7 @@ type PostsContextValue = {
 const PostsContext = createContext&lt;PostsContextValue&gt;({
     posts: [],
     createPost: <span class="fstat-no" title="function not covered" >() =&gt; {},</span>
-    likePost: <span class="fstat-no" title="function not covered" >() =&gt; {},</span>
+    // likePost: () =&gt; {},
     addComment: <span class="fstat-no" title="function not covered" >() =&gt; {},</span>
 })
 &nbsp;
@@ -285,37 +285,37 @@ export const PostsProvider = <span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; [...prevPosts, post])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const likePost = (postID: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return prevPosts.map((post) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (post.id === postID) {</span>
-<span class="cstat-no" title="statement not covered" >                    const isLiked = post.likes.some(</span>
-<span class="cstat-no" title="statement not covered" >                        (like) =&gt; like.accountID === 'YOUR_USER_ID',</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >    // const likePost = (postID: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     setPosts((prevPosts) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //         return prevPosts.map((post) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //             if (post.id === postID) {</span>
+<span class="cstat-no" title="statement not covered" >    //                 const isLiked = post.likes.some(</span>
+<span class="cstat-no" title="statement not covered" >    //                     (like) =&gt; like.accountID === 'YOUR_USER_ID',</span>
+<span class="cstat-no" title="statement not covered" >    //                 )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    if (isLiked) {</span>
-<span class="cstat-no" title="statement not covered" >                        const updatedLikes = post.likes.filter(</span>
-<span class="cstat-no" title="statement not covered" >                            (like) =&gt; like.accountID !== 'YOUR_USER_ID',</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                        return { ...post, likes: updatedLikes }</span>
-<span class="cstat-no" title="statement not covered" >                    } else {</span>
-<span class="cstat-no" title="statement not covered" >                        const updatedLikes = [</span>
-<span class="cstat-no" title="statement not covered" >                            ...post.likes,</span>
-<span class="cstat-no" title="statement not covered" >                            {</span>
-<span class="cstat-no" title="statement not covered" >                                accountID: 'YOUR_USER_ID',</span>
-<span class="cstat-no" title="statement not covered" >                                createdAt: new Date().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >                                id: 'YOUR_LIKE_ID',</span>
-<span class="cstat-no" title="statement not covered" >                                postID: post.id,</span>
-<span class="cstat-no" title="statement not covered" >                                updatedAt: new Date().toISOString(),</span>
-<span class="cstat-no" title="statement not covered" >                            },</span>
-<span class="cstat-no" title="statement not covered" >                        ]</span>
-<span class="cstat-no" title="statement not covered" >                        return { ...post, likes: updatedLikes }</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                return post</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    //                 if (isLiked) {</span>
+<span class="cstat-no" title="statement not covered" >    //                     const updatedLikes = post.likes.filter(</span>
+<span class="cstat-no" title="statement not covered" >    //                         (like) =&gt; like.accountID !== 'YOUR_USER_ID',</span>
+<span class="cstat-no" title="statement not covered" >    //                     )</span>
+<span class="cstat-no" title="statement not covered" >    //                     return { ...post, likes: updatedLikes }</span>
+<span class="cstat-no" title="statement not covered" >    //                 } else {</span>
+<span class="cstat-no" title="statement not covered" >    //                     const updatedLikes = [</span>
+<span class="cstat-no" title="statement not covered" >    //                         ...post.likes,</span>
+<span class="cstat-no" title="statement not covered" >    //                         {</span>
+<span class="cstat-no" title="statement not covered" >    //                             accountID: 'YOUR_USER_ID',</span>
+<span class="cstat-no" title="statement not covered" >    //                             createdAt: new Date().toISOString(),</span>
+<span class="cstat-no" title="statement not covered" >    //                             id: 'YOUR_LIKE_ID',</span>
+<span class="cstat-no" title="statement not covered" >    //                             postID: post.id,</span>
+<span class="cstat-no" title="statement not covered" >    //                             updatedAt: new Date().toISOString(),</span>
+<span class="cstat-no" title="statement not covered" >    //                         },</span>
+<span class="cstat-no" title="statement not covered" >    //                     ]</span>
+<span class="cstat-no" title="statement not covered" >    //                     return { ...post, likes: updatedLikes }</span>
+<span class="cstat-no" title="statement not covered" >    //                 }</span>
+<span class="cstat-no" title="statement not covered" >    //             }</span>
+<span class="cstat-no" title="statement not covered" >    //             return post</span>
+<span class="cstat-no" title="statement not covered" >    //         })</span>
+<span class="cstat-no" title="statement not covered" >    //     })</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const addComment = (postID: string, comment: Comment) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setPosts((prevPosts) =&gt; {</span>
@@ -335,7 +335,7 @@ export const PostsProvider = <span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >    const contextValue: PostsContextValue = {</span>
 <span class="cstat-no" title="statement not covered" >        posts,</span>
 <span class="cstat-no" title="statement not covered" >        createPost,</span>
-<span class="cstat-no" title="statement not covered" >        likePost,</span>
+<span class="cstat-no" title="statement not covered" >        // likePost,</span>
 <span class="cstat-no" title="statement not covered" >        addComment,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -352,7 +352,7 @@ export const PostsProvider = <span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-07T10:39:20.176Z
+                at 2023-10-10T11:19:46.401Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

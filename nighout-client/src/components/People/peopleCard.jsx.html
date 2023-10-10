@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/86</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/74</span>
+                <span class='fraction'>0/86</span>
             </div>
         
             
@@ -137,7 +137,31 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -215,17 +239,20 @@
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { Card } from '../shadcn/ui/card'</span>
+<span class="cstat-no" title="statement not covered" >import FollowButton from '../app/simple/FollowButton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >// import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import useSaveToCacheBeforeNavigate from '@/hooks/app/useStoreInCache'</span>
+<span class="cstat-no" title="statement not covered" >import { useProfile } from '@/hooks/app/profile/useProfile'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PeopleCard({ user }) {</span>
 <span class="cstat-no" title="statement not covered" >    const { handleNavigateToUserPage } = useSaveToCacheBeforeNavigate()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleFollowUser, handleUnfollowUser } = useProfile()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >            onClick={() =&gt; handleNavigateToUserPage(user)}</span>
-<span class="cstat-no" title="statement not covered" >            href={`/business-profile/${user?.username}`}</span>
+<span class="cstat-no" title="statement not covered" >            href={`/user/${user?.id}`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Card className='flex flex-col cursor-pointer h-[17rem] relative w-full rounded-xl dark:bg-primary/5 border-[0.5px] dark:border-[0.5px] shadow-none'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {/* &lt;div className='absolute top-0 left-0 z-20 w-full h-full rounded-xl '&gt;&lt;/div&gt; */}</span>
@@ -262,19 +289,28 @@
 <span class="cstat-no" title="statement not covered" >                                e.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >                            }}</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;button className='flex items-center text-sm space-x-1 px-3 py-1 font-medium rounded-3xl orange-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {/* &lt;button className='flex items-center text-sm space-x-1 px-3 py-1 font-medium rounded-3xl orange-outline'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;PlusIcon className='w-4 h-4' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;p&gt;Follow&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/button&gt; */}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                            &lt;FollowButton</span>
+<span class="cstat-no" title="statement not covered" >                                followedByMe={false}</span>
+<span class="cstat-no" title="statement not covered" >                                followAction={() =&gt; handleFollowUser(user?.id)}</span>
+<span class="cstat-no" title="statement not covered" >                                unFollowAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    handleUnfollowUser(user?.id)</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                height='h-8'</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='grid mt-2 z-30'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                            href={`/user/${user?.username}`}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            // href={`/user/${user?.username}`}</span>
 <span class="cstat-no" title="statement not covered" >                            className='font-semibold '</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {user?.name}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='truncate text-sm'&gt;@{user?.username}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm text-muted mt-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            711k followers</span>
@@ -292,7 +328,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-07T10:39:20.176Z
+                at 2023-10-10T11:19:46.401Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

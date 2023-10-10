@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.59% </span>
+                <span class="strong">74.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>323/433</span>
+                <span class='fraction'>320/431</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>36/63</span>
+                <span class='fraction'>36/64</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.59% </span>
+                <span class="strong">74.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>323/433</span>
+                <span class='fraction'>320/431</span>
             </div>
         
             
@@ -494,9 +494,7 @@
 <a name='L429'></a><a href='#L429'>429</a>
 <a name='L430'></a><a href='#L430'>430</a>
 <a name='L431'></a><a href='#L431'>431</a>
-<a name='L432'></a><a href='#L432'>432</a>
-<a name='L433'></a><a href='#L433'>433</a>
-<a name='L434'></a><a href='#L434'>434</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L432'></a><a href='#L432'>432</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -574,8 +572,6 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -725,6 +721,8 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -832,8 +830,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -947,10 +943,10 @@ import ShareButton, {
 } from '@/components/app/simple/ShareButton'
 &nbsp;
 import CommentField from '@/components/app/compound/Post/CommentField'
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import CommentItem from '@/components/app/compound/Post/CommentItem'</span></span></span></span></span></span></span>
+// import CommentItem from '@/components/app/compound/Post/CommentItem'
 import LinkPreview from '@/components/app/simple/ShareLinkPreview'
 import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'
-import { usePostsContext } from '@/components/context-containers/posts.context'
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { usePostsContext } from '@/components/context-containers/posts.context'</span></span></span></span></span></span></span>
 import CreatePostForm from '@/components/forms/CreatePostForm'
 import {
     Dialog,
@@ -1004,12 +1000,10 @@ export default function SinglePost({
 &nbsp;
     const [editDialog, setEditDialog] = useState(false)
 &nbsp;
-    const { likePost } = usePostsContext()
+    // const { likePost } = usePostsContext()
 &nbsp;
     const checkLiked = () =&gt; {
-        return (
-            post?.likes?.find((like) =&gt; like.accountID === user?.sub) ?? false
-        )
+        return false
     }
 &nbsp;
     const openEditDialog = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
@@ -1157,7 +1151,9 @@ export default function SinglePost({
                                 &lt;/Link&gt;
                                 &lt;p className='text-sm font-medium opacity-80'&gt;
                                     {TimeCounter({
-                                        dateString: post?.CreatedAt as string,
+                                        dateString: post?.CreatedAt
+                                            ? post?.CreatedAt
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                            : (post?.createdAt as string),</span></span>
                                     })}
                                 &lt;/p&gt;
                             &lt;/div&gt;
@@ -1263,7 +1259,7 @@ export default function SinglePost({
                                     data-testid='like-button'
                                     onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                        e.stopPropagation()</span>
-<span class="cstat-no" title="statement not covered" >                                        likePost(post?.id as string)</span>
+<span class="cstat-no" title="statement not covered" >                                        // likePost(post?.id as string)</span>
 <span class="cstat-no" title="statement not covered" >                                    }}</span>
                                 &gt;
                                     &lt;LikeItem
@@ -1271,9 +1267,7 @@ export default function SinglePost({
                                         likedByMe={checkLiked() as boolean}
                                     /&gt;
                                 &lt;/div&gt;
-                                &lt;p className='text-sm font-medium'&gt;
-                                    {post?.likes?.length}
-                                &lt;/p&gt;
+                                &lt;p className='text-sm font-medium'&gt;4&lt;/p&gt;
                             &lt;/div&gt;
                             &lt;div className='flex items-center space-x-1'&gt;
                                 &lt;div
@@ -1369,7 +1363,7 @@ export default function SinglePost({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-07T10:39:20.176Z
+                at 2023-10-10T11:19:46.401Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
