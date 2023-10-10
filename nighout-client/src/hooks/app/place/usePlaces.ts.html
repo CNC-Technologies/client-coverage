@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/427</span>
+                <span class='fraction'>0/431</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/427</span>
+                <span class='fraction'>0/431</span>
             </div>
         
             
@@ -490,7 +490,15 @@
 <a name='L425'></a><a href='#L425'>425</a>
 <a name='L426'></a><a href='#L426'>426</a>
 <a name='L427'></a><a href='#L427'>427</a>
-<a name='L428'></a><a href='#L428'>428</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -971,6 +979,14 @@
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    const { loading, post, deleteReq, get } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handleLikePlace = async (placeID: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        await post({ url: likePlaceRoute(placeID) })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handleUnlikePlace = async (placeID: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        await deleteReq({ url: likePlaceRoute(placeID) })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // This function is to refetch a single place which an action was executed on</span>
 <span class="cstat-no" title="statement not covered" >    // actions i.e like, unlike e.t.c</span>
 <span class="cstat-no" title="statement not covered" >    const refetchPlaceDetails = async (id: string) =&gt; {</span>
@@ -1012,18 +1028,14 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createPlaceLike = useMutation({</span>
-<span class="cstat-no" title="statement not covered" >        mutationFn: async (placeID: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            await post({ url: likePlaceRoute(placeID) })</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: (placeID: string) =&gt; handleLikePlace(placeID),</span>
 <span class="cstat-no" title="statement not covered" >        onSuccess: (_data, variables) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            refetchPlaceDetails(variables)</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const removePlaceLike = useMutation({</span>
-<span class="cstat-no" title="statement not covered" >        mutationFn: async (placeID: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            await deleteReq({ url: likePlaceRoute(placeID) })</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: (placeID: string) =&gt; handleUnlikePlace(placeID),</span>
 <span class="cstat-no" title="statement not covered" >        onSuccess: async (_data, variables) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            refetchPlaceDetails(variables)</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
@@ -1351,7 +1363,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-10T11:20:06.045Z
+                at 2023-10-10T11:20:38.725Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

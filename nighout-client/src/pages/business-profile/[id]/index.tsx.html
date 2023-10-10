@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/241</span>
+                <span class='fraction'>0/226</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/241</span>
+                <span class='fraction'>0/226</span>
             </div>
         
             
@@ -289,37 +289,7 @@
 <a name='L224'></a><a href='#L224'>224</a>
 <a name='L225'></a><a href='#L225'>225</a>
 <a name='L226'></a><a href='#L226'>226</a>
-<a name='L227'></a><a href='#L227'>227</a>
-<a name='L228'></a><a href='#L228'>228</a>
-<a name='L229'></a><a href='#L229'>229</a>
-<a name='L230'></a><a href='#L230'>230</a>
-<a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a>
-<a name='L235'></a><a href='#L235'>235</a>
-<a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a>
-<a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L227'></a><a href='#L227'>227</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -554,6 +524,7 @@
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import useResponsiveHorizontalScroll from '@/hooks/useResponsiveHorizontalScroll'</span>
 <span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import BusinessPageTabList from '@/constants/app/Profile/businessPageTabList'</span>
@@ -564,9 +535,6 @@
 <span class="cstat-no" title="statement not covered" >import Following from '@/components/app/complex/Profile/Following'</span>
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
-<span class="cstat-no" title="statement not covered" >import FollowButton from '@/components/app/simple/FollowButton'</span>
-<span class="cstat-no" title="statement not covered" >import { useProfile } from '@/hooks/app/profile/useProfile'</span>
-<span class="cstat-no" title="statement not covered" >import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// interface BusinessInterface {</span>
 <span class="cstat-no" title="statement not covered" >//     id: string</span>
@@ -588,8 +556,6 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const tabListRef = useRef&lt;HTMLDivElement | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleFollowBusiness, handleUnfollowBusiness } = useProfile()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    //Temporary</span>
 <span class="cstat-no" title="statement not covered" >    // const businessData: BusinessInterface | undefined =</span>
@@ -616,7 +582,7 @@
 <span class="cstat-no" title="statement not covered" >        &lt;div className={!user ? 'max-w-[60rem] mx-auto' : ''}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {isInitialLoading ? (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ProfileSkeleton /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;Loading&lt;/div&gt; //! Work on loader</span>
 <span class="cstat-no" title="statement not covered" >                ) : (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {businessData ? (</span>
@@ -684,20 +650,9 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex mt-3 items-center justify-center space-x-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;FollowButton</span>
-<span class="cstat-no" title="statement not covered" >                                            followedByMe={false}</span>
-<span class="cstat-no" title="statement not covered" >                                            followAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleFollowBusiness(</span>
-<span class="cstat-no" title="statement not covered" >                                                    businessData?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                                )</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleUnfollowBusiness(</span>
-<span class="cstat-no" title="statement not covered" >                                                    businessData?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                                )</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            height='h-10'</span>
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Button className='w-32 h-10 px-3 text-center  rounded-3xl '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Follow</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -793,7 +748,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-10T11:20:06.045Z
+                at 2023-10-10T11:20:38.725Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
