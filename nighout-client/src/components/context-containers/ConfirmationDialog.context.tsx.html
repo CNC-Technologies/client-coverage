@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.29% </span>
+                <span class="strong">37.03% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/99</span>
+                <span class='fraction'>40/108</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.29% </span>
+                <span class="strong">37.03% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/99</span>
+                <span class='fraction'>40/108</span>
             </div>
         
             
@@ -162,7 +162,16 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -190,6 +199,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -224,12 +248,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -268,35 +286,47 @@ import DialogLayout from '@/components/business/layouts/DialogLayout'
 import { ConfirmationDialogProps } from '@/interfaces/context.interface'
 import { DialogLayoutProps } from '@/interfaces/layouts.interface'
 &nbsp;
+interface DeleteDialogDetailsInterface {
+    callback?: () =&gt; void
+    title?: string
+    details?: string
+}
+&nbsp;
 interface ConfirmationDialogContextInterface {
     // eslint-disable-next-line
-    showConfirmDelete: (_callback: any) =&gt; void
+    showConfirmDelete: (arg: DeleteDialogDetailsInterface) =&gt; void
+    removeConfirmDelete: () =&gt; void
+    // eslint-disable-next-line
+    setLoading: (x) =&gt; void
 }
-interface DeleteDialogDetailsInterface {
-    callback: () =&gt; void
-    title: string
-    details: string
-}
+&nbsp;
 interface DeleteDialogInterface
-    extends Omit&lt;DialogLayoutProps, 'children' | 'moreBtnLink' | 'moreText'&gt; {
-    callback: () =&gt; void
+    extends Omit&lt;
+        DialogLayoutProps,
+        'children' | 'moreBtnLink' | 'moreText' | 'title'
+    &gt; {
+    title?: string
+    callback?: () =&gt; void
     loading?: boolean
 }
 &nbsp;
 export const ConfirmationDialogContext =
     createContext&lt;ConfirmationDialogContextInterface&gt;({
         showConfirmDelete: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
+        removeConfirmDelete: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
+        setLoading: <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
     })
 &nbsp;
 export default <span class="fstat-no" title="function not covered" >function ConfirmationDialogContextProvider({</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >}: ConfirmationDialogProps) {</span>
+<span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [confirmDelete, setConfirmDelete] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [dialogDetails, setDialogDetails] =</span>
 <span class="cstat-no" title="statement not covered" >        useState&lt;DeleteDialogDetailsInterface&gt;({</span>
-<span class="cstat-no" title="statement not covered" >            callback: () =&gt; null,</span>
-<span class="cstat-no" title="statement not covered" >            title: 'Delete Confirmation',</span>
-<span class="cstat-no" title="statement not covered" >            details: 'Are you sure you want to carry out this action?',</span>
+<span class="cstat-no" title="statement not covered" >            callback: async () =&gt; null,</span>
+<span class="cstat-no" title="statement not covered" >            title: '',</span>
+<span class="cstat-no" title="statement not covered" >            details: '',</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    // * Function to display dialog</span>
 <span class="cstat-no" title="statement not covered" >    const showConfirmDelete = (details: DeleteDialogDetailsInterface) =&gt; {</span>
@@ -309,12 +339,15 @@ export default <span class="fstat-no" title="function not covered" >function Con
 <span class="cstat-no" title="statement not covered" >    // * Function to remove dialog from view</span>
 <span class="cstat-no" title="statement not covered" >    const value: ConfirmationDialogContextInterface = {</span>
 <span class="cstat-no" title="statement not covered" >        showConfirmDelete,</span>
+<span class="cstat-no" title="statement not covered" >        removeConfirmDelete,</span>
+<span class="cstat-no" title="statement not covered" >        setLoading: setReqLoading,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;ConfirmationDialogContext.Provider value={value}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;DeleteDialog</span>
 <span class="cstat-no" title="statement not covered" >                {...dialogDetails}</span>
+<span class="cstat-no" title="statement not covered" >                loading={reqLoading}</span>
 <span class="cstat-no" title="statement not covered" >                dialogOpened={confirmDelete}</span>
 <span class="cstat-no" title="statement not covered" >                closeDialog={removeConfirmDelete}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
@@ -324,30 +357,24 @@ export default <span class="fstat-no" title="function not covered" >function Con
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function DeleteDialog(props: DeleteDialogInterface) {</span></span>
-<span class="cstat-no" title="statement not covered" >    const { callback, closeDialog } = props</span>
-<span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const { loading } = props</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleCallback = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await new Promise((resolve) =&gt; setTimeout(resolve, 1000)) // Delay for 1 second (adjust as needed)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Perform the callback</span>
-<span class="cstat-no" title="statement not covered" >        callback()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Close the dialog after a delay</span>
-<span class="cstat-no" title="statement not covered" >        await new Promise((resolve) =&gt; setTimeout(resolve, 1000)) // Delay for 1 second (adjust as needed)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        setReqLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >        // Close the dialog</span>
-<span class="cstat-no" title="statement not covered" >        closeDialog()</span>
+<span class="cstat-no" title="statement not covered" >        !!props?.callback &amp;&amp; (await props.callback())</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;DialogLayout {...props}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >            title={props?.title || 'Delete Confirmation'}</span>
+<span class="cstat-no" title="statement not covered" >            details={</span>
+<span class="cstat-no" title="statement not covered" >                props?.details ||</span>
+<span class="cstat-no" title="statement not covered" >                'Are you sure you want to carry out this action?'</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            {...props}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-center items-center py-3 space-x-5 row'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                    loading={reqLoading}</span>
+<span class="cstat-no" title="statement not covered" >                    loading={loading}</span>
 <span class="cstat-no" title="statement not covered" >                    onClick={handleCallback}</span>
 <span class="cstat-no" title="statement not covered" >                    className='bg-red-500 hover:bg-red-500 font-semibold text-white'</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
@@ -367,7 +394,7 @@ export default <span class="fstat-no" title="function not covered" >function Con
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-10T11:20:38.725Z
+                at 2023-10-10T12:24:17.147Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
