@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/62</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/62</span>
             </div>
         
             
@@ -125,9 +125,7 @@
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -195,18 +193,13 @@
 <span class="cstat-no" title="statement not covered" >import { Card } from '../shadcn/ui/card'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
-<span class="cstat-no" title="statement not covered" >import useSaveToCacheBeforeNavigate from '@/hooks/app/useStoreInCache'</span>
 <span class="cstat-no" title="statement not covered" >import FollowButton from '@/components/app/simple/FollowButton'</span>
 <span class="cstat-no" title="statement not covered" >import { useProfile } from '@/hooks/app/profile/useProfile'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function BusinessCard({ business }) {</span>
-<span class="cstat-no" title="statement not covered" >    const { handleNavigateToBusinessPage } = useSaveToCacheBeforeNavigate()</span>
 <span class="cstat-no" title="statement not covered" >    const { handleFollowBusiness, handleUnfollowBusiness } = useProfile()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >            onClick={() =&gt; handleNavigateToBusinessPage(business)}</span>
-<span class="cstat-no" title="statement not covered" >            href={`/business-profile/${business?.id}`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Link href={`/business-profile/${business?.id}`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Card className='flex flex-col cursor-pointer h-[14rem] relative w-full rounded-xl dark:bg-primary/5 border-[0.5px] dark:border-[0.5px] shadow-none'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='relative h-[7rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
@@ -237,10 +230,14 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;FollowButton</span>
 <span class="cstat-no" title="statement not covered" >                                    followedByMe={false}</span>
 <span class="cstat-no" title="statement not covered" >                                    followAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        handleFollowBusiness(business?.id)</span>
+<span class="cstat-no" title="statement not covered" >                                        handleFollowBusiness.mutate(</span>
+<span class="cstat-no" title="statement not covered" >                                            business?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                        )</span>
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" >                                    unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        handleUnfollowBusiness(business?.id)</span>
+<span class="cstat-no" title="statement not covered" >                                        handleUnfollowBusiness.mutate(</span>
+<span class="cstat-no" title="statement not covered" >                                            business?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                        )</span>
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" >                                    height='h-8'</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
@@ -259,7 +256,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-11T22:00:49.497Z
+                at 2023-10-11T22:01:36.765Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

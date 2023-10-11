@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/241</span>
+                <span class='fraction'>0/243</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/241</span>
+                <span class='fraction'>0/243</span>
             </div>
         
             
@@ -304,7 +304,11 @@
 <a name='L239'></a><a href='#L239'>239</a>
 <a name='L240'></a><a href='#L240'>240</a>
 <a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -654,18 +658,20 @@
 <span class="cstat-no" title="statement not covered" >                                        {businessData?.description}</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex items-center justify-center my-2 space-x-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;p className='font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            Website:</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                            href={businessData?.website}</span>
-<span class="cstat-no" title="statement not covered" >                                            className='text-blue-500 hover:underline'</span>
-<span class="cstat-no" title="statement not covered" >                                            target='_blank'</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {businessData?.website}</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {businessData?.website &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex items-center justify-center my-2 space-x-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;p className='font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                Website:</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                                href={businessData?.website}</span>
+<span class="cstat-no" title="statement not covered" >                                                className='text-blue-500 hover:underline'</span>
+<span class="cstat-no" title="statement not covered" >                                                target='_blank'</span>
+<span class="cstat-no" title="statement not covered" >                                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {businessData?.website}</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex items-center justify-center gap-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;</span>
@@ -687,12 +693,12 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;FollowButton</span>
 <span class="cstat-no" title="statement not covered" >                                            followedByMe={false}</span>
 <span class="cstat-no" title="statement not covered" >                                            followAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleFollowBusiness(</span>
+<span class="cstat-no" title="statement not covered" >                                                handleFollowBusiness.mutate(</span>
 <span class="cstat-no" title="statement not covered" >                                                    businessData?.id,</span>
 <span class="cstat-no" title="statement not covered" >                                                )</span>
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                            unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleUnfollowBusiness(</span>
+<span class="cstat-no" title="statement not covered" >                                                handleUnfollowBusiness.mutate(</span>
 <span class="cstat-no" title="statement not covered" >                                                    businessData?.id,</span>
 <span class="cstat-no" title="statement not covered" >                                                )</span>
 <span class="cstat-no" title="statement not covered" >                                            }</span>
@@ -793,7 +799,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-11T22:00:49.497Z
+                at 2023-10-11T22:01:36.765Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
