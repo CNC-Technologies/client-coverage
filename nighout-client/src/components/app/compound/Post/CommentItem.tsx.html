@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/284</span>
+                <span class='fraction'>0/292</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/284</span>
+                <span class='fraction'>0/292</span>
             </div>
         
             
@@ -347,7 +347,23 @@
 <a name='L282'></a><a href='#L282'>282</a>
 <a name='L283'></a><a href='#L283'>283</a>
 <a name='L284'></a><a href='#L284'>284</a>
-<a name='L285'></a><a href='#L285'>285</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -640,30 +656,30 @@
 <span class="cstat-no" title="statement not covered" >import { Comment, Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { formatRelativeTime } from '@/utils/dateFormat'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    DropdownMenu,</span>
-<span class="cstat-no" title="statement not covered" >    DropdownMenuContent,</span>
-<span class="cstat-no" title="statement not covered" >    DropdownMenuItem,</span>
-<span class="cstat-no" title="statement not covered" >    DropdownMenuTrigger,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/dropdown-menu'</span>
-<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
-<span class="cstat-no" title="statement not covered" >import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'</span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    ChatOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    // ChatOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    // ForwardOutlineIcon,</span>
-<span class="cstat-no" title="statement not covered" >    ThreeDotsIcon,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import usePosts from '@/hooks/posts/usePosts'</span>
+<span class="cstat-no" title="statement not covered" >import CommentField from '@/components/app/compound/Post/CommentField'</span>
 <span class="cstat-no" title="statement not covered" >import LikeItem from '@/components/app/simple/LIkeItem'</span>
+<span class="cstat-no" title="statement not covered" >import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    Dialog,</span>
 <span class="cstat-no" title="statement not covered" >    DialogContent,</span>
 <span class="cstat-no" title="statement not covered" >    DialogHeader,</span>
 <span class="cstat-no" title="statement not covered" >    DialogTitle,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/dialog'</span>
-<span class="cstat-no" title="statement not covered" >import CommentField from '@/components/app/compound/Post/CommentField'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    DropdownMenu,</span>
+<span class="cstat-no" title="statement not covered" >    DropdownMenuContent,</span>
+<span class="cstat-no" title="statement not covered" >    DropdownMenuItem,</span>
+<span class="cstat-no" title="statement not covered" >    DropdownMenuTrigger,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/dropdown-menu'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    ChatOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    // ChatOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    // ForwardOutlineIcon,</span>
+<span class="cstat-no" title="statement not covered" >    ThreeDotsIcon,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import usePosts from '@/hooks/posts/usePosts'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >// import LikeItem from '@/components/app/simple/LIkeItem'</span>
 <span class="cstat-no" title="statement not covered" >// import ShareButton from '@/components/app/simple/ShareButton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -680,7 +696,9 @@
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
-<span class="cstat-no" title="statement not covered" >    const { showConfirmDelete } = useContext(ConfirmationDialogContext)</span>
+<span class="cstat-no" title="statement not covered" >    const { showConfirmDelete, removeConfirmDelete, setLoading } = useContext(</span>
+<span class="cstat-no" title="statement not covered" >        ConfirmationDialogContext,</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { deleteCommentOnPost } = usePosts({})</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -743,14 +761,20 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;DropdownMenuItem</span>
 <span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                                showConfirmDelete({</span>
-<span class="cstat-no" title="statement not covered" >                                                    callback: () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                                        deleteCommentOnPost.mutate(</span>
+<span class="cstat-no" title="statement not covered" >                                                    title: 'Delete comment',</span>
+<span class="cstat-no" title="statement not covered" >                                                    description:</span>
+<span class="cstat-no" title="statement not covered" >                                                        'Are you sure you want to delete your comment?',</span>
+<span class="cstat-no" title="statement not covered" >                                                    callback: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                                        setLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >                                                        await deleteCommentOnPost.mutate(</span>
 <span class="cstat-no" title="statement not covered" >                                                            {</span>
 <span class="cstat-no" title="statement not covered" >                                                                commentId:</span>
 <span class="cstat-no" title="statement not covered" >                                                                    comment?.id as string,</span>
 <span class="cstat-no" title="statement not covered" >                                                                postId: post?.id,</span>
 <span class="cstat-no" title="statement not covered" >                                                            },</span>
 <span class="cstat-no" title="statement not covered" >                                                        )</span>
+<span class="cstat-no" title="statement not covered" >                                                        setLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                                                        removeConfirmDelete()</span>
 <span class="cstat-no" title="statement not covered" >                                                    },</span>
 <span class="cstat-no" title="statement not covered" >                                                })</span>
 <span class="cstat-no" title="statement not covered" >                                            }}</span>
@@ -922,7 +946,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-10T12:24:17.147Z
+                at 2023-10-11T22:00:34.679Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.35% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>89/123</span>
+                <span class='fraction'>90/126</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">61.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>8/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.35% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>89/123</span>
+                <span class='fraction'>90/126</span>
             </div>
         
             
@@ -186,7 +186,10 @@
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -223,6 +226,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -235,6 +239,8 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -309,14 +315,14 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useUser } from '@auth0/nextjs-auth0/client'
-import { ChangeEvent, KeyboardEvent, useState } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ChangeEvent, KeyboardEvent, useContext, useState } from 'react'
 &nbsp;
 import { useSelector } from 'react-redux'
 &nbsp;
 import InputField from '@/components/FormComponents/InputField'
 import { Spinner } from '@/components/FormComponents/button'
 import Avatar from '@/components/app/simple/Avatar'
+import AuthModalContext from '@/components/context-containers/AuthModal.context'
 import { SendSolidIcon } from '@/constants/icons/icons'
 import usePosts, { useReplyComment } from '@/hooks/posts/usePosts'
 import useLayoutConfig from '@/hooks/useLayoutConfig'
@@ -338,11 +344,12 @@ export default function CommentField({
     commentItem,
     handleCloseModal = <span class="fstat-no" title="function not covered" >() =&gt; null,</span>
 }: CommentFieldProps) {
-    const { user } = useUser()
     const activeBusiness = useSelector(
         (state: RootState) =&gt; state.activeBusiness.activeBusiness,
     )
+    const user = useSelector((state: RootState) =&gt; state.user.user)
     const { configKey } = useLayoutConfig()
+    const { showAuthModal } = useContext(AuthModalContext)
 &nbsp;
     const [comment, setComment] = useState('')
     const handleInputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
@@ -358,6 +365,8 @@ export default function CommentField({
     })
 &nbsp;
     const handleSubmit = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!user) return showAuthModal()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (comment) {</span>
 <span class="cstat-no" title="statement not covered" >            setCommentReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -439,7 +448,7 @@ export default function CommentField({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-10T12:24:17.147Z
+                at 2023-10-11T22:00:34.679Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
