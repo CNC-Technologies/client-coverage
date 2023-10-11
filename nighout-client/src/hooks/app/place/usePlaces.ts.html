@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/427</span>
+                <span class='fraction'>0/439</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/427</span>
+                <span class='fraction'>0/439</span>
             </div>
         
             
@@ -490,7 +490,31 @@
 <a name='L425'></a><a href='#L425'>425</a>
 <a name='L426'></a><a href='#L426'>426</a>
 <a name='L427'></a><a href='#L427'>427</a>
-<a name='L428'></a><a href='#L428'>428</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -938,7 +962,7 @@
 <span class="cstat-no" title="statement not covered" >    placeCategories,</span>
 <span class="cstat-no" title="statement not covered" >    placeDetailsRoute,</span>
 <span class="cstat-no" title="statement not covered" >    placeMediaRoute,</span>
-<span class="cstat-no" title="statement not covered" >    // placesRoute,</span>
+<span class="cstat-no" title="statement not covered" >    placesRoute,</span>
 <span class="cstat-no" title="statement not covered" >    unFollowPlaceRoute,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
@@ -1044,7 +1068,6 @@
 <span class="cstat-no" title="statement not covered" >        usePlacesList,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnfollowPlace,</span>
-<span class="cstat-no" title="statement not covered" >        // getPlaceDetails,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -1062,6 +1085,19 @@
 <span class="cstat-no" title="statement not covered" >        queryFn: ({ pageParam = '' }) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >            get({</span>
 <span class="cstat-no" title="statement not covered" >                url: allPlacesRoute(3, pageParam || ''), // Pass the pageParam to the API request</span>
+<span class="cstat-no" title="statement not covered" >            }).then((res) =&gt; res.data),</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: Infinity,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const useGetPlaceByQuery = (category: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['place', category],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            get({</span>
+<span class="cstat-no" title="statement not covered" >                // ? This might not be efficient</span>
+<span class="cstat-no" title="statement not covered" >                url: placesRoute('type', category.replaceAll('-', '/') || ''),</span>
 <span class="cstat-no" title="statement not covered" >            }).then((res) =&gt; res.data),</span>
 <span class="cstat-no" title="statement not covered" >        staleTime: Infinity,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
@@ -1351,7 +1387,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-11T22:00:34.679Z
+                at 2023-10-11T22:00:49.497Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
