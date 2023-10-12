@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.66% </span>
+                <span class="strong">72.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>327/450</span>
+                <span class='fraction'>343/470</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.89% </span>
+                <span class="strong">56.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>33/58</span>
+                <span class='fraction'>34/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.14% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/28</span>
+                <span class='fraction'>10/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.66% </span>
+                <span class="strong">72.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>327/450</span>
+                <span class='fraction'>343/470</span>
             </div>
         
             
@@ -513,7 +513,28 @@
 <a name='L448'></a><a href='#L448'>448</a>
 <a name='L449'></a><a href='#L449'>449</a>
 <a name='L450'></a><a href='#L450'>450</a>
-<a name='L451'></a><a href='#L451'>451</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -578,6 +599,19 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -854,6 +888,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -1009,6 +1049,7 @@ import usePosts from '@/hooks/posts/usePosts'
 import { Post } from '@/interfaces/posts.interface'
 import { RootState } from '@/store'
 import { TimeCounter } from '@/utils/dateFormat'
+import AuthModalContext from '@/components/context-containers/AuthModal.context'
 &nbsp;
 const PostMedias = dynamic(
     () =&gt; import('@/components/app/compound/Post/PostMedias'),
@@ -1023,11 +1064,24 @@ export default function SinglePost({
 }) {
     const router = useRouter()
 &nbsp;
+    const [commentsModal, setCommentsModal] = useState(false)
+&nbsp;
     const { showConfirmDelete } = useContext(ConfirmationDialogContext)
+    const { showAuthModal } = useContext(AuthModalContext)
+&nbsp;
     const { deletePost, likePost, unlikePost } = usePosts({ post })
+&nbsp;
     const user = useSelector((state: RootState) =&gt; state.user.user)
 &nbsp;
-    const [commentsModal, setCommentsModal] = useState(false)
+    // console.log(user)
+&nbsp;
+    const openCommentsModal = () =&gt; {
+        if (!user) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            showAuthModal()</span>
+        } else {
+            setCommentsModal(true)
+        }
+    }
 &nbsp;
     const closeCommentsModal = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // e.stopPropagation()</span>
@@ -1078,7 +1132,7 @@ export default function SinglePost({
         )
 &nbsp;
         return (
-            &lt;p
+            &lt;span
                 className='text-sm w-full md:text-base text-normal leading-[18px]'
                 dangerouslySetInnerHTML={{ __html: contentWithLinks }}
             /&gt;
@@ -1114,7 +1168,7 @@ export default function SinglePost({
             return {
                 name: post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username,</span>
                 picture: post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.picture,</span>
-                link: `/user/${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.username}`</span>,
+                link: `/user/${post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.user?.id}`</span>,
             }
         }
     }
@@ -1299,14 +1353,20 @@ export default function SinglePost({
                     )}
 &nbsp;
                     {/* Post images and videos */}
-                    {post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.medias<span class="branch-0 cbranch-no" title="branch not covered" > </span>&amp;&amp;</span>
-                        post?.edges?.medias?.length !== 0<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PostMedias</span>
-<span class="cstat-no" title="statement not covered" >                                username={post?.username as string}</span>
-<span class="cstat-no" title="statement not covered" >                                medias={post?.edges?.medias}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-                        )}
-&nbsp;
+                    &lt;span
+                        onClick={(<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >                            e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+                    &gt;
+                        {post?.edges<span class="branch-0 cbranch-no" title="branch not covered" >?.medias<span class="branch-0 cbranch-no" title="branch not covered" > </span>&amp;&amp;</span>
+                            post?.edges?.medias?.length !== 0<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;PostMedias</span>
+<span class="cstat-no" title="statement not covered" >                                    username={post?.username as string}</span>
+<span class="cstat-no" title="statement not covered" >                                    medias={post?.edges?.medias}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+                            )}
+                    &lt;/span&gt;
                     {/* Engagements (Likes and comments) */}
                     &lt;div className='items-center mt-2 justify-between row'&gt;
                         &lt;div className='items-center space-x-4 row '&gt;
@@ -1331,7 +1391,7 @@ export default function SinglePost({
                                     data-testid='comment-button'
                                     onClick={(e) =&gt; {
                                         e.stopPropagation()
-                                        setCommentsModal(true)
+                                        openCommentsModal()
                                     }}
                                     className='cursor-pointer'
                                 &gt;
@@ -1352,7 +1412,7 @@ export default function SinglePost({
                         &gt;
                             &lt;ShareButton
                                 content={{
-                                    url: `https://placio.io/app?post=${post?.id}`,
+                                    url: `https://placio.io/post/${post?.id}`,
                                     text:
                                         (post?.Content?.slice(
                                             0,
@@ -1420,7 +1480,7 @@ export default function SinglePost({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-11T22:01:36.765Z
+                at 2023-10-12T17:07:48.354Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
