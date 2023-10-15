@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.57% </span>
+                <span class="strong">85.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>178/208</span>
+                <span class='fraction'>166/195</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>18/33</span>
+                <span class='fraction'>14/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/12</span>
+                <span class='fraction'>3/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.57% </span>
+                <span class="strong">85.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>178/208</span>
+                <span class='fraction'>166/195</span>
             </div>
         
             
@@ -258,20 +258,7 @@
 <a name='L193'></a><a href='#L193'>193</a>
 <a name='L194'></a><a href='#L194'>194</a>
 <a name='L195'></a><a href='#L195'>195</a>
-<a name='L196'></a><a href='#L196'>196</a>
-<a name='L197'></a><a href='#L197'>197</a>
-<a name='L198'></a><a href='#L198'>198</a>
-<a name='L199'></a><a href='#L199'>199</a>
-<a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a>
-<a name='L203'></a><a href='#L203'>203</a>
-<a name='L204'></a><a href='#L204'>204</a>
-<a name='L205'></a><a href='#L205'>205</a>
-<a name='L206'></a><a href='#L206'>206</a>
-<a name='L207'></a><a href='#L207'>207</a>
-<a name='L208'></a><a href='#L208'>208</a>
-<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L196'></a><a href='#L196'>196</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -284,7 +271,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -447,18 +433,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -492,7 +466,6 @@ import {
     GridSolidIcon,
 } from '@/constants/icons/icons'
 import Button from '@/components/FormComponents/button'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { Dialog, DialogContent } from '@/components/shadcn/ui/dialog'</span></span></span></span></span></span></span></span></span>
 import MediaViewerModal from '@/components/modals/MediaViewerModal'
 // import { PlaySolidIcon } from '@/constants/icons/icons'
 &nbsp;
@@ -603,7 +576,7 @@ export default function PostMedias({
                                         username={username}
                                         objectContain
                                     /&gt;
-                                    &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt;
+                                    {/* &lt;div className='swiper-lazy-preloader swiper-lazy-preloader-white'&gt;&lt;/div&gt; */}
                                 &lt;/SwiperSlide&gt;
                             )
                         })}
@@ -664,22 +637,10 @@ function MediaTag({
                             loop={true}
                             controls={true}
                             width={'100%'}
-                            className='object-cover h-full w-full'
+                            height={'100%'}
+                            className='object-contain h-full w-full'
                         /&gt;
                     &lt;/span&gt;
-&nbsp;
-                    {/* &lt;video
-                        controls
-                        id={`post-video${index}`}
-                        playsInline
-                        preload='auto'
-                        autoPlay={false}
-                        loop={true}
-                        
-                        // data-setup='{}'
-                        src={media.URL}
-                    &gt;
-                    &lt;/video&gt; */}
                 &lt;/div&gt;
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ) : (</span></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div&gt;&lt;/div&gt;</span>
@@ -694,7 +655,7 @@ function MediaTag({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-15T20:08:56.608Z
+                at 2023-10-15T20:09:18.259Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
