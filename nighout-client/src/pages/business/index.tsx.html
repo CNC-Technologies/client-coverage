@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/180</span>
+                <span class='fraction'>0/202</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/180</span>
+                <span class='fraction'>0/202</span>
             </div>
         
             
@@ -243,7 +243,51 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -429,14 +473,18 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useQuery } from '@tanstack/react-query'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
 <span class="cstat-no" title="statement not covered" >import TeamInDashboardSkeleton from '@/components/skeletons/team/TeamInDashboardSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { businessPlacesLink, businessWalletLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import { teamMembersRoute } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import { placesDashboardLinks } from '@/constants/business/placesSettingsLinks'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetBusinessProfile } from '@/hooks/app/profile/useBusinessProfile'</span>
 <span class="cstat-no" title="statement not covered" >import useCurrency from '@/hooks/useCurrency'</span>
+<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function IndexPage() {</span>
@@ -445,6 +493,22 @@
 <span class="cstat-no" title="statement not covered" >        (state: RootState) =&gt; state.activeBusiness?.activeBusiness,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    const { data, isLoading } = useGetBusinessProfile(business?.id)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const activeBusiness = useSelector(</span>
+<span class="cstat-no" title="statement not covered" >        (state: RootState) =&gt; state.activeBusiness.activeBusiness,</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const teamMemberReq = useSecureRequest({</span>
+<span class="cstat-no" title="statement not covered" >        url: teamMembersRoute(activeBusiness.id),</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { data: teamMembers, isLoading: fetchingTeamMembers } = useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['teamMembers'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await teamMemberReq.get()</span>
+<span class="cstat-no" title="statement not covered" >            return res?.data?.data || []</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-10'&gt;</span>
@@ -484,17 +548,19 @@
 <span class="cstat-no" title="statement not covered" >                    title='Team members'</span>
 <span class="cstat-no" title="statement not covered" >                    description='Recently added team members'</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {(data?.edges?.teamMembers || [])?.length === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            You haven&amp;apos;t added any member to your team yet</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    {(teamMembers || [])?.length === 0 &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                        !fetchingTeamMembers &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                You haven&amp;apos;t added any member to your team</span>
+<span class="cstat-no" title="statement not covered" >                                yet</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-3 h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {isLoading ? (</span>
+<span class="cstat-no" title="statement not covered" >                        {fetchingTeamMembers ? (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;TeamInDashboardSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            (data?.edges?.teamMembers || [])</span>
+<span class="cstat-no" title="statement not covered" >                            (teamMembers || [])</span>
 <span class="cstat-no" title="statement not covered" >                                ?.slice(0, 4)</span>
 <span class="cstat-no" title="statement not covered" >                                .map((member, i) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
@@ -516,7 +582,7 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                ))</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                        {(data?.edges?.teamMembers || [])?.length &gt; 4 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        {(teamMembers || [])?.length &gt; 4 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='underline mt-auto'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;Link href={'/business/team'}&gt;See more&lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
@@ -527,7 +593,7 @@
 <span class="cstat-no" title="statement not covered" >                    title='Your places'</span>
 <span class="cstat-no" title="statement not covered" >                    description='See more of your places on placio'</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {!(data?.edges?.places || [])?.length &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    {!(data?.edges?.places || [])?.length &amp;&amp; !isLoading &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            There&amp;apos;s no place attached to your business yet.</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
@@ -610,7 +676,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-15T20:09:18.259Z
+                at 2023-10-16T16:22:16.975Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
