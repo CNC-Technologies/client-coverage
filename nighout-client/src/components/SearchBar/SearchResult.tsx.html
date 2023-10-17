@@ -548,10 +548,10 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -607,14 +607,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -970,75 +970,75 @@ export default function SearchResult({
                         &lt;/h4&gt;
                     &lt;/div&gt; */}
 &nbsp;
-                    {resultLoading<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Spinner borderColor='border-orange' /&gt;</span>
-                    ) : (
-                        &lt;&gt;
-                            {searchResult?.length !== 0<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='mt-3 grid gap-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {searchResult</span>
-<span class="cstat-no" title="statement not covered" >                                        .slice(0, 12)</span>
-<span class="cstat-no" title="statement not covered" >                                        ?.map((result, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                            return (</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;div key={idx}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    {result?.category ===</span>
-<span class="cstat-no" title="statement not covered" >                                                        'businesses' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;BusinessResultItem</span>
-<span class="cstat-no" title="statement not covered" >                                                            business={result}</span>
-<span class="cstat-no" title="statement not covered" >                                                            showTag={</span>
-<span class="cstat-no" title="statement not covered" >                                                                filter === 'all'</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                            closeModal={</span>
-<span class="cstat-no" title="statement not covered" >                                                                closeModalAndClearText</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                                    {result?.category ===</span>
-<span class="cstat-no" title="statement not covered" >                                                        'users' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;UserResultItem</span>
-<span class="cstat-no" title="statement not covered" >                                                            user={result}</span>
-<span class="cstat-no" title="statement not covered" >                                                            showTag={</span>
-<span class="cstat-no" title="statement not covered" >                                                                filter === 'all'</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                            closeModal={</span>
-<span class="cstat-no" title="statement not covered" >                                                                closeModalAndClearText</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                                    {result?.category ===</span>
-<span class="cstat-no" title="statement not covered" >                                                        'places' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;PlaceResultItem</span>
-<span class="cstat-no" title="statement not covered" >                                                            closeModal={</span>
-<span class="cstat-no" title="statement not covered" >                                                                closeModalAndClearText</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                            place={result}</span>
-<span class="cstat-no" title="statement not covered" >                                                            showTag={</span>
-<span class="cstat-no" title="statement not covered" >                                                                filter === 'all'</span>
-<span class="cstat-no" title="statement not covered" >                                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            )</span>
-<span class="cstat-no" title="statement not covered" >                                        })}</span>
+                    {
+                        resultLoading<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Spinner borderColor='border-orange' /&gt;</span>
+                        ) : // &lt;&gt;
+                        searchResult?.length !== 0<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='mt-3 grid gap-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {searchResult</span>
+<span class="cstat-no" title="statement not covered" >                                    .slice(0, 12)</span>
+<span class="cstat-no" title="statement not covered" >                                    ?.map((result, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                        return (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div key={idx}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {result?.category ===</span>
+<span class="cstat-no" title="statement not covered" >                                                    'businesses' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;BusinessResultItem</span>
+<span class="cstat-no" title="statement not covered" >                                                        business={result}</span>
+<span class="cstat-no" title="statement not covered" >                                                        showTag={</span>
+<span class="cstat-no" title="statement not covered" >                                                            filter === 'all'</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                        closeModal={</span>
+<span class="cstat-no" title="statement not covered" >                                                            closeModalAndClearText</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                                {result?.category ===</span>
+<span class="cstat-no" title="statement not covered" >                                                    'users' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;UserResultItem</span>
+<span class="cstat-no" title="statement not covered" >                                                        user={result}</span>
+<span class="cstat-no" title="statement not covered" >                                                        showTag={</span>
+<span class="cstat-no" title="statement not covered" >                                                            filter === 'all'</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                        closeModal={</span>
+<span class="cstat-no" title="statement not covered" >                                                            closeModalAndClearText</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                                {result?.category ===</span>
+<span class="cstat-no" title="statement not covered" >                                                    'places' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;PlaceResultItem</span>
+<span class="cstat-no" title="statement not covered" >                                                        closeModal={</span>
+<span class="cstat-no" title="statement not covered" >                                                            closeModalAndClearText</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                        place={result}</span>
+<span class="cstat-no" title="statement not covered" >                                                        showTag={</span>
+<span class="cstat-no" title="statement not covered" >                                                            filter === 'all'</span>
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                )}</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        )</span>
+<span class="cstat-no" title="statement not covered" >                                    })}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    {searchResult?.length &gt; 12 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick={<span class="fstat-no" title="function not covered" >() =&gt; handleSearch()}</span></span>
-<span class="cstat-no" title="statement not covered" >                                            className='text-center text-sm xmd:text-base font-semibold cursor-pointer hover:brightness-90 underline text-orange'</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            See more</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-                            ) : (
-                                &lt;div className='h-20 flex justify-center items-center'&gt;
-                                    &lt;p className='font-light'&gt;
-                                        No search suggestion
-                                    &lt;/p&gt;
-                                &lt;/div&gt;
-                            )}
-                        &lt;/&gt;
-                    )}
+<span class="cstat-no" title="statement not covered" >                                {searchResult?.length &gt; 12 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                        onClick={<span class="fstat-no" title="function not covered" >() =&gt; handleSearch()}</span></span>
+<span class="cstat-no" title="statement not covered" >                                        className='text-center text-sm xmd:text-base font-semibold cursor-pointer hover:brightness-90 underline text-orange'</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        See more</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+                        ) : (
+                            &lt;div className='h-20 flex justify-center items-center'&gt;
+                                &lt;p className='font-light'&gt;
+                                    No search suggestion
+                                &lt;/p&gt;
+                            &lt;/div&gt;
+                        )
+                        // {/* &lt;/&gt; */}
+                    }
                 &lt;/div&gt;
 &nbsp;
                 {/* Recent searches  */}
@@ -1339,7 +1339,7 @@ export default function SearchResult({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-16T20:41:23.207Z
+                at 2023-10-17T20:12:23.346Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
