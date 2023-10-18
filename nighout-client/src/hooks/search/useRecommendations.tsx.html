@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20.08% </span>
+                <span class="strong">19.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>46/229</span>
+                <span class='fraction'>49/249</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20.08% </span>
+                <span class="strong">19.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>46/229</span>
+                <span class='fraction'>49/249</span>
             </div>
         
             
@@ -292,7 +292,27 @@
 <a name='L227'></a><a href='#L227'>227</a>
 <a name='L228'></a><a href='#L228'>228</a>
 <a name='L229'></a><a href='#L229'>229</a>
-<a name='L230'></a><a href='#L230'>230</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -311,6 +331,18 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -423,6 +455,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -498,6 +537,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
@@ -521,7 +561,7 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
 &nbsp;
 import {
     FlattenedSearchResultItem,
@@ -533,35 +573,46 @@ import {
     UserProfileProps,
 } from '@/interfaces/userProfile.interface'
 &nbsp;
-export default function useSearchRecommendations() {
-    // searchResult: SearchResultProps,
-    const [recommendation, setRecommendations] = useState&lt;
-        FlattenedSearchResultItem[]
-    &gt;([])
-&nbsp;
-    const recommendedUsers = (<span class="fstat-no" title="function not covered" >searchResult: SearchResultProps) =&gt; {</span>
+export default function useSearchRecommendations({
+    recommendation,
+    setRecommendations,
+}: {
+    recommendation: FlattenedSearchResultItem[]
+    setRecommendations: React.Dispatch&lt;
+        React.SetStateAction&lt;FlattenedSearchResultItem[]&gt;
+    &gt;
+}) {
+    const recommendedUsers = <span class="fstat-no" title="function not covered" >async (searchResult: SearchResultProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // We are getting recommended users from;</span>
+<span class="cstat-no" title="statement not covered" >        // - Places edges</span>
+<span class="cstat-no" title="statement not covered" >        // - Businesses edges //? not yet implemented</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const { places, users } = searchResult</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // console.log(users)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let recommendedUsers: UserProfileProps[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (places?.length &amp;&amp; !users?.length) {</span>
 <span class="cstat-no" title="statement not covered" >            places.forEach((place) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                const userAlreadyExist = recommendedUsers.find(</span>
-<span class="cstat-no" title="statement not covered" >                    (user) =&gt; user?.id === place?.edges?.users?.[0]?.id,</span>
+<span class="cstat-no" title="statement not covered" >                const userIsInRecommendation = recommendation?.find(</span>
+<span class="cstat-no" title="statement not covered" >                    (item) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        item?.category === 'users' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                        item?.id === place?.edges?.users?.[0]?.id,</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                if (!userAlreadyExist) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!userIsInRecommendation) {</span>
 <span class="cstat-no" title="statement not covered" >                    recommendedUsers.push({</span>
 <span class="cstat-no" title="statement not covered" >                        category: 'users',</span>
-<span class="cstat-no" title="statement not covered" >                        ...(place?.edges?.users?.[0] ?? {}), // Nullish coalescing</span>
+<span class="cstat-no" title="statement not covered" >                        ...place?.edges?.users?.[0],</span>
 <span class="cstat-no" title="statement not covered" >                    })</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            places?.forEach((place) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                const userAlreadyExist = recommendedUsers.find(</span>
+<span class="cstat-no" title="statement not covered" >                const userAlreadyExist = users.find(</span>
 <span class="cstat-no" title="statement not covered" >                    (user) =&gt; user?.id === place?.edges?.users?.[0]?.id,</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                const userIsInRecommendation = users?.find(</span>
+<span class="cstat-no" title="statement not covered" >                const userIsInRecommendation = recommendation?.find(</span>
 <span class="cstat-no" title="statement not covered" >                    (item) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        item?.category === 'users' &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                        item?.id === place?.edges?.users?.[0]?.id,</span>
@@ -570,35 +621,40 @@ export default function useSearchRecommendations() {
 <span class="cstat-no" title="statement not covered" >                if (!userAlreadyExist &amp;&amp; !userIsInRecommendation) {</span>
 <span class="cstat-no" title="statement not covered" >                    recommendedUsers.push({</span>
 <span class="cstat-no" title="statement not covered" >                        category: 'users',</span>
-<span class="cstat-no" title="statement not covered" >                        ...(place.edges?.users?.[0] ?? {}), // Nullish coalescing</span>
+<span class="cstat-no" title="statement not covered" >                        ...place.edges?.users?.[0],</span>
 <span class="cstat-no" title="statement not covered" >                    })</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        // console.log(recommendedUsers)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        setRecommendations((prev) =&gt; [...prev, ...recommendedUsers])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    const recommendedPlaces = <span class="fstat-no" title="function not covered" >({</span>
+    const recommendedPlaces = <span class="fstat-no" title="function not covered" >async ({</span>
 <span class="cstat-no" title="statement not covered" >        searchResult,</span>
 <span class="cstat-no" title="statement not covered" >        bizPlaces,</span>
 <span class="cstat-no" title="statement not covered" >    }: {</span>
 <span class="cstat-no" title="statement not covered" >        searchResult?: SearchResultProps</span>
 <span class="cstat-no" title="statement not covered" >        bizPlaces?: PlaceProps[]</span>
 <span class="cstat-no" title="statement not covered" >    }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // We are getting recommended places from;</span>
+<span class="cstat-no" title="statement not covered" >        // - Business edges</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let recommendedPlaces: PlaceProps[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (searchResult) {</span>
 <span class="cstat-no" title="statement not covered" >            const { places, businesses } = searchResult</span>
+<span class="cstat-no" title="statement not covered" >            // console.log(businesses)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (businesses?.length &amp;&amp; !places?.length) {</span>
 <span class="cstat-no" title="statement not covered" >                businesses.forEach((biz) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    const businessPlaces = biz?.edges?.places as PlaceProps[]</span>
 <span class="cstat-no" title="statement not covered" >                    businessPlaces.forEach((place) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        const placeAlreadyExist = recommendedPlaces.find(</span>
+<span class="cstat-no" title="statement not covered" >                        const isInRecommendations = recommendation.find(</span>
 <span class="cstat-no" title="statement not covered" >                            (user) =&gt; user?.id === place?.id,</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                        if (!placeAlreadyExist) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!isInRecommendations) {</span>
 <span class="cstat-no" title="statement not covered" >                            recommendedPlaces.push({</span>
 <span class="cstat-no" title="statement not covered" >                                category: 'places',</span>
 <span class="cstat-no" title="statement not covered" >                                ...place,</span>
@@ -609,23 +665,26 @@ export default function useSearchRecommendations() {
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >                businesses?.forEach((biz) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    const businessPlaces = biz?.edges?.places as PlaceProps[]</span>
-<span class="cstat-no" title="statement not covered" >                    businessPlaces.forEach((place) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        const placeAlreadyExist = recommendedPlaces.find(</span>
+<span class="cstat-no" title="statement not covered" >                    // console.log(businessPlaces)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    businessPlaces?.forEach((place) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        const placeExistInResult = places.find(</span>
 <span class="cstat-no" title="statement not covered" >                            (item) =&gt; item?.id === place?.id,</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                        const isInRecommendations = places?.find(</span>
+<span class="cstat-no" title="statement not covered" >                        const isInRecommendations = recommendation?.find(</span>
 <span class="cstat-no" title="statement not covered" >                            (item) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                item.category === 'places' &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                                item.id === place?.id,</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        if (!placeAlreadyExist &amp;&amp; !isInRecommendations) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!placeExistInResult &amp;&amp; !isInRecommendations) {</span>
 <span class="cstat-no" title="statement not covered" >                            recommendedPlaces.push({</span>
 <span class="cstat-no" title="statement not covered" >                                category: 'places',</span>
 <span class="cstat-no" title="statement not covered" >                                ...place,</span>
 <span class="cstat-no" title="statement not covered" >                            })</span>
 <span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                    })</span>
+<span class="cstat-no" title="statement not covered" >                    // console.log(recommendedPlaces)</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -653,10 +712,11 @@ export default function useSearchRecommendations() {
 <span class="cstat-no" title="statement not covered" >        setRecommendations((prev) =&gt; [...prev, ...recommendedPlaces])</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    const recommendedBusinesses = (<span class="fstat-no" title="function not covered" >searchResult: SearchResultProps) =&gt; {</span>
+    const recommendedBusinesses = <span class="fstat-no" title="function not covered" >async (searchResult: SearchResultProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // We are getting recommended businesses from;</span>
+<span class="cstat-no" title="statement not covered" >        // - Places edges</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const { places, businesses } = searchResult</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(places)</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(businesses)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let recommendedBusinesses: BusinessProfileProps[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -757,7 +817,7 @@ export default function useSearchRecommendations() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-18T15:17:09.076Z
+                at 2023-10-18T18:40:33.577Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
