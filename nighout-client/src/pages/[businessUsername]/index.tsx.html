@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/73</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/73</span>
             </div>
         
             
@@ -127,7 +127,25 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -203,6 +221,9 @@
 <span class="cstat-no" title="statement not covered" >import { websiteRouteWithDomainName } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Footer from '@/components/business-website/nav/Footer'</span>
+<span class="cstat-no" title="statement not covered" >import Header from '@/components/business-website/nav/Header'</span>
+<span class="cstat-no" title="statement not covered" >import { WebsiteData } from '@/interfaces/website.interface'</span>
 <span class="cstat-no" title="statement not covered" >import dark from '@/lotties/website-error-dark.json'</span>
 <span class="cstat-no" title="statement not covered" >import light from '@/lotties/website-error-light.json'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -212,7 +233,7 @@
 <span class="cstat-no" title="statement not covered" >    const { query, push } = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    if (!query?.businessUsername) push(appHomeLink)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [data, setData] = useState(null)</span>
+<span class="cstat-no" title="statement not covered" >    const [data, setData] = useState&lt;WebsiteData | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { get, loading } = useSecureRequest({</span>
 <span class="cstat-no" title="statement not covered" >        url: websiteRouteWithDomainName(`${query?.businessUsername}`),</span>
@@ -253,7 +274,13 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return &lt;HotelTemplate data={data} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Header data={data} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;HotelTemplate data={data} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Footer data={data} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -262,7 +289,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-18T18:40:52.879Z
+                at 2023-10-19T08:21:10.299Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
