@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/55</span>
             </div>
         
             
@@ -118,15 +118,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,32 +174,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlaceCard from '@/components/Places/placeCard'</span>
 <span class="cstat-no" title="statement not covered" >// import { Place, mockedPlaces } from '@/constants/MockData/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
 <span class="cstat-no" title="statement not covered" >// import usePlaces from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import emptyLarge from '@/lotties/empty-large.json'</span>
 <span class="cstat-no" title="statement not covered" >import { appPlacesLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function LikedPlaces() {</span>
+<span class="cstat-no" title="statement not covered" >export default function LikedPlaces({ places }: { places: PlaceProps[] }) {</span>
 <span class="cstat-no" title="statement not covered" >    // const { getPlaceByQuery } = usePlaces()</span>
-<span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
+<span class="cstat-no" title="statement not covered" >    // const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let [likedPlaces, setLikedPlaces] = useState&lt;PlaceProps[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (user !== null) {</span>
-<span class="cstat-no" title="statement not covered" >            const places = user?.edges?.likedPlaces.map(</span>
-<span class="cstat-no" title="statement not covered" >                (place) =&gt; place?.edges?.place,</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            setLikedPlaces(places)</span>
+<span class="cstat-no" title="statement not covered" >        if (places?.length !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >            const placesList = places.map((place) =&gt; place?.edges?.place)</span>
+<span class="cstat-no" title="statement not covered" >            setLikedPlaces(placesList)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }, [user])</span>
+<span class="cstat-no" title="statement not covered" >    }, [places])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const placeAndEventStyle =</span>
 <span class="cstat-no" title="statement not covered" >        'grid grid-cols-1 mobile:place-items-center xxmd:grid-cols-2 xlaptop:grid-cols-2 xDesktop:grid-cols-3 gap-3 md:gap-7 w-full '</span>
@@ -247,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:14.664Z
+                at 2023-10-23T16:05:41.149Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

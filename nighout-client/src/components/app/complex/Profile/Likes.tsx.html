@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/50</span>
+                <span class='fraction'>0/72</span>
             </div>
         
             
@@ -113,7 +113,51 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,11 +208,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { motion } from 'framer-motion'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import LikedPosts from '@/components/app/complex/Profile/Likes/LikedPosts'</span>
 <span class="cstat-no" title="statement not covered" >import LikedPlaces from '@/components/app/complex/Profile/Likes/LikedPlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { UserProfileProps } from '@/interfaces/userProfile.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >// import LikedEvents from '@/components/app/complex/Profile/Likes/LikedEvents'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function UserLikes({</span>
@@ -176,40 +222,60 @@
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    userData?: UserProfileProps</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    // const likesTabs = ['posts', 'places', 'events']</span>
 <span class="cstat-no" title="statement not covered" >    const likesTabs = ['posts', 'places']</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const tabVariants = {</span>
+<span class="cstat-no" title="statement not covered" >        hidden: { opacity: 0, x: -10 },</span>
+<span class="cstat-no" title="statement not covered" >        visible: { opacity: 1, x: 0 },</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex h-8 xlaptop:h-10 w-full bg-white rounded-xl my-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {likesTabs.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                            key={index}</span>
-<span class="cstat-no" title="statement not covered" >                            className={`flex-1 capitalize ${</span>
-<span class="cstat-no" title="statement not covered" >                                activeTab === index</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'orange-fill shadow-md font-semibold '</span>
-<span class="cstat-no" title="statement not covered" >                                    : 'text-dark-charcoal  border-grey border dark:border-dark'</span>
-<span class="cstat-no" title="statement not covered" >                            } ${</span>
-<span class="cstat-no" title="statement not covered" >                                index === 0</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'rounded-bl-xl rounded-tl-xl'</span>
-<span class="cstat-no" title="statement not covered" >                                    : index === likesTabs.length - 1</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'rounded-br-xl rounded-tr-xl'</span>
-<span class="cstat-no" title="statement not covered" >                                    : ''</span>
-<span class="cstat-no" title="statement not covered" >                            } `}</span>
-<span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setActiveTab(index)}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {item}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >                {likesTabs.map((item, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;motion.button</span>
+<span class="cstat-no" title="statement not covered" >                        key={index}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`flex-1 capitalize ${</span>
+<span class="cstat-no" title="statement not covered" >                            activeTab === index</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'orange-fill shadow-md font-semibold '</span>
+<span class="cstat-no" title="statement not covered" >                                : 'text-dark-charcoal  border-grey border dark:border-dark'</span>
+<span class="cstat-no" title="statement not covered" >                        } ${</span>
+<span class="cstat-no" title="statement not covered" >                            index === 0</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'rounded-bl-xl rounded-tl-xl'</span>
+<span class="cstat-no" title="statement not covered" >                                : index === likesTabs.length - 1</span>
+<span class="cstat-no" title="statement not covered" >                                ? 'rounded-br-xl rounded-tr-xl'</span>
+<span class="cstat-no" title="statement not covered" >                                : ''</span>
+<span class="cstat-no" title="statement not covered" >                        } `}</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; setActiveTab(index)}</span>
+<span class="cstat-no" title="statement not covered" >                        variants={tabVariants}</span>
+<span class="cstat-no" title="statement not covered" >                        whileHover={{</span>
+<span class="cstat-no" title="statement not covered" >                            scale: activeTab === index ? 1.05 : 1,</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                        whileTap={{ scale: 0.95 }}</span>
+<span class="cstat-no" title="statement not covered" >                        initial='hidden'</span>
+<span class="cstat-no" title="statement not covered" >                        animate='visible'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {item}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/motion.button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {activeTab === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;LikedPosts posts={userData?.edges?.likes as Post[]} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >            {activeTab === 1 &amp;&amp; &lt;LikedPlaces /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >            {/* {activeTab === 2 &amp;&amp; &lt;LikedEvents /&gt;} */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;motion.div</span>
+<span class="cstat-no" title="statement not covered" >                key={activeTab} // Use a unique key for the motion.div to trigger reanimation when the tab changes</span>
+<span class="cstat-no" title="statement not covered" >                initial='hidden'</span>
+<span class="cstat-no" title="statement not covered" >                animate='visible'</span>
+<span class="cstat-no" title="statement not covered" >                variants={tabVariants}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {activeTab === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;LikedPosts posts={userData?.edges?.likes as Post[]} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                {activeTab === 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;LikedPlaces</span>
+<span class="cstat-no" title="statement not covered" >                        places={userData?.edges?.likedPlaces as PlaceProps[]}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/motion.div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -220,7 +286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:14.664Z
+                at 2023-10-23T16:05:41.149Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
