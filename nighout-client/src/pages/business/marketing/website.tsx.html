@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/87</span>
             </div>
         
             
@@ -135,7 +135,37 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -210,9 +240,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import Editor from '@/components/business-website/web-builder/editor'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useContext, useEffect, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useContext, useEffect, useRef } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useQuery } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
@@ -227,7 +259,7 @@
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Website() {</span>
-<span class="cstat-no" title="statement not covered" >    const [websiteData, setWebsiteData] = useState({})</span>
+<span class="cstat-no" title="statement not covered" >    const iframeRef = useRef&lt;HTMLIFrameElement&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" >    const toast = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const activeBusiness = useSelector(</span>
@@ -235,20 +267,29 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    if (!activeBusiness?.id) router.push(businessHomeLink)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { get, loading } = useSecureRequest({</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest({</span>
 <span class="cstat-no" title="statement not covered" >        url: websiteRoute(activeBusiness?.id),</span>
 <span class="cstat-no" title="statement not covered" >        loadOnRender: true,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    async function fetchWebsite() {</span>
-<span class="cstat-no" title="statement not covered" >        const res = await get()</span>
-<span class="cstat-no" title="statement not covered" >        if (!res?.success) return toast.showToast('error', res?.message)</span>
-<span class="cstat-no" title="statement not covered" >        setWebsiteData(res?.data?.data)</span>
+<span class="cstat-no" title="statement not covered" >    const { data: websiteData, isLoading: loading } = useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['websiteData', activeBusiness?.id],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get()</span>
+<span class="cstat-no" title="statement not covered" >            if (!res?.success) return toast.showToast('error', res?.message)</span>
+<span class="cstat-no" title="statement not covered" >            return res?.data?.data</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    function reloadFrame() {</span>
+<span class="cstat-no" title="statement not covered" >        if (iframeRef.current) {</span>
+<span class="cstat-no" title="statement not covered" >            iframeRef.current.src += ''</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        fetchWebsite()</span>
-<span class="cstat-no" title="statement not covered" >    }, [])</span>
+<span class="cstat-no" title="statement not covered" >        reloadFrame()</span>
+<span class="cstat-no" title="statement not covered" >    }, [websiteData])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
@@ -262,16 +303,20 @@
 <span class="cstat-no" title="statement not covered" >                        {loading ? (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;EditFormSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;EditWebsiteForm data={websiteData} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;EditWebsiteForm</span>
+<span class="cstat-no" title="statement not covered" >                                data={websiteData}</span>
+<span class="cstat-no" title="statement not covered" >                                reloadFrame={reloadFrame}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Sheet&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='bg-black/10 rounded-lg h-full w-full flex-1 min-h-[74vh] overflow-hidden'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;iframe</span>
-<span class="cstat-no" title="statement not covered" >                        src='https://placio.io/randomBusiness'</span>
+<span class="cstat-no" title="statement not covered" >                        src={`https://placio.io/${websiteData?.domainName}`}</span>
 <span class="cstat-no" title="statement not covered" >                        title='Business website preview'</span>
 <span class="cstat-no" title="statement not covered" >                        height={'100%'}</span>
 <span class="cstat-no" title="statement not covered" >                        width={'100%'}</span>
+<span class="cstat-no" title="statement not covered" >                        key={JSON.stringify(websiteData)}</span>
 <span class="cstat-no" title="statement not covered" >                        className='scrollbar-none'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -286,7 +331,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T10:52:45.897Z
+                at 2023-10-23T10:53:23.487Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
