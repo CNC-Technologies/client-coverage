@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/249</span>
+                <span class='fraction'>0/247</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/249</span>
+                <span class='fraction'>0/247</span>
             </div>
         
             
@@ -310,11 +310,7 @@
 <a name='L245'></a><a href='#L245'>245</a>
 <a name='L246'></a><a href='#L246'>246</a>
 <a name='L247'></a><a href='#L247'>247</a>
-<a name='L248'></a><a href='#L248'>248</a>
-<a name='L249'></a><a href='#L249'>249</a>
-<a name='L250'></a><a href='#L250'>250</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L248'></a><a href='#L248'>248</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -664,7 +660,7 @@
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const user = follows?.edges?.followed as UserProfileProps</span>
 <span class="cstat-no" title="statement not covered" >    const loggedInUser = useSelector((state: RootState) =&gt; state.user.user)</span>
-<span class="cstat-no" title="statement not covered" >    const { handleFollowUser, handleUnfollowUser } = useProfile()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleFollowUser } = useProfile()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >            href={`/user/${user?.id}`}</span>
@@ -694,9 +690,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;FollowButton</span>
 <span class="cstat-no" title="statement not covered" >                        followedByMe={false}</span>
 <span class="cstat-no" title="statement not covered" >                        followAction={() =&gt; handleFollowUser.mutate(user?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                        unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            handleUnfollowUser.mutate(user?.id)</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        unFollowAction={() =&gt; handleFollowUser.mutate(user?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                        height='h-8'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
@@ -767,7 +761,7 @@
 <span class="cstat-no" title="statement not covered" >    userId: string</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const business = follows?.edges?.business as BusinessProfileProps</span>
-<span class="cstat-no" title="statement not covered" >    const { handleFollowBusiness, handleUnfollowBusiness } = useProfile()</span>
+<span class="cstat-no" title="statement not covered" >    const { handleFollowBusiness } = useProfile()</span>
 <span class="cstat-no" title="statement not covered" >    const loggedInUser = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;Link</span>
@@ -801,7 +795,7 @@
 <span class="cstat-no" title="statement not covered" >                            handleFollowBusiness.mutate(business?.id)</span>
 <span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            handleUnfollowBusiness.mutate(business?.id)</span>
+<span class="cstat-no" title="statement not covered" >                            handleFollowBusiness.mutate(business?.id)</span>
 <span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        height='h-8'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
@@ -817,7 +811,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T10:53:23.487Z
+                at 2023-10-23T16:05:14.664Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

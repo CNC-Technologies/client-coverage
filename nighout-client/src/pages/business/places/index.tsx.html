@@ -195,32 +195,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlacesList from '@/components/app/complex/PlacesList'</span>
 <span class="cstat-no" title="statement not covered" >import CreatePlacesItem from '@/components/forms/CreatePage/Places'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import usePlaces, {</span>
 <span class="cstat-no" title="statement not covered" >    useGetGeneralPlaces,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/hooks/business/places/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceInterface } from '@/store/slices/places.slice'</span>
+<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const { deletePlace } = usePlaces()</span>
 <span class="cstat-no" title="statement not covered" >    const { data, isLoading } = useGetGeneralPlaces()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const { create } = router.query</span>
+<span class="cstat-no" title="statement not covered" >    const [newPlace, setNewPlace] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function openShowNewPlaceForm() {</span>
-<span class="cstat-no" title="statement not covered" >        //Add the query parameter</span>
-<span class="cstat-no" title="statement not covered" >        const queryParam = { create: 'Places' }</span>
-<span class="cstat-no" title="statement not covered" >        router.push({ pathname: router.pathname, query: queryParam })</span>
+<span class="cstat-no" title="statement not covered" >        setNewPlace(true)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function closeShowNewPlaceForm() {</span>
-<span class="cstat-no" title="statement not covered" >        // Remove the query parameter</span>
-<span class="cstat-no" title="statement not covered" >        const { create, ...query } = router.query</span>
-<span class="cstat-no" title="statement not covered" >        router.push({ pathname: router.pathname, query })</span>
+<span class="cstat-no" title="statement not covered" >        setNewPlace(false)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleDeletePlace = async (id: string) =&gt; {</span>
@@ -252,12 +248,16 @@
 <span class="cstat-no" title="statement not covered" >                deletePlace={handleDeletePlace}</span>
 <span class="cstat-no" title="statement not covered" >                // fetchPlaces={getPlaces}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ParentModal isOpen={create} handleClose={closeShowNewPlaceForm}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                title='New Place'</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={newPlace}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={closeShowNewPlaceForm}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;CreatePlacesItem</span>
 <span class="cstat-no" title="statement not covered" >                    handleAddPlace={handleAddPlace}</span>
 <span class="cstat-no" title="statement not covered" >                    handleCloseModal={closeShowNewPlaceForm}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -268,7 +268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T10:53:23.487Z
+                at 2023-10-23T16:05:14.664Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

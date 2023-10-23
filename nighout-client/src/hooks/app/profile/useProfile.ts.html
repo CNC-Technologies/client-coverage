@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -134,7 +134,29 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -208,16 +230,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    checkFollowingStatus,</span>
 <span class="cstat-no" title="statement not covered" >    followBusinessRoute,</span>
 <span class="cstat-no" title="statement not covered" >    followUserRoute,</span>
 <span class="cstat-no" title="statement not covered" >    getUserDetailsRoute,</span>
-<span class="cstat-no" title="statement not covered" >    unfollowUserRoute,</span>
-<span class="cstat-no" title="statement not covered" >    unfollowBusinessRoute,</span>
+<span class="cstat-no" title="statement not covered" >    // unfollowUserRoute,</span>
+<span class="cstat-no" title="statement not covered" >    // unfollowBusinessRoute,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function useProfile() {</span>
-<span class="cstat-no" title="statement not covered" >    const { post, deleteReq } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleFollowUser = useMutation({</span>
@@ -229,14 +252,14 @@
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleUnfollowUser = useMutation({</span>
-<span class="cstat-no" title="statement not covered" >        mutationFn: async (userId: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            await deleteReq({ url: unfollowUserRoute(userId) })</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        onSuccess: async (_data, variables) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries(['user', variables])</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    // const handleUnfollowUser = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >    //     mutationFn: async (userId: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //         await deleteReq({ url: followUserRoute(userId) })</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
+<span class="cstat-no" title="statement not covered" >    //     onSuccess: async (_data, variables) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //         queryClient.invalidateQueries(['user', variables])</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
+<span class="cstat-no" title="statement not covered" >    // })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleFollowBusiness = useMutation({</span>
 <span class="cstat-no" title="statement not covered" >        mutationFn: async (businessId: string) =&gt; {</span>
@@ -247,20 +270,20 @@
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleUnfollowBusiness = useMutation({</span>
-<span class="cstat-no" title="statement not covered" >        mutationFn: async (businessId: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            await deleteReq({ url: unfollowBusinessRoute(businessId) })</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        onSuccess: async (_data, variables) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries(['business', variables])</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    // const handleUnfollowBusiness = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >    //     mutationFn: async (businessId: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //         await deleteReq({ url: unfollowBusinessRoute(businessId) })</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
+<span class="cstat-no" title="statement not covered" >    //     onSuccess: async (_data, variables) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //         queryClient.invalidateQueries(['business', variables])</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
+<span class="cstat-no" title="statement not covered" >    // })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowUser,</span>
-<span class="cstat-no" title="statement not covered" >        handleUnfollowUser,</span>
+<span class="cstat-no" title="statement not covered" >        // handleUnfollowUser,</span>
 <span class="cstat-no" title="statement not covered" >        handleFollowBusiness,</span>
-<span class="cstat-no" title="statement not covered" >        handleUnfollowBusiness,</span>
+<span class="cstat-no" title="statement not covered" >        // handleUnfollowBusiness,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -270,8 +293,18 @@
 <span class="cstat-no" title="statement not covered" >    return useQuery({</span>
 <span class="cstat-no" title="statement not covered" >        queryKey: ['user', id],</span>
 <span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const checkFollowingRes = await get({</span>
+<span class="cstat-no" title="statement not covered" >                url: checkFollowingStatus({ followerId: id }),</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const res = await get({ url: getUserDetailsRoute(id) })</span>
-<span class="cstat-no" title="statement not covered" >            return res.data</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const modifiedData = {</span>
+<span class="cstat-no" title="statement not covered" >                ...res.data,</span>
+<span class="cstat-no" title="statement not covered" >                followedByCurrentUser: checkFollowingRes.data?.data,</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            return modifiedData</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
@@ -283,7 +316,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T10:53:23.487Z
+                at 2023-10-23T16:05:14.664Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
