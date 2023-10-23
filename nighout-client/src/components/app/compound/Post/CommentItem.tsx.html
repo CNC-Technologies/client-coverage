@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/291</span>
+                <span class='fraction'>0/303</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/291</span>
+                <span class='fraction'>0/303</span>
             </div>
         
             
@@ -354,7 +354,31 @@
 <a name='L289'></a><a href='#L289'>289</a>
 <a name='L290'></a><a href='#L290'>290</a>
 <a name='L291'></a><a href='#L291'>291</a>
-<a name='L292'></a><a href='#L292'>292</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -677,6 +701,7 @@
 <span class="cstat-no" title="statement not covered" >} from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import usePosts from '@/hooks/posts/usePosts'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >// import LikeItem from '@/components/app/simple/LIkeItem'</span>
 <span class="cstat-no" title="statement not covered" >// import ShareButton from '@/components/app/simple/ShareButton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -699,6 +724,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { deleteCommentOnPost } = usePosts({})</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const userId = user?.id || ''</span>
 <span class="cstat-no" title="statement not covered" >    const [showReplies, setShowReplies] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [commentsModal, setCommentsModal] = useState(false)</span>
@@ -719,6 +746,46 @@
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const commentTopMenu = (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;span</span>
+<span class="cstat-no" title="statement not covered" >            onClick={(e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                e.stopPropagation()</span>
+<span class="cstat-no" title="statement not covered" >                e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >            }}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DropdownMenu&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DropdownMenuTrigger className='focus:outline-none focus:ring-0'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='grey-outline rounded-full p-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ThreeDotsIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/DropdownMenuTrigger&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DropdownMenuContent className='dark:bg-black border border-grey dark:border-grey/10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DropdownMenuItem</span>
+<span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            showConfirmDelete({</span>
+<span class="cstat-no" title="statement not covered" >                                title: 'Delete comment',</span>
+<span class="cstat-no" title="statement not covered" >                                description:</span>
+<span class="cstat-no" title="statement not covered" >                                    'Are you sure you want to delete your comment?',</span>
+<span class="cstat-no" title="statement not covered" >                                callback: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                    setLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >                                    await deleteCommentOnPost.mutate({</span>
+<span class="cstat-no" title="statement not covered" >                                        commentId: comment?.id as string,</span>
+<span class="cstat-no" title="statement not covered" >                                        postId: post?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                    })</span>
+<span class="cstat-no" title="statement not covered" >                                    setLoading(false)</span>
+<span class="cstat-no" title="statement not covered" >                                    removeConfirmDelete()</span>
+<span class="cstat-no" title="statement not covered" >                                },</span>
+<span class="cstat-no" title="statement not covered" >                            })</span>
+<span class="cstat-no" title="statement not covered" >                        }}</span>
+<span class="cstat-no" title="statement not covered" >                        className='text-sm text-red-500 focus:bg-transparent dark:focus:bg-transparent focus:text-red-500 dark:focus:text-red-500 cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Delete</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/DropdownMenuItem&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/DropdownMenuContent&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DropdownMenu&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
@@ -746,43 +813,12 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        {userId === comment?.edges?.user?.id &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;DropdownMenu&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;DropdownMenuTrigger className='focus:outline-none focus:ring-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='grey-outline rounded-full p-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;ThreeDotsIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/DropdownMenuTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;DropdownMenuContent className='dark:bg-black border border-grey dark:border-grey/10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;DropdownMenuItem</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick={() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                                showConfirmDelete({</span>
-<span class="cstat-no" title="statement not covered" >                                                    title: 'Delete comment',</span>
-<span class="cstat-no" title="statement not covered" >                                                    description:</span>
-<span class="cstat-no" title="statement not covered" >                                                        'Are you sure you want to delete your comment?',</span>
-<span class="cstat-no" title="statement not covered" >                                                    callback: async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                                        setLoading(true)</span>
-<span class="cstat-no" title="statement not covered" >                                                        await deleteCommentOnPost.mutate(</span>
-<span class="cstat-no" title="statement not covered" >                                                            {</span>
-<span class="cstat-no" title="statement not covered" >                                                                commentId:</span>
-<span class="cstat-no" title="statement not covered" >                                                                    comment?.id as string,</span>
-<span class="cstat-no" title="statement not covered" >                                                                postId: post?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                                            },</span>
-<span class="cstat-no" title="statement not covered" >                                                        )</span>
-<span class="cstat-no" title="statement not covered" >                                                        setLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >                                                        removeConfirmDelete()</span>
-<span class="cstat-no" title="statement not covered" >                                                    },</span>
-<span class="cstat-no" title="statement not covered" >                                                })</span>
-<span class="cstat-no" title="statement not covered" >                                            }}</span>
-<span class="cstat-no" title="statement not covered" >                                            className='text-sm text-red-500 focus:bg-transparent dark:focus:bg-transparent focus:text-red-500 dark:focus:text-red-500 cursor-pointer'</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            Delete</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/DropdownMenuItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/DropdownMenuContent&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/DropdownMenu&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                        {post.edges?.business_account</span>
+<span class="cstat-no" title="statement not covered" >                            ? configKey === 'business' &amp;&amp; commentTopMenu</span>
+<span class="cstat-no" title="statement not covered" >                            : userId === post?.edges?.user?.id &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                              !post.edges?.business_account</span>
+<span class="cstat-no" title="statement not covered" >                            ? commentTopMenu</span>
+<span class="cstat-no" title="statement not covered" >                            : null}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-sm md:text-base'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {comment.Content}</span>
@@ -943,7 +979,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-19T08:21:10.299Z
+                at 2023-10-23T10:52:25.202Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/243</span>
+                <span class='fraction'>0/238</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/243</span>
+                <span class='fraction'>0/238</span>
             </div>
         
             
@@ -301,17 +301,7 @@
 <a name='L236'></a><a href='#L236'>236</a>
 <a name='L237'></a><a href='#L237'>237</a>
 <a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a>
-<a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a>
-<a name='L243'></a><a href='#L243'>243</a>
-<a name='L244'></a><a href='#L244'>244</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L239'></a><a href='#L239'>239</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -565,23 +555,12 @@
 <span class="cstat-no" title="statement not covered" >import BusinessActivities from '@/components/app/complex/Profile/businessProfile/BusinessActivities'</span>
 <span class="cstat-no" title="statement not covered" >import BusinessPlaces from '@/components/app/complex/Profile/businessProfile/BusinessPlaces'</span>
 <span class="cstat-no" title="statement not covered" >import Followers from '@/components/app/complex/Profile/Followers'</span>
-<span class="cstat-no" title="statement not covered" >import Following from '@/components/app/complex/Profile/Following'</span>
+<span class="cstat-no" title="statement not covered" >// import Following from '@/components/app/complex/Profile/Following'</span>
 <span class="cstat-no" title="statement not covered" >import { Post } from '@/interfaces/posts.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import FollowButton from '@/components/app/simple/FollowButton'</span>
 <span class="cstat-no" title="statement not covered" >import { useProfile } from '@/hooks/app/profile/useProfile'</span>
 <span class="cstat-no" title="statement not covered" >import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// interface BusinessInterface {</span>
-<span class="cstat-no" title="statement not covered" >//     id: string</span>
-<span class="cstat-no" title="statement not covered" >//     name: string</span>
-<span class="cstat-no" title="statement not covered" >//     description: string</span>
-<span class="cstat-no" title="statement not covered" >//     picture: string</span>
-<span class="cstat-no" title="statement not covered" >//     cover_image: string</span>
-<span class="cstat-no" title="statement not covered" >//     website: string</span>
-<span class="cstat-no" title="statement not covered" >//     edges?: Record&lt;string, unknown&gt;</span>
-<span class="cstat-no" title="statement not covered" >//     medias?: { url: string }[]</span>
-<span class="cstat-no" title="statement not covered" >// }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function BusinessDetailsPage() {</span>
 <span class="cstat-no" title="statement not covered" >    // const queryClient = useQueryClient()</span>
@@ -594,10 +573,6 @@
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { handleFollowBusiness, handleUnfollowBusiness } = useProfile()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    //Temporary</span>
-<span class="cstat-no" title="statement not covered" >    // const businessData: BusinessInterface | undefined =</span>
-<span class="cstat-no" title="statement not covered" >    // queryClient.getQueryData(['business', businessId])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { data: businessData, isInitialLoading } = useGetBusinessProfile(</span>
 <span class="cstat-no" title="statement not covered" >        businessId as string,</span>
@@ -676,17 +651,20 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex items-center justify-center gap-5'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;span className='font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                7,000</span>
+<span class="cstat-no" title="statement not covered" >                                                {</span>
+<span class="cstat-no" title="statement not covered" >                                                    businessData?.edges</span>
+<span class="cstat-no" title="statement not covered" >                                                        ?.followerUsers?.length</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/span&gt;{' '}</span>
 <span class="cstat-no" title="statement not covered" >                                            followers</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {/* &lt;p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;span className='font-bold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                3,000</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/span&gt;{' '}</span>
 <span class="cstat-no" title="statement not covered" >                                            following</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex mt-3 items-center justify-center space-x-5'&gt;</span>
@@ -732,7 +710,7 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                                            ref={tabListRef}</span>
 <span class="cstat-no" title="statement not covered" >                                            onScroll={handleScrollButtons}</span>
-<span class="cstat-no" title="statement not covered" >                                            className='flex mb-4 w-full gap-1 p-1 pb-1 overflow-x-auto transition ease-in-out border-b whitespace-nowrap scroll-smooth hideScrollbar border-grey'</span>
+<span class="cstat-no" title="statement not covered" >                                            className='flex mb-4 w-full gap-1 p-1 pb-1 overflow-x-auto transition ease-in-out border-b whitespace-nowrap scroll-smooth hideScrollbar border-grey dark:border-grey/30'</span>
 <span class="cstat-no" title="statement not covered" >                                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            {BusinessPageTabList.map(</span>
 <span class="cstat-no" title="statement not covered" >                                                (item, index) =&gt; {</span>
@@ -777,8 +755,15 @@
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                    {activeTab === 2 &amp;&amp; &lt;Followers /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                                    {activeTab === 3 &amp;&amp; &lt;Following /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                                    {activeTab === 2 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Followers</span>
+<span class="cstat-no" title="statement not covered" >                                            followers={</span>
+<span class="cstat-no" title="statement not covered" >                                                businessData?.edges</span>
+<span class="cstat-no" title="statement not covered" >                                                    ?.followerUsers</span>
+<span class="cstat-no" title="statement not covered" >                                            }</span>
+<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )}</span>
+<span class="cstat-no" title="statement not covered" >                                    {/* {activeTab === 3 &amp;&amp; &lt;Following /&gt;} */}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        ) : (</span>
@@ -799,7 +784,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-19T08:21:10.299Z
+                at 2023-10-23T10:52:25.202Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

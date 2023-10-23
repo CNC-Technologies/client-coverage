@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/228</span>
+                <span class='fraction'>0/234</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/228</span>
+                <span class='fraction'>0/234</span>
             </div>
         
             
@@ -291,7 +291,19 @@
 <a name='L226'></a><a href='#L226'>226</a>
 <a name='L227'></a><a href='#L227'>227</a>
 <a name='L228'></a><a href='#L228'>228</a>
-<a name='L229'></a><a href='#L229'>229</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -522,6 +534,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useEffect, useRef, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
@@ -537,10 +550,13 @@
 <span class="cstat-no" title="statement not covered" >import Following from '@/components/app/complex/Profile/Following'</span>
 <span class="cstat-no" title="statement not covered" >import UserLikes from '@/components/app/complex/Profile/Likes'</span>
 <span class="cstat-no" title="statement not covered" >import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function UserDetailsPageComplex() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { user: userId } = router.query</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const loggedInUser = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    const { user } = useUser()</span>
@@ -630,26 +646,28 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex items-center justify-center space-x-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;FollowButton</span>
-<span class="cstat-no" title="statement not covered" >                                            followedByMe={false}</span>
-<span class="cstat-no" title="statement not covered" >                                            followAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleFollowUser.mutate(</span>
-<span class="cstat-no" title="statement not covered" >                                                    userData?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                                )</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            unFollowAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                handleUnfollowUser.mutate(</span>
-<span class="cstat-no" title="statement not covered" >                                                    userData?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                                )</span>
-<span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            height='h-8'</span>
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {/* // ! Uncomment when Chat has been implemented  */}</span>
-<span class="cstat-no" title="statement not covered" >                                        {/* &lt;Button className='w-32 h-10 px-3 text-center border border-primary bg-transparent hover:bg-primary/30 dark:bg-transparent dark:border-orange dark:hover:border-none dark:hover:text-black dark:text-white  rounded-3xl '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Message</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {loggedInUser?.id !== userId &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex items-center justify-center space-x-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;FollowButton</span>
+<span class="cstat-no" title="statement not covered" >                                                followedByMe={false}</span>
+<span class="cstat-no" title="statement not covered" >                                                followAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    handleFollowUser.mutate(</span>
+<span class="cstat-no" title="statement not covered" >                                                        userData?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                                    )</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
+<span class="cstat-no" title="statement not covered" >                                                unFollowAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    handleUnfollowUser.mutate(</span>
+<span class="cstat-no" title="statement not covered" >                                                        userData?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                                    )</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
+<span class="cstat-no" title="statement not covered" >                                                height='h-8'</span>
+<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            {/* // ! Uncomment when Chat has been implemented  */}</span>
+<span class="cstat-no" title="statement not covered" >                                            {/* &lt;Button className='w-32 h-10 px-3 text-center border border-primary bg-transparent hover:bg-primary/30 dark:bg-transparent dark:border-orange dark:hover:border-none dark:hover:text-black dark:text-white  rounded-3xl '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Message</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='my-4 '&gt;</span>
@@ -754,7 +772,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-19T08:21:10.299Z
+                at 2023-10-23T10:52:25.202Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
