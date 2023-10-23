@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/143</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/143</span>
             </div>
         
             
@@ -206,15 +206,7 @@
 <a name='L141'></a><a href='#L141'>141</a>
 <a name='L142'></a><a href='#L142'>142</a>
 <a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a>
-<a name='L145'></a><a href='#L145'>145</a>
-<a name='L146'></a><a href='#L146'>146</a>
-<a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L144'></a><a href='#L144'>144</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -363,11 +355,25 @@
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { Dialog, DialogContent } from '@/components/shadcn/ui/dialog'</span>
 <span class="cstat-no" title="statement not covered" >import useCreatePlaceReview from '@/hooks/app/place/useCreateReview'</span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { Review } from '@/interfaces/reviews.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function CreateAReview({ place }) {</span>
+<span class="cstat-no" title="statement not covered" >interface CreateReview {</span>
+<span class="cstat-no" title="statement not covered" >    place: PlaceProps</span>
+<span class="cstat-no" title="statement not covered" >    openModal: boolean</span>
+<span class="cstat-no" title="statement not covered" >    reviewToBeEdited?: Review</span>
+<span class="cstat-no" title="statement not covered" >    closeModal: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default function CreateAReview({</span>
+<span class="cstat-no" title="statement not covered" >    place,</span>
+<span class="cstat-no" title="statement not covered" >    reviewToBeEdited,</span>
+<span class="cstat-no" title="statement not covered" >    openModal,</span>
+<span class="cstat-no" title="statement not covered" >    closeModal,</span>
+<span class="cstat-no" title="statement not covered" >}: CreateReview) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >        loading,</span>
-<span class="cstat-no" title="statement not covered" >        writeReview,</span>
+<span class="cstat-no" title="statement not covered" >        // writeReview,</span>
 <span class="cstat-no" title="statement not covered" >        reviewForm,</span>
 <span class="cstat-no" title="statement not covered" >        selectedPhotos,</span>
 <span class="cstat-no" title="statement not covered" >        errors,</span>
@@ -378,10 +384,10 @@
 <span class="cstat-no" title="statement not covered" >        setSelectedPhotos,</span>
 <span class="cstat-no" title="statement not covered" >        handleRatingChange,</span>
 <span class="cstat-no" title="statement not covered" >        handleOnChange,</span>
-<span class="cstat-no" title="statement not covered" >        handleCloseModal,</span>
+<span class="cstat-no" title="statement not covered" >        // handleCloseModal,</span>
 <span class="cstat-no" title="statement not covered" >        handleMediaChange,</span>
 <span class="cstat-no" title="statement not covered" >        setImageForUpload,</span>
-<span class="cstat-no" title="statement not covered" >    } = useCreatePlaceReview()</span>
+<span class="cstat-no" title="statement not covered" >    } = useCreatePlaceReview({ existingReview: reviewToBeEdited as Review })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSubmit = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!isEdtMode)</span>
@@ -394,10 +400,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Dialog</span>
-<span class="cstat-no" title="statement not covered" >                open={writeReview !== undefined}</span>
-<span class="cstat-no" title="statement not covered" >                onOpenChange={() =&gt; handleCloseModal(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Dialog open={openModal} onOpenChange={closeModal}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;DialogContent</span>
 <span class="cstat-no" title="statement not covered" >                    data-testid='dialog'</span>
 <span class="cstat-no" title="statement not covered" >                    className=' overflow-auto custom-scrollbar'</span>
@@ -423,21 +426,6 @@
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;h5 className='text-lg font-medium xxmd:text-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Title</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/h5&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='text-sm'&gt;Give your review a title&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='mt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                    name='reviewTitle'</span>
-<span class="cstat-no" title="statement not covered" >                                    placeholder='Give your experience a title... '</span>
-<span class="cstat-no" title="statement not covered" >                                    onChange={handleOnChange}</span>
-<span class="cstat-no" title="statement not covered" >                                    error={errors.reviewTitle}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;h5 className='text-lg font-medium xxmd:text-xl'&gt;</span>
@@ -511,7 +499,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:59:12.238Z
+                at 2023-10-23T17:46:32.796Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
