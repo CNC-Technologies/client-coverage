@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/148</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/147</span>
+                <span class='fraction'>0/148</span>
             </div>
         
             
@@ -210,7 +210,8 @@
 <a name='L145'></a><a href='#L145'>145</a>
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -357,16 +358,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useSelector } from 'react-redux'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { Metadata as NextMetadata } from 'next'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Metadata as NextMetadata } from 'next'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { Skeleton } from '@/components/shadcn/ui/skeleton'</span>
-<span class="cstat-no" title="statement not covered" >import { getPostDetails, useGetPostDetails } from '@/hooks/posts/usePosts'</span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import SinglePost from '@/components/app/complex/SinglePost'</span>
-<span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
 <span class="cstat-no" title="statement not covered" >import CommentField from '@/components/app/compound/Post/CommentField'</span>
 <span class="cstat-no" title="statement not covered" >import CommentItem from '@/components/app/compound/Post/CommentItem'</span>
+<span class="cstat-no" title="statement not covered" >import { Skeleton } from '@/components/shadcn/ui/skeleton'</span>
+<span class="cstat-no" title="statement not covered" >import { appIcon } from '@/constants/headDefaults'</span>
+<span class="cstat-no" title="statement not covered" >import { getPostDetails, useGetPostDetails } from '@/hooks/posts/usePosts'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface Metadata extends NextMetadata {</span>
@@ -426,7 +429,7 @@
 <span class="cstat-no" title="statement not covered" >    const post = data?.data</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {!isInitialLoading ? (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='post-max-width'&gt;</span>
@@ -474,7 +477,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;PostSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -511,7 +514,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

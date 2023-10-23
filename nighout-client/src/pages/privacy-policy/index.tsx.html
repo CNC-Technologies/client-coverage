@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -92,7 +92,10 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -121,33 +124,39 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import SpecializedLayout from '@/components/Layout/SpecializedLayout'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import PageTransition from '@/components/Layout/PageTransition'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import SpecializedLayout from '@/components/Layout/SpecializedLayout'</span>
 <span class="cstat-no" title="statement not covered" >import content from '@/constants/privacy-policy/content'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Page() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;UnauthenticatedLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;SpecializedLayout</span>
-<span class="cstat-no" title="statement not covered" >            heroImg='https://res.cloudinary.com/placio/image/upload/v1683019777/user-media-content/bg_kasq0s.jpg'</span>
-<span class="cstat-no" title="statement not covered" >            title='Privacy Policy'</span>
-<span class="cstat-no" title="statement not covered" >            description="The privacy of our users' information, what we collect and what the information is used for."</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='my-10 space-y-10 md:space-y-16'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {content.map((item) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        key={item.id}</span>
-<span class="cstat-no" title="statement not covered" >                        className='space-y-2 col-md-row md:space-y-0'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-[0.4] font-bold'&gt;{item.title}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;SpecializedLayout</span>
+<span class="cstat-no" title="statement not covered" >                heroImg='https://res.cloudinary.com/placio/image/upload/v1683019777/user-media-content/bg_kasq0s.jpg'</span>
+<span class="cstat-no" title="statement not covered" >                title='Privacy Policy'</span>
+<span class="cstat-no" title="statement not covered" >                description="The privacy of our users' information, what we collect and what the information is used for."</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='my-10 space-y-10 md:space-y-16'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {content.map((item) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            className='flex-1 space-y-5 col'</span>
-<span class="cstat-no" title="statement not covered" >                            dangerouslySetInnerHTML={{ __html: item.text }}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ))}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/SpecializedLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;/UnauthenticatedLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            key={item.id}</span>
+<span class="cstat-no" title="statement not covered" >                            className='space-y-2 col-md-row md:space-y-0'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex-[0.4] font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {item.title}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                className='flex-1 space-y-5 col'</span>
+<span class="cstat-no" title="statement not covered" >                                dangerouslySetInnerHTML={{ __html: item.text }}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ))}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/SpecializedLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -157,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

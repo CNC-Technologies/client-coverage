@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/87</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/87</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -150,7 +150,13 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -247,6 +253,7 @@
 <span class="cstat-no" title="statement not covered" >import { useQuery } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import PlacesSettingsLayout from '@/components/business/layouts/PlacesSettingsLayout'</span>
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import EditWebsiteForm from '@/components/forms/business/business-website/EditWebsiteForm'</span>
@@ -292,36 +299,38 @@
 <span class="cstat-no" title="statement not covered" >    }, [websiteData])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='w-full col h-full space-y-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-end space-x-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Button&gt;Archive&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Sheet</span>
-<span class="cstat-no" title="statement not covered" >                        title='Edit your website'</span>
-<span class="cstat-no" title="statement not covered" >                        trigger={&lt;Button&gt;Edit&lt;/Button&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {loading ? (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;EditFormSkeleton /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;EditWebsiteForm</span>
-<span class="cstat-no" title="statement not covered" >                                data={websiteData}</span>
-<span class="cstat-no" title="statement not covered" >                                reloadFrame={reloadFrame}</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/Sheet&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='w-full col h-full space-y-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='row justify-end space-x-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Archive&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Sheet</span>
+<span class="cstat-no" title="statement not covered" >                            title='Edit your website'</span>
+<span class="cstat-no" title="statement not covered" >                            trigger={&lt;Button&gt;Edit&lt;/Button&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {loading ? (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;EditFormSkeleton /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;EditWebsiteForm</span>
+<span class="cstat-no" title="statement not covered" >                                    data={websiteData}</span>
+<span class="cstat-no" title="statement not covered" >                                    reloadFrame={reloadFrame}</span>
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Sheet&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='bg-black/10 rounded-lg h-full w-full flex-1 min-h-[74vh] overflow-hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;iframe</span>
+<span class="cstat-no" title="statement not covered" >                            src={`https://placio.io/${websiteData?.domainName}`}</span>
+<span class="cstat-no" title="statement not covered" >                            title='Business website preview'</span>
+<span class="cstat-no" title="statement not covered" >                            height={'100%'}</span>
+<span class="cstat-no" title="statement not covered" >                            width={'100%'}</span>
+<span class="cstat-no" title="statement not covered" >                            key={JSON.stringify(websiteData)}</span>
+<span class="cstat-no" title="statement not covered" >                            className='scrollbar-none'</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-black/10 rounded-lg h-full w-full flex-1 min-h-[74vh] overflow-hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;iframe</span>
-<span class="cstat-no" title="statement not covered" >                        src={`https://placio.io/${websiteData?.domainName}`}</span>
-<span class="cstat-no" title="statement not covered" >                        title='Business website preview'</span>
-<span class="cstat-no" title="statement not covered" >                        height={'100%'}</span>
-<span class="cstat-no" title="statement not covered" >                        width={'100%'}</span>
-<span class="cstat-no" title="statement not covered" >                        key={JSON.stringify(websiteData)}</span>
-<span class="cstat-no" title="statement not covered" >                        className='scrollbar-none'</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/PlacesSettingsLayout&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -331,7 +340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

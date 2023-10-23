@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/61</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
@@ -124,7 +124,13 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -190,6 +196,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import randomColor from 'randomcolor'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
 <span class="cstat-no" title="statement not covered" >import DashboardAnalyticsCard from '@/components/business/compound/business/DashboardAnalyticsCard'</span>
@@ -207,43 +214,45 @@
 <span class="cstat-no" title="statement not covered" >export default function Insights() {</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-2 mb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='bg-white dark:bg-dark rounded-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 border-b'&gt;Insights&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 text-sm font-base grid grid-cols-1 overflow-x-scroll'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                            tabs={timeFrameTabs}</span>
-<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-2 mb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='bg-white dark:bg-dark rounded-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='p-2 border-b'&gt;Insights&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='p-2 text-sm font-base grid grid-cols-1 overflow-x-scroll'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                                tabs={timeFrameTabs}</span>
+<span class="cstat-no" title="statement not covered" >                                activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                                setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {insightDashboardCards.map((item) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCardSm</span>
-<span class="cstat-no" title="statement not covered" >                        key={item.id}</span>
-<span class="cstat-no" title="statement not covered" >                        title={item.label}</span>
-<span class="cstat-no" title="statement not covered" >                        color={randomColor({</span>
-<span class="cstat-no" title="statement not covered" >                            luminosity: 'light',</span>
-<span class="cstat-no" title="statement not covered" >                            hue: 'blue',</span>
-<span class="cstat-no" title="statement not covered" >                        })}</span>
-<span class="cstat-no" title="statement not covered" >                        info={item.digit}</span>
-<span class="cstat-no" title="statement not covered" >                        subtitle={item.timeFrame}</span>
-<span class="cstat-no" title="statement not covered" >                        noData</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ))}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-6 gap-3 mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-1 md:col-span-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;FinanceGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {insightDashboardCards.map((item) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;DashboardInfoCardSm</span>
+<span class="cstat-no" title="statement not covered" >                            key={item.id}</span>
+<span class="cstat-no" title="statement not covered" >                            title={item.label}</span>
+<span class="cstat-no" title="statement not covered" >                            color={randomColor({</span>
+<span class="cstat-no" title="statement not covered" >                                luminosity: 'light',</span>
+<span class="cstat-no" title="statement not covered" >                                hue: 'blue',</span>
+<span class="cstat-no" title="statement not covered" >                            })}</span>
+<span class="cstat-no" title="statement not covered" >                            info={item.digit}</span>
+<span class="cstat-no" title="statement not covered" >                            subtitle={item.timeFrame}</span>
+<span class="cstat-no" title="statement not covered" >                            noData</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ))}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-1 md:col-span-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardAnalyticsCard noData /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 md:grid-cols-6 gap-3 mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-1 md:col-span-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;FinanceGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-1 md:col-span-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;DashboardAnalyticsCard noData /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/PlacesSettingsLayout&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -253,7 +262,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

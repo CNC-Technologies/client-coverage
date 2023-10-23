@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/52</span>
             </div>
         
             
@@ -114,7 +114,9 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -170,6 +172,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import CalendarItem from '@/components/app/complex/CalendarItem'</span>
 <span class="cstat-no" title="statement not covered" >// import ReservationEventsSection from '@/components/app/compound/reservations/events/EventSection'</span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import ReservationPlacesSection from '@/components/app/compound/reservations/events/PlaceSection'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import { reservationTabs } from '@/constants/app/Settings/TabsList'</span>
@@ -178,42 +181,42 @@
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    const [dateToFetch, setDateToFetch] = useState(new Date())</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;AppLayout pageTitle={'Reservations'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' h-[20vh] md:h-[20vh] '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                    unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                    src={</span>
-<span class="cstat-no" title="statement not covered" >                        'https://res.cloudinary.com/placio/image/upload/v1687789425/user-media-content/reservations_th01sb.png'</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    alt={'Places featured image'}</span>
-<span class="cstat-no" title="statement not covered" >                    priority={true}</span>
-<span class="cstat-no" title="statement not covered" >                    quality={75}</span>
-<span class="cstat-no" title="statement not covered" >                    width={100}</span>
-<span class="cstat-no" title="statement not covered" >                    height={100}</span>
-<span class="cstat-no" title="statement not covered" >                    className='object-cover object-center w-full h-full'</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className=' h-[20vh] md:h-[20vh] '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                        unoptimized</span>
+<span class="cstat-no" title="statement not covered" >                        src={</span>
+<span class="cstat-no" title="statement not covered" >                            'https://res.cloudinary.com/placio/image/upload/v1687789425/user-media-content/reservations_th01sb.png'</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        alt={'Places featured image'}</span>
+<span class="cstat-no" title="statement not covered" >                        priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                        quality={75}</span>
+<span class="cstat-no" title="statement not covered" >                        width={100}</span>
+<span class="cstat-no" title="statement not covered" >                        height={100}</span>
+<span class="cstat-no" title="statement not covered" >                        className='object-cover object-center w-full h-full'</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                        tabs={reservationTabs}</span>
+<span class="cstat-no" title="statement not covered" >                        setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                        activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                &lt;CalendarItem</span>
+<span class="cstat-no" title="statement not covered" >                    activeDate={dateToFetch}</span>
+<span class="cstat-no" title="statement not covered" >                    setActiveDate={setDateToFetch}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                    tabs={reservationTabs}</span>
-<span class="cstat-no" title="statement not covered" >                    setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                    activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {/* {activeTab === 0 &amp;&amp; &lt;ReservationEventsSection /&gt;} */}</span>
+<span class="cstat-no" title="statement not covered" >                    {activeTab === 0 &amp;&amp; &lt;ReservationPlacesSection /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;CalendarItem</span>
-<span class="cstat-no" title="statement not covered" >                activeDate={dateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >                setActiveDate={setDateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* {activeTab === 0 &amp;&amp; &lt;ReservationEventsSection /&gt;} */}</span>
-<span class="cstat-no" title="statement not covered" >                {activeTab === 0 &amp;&amp; &lt;ReservationPlacesSection /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -223,7 +226,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

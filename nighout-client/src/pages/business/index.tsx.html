@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/200</span>
+                <span class='fraction'>0/208</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/200</span>
+                <span class='fraction'>0/208</span>
             </div>
         
             
@@ -263,7 +263,23 @@
 <a name='L198'></a><a href='#L198'>198</a>
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -471,6 +487,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useQuery } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
@@ -505,162 +522,169 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='space-y-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                    title='Wallet Balance'</span>
-<span class="cstat-no" title="statement not covered" >                    description='Your cumulated balance'</span>
-<span class="cstat-no" title="statement not covered" >                    data={curr + '0'}</span>
-<span class="cstat-no" title="statement not covered" >                    icon={&lt;Wallet /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    link={businessWalletLink}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                    title='Places'</span>
-<span class="cstat-no" title="statement not covered" >                    description='Total number of your places'</span>
-<span class="cstat-no" title="statement not covered" >                    data={(data?.edges?.places || [])?.length || 0}</span>
-<span class="cstat-no" title="statement not covered" >                    icon={&lt;MapPin /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    link={businessPlacesLink}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                    title='Orders'</span>
-<span class="cstat-no" title="statement not covered" >                    description='Total number of orders from all your places'</span>
-<span class="cstat-no" title="statement not covered" >                    data='0'</span>
-<span class="cstat-no" title="statement not covered" >                    icon={&lt;ShoppingBag /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h1 className='text-4xl dark:text-white'&gt;Quick check&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h1 className='text-gray-400'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Have a quick glance of your business&amp;apos; statistics</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 lg:grid-cols-4 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='col-span-full lg:col-span-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;FinanceGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        title='Wallet Balance'</span>
+<span class="cstat-no" title="statement not covered" >                        description='Your cumulated balance'</span>
+<span class="cstat-no" title="statement not covered" >                        data={curr + '0'}</span>
+<span class="cstat-no" title="statement not covered" >                        icon={&lt;Wallet /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        link={businessWalletLink}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        title='Places'</span>
+<span class="cstat-no" title="statement not covered" >                        description='Total number of your places'</span>
+<span class="cstat-no" title="statement not covered" >                        data={(data?.edges?.places || [])?.length || 0}</span>
+<span class="cstat-no" title="statement not covered" >                        icon={&lt;MapPin /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        link={businessPlacesLink}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        title='Orders'</span>
+<span class="cstat-no" title="statement not covered" >                        description='Total number of orders from all your places'</span>
+<span class="cstat-no" title="statement not covered" >                        data='0'</span>
+<span class="cstat-no" title="statement not covered" >                        icon={&lt;ShoppingBag /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                    title='Team members'</span>
-<span class="cstat-no" title="statement not covered" >                    description='Recently added team members'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {(teamMembers || [])?.length === 0 &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                        !fetchingTeamMembers &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h1 className='text-4xl dark:text-white'&gt;Quick check&lt;/h1&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;h1 className='text-gray-400'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Have a quick glance of your business&amp;apos; statistics</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/h1&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 lg:grid-cols-4 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='col-span-full lg:col-span-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;FinanceGraph /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        title='Team members'</span>
+<span class="cstat-no" title="statement not covered" >                        description='Recently added team members'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {(teamMembers || [])?.length === 0 &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                            !fetchingTeamMembers &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    You haven&amp;apos;t added any member to your</span>
+<span class="cstat-no" title="statement not covered" >                                    team yet</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='space-y-3 h-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {fetchingTeamMembers ? (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;TeamInDashboardSkeleton /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            ) : (</span>
+<span class="cstat-no" title="statement not covered" >                                (teamMembers || [])</span>
+<span class="cstat-no" title="statement not covered" >                                    ?.slice(0, 4)</span>
+<span class="cstat-no" title="statement not covered" >                                    .map((member, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                            key={`${member} ${i}`}</span>
+<span class="cstat-no" title="statement not covered" >                                            className='row space-x-2 items-center'</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                                size='sm'</span>
+<span class="cstat-no" title="statement not covered" >                                                img={</span>
+<span class="cstat-no" title="statement not covered" >                                                    member?.edges?.user?.picture</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
+<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    {member?.edges?.user?.name}</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    {member?.role}</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ))</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                            {(teamMembers || [])?.length &gt; 4 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='underline mt-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Link href={'/business/team'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        See more</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/DashboardInfoCard&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                        title='Your places'</span>
+<span class="cstat-no" title="statement not covered" >                        description='See more of your places on placio'</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {!(data?.edges?.places || [])?.length &amp;&amp; !isLoading &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                You haven&amp;apos;t added any member to your team</span>
-<span class="cstat-no" title="statement not covered" >                                yet</span>
+<span class="cstat-no" title="statement not covered" >                                There&amp;apos;s no place attached to your business</span>
+<span class="cstat-no" title="statement not covered" >                                yet.</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-3 h-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {fetchingTeamMembers ? (</span>
+<span class="cstat-no" title="statement not covered" >                        {isLoading ? (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;TeamInDashboardSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                            (teamMembers || [])</span>
+<span class="cstat-no" title="statement not covered" >                            (data?.edges?.places || [])</span>
 <span class="cstat-no" title="statement not covered" >                                ?.slice(0, 4)</span>
-<span class="cstat-no" title="statement not covered" >                                .map((member, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                        key={`${member} ${i}`}</span>
-<span class="cstat-no" title="statement not covered" >                                        className='row space-x-2 items-center'</span>
+<span class="cstat-no" title="statement not covered" >                                ?.map((place, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                        key={`${place?.id} ${i}`}</span>
+<span class="cstat-no" title="statement not covered" >                                        href={placesDashboardLinks[0].link(</span>
+<span class="cstat-no" title="statement not covered" >                                            place?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                        )}</span>
 <span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Avatar</span>
-<span class="cstat-no" title="statement not covered" >                                            size='sm'</span>
-<span class="cstat-no" title="statement not covered" >                                            img={member?.edges?.user?.picture}</span>
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {member?.edges?.user?.name}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {member?.role}</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='row space-x-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                                size='sm'</span>
+<span class="cstat-no" title="statement not covered" >                                                square</span>
+<span class="cstat-no" title="statement not covered" >                                                user={false}</span>
+<span class="cstat-no" title="statement not covered" >                                                img={place?.cover_image}</span>
+<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    {place?.name}</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    {place?.type}</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                ))</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                        {(teamMembers || [])?.length &gt; 4 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        {(data?.edges?.places || []).length &gt; 4 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='underline mt-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Link href={'/business/team'}&gt;See more&lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Link href={businessPlacesLink}&gt;See more&lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/DashboardInfoCard&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/DashboardInfoCard&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                    title='Your places'</span>
-<span class="cstat-no" title="statement not covered" >                    description='See more of your places on placio'</span>
+<span class="cstat-no" title="statement not covered" >                    title='Notifications'</span>
+<span class="cstat-no" title="statement not covered" >                    description='See your most recent notifications'</span>
+<span class="cstat-no" title="statement not covered" >                    icon={&lt;Bell /&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {!(data?.edges?.places || [])?.length &amp;&amp; !isLoading &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            There&amp;apos;s no place attached to your business yet.</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {isLoading ? (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TeamInDashboardSkeleton /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ) : (</span>
-<span class="cstat-no" title="statement not covered" >                        (data?.edges?.places || [])</span>
-<span class="cstat-no" title="statement not covered" >                            ?.slice(0, 4)</span>
-<span class="cstat-no" title="statement not covered" >                            ?.map((place, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                    key={`${place?.id} ${i}`}</span>
-<span class="cstat-no" title="statement not covered" >                                    href={placesDashboardLinks[0].link(</span>
-<span class="cstat-no" title="statement not covered" >                                        place?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='row space-x-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;Avatar</span>
-<span class="cstat-no" title="statement not covered" >                                            size='sm'</span>
-<span class="cstat-no" title="statement not covered" >                                            square</span>
-<span class="cstat-no" title="statement not covered" >                                            user={false}</span>
-<span class="cstat-no" title="statement not covered" >                                            img={place?.cover_image}</span>
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {place?.name}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                {place?.type}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;No notification to display&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {Array(0)</span>
+<span class="cstat-no" title="statement not covered" >                        .fill(null)</span>
+<span class="cstat-no" title="statement not covered" >                        .map((item, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                key={`${item} ${i}`}</span>
+<span class="cstat-no" title="statement not covered" >                                className='row space-x-2 items-center'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Avatar size='sm' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        John Doe and 500 others liked your post</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ))</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {(data?.edges?.places || []).length &gt; 4 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='underline mt-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Link href={businessPlacesLink}&gt;See more&lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/DashboardInfoCard&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                title='Notifications'</span>
-<span class="cstat-no" title="statement not covered" >                description='See your most recent notifications'</span>
-<span class="cstat-no" title="statement not covered" >                icon={&lt;Bell /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;No notification to display&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {Array(0)</span>
-<span class="cstat-no" title="statement not covered" >                    .fill(null)</span>
-<span class="cstat-no" title="statement not covered" >                    .map((item, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            key={`${item} ${i}`}</span>
-<span class="cstat-no" title="statement not covered" >                            className='row space-x-2 items-center'</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Avatar size='sm' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    John Doe and 500 others liked your post</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    Created 18th September, 2023</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        Created 18th September, 2023</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        ))}</span>
+<span class="cstat-no" title="statement not covered" >                    {false &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='underline mt-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Link href='/business/notifications'&gt;See more&lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ))}</span>
-<span class="cstat-no" title="statement not covered" >                {false &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='underline mt-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href='/business/notifications'&gt;See more&lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/DashboardInfoCard&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/DashboardInfoCard&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -670,7 +694,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

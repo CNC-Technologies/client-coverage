@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/97</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/97</span>
             </div>
         
             
@@ -148,7 +148,31 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -235,6 +259,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Mouse, Percent } from 'lucide-react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import DashboardPieChart from '@/components/business/compound/business/DashboardPieChart'</span>
 <span class="cstat-no" title="statement not covered" >import AdsList from '@/components/business/compound/marketing/PostsList'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
@@ -245,77 +270,88 @@
 <span class="cstat-no" title="statement not covered" >export default function Index() {</span>
 <span class="cstat-no" title="statement not covered" >    const symbol = useCurrency()</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex lgMobile:flex-row flex-col gap-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='min-w-[230px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;DashboardPieChart title='Gender graph' noData&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='space-y-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='row space-x-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='p-1 bg-orange rounded-full' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout links={marketingSidebarLinks}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex lgMobile:flex-row flex-col gap-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='min-w-[230px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;DashboardPieChart title='Gender graph' noData&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='space-y-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='row space-x-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='p-1 bg-orange rounded-full' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                Male</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-xs'&gt;25%&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-muted'&gt;Male&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-xs'&gt;25%&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='row space-x-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='py-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='p-1 bg-[#AF66B1] rounded-full' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                Female</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-xs'&gt;25%&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='row space-x-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='py-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='p-1 bg-[#AF66B1] rounded-full' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-muted'&gt;Female&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-xs'&gt;25%&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/DashboardPieChart&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex-1 grid grid-cols-1 md:grid-cols-2 gap-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                                titleSize='sm'</span>
+<span class="cstat-no" title="statement not covered" >                                title='Clicks per ad'</span>
+<span class="cstat-no" title="statement not covered" >                                data='0'</span>
+<span class="cstat-no" title="statement not covered" >                                icon={&lt;Mouse /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                                titleSize='sm'</span>
+<span class="cstat-no" title="statement not covered" >                                title='Conversion rate'</span>
+<span class="cstat-no" title="statement not covered" >                                data='0%'</span>
+<span class="cstat-no" title="statement not covered" >                                icon={&lt;Percent /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='space-y-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-2xl dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Ad Spend</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/DashboardPieChart&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='w-12 p-[3px] rounded-full bg-blue-600' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='space-y-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='dark:text-white max-w-[500px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Your Ad spend is the total amount you&amp;apos;ve</span>
+<span class="cstat-no" title="statement not covered" >                                spent on your ad campaigns on Placio. And so</span>
+<span class="cstat-no" title="statement not covered" >                                far, on all your ad campaigns this month, you</span>
+<span class="cstat-no" title="statement not covered" >                                have spent</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-gray-400 dark:text-gray-300 text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Your total ad spend this month is{' '}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;span className='text-base dark:text-white text-black font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {symbol}0.{' '}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;span className='text-blue-800 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:underline smooth'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    Click to Deposit</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='dark:text-white max-w-[500px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Your Ads balance is</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-6xl dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {symbol}0</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 grid grid-cols-1 md:grid-cols-2 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                            titleSize='sm'</span>
-<span class="cstat-no" title="statement not covered" >                            title='Clicks per ad'</span>
-<span class="cstat-no" title="statement not covered" >                            data='0'</span>
-<span class="cstat-no" title="statement not covered" >                            icon={&lt;Mouse /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                            titleSize='sm'</span>
-<span class="cstat-no" title="statement not covered" >                            title='Conversion rate'</span>
-<span class="cstat-no" title="statement not covered" >                            data='0%'</span>
-<span class="cstat-no" title="statement not covered" >                            icon={&lt;Percent /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;AdsList /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-2xl dark:text-white'&gt;Ad Spend&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='w-12 p-[3px] rounded-full bg-blue-600' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='space-y-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='dark:text-white max-w-[500px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Your Ad spend is the total amount you&amp;apos;ve spent</span>
-<span class="cstat-no" title="statement not covered" >                            on your ad campaigns on Placio. And so far, on all</span>
-<span class="cstat-no" title="statement not covered" >                            your ad campaigns this month, you have spent</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-gray-400 dark:text-gray-300 text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Your total ad spend this month is{' '}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-base dark:text-white text-black font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {symbol}0.{' '}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-blue-800 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:underline smooth'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Click to Deposit</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='dark:text-white max-w-[500px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Your Ads balance is</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-6xl dark:text-white'&gt;{symbol}0&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;AdsList /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/PlacesSettingsLayout&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -325,7 +361,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

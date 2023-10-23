@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/68</span>
+                <span class='fraction'>0/71</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/68</span>
+                <span class='fraction'>0/71</span>
             </div>
         
             
@@ -131,7 +131,13 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -202,6 +208,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" >//</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import ReviewsList from '@/components/Places/PlaceDetails/Reviews/ReviewsList'</span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
@@ -220,51 +227,53 @@
 <span class="cstat-no" title="statement not covered" >export default function Reviews() {</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-2 mb-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Card&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 border-b dark:border-neutral-800'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Reviews</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-2 text-sm font-base w-full grid grid-cols-1 overflow-x-scroll'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                            tabs={timeFrameTabs}</span>
-<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='space-y-2 mb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Card&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='p-2 border-b dark:border-neutral-800'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Reviews</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='p-2 text-sm font-base w-full grid grid-cols-1 overflow-x-scroll'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                                tabs={timeFrameTabs}</span>
+<span class="cstat-no" title="statement not covered" >                                activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                                setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Card&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 pr-0 md:pr-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;DashboardInfoCard</span>
+<span class="cstat-no" title="statement not covered" >                            title={'Total Reviews'}</span>
+<span class="cstat-no" title="statement not covered" >                            titleSize='sm'</span>
+<span class="cstat-no" title="statement not covered" >                            data={`0`}</span>
+<span class="cstat-no" title="statement not covered" >                            icon={&lt;PeopleSolidIcon /&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Card&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 pr-0 md:pr-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
-<span class="cstat-no" title="statement not covered" >                        title={'Total Reviews'}</span>
-<span class="cstat-no" title="statement not covered" >                        titleSize='sm'</span>
-<span class="cstat-no" title="statement not covered" >                        data={`0`}</span>
-<span class="cstat-no" title="statement not covered" >                        icon={&lt;PeopleSolidIcon /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 px-5 border-x col justify-center space-y-3 border-black/20'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;Average Rating&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='row items-center space-x-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-3xl'&gt;0&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;RatingStars rating={0} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 px-5 border-x col justify-center space-y-3 border-black/20'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className=''&gt;Average Rating&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='row items-center space-x-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-3xl'&gt;0&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;RatingStars rating={0} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Average rating for this month</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Average rating for this month</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex-1 pl-5 '&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='border-b dark:border-neutral-800 pt-4 pb-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    User Reviews</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex-1 pl-5 '&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ReviewsList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='border-b dark:border-neutral-800 pt-4 pb-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        User Reviews</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;ReviewsList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/PlacesSettingsLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/PlacesSettingsLayout&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -274,7 +283,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-23T16:05:41.149Z
+                at 2023-10-23T16:59:12.238Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
