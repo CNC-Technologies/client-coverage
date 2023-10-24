@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/289</span>
+                <span class='fraction'>0/286</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/289</span>
+                <span class='fraction'>0/286</span>
             </div>
         
             
@@ -349,10 +349,7 @@
 <a name='L284'></a><a href='#L284'>284</a>
 <a name='L285'></a><a href='#L285'>285</a>
 <a name='L286'></a><a href='#L286'>286</a>
-<a name='L287'></a><a href='#L287'>287</a>
-<a name='L288'></a><a href='#L288'>288</a>
-<a name='L289'></a><a href='#L289'>289</a>
-<a name='L290'></a><a href='#L290'>290</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L287'></a><a href='#L287'>287</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -638,15 +635,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { zodResolver } from '@hookform/resolvers/zod'</span>
-<span class="cstat-no" title="statement not covered" >import { useForm } from 'react-hook-form'</span>
-<span class="cstat-no" title="statement not covered" >import * as z from 'zod'</span>
-<span class="cstat-no" title="statement not covered" >import * as ReactPiIcons from 'react-icons/pi'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { zodResolver } from '@hookform/resolvers/zod'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { Loader2 } from 'lucide-react'</span>
+<span class="cstat-no" title="statement not covered" >import React, { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useForm } from 'react-hook-form'</span>
+<span class="cstat-no" title="statement not covered" >import * as ReactPiIcons from 'react-icons/pi'</span>
+<span class="cstat-no" title="statement not covered" >import * as z from 'zod'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
@@ -665,10 +659,10 @@
 <span class="cstat-no" title="statement not covered" >    SelectValue,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/select'</span>
 <span class="cstat-no" title="statement not covered" >// import { categoryTags } from '@/constants/app/Places/CategoryTags'</span>
-<span class="cstat-no" title="statement not covered" >import ImageSelectItem from '@/components/app/compound/CreatePage/Event/ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import { usePlacesCategories } from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import ImageSelectItem from '@/components/app/compound/CreatePage/Event/ImageSelect'</span>
 <span class="cstat-no" title="statement not covered" >import { ScrollArea } from '@/components/shadcn/ui/scroll-area'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlacesCategories } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >// Other imports...</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const detailsFormSchema = z.object({</span>
@@ -682,11 +676,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >type DetailsFormValues = z.infer&lt;typeof detailsFormSchema&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function DetailsForm({</span>
-<span class="cstat-no" title="statement not covered" >    setCoverImage,</span>
-<span class="cstat-no" title="statement not covered" >    reqLoading,</span>
-<span class="cstat-no" title="statement not covered" >    createPlace,</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >export default function DetailsForm({ setCoverImage, createPlace }) {</span>
+<span class="cstat-no" title="statement not covered" >    const [reqLoading, setReqLoading] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const defaultValues: Partial&lt;DetailsFormValues&gt; = {</span>
 <span class="cstat-no" title="statement not covered" >        name: '',</span>
 <span class="cstat-no" title="statement not covered" >        type: '',</span>
@@ -730,7 +721,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    async function onSubmit() {</span>
+<span class="cstat-no" title="statement not covered" >        setReqLoading(true)</span>
 <span class="cstat-no" title="statement not covered" >        await createPlace(form.getValues())</span>
+<span class="cstat-no" title="statement not covered" >        setReqLoading(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        //Clear form after submisson</span>
 <span class="cstat-no" title="statement not covered" >        for await (const value of Object.keys(defaultValues)) {</span>
@@ -920,11 +913,9 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col w-full px-2 mobile:px-4 gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >                        name={'Submit'}</span>
-<span class="cstat-no" title="statement not covered" >                        // className='orange-fill'</span>
-<span class="cstat-no" title="statement not covered" >                        loading={reqLoading}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Button role='submit' loading={reqLoading}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Submit</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/form&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Form&gt;</span>
@@ -937,7 +928,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-24T11:36:23.858Z
+                at 2023-10-24T11:52:48.708Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
