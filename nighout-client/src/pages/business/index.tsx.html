@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/208</span>
+                <span class='fraction'>0/224</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/208</span>
+                <span class='fraction'>0/224</span>
             </div>
         
             
@@ -271,7 +271,39 @@
 <a name='L206'></a><a href='#L206'>206</a>
 <a name='L207'></a><a href='#L207'>207</a>
 <a name='L208'></a><a href='#L208'>208</a>
-<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -487,10 +519,14 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useQuery } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import FinanceGraph from '@/components/business/complex/graphs/FinanceGraph'</span>
 <span class="cstat-no" title="statement not covered" >import { DashboardInfoCard } from '@/components/business/dashboard/DashboardInfoCard'</span>
+<span class="cstat-no" title="statement not covered" >import AddTeamMemberDialog from '@/components/business/dialogs/AddTeamMember.dialog'</span>
 <span class="cstat-no" title="statement not covered" >import TeamInDashboardSkeleton from '@/components/skeletons/team/TeamInDashboardSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { businessPlacesLink, businessWalletLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { teamMembersRoute } from '@/constants/app/routes'</span>
@@ -502,6 +538,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function IndexPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const curr = useCurrency()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const [addMemberDialog, setAddMemberDialog] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const openAddMemberDialog = () =&gt; setAddMemberDialog(true)</span>
+<span class="cstat-no" title="statement not covered" >    const closeAddMemberDialog = () =&gt; setAddMemberDialog(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const activeBusiness = useSelector(</span>
 <span class="cstat-no" title="statement not covered" >        (state: RootState) =&gt; state.activeBusiness.activeBusiness,</span>
@@ -523,6 +563,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;AddTeamMemberDialog</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={addMemberDialog}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={closeAddMemberDialog}</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='space-y-10'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
@@ -558,6 +602,9 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
 <span class="cstat-no" title="statement not covered" >                        title='Team members'</span>
+<span class="cstat-no" title="statement not covered" >                        titleRight={</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button onClick={openAddMemberDialog}&gt;New&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                        description='Recently added team members'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {(teamMembers || [])?.length === 0 &amp;&amp;</span>
@@ -607,6 +654,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/DashboardInfoCard&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;DashboardInfoCard</span>
 <span class="cstat-no" title="statement not covered" >                        title='Your places'</span>
+<span class="cstat-no" title="statement not covered" >                        titleRight={&lt;Button&gt;Create place&lt;/Button&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                        description='See more of your places on placio'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        {!(data?.edges?.places || [])?.length &amp;&amp; !isLoading &amp;&amp; (</span>
@@ -683,7 +731,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/DashboardInfoCard&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;{' '}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -694,7 +742,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-24T10:18:43.088Z
+                at 2023-10-24T11:36:23.858Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
