@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/Homepage/upcomingEvents/upcomingEvents.jsx</title>
+    <title>Code coverage report for nighout-client/src/hooks/app/useNotifications.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Homepage/upcomingEvents</a> upcomingEvents.jsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks/app</a> useNotifications.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/49</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/49</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -112,7 +112,8 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -161,54 +162,56 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQuery } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import SectionHeading from '@/components/Homepage/sectionHeading'</span>
+<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    getAllNotificationsRoute,</span>
+<span class="cstat-no" title="statement not covered" >    unreadNotificationsCountRoute,</span>
+<span class="cstat-no" title="statement not covered" >    unreadNotificationsRoute,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import EventCard from '@/components/Homepage/upcomingEvents/eventCard'</span>
+<span class="cstat-no" title="statement not covered" >export default function useNotifications() {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function UpcomingEvents() {</span>
-<span class="cstat-no" title="statement not covered" >    const trendingItems = [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Club Spartacus',</span>
-<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/club.svg',</span>
+<span class="cstat-no" title="statement not covered" >    const unreadNotificationsCount = useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['notificationsCount'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: unreadNotificationsCountRoute })</span>
+<span class="cstat-no" title="statement not covered" >            return res.data.data</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Sport Center',</span>
-<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/sportCenter.svg',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'Eatery',</span>
-<span class="cstat-no" title="statement not covered" >            decsription: '',</span>
-<span class="cstat-no" title="statement not covered" >            image: '/Images/homepage/eatery.svg',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    ]</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='px-16 py-10 max-width max-md:px-10 max-mobile:px-6 max-mobile:py-6'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;SectionHeading text={'Upcoming Events'} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='mt-1 max-md:hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        See the latest event that would be happening soon</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                    href={'#'}</span>
-<span class="cstat-no" title="statement not covered" >                    className='text-lg font-light max-md:text-base max-mobile:text-sm'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    View all</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 3,</span>
+<span class="cstat-no" title="statement not covered" >        refetchInterval: 1000 * 60 * 3, // Refetch after 3 minutes interval</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-10 max-mobile:mt-5 flex flex-nowrap hideScrollbar max-md:scroll-smooth max-md:py-4 max-md:overflow-scroll  max-[750px]:w-[95%] max-xmd:w-full gap-12 max-lgDesktop:gap-10 max-desktop:gap-8 max-[920px]:gap-x-6 max-md:gap-4 max-xmobile:gap-3 max-w-[85rem] mx-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {trendingItems.map((item, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return &lt;EventCard key={index} event={item} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                })}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >    const unreadNotifications = useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['unreadNotifications'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: unreadNotificationsRoute })</span>
+<span class="cstat-no" title="statement not covered" >            return res.data.data</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >        unreadNotificationsCount,</span>
+<span class="cstat-no" title="statement not covered" >        unreadNotifications,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useGetNotifications() {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['myNotifications'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: getAllNotificationsRoute })</span>
+<span class="cstat-no" title="statement not covered" >            return res.data</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 10,</span>
+<span class="cstat-no" title="statement not covered" >        refetchInterval: 1000 * 60 * 10, // Refetch after 10 minutes interval</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -219,14 +222,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-10-25T04:48:19.547Z
             </div>
-        <script src="../../../../../prettify.js"></script>
+        <script src="../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../sorter.js"></script>
-        <script src="../../../../../block-navigation.js"></script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
     </body>
 </html>
     
