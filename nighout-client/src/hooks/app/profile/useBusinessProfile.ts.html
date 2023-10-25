@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">26.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/30</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>9/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">26.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/30</span>
+                <span class='fraction'>9/34</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,20 +93,16 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -115,14 +111,26 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useQuery } from '@tanstack/react-query'
 &nbsp;
 import {
@@ -131,28 +139,32 @@ import {
 } from '@/constants/app/routes'
 import useSecureRequest from '@/hooks/useRequest'
 &nbsp;
-export function useGetBusinessProfile(id: string, checkStatus?: boolean) {
-    const { get } = useSecureRequest()
-&nbsp;
-    return useQuery({
-        queryKey: ['business', id],
-        queryFn: async () =&gt; {
-            const checkFollowingRes = await get({
-                url: checkFollowingStatus({ businessId: id }),
-            })
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
+export <span class="fstat-no" title="function not covered" >function useGetBusinessProfile(id: string, checkStatus?: boolean) {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['business', id],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            let modifiedData</span>
+<span class="cstat-no" title="statement not covered" >            let checkFollowingRes</span>
+<span class="cstat-no" title="statement not covered" >            if (checkStatus) {</span>
+<span class="cstat-no" title="statement not covered" >                checkFollowingRes = await get({</span>
+<span class="cstat-no" title="statement not covered" >                    url: checkFollowingStatus({ businessId: id }),</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const res = await get({ url: getBusinessDetailsRoute(id) })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const modifiedData = {</span>
+<span class="cstat-no" title="statement not covered" >            modifiedData = {</span>
 <span class="cstat-no" title="statement not covered" >                ...res.data,</span>
-                followedByCurrentUser: checkFollowingRes.data?.data,
-            }
-&nbsp;
-            return checkStatus<span class="branch-0 cbranch-no" title="branch not covered" > ? modifiedData<span class="branch-0 cbranch-no" title="branch not covered" > </span>: res.data</span>
-        },
-        staleTime: 1000 * 60 * 5,
-    })
-}
+<span class="cstat-no" title="statement not covered" >                followedByCurrentUser: checkFollowingRes.data?.data,</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            return checkStatus ? modifiedData : res.data</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +172,7 @@ export function useGetBusinessProfile(id: string, checkStatus?: boolean) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-25T04:48:19.547Z
+                at 2023-10-25T09:11:52.075Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

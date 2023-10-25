@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.66% </span>
+                <span class="strong">71.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>94/118</span>
+                <span class='fraction'>84/118</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">2.27% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/44</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.66% </span>
+                <span class="strong">71.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>94/118</span>
+                <span class='fraction'>84/118</span>
             </div>
         
             
@@ -196,16 +196,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -313,17 +313,17 @@ export const searchRoute = <span class="fstat-no" title="function not covered" >
 export const getUserDetailsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/users?userId=${id}`</span>
 export const getBusinessDetailsRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/business/${id}`</span>
 &nbsp;
-export const checkFollowingStatus = ({
-    //for both users and businesses
-    followerId,
-    businessId,
-}: {
-    followerId?: string
-    businessId?: string
-}) =&gt;
-    `/users/check-following?${followerId<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; `followerId=${followerId}`}$</span>{
-        businessId<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; `businessId=${businessId}`</span>
-    }`
+export const checkFollowingStatus = <span class="fstat-no" title="function not covered" >({</span>
+<span class="cstat-no" title="statement not covered" >    //for both users and businesses</span>
+<span class="cstat-no" title="statement not covered" >    followerId,</span>
+<span class="cstat-no" title="statement not covered" >    businessId,</span>
+<span class="cstat-no" title="statement not covered" >}: {</span>
+<span class="cstat-no" title="statement not covered" >    followerId?: string</span>
+<span class="cstat-no" title="statement not covered" >    businessId?: string</span>
+<span class="cstat-no" title="statement not covered" >}) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/users/check-following?${followerId ? `followerId=${followerId}` : ''}${</span>
+<span class="cstat-no" title="statement not covered" >        businessId ? `businessId=${businessId}` : ''</span>
+<span class="cstat-no" title="statement not covered" >    }`</span>
 &nbsp;
 export const followUserRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/follow/user/${id}`</span>
 export const unfollowUserRoute = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/unfollow/user/${id}`</span>
@@ -424,7 +424,7 @@ export const faqRoute = (<span class="fstat-no" title="function not covered" >fa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-25T04:48:19.547Z
+                at 2023-10-25T09:11:52.075Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
