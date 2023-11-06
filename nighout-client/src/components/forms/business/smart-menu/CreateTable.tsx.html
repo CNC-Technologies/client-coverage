@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/170</span>
+                <span class='fraction'>0/183</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/170</span>
+                <span class='fraction'>0/183</span>
             </div>
         
             
@@ -233,7 +233,20 @@
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
 <a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -403,7 +416,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
+<span class="cstat-no" title="statement not covered" >// import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" >import { useForm } from 'react-hook-form'</span>
 <span class="cstat-no" title="statement not covered" >import { zodResolver } from '@hookform/resolvers/zod'</span>
 <span class="cstat-no" title="statement not covered" >import * as z from 'zod'</span>
@@ -428,51 +455,50 @@
 <span class="cstat-no" title="statement not covered" >    SelectTrigger,</span>
 <span class="cstat-no" title="statement not covered" >    SelectValue,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/select'</span>
+<span class="cstat-no" title="statement not covered" >import useTables from '@/hooks/business/places/smart-menu/useTables'</span>
 <span class="cstat-no" title="statement not covered" >// import { Textarea } from '@/components/shadcn/ui/textarea'</span>
 <span class="cstat-no" title="statement not covered" >// import { InventoryTypeProps } from '@/hooks/app/place/usePlaceInventories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const inventoryFormSchema = z.object({</span>
 <span class="cstat-no" title="statement not covered" >    number: z.number(),</span>
 <span class="cstat-no" title="statement not covered" >    name: z.string(),</span>
-<span class="cstat-no" title="statement not covered" >    seats: z.number(),</span>
+<span class="cstat-no" title="statement not covered" >    capacity: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >    type: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export type InventoryFormValues = z.infer&lt;typeof inventoryFormSchema&gt;</span>
+<span class="cstat-no" title="statement not covered" >export type TableFormValues = z.infer&lt;typeof inventoryFormSchema&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// interface InventoryTypesResponse {</span>
-<span class="cstat-no" title="statement not covered" >//     data: InventoryTypeProps[]</span>
-<span class="cstat-no" title="statement not covered" >//     status: string</span>
-<span class="cstat-no" title="statement not covered" >//     nextPageToken: string</span>
-<span class="cstat-no" title="statement not covered" >//     message: string</span>
-<span class="cstat-no" title="statement not covered" >// }</span>
+<span class="cstat-no" title="statement not covered" >export default function NewTableForm({</span>
+<span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
+<span class="cstat-no" title="statement not covered" >}: {</span>
+<span class="cstat-no" title="statement not covered" >    handleCloseModal: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = router?.query?.details as string</span>
+<span class="cstat-no" title="statement not covered" >    // console.log(placeId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function NewTableForm() {</span>
-<span class="cstat-no" title="statement not covered" >    // const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
-<span class="cstat-no" title="statement not covered" >    // const [imageForUpload, setImageForUpload] = useState(null)</span>
-<span class="cstat-no" title="statement not covered" >    // const handleMediaChange = (files) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // setImageForUpload(files)</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const defaultValues: Partial&lt;InventoryFormValues&gt; = {</span>
-<span class="cstat-no" title="statement not covered" >        number: 0,</span>
+<span class="cstat-no" title="statement not covered" >    const defaultValues: Partial&lt;TableFormValues&gt; = {</span>
+<span class="cstat-no" title="statement not covered" >        number: undefined,</span>
 <span class="cstat-no" title="statement not covered" >        name: '',</span>
-<span class="cstat-no" title="statement not covered" >        seats: 2,</span>
+<span class="cstat-no" title="statement not covered" >        capacity: '',</span>
 <span class="cstat-no" title="statement not covered" >        type: '',</span>
-<span class="cstat-no" title="statement not covered" >        // price: 0,</span>
-<span class="cstat-no" title="statement not covered" >        // quantity: 0,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const form = useForm&lt;InventoryFormValues&gt;({</span>
+<span class="cstat-no" title="statement not covered" >    const form = useForm&lt;TableFormValues&gt;({</span>
 <span class="cstat-no" title="statement not covered" >        resolver: zodResolver(inventoryFormSchema),</span>
 <span class="cstat-no" title="statement not covered" >        defaultValues,</span>
 <span class="cstat-no" title="statement not covered" >        mode: 'onChange',</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { createTable } = useTables({ placeId })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    const onSubmit = (data) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // console.log('hello')</span>
 <span class="cstat-no" title="statement not covered" >        // console.log(data)</span>
+<span class="cstat-no" title="statement not covered" >        createTable.mutateAsync(data).then(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            form.reset(defaultValues)</span>
+<span class="cstat-no" title="statement not covered" >            handleCloseModal()</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -489,7 +515,15 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;FormItem&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Table Number&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;InputField placeholder='00' {...field} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder='00'</span>
+<span class="cstat-no" title="statement not covered" >                                        {...field}</span>
+<span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            field.onChange(</span>
+<span class="cstat-no" title="statement not covered" >                                                parseFloat(e.target.value),</span>
+<span class="cstat-no" title="statement not covered" >                                            )</span>
+<span class="cstat-no" title="statement not covered" >                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormMessage /&gt;</span>
@@ -517,7 +551,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;FormField</span>
 <span class="cstat-no" title="statement not covered" >                        control={form.control}</span>
-<span class="cstat-no" title="statement not covered" >                        name='seats'</span>
+<span class="cstat-no" title="statement not covered" >                        name='capacity'</span>
 <span class="cstat-no" title="statement not covered" >                        render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;FormItem&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Table Capacity&lt;/FormLabel&gt;</span>
@@ -565,7 +599,12 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='row justify-center mt-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='w-40 flex justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Button&gt;Create Table&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                                type='submit'</span>
+<span class="cstat-no" title="statement not covered" >                                loading={createTable.isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                Create Table</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/form&gt;</span>
@@ -580,7 +619,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-06T09:49:41.911Z
+                at 2023-11-06T11:41:55.127Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
