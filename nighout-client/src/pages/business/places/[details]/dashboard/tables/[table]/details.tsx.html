@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/61</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/59</span>
+                <span class='fraction'>0/61</span>
             </div>
         
             
@@ -122,7 +122,11 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,7 +186,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
 <span class="cstat-no" title="statement not covered" >import TableDetails from '@/components/business/smart-menu/tables/tableDetails/Details'</span>
@@ -190,52 +194,54 @@
 <span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import QRCode from '@/components/business/smart-menu/tables/tableDetails/QRCode'</span>
 <span class="cstat-no" title="statement not covered" >import Orders from '@/components/business/smart-menu/tables/tableDetails/Orders'</span>
-<span class="cstat-no" title="statement not covered" >import { TableData, mockTablesData } from '@/constants/business/dummyTables'</span>
+<span class="cstat-no" title="statement not covered" >import { TableData } from '@/constants/business/dummyTables'</span>
+<span class="cstat-no" title="statement not covered" >import { useGetSingleTable } from '@/hooks/business/places/smart-menu/useTables'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function DetailsPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const tableNumber = (router.query?.table as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    const tableId = (router.query?.table as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    // const placeId = (router.query?.details as string) || ''</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [tableDetails, setTableDetails] = useState&lt;TableData | null&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" >    // const [tableDetails, setTableDetails] = useState&lt;TableData | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // ? Temporary</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const tableData = mockTablesData.find(</span>
-<span class="cstat-no" title="statement not covered" >            (item: TableData) =&gt; item.tableNumber === Number(tableNumber),</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    const { data, isInitialLoading } = useGetSingleTable(tableId)</span>
+<span class="cstat-no" title="statement not covered" >    const tableData = data?.data</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        setTableDetails(tableData as TableData)</span>
-<span class="cstat-no" title="statement not covered" >    }, [tableNumber])</span>
+<span class="cstat-no" title="statement not covered" >    // console.log(tableData)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='my-3 text-center font-semibold text-lg'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        T{tableNumber}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='my-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                            tabs={[</span>
-<span class="cstat-no" title="statement not covered" >                                { label: 'Details' },</span>
-<span class="cstat-no" title="statement not covered" >                                { label: 'QR Code' },</span>
-<span class="cstat-no" title="statement not covered" >                                { label: 'Orders' },</span>
-<span class="cstat-no" title="statement not covered" >                            ]}</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {isInitialLoading &amp;&amp; !tableData ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='h-[700px] rounded-md bg-black/10 w-full animate-pulse'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='my-3 text-center font-semibold text-lg'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            T{tableData.number}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='my-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Tabs</span>
+<span class="cstat-no" title="statement not covered" >                                activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                                setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                                tabs={[</span>
+<span class="cstat-no" title="statement not covered" >                                    { label: 'Details' },</span>
+<span class="cstat-no" title="statement not covered" >                                    { label: 'QR Code' },</span>
+<span class="cstat-no" title="statement not covered" >                                    { label: 'Orders' },</span>
+<span class="cstat-no" title="statement not covered" >                                ]}</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableDetails table={tableDetails as TableData} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 1 &amp;&amp; &lt;QRCode /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 2 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Orders table={tableDetails as TableData} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;TableDetails table={tableData as TableData} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 1 &amp;&amp; &lt;QRCode /&gt;}</span>
+<span class="cstat-no" title="statement not covered" >                        {activeTab === 2 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Orders table={tableData as TableData} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/PlacesSettingsLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -247,7 +253,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-06T11:41:55.127Z
+                at 2023-11-07T06:27:48.256Z
             </div>
         <script src="../../../../../../../../../prettify.js"></script>
         <script>

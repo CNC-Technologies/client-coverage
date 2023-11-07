@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/154</span>
+                <span class='fraction'>0/155</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/154</span>
+                <span class='fraction'>0/155</span>
             </div>
         
             
@@ -217,7 +217,9 @@
 <a name='L152'></a><a href='#L152'>152</a>
 <a name='L153'></a><a href='#L153'>153</a>
 <a name='L154'></a><a href='#L154'>154</a>
-<a name='L155'></a><a href='#L155'>155</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -373,22 +375,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
-<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
+<span class="cstat-no" title="statement not covered" >// import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { Order, TableData } from '@/constants/business/dummyTables'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >export default function Orders({ table }: { table: TableData }) {</span>
 <span class="cstat-no" title="statement not covered" >    const [orderModal, setOrderModal] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const [activeOrder, setActiveOrder] = useState&lt;Order | null&gt;(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const openOrderModal = (order: Order) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setActiveOrder(order)</span>
-<span class="cstat-no" title="statement not covered" >        setOrderModal(true)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    // const openOrderModal = (order: Order) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    //     setActiveOrder(order)</span>
+<span class="cstat-no" title="statement not covered" >    //     setOrderModal(true)</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const closeOrderModal = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setActiveOrder(null)</span>
@@ -409,7 +412,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row justify-end my-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Button onClick={createNewOrder}&gt;New Order&lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {table?.order &amp;&amp; table?.order.length ? (</span>
+<span class="cstat-no" title="statement not covered" >            {/* {table?.order &amp;&amp; table?.order.length ? (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='grid gap-5 grid-cols-1 lgMobile:grid-cols-2 xlaptop:grid-cols-3 lgDesktop:grid-cols-4 max-w-[70rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {table?.order?.map((item, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
@@ -459,7 +462,7 @@
 <span class="cstat-no" title="statement not covered" >                        There ae no orders yet on this table</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            )} */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
 <span class="cstat-no" title="statement not covered" >                closeDialog={closeOrderModal}</span>
@@ -532,7 +535,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-06T11:41:55.127Z
+                at 2023-11-07T06:27:48.256Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
