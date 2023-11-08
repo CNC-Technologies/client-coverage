@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/business/complex/resources/ResourcesList.tsx</title>
+    <title>Code coverage report for nighout-client/src/interfaces/smartMenu.interface.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/business/complex/resources</a> ResourcesList.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">nighout-client/src/interfaces</a> smartMenu.interface.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -129,38 +129,38 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import ResourceItem from '@/components/business/compound/resources/ResourceItem'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Media } from '@/components/Places/PlaceDetails/PlaceImages/PlaceImages'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >    Table,</span>
-<span class="cstat-no" title="statement not covered" >    TableBody,</span>
-<span class="cstat-no" title="statement not covered" >    TableHead,</span>
-<span class="cstat-no" title="statement not covered" >    TableHeader,</span>
-<span class="cstat-no" title="statement not covered" >    TableRow,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/table'</span>
-<span class="cstat-no" title="statement not covered" >import dummyResources from '@/constants/business/dummyResources'</span>
+<span class="cstat-no" title="statement not covered" >export interface MenuProps {</span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    name: string</span>
+<span class="cstat-no" title="statement not covered" >    description: string</span>
+<span class="cstat-no" title="statement not covered" >    foodType: string</span>
+<span class="cstat-no" title="statement not covered" >    drinkType: string</span>
+<span class="cstat-no" title="statement not covered" >    menuItemType: string</span>
+<span class="cstat-no" title="statement not covered" >    dietaryType: string</span>
+<span class="cstat-no" title="statement not covered" >    updated_at: string</span>
+<span class="cstat-no" title="statement not covered" >    edges: {</span>
+<span class="cstat-no" title="statement not covered" >        place: PlaceProps[]</span>
+<span class="cstat-no" title="statement not covered" >        menu_items: MenuItemProps[]</span>
+<span class="cstat-no" title="statement not covered" >        media: Media[]</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ResourcesList() {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Table className='w-full overflow-x-scroll'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;TableHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;TableRow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableHead&gt;Image&lt;/TableHead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableHead&gt;Name&lt;/TableHead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableHead&gt;Quantity&lt;/TableHead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableHead&gt;Date&lt;/TableHead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;TableHead&gt;Actions&lt;/TableHead&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/TableRow&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/TableHeader&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;TableBody&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {dummyResources.map((item, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;ResourceItem key={i} resource={item} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ))}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/TableBody&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/Table&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >export interface MenuItemProps {</span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    name: string</span>
+<span class="cstat-no" title="statement not covered" >    description: string</span>
+<span class="cstat-no" title="statement not covered" >    price: number</span>
+<span class="cstat-no" title="statement not covered" >    available_from: string</span>
+<span class="cstat-no" title="statement not covered" >    available_until: string</span>
+<span class="cstat-no" title="statement not covered" >    promotion_start: string</span>
+<span class="cstat-no" title="statement not covered" >    promotion_end: string</span>
+<span class="cstat-no" title="statement not covered" >    edges: {</span>
+<span class="cstat-no" title="statement not covered" >        // key: string</span>
+<span class="cstat-no" title="statement not covered" >        // value: string</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -171,14 +171,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-11-08T20:56:26.449Z
             </div>
-        <script src="../../../../../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../../sorter.js"></script>
-        <script src="../../../../../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     
