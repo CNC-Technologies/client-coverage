@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/191</span>
+                <span class='fraction'>0/197</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/191</span>
+                <span class='fraction'>0/197</span>
             </div>
         
             
@@ -254,7 +254,19 @@
 <a name='L189'></a><a href='#L189'>189</a>
 <a name='L190'></a><a href='#L190'>190</a>
 <a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -476,9 +488,9 @@
 <span class="cstat-no" title="statement not covered" >// import { InventoryTypeProps } from '@/hooks/app/place/usePlaceInventories'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const inventoryFormSchema = z.object({</span>
-<span class="cstat-no" title="statement not covered" >    number: z.number(),</span>
+<span class="cstat-no" title="statement not covered" >    number: z.number().nullable(),</span>
 <span class="cstat-no" title="statement not covered" >    name: z.string(),</span>
-<span class="cstat-no" title="statement not covered" >    capacity: z.number(),</span>
+<span class="cstat-no" title="statement not covered" >    capacity: z.number().nullable(),</span>
 <span class="cstat-no" title="statement not covered" >    type: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -494,9 +506,9 @@
 <span class="cstat-no" title="statement not covered" >    // console.log(placeId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const defaultValues: Partial&lt;TableFormValues&gt; = {</span>
-<span class="cstat-no" title="statement not covered" >        number: undefined,</span>
+<span class="cstat-no" title="statement not covered" >        number: null,</span>
 <span class="cstat-no" title="statement not covered" >        name: '',</span>
-<span class="cstat-no" title="statement not covered" >        capacity: undefined,</span>
+<span class="cstat-no" title="statement not covered" >        capacity: null,</span>
 <span class="cstat-no" title="statement not covered" >        type: '',</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -534,11 +546,14 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='00'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
-<span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            field.onChange(</span>
-<span class="cstat-no" title="statement not covered" >                                                parseFloat(e.target.value),</span>
-<span class="cstat-no" title="statement not covered" >                                            )</span>
-<span class="cstat-no" title="statement not covered" >                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                            const value = e.target.value</span>
+<span class="cstat-no" title="statement not covered" >                                            const parsedValue =</span>
+<span class="cstat-no" title="statement not covered" >                                                value === ''</span>
+<span class="cstat-no" title="statement not covered" >                                                    ? null</span>
+<span class="cstat-no" title="statement not covered" >                                                    : parseFloat(value)</span>
+<span class="cstat-no" title="statement not covered" >                                            field.onChange(parsedValue)</span>
+<span class="cstat-no" title="statement not covered" >                                        }}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -575,11 +590,14 @@
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='2'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
-<span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            field.onChange(</span>
-<span class="cstat-no" title="statement not covered" >                                                parseFloat(e.target.value),</span>
-<span class="cstat-no" title="statement not covered" >                                            )</span>
-<span class="cstat-no" title="statement not covered" >                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                            const value = e.target.value</span>
+<span class="cstat-no" title="statement not covered" >                                            const parsedValue =</span>
+<span class="cstat-no" title="statement not covered" >                                                value === ''</span>
+<span class="cstat-no" title="statement not covered" >                                                    ? null</span>
+<span class="cstat-no" title="statement not covered" >                                                    : parseFloat(value)</span>
+<span class="cstat-no" title="statement not covered" >                                            field.onChange(parsedValue)</span>
+<span class="cstat-no" title="statement not covered" >                                        }}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -643,7 +661,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-09T11:47:15.736Z
+                at 2023-11-11T08:18:34.134Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
