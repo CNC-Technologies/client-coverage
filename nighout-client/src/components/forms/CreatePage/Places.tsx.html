@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/109</span>
+                <span class='fraction'>0/111</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/109</span>
+                <span class='fraction'>0/111</span>
             </div>
         
             
@@ -172,7 +172,11 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -291,9 +295,11 @@
 <span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" >import { newPlace } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import { placeBusinessSettings } from '@/constants/routerLinks/Links'</span>
-<span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
+<span class="cstat-no" title="statement not covered" >// import UploadForm from '@/hooks/useFileUpload'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import useUploadMedia from '@/hooks/useMediaUpload'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CreatePlacesItem({</span>
 <span class="cstat-no" title="statement not covered" >    handleCloseModal,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
@@ -308,7 +314,9 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    // const {  handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { uploadMedia } = useUploadMedia()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [coverImage, setCoverImage] = useState(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -319,10 +327,8 @@
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >            // * upload images</span>
 <span class="cstat-no" title="statement not covered" >            if (coverImage) {</span>
-<span class="cstat-no" title="statement not covered" >                const res = await handleUpload([coverImage]).catch((error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    throw error</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                const img = res[0]?.url</span>
+<span class="cstat-no" title="statement not covered" >                const res = await uploadMedia([coverImage])</span>
+<span class="cstat-no" title="statement not covered" >                const img = res[0]?.URL</span>
 <span class="cstat-no" title="statement not covered" >                formData = { ...formData, cover_image: img }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -362,9 +368,9 @@
 <span class="cstat-no" title="statement not covered" >                throw 'Error creating place'</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            handleCloseModal()</span>
-<span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >        } catch ({ error }) {</span>
 <span class="cstat-no" title="statement not covered" >            // * Delete files if files were uploaded</span>
-<span class="cstat-no" title="statement not covered" >            if (formData.cover_image) handleDelete(formData.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >            // if (formData.cover_image) handleDelete(formData.cover_image)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            showToast(</span>
 <span class="cstat-no" title="statement not covered" >                'error',</span>
@@ -397,7 +403,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-14T16:31:20.977Z
+                at 2023-11-20T10:57:18.015Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

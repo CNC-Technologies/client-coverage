@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/289</span>
+                <span class='fraction'>0/283</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/289</span>
+                <span class='fraction'>0/283</span>
             </div>
         
             
@@ -346,19 +346,7 @@
 <a name='L281'></a><a href='#L281'>281</a>
 <a name='L282'></a><a href='#L282'>282</a>
 <a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a>
-<a name='L285'></a><a href='#L285'>285</a>
-<a name='L286'></a><a href='#L286'>286</a>
-<a name='L287'></a><a href='#L287'>287</a>
-<a name='L288'></a><a href='#L288'>288</a>
-<a name='L289'></a><a href='#L289'>289</a>
-<a name='L290'></a><a href='#L290'>290</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L284'></a><a href='#L284'>284</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -658,7 +646,7 @@
 <span class="cstat-no" title="statement not covered" >import { settingsTabs } from '@/constants/app/Settings/TabsList'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar, defaultCoverPhoto } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { userRoute } from '@/constants/app/routes'</span>
-<span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
+<span class="cstat-no" title="statement not covered" >// import UploadForm from '@/hooks/useFileUpload'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    GeneralSettingsInterface,</span>
@@ -666,11 +654,13 @@
 <span class="cstat-no" title="statement not covered" >} from '@/interfaces/settings.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import { setUser } from '@/store/slices/user.slice'</span>
+<span class="cstat-no" title="statement not covered" >import useUploadMedia from '@/hooks/useMediaUpload'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SettingsPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const dispatch = useDispatch()</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    // const { handleUpload, handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    const { uploadMedia } = useUploadMedia()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -743,29 +733,21 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (images.picture) {</span>
-<span class="cstat-no" title="statement not covered" >                const res = await handleUpload(images.picture).catch(</span>
-<span class="cstat-no" title="statement not covered" >                    (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        throw error</span>
-<span class="cstat-no" title="statement not covered" >                    },</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                const img = res[0].url</span>
+<span class="cstat-no" title="statement not covered" >                const res = await uploadMedia(images.picture)</span>
+<span class="cstat-no" title="statement not covered" >                const img = res[0]?.URL</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                finalSettingsData = { ...finalSettingsData, picture: img }</span>
-<span class="cstat-no" title="statement not covered" >                handleDelete(prevImages.picture)</span>
+<span class="cstat-no" title="statement not covered" >                // handleDelete(prevImages.picture)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                setSettingsDataHandler('accountSettings.picture', img)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (images.cover_image) {</span>
-<span class="cstat-no" title="statement not covered" >                const res = await handleUpload(images.cover_image).catch(</span>
-<span class="cstat-no" title="statement not covered" >                    (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        throw error</span>
-<span class="cstat-no" title="statement not covered" >                    },</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                const img = res[0].url</span>
+<span class="cstat-no" title="statement not covered" >                const res = await uploadMedia(images.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >                const img = res[0]?.URL</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                finalSettingsData = { ...finalSettingsData, cover_image: img }</span>
-<span class="cstat-no" title="statement not covered" >                handleDelete(prevImages.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >                // handleDelete(prevImages.cover_image)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                setSettingsDataHandler('accountSettings.cover_image', img)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -937,7 +919,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-14T16:31:20.977Z
+                at 2023-11-20T10:57:18.015Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

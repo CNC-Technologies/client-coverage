@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/305</span>
+                <span class='fraction'>0/302</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/305</span>
+                <span class='fraction'>0/302</span>
             </div>
         
             
@@ -365,13 +365,7 @@
 <a name='L300'></a><a href='#L300'>300</a>
 <a name='L301'></a><a href='#L301'>301</a>
 <a name='L302'></a><a href='#L302'>302</a>
-<a name='L303'></a><a href='#L303'>303</a>
-<a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a>
-<a name='L306'></a><a href='#L306'>306</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L303'></a><a href='#L303'>303</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -688,10 +682,11 @@
 <span class="cstat-no" title="statement not covered" >import { defaultCoverPhoto, defaultPicture } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { businessRoute } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" >import { CloseOutlineIcon, EditIcon } from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import UploadForm from '@/hooks/useFileUpload'</span>
+<span class="cstat-no" title="statement not covered" >// import UploadForm from '@/hooks/useFileUpload'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { imagesType } from '@/interfaces/settings.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { setActiveBusiness } from '@/store/slices/activeBusiness.slice'</span>
+<span class="cstat-no" title="statement not covered" >import useUploadMedia from '@/hooks/useMediaUpload'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface BusinessInfoInterface {</span>
 <span class="cstat-no" title="statement not covered" >    picture: any</span>
@@ -709,7 +704,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createBusinessReq = useSecureRequest(businessRoute)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = UploadForm()</span>
+<span class="cstat-no" title="statement not covered" >    // const { handleUpload, handleDelete } = UploadForm()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showToast } = useContext(ToastContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -725,6 +720,8 @@
 <span class="cstat-no" title="statement not covered" >        website: '',</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    const [creatingBusiness, setCreatingBusiness] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { uploadMedia } = useUploadMedia()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line</span>
 <span class="cstat-no" title="statement not covered" >    const [images, setImages] = useState&lt;imagesType&gt;({</span>
@@ -815,19 +812,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // * upload images</span>
 <span class="cstat-no" title="statement not covered" >            if (images.cover_image) {</span>
-<span class="cstat-no" title="statement not covered" >                const res = await handleUpload(images.cover_image).catch(</span>
-<span class="cstat-no" title="statement not covered" >                    (e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        throw e</span>
-<span class="cstat-no" title="statement not covered" >                    },</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                const img = res[0].url</span>
+<span class="cstat-no" title="statement not covered" >                const res = await uploadMedia(images.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >                const img = res[0]?.URL</span>
 <span class="cstat-no" title="statement not covered" >                formDataCopy = { ...formDataCopy, cover_image: img }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (images.picture) {</span>
-<span class="cstat-no" title="statement not covered" >                const res = await handleUpload(images.picture).catch((e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    throw e</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                const img = res[0].url</span>
+<span class="cstat-no" title="statement not covered" >                const res = await uploadMedia(images.picture)</span>
+<span class="cstat-no" title="statement not covered" >                const img = res[0]?.URL</span>
 <span class="cstat-no" title="statement not covered" >                formDataCopy = { ...formDataCopy, picture: img }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -840,16 +831,16 @@
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >                throw 'Error saving business information'</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >        } catch ({ error }) {</span>
 <span class="cstat-no" title="statement not covered" >            // * Delete files if files were uploaded</span>
-<span class="cstat-no" title="statement not covered" >            if (formDataCopy.picture !== defaultPicture)</span>
-<span class="cstat-no" title="statement not covered" >                handleDelete(formDataCopy.picture)</span>
-<span class="cstat-no" title="statement not covered" >            if (formDataCopy.cover_image !== defaultCoverPhoto)</span>
-<span class="cstat-no" title="statement not covered" >                handleDelete(formDataCopy.cover_image)</span>
+<span class="cstat-no" title="statement not covered" >            // if (formDataCopy.picture !== defaultPicture)</span>
+<span class="cstat-no" title="statement not covered" >            //     handleDelete(formDataCopy.picture)</span>
+<span class="cstat-no" title="statement not covered" >            // if (formDataCopy.cover_image !== defaultCoverPhoto)</span>
+<span class="cstat-no" title="statement not covered" >            //     handleDelete(formDataCopy.cover_image)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            showToast(</span>
 <span class="cstat-no" title="statement not covered" >                'error',</span>
-<span class="cstat-no" title="statement not covered" >                `There was an error while creating your business account! ${err}`,</span>
+<span class="cstat-no" title="statement not covered" >                `There was an error while creating your business account! ${error}`,</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        } finally {</span>
 <span class="cstat-no" title="statement not covered" >            setCreatingBusiness(false)</span>
@@ -985,7 +976,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-14T16:31:20.977Z
+                at 2023-11-20T10:57:18.015Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
