@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/187</span>
+                <span class='fraction'>0/208</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/187</span>
+                <span class='fraction'>0/208</span>
             </div>
         
             
@@ -250,7 +250,49 @@
 <a name='L185'></a><a href='#L185'>185</a>
 <a name='L186'></a><a href='#L186'>186</a>
 <a name='L187'></a><a href='#L187'>187</a>
-<a name='L188'></a><a href='#L188'>188</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -455,6 +497,8 @@
 <span class="cstat-no" title="statement not covered" >    usePlaceDetails,</span>
 <span class="cstat-no" title="statement not covered" >    useUpdatePlaceDetails,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { useGeneratePlaceDetailsTourSteps } from '@/components/Tours/business/PlaceSettings'</span>
+<span class="cstat-no" title="statement not covered" >import TourItem from '@/components/Tours/TourItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Index() {</span>
 <span class="cstat-no" title="statement not covered" >    const { isLoading, data } = usePlaceDetails()</span>
@@ -479,11 +523,28 @@
 <span class="cstat-no" title="statement not covered" >        setFormState({ ...formState, [key]: value })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // ******* ONBOARDING TOUR ******** //</span>
+<span class="cstat-no" title="statement not covered" >    const [run, setRun] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { steps, bizPlaceDetailsTourCallback } =</span>
+<span class="cstat-no" title="statement not covered" >        useGeneratePlaceDetailsTourSteps()</span>
+<span class="cstat-no" title="statement not covered" >    const callback = bizPlaceDetailsTourCallback(setRun)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (steps.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            setRun(true)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }, [steps])</span>
+<span class="cstat-no" title="statement not covered" >    // ****************** //</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setFormState({ ...formState, ...data })</span>
 <span class="cstat-no" title="statement not covered" >    }, [data])</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {steps.length &gt; 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;TourItem steps={steps} callback={callback} run={run} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout variant='placeSettings'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
@@ -491,7 +552,9 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;p&gt;Change your business details&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='row items-center space-x-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Button variant='outline'&gt;Preview&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button id='place-preview-button' variant='outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Preview</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Publish&lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -631,7 +694,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-21T14:35:59.676Z
+                at 2023-11-22T10:05:36.014Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
