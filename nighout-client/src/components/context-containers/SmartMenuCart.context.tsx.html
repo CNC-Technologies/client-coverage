@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/104</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/104</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -162,17 +162,7 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -281,18 +271,16 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { MenuItemProps } from '@/interfaces/smartMenu.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// export interface MenuCartItem {</span>
-<span class="cstat-no" title="statement not covered" >//     id: number</span>
-<span class="cstat-no" title="statement not covered" >//     name: string</span>
-<span class="cstat-no" title="statement not covered" >//     price: number</span>
-<span class="cstat-no" title="statement not covered" >//     quantity: number</span>
-<span class="cstat-no" title="statement not covered" >// }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface CartContextType {</span>
-<span class="cstat-no" title="statement not covered" >    items: MenuItemProps[]</span>
-<span class="cstat-no" title="statement not covered" >    total: number</span>
-<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
-<span class="cstat-no" title="statement not covered" >    updateCartItem: (item: MenuItemProps, action: 'add' | 'remove') =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    carts: { [restaurantId: string]: MenuItemProps[] }</span>
+<span class="cstat-no" title="statement not covered" >    updateCartItem: (</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        restaurantId: string,</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        item: MenuItemProps,</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        action: 'add' | 'remove',</span>
+<span class="cstat-no" title="statement not covered" >    ) =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const CartContext = createContext&lt;CartContextType | undefined&gt;(undefined)</span>
@@ -310,68 +298,65 @@
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    children: ReactNode</span>
 <span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [cartItems, setCartItems] = useState&lt;MenuItemProps[]&gt;(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const storedCart =</span>
-<span class="cstat-no" title="statement not covered" >            typeof window !== 'undefined' &amp;&amp; localStorage.getItem('menu_cart')</span>
-<span class="cstat-no" title="statement not covered" >        const cart = storedCart</span>
-<span class="cstat-no" title="statement not covered" >            ? (JSON.parse(storedCart) as MenuItemProps[])</span>
-<span class="cstat-no" title="statement not covered" >            : []</span>
-<span class="cstat-no" title="statement not covered" >        return cart</span>
+<span class="cstat-no" title="statement not covered" >    const [carts, setCarts] = useState&lt;{</span>
+<span class="cstat-no" title="statement not covered" >        [restaurantId: string]: MenuItemProps[]</span>
+<span class="cstat-no" title="statement not covered" >    }&gt;(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const storedCarts =</span>
+<span class="cstat-no" title="statement not covered" >            typeof window !== 'undefined' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            localStorage.getItem('multi_restaurant_cart')</span>
+<span class="cstat-no" title="statement not covered" >        return storedCarts ? JSON.parse(storedCarts) : {}</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('menu_cart', JSON.stringify(cartItems))</span>
-<span class="cstat-no" title="statement not covered" >    }, [cartItems])</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('multi_restaurant_cart', JSON.stringify(carts))</span>
+<span class="cstat-no" title="statement not covered" >    }, [carts])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const updateCartItem = (</span>
+<span class="cstat-no" title="statement not covered" >        restaurantId: string,</span>
 <span class="cstat-no" title="statement not covered" >        item: MenuItemProps,</span>
 <span class="cstat-no" title="statement not covered" >        action: 'add' | 'remove',</span>
 <span class="cstat-no" title="statement not covered" >    ): void =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const existingItem = cartItems.find(</span>
+<span class="cstat-no" title="statement not covered" >        const currentCart = carts[restaurantId] || []</span>
+<span class="cstat-no" title="statement not covered" >        const existingItem = currentCart.find(</span>
 <span class="cstat-no" title="statement not covered" >            (cartItem) =&gt; cartItem.id === item.id,</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        let updatedCart</span>
 <span class="cstat-no" title="statement not covered" >        if (action === 'add') {</span>
-<span class="cstat-no" title="statement not covered" >            if (existingItem) {</span>
-<span class="cstat-no" title="statement not covered" >                setCartItems((prevItems) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    prevItems.map((cartItem) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        cartItem.id === item.id</span>
-<span class="cstat-no" title="statement not covered" >                            ? { ...cartItem, quantity: cartItem.quantity + 1 }</span>
-<span class="cstat-no" title="statement not covered" >                            : cartItem,</span>
-<span class="cstat-no" title="statement not covered" >                    ),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                setCartItems([...cartItems, { ...item, quantity: 1 }])</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            updatedCart = existingItem</span>
+<span class="cstat-no" title="statement not covered" >                ? currentCart.map((cartItem) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                      cartItem.id === item.id</span>
+<span class="cstat-no" title="statement not covered" >                          ? { ...cartItem, quantity: cartItem.quantity + 1 }</span>
+<span class="cstat-no" title="statement not covered" >                          : cartItem,</span>
+<span class="cstat-no" title="statement not covered" >                  )</span>
+<span class="cstat-no" title="statement not covered" >                : [...currentCart, { ...item, quantity: 1 }]</span>
 <span class="cstat-no" title="statement not covered" >        } else if (action === 'remove') {</span>
-<span class="cstat-no" title="statement not covered" >            if (existingItem &amp;&amp; existingItem.quantity &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >                setCartItems((prevItems) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    prevItems.map((cartItem) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        cartItem.id === item.id</span>
-<span class="cstat-no" title="statement not covered" >                            ? { ...cartItem, quantity: cartItem.quantity - 1 }</span>
-<span class="cstat-no" title="statement not covered" >                            : cartItem,</span>
-<span class="cstat-no" title="statement not covered" >                    ),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                setCartItems((prevItems) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    prevItems.filter((cartItem) =&gt; cartItem.id !== item.id),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            updatedCart =</span>
+<span class="cstat-no" title="statement not covered" >                existingItem &amp;&amp; existingItem.quantity &gt; 1</span>
+<span class="cstat-no" title="statement not covered" >                    ? currentCart.map((cartItem) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                          cartItem.id === item.id</span>
+<span class="cstat-no" title="statement not covered" >                              ? { ...cartItem, quantity: cartItem.quantity - 1 }</span>
+<span class="cstat-no" title="statement not covered" >                              : cartItem,</span>
+<span class="cstat-no" title="statement not covered" >                      )</span>
+<span class="cstat-no" title="statement not covered" >                    : currentCart.filter((cartItem) =&gt; cartItem.id !== item.id)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        setCarts((prevCarts) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >            ...prevCarts,</span>
+<span class="cstat-no" title="statement not covered" >            [restaurantId]: updatedCart,</span>
+<span class="cstat-no" title="statement not covered" >        }))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const cartTotal = cartItems.reduce(</span>
-<span class="cstat-no" title="statement not covered" >        (acc, product) =&gt; acc + product.price * product.quantity,</span>
-<span class="cstat-no" title="statement not covered" >        0,</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const cart: CartContextType = {</span>
-<span class="cstat-no" title="statement not covered" >        items: cartItems,</span>
-<span class="cstat-no" title="statement not covered" >        total: cartTotal,</span>
+<span class="cstat-no" title="statement not covered" >    const cartContextValue = {</span>
+<span class="cstat-no" title="statement not covered" >        carts,</span>
 <span class="cstat-no" title="statement not covered" >        updateCartItem,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return &lt;CartContext.Provider value={cart}&gt;{children}&lt;/CartContext.Provider&gt;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;CartContext.Provider value={cartContextValue}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/CartContext.Provider&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default SmartMenuCartProvider</span>
@@ -382,7 +367,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-22T11:08:41.341Z
+                at 2023-11-22T13:07:33.997Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
