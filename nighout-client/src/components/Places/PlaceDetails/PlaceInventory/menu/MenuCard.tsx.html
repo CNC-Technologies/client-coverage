@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/81</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/81</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -126,25 +126,7 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -207,102 +189,66 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { FaBowlRice } from 'react-icons/fa6'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
+<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" >import { BiSolidDrink } from 'react-icons/bi'</span>
 <span class="cstat-no" title="statement not covered" >// import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import ImageSliderWIthNavigation from '@/components/Sliders/ImageSliderWIthNavigation'</span>
-<span class="cstat-no" title="statement not covered" >import { MoneyStackIcon } from '@/constants/icons/icons'</span>
-<span class="cstat-no" title="statement not covered" >import Truncate from '@/components/app/simple/Truncate'</span>
-<span class="cstat-no" title="statement not covered" >// import ParentModal from '@/components/modals/parentModal'</span>
-<span class="cstat-no" title="statement not covered" >import InventoryDetails from '@/components/Places/PlaceDetails/PlaceInventory/menu/MenuDetails'</span>
 <span class="cstat-no" title="statement not covered" >import { Card } from '@/components/shadcn/ui/card'</span>
-<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
+<span class="cstat-no" title="statement not covered" >import { defaultFoodDrinksMenu } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >import { MenuProps } from '@/interfaces/smartMenu.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { placeInventoryDetailsLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function MenuCard({ inventory }) {</span>
-<span class="cstat-no" title="statement not covered" >    const [showItem, setShowItem] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const openItemDetails = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setShowItem(true)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const closeItemDetails = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setShowItem(false)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >export default function MenuCard({ menu }: { menu: MenuProps }) {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = (router.query?.details as string) || ''</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Card className='h-fit cursor-pointer rounded-xl border-0 dark:bg-primary/5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='relative h-[11rem] xmd:h-[13rem]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-2 text-sm rounded-t-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            className={`flex items-center justify-center px-3 py-2 rounded-lg shadow-lg ${</span>
-<span class="cstat-no" title="statement not covered" >                                inventory?.available</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'bg-green-300 dark:bg-bright-blue'</span>
-<span class="cstat-no" title="statement not covered" >                                    : 'bg-grey'</span>
-<span class="cstat-no" title="statement not covered" >                            } dark:text-dark-charcoal`}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-medium'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {inventory?.available</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'Available'</span>
-<span class="cstat-no" title="statement not covered" >                                    : 'Unavailable'}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                // onClick={() =&gt; handlePageRoute(menu)}</span>
+<span class="cstat-no" title="statement not covered" >                href={placeInventoryDetailsLink(placeId, 'Menu', menu.id)}</span>
+<span class="cstat-no" title="statement not covered" >                // href={`${currentPath}/Menu/${menu.id}` }</span>
+<span class="cstat-no" title="statement not covered" >                className='w-full h-full shadow cursor-pointer rounded-xl border-0 dark:bg-primary/5'</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Card className='w-full h-full shadow cursor-pointer rounded-xl border-0 dark:bg-primary/5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className=' rounded-xl  w-full h-40'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                            src={</span>
+<span class="cstat-no" title="statement not covered" >                                menu?.edges?.media?.[0].URL ||</span>
+<span class="cstat-no" title="statement not covered" >                                defaultFoodDrinksMenu</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                            height={100}</span>
+<span class="cstat-no" title="statement not covered" >                            unoptimized</span>
+<span class="cstat-no" title="statement not covered" >                            width={100}</span>
+<span class="cstat-no" title="statement not covered" >                            priority</span>
+<span class="cstat-no" title="statement not covered" >                            alt='Menu Order'</span>
+<span class="cstat-no" title="statement not covered" >                            className='w-full rounded-t-xl h-full'</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='my-3 px-2 pb-3'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex space-x-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='opacity-70 font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {menu.name}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                            {menu.menuItemType === 'food' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;FaBowlRice className='text-orange' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                            {menu.menuItemType === 'drink' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;BiSolidDrink className='text-orange' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='three-line-text-truncate mt-1 text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {menu.description}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ImageSliderWIthNavigation</span>
-<span class="cstat-no" title="statement not covered" >                        images={inventory?.images}</span>
-<span class="cstat-no" title="statement not covered" >                        extraClass={'rounded-t-xl'}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    onClick={() =&gt; openItemDetails()}</span>
-<span class="cstat-no" title="statement not covered" >                    className='py-3 mt-1 px-2 font-medium'</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Truncate&gt;{inventory?.name}&lt;/Truncate&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center justify-end space-x-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;MoneyStackIcon className='text-xl text-orange' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p</span>
-<span class="cstat-no" title="statement not covered" >                            className={`text-sm ${</span>
-<span class="cstat-no" title="statement not covered" >                                inventory?.available ? '' : 'line-through'</span>
-<span class="cstat-no" title="statement not covered" >                            }`}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {inventory?.price}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/Card&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
-<span class="cstat-no" title="statement not covered" >                dialogOpened={showItem}</span>
-<span class="cstat-no" title="statement not covered" >                closeDialog={closeItemDetails}</span>
-<span class="cstat-no" title="statement not covered" >                title={inventory.name}</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;InventoryDetails</span>
-<span class="cstat-no" title="statement not covered" >                    // handleAddToCart={handleAddToCart}</span>
-<span class="cstat-no" title="statement not covered" >                    inventory={inventory}</span>
-<span class="cstat-no" title="statement not covered" >                    handleClose={closeItemDetails}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/Card&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -313,7 +259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-22T13:07:33.997Z
+                at 2023-11-23T13:44:20.199Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
