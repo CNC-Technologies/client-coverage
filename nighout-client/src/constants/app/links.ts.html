@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.85% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>185/213</span>
+                <span class='fraction'>190/220</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.85% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>185/213</span>
+                <span class='fraction'>190/220</span>
             </div>
         
             
@@ -276,7 +276,14 @@
 <a name='L211'></a><a href='#L211'>211</a>
 <a name='L212'></a><a href='#L212'>212</a>
 <a name='L213'></a><a href='#L213'>213</a>
-<a name='L214'></a><a href='#L214'>214</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -323,7 +330,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -331,10 +337,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -529,12 +543,13 @@ export const placeInventoryDetailsLink = <span class="fstat-no" title="function 
 <span class="cstat-no" title="statement not covered" >    placeId: string,</span>
 <span class="cstat-no" title="statement not covered" >    inventoryName: string,</span>
 <span class="cstat-no" title="statement not covered" >    inventoryId: string,</span>
-<span class="cstat-no" title="statement not covered" >) =&gt; `/app/places${placeId}/${inventoryName}/${inventoryId}`</span>
+<span class="cstat-no" title="statement not covered" >) =&gt; `/app/places/${placeId}/${inventoryName}/${inventoryId}`</span>
 &nbsp;
 // * Business Links
 export const businessHomeLink = '/business'
 export const businessEventsLink = '/business/events'
 export const businessPlacesLink = '/business/places'
+export const businessPlaceDetailsLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt; `/business/places/${id}`</span>
 export const businessPlacesSettingsLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/settings`</span>
 export const businessPlacesMediaLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
@@ -548,6 +563,12 @@ export const businessPlacesDashboardLink = (<span class="fstat-no" title="functi
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/dashboard`</span>
 export const businessPlacesInventoryLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/dashboard/inventory`</span>
+&nbsp;
+export const businessPlaceMenuLink = (<span class="fstat-no" title="function not covered" >placeId: string) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/business/places/${placeId}/dashboard/menus`</span>
+export const businessPlaceMenuDetailsLink = <span class="fstat-no" title="function not covered" >(placeId: string, menuId: string) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    `/business/places/${placeId}/dashboard/menus/${menuId}`</span>
+&nbsp;
 export const businessPlacesTablesLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    `/business/places/${id}/dashboard/tables`</span>
 export const businessPlacesMenusLink = (<span class="fstat-no" title="function not covered" >id: string) =&gt;</span>
@@ -709,7 +730,7 @@ export const businessLeftSidebarLinks = [
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-25T02:56:39.441Z
+                at 2023-11-25T02:57:21.371Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

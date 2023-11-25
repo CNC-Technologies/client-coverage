@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/86</span>
+                <span class='fraction'>0/95</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/86</span>
+                <span class='fraction'>0/95</span>
             </div>
         
             
@@ -149,7 +149,25 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -243,6 +261,7 @@
 <span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/ratingStars'</span>
 <span class="cstat-no" title="statement not covered" >import { ForwardOutlineIcon, MapMarkerSolidIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceDetailsHeading({</span>
 <span class="cstat-no" title="statement not covered" >    place,</span>
@@ -254,6 +273,8 @@
 <span class="cstat-no" title="statement not covered" >        handleFollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >        handleUnfollowPlace,</span>
 <span class="cstat-no" title="statement not covered" >    } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const baseUrl =</span>
 <span class="cstat-no" title="statement not covered" >        typeof window !== 'undefined' &amp;&amp;</span>
@@ -282,19 +303,23 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex max-mobile:flex-col max-mobile:space-y-3 mobile:space-x-3 items-center h-fit'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center space-x-2 mobile:space-x-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;LikeItem</span>
-<span class="cstat-no" title="statement not covered" >                            likedByMe={</span>
-<span class="cstat-no" title="statement not covered" >                                place?.likedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                                    ? place?.likedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                                    : false</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                            likeAction={() =&gt; createPlaceLike.mutate(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                            unlikeAction={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                removePlaceLike.mutate(place?.id)</span>
-<span class="cstat-no" title="statement not covered" >                            }</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {configKey !== 'business' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;LikeItem</span>
+<span class="cstat-no" title="statement not covered" >                                likedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                                    place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                        ? place?.likedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                        : false</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                likeAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    createPlaceLike.mutate(place?.id)</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                unlikeAction={() =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    removePlaceLike.mutate(place?.id)</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ShareButton</span>
 <span class="cstat-no" title="statement not covered" >                        content={{</span>
 <span class="cstat-no" title="statement not covered" >                            url: `${baseUrl}/places/${place?.id}/shared`,</span>
@@ -308,15 +333,17 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/ShareButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;FollowButton</span>
-<span class="cstat-no" title="statement not covered" >                    followedByMe={</span>
-<span class="cstat-no" title="statement not covered" >                        place?.followedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                            ? place?.followedByCurrentUser</span>
-<span class="cstat-no" title="statement not covered" >                            : false</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    followAction={() =&gt; handleFollowPlace(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                    unFollowAction={() =&gt; handleUnfollowPlace(place?.id)}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {configKey !== 'business' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;FollowButton</span>
+<span class="cstat-no" title="statement not covered" >                        followedByMe={</span>
+<span class="cstat-no" title="statement not covered" >                            place?.followedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                ? place?.followedByCurrentUser</span>
+<span class="cstat-no" title="statement not covered" >                                : false</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        followAction={() =&gt; handleFollowPlace(place?.id)}</span>
+<span class="cstat-no" title="statement not covered" >                        unFollowAction={() =&gt; handleUnfollowPlace(place?.id)}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -328,7 +355,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-25T02:56:39.441Z
+                at 2023-11-25T02:57:21.371Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

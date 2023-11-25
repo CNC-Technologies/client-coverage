@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/802</span>
+                <span class='fraction'>0/824</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/802</span>
+                <span class='fraction'>0/824</span>
             </div>
         
             
@@ -865,7 +865,51 @@
 <a name='L800'></a><a href='#L800'>800</a>
 <a name='L801'></a><a href='#L801'>801</a>
 <a name='L802'></a><a href='#L802'>802</a>
-<a name='L803'></a><a href='#L803'>803</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L803'></a><a href='#L803'>803</a>
+<a name='L804'></a><a href='#L804'>804</a>
+<a name='L805'></a><a href='#L805'>805</a>
+<a name='L806'></a><a href='#L806'>806</a>
+<a name='L807'></a><a href='#L807'>807</a>
+<a name='L808'></a><a href='#L808'>808</a>
+<a name='L809'></a><a href='#L809'>809</a>
+<a name='L810'></a><a href='#L810'>810</a>
+<a name='L811'></a><a href='#L811'>811</a>
+<a name='L812'></a><a href='#L812'>812</a>
+<a name='L813'></a><a href='#L813'>813</a>
+<a name='L814'></a><a href='#L814'>814</a>
+<a name='L815'></a><a href='#L815'>815</a>
+<a name='L816'></a><a href='#L816'>816</a>
+<a name='L817'></a><a href='#L817'>817</a>
+<a name='L818'></a><a href='#L818'>818</a>
+<a name='L819'></a><a href='#L819'>819</a>
+<a name='L820'></a><a href='#L820'>820</a>
+<a name='L821'></a><a href='#L821'>821</a>
+<a name='L822'></a><a href='#L822'>822</a>
+<a name='L823'></a><a href='#L823'>823</a>
+<a name='L824'></a><a href='#L824'>824</a>
+<a name='L825'></a><a href='#L825'>825</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1769,14 +1813,14 @@
 <span class="cstat-no" title="statement not covered" >        description: menuItem?.description || '',</span>
 <span class="cstat-no" title="statement not covered" >        price: menuItem?.price || null,</span>
 <span class="cstat-no" title="statement not covered" >        preparation_time: menuItem?.preparation_time || null,</span>
-<span class="cstat-no" title="statement not covered" >        options: [''],</span>
-<span class="cstat-no" title="statement not covered" >        spiciness_level: '',</span>
-<span class="cstat-no" title="statement not covered" >        discount_percentage: null,</span>
-<span class="cstat-no" title="statement not covered" >        allergens: [''],</span>
-<span class="cstat-no" title="statement not covered" >        chef_special_note: '',</span>
-<span class="cstat-no" title="statement not covered" >        is_new: false,</span>
-<span class="cstat-no" title="statement not covered" >        is_seasonal: false,</span>
-<span class="cstat-no" title="statement not covered" >        season: '',</span>
+<span class="cstat-no" title="statement not covered" >        options: menuItem?.options || [],</span>
+<span class="cstat-no" title="statement not covered" >        spiciness_level: menuItem?.spiciness_level || '',</span>
+<span class="cstat-no" title="statement not covered" >        discount_percentage: menuItem?.discount_percentage || null,</span>
+<span class="cstat-no" title="statement not covered" >        allergens: menuItem?.allergens || [],</span>
+<span class="cstat-no" title="statement not covered" >        chef_special_note: menuItem?.chef_special_note || '',</span>
+<span class="cstat-no" title="statement not covered" >        is_new: menuItem?.is_available || false,</span>
+<span class="cstat-no" title="statement not covered" >        is_seasonal: menuItem?.is_seasonal || false,</span>
+<span class="cstat-no" title="statement not covered" >        season: menuItem?.season || '',</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const form = useForm&lt;MenuItemFormValues&gt;({</span>
@@ -1956,6 +2000,7 @@
 <span class="cstat-no" title="statement not covered" >                                            )</span>
 <span class="cstat-no" title="statement not covered" >                                        }}</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='00'</span>
+<span class="cstat-no" title="statement not covered" >                                        value={field.value}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -1978,6 +2023,7 @@
 <span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            handleInputChange(field, e)</span>
 <span class="cstat-no" title="statement not covered" >                                        }</span>
+<span class="cstat-no" title="statement not covered" >                                        value={field.value}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -1991,7 +2037,7 @@
 <span class="cstat-no" title="statement not covered" >                        name='preparation_time'</span>
 <span class="cstat-no" title="statement not covered" >                        render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Preparation Time&lt;/FormLabel&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Preparation Time (mins)&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='40 mins'</span>
@@ -2007,6 +2053,7 @@
 <span class="cstat-no" title="statement not covered" >                                                parsedValue,</span>
 <span class="cstat-no" title="statement not covered" >                                            )</span>
 <span class="cstat-no" title="statement not covered" >                                        }}</span>
+<span class="cstat-no" title="statement not covered" >                                        value={field.value}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2022,7 +2069,11 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='List possible options for this menu item'</span>
-<span class="cstat-no" title="statement not covered" >                                        value={optionItemInput}</span>
+<span class="cstat-no" title="statement not covered" >                                        value={</span>
+<span class="cstat-no" title="statement not covered" >                                            menuItem?.options?.length</span>
+<span class="cstat-no" title="statement not covered" >                                                ? menuItem?.options.join()</span>
+<span class="cstat-no" title="statement not covered" >                                                : optionItemInput</span>
+<span class="cstat-no" title="statement not covered" >                                        }</span>
 <span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            setOptionItemInput(e.target.value)</span>
 <span class="cstat-no" title="statement not covered" >                                        }</span>
@@ -2259,6 +2310,7 @@
 <span class="cstat-no" title="statement not covered" >                                                            parsedValue,</span>
 <span class="cstat-no" title="statement not covered" >                                                        )</span>
 <span class="cstat-no" title="statement not covered" >                                                    }}</span>
+<span class="cstat-no" title="statement not covered" >                                                    value={field.value}</span>
 <span class="cstat-no" title="statement not covered" >                                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2275,7 +2327,11 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                                placeholder='tags...'</span>
-<span class="cstat-no" title="statement not covered" >                                                value={tagInput}</span>
+<span class="cstat-no" title="statement not covered" >                                                value={</span>
+<span class="cstat-no" title="statement not covered" >                                                    menuItem?.tags?.length</span>
+<span class="cstat-no" title="statement not covered" >                                                        ? menuItem?.tags.join()</span>
+<span class="cstat-no" title="statement not covered" >                                                        : tagInput</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
 <span class="cstat-no" title="statement not covered" >                                                onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    setTagInput(e.target.value)</span>
 <span class="cstat-no" title="statement not covered" >                                                }</span>
@@ -2327,7 +2383,12 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                                placeholder='related items...'</span>
-<span class="cstat-no" title="statement not covered" >                                                value={relatedItemInput}</span>
+<span class="cstat-no" title="statement not covered" >                                                value={</span>
+<span class="cstat-no" title="statement not covered" >                                                    menuItem?.related_items</span>
+<span class="cstat-no" title="statement not covered" >                                                        ?.length</span>
+<span class="cstat-no" title="statement not covered" >                                                        ? menuItem?.related_items.join()</span>
+<span class="cstat-no" title="statement not covered" >                                                        : relatedItemInput</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
 <span class="cstat-no" title="statement not covered" >                                                onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    setRelatedItemInput(</span>
 <span class="cstat-no" title="statement not covered" >                                                        e.target.value,</span>
@@ -2379,7 +2440,11 @@
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                                placeholder='Ingredients that are most known for popular allergies...'</span>
-<span class="cstat-no" title="statement not covered" >                                                value={allergenItemInput}</span>
+<span class="cstat-no" title="statement not covered" >                                                value={</span>
+<span class="cstat-no" title="statement not covered" >                                                    menuItem?.allergens?.length</span>
+<span class="cstat-no" title="statement not covered" >                                                        ? menuItem?.allergens.join()</span>
+<span class="cstat-no" title="statement not covered" >                                                        : allergenItemInput</span>
+<span class="cstat-no" title="statement not covered" >                                                }</span>
 <span class="cstat-no" title="statement not covered" >                                                onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    setAllergenItemInput(</span>
 <span class="cstat-no" title="statement not covered" >                                                        e.target.value,</span>
@@ -2442,6 +2507,7 @@
 <span class="cstat-no" title="statement not covered" >                                                onChange={(e) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    handleInputChange(field, e)</span>
 <span class="cstat-no" title="statement not covered" >                                                }</span>
+<span class="cstat-no" title="statement not covered" >                                                value={field.value}</span>
 <span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2476,7 +2542,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-25T02:56:39.441Z
+                at 2023-11-25T02:57:21.371Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

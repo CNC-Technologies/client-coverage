@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/112</span>
+                <span class='fraction'>0/120</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/112</span>
+                <span class='fraction'>0/120</span>
             </div>
         
             
@@ -175,7 +175,23 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -299,10 +315,13 @@
 <span class="cstat-no" title="statement not covered" >import usePlaceReviews from '@/hooks/app/place/usePlaceReviews'</span>
 <span class="cstat-no" title="statement not covered" >import { Review } from '@/interfaces/reviews.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceReviews({ place }: { place: PlaceProps }) {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" >    const { showAuthModal } = useContext(AuthModalContext)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { useReviewsList, currentPage, setCurrentPage } = usePlaceReviews()</span>
 <span class="cstat-no" title="statement not covered" >    const reviewsQuery = useReviewsList()</span>
@@ -354,49 +373,54 @@
 <span class="cstat-no" title="statement not covered" >    }, [reviews?.pages])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='max-w-[50rem] w-full mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex justify-between items-center my-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;h5 className='text-lg font-semibold xxmd:text-xl'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    Reviews</span>
 <span class="cstat-no" title="statement not covered" >                    {/* &lt;span className='text-base font-normal'&gt;(290)&lt;/span&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/h5&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div onClick={() =&gt; handleOpenReview()}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Button&gt;Write a review&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {configKey !== 'business' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div onClick={() =&gt; handleOpenReview()}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Button&gt;Write a review&lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;hr className='my-5 border-darkGrey dark:border-grey/10' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='max-w-[50rem] w-full mx-auto'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;hr className='my-5 border-darkGrey dark:border-grey/10' /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {reviews?.pages[currentPage - 1]?.data?.stats.total !== 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;PlaceRatingSection</span>
-<span class="cstat-no" title="statement not covered" >                        stats={reviews?.pages[currentPage - 1]?.data?.stats}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;hr className='my-5 border-darkGrey dark:border-grey/10' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >                {reviews?.pages[currentPage - 1]?.data?.stats.total !== 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PlaceRatingSection</span>
+<span class="cstat-no" title="statement not covered" >                            stats={reviews?.pages[currentPage - 1]?.data?.stats}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;hr className='my-5 border-darkGrey dark:border-grey/10' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* Reviews List  */}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ReviewsList</span>
-<span class="cstat-no" title="statement not covered" >                reviews={</span>
-<span class="cstat-no" title="statement not covered" >                    reviews?.pages[currentPage - 1]?.data?.reviews as Review[]</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                handleOpenReview={handleOpenReview}</span>
-<span class="cstat-no" title="statement not covered" >                paginate={paginate}</span>
-<span class="cstat-no" title="statement not covered" >                // loadingState={reviewsQuery.isFetching}</span>
-<span class="cstat-no" title="statement not covered" >                loadingState={reviewsQuery.isInitialLoading}</span>
-<span class="cstat-no" title="statement not covered" >                currentPage={currentPage}</span>
-<span class="cstat-no" title="statement not covered" >                hasNextPage={reviews?.pages[currentPage - 1]?.nextPageToken}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* Reviews List  */}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ReviewsList</span>
+<span class="cstat-no" title="statement not covered" >                    reviews={</span>
+<span class="cstat-no" title="statement not covered" >                        reviews?.pages[currentPage - 1]?.data</span>
+<span class="cstat-no" title="statement not covered" >                            ?.reviews as Review[]</span>
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                    handleOpenReview={handleOpenReview}</span>
+<span class="cstat-no" title="statement not covered" >                    paginate={paginate}</span>
+<span class="cstat-no" title="statement not covered" >                    // loadingState={reviewsQuery.isFetching}</span>
+<span class="cstat-no" title="statement not covered" >                    loadingState={reviewsQuery.isInitialLoading}</span>
+<span class="cstat-no" title="statement not covered" >                    currentPage={currentPage}</span>
+<span class="cstat-no" title="statement not covered" >                    hasNextPage={reviews?.pages[currentPage - 1]?.nextPageToken}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;CreateAReview</span>
-<span class="cstat-no" title="statement not covered" >                place={place}</span>
-<span class="cstat-no" title="statement not covered" >                openModal={reviewModal}</span>
-<span class="cstat-no" title="statement not covered" >                closeModal={handleCloseReviewModal}</span>
-<span class="cstat-no" title="statement not covered" >                reviewToBeEdited={reviewToBeEdited as Review}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;CreateAReview</span>
+<span class="cstat-no" title="statement not covered" >                    place={place}</span>
+<span class="cstat-no" title="statement not covered" >                    openModal={reviewModal}</span>
+<span class="cstat-no" title="statement not covered" >                    closeModal={handleCloseReviewModal}</span>
+<span class="cstat-no" title="statement not covered" >                    reviewToBeEdited={reviewToBeEdited as Review}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -406,7 +430,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-25T02:56:39.441Z
+                at 2023-11-25T02:57:21.371Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

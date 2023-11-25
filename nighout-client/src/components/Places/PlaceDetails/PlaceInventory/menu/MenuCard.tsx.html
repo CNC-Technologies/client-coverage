@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/63</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -126,7 +126,29 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,17 +221,28 @@
 <span class="cstat-no" title="statement not covered" >import { Card } from '@/components/shadcn/ui/card'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultFoodDrinksMenu } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { MenuProps } from '@/interfaces/smartMenu.interface'</span>
-<span class="cstat-no" title="statement not covered" >import { placeInventoryDetailsLink } from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    businessPlaceMenuDetailsLink,</span>
+<span class="cstat-no" title="statement not covered" >    placeInventoryDetailsLink,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/app/links'</span>
+<span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MenuCard({ menu }: { menu: MenuProps }) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const placeId = (router.query?.details as string) || ''</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const detailsLink =</span>
+<span class="cstat-no" title="statement not covered" >        configKey === 'business'</span>
+<span class="cstat-no" title="statement not covered" >            ? businessPlaceMenuDetailsLink(placeId, menu.id)</span>
+<span class="cstat-no" title="statement not covered" >            : placeInventoryDetailsLink(placeId, 'Menu', menu.id)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Link</span>
 <span class="cstat-no" title="statement not covered" >                // onClick={() =&gt; handlePageRoute(menu)}</span>
-<span class="cstat-no" title="statement not covered" >                href={placeInventoryDetailsLink(placeId, 'Menu', menu.id)}</span>
+<span class="cstat-no" title="statement not covered" >                href={detailsLink}</span>
 <span class="cstat-no" title="statement not covered" >                // href={`${currentPath}/Menu/${menu.id}` }</span>
 <span class="cstat-no" title="statement not covered" >                className='w-full h-full shadow cursor-pointer rounded-xl border-0 dark:bg-primary/5'</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
@@ -259,7 +292,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-25T02:56:39.441Z
+                at 2023-11-25T02:57:21.371Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
