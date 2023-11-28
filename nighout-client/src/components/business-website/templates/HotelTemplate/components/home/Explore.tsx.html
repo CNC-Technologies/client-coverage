@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/46</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/46</span>
             </div>
         
             
@@ -95,7 +95,35 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -130,29 +158,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { WebsiteData } from '@/interfaces/website.interface'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Explore({ data }: { data: WebsiteData | null }) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!data) return null</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Filter out empty strings and create an array of available texts</span>
+<span class="cstat-no" title="statement not covered" >    const bannerTexts = [</span>
+<span class="cstat-no" title="statement not covered" >        data.three_items_section_item_one_text,</span>
+<span class="cstat-no" title="statement not covered" >        data.three_items_section_item_two_text,</span>
+<span class="cstat-no" title="statement not covered" >        data.three_items_section_item_three_text,</span>
+<span class="cstat-no" title="statement not covered" >    ].filter((text) =&gt; text)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // If there are no banner texts, do not render the section</span>
+<span class="cstat-no" title="statement not covered" >    if (bannerTexts.length === 0) return null</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Determine grid column classes based on the number of banner texts</span>
+<span class="cstat-no" title="statement not covered" >    const gridColsClass = `grid-cols-1 md:grid-cols-${bannerTexts.length}`</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='mx-10 md:mx-20'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center text-3xl text-orange space-y-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div&gt;{data?.three_items_section_heading_text}&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center md:w-[70vw] text-lg mx-auto text-gray-400'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {data?.three_items_section_details_text}</span>
+<span class="cstat-no" title="statement not covered" >            {data.three_items_section_heading_text &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center text-3xl text-orange space-y-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;{data.three_items_section_heading_text}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-center md:w-[70vw] text-lg mx-auto text-gray-400'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {data.three_items_section_details_text}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-7 py-20'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {[</span>
-<span class="cstat-no" title="statement not covered" >                    data?.three_items_section_item_one_text,</span>
-<span class="cstat-no" title="statement not covered" >                    data?.three_items_section_item_two_text,</span>
-<span class="cstat-no" title="statement not covered" >                    data?.three_items_section_item_three_text,</span>
-<span class="cstat-no" title="statement not covered" >                ].map((item, i) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className={`grid ${gridColsClass} gap-7 py-20`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {bannerTexts.map((item, i) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                        key={i}</span>
 <span class="cstat-no" title="statement not covered" >                        className='bg-white p-5 rounded-xl shadow-sm transition-all hover:shadow-orange transform hover:shadow-lg hover:-translate-y-1 hover:-translate-x-1 space-y-3'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='text-center'&gt;{item}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {/* Optional See more link */}</span>
 <span class="cstat-no" title="statement not covered" >                        {/* &lt;div className='text-end row text-lg text-orange space-x-3 justify-end'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;See more&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;&amp;rarr;&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span&gt;See more&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span&gt;&amp;rarr;&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
@@ -166,7 +208,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-28T09:29:42.674Z
+                at 2023-11-28T15:40:36.114Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

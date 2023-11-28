@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/83</span>
+                <span class='fraction'>0/84</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/83</span>
+                <span class='fraction'>0/84</span>
             </div>
         
             
@@ -146,7 +146,9 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -258,37 +260,38 @@
 <span class="cstat-no" title="statement not covered" >                        height={50}</span>
 <span class="cstat-no" title="statement not covered" >                        width={50}</span>
 <span class="cstat-no" title="statement not covered" >                        alt='Business Logo'</span>
+<span class="cstat-no" title="statement not covered" >                        className='rounded-full h-14 w-14 object-center object-fill'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='text-xl'&gt;{data?.heading_text}&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='row justify-center md:justify-start space-x-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.instagram &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.instagram}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.instagram}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;InstagramSolidIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.twitter &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.twitter}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.twitter}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;TwitterSolidIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.facebook &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.facebook}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.facebook}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;FacebookSolidIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.pinterest &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.pinterest}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.pinterest}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;PiPinterestLogo size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.youtube &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.youtube}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.youtube}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Youtube size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                    {!!data?.linkedin &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={data?.linkedin}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Link target='_blank' href={data?.linkedin}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;LinkedinSolidIcon size={24} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
@@ -319,7 +322,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-28T09:29:42.674Z
+                at 2023-11-28T15:40:36.114Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

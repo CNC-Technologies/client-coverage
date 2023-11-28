@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/155</span>
+                <span class='fraction'>0/156</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/155</span>
+                <span class='fraction'>0/156</span>
             </div>
         
             
@@ -218,7 +218,9 @@
 <a name='L153'></a><a href='#L153'>153</a>
 <a name='L154'></a><a href='#L154'>154</a>
 <a name='L155'></a><a href='#L155'>155</a>
-<a name='L156'></a><a href='#L156'>156</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -393,20 +395,22 @@
 <span class="cstat-no" title="statement not covered" >import { businessPlacesDashboardLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { placeBusinessDashboard } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >// import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >// import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >// import Breadcrumbs from '@/components/app/simple/BreadCrumbs'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlacesSettingsLayout({</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >    variant = 'placeSettings',</span>
 <span class="cstat-no" title="statement not covered" >    links,</span>
-<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
-<span class="cstat-no" title="statement not covered" >    pageName,</span>
-<span class="cstat-no" title="statement not covered" >}: PlacesSettingsLayoutProps) {</span>
-<span class="cstat-no" title="statement not covered" >    // const queryClient = useQueryClient()</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >}: // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >// place,</span>
+<span class="cstat-no" title="statement not covered" >PlacesSettingsLayoutProps) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const placeId = router.query.details</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = (router.query?.details as string) || ''</span>
 <span class="cstat-no" title="statement not covered" >    const featureQuery = router.query?.action</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { data: place } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [sidebar, setSidebar] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" >    const toggleSidebar = () =&gt; setSidebar(!sidebar)</span>
@@ -420,32 +424,31 @@
 <span class="cstat-no" title="statement not covered" >        if (variant === 'placeDashboard') return placesDashboardLinks</span>
 <span class="cstat-no" title="statement not covered" >        return placesSettingsLinks</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    // const place = queryClient.getQueryData([</span>
-<span class="cstat-no" title="statement not covered" >    //     'placeDetails',</span>
-<span class="cstat-no" title="statement not covered" >    //     placeId,</span>
-<span class="cstat-no" title="statement not covered" >    // ]) as PlaceProps</span>
-<span class="cstat-no" title="statement not covered" >    // const placeCategory = place?.type</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const placeCategory = place?.type</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // console.log(place)</span>
 <span class="cstat-no" title="statement not covered" >    // console.log(placeCategory)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        function getFilteredLinks() {</span>
-<span class="cstat-no" title="statement not covered" >            // if (variant === 'placeDashboard') {</span>
-<span class="cstat-no" title="statement not covered" >            //     return getLinks().filter((item) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            //         return (</span>
-<span class="cstat-no" title="statement not covered" >            //             item.placeType === placeCategory ||</span>
-<span class="cstat-no" title="statement not covered" >            //             item.placeType === 'General'</span>
-<span class="cstat-no" title="statement not covered" >            //         )</span>
-<span class="cstat-no" title="statement not covered" >            //     })</span>
-<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >            if (variant === 'placeDashboard') {</span>
+<span class="cstat-no" title="statement not covered" >                // console.log('should work')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                return getLinks().filter((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        item.placeType === placeCategory ||</span>
+<span class="cstat-no" title="statement not covered" >                        item.placeType === 'General'</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            return getLinks()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const filteredLinks = getFilteredLinks()</span>
 <span class="cstat-no" title="statement not covered" >        setSidebarLinks(filteredLinks as linkItem[])</span>
-<span class="cstat-no" title="statement not covered" >    }, [variant, links])</span>
+<span class="cstat-no" title="statement not covered" >    }, [place, variant, links])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const isActive = (resolvedLink: string, placeId: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const isDashboardRoute =</span>
@@ -535,7 +538,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-28T09:29:42.674Z
+                at 2023-11-28T15:40:36.114Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

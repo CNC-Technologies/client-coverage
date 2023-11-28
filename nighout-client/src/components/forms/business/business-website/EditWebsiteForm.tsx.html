@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/177</span>
+                <span class='fraction'>0/183</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/177</span>
+                <span class='fraction'>0/183</span>
             </div>
         
             
@@ -240,7 +240,19 @@
 <a name='L175'></a><a href='#L175'>175</a>
 <a name='L176'></a><a href='#L176'>176</a>
 <a name='L177'></a><a href='#L177'>177</a>
-<a name='L178'></a><a href='#L178'>178</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -432,9 +444,10 @@
 <span class="cstat-no" title="statement not covered" >import HomeTabForm from '@/components/forms/business/business-website/home-tab/Form'</span>
 <span class="cstat-no" title="statement not covered" >import { businessHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { editWebsiteRoute } from '@/constants/app/routes'</span>
-<span class="cstat-no" title="statement not covered" >import useFileUpload from '@/hooks/useFileUpload'</span>
+<span class="cstat-no" title="statement not covered" >// import useFileUpload from '@/hooks/useFileUpload'</span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import useUploadMedia from '@/hooks/useMediaUpload'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const tabs = [{ label: 'Home' }]</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -451,7 +464,7 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    const [savingData, setSavingData] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { handleUpload, handleDelete } = useFileUpload()</span>
+<span class="cstat-no" title="statement not covered" >    const { uploadMedia } = useUploadMedia()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (!activeBusiness?.id) router.push(businessHomeLink)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -496,11 +509,16 @@
 <span class="cstat-no" title="statement not covered" >                    if (!!imagesForUpload[key]) {</span>
 <span class="cstat-no" title="statement not covered" >                        //* if an image was selected</span>
 <span class="cstat-no" title="statement not covered" >                        // * upload the image</span>
-<span class="cstat-no" title="statement not covered" >                        const res = await handleUpload(imagesForUpload[key])</span>
+<span class="cstat-no" title="statement not covered" >                        const res = await uploadMedia(imagesForUpload[key])</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        // * delete the previous image</span>
-<span class="cstat-no" title="statement not covered" >                        if (typeof data[key] === 'string')</span>
-<span class="cstat-no" title="statement not covered" >                            handleDelete(data[key])</span>
-<span class="cstat-no" title="statement not covered" >                        return { ...res[0], key }</span>
+<span class="cstat-no" title="statement not covered" >                        // if (typeof data[key] === 'string')</span>
+<span class="cstat-no" title="statement not covered" >                        //     handleDelete(data[key])</span>
+<span class="cstat-no" title="statement not covered" >                        return {</span>
+<span class="cstat-no" title="statement not covered" >                            type: res[0]?.MediaType,</span>
+<span class="cstat-no" title="statement not covered" >                            url: res[0]?.URL,</span>
+<span class="cstat-no" title="statement not covered" >                            key,</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                    } else {</span>
 <span class="cstat-no" title="statement not covered" >                        return { type: '', url: '', key }</span>
 <span class="cstat-no" title="statement not covered" >                    }</span>
@@ -601,7 +619,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-28T09:29:42.674Z
+                at 2023-11-28T15:40:36.114Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
