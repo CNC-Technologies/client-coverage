@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/business-website/web-builder/Text.tsx</title>
+    <title>Code coverage report for nighout-client/src/hooks/business/places/smart-menu/useOrder.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/business-website/web-builder</a> Text.tsx</h1>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks/business/places/smart-menu</a> useOrder.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/71</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/71</span>
             </div>
         
             
@@ -134,12 +134,7 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -210,86 +205,76 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useNode } from '@craftjs/core'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { FormControl, FormLabel, Slider } from '@material-ui/core'</span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import ContentEditable from 'react-contenteditable'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function Text({ text = '', fontSize = 16, textAlign = 'left' }) {</span>
-<span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >        connectors: { connect, drag },</span>
-<span class="cstat-no" title="statement not covered" >        hasSelectedNode,</span>
-<span class="cstat-no" title="statement not covered" >        actions: { setProp },</span>
-<span class="cstat-no" title="statement not covered" >    } = useNode((state) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >        hasSelectedNode: state.events.selected,</span>
-<span class="cstat-no" title="statement not covered" >        hasDraggedNode: state.events.dragged,</span>
-<span class="cstat-no" title="statement not covered" >    }))</span>
-<span class="cstat-no" title="statement not covered" >    const [editable, setEditable] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import { menuOrderRoute, menuOrderWithIdRoute } from '@/constants/app/routes'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        !hasSelectedNode &amp;&amp; setEditable(false)</span>
-<span class="cstat-no" title="statement not covered" >    }, [hasSelectedNode])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            ref={(ref: any) =&gt; connect(drag(ref))}</span>
-<span class="cstat-no" title="statement not covered" >            onClick={() =&gt; setEditable(true)}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ContentEditable</span>
-<span class="cstat-no" title="statement not covered" >                disabled={!editable}</span>
-<span class="cstat-no" title="statement not covered" >                html={`${text}`}</span>
-<span class="cstat-no" title="statement not covered" >                onChange={(e) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    setProp(</span>
-<span class="cstat-no" title="statement not covered" >                        (props) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            (props.text = e.target.value.replace(</span>
-<span class="cstat-no" title="statement not covered" >                                /&lt;\/?[^&gt;]+(&gt;|$)/g,</span>
-<span class="cstat-no" title="statement not covered" >                                '',</span>
-<span class="cstat-no" title="statement not covered" >                            )),</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                tagName='p'</span>
-<span class="cstat-no" title="statement not covered" >                style={{ fontSize: `${fontSize}px`, textAlign }}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >interface Item {</span>
+<span class="cstat-no" title="statement not covered" >    id: string</span>
+<span class="cstat-no" title="statement not covered" >    quantity: number</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const TextSettings = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >        actions: { setProp },</span>
-<span class="cstat-no" title="statement not covered" >        fontSize,</span>
-<span class="cstat-no" title="statement not covered" >    } = useNode((node) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >        fontSize: node.data.props.fontSize,</span>
-<span class="cstat-no" title="statement not covered" >    }))</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;FormControl size='small' component='fieldset'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;FormLabel component='legend'&gt;Font size&lt;/FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Slider</span>
-<span class="cstat-no" title="statement not covered" >                    value={fontSize || 7}</span>
-<span class="cstat-no" title="statement not covered" >                    step={7}</span>
-<span class="cstat-no" title="statement not covered" >                    min={1}</span>
-<span class="cstat-no" title="statement not covered" >                    max={50}</span>
-<span class="cstat-no" title="statement not covered" >                    onChange={(_, value) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        setProp((props) =&gt; (props.fontSize = value))</span>
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/FormControl&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >export interface OrderProps {</span>
+<span class="cstat-no" title="statement not covered" >    items: Item[]</span>
+<span class="cstat-no" title="statement not covered" >    order: {</span>
+<span class="cstat-no" title="statement not covered" >        additional_info: {</span>
+<span class="cstat-no" title="statement not covered" >            additional_note?: string</span>
+<span class="cstat-no" title="statement not covered" >            option?: string</span>
+<span class="cstat-no" title="statement not covered" >            order_type?: string</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >Text.craft = {</span>
-<span class="cstat-no" title="statement not covered" >    related: {</span>
-<span class="cstat-no" title="statement not covered" >        settings: TextSettings,</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    // props: {}</span>
+<span class="cstat-no" title="statement not covered" >export default function useOrders() {</span>
+<span class="cstat-no" title="statement not covered" >    // const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const createOrder = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async (data: OrderProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >            const res = await post({ url: menuOrderRoute, data })</span>
+<span class="cstat-no" title="statement not covered" >            // if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            //     console.log(res)</span>
+<span class="cstat-no" title="statement not covered" >            // queryClient.invalidateQueries(['order', res.data.id])</span>
+<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >        createOrder,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useGetAllOrders() {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['allMenuOrders'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: menuOrderRoute })</span>
+<span class="cstat-no" title="statement not covered" >            // if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            //     console.log(res.data)</span>
+<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useGetOrderDetails(id: string) {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['order', id],</span>
+<span class="cstat-no" title="statement not covered" >        enabled: id !== '',</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: menuOrderWithIdRoute(id) })</span>
+<span class="cstat-no" title="statement not covered" >            // if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >            //     console.log(res.data)</span>
+<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -300,14 +285,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-12-01T08:10:28.378Z
             </div>
-        <script src="../../../../../prettify.js"></script>
+        <script src="../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../sorter.js"></script>
-        <script src="../../../../../block-navigation.js"></script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
