@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/81</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/81</span>
+                <span class='fraction'>0/82</span>
             </div>
         
             
@@ -144,7 +144,9 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -226,7 +228,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" >// import Link from 'next/link'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/navigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -253,9 +255,9 @@
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
 <span class="cstat-no" title="statement not covered" >            ref={containerRef}</span>
 <span class="cstat-no" title="statement not covered" >            id='homepageSection'</span>
-<span class="cstat-no" title="statement not covered" >            className={`h-fit max-md:py-12 md:h-screen flex flex-col justify-center bg-inherit`}</span>
+<span class="cstat-no" title="statement not covered" >            className={`h-fit max-md:py-12 md:mt-[10%] md:h-screen flex flex-col justify-center bg-inherit`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center  w-full max-width px-6 mobile:px-10 md:px-14 flex gap-16 md:gap-6 desktop:gap-12 items-center max-md:flex-col-reverse'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='text-center  w-full max-width flex gap-16 md:gap-6 desktop:gap-12 items-center max-md:flex-col-reverse'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex md:hidden justify-center '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; router.push('/explore')}</span>
@@ -265,8 +267,8 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                    href={'/explore?search=a_breakfast_spot'}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    // href={'/explore?search=a_breakfast_spot'}</span>
 <span class="cstat-no" title="statement not covered" >                    data-aos='fade-down-right'</span>
 <span class="cstat-no" title="statement not covered" >                    data-aos-duration='1000'</span>
 <span class="cstat-no" title="statement not covered" >                    className='flex-1 flex flex-col justify-center items-center'</span>
@@ -275,11 +277,12 @@
 <span class="cstat-no" title="statement not covered" >                        src={searchForEvent}</span>
 <span class="cstat-no" title="statement not covered" >                        alt='Sample'</span>
 <span class="cstat-no" title="statement not covered" >                        width={100}</span>
+<span class="cstat-no" title="statement not covered" >                        unoptimized</span>
 <span class="cstat-no" title="statement not covered" >                        height={100}</span>
-<span class="cstat-no" title="statement not covered" >                        className='w-[95%] xmobile:w-[90%] mobile:w-[75%] lgMobile:w-[60%] xmd:w-[45%] md:w-[85%] desktop:w-[70%] h-{70%} object-contain cursor-pointer'</span>
+<span class="cstat-no" title="statement not covered" >                        className='w-full object-contain cursor-pointer'</span>
 <span class="cstat-no" title="statement not covered" >                        // onClick={() =&gt; router.push('/explore?search=a_breakfast_spot')}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col flex-1 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h3 className='text-[1.8rem] xmobile:text-[2rem] laptop:text-[2.5rem] desktop:text-5xl font-semibold'&gt;</span>
@@ -313,7 +316,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T08:10:28.378Z
+                at 2023-12-01T08:21:04.461Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
