@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/53</span>
             </div>
         
             
@@ -100,7 +100,39 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -139,6 +171,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { RefObject } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { Media } from '@/interfaces/posts.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { MenuProps } from '@/interfaces/smartMenu.interface'</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    BusinessProfileProps,</span>
+<span class="cstat-no" title="statement not covered" >    UserProfileProps,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/interfaces/userProfile.interface'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export interface PlaceProps {</span>
 <span class="cstat-no" title="statement not covered" >    likedByCurrentUser: boolean</span>
 <span class="cstat-no" title="statement not covered" >    id: string</span>
@@ -156,7 +195,15 @@
 <span class="cstat-no" title="statement not covered" >    map_coordinates: any</span>
 <span class="cstat-no" title="statement not covered" >    longitude: string</span>
 <span class="cstat-no" title="statement not covered" >    latitude: string</span>
-<span class="cstat-no" title="statement not covered" >    edges: any</span>
+<span class="cstat-no" title="statement not covered" >    edges: {</span>
+<span class="cstat-no" title="statement not covered" >        medias?: Media[]</span>
+<span class="cstat-no" title="statement not covered" >        menus?: MenuProps[]</span>
+<span class="cstat-no" title="statement not covered" >        amenities?: any // ! Fix this type later</span>
+<span class="cstat-no" title="statement not covered" >        business?: BusinessProfileProps</span>
+<span class="cstat-no" title="statement not covered" >        faqs?: any // ! Fix this type later</span>
+<span class="cstat-no" title="statement not covered" >        place: PlaceProps[]</span>
+<span class="cstat-no" title="statement not covered" >        users: UserProfileProps[]</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    category?: 'events' | 'places' | 'users' | 'businesses'</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -170,6 +217,7 @@
 <span class="cstat-no" title="statement not covered" >    gridLayout?: boolean</span>
 <span class="cstat-no" title="statement not covered" >    places: PlaceProps[]</span>
 <span class="cstat-no" title="statement not covered" >    loading: boolean</span>
+<span class="cstat-no" title="statement not covered" >    hideMoreButton?: boolean</span>
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    deletePlace?: (id: string) =&gt; void //This function is only for business accounts</span>
 <span class="cstat-no" title="statement not covered" >    fetchPlaces?: () =&gt; void</span>
@@ -181,7 +229,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T08:21:04.461Z
+                at 2023-12-01T16:22:36.190Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
