@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/56</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/56</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -119,7 +119,13 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -198,26 +204,29 @@
 <span class="cstat-no" title="statement not covered" >                className={`h-[70vh] grid grid-cols-1 md:grid-cols-2 px-10 md:px-20 relative bg-no-repeat `}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='absolute bg-black/50 w-full h-full'&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='text-center col-center space-y-7 z-10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-center font-semibold text-2xl text-white drop-shadow-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {data?.banner_two_left_section_heading_text}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='text-gray-200'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {data?.banner_two_left_section_details_text}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='row-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {/* {data?.banner_two_left_section_button_link &amp;&amp; ( */}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link href={'#'}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Button className='py-3 px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='row font-medium items-center space-x-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {/* &lt;PlayCircle /&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                                    Explore</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {/* )} */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {data?.banner_two_left_section_heading_text ||</span>
+<span class="cstat-no" title="statement not covered" >                    (data?.banner_two_left_section_details_text &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-center col-center space-y-7 z-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-center font-semibold text-2xl text-white drop-shadow-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {data?.banner_two_left_section_heading_text}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='text-gray-200'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {data?.banner_two_left_section_details_text}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='row-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {/* {data?.banner_two_left_section_button_link &amp;&amp; ( */}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;Link href={'#'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Button className='py-3 px-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div className='row font-medium items-center space-x-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            {/* &lt;PlayCircle /&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >                                            Explore</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {/* )} */}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ))}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='col-center z-10 items-end p-7'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ImageWithFallback</span>
 <span class="cstat-no" title="statement not covered" >                        src={data?.banner_two_right_side_image}</span>
@@ -238,7 +247,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T16:22:36.190Z
+                at 2023-12-04T15:09:10.199Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

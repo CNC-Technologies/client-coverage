@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/71</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -123,29 +123,7 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -206,32 +184,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery } from '@tanstack/react-query'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" >import { menuOrderRoute, menuOrderWithIdRoute } from '@/constants/app/routes'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >interface Item {</span>
-<span class="cstat-no" title="statement not covered" >    id: string</span>
-<span class="cstat-no" title="statement not covered" >    quantity: number</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export interface OrderProps {</span>
-<span class="cstat-no" title="statement not covered" >    items: Item[]</span>
-<span class="cstat-no" title="statement not covered" >    order: {</span>
-<span class="cstat-no" title="statement not covered" >        additional_info: {</span>
-<span class="cstat-no" title="statement not covered" >            additional_note?: string</span>
-<span class="cstat-no" title="statement not covered" >            option?: string</span>
-<span class="cstat-no" title="statement not covered" >            order_type?: string</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >import { OrderFormProps } from '@/interfaces/orders.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function useOrders() {</span>
 <span class="cstat-no" title="statement not covered" >    // const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createOrder = useMutation({</span>
-<span class="cstat-no" title="statement not covered" >        mutationFn: async (data: OrderProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async (data: OrderFormProps) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >            const res = await post({ url: menuOrderRoute, data })</span>
 <span class="cstat-no" title="statement not covered" >            // if (res.success) {</span>
@@ -247,16 +211,19 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function useGetAllOrders() {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = router.query?.details as string</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return useQuery({</span>
-<span class="cstat-no" title="statement not covered" >        queryKey: ['allMenuOrders'],</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: [placeId, 'allOrders'],</span>
 <span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >            const res = await get({ url: menuOrderRoute })</span>
-<span class="cstat-no" title="statement not covered" >            // if (res.success) {</span>
-<span class="cstat-no" title="statement not covered" >            //     console.log(res.data)</span>
-<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >            if (res.success) {</span>
+<span class="cstat-no" title="statement not covered" >                // console.log(res)</span>
+<span class="cstat-no" title="statement not covered" >                return res.data</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -283,7 +250,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T16:22:36.190Z
+                at 2023-12-04T15:09:10.199Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

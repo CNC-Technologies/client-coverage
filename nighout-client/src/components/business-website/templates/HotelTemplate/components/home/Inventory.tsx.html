@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/77</span>
+                <span class='fraction'>0/79</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/77</span>
+                <span class='fraction'>0/79</span>
             </div>
         
             
@@ -140,7 +140,11 @@
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -250,46 +254,48 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {places?.map((place, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    if (getCombinedMenuItems(place)?.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >                        return (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div key={idx}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='text-lg capitalize font-medium mobile:text-xl mobile:font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {place.name}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='grid gap-6'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {places?.map((place, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (getCombinedMenuItems(place)?.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            return (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div key={idx} className='mt-5'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='text-lg capitalize font-medium mobile:text-xl mobile:font-semibold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {place.name}</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                        href={placeInventoryLink(</span>
-<span class="cstat-no" title="statement not covered" >                                            place?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                            'Menu',</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                            href={placeInventoryLink(</span>
+<span class="cstat-no" title="statement not covered" >                                                place?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                                'Menu',</span>
+<span class="cstat-no" title="statement not covered" >                                            )}</span>
+<span class="cstat-no" title="statement not covered" >                                            className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-text'</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;span className='text-sm'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                View all</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;ArrowRightOutlineIcon className='text-base mobile:text-xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className='mt-4 grid gap-5 max-lgMobile:grid-cols-1  max-md:grid-cols-2 grid-cols-1 smLaptop:grid-cols-2 lgDesktop:grid-cols-3 max-w-[70rem]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {getCombinedMenuItems(place)?.map(</span>
+<span class="cstat-no" title="statement not covered" >                                            (menuItem, index) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;MenuOrderCard</span>
+<span class="cstat-no" title="statement not covered" >                                                    key={index}</span>
+<span class="cstat-no" title="statement not covered" >                                                    menuItem={menuItem}</span>
+<span class="cstat-no" title="statement not covered" >                                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            ),</span>
 <span class="cstat-no" title="statement not covered" >                                        )}</span>
-<span class="cstat-no" title="statement not covered" >                                        className='flex items-center gap-3 text-sm mobile:text-base mobile:font-medium link-text'</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;span className='text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            View all</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;ArrowRightOutlineIcon className='text-base mobile:text-xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {/* &lt;InventoryList businessWebsite place={place} /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='mt-4 grid gap-5 max-lgMobile:grid-cols-1  max-md:grid-cols-2 grid-cols-1 smLaptop:grid-cols-2 lgDesktop:grid-cols-3 max-w-[70rem]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {getCombinedMenuItems(place)?.map(</span>
-<span class="cstat-no" title="statement not covered" >                                        (menuItem, index) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;MenuOrderCard</span>
-<span class="cstat-no" title="statement not covered" >                                                key={index}</span>
-<span class="cstat-no" title="statement not covered" >                                                menuItem={menuItem}</span>
-<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        ),</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {/* &lt;InventoryList businessWebsite place={place} /&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >                            )</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                    })}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -301,7 +307,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T16:22:36.190Z
+                at 2023-12-04T15:09:10.199Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

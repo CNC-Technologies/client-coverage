@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/186</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/175</span>
+                <span class='fraction'>0/186</span>
             </div>
         
             
@@ -238,7 +238,29 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -414,17 +436,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { MinusIcon, PlusIcon } from 'lucide-react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" >import { useContext, useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
 <span class="cstat-no" title="statement not covered" >import Button, { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { useSmartMenuCart } from '@/components/context-containers/SmartMenuCart.context'</span>
-<span class="cstat-no" title="statement not covered" >import useOrders, {</span>
-<span class="cstat-no" title="statement not covered" >    OrderProps,</span>
-<span class="cstat-no" title="statement not covered" >} from '@/hooks/business/places/smart-menu/useOrder'</span>
+<span class="cstat-no" title="statement not covered" >import useOrders from '@/hooks/business/places/smart-menu/useOrder'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import AuthModalContext from '@/components/context-containers/AuthModal.context'</span>
+<span class="cstat-no" title="statement not covered" >import { OrderFormProps } from '@/interfaces/orders.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >export default function MenuOrderItem({ placeOrder, orders, placeId }) {</span>
+<span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { updateCartItem, carts } = useSmartMenuCart()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const calculateTotal = (placeId) =&gt; {</span>
@@ -433,6 +459,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const [additionalNote, setAdditionalNote] = useState('')</span>
+<span class="cstat-no" title="statement not covered" >    const { showAuthModal } = useContext(AuthModalContext)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const total = calculateTotal(placeId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -442,15 +469,21 @@
 <span class="cstat-no" title="statement not covered" >    const { createOrder } = useOrders()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleOrder = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        let data: OrderProps = {</span>
+<span class="cstat-no" title="statement not covered" >        if (!user) {</span>
+<span class="cstat-no" title="statement not covered" >            showAuthModal()</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        let data: OrderFormProps = {</span>
 <span class="cstat-no" title="statement not covered" >            order: {</span>
 <span class="cstat-no" title="statement not covered" >                additional_info: {</span>
 <span class="cstat-no" title="statement not covered" >                    order_type: activeOption,</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            items: orders.map((order) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >                [order.id]: order.quantity,</span>
-<span class="cstat-no" title="statement not covered" >            })),</span>
+<span class="cstat-no" title="statement not covered" >            items: orders.reduce((acc, order) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                acc[order.id] = order.quantity</span>
+<span class="cstat-no" title="statement not covered" >                return acc</span>
+<span class="cstat-no" title="statement not covered" >            }, {}),</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        // Add additional_note to additional_info only if it exists</span>
@@ -595,7 +628,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-01T16:22:36.190Z
+                at 2023-12-04T15:09:10.199Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
