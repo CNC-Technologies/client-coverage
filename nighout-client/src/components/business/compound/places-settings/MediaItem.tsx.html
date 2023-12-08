@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/66</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/66</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -129,7 +129,45 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -200,18 +238,29 @@
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import MenuList from '@/components/app/simple/MenuList'</span>
 <span class="cstat-no" title="statement not covered" >import { ThreeDotsIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import CheckBox from '@/components/FormComponents/checkbox'</span>
+<span class="cstat-no" title="statement not covered" >import usePlaces from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MediaItem({</span>
 <span class="cstat-no" title="statement not covered" >    item,</span>
 <span class="cstat-no" title="statement not covered" >    type = 'image',</span>
+<span class="cstat-no" title="statement not covered" >    multipleSelect,</span>
+<span class="cstat-no" title="statement not covered" >    selectedMedias,</span>
+<span class="cstat-no" title="statement not covered" >    addSelectedMedia,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    item: any</span>
 <span class="cstat-no" title="statement not covered" >    type: 'image' | 'video'</span>
+<span class="cstat-no" title="statement not covered" >    multipleSelect: boolean</span>
+<span class="cstat-no" title="statement not covered" >    selectedMedias: string[]</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    addSelectedMedia: (x: string) =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >    const { deletePlaceMedia } = usePlaces()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const optionsItems = [</span>
 <span class="cstat-no" title="statement not covered" >        {</span>
 <span class="cstat-no" title="statement not covered" >            label: 'Delete',</span>
-<span class="cstat-no" title="statement not covered" >            onClick: () =&gt; null,</span>
+<span class="cstat-no" title="statement not covered" >            onClick: () =&gt; deletePlaceMedia.mutate([item.id]),</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -223,17 +272,25 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='h-[150px] w-full relative bg-black rounded-xl overflow-hidden'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span className='absolute top-2 right-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;MenuList</span>
-<span class="cstat-no" title="statement not covered" >                    leftSided</span>
-<span class="cstat-no" title="statement not covered" >                    menuButton={</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;IconButton className='bg-black/10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ThreeDotsIcon color='white' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    menuItems={optionsItems}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='h-[150px] w-full relative bg-black dark:bg-grey/20 rounded-xl overflow-hidden'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span className='absolute z-20 top-2 right-2 flex items-center space-x-1'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {multipleSelect ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;CheckBox</span>
+<span class="cstat-no" title="statement not covered" >                        checked={selectedMedias?.includes(item.id)}</span>
+<span class="cstat-no" title="statement not covered" >                        onCheckedChange={() =&gt; addSelectedMedia(item.id)}</span>
+<span class="cstat-no" title="statement not covered" >                        className='border-white'</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;MenuList</span>
+<span class="cstat-no" title="statement not covered" >                        leftSided</span>
+<span class="cstat-no" title="statement not covered" >                        menuButton={</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;IconButton className='bg-black/10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;ThreeDotsIcon color='white' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        menuItems={optionsItems}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {item.MediaType === 'image' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
@@ -268,7 +325,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-07T07:28:15.305Z
+                at 2023-12-08T19:48:46.212Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
