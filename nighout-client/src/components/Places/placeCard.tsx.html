@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/290</span>
+                <span class='fraction'>0/299</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/290</span>
+                <span class='fraction'>0/299</span>
             </div>
         
             
@@ -353,7 +353,25 @@
 <a name='L288'></a><a href='#L288'>288</a>
 <a name='L289'></a><a href='#L289'>289</a>
 <a name='L290'></a><a href='#L290'>290</a>
-<a name='L291'></a><a href='#L291'>291</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -650,6 +668,7 @@
 <span class="cstat-no" title="statement not covered" >import { RefObject, useContext, useEffect } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useUser } from '@auth0/nextjs-auth0/client'</span>
+<span class="cstat-no" title="statement not covered" >import { useQueryClient } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" >import dynamic from 'next/dynamic'</span>
 <span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -702,6 +721,8 @@
 <span class="cstat-no" title="statement not covered" >    // fetchPlaces = () =&gt; {}, //This function is only for business accounts</span>
 <span class="cstat-no" title="statement not covered" >    refetchMorePlaces,</span>
 <span class="cstat-no" title="statement not covered" >}: PlaceCardProps) {</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { showConfirmDelete } = useContext(ConfirmationDialogContext)</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
@@ -724,6 +745,10 @@
 <span class="cstat-no" title="statement not covered" >                }),</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const cacheBusinessPlaceOnRouting = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['placeDetails', place.id], place)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // This function is to refetch places in an infinite scroll list</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
@@ -848,6 +873,7 @@
 <span class="cstat-no" title="statement not covered" >                    {configKey === 'business' ? (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='row space-x-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={cacheBusinessPlaceOnRouting}</span>
 <span class="cstat-no" title="statement not covered" >                                href={placeBusinessDashboard(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                                className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
@@ -855,6 +881,7 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={cacheBusinessPlaceOnRouting}</span>
 <span class="cstat-no" title="statement not covered" >                                href={placeBusinessSettings(place?.id)}</span>
 <span class="cstat-no" title="statement not covered" >                                className='flex items-center whitespace-nowrap px-3 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
@@ -940,7 +967,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-11T19:19:15.522Z
+                at 2023-12-11T19:20:14.915Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
