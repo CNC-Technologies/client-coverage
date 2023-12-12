@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/252</span>
+                <span class='fraction'>0/251</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/252</span>
+                <span class='fraction'>0/251</span>
             </div>
         
             
@@ -314,9 +314,7 @@
 <a name='L249'></a><a href='#L249'>249</a>
 <a name='L250'></a><a href='#L250'>250</a>
 <a name='L251'></a><a href='#L251'>251</a>
-<a name='L252'></a><a href='#L252'>252</a>
-<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L252'></a><a href='#L252'>252</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -641,17 +639,15 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    const onSubmit = (data) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const finalData = {</span>
 <span class="cstat-no" title="statement not covered" >            data: data,</span>
 <span class="cstat-no" title="statement not covered" >            tableId: table?.id,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (table?.id) {</span>
 <span class="cstat-no" title="statement not covered" >            editTable.mutateAsync(finalData)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        // console.log('hello')</span>
-<span class="cstat-no" title="statement not covered" >        // console.log(data)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -669,7 +665,7 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Table Number&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                        placeholder='01'</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder='Enter table number (e.g., 05)'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
 <span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                            const value = e.target.value</span>
@@ -695,7 +691,7 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Table name&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                        placeholder='Table one'</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder='Enter a unique name (e.g., Family Corner)'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
@@ -717,7 +713,7 @@
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;SelectTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;SelectValue placeholder='Select a type' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;SelectValue placeholder='Select the assigned staff member' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/SelectTrigger&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;SelectContent className='capitalize'&gt;</span>
@@ -750,7 +746,7 @@
 <span class="cstat-no" title="statement not covered" >                                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;SelectTrigger&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;SelectValue placeholder='Select a type' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;SelectValue placeholder='Choose table type (Regular, Premium, VIP)' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/SelectTrigger&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;SelectContent className='capitalize'&gt;</span>
@@ -779,7 +775,7 @@
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Table Capacity&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                        placeholder='2'</span>
+<span class="cstat-no" title="statement not covered" >                                        placeholder='Enter number of seats (e.g., 4)'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
 <span class="cstat-no" title="statement not covered" >                                        onChange={(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                            const value = e.target.value</span>
@@ -797,11 +793,11 @@
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={handleDeleteTable}</span>
-<span class="cstat-no" title="statement not covered" >                        className='flex justify-end'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-red-500 text-sm font-medium hover:underline cursor-pointer '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex justify-end'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={handleDeleteTable}</span>
+<span class="cstat-no" title="statement not covered" >                            className='text-red-500 text-sm font-medium hover:underline cursor-pointer w-fit '</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Delete Table</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -809,6 +805,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='w-60 flex justify-center mt-4 mx-auto'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Button</span>
 <span class="cstat-no" title="statement not covered" >                            loading={editTable.isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                            disabled={!form.formState.isDirty}</span>
 <span class="cstat-no" title="statement not covered" >                            className='w-full'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Update</span>
@@ -826,7 +823,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-11T19:20:14.915Z
+                at 2023-12-12T18:59:15.338Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
