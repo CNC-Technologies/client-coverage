@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/156</span>
+                <span class='fraction'>0/158</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/156</span>
+                <span class='fraction'>0/158</span>
             </div>
         
             
@@ -219,7 +219,11 @@
 <a name='L154'></a><a href='#L154'>154</a>
 <a name='L155'></a><a href='#L155'>155</a>
 <a name='L156'></a><a href='#L156'>156</a>
-<a name='L157'></a><a href='#L157'>157</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -392,6 +396,7 @@
 <span class="cstat-no" title="statement not covered" >import { useGetMenus } from '@/hooks/business/places/smart-menu/useMenu'</span>
 <span class="cstat-no" title="statement not covered" >import { businessPlaceMenuLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import { hotelRoomList } from '@/constants/MockData/RoomList'</span>
+<span class="cstat-no" title="statement not covered" >import { subscriptionList } from '@/constants/MockData/GymSubscriptionList'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface InventoryListProps {</span>
 <span class="cstat-no" title="statement not covered" >    gridLayout?: boolean</span>
@@ -441,7 +446,7 @@
 <span class="cstat-no" title="statement not covered" >                return 'Rooms'</span>
 <span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
 <span class="cstat-no" title="statement not covered" >                return 'Menu'</span>
-<span class="cstat-no" title="statement not covered" >            case 'Recreation &amp; Fitness':</span>
+<span class="cstat-no" title="statement not covered" >            case 'Fitness':</span>
 <span class="cstat-no" title="statement not covered" >                return 'Subscriptions'</span>
 <span class="cstat-no" title="statement not covered" >            case 'Travel/Tour Operators':</span>
 <span class="cstat-no" title="statement not covered" >                return 'Tickets'</span>
@@ -458,8 +463,8 @@
 <span class="cstat-no" title="statement not covered" >                return &lt;RoomList rooms={hotelRoomList} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
 <span class="cstat-no" title="statement not covered" >                return &lt;MenuList menus={inventoryList(type)} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            case 'Recreation &amp; Fitness':</span>
-<span class="cstat-no" title="statement not covered" >                return &lt;SubscriptionList /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            case 'Fitness':</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;SubscriptionList subscriptions={subscriptionList} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            case 'Travel/Tour Operators':</span>
 <span class="cstat-no" title="statement not covered" >                return &lt;TicketList /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            default:</span>
@@ -475,7 +480,8 @@
 <span class="cstat-no" title="statement not covered" >                return resolvedMenuList</span>
 <span class="cstat-no" title="statement not covered" >            case 'Hotels':</span>
 <span class="cstat-no" title="statement not covered" >                return hotelRoomList</span>
-<span class="cstat-no" title="statement not covered" >            case 'Recreation &amp; Fitness':</span>
+<span class="cstat-no" title="statement not covered" >            case 'Fitness':</span>
+<span class="cstat-no" title="statement not covered" >                return subscriptionList</span>
 <span class="cstat-no" title="statement not covered" >            case 'Travel/Tour Operators':</span>
 <span class="cstat-no" title="statement not covered" >            default:</span>
 <span class="cstat-no" title="statement not covered" >                return []</span>
@@ -538,7 +544,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-12T18:59:15.338Z
+                at 2023-12-13T08:33:24.842Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
