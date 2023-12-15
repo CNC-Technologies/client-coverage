@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/Tours/BusinessFeatureTour.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/context-containers/CompletedOrderCart.context.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Tours</a> BusinessFeatureTour.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/context-containers</a> CompletedOrderCart.context.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/67</span>
+                <span class='fraction'>0/76</span>
             </div>
         
             
@@ -130,7 +130,16 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -197,73 +206,91 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQueryClient } from '@tanstack/react-query'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
-<span class="cstat-no" title="statement not covered" >import { CallBackProps, STATUS, Step } from 'react-joyride'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, {</span></span></span>
+<span class="cstat-no" title="statement not covered" >    createContext,</span>
+<span class="cstat-no" title="statement not covered" >    useContext,</span>
+<span class="cstat-no" title="statement not covered" >    useEffect,</span>
+<span class="cstat-no" title="statement not covered" >    useState,</span>
+<span class="cstat-no" title="statement not covered" >    ReactNode,</span>
+<span class="cstat-no" title="statement not covered" >} from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import useTourManagement from '@/hooks/tours/useTourManagement'</span>
+<span class="cstat-no" title="statement not covered" >import { MenuItemProps } from '@/interfaces/smartMenu.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export const useGenerateBusinessFeatureTourSteps = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { markTourAsCompleted, isTourCompleted } = useTourManagement()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const hasBusinesses = queryClient.getQueryData(['myBusinessesList'])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const hasSeenTour = isTourCompleted('hasSeenHomepageFeatureTour')</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let steps: Step[] = [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            target: 'body',</span>
-<span class="cstat-no" title="statement not covered" >            content: (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                        width={100}</span>
-<span class="cstat-no" title="statement not covered" >                        height={100}</span>
-<span class="cstat-no" title="statement not covered" >                        src={'/favicon.png'}</span>
-<span class="cstat-no" title="statement not covered" >                        alt={'Placio logo'}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;h5 className='text-xl italic font-semibold mt-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Welcome to Placio.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/h5&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {`Let's help you create a smart menu`}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            ),</span>
-<span class="cstat-no" title="statement not covered" >            placement: 'center',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    ]</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (!hasBusinesses) {</span>
-<span class="cstat-no" title="statement not covered" >        steps.push({</span>
-<span class="cstat-no" title="statement not covered" >            target: '#createBusinessButton',</span>
-<span class="cstat-no" title="statement not covered" >            content: 'Create a new business account.',</span>
-<span class="cstat-no" title="statement not covered" >            placement: 'right',</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >        steps.push({</span>
-<span class="cstat-no" title="statement not covered" >            target: '#business-accounts-section-selector',</span>
-<span class="cstat-no" title="statement not covered" >            content: 'Manage your business accounts from this section.',</span>
-<span class="cstat-no" title="statement not covered" >            placement: 'left',</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const homepageFeatureTourCallback = (</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
-<span class="cstat-no" title="statement not covered" >        setRun: (value: boolean) =&gt; void,</span>
-<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return (data: CallBackProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const { status } = data</span>
-<span class="cstat-no" title="statement not covered" >            if (status === STATUS.FINISHED || status === STATUS.SKIPPED) {</span>
-<span class="cstat-no" title="statement not covered" >                setRun(false)</span>
-<span class="cstat-no" title="statement not covered" >                markTourAsCompleted('hasSeenHomepageFeatureTour')</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { steps: !hasSeenTour ? steps : [], homepageFeatureTourCallback }</span>
+<span class="cstat-no" title="statement not covered" >interface OrdersContextType {</span>
+<span class="cstat-no" title="statement not covered" >    orders: { [restaurantId: string]: MenuItemProps[] }</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    addOrder: (restaurantId: string, order: MenuItemProps) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    removeOrder: (restaurantId: string, orderId: string) =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const OrdersContext = createContext&lt;OrdersContextType | undefined&gt;(undefined)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const useOrdersCart = (): OrdersContextType =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const context = useContext(OrdersContext)</span>
+<span class="cstat-no" title="statement not covered" >    if (!context) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('useOrdersCart must be used within a OrdersProvider')</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return context</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const OrdersProvider = ({ children }: { children: ReactNode }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const [orders, setOrders] = useState&lt;{</span>
+<span class="cstat-no" title="statement not covered" >        [restaurantId: string]: MenuItemProps[]</span>
+<span class="cstat-no" title="statement not covered" >    }&gt;(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Retrieve stored orders from localStorage or initial state</span>
+<span class="cstat-no" title="statement not covered" >        const storedOrders =</span>
+<span class="cstat-no" title="statement not covered" >            typeof window !== 'undefined' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            localStorage.getItem('restaurant_orders')</span>
+<span class="cstat-no" title="statement not covered" >        return storedOrders ? JSON.parse(storedOrders) : {}</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Update localStorage whenever orders change</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('restaurant_orders', JSON.stringify(orders))</span>
+<span class="cstat-no" title="statement not covered" >    }, [orders])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const addOrder = (restaurantId: string, order: MenuItemProps): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Add a new order to the specified restaurant</span>
+<span class="cstat-no" title="statement not covered" >        setOrders((prevOrders) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >            ...prevOrders,</span>
+<span class="cstat-no" title="statement not covered" >            [restaurantId]: [...(prevOrders[restaurantId] || []), order],</span>
+<span class="cstat-no" title="statement not covered" >        }))</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const removeOrder = (restaurantId: string, orderId: string): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Remove an order from the specified restaurant</span>
+<span class="cstat-no" title="statement not covered" >        setOrders((prevOrders) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >            ...prevOrders,</span>
+<span class="cstat-no" title="statement not covered" >            [restaurantId]: prevOrders[restaurantId].filter(</span>
+<span class="cstat-no" title="statement not covered" >                (order) =&gt; order.id !== orderId,</span>
+<span class="cstat-no" title="statement not covered" >            ),</span>
+<span class="cstat-no" title="statement not covered" >        }))</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const ordersContextValue = {</span>
+<span class="cstat-no" title="statement not covered" >        orders,</span>
+<span class="cstat-no" title="statement not covered" >        addOrder,</span>
+<span class="cstat-no" title="statement not covered" >        removeOrder,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;OrdersContext.Provider value={ordersContextValue}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/OrdersContext.Provider&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default OrdersProvider</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

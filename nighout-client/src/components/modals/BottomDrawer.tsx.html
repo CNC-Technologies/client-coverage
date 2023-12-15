@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/58</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/58</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -121,7 +121,8 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -179,35 +180,35 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useEffect } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useEffect, useRef } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function BottomDrawer({</span>
 <span class="cstat-no" title="statement not covered" >    isOpen,</span>
 <span class="cstat-no" title="statement not covered" >    handleClose,</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
-<span class="cstat-no" title="statement not covered" >    // heading = '',</span>
 <span class="cstat-no" title="statement not covered" >    height = 'max-h-[50%] h-full',</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    isOpen: boolean</span>
 <span class="cstat-no" title="statement not covered" >    handleClose: () =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >    children: React.ReactNode</span>
-<span class="cstat-no" title="statement not covered" >    // heading?: string</span>
 <span class="cstat-no" title="statement not covered" >    height?: string</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    // const touchStartYRef = useRef&lt;number&gt;(0)</span>
+<span class="cstat-no" title="statement not covered" >    const touchStartYRef = useRef&lt;number&gt;(0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const handleTouchStart = (e: React.TouchEvent&lt;HTMLDivElement&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // 	touchStartYRef.current = e.touches[0].clientY</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >    const handleTouchStart = (e: React.TouchEvent&lt;HTMLDivElement&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        touchStartYRef.current = e.touches[0].clientY</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const handleTouchEnd = (e: React.TouchEvent&lt;HTMLDivElement&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // 	const touchEndY = e.changedTouches[0].clientY</span>
-<span class="cstat-no" title="statement not covered" >    // 	const touchDistance = touchEndY - touchStartYRef.current</span>
+<span class="cstat-no" title="statement not covered" >    const handleTouchEnd = (e: React.TouchEvent&lt;HTMLDivElement&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const touchEndY = e.changedTouches[0].clientY</span>
+<span class="cstat-no" title="statement not covered" >        const touchDistance = touchEndY - touchStartYRef.current</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // 	if (touchDistance &gt; 50) {</span>
-<span class="cstat-no" title="statement not covered" >    // 		handleClose()</span>
-<span class="cstat-no" title="statement not covered" >    // 	}</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >        if (touchDistance &gt; 50) {</span>
+<span class="cstat-no" title="statement not covered" >            // You can adjust this threshold as needed</span>
+<span class="cstat-no" title="statement not covered" >            handleClose()</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        document.body.classList.toggle('overflow-hidden', isOpen)</span>
@@ -219,15 +220,17 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            className={`fixed  w-full bottom-0 left-0 bg-black/50 shadow-lg ${</span>
+<span class="cstat-no" title="statement not covered" >            className={`fixed w-full bottom-0 left-0 bg-black/50 shadow-lg ${</span>
 <span class="cstat-no" title="statement not covered" >                isOpen</span>
-<span class="cstat-no" title="statement not covered" >                    ? 'opacity-100 z-[1000]  h-full duration-300'</span>
+<span class="cstat-no" title="statement not covered" >                    ? 'opacity-100 z-[1000] h-full duration-300'</span>
 <span class="cstat-no" title="statement not covered" >                    : 'opacity-0 translate-y-0'</span>
-<span class="cstat-no" title="statement not covered" >            } transition-opacity   ease-in`}</span>
+<span class="cstat-no" title="statement not covered" >            } transition-opacity ease-in`}</span>
 <span class="cstat-no" title="statement not covered" >            onClick={handleClose}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                onClick={(e) =&gt; e.stopPropagation()}</span>
+<span class="cstat-no" title="statement not covered" >                onTouchStart={handleTouchStart}</span>
+<span class="cstat-no" title="statement not covered" >                onTouchEnd={handleTouchEnd}</span>
 <span class="cstat-no" title="statement not covered" >                className={` ${height} overflow-y-auto bg-white rounded-t-2xl absolute bottom-0 left-0 w-full shadow-lg ${</span>
 <span class="cstat-no" title="statement not covered" >                    !isOpen ? 'translate-y-full' : 'translate-y-0 '</span>
 <span class="cstat-no" title="statement not covered" >                } transition-transform duration-300 ease-in-out`}</span>
@@ -244,7 +247,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-14T16:37:44.216Z
+                at 2023-12-15T12:59:08.313Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
