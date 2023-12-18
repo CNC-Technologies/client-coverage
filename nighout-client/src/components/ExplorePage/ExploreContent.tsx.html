@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/111</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/113</span>
+                <span class='fraction'>0/111</span>
             </div>
         
             
@@ -174,9 +174,7 @@
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -287,43 +285,38 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useSelector } from 'react-redux'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import ExploreCategories from '@/components/ExplorePage/categories'</span>
 <span class="cstat-no" title="statement not covered" >// import EventsNearby from '@/components/ExplorePage/eventsNearby'</span>
 <span class="cstat-no" title="statement not covered" >import MostSearchKeywords from '@/components/ExplorePage/mostSearchKeywords'</span>
-<span class="cstat-no" title="statement not covered" >import PopularPlaces from '@/components/ExplorePage/popularPlaces'</span>
 <span class="cstat-no" title="statement not covered" >import RecommendedPlaces from '@/components/ExplorePage/recommendedPlaces'</span>
 <span class="cstat-no" title="statement not covered" >import SearchBar from '@/components/SearchBar/SearchBar'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function ExploreContent({ layout = '' }) {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
-<span class="cstat-no" title="statement not covered" >    const [hoveredElement, setHoveredElement] = useState&lt;number | null&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" >    const categories = [</span>
-<span class="cstat-no" title="statement not covered" >        // {</span>
-<span class="cstat-no" title="statement not covered" >        //     name: 'events',</span>
-<span class="cstat-no" title="statement not covered" >        //     image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/event_vxebm2.svg',</span>
-<span class="cstat-no" title="statement not covered" >        // },</span>
+<span class="cstat-no" title="statement not covered" >    // const [hoveredElement, setHoveredElement] = useState&lt;number | null&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" >    // const categories = [</span>
+<span class="cstat-no" title="statement not covered" >    //     {</span>
+<span class="cstat-no" title="statement not covered" >    //         name: 'events',</span>
+<span class="cstat-no" title="statement not covered" >    //         image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/event_vxebm2.svg',</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'places',</span>
-<span class="cstat-no" title="statement not covered" >            image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/places_gckvab.svg',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    //     {</span>
+<span class="cstat-no" title="statement not covered" >    //         name: 'places',</span>
+<span class="cstat-no" title="statement not covered" >    //         image: 'https://res.cloudinary.com/placio/image/upload/v1683018230/user-media-content/places_gckvab.svg',</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            name: 'users',</span>
-<span class="cstat-no" title="statement not covered" >            image: 'https://res.cloudinary.com/placio/image/upload/v1683018229/user-media-content/people_fatl98.svg',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >    ]</span>
+<span class="cstat-no" title="statement not covered" >    //     {</span>
+<span class="cstat-no" title="statement not covered" >    //         name: 'users',</span>
+<span class="cstat-no" title="statement not covered" >    //         image: 'https://res.cloudinary.com/placio/image/upload/v1683018229/user-media-content/people_fatl98.svg',</span>
+<span class="cstat-no" title="statement not covered" >    //     },</span>
+<span class="cstat-no" title="statement not covered" >    // ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className={` ${!layout ? 'md:py-10' : ''} relative `}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className={`relative `}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;div className={` ${!layout ? 'md:py-5' : ''} relative `}&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;SearchBar</span>
 <span class="cstat-no" title="statement not covered" >                mobileViewClass={` ${</span>
 <span class="cstat-no" title="statement not covered" >                    user ? 'top-16' : 'top-20'</span>
@@ -337,13 +330,15 @@
 <span class="cstat-no" title="statement not covered" >                        : 'w-full'</span>
 <span class="cstat-no" title="statement not covered" >                } `}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mb-2 mt-3 xmd:mb-10 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;div className='mb-2 mt-3 xmd:mb-10 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h2 className='text-xl max-mobile:text-center xmd:text-2xl md:text-3xl   flex justify-center items-center font-semibold'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Experience Placio at its finest.</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='flex max-md:flex-wrap max-w-[60rem] mx-auto justify-center items-center gap-4 smLaptop:gap-6 lgDesktop:gap-7 my-2 md:my-6 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* // ! this is meant for event and places. Take note when uncommenting</span>
+<span class="cstat-no" title="statement not covered" >                //!  and it is meant to redirect places and event page respectively */}</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;div className='flex max-md:flex-wrap max-w-[60rem] mx-auto justify-center items-center gap-4 smLaptop:gap-6 lgDesktop:gap-7 my-2 md:my-6 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {categories.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                        return (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
@@ -387,17 +382,16 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" >                    })}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;ExploreCategories categoryName={undefined} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ExploreCategories /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;PopularPlaces /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;PopularPlaces /&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* &lt;EventsNearby /&gt; */}</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;MostSearchKeywords /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;RecommendedPlaces categoryName={undefined} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;RecommendedPlaces /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -409,7 +403,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-15T12:59:08.313Z
+                at 2023-12-18T08:20:23.728Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
