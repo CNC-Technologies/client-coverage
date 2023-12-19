@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/Places/PlacesDetailsComplex.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/context-containers/BusinessWebsiteCart.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Places</a> PlacesDetailsComplex.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/context-containers</a> BusinessWebsiteCart.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/156</span>
+                <span class='fraction'>0/160</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/156</span>
+                <span class='fraction'>0/160</span>
             </div>
         
             
@@ -219,7 +219,11 @@
 <a name='L154'></a><a href='#L154'>154</a>
 <a name='L155'></a><a href='#L155'>155</a>
 <a name='L156'></a><a href='#L156'>156</a>
-<a name='L157'></a><a href='#L157'>157</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -375,162 +379,170 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useQueryClient } from '@tanstack/react-query'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
-<span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, {</span></span></span>
+<span class="cstat-no" title="statement not covered" >    createContext,</span>
+<span class="cstat-no" title="statement not covered" >    useContext,</span>
+<span class="cstat-no" title="statement not covered" >    useEffect,</span>
+<span class="cstat-no" title="statement not covered" >    useState,</span>
+<span class="cstat-no" title="statement not covered" >    ReactNode,</span>
+<span class="cstat-no" title="statement not covered" >} from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import empty from '@/lotties/empty-large.json'</span>
-<span class="cstat-no" title="statement not covered" >// import PlacesList from '@/components/app/complex/PlacesList'</span>
-<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceAmenities from '@/components/Places/PlaceDetails/Amenities'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceDetails from '@/components/Places/PlaceDetails/Details/Details'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceFAQ from '@/components/Places/PlaceDetails/PlaceFAQ'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceDetailsHeading from '@/components/Places/PlaceDetails/PlaceHeading'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceDetailsImages from '@/components/Places/PlaceDetails/PlaceImages/PlaceImages'</span>
-<span class="cstat-no" title="statement not covered" >import InventoryList from '@/components/Places/PlaceDetails/PlaceInventory/InventoryList'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceReviews from '@/components/Places/PlaceDetails/Reviews/PlaceReviews'</span>
-<span class="cstat-no" title="statement not covered" >import PlacesCartList from '@/components/Places/PlaceDetails/placesCart/CartItem'</span>
-<span class="cstat-no" title="statement not covered" >import PlacesFloatingCartButton from '@/components/Places/PlaceDetails/placesCart/FloatingCartButton'</span>
-<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceDetailsSkeleton from '@/components/skeletons/places/PlaceDetailsSkeleton'</span>
-<span class="cstat-no" title="statement not covered" >// import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
-<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
-<span class="cstat-no" title="statement not covered" >import { PlaceInterface } from '@/store/slices/places.slice'</span>
-<span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
-<span class="cstat-no" title="statement not covered" >import OwnersCard from '@/components/Places/PlaceDetails/OwnerCard'</span>
+<span class="cstat-no" title="statement not covered" >import { MenuItemProps } from '@/interfaces/smartMenu.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PlacesDetailsComplex({</span>
-<span class="cstat-no" title="statement not covered" >    placeDetails,</span>
-<span class="cstat-no" title="statement not covered" >    isLoading,</span>
+<span class="cstat-no" title="statement not covered" >// Extending MenuItemProps for PlaceItemProps</span>
+<span class="cstat-no" title="statement not covered" >interface PlaceItemProps extends MenuItemProps {</span>
+<span class="cstat-no" title="statement not covered" >    placeId: string</span>
+<span class="cstat-no" title="statement not covered" >    quantity: number // Assuming each item has a quantity</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >interface CartContextType {</span>
+<span class="cstat-no" title="statement not covered" >    carts: { [businessName: string]: { [placeId: string]: PlaceItemProps[] } }</span>
+<span class="cstat-no" title="statement not covered" >    updateCartItem: (</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        businessName: string,</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        placeId: string,</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        item: PlaceItemProps,</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        action: 'add' | 'remove',</span>
+<span class="cstat-no" title="statement not covered" >    ) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    hasCartItems: (businessName: string, placeId: string) =&gt; boolean</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    clearCart: (businessName: string, placeId?: string) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const CartContext = createContext&lt;CartContextType | undefined&gt;(undefined)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const useBusinessWebsiteCart = (): CartContextType =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const context = useContext(CartContext)</span>
+<span class="cstat-no" title="statement not covered" >    if (!context) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('useCart must be used within a BusinessWebsiteCart')</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return context</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const BusinessWebsiteCartProvider = ({</span>
+<span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
-<span class="cstat-no" title="statement not covered" >    placeDetails: PlaceProps</span>
-<span class="cstat-no" title="statement not covered" >    isLoading: boolean</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
+<span class="cstat-no" title="statement not covered" >    children: ReactNode</span>
+<span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const [carts, setCarts] = useState&lt;{</span>
+<span class="cstat-no" title="statement not covered" >        [businessName: string]: { [placeId: string]: PlaceItemProps[] }</span>
+<span class="cstat-no" title="statement not covered" >    }&gt;(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // Load cart from localStorage</span>
+<span class="cstat-no" title="statement not covered" >        const storedCarts =</span>
+<span class="cstat-no" title="statement not covered" >            typeof window !== 'undefined' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            localStorage.getItem('business_website_cart')</span>
+<span class="cstat-no" title="statement not covered" >        return storedCarts ? JSON.parse(storedCarts) : {}</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // A particaular place's cart</span>
-<span class="cstat-no" title="statement not covered" >    const placesCart = useSelector((state: RootState) =&gt; state.placesCart)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const placeId = router.query.details as string</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const details = queryClient.getQueryData([</span>
-<span class="cstat-no" title="statement not covered" >        'placeDetails',</span>
-<span class="cstat-no" title="statement not covered" >        placeId,</span>
-<span class="cstat-no" title="statement not covered" >    ]) as PlaceInterface</span>
-<span class="cstat-no" title="statement not covered" >    const placeName = details?.name</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [openCart, setOpenCart] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    const [inCart, setInCart] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" >    const [cartLength, setCartLength] = useState(0)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // THis is for the cart of a particular place</span>
-<span class="cstat-no" title="statement not covered" >    // * This may removed later</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        let storedCart = placesCart.placesCart</span>
-<span class="cstat-no" title="statement not covered" >        if (storedCart[placeName]) {</span>
-<span class="cstat-no" title="statement not covered" >            if (Object.keys(storedCart[placeName]).length !== 0) setInCart(true)</span>
-<span class="cstat-no" title="statement not covered" >            setCartLength(Object.keys(storedCart[placeName]).length)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }, [placeName, placesCart])</span>
+<span class="cstat-no" title="statement not covered" >        // Update localStorage when carts change</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('business_website_cart', JSON.stringify(carts))</span>
+<span class="cstat-no" title="statement not covered" >    }, [carts])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const updateCartItem = (</span>
+<span class="cstat-no" title="statement not covered" >        businessName: string,</span>
+<span class="cstat-no" title="statement not covered" >        placeId: string,</span>
+<span class="cstat-no" title="statement not covered" >        item: PlaceItemProps,</span>
+<span class="cstat-no" title="statement not covered" >        action: 'add' | 'remove',</span>
+<span class="cstat-no" title="statement not covered" >    ): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setCarts((prevCarts) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const businessCart = prevCarts[businessName] || {}</span>
+<span class="cstat-no" title="statement not covered" >            const placeItems = businessCart[placeId] || []</span>
+<span class="cstat-no" title="statement not covered" >            let updatedItems: PlaceItemProps[] = [] // Initialized as an empty array</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            if (action === 'add') {</span>
+<span class="cstat-no" title="statement not covered" >                const existingItem = placeItems.find(</span>
+<span class="cstat-no" title="statement not covered" >                    (placeItem) =&gt; placeItem.id === item.id,</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                updatedItems = existingItem</span>
+<span class="cstat-no" title="statement not covered" >                    ? placeItems.map((placeItem) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                          placeItem.id === item.id</span>
+<span class="cstat-no" title="statement not covered" >                              ? {</span>
+<span class="cstat-no" title="statement not covered" >                                    ...placeItem,</span>
+<span class="cstat-no" title="statement not covered" >                                    quantity: placeItem.quantity + 1,</span>
+<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                              : placeItem,</span>
+<span class="cstat-no" title="statement not covered" >                      )</span>
+<span class="cstat-no" title="statement not covered" >                    : [...placeItems, { ...item, quantity: 1 }]</span>
+<span class="cstat-no" title="statement not covered" >            } else if (action === 'remove') {</span>
+<span class="cstat-no" title="statement not covered" >                updatedItems = placeItems.reduce(</span>
+<span class="cstat-no" title="statement not covered" >                    (newItems: PlaceItemProps[], placeItem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (placeItem.id === item.id) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (placeItem.quantity &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                                newItems.push({</span>
+<span class="cstat-no" title="statement not covered" >                                    ...placeItem,</span>
+<span class="cstat-no" title="statement not covered" >                                    quantity: placeItem.quantity - 1,</span>
+<span class="cstat-no" title="statement not covered" >                                })</span>
+<span class="cstat-no" title="statement not covered" >                            }</span>
+<span class="cstat-no" title="statement not covered" >                        } else {</span>
+<span class="cstat-no" title="statement not covered" >                            newItems.push(placeItem)</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                        return newItems</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
+<span class="cstat-no" title="statement not covered" >                    [],</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
+<span class="cstat-no" title="statement not covered" >                ...prevCarts,</span>
+<span class="cstat-no" title="statement not covered" >                [businessName]: {</span>
+<span class="cstat-no" title="statement not covered" >                    ...businessCart,</span>
+<span class="cstat-no" title="statement not covered" >                    [placeId]: updatedItems,</span>
+<span class="cstat-no" title="statement not covered" >                },</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const clearCart = (businessName: string, placeId?: string): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setCarts((prevCarts) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (placeId) {</span>
+<span class="cstat-no" title="statement not covered" >                // Clear specific place in business</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
+<span class="cstat-no" title="statement not covered" >                    ...prevCarts,</span>
+<span class="cstat-no" title="statement not covered" >                    [businessName]: {</span>
+<span class="cstat-no" title="statement not covered" >                        ...prevCarts[businessName],</span>
+<span class="cstat-no" title="statement not covered" >                        [placeId]: [],</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >                // Clear all places in business</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
+<span class="cstat-no" title="statement not covered" >                    ...prevCarts,</span>
+<span class="cstat-no" title="statement not covered" >                    [businessName]: {},</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const hasCartItems = (businessName: string, placeId: string): boolean =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const businessCart = carts[businessName]</span>
+<span class="cstat-no" title="statement not covered" >        const placeItems = businessCart ? businessCart[placeId] : []</span>
+<span class="cstat-no" title="statement not covered" >        return placeItems &amp;&amp; placeItems.length &gt; 0</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const cartContextValue = {</span>
+<span class="cstat-no" title="statement not covered" >        carts,</span>
+<span class="cstat-no" title="statement not covered" >        updateCartItem,</span>
+<span class="cstat-no" title="statement not covered" >        hasCartItems,</span>
+<span class="cstat-no" title="statement not covered" >        clearCart,</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            className={`${</span>
-<span class="cstat-no" title="statement not covered" >                !user ? 'max-w-[80rem] mx-auto pt-5 pb-10 general-padding' : ''</span>
-<span class="cstat-no" title="statement not covered" >            } relative`}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >            {isLoading ? (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;PlaceDetailsSkeleton /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {placeDetails === null &amp;&amp; !isLoading ? (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-center '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;LottiePlayer animationData={empty} size='md' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='font-bold text-lg text-dark dark:text-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Place details does not exist{' '}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    className='cursor-pointer'</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; router.back()}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;span className='underline'&gt;Go back.&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ) : (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className={`grid gap-6 grid-cols-1 relative`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {/* Place Heading */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PlaceDetailsHeading place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Place images  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {placeDetails?.edges?.medias &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlaceDetailsImages place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Menu list  */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;InventoryList place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Details  */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PlaceDetails place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Amenities  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {placeDetails?.edges?.amenities &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlaceAmenities</span>
-<span class="cstat-no" title="statement not covered" >                                    amenities={placeDetails?.edges?.amenities}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* About Owner  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {placeDetails?.edges?.business &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;OwnersCard</span>
-<span class="cstat-no" title="statement not covered" >                                    business={placeDetails?.edges?.business}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Reviews  */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;PlaceReviews place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* FAQs  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {placeDetails?.edges?.faqs &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlaceFAQ place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            {/* Other categories of Places  */}</span>
-<span class="cstat-no" title="statement not covered" >                            {/* &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;PlacesList</span>
-<span class="cstat-no" title="statement not covered" >                                    title='Places Owned by Business'</span>
-<span class="cstat-no" title="statement not covered" >                                    gridLayout={false}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {inCart &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;PlacesFloatingCartButton</span>
-<span class="cstat-no" title="statement not covered" >                    handleOpenCart={() =&gt; setOpenCart(true)}</span>
-<span class="cstat-no" title="statement not covered" >                    noOfItems={cartLength}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >            {placeDetails !== null &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {/* Cart components  */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;DialogLayout</span>
-<span class="cstat-no" title="statement not covered" >                        dialogOpened={openCart}</span>
-<span class="cstat-no" title="statement not covered" >                        closeDialog={() =&gt; setOpenCart(false)}</span>
-<span class="cstat-no" title="statement not covered" >                        title={placeDetails?.name}</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlacesCartList placeName={placeDetails?.name} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/DialogLayout&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;CartContext.Provider value={cartContextValue}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/CartContext.Provider&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default BusinessWebsiteCartProvider</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

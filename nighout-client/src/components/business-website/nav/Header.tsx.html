@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/89</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/89</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -152,7 +152,49 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -244,6 +286,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useSelector } from 'react-redux'</span></span></span>
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { CartIcon } from '@/constants/icons/icons'</span>
@@ -251,16 +294,33 @@
 <span class="cstat-no" title="statement not covered" >import { appHomeLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import { useBusinessWebsiteCart } from '@/components/context-containers/BusinessWebsiteCart'</span>
+<span class="cstat-no" title="statement not covered" >import Sheet from '@/components/shadcn/ui/sheet'</span>
+<span class="cstat-no" title="statement not covered" >import MenuOrderItem from '@/components/app/smart-menu/MenuOrderItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Header({ data }: { data: WebsiteData | null }) {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const placeId = data?.edges.business.</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const businessName = (router.query?.businessUsername as string) || ''</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const { carts, hasCartItems } = useSmartMenuCart()</span>
-<span class="cstat-no" title="statement not covered" >    // const placeCartItems = carts[placeId] || []</span>
+<span class="cstat-no" title="statement not covered" >    const { carts } = useBusinessWebsiteCart()</span>
+<span class="cstat-no" title="statement not covered" >    const businessCartItems = carts[businessName] || []</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Calculate total number of items</span>
+<span class="cstat-no" title="statement not covered" >    const totalItems = Object.values(businessCartItems).reduce(</span>
+<span class="cstat-no" title="statement not covered" >        (total, currentArray) =&gt; total + currentArray.length,</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Combine all items into a single array</span>
+<span class="cstat-no" title="statement not covered" >    const allItems = Object.values(businessCartItems).flat()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // console.log('Total number of items:', totalItems)</span>
+<span class="cstat-no" title="statement not covered" >    // console.log('All items:', allItems)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='row sticky top-0 z-20 justify-between bg-white dark:bg-black px-4 py-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='row sticky top-0 z-50 justify-between bg-white dark:bg-black px-4 py-2'&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row items-center space-x-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                    src={data?.business_logo || defaultPicture}</span>
@@ -279,11 +339,49 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='row items-center space-x-3 md:px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Link href='/'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {businessCartItems &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Sheet</span>
+<span class="cstat-no" title="statement not covered" >                        title=''</span>
+<span class="cstat-no" title="statement not covered" >                        trigger={</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                className={`relative flex justify-center items-center p-2 rounded-full`}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;CartIcon className='w-7 h-7' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex absolute top-0 -right-1 justify-center h-5 w-5 text-white text-sm font-bold items-center shadow-md bg-[red] rounded-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {totalItems}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        }</span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='text-2xl text-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            still Working on displaying the cart here and the</span>
+<span class="cstat-no" title="statement not covered" >                            interactions</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {allItems?.length &gt;= 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;MenuOrderItem</span>
+<span class="cstat-no" title="statement not covered" >                                        orders={allItems}</span>
+<span class="cstat-no" title="statement not covered" >                                        placeOrder={() =&gt; null}</span>
+<span class="cstat-no" title="statement not covered" >                                        placeId={'1'}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                            {allItems?.length === 0 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex flex-col space-y-1 items-center w-full h-[12rem] justify-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;CartIcon className='text-3xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;No Selected Item&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Sheet&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                {/* &lt;Link href='/'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='p-4 rounded-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;CartIcon className='h-7 w-7' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/Link&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                {user &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link href={appHomeLink}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='col items-center'&gt;</span>
@@ -292,41 +390,6 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            {/* {items.length &gt;= 1 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Sheet</span>
-<span class="cstat-no" title="statement not covered" >                    title='Order'</span>
-<span class="cstat-no" title="statement not covered" >                    trigger={</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            className={`fixed ${'bottom-[5.5rem]'} right-4  md:right-[190px] laptop:right-[200px] desktop:right-[260px] flex justify-center items-center z-[1000] bg-dark-charcoal dark:bg-darkGrey text-primary dark:text-dark rounded-full h-14 w-14 shadow-lg`}</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;CartIcon className='w-6 h-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex absolute -top-1 -right-1 justify-center h-5 w-5 text-white text-sm font-bold items-center shadow-md bg-[red] rounded-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {items.length}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {items?.length &gt;= 1 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;MenuOrderItem</span>
-<span class="cstat-no" title="statement not covered" >                                    orders={items}</span>
-<span class="cstat-no" title="statement not covered" >                                    placeOrder={() =&gt; null}</span>
-<span class="cstat-no" title="statement not covered" >                                    placeId={placeId}</span>
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        {items?.length === 0 &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex flex-col space-y-1 items-center w-full h-[12rem] justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;CartIcon className='text-3xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;No Selected Item&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/Sheet&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )} */}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -337,7 +400,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-19T15:40:54.212Z
+                at 2023-12-19T15:42:12.096Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
