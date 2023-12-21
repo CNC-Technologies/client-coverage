@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/271</span>
+                <span class='fraction'>0/280</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/271</span>
+                <span class='fraction'>0/280</span>
             </div>
         
             
@@ -334,7 +334,25 @@
 <a name='L269'></a><a href='#L269'>269</a>
 <a name='L270'></a><a href='#L270'>270</a>
 <a name='L271'></a><a href='#L271'>271</a>
-<a name='L272'></a><a href='#L272'>272</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -808,32 +826,41 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;TeamInDashboardSkeleton /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        ) : (</span>
 <span class="cstat-no" title="statement not covered" >                            (data?.edges?.places || [])</span>
-<span class="cstat-no" title="statement not covered" >                                ?.slice(0, 4)</span>
-<span class="cstat-no" title="statement not covered" >                                ?.map((place, i) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                        key={`${place?.id} ${i}`}</span>
-<span class="cstat-no" title="statement not covered" >                                        href={placesDashboardLinks[0].link(</span>
-<span class="cstat-no" title="statement not covered" >                                            place?.id,</span>
-<span class="cstat-no" title="statement not covered" >                                        )}</span>
-<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className='row space-x-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;Avatar</span>
-<span class="cstat-no" title="statement not covered" >                                                size='sm'</span>
-<span class="cstat-no" title="statement not covered" >                                                square</span>
-<span class="cstat-no" title="statement not covered" >                                                user={false}</span>
-<span class="cstat-no" title="statement not covered" >                                                img={place?.cover_image}</span>
-<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className='flex-1 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;div className='font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    {place?.name}</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;div className='text-muted'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    {place?.type}</span>
+<span class="cstat-no" title="statement not covered" >                                .slice(0, 4)</span>
+<span class="cstat-no" title="statement not covered" >                                .map((place, i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                    // Check if placesDashboardLinks[0].link is a function before calling it</span>
+<span class="cstat-no" title="statement not covered" >                                    const href =</span>
+<span class="cstat-no" title="statement not covered" >                                        typeof placesDashboardLinks[0].link ===</span>
+<span class="cstat-no" title="statement not covered" >                                        'function'</span>
+<span class="cstat-no" title="statement not covered" >                                            ? placesDashboardLinks[0].link(</span>
+<span class="cstat-no" title="statement not covered" >                                                  place?.id,</span>
+<span class="cstat-no" title="statement not covered" >                                              )</span>
+<span class="cstat-no" title="statement not covered" >                                            : placesDashboardLinks[0].link</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                                    return (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                                            key={`${place?.id} ${i}`}</span>
+<span class="cstat-no" title="statement not covered" >                                            href={href}</span>
+<span class="cstat-no" title="statement not covered" >                                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className='row space-x-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;Avatar</span>
+<span class="cstat-no" title="statement not covered" >                                                    size='sm'</span>
+<span class="cstat-no" title="statement not covered" >                                                    square</span>
+<span class="cstat-no" title="statement not covered" >                                                    user={false}</span>
+<span class="cstat-no" title="statement not covered" >                                                    img={place?.cover_image}</span>
+<span class="cstat-no" title="statement not covered" >                                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;div className='flex-1 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;div className='font-bold'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        {place?.name}</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;div className='text-muted'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        {place?.type}</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                ))</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    )</span>
+<span class="cstat-no" title="statement not covered" >                                })</span>
 <span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                        {(data?.edges?.places || []).length &gt; 4 &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='underline mt-auto'&gt;</span>
@@ -883,7 +910,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-21T18:37:55.332Z
+                at 2023-12-21T18:38:16.214Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
