@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/modals/GymSubscriptionModal.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/Sliders/ImageSliderWithTextsAndNavigation.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/modals</a> GymSubscriptionModal.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Sliders</a> ImageSliderWithTextsAndNavigation.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -128,14 +128,7 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -200,83 +193,69 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { Swiper, SwiperSlide } from 'swiper/react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import OverlappingAvatars from '@/components/app/simple/OverlappingAvatars'</span>
-<span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/ratingStars'</span>
+<span class="cstat-no" title="statement not covered" >// Import Swiper styles</span>
+<span class="cstat-no" title="statement not covered" >import 'swiper/css'</span>
+<span class="cstat-no" title="statement not covered" >import 'swiper/css/navigation'</span>
+<span class="cstat-no" title="statement not covered" >import 'swiper/css/pagination'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function GymSubscriptionModal({</span>
-<span class="cstat-no" title="statement not covered" >    planName,</span>
-<span class="cstat-no" title="statement not covered" >    coverImage,</span>
-<span class="cstat-no" title="statement not covered" >    makePayment,</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >// import required modules</span>
+<span class="cstat-no" title="statement not covered" >import { Navigation, Pagination, Autoplay } from 'swiper'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// import '@/styles/places/placeCard.css';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import SwiperButtonNext from './swiperButtons/nextButton'</span>
+<span class="cstat-no" title="statement not covered" >import SwiperButtonPrev from './swiperButtons/previousButton'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeftIcon, ChevronRightIcon } from '@/constants/icons/icons'</span>
+<span class="cstat-no" title="statement not covered" >import { defaultPicture } from '@/constants/app/defaults'</span>
+<span class="cstat-no" title="statement not covered" >export default function ImageSliderWithTextsAndNavigation({ content, extraClass }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='summary-card px-3 pb-14'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {/* &lt;div className="top flex items-center gap-4 mb-10"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;span className="heading text-2xl font-semibold"&gt;Reservation Inquiry&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Swiper</span>
+<span class="cstat-no" title="statement not covered" >            slidesPerView={1}</span>
+<span class="cstat-no" title="statement not covered" >            spaceBetween={0}</span>
+<span class="cstat-no" title="statement not covered" >            loop={true}</span>
+<span class="cstat-no" title="statement not covered" >            navigation={false}</span>
+<span class="cstat-no" title="statement not covered" >            autoplay={{ delay: 3000, disableOnInteraction: false }}</span>
+<span class="cstat-no" title="statement not covered" >            modules={[Pagination, Navigation, Autoplay]}</span>
+<span class="cstat-no" title="statement not covered" >            className='h-full mySwiper  bg-transparent'</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {content?.length &gt; 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;SwiperButtonPrev&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ChevronLeftIcon className='w-5 h-5  cursor-pointer ' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/SwiperButtonPrev&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            {content?.map((item, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                return (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;SwiperSlide key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
+<span class="cstat-no" title="statement not covered" >                            unoptimized</span>
+<span class="cstat-no" title="statement not covered" >                            src={item?.image || defaultPicture}</span>
+<span class="cstat-no" title="statement not covered" >                            alt={'activity'}</span>
+<span class="cstat-no" title="statement not covered" >                            priority={true}</span>
+<span class="cstat-no" title="statement not covered" >                            quality={50}</span>
+<span class="cstat-no" title="statement not covered" >                            width={341}</span>
+<span class="cstat-no" title="statement not covered" >                            height={266}</span>
+<span class="cstat-no" title="statement not covered" >                            className={`w-full  h-full object-cover transition-opacity duration-1000 opacity-100 object-center ${extraClass}`}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className=' flex flex-col items-center justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='room-detail flex items-center gap-2 mb-8 w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='room'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {/* Image */}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                                src={coverImage}</span>
-<span class="cstat-no" title="statement not covered" >                                width={80}</span>
-<span class="cstat-no" title="statement not covered" >                                height={50}</span>
-<span class="cstat-no" title="statement not covered" >                                alt='The room preview'</span>
-<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex flex-col items-center justify-center mb-6'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-base font-semibold mb-1'&gt;{item?.title}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-sm'&gt;{ item?.body }&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='detail flex flex-col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='font-normal text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {planName}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex flex-col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;RatingStars rating={4} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex space-x-2 items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;OverlappingAvatars /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;Reviews&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='summary w-full flex flex-col items-center justify-center p-8 m-auto rounded-md border border-grey dark:border-grey/10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className='text-lg mb-5'&gt;Summary&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='products w-full flex flex-col gap-4'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='product flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;$68 x 3 nights&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;$204&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='product flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;Service Charge&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;$4&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='total mt-5 flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;Total&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;span&gt;$208&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={makePayment}</span>
-<span class="cstat-no" title="statement not covered" >                        type='submit'</span>
-<span class="cstat-no" title="statement not covered" >                        className='mt-3 bg-orange rounded-md text-white text-base w-full py-2'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Make Payment</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        </span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/SwiperSlide&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            })}</span>
+<span class="cstat-no" title="statement not covered" >            {content?.length &gt; 1 &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;SwiperButtonNext&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ChevronRightIcon className='w-5 h-5 cursor-pointer' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/SwiperButtonNext&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/Swiper&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
