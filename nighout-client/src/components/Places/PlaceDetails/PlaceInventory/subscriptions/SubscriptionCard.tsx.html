@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/51</span>
+                <span class='fraction'>0/65</span>
             </div>
         
             
@@ -114,7 +114,35 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -190,13 +218,27 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='font-bold md:text-lg two-line-text-truncate'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {inventory.name}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p className={` md:text-lg text-orange font-semibold`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ${inventory?.price}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-sm'&gt;From: &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span</span>
+<span class="cstat-no" title="statement not covered" >                                className={` md:text-lg text-orange font-semibold`}</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                ${inventory?.plan[0].price}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center text-xs text-orange'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ( {inventory.duration?.join(', ')})</span>
+<span class="cstat-no" title="statement not covered" >                        ({' '}</span>
+<span class="cstat-no" title="statement not covered" >                        {inventory.plan?.map((item, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                            return (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div key={idx}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    {item.type}</span>
+<span class="cstat-no" title="statement not covered" >                                    {idx + 1 !== inventory.plan.length &amp;&amp; ','}</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className=' mt-1 two-line-text-truncate text-sm '&gt;</span>
@@ -223,7 +265,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-29T16:53:51.384Z
+                at 2024-01-05T06:59:22.962Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
