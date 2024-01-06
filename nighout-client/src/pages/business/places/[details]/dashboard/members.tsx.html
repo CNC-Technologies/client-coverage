@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/79</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/79</span>
+                <span class='fraction'>0/90</span>
             </div>
         
             
@@ -142,7 +142,29 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -223,7 +245,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState, useEffect } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { ImMenu2 } from 'react-icons/im'</span>
+<span class="cstat-no" title="statement not covered" >import { List } from 'lucide-react'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import TabsWithWhiteBg from '@/components/app/simple/TabsWithWhiteBg'</span>
@@ -260,6 +283,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }, [steps])</span>
 <span class="cstat-no" title="statement not covered" >    // ****************** //</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {steps.length &gt; 0 &amp;&amp; (</span>
@@ -268,28 +292,37 @@
 <span class="cstat-no" title="statement not covered" >            &lt;PlacesSettingsLayout variant='placeDashboard'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;span className='text-3xl font-medium mb-2'&gt;Members&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='mb-6 flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;TabsWithWhiteBg</span>
-<span class="cstat-no" title="statement not covered" >                        tabList={membersTabList}</span>
-<span class="cstat-no" title="statement not covered" >                        activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                        setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                        mobilePosition='max-md:-top-4'</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-6'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;ImMenu2</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-fit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;TabsWithWhiteBg</span>
+<span class="cstat-no" title="statement not covered" >                            tabList={membersTabList}</span>
+<span class="cstat-no" title="statement not covered" >                            activeTab={activeTab}</span>
+<span class="cstat-no" title="statement not covered" >                            setActiveTab={setActiveTab}</span>
+<span class="cstat-no" title="statement not covered" >                            mobilePosition='max-md:-top-4'</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='bg-grey/30 dark:bg-grey/10 rounded-lg px-3 py-2 flex items-center space-x-4'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;List</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setView('menu')}</span>
 <span class="cstat-no" title="statement not covered" >                            className={</span>
-<span class="cstat-no" title="statement not covered" >                                view === 'menu'</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'cursor-pointer text-4xl hover:text-orange text-orange'</span>
-<span class="cstat-no" title="statement not covered" >                                    : 'cursor-pointer text-4xl hover:text-orange'</span>
+<span class="cstat-no" title="statement not covered" >                                `cursor-pointer text-2xl` +</span>
+<span class="cstat-no" title="statement not covered" >                                (view === 'menu'</span>
+<span class="cstat-no" title="statement not covered" >                                    ? ' text-orange'</span>
+<span class="cstat-no" title="statement not covered" >                                    : ' hover:text-orange')</span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;DashboardSolidIcon</span>
 <span class="cstat-no" title="statement not covered" >                            id='grid-view'</span>
 <span class="cstat-no" title="statement not covered" >                            onClick={() =&gt; setView('grid')}</span>
 <span class="cstat-no" title="statement not covered" >                            className={</span>
-<span class="cstat-no" title="statement not covered" >                                view === 'grid'</span>
-<span class="cstat-no" title="statement not covered" >                                    ? 'cursor-pointer text-4xl hover:text-orange text-orange'</span>
-<span class="cstat-no" title="statement not covered" >                                    : 'cursor-pointer text-4xl hover:text-orange'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                                `cursor-pointer text-2xl` +</span>
+<span class="cstat-no" title="statement not covered" >                                (view === 'grid'</span>
+<span class="cstat-no" title="statement not covered" >                                    ? ' text-orange'</span>
+<span class="cstat-no" title="statement not covered" >                                    : ' hover:text-orange')</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -307,7 +340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-05T10:20:27.645Z
+                at 2024-01-06T08:37:02.739Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

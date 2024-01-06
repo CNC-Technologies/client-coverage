@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/ExplorePage/ExploreCategoryContent.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/FormComponents/PhoneNumberInput.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/ExplorePage</a> ExploreCategoryContent.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/FormComponents</a> PhoneNumberInput.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/39</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/27</span>
+                <span class='fraction'>0/39</span>
             </div>
         
             
@@ -90,7 +90,19 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -117,33 +129,57 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { usePathname } from 'next/navigation'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { forwardRef } from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import 'react-phone-number-input/style.css'</span>
+<span class="cstat-no" title="statement not covered" >import PhoneInput from 'react-phone-number-input'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import ExploreCategories from '@/components/ExplorePage/categories'</span>
-<span class="cstat-no" title="statement not covered" >import RecommendedPlaces from '@/components/ExplorePage/recommendedPlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { Input as ShadcnInput } from '@/components/shadcn/ui/input'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ExploreCategoryContent() {</span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const { category } = router.query</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' py-0 mobile:py-3 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='max-width general-padding'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mb-0  xmd:mb-10 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;h2 className='capitalize text-2xl max-mobile:text-center xmd:text-3xl md:text-4xl desktop:text-[2.5rem] flex justify-center items-center font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {category}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >// Assuming E164Number is a type of string; adjust if it's different</span>
+<span class="cstat-no" title="statement not covered" >type E164Number = string</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;ExploreCategories /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;RecommendedPlaces /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >interface PhoneNumberInputProps {</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >    onChange: (value?: E164Number) =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    onBlur?: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    name?: string</span>
+<span class="cstat-no" title="statement not covered" >    label?: string</span>
+<span class="cstat-no" title="statement not covered" >    placeholder?: string</span>
+<span class="cstat-no" title="statement not covered" >    value: string</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const PhoneNumberInput = forwardRef&lt;HTMLInputElement, PhoneNumberInputProps&gt;(</span>
+<span class="cstat-no" title="statement not covered" >    ({ onChange, onBlur, name, ...props }, ref) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;PhoneInput</span>
+<span class="cstat-no" title="statement not covered" >                international</span>
+<span class="cstat-no" title="statement not covered" >                defaultCountry='NG'</span>
+<span class="cstat-no" title="statement not covered" >                onChange={onChange}</span>
+<span class="cstat-no" title="statement not covered" >                onBlur={onBlur}</span>
+<span class="cstat-no" title="statement not covered" >                name={name}</span>
+<span class="cstat-no" title="statement not covered" >                inputComponent={ShadcnInput}</span>
+<span class="cstat-no" title="statement not covered" >                inputRef={ref}</span>
+<span class="cstat-no" title="statement not covered" >                {...props}</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+<span class="cstat-no" title="statement not covered" >)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >PhoneNumberInput.displayName = 'PhoneNumberInput'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default PhoneNumberInput</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
