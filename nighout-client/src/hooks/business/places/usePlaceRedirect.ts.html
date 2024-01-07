@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/hooks/useIntersection.tsx</title>
+    <title>Code coverage report for nighout-client/src/hooks/business/places/usePlaceRedirect.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks</a> useIntersection.tsx</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks/business/places</a> usePlaceRedirect.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -83,7 +83,11 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -103,26 +107,34 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { RefObject, useEffect, useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const useIntersection = (element: RefObject&lt;any&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [isVisible, setIsVisible] = useState&lt;boolean&gt;(false)</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const observer = new IntersectionObserver(</span>
-<span class="cstat-no" title="statement not covered" >            (entries) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                setIsVisible(entries[entries.length - 1].isIntersecting)</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            { threshold: 0.8 },</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >import { placesDashboardLinks } from '@/constants/business/placesSettingsLinks'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        element.current &amp;&amp; observer.observe(element.current)</span>
+<span class="cstat-no" title="statement not covered" >export function usePlaceRedirect() {</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const { data: place } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return () =&gt; element.current &amp;&amp; observer.unobserve(element.current)</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" >    return isVisible</span>
+<span class="cstat-no" title="statement not covered" >    let allowRoute = false</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const lastPath =</span>
+<span class="cstat-no" title="statement not covered" >        router.asPath.split('/')[router.asPath.split('/').length - 1]</span>
+<span class="cstat-no" title="statement not covered" >    const currentPlaceCategory = placesDashboardLinks.filter((placeLink) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        placeLink.placeType?.includes(place?.type),</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    for (const index in currentPlaceCategory) {</span>
+<span class="cstat-no" title="statement not covered" >        if (currentPlaceCategory[index].label.toLowerCase() === lastPath) {</span>
+<span class="cstat-no" title="statement not covered" >            allowRoute = true</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return allowRoute</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default useIntersection</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -132,14 +144,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-01-07T06:19:50.216Z
             </div>
-        <script src="../../../prettify.js"></script>
+        <script src="../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
+        <script src="../../../../../sorter.js"></script>
+        <script src="../../../../../block-navigation.js"></script>
     </body>
 </html>
     

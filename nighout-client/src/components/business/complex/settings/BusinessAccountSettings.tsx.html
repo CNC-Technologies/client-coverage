@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/215</span>
+                <span class='fraction'>0/223</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/215</span>
+                <span class='fraction'>0/223</span>
             </div>
         
             
@@ -278,7 +278,23 @@
 <a name='L213'></a><a href='#L213'>213</a>
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
-<a name='L216'></a><a href='#L216'>216</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -506,6 +522,8 @@
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar, defaultCoverPhoto } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { CloseOutlineIcon, EditIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { imagesType } from '@/interfaces/settings.interface'</span>
+<span class="cstat-no" title="statement not covered" >import PhoneNumberInput from '@/components/FormComponents/PhoneNumberInput'</span>
+<span class="cstat-no" title="statement not covered" >import { Label } from '@/components/shadcn/ui/label'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >function BusinessAccountSettings({</span>
 <span class="cstat-no" title="statement not covered" >    business,</span>
@@ -678,13 +696,19 @@
 <span class="cstat-no" title="statement not covered" >                        value={business?.email}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={(e) =&gt; setState('email', e.target.value)}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                        label='Business Phone Number'</span>
-<span class="cstat-no" title="statement not covered" >                        placeholder='+234 802 5226 311'</span>
-<span class="cstat-no" title="statement not covered" >                        required</span>
-<span class="cstat-no" title="statement not covered" >                        value={business?.phone}</span>
-<span class="cstat-no" title="statement not covered" >                        onChange={(e) =&gt; setState('phone', e.target.value)}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Label htmlFor='phone' required={true}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Business Phone Number</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/Label&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;PhoneNumberInput</span>
+<span class="cstat-no" title="statement not covered" >                            placeholder='+234 802 5226 311'</span>
+<span class="cstat-no" title="statement not covered" >                            value={business?.phone}</span>
+<span class="cstat-no" title="statement not covered" >                            onChange={(phone) =&gt; setState('phone', phone)}</span>
+<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                        label='Location'</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder='Enter your street address'</span>
@@ -715,7 +739,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-06T08:37:49.829Z
+                at 2024-01-07T06:19:50.216Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
