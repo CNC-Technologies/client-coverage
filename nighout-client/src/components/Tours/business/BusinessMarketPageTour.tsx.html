@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/forms/HelpForm.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/Tours/business/BusinessMarketPageTour.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/forms</a> HelpForm.tsx</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/Tours/business</a> BusinessMarketPageTour.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/53</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/53</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -116,7 +116,10 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -169,58 +172,64 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { EditorState } from 'draft-js'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { CallBackProps, STATUS, Step } from 'react-joyride'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import useTourManagement from '@/hooks/tours/useTourManagement'</span>
+<span class="cstat-no" title="statement not covered" >import ImageSliderWithTextsAndNavigation from '@/components/Sliders/ImageSliderWithTextsAndNavigation'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import DragDropImageUpload from '@/components/FormComponents/DragDropImageUpload'</span>
-<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import RichTextEditor from '@/components/FormComponents/RichTextEditor'</span>
-<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
-<span class="cstat-no" title="statement not covered" >import { Photo } from '@/interfaces/dragDropImageUpload.interface'</span>
+<span class="cstat-no" title="statement not covered" >export const useGenerateBusinessMarketTourSteps = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const { markTourAsCompleted, isTourCompleted } = useTourManagement()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function HelpForm() {</span>
-<span class="cstat-no" title="statement not covered" >    const [subject, setSubject] = useState('')</span>
-<span class="cstat-no" title="statement not covered" >    const [description, setDescription] = useState(() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >        EditorState.createEmpty(),</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
+<span class="cstat-no" title="statement not covered" >    const hasSeenTour = isTourCompleted('hasSeenBizMarketTour')</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className='w-full max-w-[40rem] space-y-5 mx-auto'&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='text-lg text-dark dark:text-gray-200 font-bold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                Help us improve more</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    let businessMarketTourContent = [</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/tours/business/business_maket_insight.png',</span>
+<span class="cstat-no" title="statement not covered" >            title: 'Look Further into your Business',</span>
+<span class="cstat-no" title="statement not covered" >            body: 'Unlock insights effortlessly! Our platform consolidates all your data in one insightful dashboard, providing a comprehensive overview for you to discover and leverage valuable insights for smarter decision-making.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            image: '/Images/tours/business/business_website.png',</span>
+<span class="cstat-no" title="statement not covered" >            title: 'Manage your own Business Website',</span>
+<span class="cstat-no" title="statement not covered" >            body: 'Effortlessly manage your customizable business website! Our platform offers a user-friendly interface, allowing you to discover and edit all aspects of your website, ensuring a personalized and effective online presence.',</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                label='Subject'</span>
-<span class="cstat-no" title="statement not covered" >                value={subject}</span>
-<span class="cstat-no" title="statement not covered" >                onChange={({ target: { value } }) =&gt; setSubject(value)}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='block my-1 uppercase text-xs text-start font-bold opacity-70'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Describe what you want</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    let steps: Step[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='border dark:border-gray-800 h-56 rounded-lg p-2 col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;RichTextEditor</span>
-<span class="cstat-no" title="statement not covered" >                        mailText={description}</span>
-<span class="cstat-no" title="statement not covered" >                        setMailText={setDescription}</span>
+<span class="cstat-no" title="statement not covered" >    if (!hasSeenTour) {</span>
+<span class="cstat-no" title="statement not covered" >        steps.push({</span>
+<span class="cstat-no" title="statement not covered" >            target: '#place-sidebar',</span>
+<span class="cstat-no" title="statement not covered" >            content: (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;ImageSliderWithTextsAndNavigation</span>
+<span class="cstat-no" title="statement not covered" >                        content={businessMarketTourContent}</span>
+<span class="cstat-no" title="statement not covered" >                        extraClass={''}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;DragDropImageUpload</span>
-<span class="cstat-no" title="statement not covered" >                handleMediaChange={() =&gt; null}</span>
-<span class="cstat-no" title="statement not covered" >                selectedPhotos={selectedPhotos}</span>
-<span class="cstat-no" title="statement not covered" >                setSelectedPhotos={setSelectedPhotos}</span>
-<span class="cstat-no" title="statement not covered" >                imageForUpload={null}</span>
-<span class="cstat-no" title="statement not covered" >                setImageForUpload={() =&gt; null}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='row justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Button&gt;Send&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >            ),</span>
+<span class="cstat-no" title="statement not covered" >            placement: 'right',</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    } else steps = []</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const bizMarketTourCallback = (</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        setRun: (value: boolean) =&gt; void,</span>
+<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return (data: CallBackProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const { status } = data</span>
+<span class="cstat-no" title="statement not covered" >            if (status === STATUS.FINISHED || status === STATUS.SKIPPED) {</span>
+<span class="cstat-no" title="statement not covered" >                setRun(false)</span>
+<span class="cstat-no" title="statement not covered" >                const storageKey = 'hasSeenBizMarketTour'</span>
+<span class="cstat-no" title="statement not covered" >                markTourAsCompleted(storageKey)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return { steps, bizMarketTourCallback }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -231,14 +240,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-01-09T20:36:55.011Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../../../sorter.js"></script>
+        <script src="../../../../../block-navigation.js"></script>
     </body>
 </html>
     
