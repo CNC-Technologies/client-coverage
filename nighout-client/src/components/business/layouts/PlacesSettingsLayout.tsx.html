@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/168</span>
+                <span class='fraction'>0/195</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/168</span>
+                <span class='fraction'>0/195</span>
             </div>
         
             
@@ -231,7 +231,61 @@
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -420,6 +474,7 @@
 <span class="cstat-no" title="statement not covered" >import { placeBusinessDashboard } from '@/constants/routerLinks/Links'</span>
 <span class="cstat-no" title="statement not covered" >// import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { usePlaceRedirect } from '@/hooks/business/places/usePlaceRedirect'</span>
 <span class="cstat-no" title="statement not covered" >// import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >// import Breadcrumbs from '@/components/app/simple/BreadCrumbs'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -449,26 +504,6 @@
 <span class="cstat-no" title="statement not covered" >        return placesSettingsLinks</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        function getFilteredLinks() {</span>
-<span class="cstat-no" title="statement not covered" >            const placeCategory = place?.type</span>
-<span class="cstat-no" title="statement not covered" >            if (variant === 'placeDashboard') {</span>
-<span class="cstat-no" title="statement not covered" >                return getLinks().filter((item) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    return (</span>
-<span class="cstat-no" title="statement not covered" >                        item.placeType.includes(placeCategory) ||</span>
-<span class="cstat-no" title="statement not covered" >                        item.placeType.includes('General') ||</span>
-<span class="cstat-no" title="statement not covered" >                        placeCategory === item.placeType</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return getLinks()</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const filteredLinks = getFilteredLinks()</span>
-<span class="cstat-no" title="statement not covered" >        setSidebarLinks(filteredLinks as linkItem[])</span>
-<span class="cstat-no" title="statement not covered" >    }, [place, variant, links])</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const isActive = (resolvedLink: string, placeId: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        let firstLink = getLinks()[0]?.link</span>
 <span class="cstat-no" title="statement not covered" >        let linkToCompare = ''</span>
@@ -493,12 +528,38 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const allowPlaceRoute = usePlaceRedirect()</span>
+<span class="cstat-no" title="statement not covered" >    const { allowRoute, isInitialLoading } = usePlaceRedirect()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // if (!allowPlaceRoute) {</span>
-<span class="cstat-no" title="statement not covered" >    //     router.push(`/business/places/${placeId}/dashboard`)</span>
-<span class="cstat-no" title="statement not covered" >    //     // return;</span>
-<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        function getFilteredLinks() {</span>
+<span class="cstat-no" title="statement not covered" >            const placeCategory = place?.type</span>
+<span class="cstat-no" title="statement not covered" >            if (variant === 'placeDashboard') {</span>
+<span class="cstat-no" title="statement not covered" >                return getLinks().filter((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        item.placeType.includes(placeCategory) ||</span>
+<span class="cstat-no" title="statement not covered" >                        item.placeType.includes('General') ||</span>
+<span class="cstat-no" title="statement not covered" >                        placeCategory === item.placeType</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            return getLinks()</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const filteredLinks = getFilteredLinks()</span>
+<span class="cstat-no" title="statement not covered" >        setSidebarLinks(filteredLinks as linkItem[])</span>
+<span class="cstat-no" title="statement not covered" >    }, [place, variant, links])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isInitialLoading &amp;&amp; !allowRoute) {</span>
+<span class="cstat-no" title="statement not covered" >            // Redirect if route not allowed</span>
+<span class="cstat-no" title="statement not covered" >            router.push(`/business/places/${placeId}/dashboard`)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }, [allowRoute, placeId, router])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (isInitialLoading) {</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;PlacesSettingsLayoutSkeleton /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className='row relative'&gt;</span>
@@ -567,6 +628,26 @@
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function PlacesSettingsLayoutSkeleton() {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className='row relative'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                className={`space-y-2 pr-4 group lg:w-40 w-10 smoothen lg:sticky bottom-0 top-20 left-0 z-[2] self-start h-auto `}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {[...Array(10)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                            className='skeleton rounded-lg h-5'</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='skeleton h-[600px] flex-1'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -574,7 +655,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-07T06:19:50.216Z
+                at 2024-01-09T16:55:43.273Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
