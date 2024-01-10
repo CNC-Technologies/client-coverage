@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/37</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/37</span>
             </div>
         
             
@@ -89,7 +89,29 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -125,7 +147,17 @@
 <span class="cstat-no" title="statement not covered" >    const { data: place, isInitialLoading } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const placeType = place?.type ?? ''</span>
-<span class="cstat-no" title="statement not covered" >    const lastPath = router.asPath.split('/').pop()?.toLowerCase() ?? ''</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Extracting the segment after "dashboard"</span>
+<span class="cstat-no" title="statement not covered" >    const pathSegments = router.asPath.split('/')</span>
+<span class="cstat-no" title="statement not covered" >    const dashboardIndex = pathSegments.findIndex(</span>
+<span class="cstat-no" title="statement not covered" >        (segment) =&gt; segment.toLowerCase() === 'dashboard',</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >    let nextSegmentAfterDashboard = ''</span>
+<span class="cstat-no" title="statement not covered" >    if (dashboardIndex &gt;= 0 &amp;&amp; dashboardIndex &lt; pathSegments.length - 1) {</span>
+<span class="cstat-no" title="statement not covered" >        nextSegmentAfterDashboard =</span>
+<span class="cstat-no" title="statement not covered" >            pathSegments[dashboardIndex + 1].toLowerCase()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const allowedLinks = placesDashboardLinks.filter((linkItem) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -135,10 +167,11 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const allowRoute = allowedLinks.some(</span>
-<span class="cstat-no" title="statement not covered" >        (linkItem) =&gt; linkItem.label.toLowerCase() === lastPath,</span>
+<span class="cstat-no" title="statement not covered" >        (linkItem) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            linkItem.label.toLowerCase() === nextSegmentAfterDashboard,</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Return both allowRoute and isInitialLoading</span>
+<span class="cstat-no" title="statement not covered" >    // Return both allowRoute, isInitialLoading and nextSegmentAfterDashboard</span>
 <span class="cstat-no" title="statement not covered" >    return { allowRoute, isInitialLoading }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -148,7 +181,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-09T20:36:55.011Z
+                at 2024-01-10T20:26:12.158Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

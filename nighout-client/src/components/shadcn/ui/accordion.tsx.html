@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/pages/app/reservations.tsx</title>
+    <title>Code coverage report for nighout-client/src/components/shadcn/ui/accordion.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/pages/app</a> reservations.tsx</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/shadcn/ui</a> accordion.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/52</span>
+                <span class='fraction'>0/56</span>
             </div>
         
             
@@ -115,7 +115,11 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,58 +171,66 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import * as React from 'react'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import * as AccordionPrimitive from '@radix-ui/react-accordion'</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronDown } from 'lucide-react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import CalendarItem from '@/components/app/complex/CalendarItem'</span>
-<span class="cstat-no" title="statement not covered" >// import ReservationEventsSection from '@/components/app/compound/reservations/events/EventSection'</span>
-<span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
-<span class="cstat-no" title="statement not covered" >import ReservationPlacesSection from '@/components/app/compound/reservations/events/PlaceSection'</span>
-<span class="cstat-no" title="statement not covered" >import Tabs from '@/components/app/simple/Tabs'</span>
-<span class="cstat-no" title="statement not covered" >import { reservationTabs } from '@/constants/app/Settings/TabsList'</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from '@/utils/shadcn-utils'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ReservationsPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const [activeTab, setActiveTab] = useState(0)</span>
-<span class="cstat-no" title="statement not covered" >    const [dateToFetch, setDateToFetch] = useState(new Date())</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className=' h-[20vh] md:h-[20vh] '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Image</span>
-<span class="cstat-no" title="statement not covered" >                        unoptimized</span>
-<span class="cstat-no" title="statement not covered" >                        src={</span>
-<span class="cstat-no" title="statement not covered" >                            'https://res.cloudinary.com/placio/image/upload/v1687789425/user-media-content/reservations_th01sb.png'</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                        alt={'Places featured image'}</span>
-<span class="cstat-no" title="statement not covered" >                        priority={true}</span>
-<span class="cstat-no" title="statement not covered" >                        quality={75}</span>
-<span class="cstat-no" title="statement not covered" >                        width={100}</span>
-<span class="cstat-no" title="statement not covered" >                        height={100}</span>
-<span class="cstat-no" title="statement not covered" >                        className='object-cover object-center w-full h-full'</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >const Accordion = AccordionPrimitive.Root</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Tabs</span>
-<span class="cstat-no" title="statement not covered" >                        tabs={reservationTabs}</span>
-<span class="cstat-no" title="statement not covered" >                        setActiveTab={setActiveTab}</span>
-<span class="cstat-no" title="statement not covered" >                        activeTab={activeTab}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >const AccordionItem = React.forwardRef&lt;</span>
+<span class="cstat-no" title="statement not covered" >    React.ElementRef&lt;typeof AccordionPrimitive.Item&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    React.ComponentPropsWithoutRef&lt;typeof AccordionPrimitive.Item&gt;</span>
+<span class="cstat-no" title="statement not covered" >&gt;(({ className, ...props }, ref) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;AccordionPrimitive.Item</span>
+<span class="cstat-no" title="statement not covered" >        ref={ref}</span>
+<span class="cstat-no" title="statement not covered" >        className={cn('border-b', className)}</span>
+<span class="cstat-no" title="statement not covered" >        {...props}</span>
+<span class="cstat-no" title="statement not covered" >    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >))</span>
+<span class="cstat-no" title="statement not covered" >AccordionItem.displayName = 'AccordionItem'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;CalendarItem</span>
-<span class="cstat-no" title="statement not covered" >                    activeDate={dateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >                    setActiveDate={setDateToFetch}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >const AccordionTrigger = React.forwardRef&lt;</span>
+<span class="cstat-no" title="statement not covered" >    React.ElementRef&lt;typeof AccordionPrimitive.Trigger&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    React.ComponentPropsWithoutRef&lt;typeof AccordionPrimitive.Trigger&gt;</span>
+<span class="cstat-no" title="statement not covered" >&gt;(({ className, children, ...props }, ref) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;AccordionPrimitive.Header className='flex'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;AccordionPrimitive.Trigger</span>
+<span class="cstat-no" title="statement not covered" >            ref={ref}</span>
+<span class="cstat-no" title="statement not covered" >            className={cn(</span>
+<span class="cstat-no" title="statement not covered" >                'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180',</span>
+<span class="cstat-no" title="statement not covered" >                className,</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
+<span class="cstat-no" title="statement not covered" >            {...props}</span>
+<span class="cstat-no" title="statement not covered" >        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            {children}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ChevronDown className='h-4 w-4 shrink-0 transition-transform duration-200' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/AccordionPrimitive.Trigger&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/AccordionPrimitive.Header&gt;</span>
+<span class="cstat-no" title="statement not covered" >))</span>
+<span class="cstat-no" title="statement not covered" >AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {/* {activeTab === 0 &amp;&amp; &lt;ReservationEventsSection /&gt;} */}</span>
-<span class="cstat-no" title="statement not covered" >                    {activeTab === 0 &amp;&amp; &lt;ReservationPlacesSection /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >const AccordionContent = React.forwardRef&lt;</span>
+<span class="cstat-no" title="statement not covered" >    React.ElementRef&lt;typeof AccordionPrimitive.Content&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    React.ComponentPropsWithoutRef&lt;typeof AccordionPrimitive.Content&gt;</span>
+<span class="cstat-no" title="statement not covered" >&gt;(({ className, children, ...props }, ref) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;AccordionPrimitive.Content</span>
+<span class="cstat-no" title="statement not covered" >        ref={ref}</span>
+<span class="cstat-no" title="statement not covered" >        className='overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'</span>
+<span class="cstat-no" title="statement not covered" >        {...props}</span>
+<span class="cstat-no" title="statement not covered" >    &gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className={cn('pb-4 pt-0', className)}&gt;{children}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/AccordionPrimitive.Content&gt;</span>
+<span class="cstat-no" title="statement not covered" >))</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >AccordionContent.displayName = AccordionPrimitive.Content.displayName</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -228,14 +240,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-01-10T20:26:12.158Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../../../sorter.js"></script>
+        <script src="../../../../../block-navigation.js"></script>
     </body>
 </html>
     

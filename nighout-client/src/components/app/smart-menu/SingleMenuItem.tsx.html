@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/106</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/106</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
@@ -169,7 +169,21 @@
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -286,6 +300,7 @@
 <span class="cstat-no" title="statement not covered" >import { useSmartMenuCart } from '@/components/context-containers/SmartMenuCart.context'</span>
 <span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
 <span class="cstat-no" title="statement not covered" >import MenuItemDetails from '@/components/Places/PlaceDetails/PlaceInventory/menu/MenuItemDetails'</span>
+<span class="cstat-no" title="statement not covered" >import { NewBadge } from '@/components/Places/PlaceDetails/PlaceInventory/menu/MenuOrderCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function SingleMenuItem({ item }: { item: MenuItemProps }) {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
@@ -308,8 +323,9 @@
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
 <span class="cstat-no" title="statement not covered" >                onClick={() =&gt; setDetailsModal(true)}</span>
-<span class="cstat-no" title="statement not covered" >                className='bg-white cursor-pointer p-3 rounded-xl h-fit'</span>
+<span class="cstat-no" title="statement not covered" >                className='bg-white relative cursor-pointer p-3 rounded-xl h-fit'</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {item?.is_new &amp;&amp; &lt;NewBadge extraClass='z-[3]' /&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-nowrap space-x-3'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className=' w-[8rem] h-20'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Image</span>
@@ -330,7 +346,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-4 flex justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div className='mt-3 flex justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className='text-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        $ &lt;span className='font-medium'&gt;{item.price}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
@@ -370,6 +386,11 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {item.is_seasonal &amp;&amp; item.season &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='p-1 w-full one-line-text-truncate mt-1 text-black/75 capitalize font-semibold text-xs bg-gradient-to-r from-pink to-yellow dark:from-green-400 dark:to-blue-500'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {item.season}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
 <span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setDetailsModal(false)}</span>
@@ -388,7 +409,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-09T20:36:55.011Z
+                at 2024-01-10T20:26:12.158Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
