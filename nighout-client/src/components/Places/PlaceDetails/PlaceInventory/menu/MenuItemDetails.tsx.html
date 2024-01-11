@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/232</span>
+                <span class='fraction'>0/252</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/232</span>
+                <span class='fraction'>0/252</span>
             </div>
         
             
@@ -295,7 +295,47 @@
 <a name='L230'></a><a href='#L230'>230</a>
 <a name='L231'></a><a href='#L231'>231</a>
 <a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -531,7 +571,7 @@
 <span class="cstat-no" title="statement not covered" >import Image from 'next/image'</span>
 <span class="cstat-no" title="statement not covered" >import { Navigation } from 'swiper'</span>
 <span class="cstat-no" title="statement not covered" >import { SwiperSlide, Swiper } from 'swiper/react'</span>
-<span class="cstat-no" title="statement not covered" >import { Clock } from 'lucide-react'</span>
+<span class="cstat-no" title="statement not covered" >import { Clock, X } from 'lucide-react'</span>
 <span class="cstat-no" title="statement not covered" >import { BiMoney } from 'react-icons/bi'</span>
 <span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -549,8 +589,14 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function MenuItemDetails({</span>
 <span class="cstat-no" title="statement not covered" >    menuItem,</span>
+<span class="cstat-no" title="statement not covered" >    addToCart,</span>
+<span class="cstat-no" title="statement not covered" >    itemInCart,</span>
+<span class="cstat-no" title="statement not covered" >    removeFromCart,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    menuItem: MenuItemProps</span>
+<span class="cstat-no" title="statement not covered" >    addToCart?: () =&gt; void</span>
+<span class="cstat-no" title="statement not covered" >    itemInCart?: boolean</span>
+<span class="cstat-no" title="statement not covered" >    removeFromCart?: () =&gt; void</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const variants = {</span>
 <span class="cstat-no" title="statement not covered" >        initial: {</span>
@@ -736,15 +782,29 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex justify-between'&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Button className='w-full mt-3 bg-orange'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className='flex items-center space-x-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;CartIcon /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div&gt;Add to cart&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='mt-5 flex justify-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {itemInCart ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                                variant='outline'</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={removeFromCart}</span>
+<span class="cstat-no" title="statement not covered" >                                className=' mt-3 border-orange hover:bg-orange/10'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex items-center space-x-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;X size={18} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;Remove from cart&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        ) : (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                                onClick={addToCart}</span>
+<span class="cstat-no" title="statement not covered" >                                className=' mt-3 orange-fill hover:bg-orange'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex items-center space-x-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;CartIcon /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div&gt;Add to cart&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/motion.div&gt;</span>
@@ -766,7 +826,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-11T15:17:06.336Z
+                at 2024-01-11T15:18:15.401Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

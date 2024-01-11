@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -120,7 +120,19 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,11 +193,11 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import ImageSliderWIthNavigation from '@/components/Sliders/ImageSliderWIthNavigation'</span>
 <span class="cstat-no" title="statement not covered" >import EventsList from '@/components/app/complex/EventsList'</span>
-<span class="cstat-no" title="statement not covered" >import TagsList from '@/components/app/complex/TagsList'</span>
 <span class="cstat-no" title="statement not covered" >import AboutOrganizer from '@/components/app/compound/eventDetails/AboutOrganizer'</span>
 <span class="cstat-no" title="statement not covered" >import AttendeesList from '@/components/app/compound/eventDetails/AttendeesList'</span>
 <span class="cstat-no" title="statement not covered" >import DetailsSection from '@/components/app/compound/eventDetails/DetailsSection'</span>
 <span class="cstat-no" title="statement not covered" >import ShareWithFriends from '@/components/app/compound/eventDetails/ShareWithFriends'</span>
+<span class="cstat-no" title="statement not covered" >import OrganizersList from '@/components/app/complex/OrganizersList'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function EventDetailsPageComplex() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -214,11 +226,17 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;DetailsSection /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;AttendeesList /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-7 md:mt-14'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;div className='mt-7 md:mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;TagsList title='Tags' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;ShareWithFriends /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;AboutOrganizer /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;OrganizersList</span>
+<span class="cstat-no" title="statement not covered" >                    title='Organizers'</span>
+<span class="cstat-no" title="statement not covered" >                    subtext={`Follow event organizers and get notified once there is an event`}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='mt-7 md:mt-14'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;EventsList</span>
 <span class="cstat-no" title="statement not covered" >                    title={'More events from this organizer'}</span>
@@ -241,7 +259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-11T15:17:06.336Z
+                at 2024-01-11T15:18:15.401Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/164</span>
+                <span class='fraction'>0/179</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/164</span>
+                <span class='fraction'>0/179</span>
             </div>
         
             
@@ -227,7 +227,37 @@
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
 <a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -425,9 +455,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const resolvedPlaceId = businessPlaceId ? businessPlaceId : placeId</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { carts, updateCartItem } = useSmartMenuCart()</span>
-<span class="cstat-no" title="statement not covered" >    const { carts: businessCart, updateCartItem: updateBusinessCart } =</span>
-<span class="cstat-no" title="statement not covered" >        useBusinessWebsiteCart()</span>
+<span class="cstat-no" title="statement not covered" >    const { carts, updateCartItem, removeSingleCartItemCompletely } =</span>
+<span class="cstat-no" title="statement not covered" >        useSmartMenuCart()</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >        carts: businessCart,</span>
+<span class="cstat-no" title="statement not covered" >        updateCartItem: updateBusinessCart,</span>
+<span class="cstat-no" title="statement not covered" >        removeItemCompletely,</span>
+<span class="cstat-no" title="statement not covered" >    } = useBusinessWebsiteCart()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Get items for the current restaurant</span>
 <span class="cstat-no" title="statement not covered" >    const items = businessWebsite</span>
@@ -461,6 +495,12 @@
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            updateCartItem(resolvedPlaceId, itemToUpdate, action)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const resolvedRemoveItemCompletely = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (businessWebsite)</span>
+<span class="cstat-no" title="statement not covered" >            removeItemCompletely(businessName, resolvedPlaceId, menuItem.id)</span>
+<span class="cstat-no" title="statement not covered" >        else removeSingleCartItemCompletely(placeId, menuItem.id)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -542,7 +582,12 @@
 <span class="cstat-no" title="statement not covered" >                closeDialog={() =&gt; setShowItem(false)}</span>
 <span class="cstat-no" title="statement not covered" >                title={menuItem.name}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;MenuItemDetails menuItem={menuItem} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;MenuItemDetails</span>
+<span class="cstat-no" title="statement not covered" >                    menuItem={menuItem}</span>
+<span class="cstat-no" title="statement not covered" >                    addToCart={() =&gt; handleUpdateCartItem('add')}</span>
+<span class="cstat-no" title="statement not covered" >                    removeFromCart={resolvedRemoveItemCompletely}</span>
+<span class="cstat-no" title="statement not covered" >                    itemInCart={singleMenu(menuItem) ? true : false}</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -562,7 +607,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-11T15:17:06.336Z
+                at 2024-01-11T15:18:15.401Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
