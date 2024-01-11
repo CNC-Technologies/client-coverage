@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/92</span>
+                <span class='fraction'>0/102</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/92</span>
+                <span class='fraction'>0/102</span>
             </div>
         
             
@@ -155,7 +155,27 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -248,23 +268,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import EventsList from '@/components/business/complex/events/EventsList'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import CalendarItem from '@/components/app/complex/CalendarItem'</span>
 <span class="cstat-no" title="statement not covered" >import EventList from '@/components/app/complex/EventsList'</span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" >import CreateEventItem from '@/components/forms/CreatePage/Event'</span>
-<span class="cstat-no" title="statement not covered" >import ParentModal from '@/components/modals/parentModal'</span>
 <span class="cstat-no" title="statement not covered" >import { defaultAvatar } from '@/constants/app/defaults'</span>
 <span class="cstat-no" title="statement not covered" >import { PlusIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/LottiePlayer'</span>
 <span class="cstat-no" title="statement not covered" >import comingSoonDarkLottie from '@/lotties/dark-coming-soon.json'</span>
 <span class="cstat-no" title="statement not covered" >import comingSoonLightLottie from '@/lotties/light-coming-soon.json'</span>
+<span class="cstat-no" title="statement not covered" >import DialogLayout from '@/components/business/layouts/DialogLayout'</span>
+<span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function ComingSoonEvents() {</span>
+<span class="cstat-no" title="statement not covered" >export function ComingSoonEvents() {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;LottiePlayer</span>
@@ -278,22 +298,28 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function EventsPage() {</span>
-<span class="cstat-no" title="statement not covered" >    const [dateToFetch, setDateToFetch] = useState(new Date())</span>
+<span class="cstat-no" title="statement not covered" >export default function EventsPage() {</span>
+<span class="cstat-no" title="statement not covered" >    const events = useSelector((state: RootState) =&gt; state.events.events)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const { create } = router.query</span>
+<span class="cstat-no" title="statement not covered" >    const [newEvent, setNewEvent] = useState(false)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    function openShowNewEventForm() {</span>
-<span class="cstat-no" title="statement not covered" >        //Add the query parameter</span>
-<span class="cstat-no" title="statement not covered" >        const queryParam = { create: 'Events' }</span>
-<span class="cstat-no" title="statement not covered" >        router.push({ pathname: router.pathname, query: queryParam })</span>
+<span class="cstat-no" title="statement not covered" >        setNewEvent(true)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function closeShowNewEventForm() {</span>
-<span class="cstat-no" title="statement not covered" >        // Remove the query parameter</span>
-<span class="cstat-no" title="statement not covered" >        const { create, ...query } = router.query</span>
-<span class="cstat-no" title="statement not covered" >        router.push({ pathname: router.pathname, query })</span>
+<span class="cstat-no" title="statement not covered" >        setNewEvent(false)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // function openShowNewEventForm() {</span>
+<span class="cstat-no" title="statement not covered" >    //     //Add the query parameter</span>
+<span class="cstat-no" title="statement not covered" >    //     const queryParam = { create: 'Events' }</span>
+<span class="cstat-no" title="statement not covered" >    //     router.push({ pathname: router.pathname, query: queryParam })</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
+<span class="cstat-no" title="statement not covered" >    // function closeShowNewEventForm() {</span>
+<span class="cstat-no" title="statement not covered" >    //     // Remove the query parameter</span>
+<span class="cstat-no" title="statement not covered" >    //     const { create, ...query } = router.query</span>
+<span class="cstat-no" title="statement not covered" >    //     router.push({ pathname: router.pathname, query })</span>
+<span class="cstat-no" title="statement not covered" >    // }</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        // &lt;AppLayout pageTitle='Events'&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
@@ -318,23 +344,27 @@
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-end'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;button</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={openShowNewEventForm}</span>
-<span class="cstat-no" title="statement not covered" >                        className={`primary-fill flex items-center space-x-2 dark:bg-bright-blue py-2 w-fit shadow-md px-6 h-12 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
+<span class="cstat-no" title="statement not covered" >                        className={`primary-fill flex items-center space-x-2 dark:bg-bright-blue py-2 w-fit shadow-md px-6 h-10 max-lg:px-4 max-lg:h-10 max-lg:text-sm text-base text-center  font-semibold focus:outline-none rounded-lg`}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;PlusIcon className='text-lg' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;p&gt;New Event&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;p className='text-sm'&gt;New Event&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='grid grid-cols-1  z-20 bg-[whitesmoke] dark:bg-black'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {/* &lt;div className='grid grid-cols-1  z-20 bg-[whitesmoke] dark:bg-black'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;CalendarItem</span>
 <span class="cstat-no" title="statement not covered" >                    activeDate={dateToFetch}</span>
 <span class="cstat-no" title="statement not covered" >                    setActiveDate={setDateToFetch}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;EventList gridLayout /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ParentModal isOpen={create} handleClose={closeShowNewEventForm}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt; */}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;EventList gridLayout events={events} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;DialogLayout</span>
+<span class="cstat-no" title="statement not covered" >                title='New Event'</span>
+<span class="cstat-no" title="statement not covered" >                dialogOpened={newEvent}</span>
+<span class="cstat-no" title="statement not covered" >                closeDialog={closeShowNewEventForm}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;CreateEventItem handleCloseModal={closeShowNewEventForm} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/ParentModal&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/DialogLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >        // &lt;/AppLayout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -346,7 +376,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-11T15:18:15.401Z
+                at 2024-01-11T16:36:22.334Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
