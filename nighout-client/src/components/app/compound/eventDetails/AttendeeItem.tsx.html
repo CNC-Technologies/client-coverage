@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/35</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/35</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -96,9 +96,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -131,41 +129,37 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Link from 'next/link'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import Link from 'next/link'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Avatar from '@/components/app/simple/Avatar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function AttendeeItem({ user }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >            href={`/${user?.name.first}_${user?.name.last}`}</span>
-<span class="cstat-no" title="statement not covered" >            className={`max-md:min-w-[200px] w-full dark:bg-primary/5 shadow-sm dark:shadow-none border dark:border-none rounded-lg py-6 xmd:py-10 px-5 grid gap-2 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            // href={`/${user?.name.first}_${user?.name.last}`}</span>
+<span class="cstat-no" title="statement not covered" >            className={`max-md:min-w-[200px] w-full dark:bg-primary/5 shadow-sm dark:shadow-none border-[0.5px] dark:border-none rounded-lg py-6  px-5 grid gap-2 place-items-center`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Avatar img={`${user?.picture.medium}`} size='xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;h4 className='text-lg text-center  xDesktop:text-xl'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;h4 className='text-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {user?.name.first} {user?.name.last}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/h4&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span className='text-base xDesktop:text-lg text-orange font-semibold'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                Member</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span className='text-sm text-orange font-semibold'&gt;Member&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function ModalAttendeeItem({ user }) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >            href={`/${user?.name.first}_${user?.name.last}`}</span>
-<span class="cstat-no" title="statement not covered" >            className={`max-xxmobile:w-full max-mobile:w-[90%] mx-auto max-md:min-w-[180px] w-full dark:bg-primary/5 border dark:border-none shadow-sm dark:shadow-none rounded-lg py-5 px-4 grid gap-1 place-items-center`}</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >            // href={`/${user?.name.first}_${user?.name.last}`}</span>
+<span class="cstat-no" title="statement not covered" >            className={`text-sm max-xxmobile:w-full max-mobile:w-[90%] mx-auto max-md:min-w-[180px] w-full dark:bg-primary/5 border dark:border-none shadow-sm dark:shadow-none rounded-lg py-5 px-4 grid gap-1 place-items-center`}</span>
 <span class="cstat-no" title="statement not covered" >        &gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Avatar img={`${user?.picture.medium}`} size='xl' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;h4 className='text-center  '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {user?.name.first} {user?.name.last}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/h4&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;span className=' text-orange font-semibold'&gt;Member&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
@@ -175,7 +169,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-11T16:36:22.334Z
+                at 2024-01-12T16:17:16.527Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
