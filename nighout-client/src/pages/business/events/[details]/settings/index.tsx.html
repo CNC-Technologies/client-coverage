@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/556</span>
+                <span class='fraction'>0/564</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/556</span>
+                <span class='fraction'>0/564</span>
             </div>
         
             
@@ -619,7 +619,23 @@
 <a name='L554'></a><a href='#L554'>554</a>
 <a name='L555'></a><a href='#L555'>555</a>
 <a name='L556'></a><a href='#L556'>556</a>
-<a name='L557'></a><a href='#L557'>557</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L557'></a><a href='#L557'>557</a>
+<a name='L558'></a><a href='#L558'>558</a>
+<a name='L559'></a><a href='#L559'>559</a>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a>
+<a name='L562'></a><a href='#L562'>562</a>
+<a name='L563'></a><a href='#L563'>563</a>
+<a name='L564'></a><a href='#L564'>564</a>
+<a name='L565'></a><a href='#L565'>565</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1279,7 +1295,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className='flex items-center justify-end mt-4 space-x-3'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Link href={''}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Link href={'/business/events/eventId'}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Button id='place-preview-button' variant='outline'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Preview</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
@@ -1317,7 +1333,9 @@
 <span class="cstat-no" title="statement not covered" >                                name='name'</span>
 <span class="cstat-no" title="statement not covered" >                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel&gt;Event Name *&lt;/FormLabel&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Event Name</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                                {...field}</span>
@@ -1338,7 +1356,9 @@
 <span class="cstat-no" title="statement not covered" >                                name='type'</span>
 <span class="cstat-no" title="statement not covered" >                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel&gt;Event Type *&lt;/FormLabel&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Event Type</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;Select</span>
 <span class="cstat-no" title="statement not covered" >                                            onValueChange={field.onChange}</span>
 <span class="cstat-no" title="statement not covered" >                                            defaultValue={field.value}</span>
@@ -1370,7 +1390,9 @@
 <span class="cstat-no" title="statement not covered" >                                name='category'</span>
 <span class="cstat-no" title="statement not covered" >                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel&gt;Event Category *&lt;/FormLabel&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            Event Category</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;Select</span>
 <span class="cstat-no" title="statement not covered" >                                            onValueChange={field.onChange}</span>
 <span class="cstat-no" title="statement not covered" >                                            defaultValue={field.value}</span>
@@ -1430,8 +1452,8 @@
 <span class="cstat-no" title="statement not covered" >                                            name='eventStartDate'</span>
 <span class="cstat-no" title="statement not covered" >                                            render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        Start Date *</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        Start Date</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;InputField</span>
@@ -1452,8 +1474,8 @@
 <span class="cstat-no" title="statement not covered" >                                            name='eventStartTime'</span>
 <span class="cstat-no" title="statement not covered" >                                            render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        Start Time *</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        Start Time</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;InputField</span>
@@ -1477,8 +1499,8 @@
 <span class="cstat-no" title="statement not covered" >                                            name='eventEndDate'</span>
 <span class="cstat-no" title="statement not covered" >                                            render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        End Date *</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        End Date</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;InputField</span>
@@ -1499,8 +1521,8 @@
 <span class="cstat-no" title="statement not covered" >                                            name='eventEndTime'</span>
 <span class="cstat-no" title="statement not covered" >                                            render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        End Time *</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        End Time</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;InputField</span>
@@ -1535,8 +1557,8 @@
 <span class="cstat-no" title="statement not covered" >                                                name='ticketStartDate'</span>
 <span class="cstat-no" title="statement not covered" >                                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            Start Date *</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            Start Date</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;InputField</span>
@@ -1557,8 +1579,8 @@
 <span class="cstat-no" title="statement not covered" >                                                name='ticketStartTime'</span>
 <span class="cstat-no" title="statement not covered" >                                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            Start Time *</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            Start Time</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;InputField</span>
@@ -1582,8 +1604,8 @@
 <span class="cstat-no" title="statement not covered" >                                                name='ticketEndDate'</span>
 <span class="cstat-no" title="statement not covered" >                                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            End Date *</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            End Date</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;InputField</span>
@@ -1604,8 +1626,8 @@
 <span class="cstat-no" title="statement not covered" >                                                name='ticketEndTime'</span>
 <span class="cstat-no" title="statement not covered" >                                                render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;FormItem className='flex-1'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                            End Time *</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            End Time</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                        &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                            &lt;InputField</span>
@@ -1635,7 +1657,7 @@
 <span class="cstat-no" title="statement not covered" >                                        render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;FormItem className='mb-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    Email Address *</span>
+<span class="cstat-no" title="statement not covered" >                                                    Email Address</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;InputField</span>
@@ -1656,7 +1678,7 @@
 <span class="cstat-no" title="statement not covered" >                                        render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;FormItem&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                    Phone Number *</span>
+<span class="cstat-no" title="statement not covered" >                                                    Phone Number</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                    &lt;InputField</span>
@@ -1681,7 +1703,9 @@
 <span class="cstat-no" title="statement not covered" >                                    name='name'</span>
 <span class="cstat-no" title="statement not covered" >                                    render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;FormLabel&gt;Location *&lt;/FormLabel&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                Location</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;InputField</span>
 <span class="cstat-no" title="statement not covered" >                                                    {...field}</span>
@@ -1704,8 +1728,8 @@
 <span class="cstat-no" title="statement not covered" >                                    name='name'</span>
 <span class="cstat-no" title="statement not covered" >                                    render={({ field }) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                External link *</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;FormLabel required&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                External link</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;FormControl&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                                &lt;InputField</span>
@@ -1738,7 +1762,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-17T19:09:02.540Z
+                at 2024-01-17T19:10:37.965Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
