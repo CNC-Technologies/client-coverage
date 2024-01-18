@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.69% </span>
+                <span class="strong">57.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>88/158</span>
+                <span class='fraction'>96/166</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">64.7% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/12</span>
+                <span class='fraction'>11/17</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.69% </span>
+                <span class="strong">57.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>88/158</span>
+                <span class='fraction'>96/166</span>
             </div>
         
             
@@ -221,7 +221,15 @@
 <a name='L156'></a><a href='#L156'>156</a>
 <a name='L157'></a><a href='#L157'>157</a>
 <a name='L158'></a><a href='#L158'>158</a>
-<a name='L159'></a><a href='#L159'>159</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -243,6 +251,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -404,6 +420,14 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
     const [hoveredElement, setHoveredElement] = useState(null)
     const { user, isLoading } = useUser()
 &nbsp;
+    const homePageUrls = ['/', '/get-the-app', '/privacy', '/terms', '/support']
+    const currentUrl = typeof window !== 'undefined' &amp;&amp; window.location.href
+&nbsp;
+    const isHomePageUrl = homePageUrls.includes(currentUrl)
+&nbsp;
+    const logInHref = isHomePageUrl<span class="branch-0 cbranch-no" title="branch not covered" > ? '/api/auth/login' </span>: `/api/auth/login-with-redirect?returnTo=${encodeURIComponent(currentUrl)}`
+    const signUpHref = isHomePageUrl<span class="branch-0 cbranch-no" title="branch not covered" > ? '/api/auth/signup' </span>: `/api/auth/signup-with-redirect?returnTo=${encodeURIComponent(currentUrl)}`
+&nbsp;
     return (
         &lt;nav
             className={`${
@@ -509,7 +533,7 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
 <span class="cstat-no" title="statement not covered" >                            ) : (</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className='flex items-center gap-2 desktop:gap-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;HomeNavButton</span>
-<span class="cstat-no" title="statement not covered" >                                        href='/api/auth/login'</span>
+<span class="cstat-no" title="statement not covered" >                                        href={logInHref}</span>
 <span class="cstat-no" title="statement not covered" >                                        dataTestid='login-btn'</span>
 <span class="cstat-no" title="statement not covered" >                                        className={</span>
 <span class="cstat-no" title="statement not covered" >                                            scrollPastSection &amp;&amp;</span>
@@ -519,7 +543,7 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
 <span class="cstat-no" title="statement not covered" >                                        Login</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;/HomeNavButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;HomeNavButton</span>
-<span class="cstat-no" title="statement not covered" >                                        href='/api/auth/signup'</span>
+<span class="cstat-no" title="statement not covered" >                                        href={signUpHref}</span>
 <span class="cstat-no" title="statement not covered" >                                        dataTestid='signup-btn'</span>
 <span class="cstat-no" title="statement not covered" >                                        className={</span>
 <span class="cstat-no" title="statement not covered" >                                            scrollPastSection &amp;&amp;</span>
@@ -544,7 +568,7 @@ export default function HomepageDesktopNav({ scrollPastSection, pathname }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-18T12:25:28.216Z
+                at 2024-01-18T19:45:13.072Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
