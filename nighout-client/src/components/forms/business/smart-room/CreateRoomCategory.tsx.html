@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/182</span>
+                <span class='fraction'>0/190</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/182</span>
+                <span class='fraction'>0/190</span>
             </div>
         
             
@@ -245,7 +245,23 @@
 <a name='L180'></a><a href='#L180'>180</a>
 <a name='L181'></a><a href='#L181'>181</a>
 <a name='L182'></a><a href='#L182'>182</a>
-<a name='L183'></a><a href='#L183'>183</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -438,7 +454,6 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import DragDropImageUpload from '@/components/FormComponents/DragDropImageUpload'</span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import { Button } from '@/components/shadcn/ui/button'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    Form,</span>
 <span class="cstat-no" title="statement not covered" >    FormControl,</span>
@@ -450,6 +465,9 @@
 <span class="cstat-no" title="statement not covered" >import { Photo } from '@/interfaces/dragDropImageUpload.interface'</span>
 <span class="cstat-no" title="statement not covered" >import useRoomCategory from '@/hooks/business/places/room-management/useRoomCategory'</span>
 <span class="cstat-no" title="statement not covered" >import { Textarea } from '@/components/shadcn/ui/textarea'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const roomFormSchema = z.object({</span>
 <span class="cstat-no" title="statement not covered" >    name: z.string(),</span>
@@ -496,12 +514,14 @@
 <span class="cstat-no" title="statement not covered" >        formData.append('name', data?.name)</span>
 <span class="cstat-no" title="statement not covered" >        formData.append('price', data?.price)</span>
 <span class="cstat-no" title="statement not covered" >        formData.append('description', data?.description)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (imageForUpload) {</span>
 <span class="cstat-no" title="statement not covered" >            formData.append('medias', imageForUpload[0])</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (room) {</span>
-<span class="cstat-no" title="statement not covered" >            ;('hi')</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            // This part for editing</span>
 <span class="cstat-no" title="statement not covered" >            // const roomCategoryFormData = {</span>
 <span class="cstat-no" title="statement not covered" >            //     data,</span>
@@ -537,6 +557,7 @@
 <span class="cstat-no" title="statement not covered" >                                videoControl={true}</span>
 <span class="cstat-no" title="statement not covered" >                                imageForUpload={imageForUpload}</span>
 <span class="cstat-no" title="statement not covered" >                                setImageForUpload={setImageForUpload}</span>
+<span class="cstat-no" title="statement not covered" >                                allowMultiple={false}</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
@@ -597,7 +618,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='row justify-center mt-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='w-48 flex justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Button type='submit'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >                                loading={createRoomCategory.isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                                type='submit'</span>
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                                {room</span>
 <span class="cstat-no" title="statement not covered" >                                    ? 'Edit Room Category'</span>
 <span class="cstat-no" title="statement not covered" >                                    : 'Create Room Category'}</span>
@@ -616,7 +640,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-22T17:26:05.871Z
+                at 2024-01-22T20:30:48.946Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
