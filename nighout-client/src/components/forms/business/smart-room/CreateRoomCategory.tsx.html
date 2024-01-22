@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/169</span>
+                <span class='fraction'>0/182</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/169</span>
+                <span class='fraction'>0/182</span>
             </div>
         
             
@@ -232,7 +232,33 @@
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -408,9 +434,10 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import * as z from 'zod'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import DragDropImageUpload from '@/components/FormComponents/DragDropImageUpload'</span>
 <span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
-<span class="cstat-no" title="statement not covered" >import { RoomFormValue } from '@/components/forms/business/smart-room/CreateRoom'</span>
 <span class="cstat-no" title="statement not covered" >import { Button } from '@/components/shadcn/ui/button'</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
 <span class="cstat-no" title="statement not covered" >    Form,</span>
@@ -421,13 +448,13 @@
 <span class="cstat-no" title="statement not covered" >    FormMessage,</span>
 <span class="cstat-no" title="statement not covered" >} from '@/components/shadcn/ui/form'</span>
 <span class="cstat-no" title="statement not covered" >import { Photo } from '@/interfaces/dragDropImageUpload.interface'</span>
-<span class="cstat-no" title="statement not covered" >import { RoomProps } from '@/interfaces/rooms.interface'</span>
+<span class="cstat-no" title="statement not covered" >import useRoomCategory from '@/hooks/business/places/room-management/useRoomCategory'</span>
+<span class="cstat-no" title="statement not covered" >import { Textarea } from '@/components/shadcn/ui/textarea'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const roomFormSchema = z.object({</span>
 <span class="cstat-no" title="statement not covered" >    name: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >    description: z.string(),</span>
-<span class="cstat-no" title="statement not covered" >    price: z.number().nullable(),</span>
-<span class="cstat-no" title="statement not covered" >    extras: z.string(),</span>
+<span class="cstat-no" title="statement not covered" >    price: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export type RoomCategoryFormValue = z.infer&lt;typeof roomFormSchema&gt;</span>
@@ -437,7 +464,7 @@
 <span class="cstat-no" title="statement not covered" >    room,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    handleClose: () =&gt; void</span>
-<span class="cstat-no" title="statement not covered" >    room?: RoomProps</span>
+<span class="cstat-no" title="statement not covered" >    room?: any</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
@@ -445,11 +472,15 @@
 <span class="cstat-no" title="statement not covered" >        setImageForUpload(files)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const placeId = router.query?.details as string</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const { createRoomCategory } = useRoomCategory({ placeId })</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let defaultValues: Partial&lt;RoomCategoryFormValue&gt; = {</span>
 <span class="cstat-no" title="statement not covered" >        name: room?.category || '',</span>
-<span class="cstat-no" title="statement not covered" >        price: room?.price || null,</span>
+<span class="cstat-no" title="statement not covered" >        price: room?.price || '',</span>
 <span class="cstat-no" title="statement not covered" >        description: room?.description || '',</span>
-<span class="cstat-no" title="statement not covered" >        extras: '',</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const form = useForm&lt;RoomCategoryFormValue&gt;({</span>
@@ -459,8 +490,34 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
-<span class="cstat-no" title="statement not covered" >    const onSubmit = (data: RoomFormValue) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        handleClose()</span>
+<span class="cstat-no" title="statement not covered" >    const onSubmit = (data: RoomCategoryFormValue) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const formData = new FormData()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        formData.append('name', data?.name)</span>
+<span class="cstat-no" title="statement not covered" >        formData.append('price', data?.price)</span>
+<span class="cstat-no" title="statement not covered" >        formData.append('description', data?.description)</span>
+<span class="cstat-no" title="statement not covered" >        if (imageForUpload) {</span>
+<span class="cstat-no" title="statement not covered" >            formData.append('medias', imageForUpload[0])</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (room) {</span>
+<span class="cstat-no" title="statement not covered" >            ;('hi')</span>
+<span class="cstat-no" title="statement not covered" >            // This part for editing</span>
+<span class="cstat-no" title="statement not covered" >            // const roomCategoryFormData = {</span>
+<span class="cstat-no" title="statement not covered" >            //     data,</span>
+<span class="cstat-no" title="statement not covered" >            //     categoryId: room.id,</span>
+<span class="cstat-no" title="statement not covered" >            // }</span>
+<span class="cstat-no" title="statement not covered" >            // editRoomCategory.mutateAsync(formData).then(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            //     form.reset(defaultValues)</span>
+<span class="cstat-no" title="statement not covered" >            //     handleClose()</span>
+<span class="cstat-no" title="statement not covered" >            // })</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >            // console.log(formData)</span>
+<span class="cstat-no" title="statement not covered" >            createRoomCategory.mutateAsync(formData).then(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                form.reset(defaultValues)</span>
+<span class="cstat-no" title="statement not covered" >                handleClose()</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -527,26 +584,8 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;FormItem&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormLabel required&gt;Description&lt;/FormLabel&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;Textarea</span>
 <span class="cstat-no" title="statement not covered" >                                        placeholder='Room description'</span>
-<span class="cstat-no" title="statement not covered" >                                        {...field}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FormMessage /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        )}</span>
-<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    &lt;FormField</span>
-<span class="cstat-no" title="statement not covered" >                        control={form.control}</span>
-<span class="cstat-no" title="statement not covered" >                        name='extras'</span>
-<span class="cstat-no" title="statement not covered" >                        render={({ field }) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;FormItem&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FormLabel&gt;Extras&lt;/FormLabel&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FormControl&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                                        placeholder='Extras'</span>
 <span class="cstat-no" title="statement not covered" >                                        {...field}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/FormControl&gt;</span>
@@ -577,7 +616,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-22T14:34:30.131Z
+                at 2024-01-22T17:26:05.871Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
