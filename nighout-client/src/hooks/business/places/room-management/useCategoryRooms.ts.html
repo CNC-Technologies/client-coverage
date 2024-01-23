@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/general/PageLoader.tsx</title>
+    <title>Code coverage report for nighout-client/src/hooks/business/places/room-management/useCategoryRooms.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/general</a> PageLoader.tsx</h1>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks/business/places/room-management</a> useCategoryRooms.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
@@ -106,12 +106,7 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -154,58 +149,48 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import { catrgoryRoomsRoute } from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { BarLoader } from 'react-spinners'</span>
+<span class="cstat-no" title="statement not covered" >export default function useCategoryRooms(categoryId: string) {</span>
+<span class="cstat-no" title="statement not covered" >    const { post } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useTheme } from 'next-themes'</span>
+<span class="cstat-no" title="statement not covered" >    const createRoom = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async (data: FormData) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            await post({</span>
+<span class="cstat-no" title="statement not covered" >                url: catrgoryRoomsRoute(categoryId),</span>
+<span class="cstat-no" title="statement not covered" >                data,</span>
+<span class="cstat-no" title="statement not covered" >                formDataReq: true,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([categoryId, 'rooms'])</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import LottiePlayer from '@/components/general/LottiePlayer'</span>
-<span class="cstat-no" title="statement not covered" >import loadingDarkLottie from '@/lotties/loading-dark.json'</span>
-<span class="cstat-no" title="statement not covered" >import loadingLightLottie from '@/lotties/loading-light.json'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function PageLoader({ full }: { full?: boolean }) {</span>
-<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const { theme } = useTheme()</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [spinnerDisplay, spinnerDisplaySetter] = useState(false)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (typeof window !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >        router.events.on('routeChangeStart', () =&gt; spinnerDisplaySetter(true))</span>
-<span class="cstat-no" title="statement not covered" >        router.events.on('routeChangeComplete', () =&gt;</span>
-<span class="cstat-no" title="statement not covered" >            spinnerDisplaySetter(false),</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >        createRoom,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (full)</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='col-center z-20 bg-black/20 fixed top-0 left-0 right-0 bottom-0'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;LottiePlayer</span>
-<span class="cstat-no" title="statement not covered" >                    animationData={{</span>
-<span class="cstat-no" title="statement not covered" >                        light: loadingLightLottie,</span>
-<span class="cstat-no" title="statement not covered" >                        dark: loadingDarkLottie,</span>
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >    if (spinnerDisplay) {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='fixed top-0 z-[99999] w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;BarLoader</span>
-<span class="cstat-no" title="statement not covered" >                    width={'100%'}</span>
-<span class="cstat-no" title="statement not covered" >                    height='5px'</span>
-<span class="cstat-no" title="statement not covered" >                    color={theme === 'light' ? '#19303C' : 'rgb(245, 195, 152)'}</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return null</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useGetCategoryRooms(categoryId: string) {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: [categoryId, 'rooms'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: catrgoryRoomsRoute(categoryId) })</span>
+<span class="cstat-no" title="statement not covered" >            if (res) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.data</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        refetchOnWindowFocus: false,</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >        // refetchOnMount: false,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -216,14 +201,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-01-23T15:43:48.889Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
