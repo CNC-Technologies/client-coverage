@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/190</span>
+                <span class='fraction'>0/188</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/190</span>
+                <span class='fraction'>0/188</span>
             </div>
         
             
@@ -251,11 +251,7 @@
 <a name='L186'></a><a href='#L186'>186</a>
 <a name='L187'></a><a href='#L187'>187</a>
 <a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a>
-<a name='L191'></a><a href='#L191'>191</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L189'></a><a href='#L189'>189</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -467,22 +463,22 @@
 <span class="cstat-no" title="statement not covered" >import { Textarea } from '@/components/shadcn/ui/textarea'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
+<span class="cstat-no" title="statement not covered" >import { RoomCategoryProps } from '@/interfaces/rooms.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const roomFormSchema = z.object({</span>
+<span class="cstat-no" title="statement not covered" >const roomCategoryFormSchema = z.object({</span>
 <span class="cstat-no" title="statement not covered" >    name: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >    description: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >    price: z.string(),</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export type RoomCategoryFormValue = z.infer&lt;typeof roomFormSchema&gt;</span>
+<span class="cstat-no" title="statement not covered" >export type RoomCategoryFormValue = z.infer&lt;typeof roomCategoryFormSchema&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CreateRoomCategoryForm({</span>
 <span class="cstat-no" title="statement not covered" >    handleClose,</span>
-<span class="cstat-no" title="statement not covered" >    room,</span>
+<span class="cstat-no" title="statement not covered" >    roomCategory,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    handleClose: () =&gt; void</span>
-<span class="cstat-no" title="statement not covered" >    room?: any</span>
+<span class="cstat-no" title="statement not covered" >    roomCategory?: RoomCategoryProps</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const [selectedPhotos, setSelectedPhotos] = useState&lt;Photo[]&gt;([])</span>
 <span class="cstat-no" title="statement not covered" >    const [imageForUpload, setImageForUpload] = useState(null)</span>
@@ -496,13 +492,13 @@
 <span class="cstat-no" title="statement not covered" >    const { createRoomCategory } = useRoomCategory({ placeId })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let defaultValues: Partial&lt;RoomCategoryFormValue&gt; = {</span>
-<span class="cstat-no" title="statement not covered" >        name: room?.category || '',</span>
-<span class="cstat-no" title="statement not covered" >        price: room?.price || '',</span>
-<span class="cstat-no" title="statement not covered" >        description: room?.description || '',</span>
+<span class="cstat-no" title="statement not covered" >        name: roomCategory?.name || '',</span>
+<span class="cstat-no" title="statement not covered" >        price: roomCategory?.price || '',</span>
+<span class="cstat-no" title="statement not covered" >        description: roomCategory?.description || '',</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const form = useForm&lt;RoomCategoryFormValue&gt;({</span>
-<span class="cstat-no" title="statement not covered" >        resolver: zodResolver(roomFormSchema),</span>
+<span class="cstat-no" title="statement not covered" >        resolver: zodResolver(roomCategoryFormSchema),</span>
 <span class="cstat-no" title="statement not covered" >        defaultValues,</span>
 <span class="cstat-no" title="statement not covered" >        mode: 'onChange',</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
@@ -519,9 +515,7 @@
 <span class="cstat-no" title="statement not covered" >            formData.append('medias', imageForUpload[0])</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (room) {</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (roomCategory) {</span>
 <span class="cstat-no" title="statement not covered" >            // This part for editing</span>
 <span class="cstat-no" title="statement not covered" >            // const roomCategoryFormData = {</span>
 <span class="cstat-no" title="statement not covered" >            //     data,</span>
@@ -547,7 +541,7 @@
 <span class="cstat-no" title="statement not covered" >                    className='grid gap-4 mx-2 mt-4'</span>
 <span class="cstat-no" title="statement not covered" >                    onSubmit={form.handleSubmit(onSubmit)}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {!room &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                    {!roomCategory &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {/* &lt;div className='-mb-2 text-sm'&gt;Menu Image&lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;DragDropImageUpload</span>
@@ -622,7 +616,7 @@
 <span class="cstat-no" title="statement not covered" >                                loading={createRoomCategory.isLoading}</span>
 <span class="cstat-no" title="statement not covered" >                                type='submit'</span>
 <span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {room</span>
+<span class="cstat-no" title="statement not covered" >                                {roomCategory</span>
 <span class="cstat-no" title="statement not covered" >                                    ? 'Edit Room Category'</span>
 <span class="cstat-no" title="statement not covered" >                                    : 'Create Room Category'}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/Button&gt;</span>
@@ -640,7 +634,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-22T20:30:48.946Z
+                at 2024-01-23T12:46:16.670Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
