@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
@@ -123,39 +123,7 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -217,15 +185,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useRouter } from 'next/router'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { useState } from 'react'</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlaceDetailsHeading from '@/components/features/Places/PlaceDetails/PlaceHeading'</span>
-<span class="cstat-no" title="statement not covered" >import RoomList from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomList'</span>
-<span class="cstat-no" title="statement not covered" >import { hotelRoomList } from '@/constants/MockData/RoomList'</span>
+<span class="cstat-no" title="statement not covered" >import RoomCategoriesList from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomList'</span>
 <span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
+<span class="cstat-no" title="statement not covered" >import { useGetRoomCategories } from '@/hooks/business/places/room-management/useRoomCategory'</span>
+<span class="cstat-no" title="statement not covered" >import { RoomCategoryProps } from '@/interfaces/rooms.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function RoomInventoryList() {</span>
+<span class="cstat-no" title="statement not covered" >export default function RoomCategoriesPage() {</span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const placeId = router.query?.details as string</span>
@@ -236,12 +203,9 @@
 <span class="cstat-no" title="statement not covered" >    } = usePlaceDetails(placeId)</span>
 <span class="cstat-no" title="statement not covered" >    const placeData = data as PlaceProps</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [activeMenu, setActiveMenu] = useState&lt;string&gt;('')</span>
-<span class="cstat-no" title="statement not covered" >    const categories: string[] = []</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const handleMenuChange = (cat) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setActiveMenu(cat)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const { data: roomCategoriesRes, isInitialLoading } =</span>
+<span class="cstat-no" title="statement not covered" >        useGetRoomCategories(placeId)</span>
+<span class="cstat-no" title="statement not covered" >    const roomCategories = roomCategoriesRes?.data as RoomCategoryProps[]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    //     hotelRoomList.forEach(room =&gt; categories.push(room.category))</span>
@@ -256,36 +220,24 @@
 <span class="cstat-no" title="statement not covered" >                    hideOtherDetails={false}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className=' max-w-[95rem] flex md:space-x-8 justify-between mx-auto w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='mt-3 max-w-[95rem] flex md:space-x-8 justify-between mx-auto w-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='max-w-[60rem] w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid grid-cols-1 w-full px-0 xmd:px-5 place-items-center mb-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='flex space-x-3 custom-scrollbar overflow-x-auto  py-3 w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {categories.map((cat, idx: number) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    key={idx}</span>
-<span class="cstat-no" title="statement not covered" >                                    onClick={() =&gt; handleMenuChange(cat)}</span>
-<span class="cstat-no" title="statement not covered" >                                    className={` ${</span>
-<span class="cstat-no" title="statement not covered" >                                        activeMenu === cat</span>
-<span class="cstat-no" title="statement not covered" >                                            ? 'bg-dark dark:bg-grey/50 text-white'</span>
-<span class="cstat-no" title="statement not covered" >                                            : 'text-dark dark:text-white border border-dark dark:border-white/30 bg-transparent'</span>
-<span class="cstat-no" title="statement not covered" >                                    } transition-colors duration-200 ease-in-out px-5 cursor-pointer w-fit py-2 rounded-full  flex space-x-3`}</span>
-<span class="cstat-no" title="statement not covered" >                                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {/* {menu?.menuItemType === 'food' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;FaBowlRice className='text-xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        )}</span>
-<span class="cstat-no" title="statement not covered" >                                        {menu?.menuItemType === 'drink' &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;BiSolidDrink className='text-xl' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        )} */}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className='whitespace-nowrap'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {cat}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ))}</span>
+<span class="cstat-no" title="statement not covered" >                    {isInitialLoading ? (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='grid max-xlaptop:grid-cols-1 max-[1360px]:grid-cols-2 grid-cols-3 gap-5 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {[...Array(10)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                return (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                        key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                        className='skeleton h-[300px]'</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )</span>
+<span class="cstat-no" title="statement not covered" >                            })}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='grid max-xlaptop:grid-cols-1 max-[1360px]:grid-cols-2 grid-cols-3 gap-5 '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;RoomList rooms={hotelRoomList} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    ) : (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='grid max-xlaptop:grid-cols-1 max-[1360px]:grid-cols-2 grid-cols-3 gap-5 '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;RoomCategoriesList categories={roomCategories} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
@@ -298,7 +250,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-24T17:59:35.717Z
+                at 2024-01-24T18:00:22.892Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

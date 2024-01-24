@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/158</span>
+                <span class='fraction'>0/164</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/158</span>
+                <span class='fraction'>0/164</span>
             </div>
         
             
@@ -221,7 +221,19 @@
 <a name='L156'></a><a href='#L156'>156</a>
 <a name='L157'></a><a href='#L157'>157</a>
 <a name='L158'></a><a href='#L158'>158</a>
-<a name='L159'></a><a href='#L159'>159</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -395,8 +407,10 @@
 <span class="cstat-no" title="statement not covered" >import { PlaceProps } from '@/interfaces/places/place.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetMenus } from '@/hooks/business/places/smart-menu/useMenu'</span>
 <span class="cstat-no" title="statement not covered" >import { businessPlaceMenuLink } from '@/constants/app/links'</span>
-<span class="cstat-no" title="statement not covered" >import { hotelRoomList } from '@/constants/MockData/RoomList'</span>
+<span class="cstat-no" title="statement not covered" >// import { hotelRoomList } from '@/constants/MockData/RoomList' // ! Remove this mock data later</span>
 <span class="cstat-no" title="statement not covered" >import { subscriptionList } from '@/constants/MockData/GymSubscriptionList'</span>
+<span class="cstat-no" title="statement not covered" >import { useGetRoomCategories } from '@/hooks/business/places/room-management/useRoomCategory'</span>
+<span class="cstat-no" title="statement not covered" >import { RoomCategoryProps } from '@/interfaces/rooms.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >interface InventoryListProps {</span>
 <span class="cstat-no" title="statement not covered" >    gridLayout?: boolean</span>
@@ -438,6 +452,10 @@
 <span class="cstat-no" title="statement not covered" >        ? place?.edges.menus</span>
 <span class="cstat-no" title="statement not covered" >        : menuList?.data</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // For getting hotel room categories</span>
+<span class="cstat-no" title="statement not covered" >    const { data: roomCategoriesRes } = useGetRoomCategories(resolvedPlaceId)</span>
+<span class="cstat-no" title="statement not covered" >    const roomCategories = roomCategoriesRes?.data as RoomCategoryProps[]</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const setInventoryHeading = (type: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        switch (type) {</span>
 <span class="cstat-no" title="statement not covered" >            case 'Restaurants':</span>
@@ -460,7 +478,7 @@
 <span class="cstat-no" title="statement not covered" >            case 'Restaurants':</span>
 <span class="cstat-no" title="statement not covered" >                return &lt;MenuList menus={inventoryList(type)} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            case 'Hotels':</span>
-<span class="cstat-no" title="statement not covered" >                return &lt;RoomList rooms={hotelRoomList} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;RoomList categories={inventoryList(type)} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
 <span class="cstat-no" title="statement not covered" >                return &lt;MenuList menus={inventoryList(type)} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            case 'Fitness':</span>
@@ -479,7 +497,7 @@
 <span class="cstat-no" title="statement not covered" >            case 'Bars':</span>
 <span class="cstat-no" title="statement not covered" >                return resolvedMenuList</span>
 <span class="cstat-no" title="statement not covered" >            case 'Hotels':</span>
-<span class="cstat-no" title="statement not covered" >                return hotelRoomList</span>
+<span class="cstat-no" title="statement not covered" >                return roomCategories</span>
 <span class="cstat-no" title="statement not covered" >            case 'Fitness':</span>
 <span class="cstat-no" title="statement not covered" >                return subscriptionList</span>
 <span class="cstat-no" title="statement not covered" >            case 'Travel/Tour Operators':</span>
@@ -544,7 +562,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-24T17:59:35.717Z
+                at 2024-01-24T18:00:22.892Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
