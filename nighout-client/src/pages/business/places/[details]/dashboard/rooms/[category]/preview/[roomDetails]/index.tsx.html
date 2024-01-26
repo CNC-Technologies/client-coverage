@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/36</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/36</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -96,13 +96,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -137,35 +131,32 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// import { useRouter } from 'next/router'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
 <span class="cstat-no" title="statement not covered" >import RoomReservation from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomReservation'</span>
 <span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
+<span class="cstat-no" title="statement not covered" >import { useGetRoomDetails } from '@/hooks/business/places/room-management/useRooms'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceInventoryDetailsPageComplex() {</span>
-<span class="cstat-no" title="statement not covered" >    // const router = useRouter()</span>
+<span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >        isLoading,</span>
 <span class="cstat-no" title="statement not covered" >        data: placeDetails,</span>
 <span class="cstat-no" title="statement not covered" >        // error,</span>
 <span class="cstat-no" title="statement not covered" >        // isError,</span>
 <span class="cstat-no" title="statement not covered" >        // refetch,</span>
 <span class="cstat-no" title="statement not covered" >    } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const user = useSelector((state: RootState) =&gt; state.user.user)</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const placeId = (router.query?.details as string) || ''</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const { carts, hasCartItems } = useSmartMenuCart()</span>
-<span class="cstat-no" title="statement not covered" >    // const placeCartItems = carts[placeId] || []</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const hasItemsInCart = hasCartItems(placeId)</span>
+<span class="cstat-no" title="statement not covered" >    const roomId = (router.query?.roomDetails as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    const { data } = useGetRoomDetails(roomId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;RoomReservation</span>
 <span class="cstat-no" title="statement not covered" >                placeDetails={placeDetails}</span>
-<span class="cstat-no" title="statement not covered" >                isLoading={isLoading}</span>
+<span class="cstat-no" title="statement not covered" >                // isLoading={isInitialLoading}</span>
+<span class="cstat-no" title="statement not covered" >                roomDetails={data?.data}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {/* {hasItemsInCart &amp;&amp; &lt;MenuCart items={placeCartItems} /&gt;} */}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/PageTransition&gt;</span>
@@ -178,7 +169,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-25T10:15:37.500Z
+                at 2024-01-26T05:41:20.512Z
             </div>
         <script src="../../../../../../../../../../../prettify.js"></script>
         <script>

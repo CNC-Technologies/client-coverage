@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for nighout-client/src/components/app/simple/ShareLinkPreview.tsx</title>
+    <title>Code coverage report for nighout-client/src/hooks/business/places/room-management/useRooms.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/components/app/simple</a> ShareLinkPreview.tsx</h1>
+        <h1><a href="../../../../../../index.html">All files</a> / <a href="index.html">nighout-client/src/hooks/business/places/room-management</a> useRooms.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/108</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/108</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -168,10 +168,7 @@
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -276,117 +273,111 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useEffect, useState } from 'react'</span></span></span>
-<span class="cstat-no" title="statement not covered" >import axios from 'axios'</span>
-<span class="cstat-no" title="statement not covered" >import Link from 'next/link'</span>
-<span class="cstat-no" title="statement not covered" >import { BiErrorCircle } from 'react-icons/bi'</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >interface MetaData {</span>
-<span class="cstat-no" title="statement not covered" >    title?: string</span>
-<span class="cstat-no" title="statement not covered" >    description?: string</span>
-<span class="cstat-no" title="statement not covered" >    imageUrl?: string</span>
-<span class="cstat-no" title="statement not covered" >    videoUrl?: string</span>
-<span class="cstat-no" title="statement not covered" >    url: string</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >    categoryRoomsRoute,</span>
+<span class="cstat-no" title="statement not covered" >    categoryRoomsRouteWithId,</span>
+<span class="cstat-no" title="statement not covered" >} from '@/constants/app/routes'</span>
+<span class="cstat-no" title="statement not covered" >import useSecureRequest from '@/hooks/useRequest'</span>
+<span class="cstat-no" title="statement not covered" >import { EditRoomProps } from '@/components/forms/business/smart-room/CreateRoom'</span>
+<span class="cstat-no" title="statement not covered" >import { ToggleRoomProps } from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomCard'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const LinkPreview = ({ url }: { url: string }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // const [url, setUrl] = useState('')</span>
-<span class="cstat-no" title="statement not covered" >    const [metadata, setMetadata] = useState&lt;MetaData | null&gt;(null)</span>
-<span class="cstat-no" title="statement not covered" >    // const [loading, setLoading] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >export default function useCategoryRooms(categoryId: string) {</span>
+<span class="cstat-no" title="statement not covered" >    const { post, put, deleteReq } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const fetchMetadata = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        // setLoading(true)</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            const response = await axios.get(`/api/scrape?url=${url}`)</span>
-<span class="cstat-no" title="statement not covered" >            const metadata = response.data</span>
+<span class="cstat-no" title="statement not covered" >    const createRoom = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async (data: FormData) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            await post({</span>
+<span class="cstat-no" title="statement not covered" >                url: categoryRoomsRoute(categoryId),</span>
+<span class="cstat-no" title="statement not covered" >                data,</span>
+<span class="cstat-no" title="statement not covered" >                formDataReq: true,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([categoryId, 'rooms'])</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            setMetadata(metadata)</span>
-<span class="cstat-no" title="statement not covered" >        } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >            const { response } = error</span>
+<span class="cstat-no" title="statement not covered" >    const editRoom = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async ({ id, data }: EditRoomProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            await put({</span>
+<span class="cstat-no" title="statement not covered" >                url: categoryRoomsRouteWithId(id),</span>
+<span class="cstat-no" title="statement not covered" >                data,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([categoryId, 'rooms'])</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            setMetadata({ url: response?.data?.url })</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        // finally {</span>
-<span class="cstat-no" title="statement not covered" >        //     setLoading(false)</span>
-<span class="cstat-no" title="statement not covered" >        // }</span>
+<span class="cstat-no" title="statement not covered" >    const toggleRoomAvailability = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async ({ id, data }: ToggleRoomProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            await put({</span>
+<span class="cstat-no" title="statement not covered" >                url: categoryRoomsRouteWithId(id),</span>
+<span class="cstat-no" title="statement not covered" >                data,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.invalidateQueries([categoryId, 'rooms'])</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const deleteRoom = useMutation({</span>
+<span class="cstat-no" title="statement not covered" >        // ? Implement the onMutate part where it it deleted even before the</span>
+<span class="cstat-no" title="statement not covered" >        // ? invalidating of all the categories query</span>
+<span class="cstat-no" title="statement not covered" >        mutationFn: async (roomId: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            await deleteReq({</span>
+<span class="cstat-no" title="statement not covered" >                url: categoryRoomsRouteWithId(roomId),</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        onSuccess: (_data, variables) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            queryClient.removeQueries(['roomDetails', variables])</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >        createRoom,</span>
+<span class="cstat-no" title="statement not covered" >        editRoom,</span>
+<span class="cstat-no" title="statement not covered" >        toggleRoomAvailability,</span>
+<span class="cstat-no" title="statement not covered" >        deleteRoom,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (url !== '') {</span>
-<span class="cstat-no" title="statement not covered" >            fetchMetadata()</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }, [url])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {metadata ? (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='rounded-xl pb-2 bg-grey/70 dark:bg-grey/10'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {metadata.title &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    metadata.description &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    (metadata.imageUrl || metadata.videoUrl) ? (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                            href={metadata.url || ''}</span>
-<span class="cstat-no" title="statement not covered" >                            target='_blank'</span>
-<span class="cstat-no" title="statement not covered" >                            className='rounded-xl'</span>
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {metadata.videoUrl ? (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {metadata.videoUrl &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;iframe</span>
-<span class="cstat-no" title="statement not covered" >                                            onClick={(e) =&gt; e.preventDefault()}</span>
-<span class="cstat-no" title="statement not covered" >                                            className='h-52 rounded-t-xl'</span>
-<span class="cstat-no" title="statement not covered" >                                            src={metadata.videoUrl}</span>
-<span class="cstat-no" title="statement not covered" >                                            width='100%'</span>
-<span class="cstat-no" title="statement not covered" >                                            height='auto'</span>
-<span class="cstat-no" title="statement not covered" >                                            allowFullScreen</span>
-<span class="cstat-no" title="statement not covered" >                                        &gt;&lt;/iframe&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {metadata.imageUrl ? (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;img</span>
-<span class="cstat-no" title="statement not covered" >                                            width={100}</span>
-<span class="cstat-no" title="statement not covered" >                                            height={100}</span>
-<span class="cstat-no" title="statement not covered" >                                            src={metadata.imageUrl}</span>
-<span class="cstat-no" title="statement not covered" >                                            alt='Preview'</span>
-<span class="cstat-no" title="statement not covered" >                                            className='h-36 lgMobile:h-52 w-full object-cover object-center rounded-t-xl'</span>
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    ) : null}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className=' p-2 rounded-b-xl'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;h2 className='font-bold mb-1 two-line-text-truncate'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {metadata.title}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/h2&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;p className='three-line-text-truncate text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {metadata.description}</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ) : (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='h-24  flex flex-col justify-center items-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;BiErrorCircle className='h-6 w-6' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;p className='font-semibold'&gt;No preview&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                                href={(metadata?.url as string) || ''}</span>
-<span class="cstat-no" title="statement not covered" >                                target='_blank'</span>
-<span class="cstat-no" title="statement not covered" >                                className='mt-2 border-b text-sm border-orange hover:opacity-60 px-2 w-fit'</span>
-<span class="cstat-no" title="statement not covered" >                            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Open link</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/Link&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            ) : null}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default LinkPreview</span>
+<span class="cstat-no" title="statement not covered" >export function useGetCategoryRooms(categoryId: string) {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: [categoryId, 'rooms'],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: categoryRoomsRoute(categoryId) })</span>
+<span class="cstat-no" title="statement not covered" >            if (res) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.data</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        refetchOnWindowFocus: false,</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >        // refetchOnMount: false,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export function useGetRoomDetails(roomId: string, enabled = true) {</span>
+<span class="cstat-no" title="statement not covered" >    const { get } = useSecureRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return useQuery({</span>
+<span class="cstat-no" title="statement not covered" >        queryKey: ['roomDetails', roomId],</span>
+<span class="cstat-no" title="statement not covered" >        queryFn: async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const res = await get({ url: categoryRoomsRouteWithId(roomId) })</span>
+<span class="cstat-no" title="statement not covered" >            if (res) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.data</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        enabled,</span>
+<span class="cstat-no" title="statement not covered" >        refetchOnWindowFocus: false,</span>
+<span class="cstat-no" title="statement not covered" >        staleTime: 1000 * 60 * 5,</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -396,14 +387,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-01-26T05:41:20.512Z
             </div>
-        <script src="../../../../../prettify.js"></script>
+        <script src="../../../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../sorter.js"></script>
-        <script src="../../../../../block-navigation.js"></script>
+        <script src="../../../../../../sorter.js"></script>
+        <script src="../../../../../../block-navigation.js"></script>
     </body>
 </html>
     
