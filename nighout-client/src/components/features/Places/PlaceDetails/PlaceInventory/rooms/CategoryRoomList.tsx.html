@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -127,7 +127,49 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -195,62 +237,83 @@
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PageTransition from '@/components/Layout/PageTransition'</span>
-<span class="cstat-no" title="statement not covered" >import { hotelRoomList } from '@/constants/MockData/RoomList'</span>
-<span class="cstat-no" title="statement not covered" >import { HeartOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import { RoomCard } from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomCard'</span>
+<span class="cstat-no" title="statement not covered" >import { useGetRoomCategoryDetails } from '@/hooks/business/places/room-management/useRoomCategory'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CategoryRoomDetails() {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" >    const { configKey } = useLayoutConfig()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
-<span class="cstat-no" title="statement not covered" >    const roomId = (router.query?.inventoryDetails as string) || ''</span>
-<span class="cstat-no" title="statement not covered" >    const businessRoomId = (router.query?.roomDetails as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    const categoryId = (router.query?.inventoryDetails as string) || ''</span>
+<span class="cstat-no" title="statement not covered" >    const businessCategoryId = (router.query?.roomDetails as string) || ''</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const resolvedRoomId = configKey === 'business' ? businessRoomId : roomId</span>
+<span class="cstat-no" title="statement not covered" >    const resolvedCategoryId =</span>
+<span class="cstat-no" title="statement not covered" >        configKey === 'business' ? businessCategoryId : categoryId</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const categoryRoom = hotelRoomList.find(</span>
-<span class="cstat-no" title="statement not covered" >        (room) =&gt; room.id === Number(resolvedRoomId),</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >    const { data, isInitialLoading } =</span>
+<span class="cstat-no" title="statement not covered" >        useGetRoomCategoryDetails(resolvedCategoryId)</span>
+<span class="cstat-no" title="statement not covered" >    const categoryDetails = data?.data</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;PageTransition&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={`sticky top-16 ${</span>
-<span class="cstat-no" title="statement not covered" >                        user ? 'md:top-20' : 'md:top-24'</span>
-<span class="cstat-no" title="statement not covered" >                    }  z-50 bg-white px-2`}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='header mb-8'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='main-header mb-6 flex items-center justify-between'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='text-black dark:text-grey font-semibold text-[32px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {categoryRoom?.category}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;HeartOutlineIcon className='text-2xl' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {isInitialLoading ? (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='py-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className=' h-[20vh] w-full skeleton'&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className='pt-4 grid gap-5 max-lgMobile:grid-cols-1  max-md:grid-cols-2 grid-cols-1 smLaptop:grid-cols-2 lgDesktop:grid-cols-3 max-w-[70rem]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            {[...Array(8)].map((_, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                return (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                                        className='h-[300px] rounded-md w-full skeleton'</span>
+<span class="cstat-no" title="statement not covered" >                                        key={idx}</span>
+<span class="cstat-no" title="statement not covered" >                                    &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )</span>
+<span class="cstat-no" title="statement not covered" >                            })}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ) : (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            className={`sticky top-16 ${</span>
+<span class="cstat-no" title="statement not covered" >                                user ? 'md:top-20' : 'md:top-24'</span>
+<span class="cstat-no" title="statement not covered" >                            }  z-50 bg-white`}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className=' flex items-center justify-between'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;span className='text-black dark:text-grey font-semibold text-[32px]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {categoryDetails?.name}</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='amenities flex items-start gap-2'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;span className='title text-black dark:text-grey text-[20px]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Amenities:</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;span className='value text-black dark:text-grey text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        dolor sit amet consectetur. Iaculis sit ipsum in</span>
-<span class="cstat-no" title="statement not covered" >                        convallis nibh. Morbi pharetra hac in lacus metus</span>
-<span class="cstat-no" title="statement not covered" >                        aliquam eget eget. Vitae enim a donec elementum quam</span>
-<span class="cstat-no" title="statement not covered" >                        nulla faucibus scelerisque id. Sem quis faucibus</span>
-<span class="cstat-no" title="statement not covered" >                        suscipit natoque massa mattis natoque lobortis ornare.</span>
-<span class="cstat-no" title="statement not covered" >                        Nec duis dignissim at nisl.</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className=' flex items-start gap-2'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className=' text-black dark:text-grey text-base'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {categoryDetails?.description}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className='rooms pt-4 grid gap-5 max-lgMobile:grid-cols-1  max-md:grid-cols-2 grid-cols-1 smLaptop:grid-cols-2 lgDesktop:grid-cols-3 max-w-[70rem]'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {categoryRoom?.rooms.map((room) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;RoomCard key={room.id} room={room} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    ))}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {categoryDetails?.edges?.rooms?.length &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;div className='pt-4 grid gap-5 max-lgMobile:grid-cols-1  max-md:grid-cols-2 grid-cols-1 smLaptop:grid-cols-2 lgDesktop:grid-cols-3 max-w-[70rem]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {categoryDetails?.edges?.rooms?.map(</span>
+<span class="cstat-no" title="statement not covered" >                                    (room, idx) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                                        &lt;RoomCard key={idx} room={room} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    ),</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        )}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                        {!isInitialLoading &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                            !categoryDetails?.edges?.rooms?.length &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;div className='text-center text-black/70 mt-10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    There are no rooms under this category yet.</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/PageTransition&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -262,7 +325,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-26T05:41:20.512Z
+                at 2024-01-29T08:57:49.810Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

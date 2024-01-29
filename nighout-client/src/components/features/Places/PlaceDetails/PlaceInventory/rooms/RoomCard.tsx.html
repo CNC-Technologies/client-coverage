@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/304</span>
+                <span class='fraction'>0/326</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/304</span>
+                <span class='fraction'>0/326</span>
             </div>
         
             
@@ -367,7 +367,51 @@
 <a name='L302'></a><a href='#L302'>302</a>
 <a name='L303'></a><a href='#L303'>303</a>
 <a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -689,10 +733,11 @@
 <span class="cstat-no" title="statement not covered" >import CreateRoomForm from '@/components/forms/business/smart-room/CreateRoom'</span>
 <span class="cstat-no" title="statement not covered" >import useCategoryRooms from '@/hooks/business/places/room-management/useRooms'</span>
 <span class="cstat-no" title="statement not covered" >import { ConfirmationDialogContext } from '@/components/context-containers/ConfirmationDialog.context'</span>
-<span class="cstat-no" title="statement not covered" >import { RoomCategoryProps } from '@/interfaces/rooms.interface'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { RoomCategoryProps, RoomProps } from '@/interfaces/rooms.interface'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const MenuList = dynamic(import('@/components/app/simple/MenuList'))</span>
-<span class="cstat-no" title="statement not covered" >// import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function RoomCategoryCard({</span>
 <span class="cstat-no" title="statement not covered" >    category,</span>
@@ -701,7 +746,18 @@
 <span class="cstat-no" title="statement not covered" >}) {</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
 <span class="cstat-no" title="statement not covered" >    // const { configKey } = useLayoutConfig()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handlePageRoute = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const data = {</span>
+<span class="cstat-no" title="statement not covered" >            data: category,</span>
+<span class="cstat-no" title="statement not covered" >            message: 'Success',</span>
+<span class="cstat-no" title="statement not covered" >            nextPageToken: '',</span>
+<span class="cstat-no" title="statement not covered" >            status: 'success',</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomCategoryDetails', category.id], data)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { details: placeID } = router.query</span>
@@ -722,7 +778,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/Truncate&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span className='font-medium text-black dark:text-grey text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            Room {category.name}</span>
+<span class="cstat-no" title="statement not covered" >                            {category.name}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='flex items-center gap-1'&gt;</span>
@@ -750,6 +806,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex justify-end'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Link</span>
+<span class="cstat-no" title="statement not covered" >                            onClick={handlePageRoute}</span>
 <span class="cstat-no" title="statement not covered" >                            href={`${</span>
 <span class="cstat-no" title="statement not covered" >                                !user ? '/places' : '/app/places'</span>
 <span class="cstat-no" title="statement not covered" >                            }/${placeID}/Rooms/${category.id}`}</span>
@@ -764,7 +821,7 @@
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function RoomCard({ room }: { room: any }) {</span>
+<span class="cstat-no" title="statement not covered" >export function RoomCard({ room }: { room: RoomProps }) {</span>
 <span class="cstat-no" title="statement not covered" >    // ! change type</span>
 <span class="cstat-no" title="statement not covered" >    const user = useSelector((state: RootState) =&gt; state.user.user)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -774,10 +831,19 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className='h-fit dark:bg-[#292929] border border-grey dark:border-grey/10 cursor-pointer rounded-xl '&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className='h-fit dark:bg-[#292929] relative border border-grey dark:border-grey/10 cursor-pointer rounded-xl '&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    className={` ${</span>
+<span class="cstat-no" title="statement not covered" >                        room.status === 'available'</span>
+<span class="cstat-no" title="statement not covered" >                            ? 'bg-green-500 text-white'</span>
+<span class="cstat-no" title="statement not covered" >                            : 'bg-grey/90 text-black/70'</span>
+<span class="cstat-no" title="statement not covered" >                    } absolute z-20 capitalize rounded-tr-xl top-0 right-0   px-2 py-1 text-sm rounded-bl-xl`}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {room.status}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='relative h-[11rem] xmd:h-[13rem]'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ImageSliderWIthNavigation</span>
-<span class="cstat-no" title="statement not covered" >                        images={['/business-website/hotel-hero.jpg']}</span>
+<span class="cstat-no" title="statement not covered" >                        images={room?.edges?.media}</span>
 <span class="cstat-no" title="statement not covered" >                        extraClass={'rounded-tl-[10px] rounded-tr-[10px]'}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
@@ -800,7 +866,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center justify-between mb-[10px] space-x-2 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;p className={`font-medium`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            ${room?.price} /{' '}</span>
+<span class="cstat-no" title="statement not covered" >                            ${room?.room_price.toLocaleString()} /{' '}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;span className='text-sm font-medium capitalize'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                Night</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
@@ -982,7 +1048,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-26T05:41:20.512Z
+                at 2024-01-29T08:57:49.810Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>
