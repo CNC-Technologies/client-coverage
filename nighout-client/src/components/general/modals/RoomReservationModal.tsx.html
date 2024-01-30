@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/77</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/77</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -137,13 +137,7 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -219,8 +213,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import Image from 'next/image'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import OverlappingAvatars from '@/components/app/simple/OverlappingAvatars'</span>
+<span class="cstat-no" title="statement not covered" >// import OverlappingAvatars from '@/components/app/simple/OverlappingAvatars'</span>
 <span class="cstat-no" title="statement not covered" >import RatingStars from '@/components/general/ratingStars'</span>
+<span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function RoomReservationModal({</span>
 <span class="cstat-no" title="statement not covered" >    roomName,</span>
@@ -237,34 +232,33 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                {/* Main body */}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex flex-col items-center justify-center'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='room-detail flex items-center gap-2 mb-8 w-full'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='room-detail flex  gap-2 mb-4 w-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='room'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            {/* Image */}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;Image</span>
 <span class="cstat-no" title="statement not covered" >                                src={coverImage}</span>
-<span class="cstat-no" title="statement not covered" >                                width={80}</span>
-<span class="cstat-no" title="statement not covered" >                                height={50}</span>
+<span class="cstat-no" title="statement not covered" >                                width={100}</span>
+<span class="cstat-no" title="statement not covered" >                                height={100}</span>
 <span class="cstat-no" title="statement not covered" >                                alt='The room preview'</span>
+<span class="cstat-no" title="statement not covered" >                                className='w-[10rem]'</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        {/* Details */}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='flex flex-col'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;span className='font-normal text-sm'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                Room {roomName}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span className='font-normal'&gt;Room {roomName}&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='flex flex-col'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;RatingStars rating={4} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;div className='flex space-x-2 items-center'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {/* &lt;div className='flex space-x-2 items-center'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;OverlappingAvatars /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;p&gt;Reviews&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt; */}</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    {/* Summary */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-full flex flex-col items-center justify-center p-8 m-auto rounded-md border border-grey dark:border-grey/10'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='w-full flex flex-col items-center justify-center p-5 m-auto rounded-md border border-grey dark:border-grey/10'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span className='text-lg mb-5'&gt;Summary&lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='products w-full flex flex-col gap-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;div className='product flex items-center justify-between'&gt;</span>
@@ -282,13 +276,10 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                        onClick={makePayment}</span>
-<span class="cstat-no" title="statement not covered" >                        type='submit'</span>
-<span class="cstat-no" title="statement not covered" >                        className='mt-3 bg-orange rounded-md text-white text-base w-full py-2'</span>
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >                    &lt;Button onClick={makePayment} className='mt-4'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Make Payment</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/Button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/&gt;</span>
@@ -301,7 +292,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-29T10:38:22.806Z
+                at 2024-01-30T09:21:31.480Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
