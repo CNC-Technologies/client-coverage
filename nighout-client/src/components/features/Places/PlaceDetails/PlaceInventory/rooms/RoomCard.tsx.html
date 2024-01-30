@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/334</span>
+                <span class='fraction'>0/338</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/334</span>
+                <span class='fraction'>0/338</span>
             </div>
         
             
@@ -397,7 +397,15 @@
 <a name='L332'></a><a href='#L332'>332</a>
 <a name='L333'></a><a href='#L333'>333</a>
 <a name='L334'></a><a href='#L334'>334</a>
-<a name='L335'></a><a href='#L335'>335</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -919,7 +927,9 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function BusinessRoomCard({ inventory }) {</span>
-<span class="cstat-no" title="statement not covered" >    const [isAvailable, setIsAvailable] = useState&lt;boolean&gt;(false)</span>
+<span class="cstat-no" title="statement not covered" >    const [isAvailable, setIsAvailable] = useState&lt;boolean&gt;(</span>
+<span class="cstat-no" title="statement not covered" >        inventory.status === 'available',</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const categoryId = (router.query?.category as string) || ''</span>
@@ -954,17 +964,16 @@
 <span class="cstat-no" title="statement not covered" >            label: 'Delete Room',</span>
 <span class="cstat-no" title="statement not covered" >            onClick: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (inventory) {</span>
-<span class="cstat-no" title="statement not covered" >                    // handleClose()</span>
 <span class="cstat-no" title="statement not covered" >                    showConfirmDelete({</span>
-<span class="cstat-no" title="statement not covered" >                        title: `Delete Room ${inventory.room_number} Category?`,</span>
-<span class="cstat-no" title="statement not covered" >                        callback: () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        title: `Delete Room ${inventory.room_number}?`,</span>
+<span class="cstat-no" title="statement not covered" >                        callback: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                            deleteRoom.mutateAsync(inventory?.id).then(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                queryClient.invalidateQueries([</span>
 <span class="cstat-no" title="statement not covered" >                                    categoryId,</span>
 <span class="cstat-no" title="statement not covered" >                                    'rooms',</span>
 <span class="cstat-no" title="statement not covered" >                                ])</span>
-<span class="cstat-no" title="statement not covered" >                                // router.push(businessPlaceRoomLink(placeId))</span>
-<span class="cstat-no" title="statement not covered" >                            }),</span>
+<span class="cstat-no" title="statement not covered" >                            })</span>
+<span class="cstat-no" title="statement not covered" >                        },</span>
 <span class="cstat-no" title="statement not covered" >                    })</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            },</span>
@@ -972,11 +981,14 @@
 <span class="cstat-no" title="statement not covered" >    ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const toggleRoomStatus = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setIsAvailable(!isAvailable)</span>
 <span class="cstat-no" title="statement not covered" >        let payload</span>
 <span class="cstat-no" title="statement not covered" >        inventory.status === 'available'</span>
 <span class="cstat-no" title="statement not covered" >            ? (payload = { id: inventory.id, data: { status: 'unavailable' } })</span>
 <span class="cstat-no" title="statement not covered" >            : (payload = { id: inventory.id, data: { status: 'available' } })</span>
-<span class="cstat-no" title="statement not covered" >        toggleRoomAvailability.mutateAsync(payload)</span>
+<span class="cstat-no" title="statement not covered" >        toggleRoomAvailability</span>
+<span class="cstat-no" title="statement not covered" >            .mutateAsync(payload)</span>
+<span class="cstat-no" title="statement not covered" >            .then(() =&gt; setIsAvailable(inventory?.status))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
@@ -1072,7 +1084,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-30T09:21:31.480Z
+                at 2024-01-30T09:24:55.880Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>
