@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/105</span>
             </div>
         
             
@@ -157,7 +157,29 @@
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -273,10 +295,13 @@
 <span class="cstat-no" title="statement not covered" >        filter,</span>
 <span class="cstat-no" title="statement not covered" >        filterOptions,</span>
 <span class="cstat-no" title="statement not covered" >        showSearchResultModal,</span>
+<span class="cstat-no" title="statement not covered" >        showDarkBackground,</span>
 <span class="cstat-no" title="statement not covered" >        searchForm,</span>
+<span class="cstat-no" title="statement not covered" >        searchResult,</span>
 <span class="cstat-no" title="statement not covered" >        handleFilterChange,</span>
 <span class="cstat-no" title="statement not covered" >        handleInputChange,</span>
-<span class="cstat-no" title="statement not covered" >        close,</span>
+<span class="cstat-no" title="statement not covered" >        handleSearchModal,</span>
+<span class="cstat-no" title="statement not covered" >        closeModal,</span>
 <span class="cstat-no" title="statement not covered" >        clearSearchText,</span>
 <span class="cstat-no" title="statement not covered" >    } = useRoomSearchBar()</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -315,6 +340,7 @@
 <span class="cstat-no" title="statement not covered" >                        name={'search'}</span>
 <span class="cstat-no" title="statement not covered" >                        value={searchForm.search}</span>
 <span class="cstat-no" title="statement not covered" >                        onChange={handleInputChange}</span>
+<span class="cstat-no" title="statement not covered" >                        onFocus={handleSearchModal}</span>
 <span class="cstat-no" title="statement not covered" >                        placeholder={placeholder}</span>
 <span class="cstat-no" title="statement not covered" >                        className='!focus:border-grey focus:ring-0'</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
@@ -332,16 +358,23 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {showSearchResultModal &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute w-full z-[1500]'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className='absolute w-full'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;RoomSearchResults</span>
 <span class="cstat-no" title="statement not covered" >                            resultLoading={false}</span>
-<span class="cstat-no" title="statement not covered" >                            searchResult={[]}</span>
-<span class="cstat-no" title="statement not covered" >                            closeModal={close}</span>
+<span class="cstat-no" title="statement not covered" >                            searchResult={searchResult}</span>
+<span class="cstat-no" title="statement not covered" >                            closeModal={closeModal}</span>
 <span class="cstat-no" title="statement not covered" >                            clearSearchText={clearSearchText}</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            {showDarkBackground &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                    role={'overlay'}</span>
+<span class="cstat-no" title="statement not covered" >                    className={`fixed  inset-0 z-[1001] bg-black/40 backdrop-blur-sm bg-opacity-75`}</span>
+<span class="cstat-no" title="statement not covered" >                    onClick={closeModal}</span>
+<span class="cstat-no" title="statement not covered" >                &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -352,7 +385,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-31T18:22:22.818Z
+                at 2024-02-01T09:25:42.476Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
