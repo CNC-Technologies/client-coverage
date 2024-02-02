@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/163</span>
+                <span class='fraction'>0/166</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/163</span>
+                <span class='fraction'>0/166</span>
             </div>
         
             
@@ -226,7 +226,13 @@
 <a name='L161'></a><a href='#L161'>161</a>
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
-<a name='L164'></a><a href='#L164'>164</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -427,7 +433,7 @@
 <span class="cstat-no" title="statement not covered" >                            {searchResult.slice(0, 12)?.map((result, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                return (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div key={idx}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        {result?.name &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                        {result?.type === 'category' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;CategoryResultItem</span>
 <span class="cstat-no" title="statement not covered" >                                                category={result}</span>
 <span class="cstat-no" title="statement not covered" >                                                closeModal={</span>
@@ -435,7 +441,7 @@
 <span class="cstat-no" title="statement not covered" >                                                }</span>
 <span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        )}</span>
-<span class="cstat-no" title="statement not covered" >                                        {result?.room_number &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                        {result?.type === 'room' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;RoomResultItem</span>
 <span class="cstat-no" title="statement not covered" >                                                room={result}</span>
 <span class="cstat-no" title="statement not covered" >                                                closeModal={</span>
@@ -497,8 +503,8 @@
 <span class="cstat-no" title="statement not covered" >                        {category?.name}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Badge className=' bg-[green]/50 hover:bg-[green]/50 dark:bg-[green]/30 dark:hover:dark:bg-[green]/30 hover:brightness-125 dark:text-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    Hotels</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Badge className=' bg-[red]/50 hover:bg-[red]/50 dark:bg-[red]/30 dark:hover:dark:bg-[red]/30 hover:brightness-125 dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    category</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/Badge&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/motion.div&gt;</span>
@@ -541,12 +547,15 @@
 <span class="cstat-no" title="statement not covered" >                            className='object-cover object-center w-full h-full text-sm overflow-hidden transition-opacity rounded-lg'</span>
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-sm xmd:text-base w-full'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Room {room?.room_number}</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;p className='text-sm xmd:text-base w-full flex flex-col'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;Room {room?.room_number}&lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span className='text-sm text-slate-400'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            category: {room?.category}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Badge className=' bg-[green]/50 hover:bg-[green]/50 dark:bg-[green]/30 dark:hover:dark:bg-[green]/30 hover:brightness-125 dark:text-white'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {room?.category}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Badge className=' bg-[gold]/50 hover:bg-[gold]/50 dark:bg-[gold]/30 dark:hover:dark:bg-[gold]/30 hover:brightness-125 dark:text-white'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    room</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/Badge&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/motion.div&gt;</span>
@@ -559,7 +568,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-01T10:35:48.896Z
+                at 2024-02-02T09:26:11.673Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
