@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/150</span>
+                <span class='fraction'>0/164</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/150</span>
+                <span class='fraction'>0/164</span>
             </div>
         
             
@@ -213,7 +213,21 @@
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
 <a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -363,7 +377,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useEffect, useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { KeyboardEvent, useEffect, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// import { useQueryClient } from '@tanstack/react-query'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -372,6 +400,7 @@
 <span class="cstat-no" title="statement not covered" >import { RoomCategoryProps, RoomProps } from '@/interfaces/rooms.interface'</span>
 <span class="cstat-no" title="statement not covered" >import { useSearchFormAndModalVisibility } from '@/hooks/search/useSearchCommon'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetRoomCategories } from '@/hooks/business/places/room-management/useRoomCategory'</span>
+<span class="cstat-no" title="statement not covered" >import { businessPlaceRoomsSearchLink } from '@/constants/app/links'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// interface CachedData {</span>
 <span class="cstat-no" title="statement not covered" >//     data: any[]</span>
@@ -413,7 +442,7 @@
 <span class="cstat-no" title="statement not covered" >    // so if there isn't any category it fetches it and displays</span>
 <span class="cstat-no" title="statement not covered" >    const { data, isInitialLoading: categoriesLoading } =</span>
 <span class="cstat-no" title="statement not covered" >        useGetRoomCategories(placeId)</span>
-<span class="cstat-no" title="statement not covered" >    const roomCategoryList = data?.data</span>
+<span class="cstat-no" title="statement not covered" >    const roomCategoryList = data?.data || []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSearch = (searchText) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (searchText !== '') {</span>
@@ -486,6 +515,17 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    // Function to redirect to search page when enter key is pressed</span>
+<span class="cstat-no" title="statement not covered" >    const handleKeyDown = (event: KeyboardEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (event.key === 'Enter' &amp;&amp; searchForm.search) {</span>
+<span class="cstat-no" title="statement not covered" >            handleRedirect()</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const handleRedirect = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        router.push(businessPlaceRoomsSearchLink(placeId, searchForm.search))</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (searchText) setSearchForm({ ...searchForm, search: searchText })</span>
 <span class="cstat-no" title="statement not covered" >    }, [searchText])</span>
@@ -495,7 +535,7 @@
 <span class="cstat-no" title="statement not covered" >            handleSearch(searchForm.search || searchText)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line react-hooks/exhaustive-deps</span>
-<span class="cstat-no" title="statement not covered" >    }, [searchForm.search, filter, searchText])</span>
+<span class="cstat-no" title="statement not covered" >    }, [searchForm.search, filter, searchText, roomCategoryList])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >        searchForm,</span>
@@ -510,6 +550,8 @@
 <span class="cstat-no" title="statement not covered" >        handleOnBlur,</span>
 <span class="cstat-no" title="statement not covered" >        handleSearchModal,</span>
 <span class="cstat-no" title="statement not covered" >        handleFilterChange,</span>
+<span class="cstat-no" title="statement not covered" >        handleRedirect,</span>
+<span class="cstat-no" title="statement not covered" >        handleKeyDown,</span>
 <span class="cstat-no" title="statement not covered" >        handleInputChange,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -520,7 +562,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-06T08:21:24.304Z
+                at 2024-02-06T12:02:17.890Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
