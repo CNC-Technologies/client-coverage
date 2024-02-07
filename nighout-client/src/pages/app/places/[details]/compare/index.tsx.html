@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/145</span>
+                <span class='fraction'>0/156</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/145</span>
+                <span class='fraction'>0/156</span>
             </div>
         
             
@@ -208,7 +208,18 @@
 <a name='L143'></a><a href='#L143'>143</a>
 <a name='L144'></a><a href='#L144'>144</a>
 <a name='L145'></a><a href='#L145'>145</a>
-<a name='L146'></a><a href='#L146'>146</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -353,12 +364,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext, useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useRouter } from 'next/router'</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import { useQueryClient } from '@tanstack/react-query'</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import PlaceDetailsHeading from '@/components/features/Places/PlaceDetails/PlaceHeading'</span>
-<span class="cstat-no" title="statement not covered" >import PlaceDetailsImages from '@/components/features/Places/PlaceDetails/PlaceImages/PlaceImages'</span>
 <span class="cstat-no" title="statement not covered" >import PlaceDetailsSkeleton from '@/components/general/skeletons/places/PlaceDetailsSkeleton'</span>
 <span class="cstat-no" title="statement not covered" >import { usePlaceDetails } from '@/hooks/app/place/usePlaces'</span>
 <span class="cstat-no" title="statement not covered" >import { useGetRoomCategories } from '@/hooks/business/places/room-management/useRoomCategory'</span>
@@ -366,6 +389,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import Button from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import { RoomCard } from '@/components/features/Places/PlaceDetails/PlaceInventory/rooms/RoomCard'</span>
+<span class="cstat-no" title="statement not covered" >import { ToastContext } from '@/components/context-containers/Toast.context'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const horizontalClass =</span>
 <span class="cstat-no" title="statement not covered" >    'row space-x-3 desktop:space-x-5 overflow-x-scroll  scroll-smooth '</span>
@@ -373,27 +397,17 @@
 <span class="cstat-no" title="statement not covered" >export default function ComparePage() {</span>
 <span class="cstat-no" title="statement not covered" >    const { isLoading, data: placeDetails } = usePlaceDetails()</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const queryClient = useQueryClient()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const toastContext = useContext(ToastContext)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
 <span class="cstat-no" title="statement not covered" >    const { data: roomCategoriesRes } = useGetRoomCategories(placeDetails?.id)</span>
 <span class="cstat-no" title="statement not covered" >    const roomCategories =</span>
 <span class="cstat-no" title="statement not covered" >        (roomCategoriesRes?.data as RoomCategoryProps[]) || []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const [firstRowItem, setFirstRowItem] = useState&lt;RoomProps&gt;({</span>
-<span class="cstat-no" title="statement not covered" >        id: '',</span>
-<span class="cstat-no" title="statement not covered" >        description: '',</span>
-<span class="cstat-no" title="statement not covered" >        name: '',</span>
-<span class="cstat-no" title="statement not covered" >        room_number: 0,</span>
-<span class="cstat-no" title="statement not covered" >        room_price: 0,</span>
-<span class="cstat-no" title="statement not covered" >        status: '',</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" >    const [secondRowItem, setSecondRowItem] = useState&lt;RoomProps&gt;({</span>
-<span class="cstat-no" title="statement not covered" >        id: '',</span>
-<span class="cstat-no" title="statement not covered" >        description: '',</span>
-<span class="cstat-no" title="statement not covered" >        name: '',</span>
-<span class="cstat-no" title="statement not covered" >        room_number: 0,</span>
-<span class="cstat-no" title="statement not covered" >        room_price: 0,</span>
-<span class="cstat-no" title="statement not covered" >        status: '',</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    const [firstRowItem, setFirstRowItem] = useState&lt;RoomProps | null&gt;()</span>
+<span class="cstat-no" title="statement not covered" >    const [secondRowItem, setSecondRowItem] = useState&lt;RoomProps | null&gt;()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let allRooms = ([] as RoomProps[]) || []</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -409,14 +423,37 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleCompare = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (Object.keys(firstRowItem).length === 0) return</span>
-<span class="cstat-no" title="statement not covered" >        if (Object.keys(secondRowItem).length === 0) return</span>
-<span class="cstat-no" title="statement not covered" >        // We will show toast here so they can select 2 different rooms</span>
-<span class="cstat-no" title="statement not covered" >        if (firstRowItem.id === secondRowItem.id) return</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('firstCompareItem', JSON.stringify(firstRowItem))</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('secondCompareItem', JSON.stringify(secondRowItem))</span>
+<span class="cstat-no" title="statement not covered" >        if (!firstRowItem) {</span>
+<span class="cstat-no" title="statement not covered" >            toastContext.showToast('warn', 'Please select a room to compare!')</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (firstRowItem &amp;&amp; !secondRowItem) {</span>
+<span class="cstat-no" title="statement not covered" >            toastContext.showToast(</span>
+<span class="cstat-no" title="statement not covered" >                'warn',</span>
+<span class="cstat-no" title="statement not covered" >                'Please select a second room to compare!',</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (firstRowItem?.id === secondRowItem?.id) {</span>
+<span class="cstat-no" title="statement not covered" >            toastContext.showToast(</span>
+<span class="cstat-no" title="statement not covered" >                'warn',</span>
+<span class="cstat-no" title="statement not covered" >                'Please select different rooms to compare!',</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        router.push(`/app/places/${placeDetails.id}/compare/compare-result`)</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(</span>
+<span class="cstat-no" title="statement not covered" >            ['roomDetails', firstRowItem?.id],</span>
+<span class="cstat-no" title="statement not covered" >            firstRowItem,</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(</span>
+<span class="cstat-no" title="statement not covered" >            ['roomDetails', secondRowItem?.id],</span>
+<span class="cstat-no" title="statement not covered" >            secondRowItem,</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        router.push(</span>
+<span class="cstat-no" title="statement not covered" >            `/app/places/${placeDetails.id}/compare/compare-result?id1=${firstRowItem?.id}&amp;id2=${secondRowItem?.id}`,</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -426,10 +463,6 @@
 <span class="cstat-no" title="statement not covered" >            ) : (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className={`grid gap-6 grid-cols-1 relative`}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;PlaceDetailsHeading place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    {placeDetails?.edges?.medias &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;PlaceDetailsImages place={placeDetails} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;h2 className='text-2xl font-semibold capitalize'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        Compare two rooms from rooms in each of the rows below</span>
@@ -505,7 +538,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-07T12:45:37.930Z
+                at 2024-02-07T20:52:15.811Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>
