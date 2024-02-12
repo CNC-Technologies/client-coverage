@@ -804,7 +804,7 @@
 <span class="cstat-no" title="statement not covered" >            nextPageToken: '',</span>
 <span class="cstat-no" title="statement not covered" >            status: 'success',</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomCategoryDetails', category.id], data)</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomCategoryDetails', category?.id], data)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const router = useRouter()</span>
@@ -826,7 +826,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/Truncate&gt; */}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span className='font-medium text-black dark:text-grey text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {category.name}</span>
+<span class="cstat-no" title="statement not covered" >                            {category?.name}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className='flex items-center gap-1'&gt;</span>
@@ -837,7 +837,7 @@
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className='text-black dark:text-grey mt-1 mb-4 two-line-text-truncate text-xs '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {category.description}</span>
+<span class="cstat-no" title="statement not covered" >                        {category?.description}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center justify-between mb-[10px] space-x-2 '&gt;</span>
@@ -857,7 +857,7 @@
 <span class="cstat-no" title="statement not covered" >                            onClick={handlePageRoute}</span>
 <span class="cstat-no" title="statement not covered" >                            href={`${</span>
 <span class="cstat-no" title="statement not covered" >                                !user ? '/places' : '/app/places'</span>
-<span class="cstat-no" title="statement not covered" >                            }/${placeID}/Rooms/${category.id}`}</span>
+<span class="cstat-no" title="statement not covered" >                            }/${placeID}/Rooms/${category?.id}`}</span>
 <span class="cstat-no" title="statement not covered" >                            className='flex items-center text-black dark:text-grey text-sm whitespace-nowrap px-2 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" >                            View details</span>
@@ -885,7 +885,7 @@
 <span class="cstat-no" title="statement not covered" >            nextPageToken: '',</span>
 <span class="cstat-no" title="statement not covered" >            status: 'success',</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomDetails', room.id], data)</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomDetails', room?.id], data)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -908,7 +908,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='py-3 mt-1 px-2 font-medium'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex space-x-3 justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;span className='font-medium text-black dark:text-grey text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Room {room.room_number}</span>
+<span class="cstat-no" title="statement not covered" >                        Room {room?.room_number}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-1'&gt;</span>
@@ -918,12 +918,12 @@
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;p className='text-black dark:text-grey mt-1 mb-2 two-line-text-truncate text-xs '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {room.description}</span>
+<span class="cstat-no" title="statement not covered" >                    {room?.description}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between mb-1 space-x-2 '&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;p className={`font-medium`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        ${room?.room_price.toLocaleString()} /{' '}</span>
+<span class="cstat-no" title="statement not covered" >                        ${room?.room_price?.toLocaleString()} /{' '}</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;span className='text-sm font-medium capitalize'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            Night</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
@@ -935,7 +935,7 @@
 <span class="cstat-no" title="statement not covered" >                        onClick={handlePageRoute}</span>
 <span class="cstat-no" title="statement not covered" >                        href={`${</span>
 <span class="cstat-no" title="statement not covered" >                            !user ? '/places' : '/app/places'</span>
-<span class="cstat-no" title="statement not covered" >                        }/${placeID}/Rooms/${inventoryDetails}/${room.id}`}</span>
+<span class="cstat-no" title="statement not covered" >                        }/${placeID}/Rooms/${inventoryDetails}/${room?.id}`}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center text-black dark:text-grey text-sm whitespace-nowrap px-2 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        View details</span>
@@ -978,7 +978,7 @@
 <span class="cstat-no" title="statement not covered" >            nextPageToken: '',</span>
 <span class="cstat-no" title="statement not covered" >            status: 'success',</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomDetails', roomDetails.id], data)</span>
+<span class="cstat-no" title="statement not covered" >        queryClient.setQueryData(['roomDetails', roomDetails?.id], data)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const menuOptions = [</span>
@@ -995,7 +995,7 @@
 <span class="cstat-no" title="statement not covered" >            onClick: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (room) {</span>
 <span class="cstat-no" title="statement not covered" >                    showConfirmDelete({</span>
-<span class="cstat-no" title="statement not covered" >                        title: `Delete Room ${room.room_number}?`,</span>
+<span class="cstat-no" title="statement not covered" >                        title: `Delete Room ${room?.room_number}?`,</span>
 <span class="cstat-no" title="statement not covered" >                        callback: () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                            deleteRoom.mutateAsync(room?.id).then(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                                queryClient.invalidateQueries([</span>
@@ -1013,16 +1013,16 @@
 <span class="cstat-no" title="statement not covered" >    const toggleRoomStatus = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setIsAvailable(!isAvailable)</span>
 <span class="cstat-no" title="statement not covered" >        let payload</span>
-<span class="cstat-no" title="statement not covered" >        room.status === 'available'</span>
-<span class="cstat-no" title="statement not covered" >            ? (payload = { id: room.id, data: { status: 'unavailable' } })</span>
-<span class="cstat-no" title="statement not covered" >            : (payload = { id: room.id, data: { status: 'available' } })</span>
+<span class="cstat-no" title="statement not covered" >        room?.status === 'available'</span>
+<span class="cstat-no" title="statement not covered" >            ? (payload = { id: room?.id, data: { status: 'unavailable' } })</span>
+<span class="cstat-no" title="statement not covered" >            : (payload = { id: room?.id, data: { status: 'available' } })</span>
 <span class="cstat-no" title="statement not covered" >        toggleRoomAvailability</span>
 <span class="cstat-no" title="statement not covered" >            .mutateAsync(payload)</span>
 <span class="cstat-no" title="statement not covered" >            .then(() =&gt; setIsAvailable(room?.status))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        room.status === 'available'</span>
+<span class="cstat-no" title="statement not covered" >        room?.status === 'available'</span>
 <span class="cstat-no" title="statement not covered" >            ? setIsAvailable(true)</span>
 <span class="cstat-no" title="statement not covered" >            : setIsAvailable(false)</span>
 <span class="cstat-no" title="statement not covered" >    }, [room.status])</span>
@@ -1056,7 +1056,7 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className='py-3 mt-1 px-2 font-medium'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex space-x-3 justify-between'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;span className='font-medium text-black dark:text-grey text-base'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Room {room.room_number}</span>
+<span class="cstat-no" title="statement not covered" >                        Room {room?.room_number}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className='flex items-center gap-1'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;StarSolidIcon className='w-5 h-5 text-orange' /&gt;</span>
@@ -1064,7 +1064,7 @@
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;p className='text-black dark:text-grey mt-1 mb-4 two-line-text-truncate text-xs '&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {room.description}</span>
+<span class="cstat-no" title="statement not covered" >                    {room?.description}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex items-center justify-between mb-[10px] space-x-2 '&gt;</span>
@@ -1083,7 +1083,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className='flex justify-end'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;Link</span>
-<span class="cstat-no" title="statement not covered" >                        href={`/business/places/${placeId}/dashboard/rooms/${categoryId}/preview/${room.id}`}</span>
+<span class="cstat-no" title="statement not covered" >                        href={`/business/places/${placeId}/dashboard/rooms/${categoryId}/preview/${room?.id}`}</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={() =&gt; handlePageRoute(room)}</span>
 <span class="cstat-no" title="statement not covered" >                        className='flex items-center text-black dark:text-grey text-sm whitespace-nowrap px-2 py-1 rounded-lg orange-outline'</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
@@ -1120,7 +1120,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-09T10:46:27.396Z
+                at 2024-02-12T22:11:13.933Z
             </div>
         <script src="../../../../../../../../prettify.js"></script>
         <script>

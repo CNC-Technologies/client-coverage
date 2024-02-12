@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/124</span>
+                <span class='fraction'>0/134</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/124</span>
+                <span class='fraction'>0/134</span>
             </div>
         
             
@@ -187,7 +187,27 @@
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -317,7 +337,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { useSelector } from 'react-redux'</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import { FaSyncAlt } from 'react-icons/fa'</span>
+<span class="cstat-no" title="statement not covered" >import { FaSearch, FaSyncAlt } from 'react-icons/fa'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import { IconButton } from '@/components/FormComponents/button'</span>
 <span class="cstat-no" title="statement not covered" >import FollowButton from '@/components/app/simple/FollowButton'</span>
@@ -330,6 +350,7 @@
 <span class="cstat-no" title="statement not covered" >import useLayoutConfig from '@/hooks/useLayoutConfig'</span>
 <span class="cstat-no" title="statement not covered" >import { Tooltip } from '@/components/shadcn/ui/tooltip'</span>
 <span class="cstat-no" title="statement not covered" >import { RootState } from '@/store'</span>
+<span class="cstat-no" title="statement not covered" >import SearchButton from '@/components/app/simple/SearchButton'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function PlaceDetailsHeading({</span>
 <span class="cstat-no" title="statement not covered" >    place,</span>
@@ -419,6 +440,15 @@
 <span class="cstat-no" title="statement not covered" >                            &lt;/Tooltip&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                    {place.type === 'Hotels' &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;SearchButton place={place?.name}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;Tooltip content={'Search Rooms'}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;IconButton className=' flex gap-1 items-center rounded-full justify-center text-center primary-outline'&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;FaSearch className='h-4 w-4' /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;/IconButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;/Tooltip&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/SearchButton&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {configKey !== 'business' &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;FollowButton</span>
@@ -442,7 +472,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-09T10:46:27.396Z
+                at 2024-02-12T22:11:13.933Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
