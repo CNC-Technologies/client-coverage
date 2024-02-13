@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/188</span>
+                <span class='fraction'>0/196</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/188</span>
+                <span class='fraction'>0/196</span>
             </div>
         
             
@@ -251,7 +251,23 @@
 <a name='L186'></a><a href='#L186'>186</a>
 <a name='L187'></a><a href='#L187'>187</a>
 <a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -505,11 +521,6 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const handleSearch = (searchText) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (searchText !== '') {</span>
-<span class="cstat-no" title="statement not covered" >            // const roomCategories = queryClient.getQueryData([</span>
-<span class="cstat-no" title="statement not covered" >            //     placeId,</span>
-<span class="cstat-no" title="statement not covered" >            //     'roomCategory',</span>
-<span class="cstat-no" title="statement not covered" >            // ]) as CachedData</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const allCategories =</span>
 <span class="cstat-no" title="statement not covered" >                roomCategoryList?.map((cat) =&gt; ({</span>
 <span class="cstat-no" title="statement not covered" >                    ...cat,</span>
@@ -524,6 +535,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >                for (const room of rooms) {</span>
 <span class="cstat-no" title="statement not covered" >                    room.category = categoryName</span>
+<span class="cstat-no" title="statement not covered" >                    room.categoryId = cat.id</span>
 <span class="cstat-no" title="statement not covered" >                    room.room_number = String(room.room_number)</span>
 <span class="cstat-no" title="statement not covered" >                    room.type = 'room'</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -532,41 +544,53 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (filter === 'all') {</span>
-<span class="cstat-no" title="statement not covered" >                const categoryFilter = allCategories?.filter((data) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    data.name?.toLowerCase().includes(searchText.toLowerCase()),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                const categoryFilter = allCategories.filter((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return Object.values(item).some((value: any) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        value</span>
+<span class="cstat-no" title="statement not covered" >                            .toString()</span>
+<span class="cstat-no" title="statement not covered" >                            .toLowerCase()</span>
+<span class="cstat-no" title="statement not covered" >                            .includes(searchText.toLowerCase()),</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                const roomNumberFilter = allRooms?.filter((data) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    `${data.room_number}`?.includes(searchText.toLowerCase()),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                const roomFilter = allRooms.filter((item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return Object.values(item).some((value: any) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        value</span>
+<span class="cstat-no" title="statement not covered" >                            .toString()</span>
+<span class="cstat-no" title="statement not covered" >                            .toLowerCase()</span>
+<span class="cstat-no" title="statement not covered" >                            .includes(searchText.toLowerCase()),</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                const roomCategoryFilter = allRooms?.filter((data) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    data.category</span>
-<span class="cstat-no" title="statement not covered" >                        ?.toLowerCase()</span>
-<span class="cstat-no" title="statement not covered" >                        .includes(searchText.toLowerCase()),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                setSearchResult([</span>
-<span class="cstat-no" title="statement not covered" >                    ...categoryFilter,</span>
-<span class="cstat-no" title="statement not covered" >                    ...roomNumberFilter,</span>
-<span class="cstat-no" title="statement not covered" >                    ...roomCategoryFilter,</span>
-<span class="cstat-no" title="statement not covered" >                ])</span>
+<span class="cstat-no" title="statement not covered" >                setSearchResult([...categoryFilter, ...roomFilter])</span>
 <span class="cstat-no" title="statement not covered" >                return</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (filter === 'rooms') {</span>
-<span class="cstat-no" title="statement not covered" >                const allRooms: any[] = []</span>
+<span class="cstat-no" title="statement not covered" >                // const allRooms: any[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                const result = allRooms?.filter((room) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    room.room_number.includes(searchText.toLowerCase()),</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                const result = allRooms?.filter((room) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return Object.values(room).some((value: any) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        value</span>
+<span class="cstat-no" title="statement not covered" >                            .toString()</span>
+<span class="cstat-no" title="statement not covered" >                            .toLowerCase()</span>
+<span class="cstat-no" title="statement not covered" >                            .includes(searchText.toLowerCase()),</span>
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >                setSearchResult(result)</span>
 <span class="cstat-no" title="statement not covered" >                return</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (filter === 'categories') {</span>
-<span class="cstat-no" title="statement not covered" >                const result = allCategories?.filter((cat: RoomCategoryProps) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    cat.name.toLowerCase().includes(searchText.toLowerCase()),</span>
+<span class="cstat-no" title="statement not covered" >                const result = allCategories?.filter(</span>
+<span class="cstat-no" title="statement not covered" >                    (cat: RoomCategoryProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return Object.values(cat).some((value: any) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            value</span>
+<span class="cstat-no" title="statement not covered" >                                .toString()</span>
+<span class="cstat-no" title="statement not covered" >                                .toLowerCase()</span>
+<span class="cstat-no" title="statement not covered" >                                .includes(searchText.toLowerCase()),</span>
+<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    },</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >                setSearchResult(result)</span>
 <span class="cstat-no" title="statement not covered" >                return</span>
@@ -634,7 +658,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-12T22:11:13.933Z
+                at 2024-02-13T10:54:08.176Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
