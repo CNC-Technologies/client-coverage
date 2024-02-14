@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/33</span>
             </div>
         
             
@@ -86,7 +86,27 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -112,13 +132,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >import EventForm from '@/components/app/compound/CreatePage/Event/EventForm'</span>
+<span class="cstat-no" title="statement not covered" >import useEvents from '@/hooks/business/events/useEvents'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function CreateEventItem({ handleCloseModal }) {</span>
+<span class="cstat-no" title="statement not covered" >    // eslint-disable-next-line no-unused-vars</span>
 <span class="cstat-no" title="statement not covered" >    const [coverImage, setCoverImage] = useState(null)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const createEvent = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        coverImage</span>
-<span class="cstat-no" title="statement not covered" >        handleCloseModal()</span>
+<span class="cstat-no" title="statement not covered" >    const { createEvent } = useEvents()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const newEvent = async (data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        // const finalData = {</span>
+<span class="cstat-no" title="statement not covered" >        //     ...data,</span>
+<span class="cstat-no" title="statement not covered" >        //     cover_image: coverImage,</span>
+<span class="cstat-no" title="statement not covered" >        // }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // ! Pass the image later</span>
+<span class="cstat-no" title="statement not covered" >        createEvent.mutateAsync(data).then(() =&gt; handleCloseModal())</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -126,7 +155,8 @@
 <span class="cstat-no" title="statement not covered" >            &lt;div className=' py-2 rounded-lg'&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;EventForm</span>
 <span class="cstat-no" title="statement not covered" >                    setCoverImage={setCoverImage}</span>
-<span class="cstat-no" title="statement not covered" >                    createEvent={createEvent}</span>
+<span class="cstat-no" title="statement not covered" >                    createEvent={newEvent}</span>
+<span class="cstat-no" title="statement not covered" >                    loading={createEvent.isLoading}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -139,7 +169,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-13T10:54:08.176Z
+                at 2024-02-14T09:53:41.712Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
