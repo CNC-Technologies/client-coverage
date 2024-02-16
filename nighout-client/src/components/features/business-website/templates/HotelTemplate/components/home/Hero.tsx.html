@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/54</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/54</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -111,13 +111,7 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -165,23 +159,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState } from 'react'</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState, useEffect } from 'react'</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import _ from 'lodash'</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >import InputField from '@/components/FormComponents/InputField'</span>
 <span class="cstat-no" title="statement not covered" >import ImageWithFallback from '@/components/app/simple/ImageWithFallback'</span>
-<span class="cstat-no" title="statement not covered" >import { SearchOutlineIcon } from '@/constants/icons/icons'</span>
 <span class="cstat-no" title="statement not covered" >import { WebsiteData } from '@/interfaces/website.interface'</span>
+<span class="cstat-no" title="statement not covered" >import BizWebsiteSearchBar from '@/components/features/search/bizwebsiteSearch/BizwebsiteSearchBar'</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export default function Hero({ data }: { data: WebsiteData | null }) {</span>
-<span class="cstat-no" title="statement not covered" >    const [query, setQuery] = useState('')</span>
+<span class="cstat-no" title="statement not covered" >    const [bizCategories, setBizCategories] = useState&lt;string[]&gt;([])</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const places = data?.edges.business.edges.places</span>
+<span class="cstat-no" title="statement not covered" >        const categories = [...new Set(places?.map((place) =&gt; place.type))]</span>
+<span class="cstat-no" title="statement not covered" >        setBizCategories(categories)</span>
+<span class="cstat-no" title="statement not covered" >    }, [data])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div</span>
@@ -206,20 +197,11 @@
 <span class="cstat-no" title="statement not covered" >                            Enter Banner Section Text Here (Brief Description)</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='relative'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;InputField</span>
-<span class="cstat-no" title="statement not covered" >                            value={query}</span>
-<span class="cstat-no" title="statement not covered" >                            placeholder={`What are you looking for in ${_.startCase(</span>
-<span class="cstat-no" title="statement not covered" >                                data?.domainName,</span>
-<span class="cstat-no" title="statement not covered" >                            )}?`}</span>
-<span class="cstat-no" title="statement not covered" >                            onChange={(e) =&gt; setQuery(e?.target?.value || '')}</span>
-<span class="cstat-no" title="statement not covered" >                            className='h-12 bg-white dark:bg-black'</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className='absolute w-fit right-0 flex items-center justify-center h-full -translate-y-1/2 white-fill border border-l rounded-r-lg cursor-pointer dark:bg-dark-primary  top-1/2 border-grey dark:border-none dark:border-l-grey px-5'&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;SearchOutlineIcon className='dark:fill-white' /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;BizWebsiteSearchBar</span>
+<span class="cstat-no" title="statement not covered" >                        data={data}</span>
+<span class="cstat-no" title="statement not covered" >                        hideBlurBg={true}</span>
+<span class="cstat-no" title="statement not covered" >                        categories={bizCategories}</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
@@ -232,7 +214,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-15T13:33:13.923Z
+                at 2024-02-16T09:14:10.015Z
             </div>
         <script src="../../../../../../../../../prettify.js"></script>
         <script>

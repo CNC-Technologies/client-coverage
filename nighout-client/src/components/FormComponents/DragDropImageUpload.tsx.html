@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.89% </span>
+                <span class="strong">76.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>211/278</span>
+                <span class='fraction'>217/285</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.96% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>20/29</span>
+                <span class='fraction'>20/30</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.89% </span>
+                <span class="strong">76.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>211/278</span>
+                <span class='fraction'>217/285</span>
             </div>
         
             
@@ -341,7 +341,14 @@
 <a name='L276'></a><a href='#L276'>276</a>
 <a name='L277'></a><a href='#L277'>277</a>
 <a name='L278'></a><a href='#L278'>278</a>
-<a name='L279'></a><a href='#L279'>279</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -362,6 +369,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -548,9 +556,15 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -651,6 +665,7 @@ const DragDropImageUpload: React.FC&lt;DragDropImageUploadProps&gt; = ({
     optionalAltText = '',
     setImagesForDelete = () =&gt; null,
     allowMultiple = true,
+    placeholder = '',
 }) =&gt; {
     const [isDragOver, setIsDragOver] = useState(false)
 &nbsp;
@@ -803,7 +818,7 @@ const DragDropImageUpload: React.FC&lt;DragDropImageUploadProps&gt; = ({
             &lt;/div&gt;
 &nbsp;
             &lt;div
-                className={`h-40 mt-5 cursor-pointer bg-white dark:bg-black dark:text-gray-300 flex items-center justify-center border border-dashed dark:border-gray-800 border-gray-300 rounded-lg ${
+                className={`h-32 mt-5 cursor-pointer bg-white dark:bg-black dark:text-gray-300 flex items-center justify-center border border-dashed dark:border-gray-800 border-gray-300 rounded-lg ${
                     isDragOver<span class="branch-0 cbranch-no" title="branch not covered" > ? 'border-blue-500' </span>: ''
                 }`}
                 onDragOver={handleDragOver}
@@ -825,11 +840,17 @@ const DragDropImageUpload: React.FC&lt;DragDropImageUploadProps&gt; = ({
                 /&gt;
                 &lt;div&gt;
                     &lt;div className='text-center mb-2'&gt;
-                        Click or Drag and Drop{' '}
-                        {accept === 'all'
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                            ? 'Images and Video'</span></span>
-                            : titleCase(accept)}{' '}
-                        Here
+                        {placeholder<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;&gt;{placeholder}&lt;/&gt;</span>
+                        ) : (
+                            &lt;&gt;
+                                Click or Drag and Drop{' '}
+                                {accept === 'all'
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                    ? 'Images and Video'</span></span>
+                                    : titleCase(accept)}{' '}
+                                Here
+                            &lt;/&gt;
+                        )}
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -904,7 +925,7 @@ export default DragDropImageUpload
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-15T13:33:13.923Z
+                at 2024-02-16T09:14:10.015Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
